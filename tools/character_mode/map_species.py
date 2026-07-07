@@ -37,11 +37,36 @@ def name_to_const():
 
 
 def first_stage_map():
-    """SPECIES_X -> base-stage SPECIES_Y from gFirstEvolutionTable."""
-    text = read(os.path.join(TARGET, "src/data/pokemon/first_stage.h"))
+    """SPECIES_X -> base-stage SPECIES_Y, walking gEvolutionTable backwards.
+
+    Mirrors the runtime GetFirstEvolution() (src/level_scaling.c) so offline
+    normalization always agrees with the in-game roster check."""
+    text = read(os.path.join(TARGET, "src/data/pokemon/evolution.h"))
+    m = re.search(r"gEvolutionTable\[NUM_SPECIES\]\[EVOS_PER_MON\]\s*=\s*\{(.*?)^\};",
+                  text, re.S | re.M)
+    body = m.group(1)
+    rows = [(r.start(), r.group(1))
+            for r in re.finditer(r"\[(SPECIES_\w+)\]\s*=", body)]
+    parent = {}
+    for t in re.finditer(r"\{\s*EVO_\w+\s*,[^,{}]+,\s*(SPECIES_\w+)", body):
+        src = None
+        for pos, name in rows:
+            if pos < t.start():
+                src = name
+            else:
+                break
+        if src and src != t.group(1):
+            parent.setdefault(t.group(1), src)
+
     base = {}
-    for m in re.finditer(r"\[(SPECIES_\w+)\]\s*=\s*\{(SPECIES_\w+)", text):
-        base[m.group(1)] = m.group(2)
+    def find_base(c):
+        seen = set()
+        while c in parent and c not in seen:
+            seen.add(c)
+            c = parent[c]
+        return c
+    for child in list(parent):
+        base[child] = find_base(child)
     return base
 
 
@@ -63,6 +88,10 @@ NAME_FIXES = {
     "Iron Leaves": "IronLeaves", "Gouging Fire": "GougngFire",
     "Raging Bolt": "RagingBolt", "Iron Boulder": "IronBouldr",
     "Flabébé": "Flabébé",
+    "Mime Jr.": "Mime jr.",
+    "Porygon-Z": "Porygon-z",
+    "Blacephalon": "Blacefalon",
+    "Type: Null": "Type: Null",
 }
 
 

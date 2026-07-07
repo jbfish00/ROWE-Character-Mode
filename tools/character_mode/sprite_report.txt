@@ -1,0 +1,49 @@
+Red              ow=OBJ_EVENT_GFX_RED_NORMAL           front=TRAINER_PIC_RED            back=TRAINER_BACK_PIC_RED
+Leaf             ow=OBJ_EVENT_GFX_LEAF_NORMAL          front=TRAINER_PIC_LEAF           back=TRAINER_BACK_PIC_LEAF
+Ethan            ow=-                                  front=-                          back=-
+Kris             ow=-                                  front=-                          back=-
+Lyra             ow=-                                  front=-                          back=-
+Brendan          ow=OBJ_EVENT_GFX_BRENDAN_NORMAL       front=TRAINER_PIC_BRENDAN        back=TRAINER_BACK_PIC_BRENDAN
+May              ow=OBJ_EVENT_GFX_MAY_NORMAL           front=TRAINER_PIC_MAY            back=TRAINER_BACK_PIC_MAY
+Lucas            ow=-                                  front=-                          back=-
+Dawn             ow=-                                  front=-                          back=-
+Hilbert          ow=OBJ_EVENT_GFX_HILBERT_NORMAL       front=TRAINER_PIC_HILBERT        back=TRAINER_BACK_PIC_HILBERT
+Hilda            ow=-                                  front=-                          back=-
+Nate             ow=-                                  front=-                          back=-
+Rosa             ow=-                                  front=-                          back=-
+Calem            ow=-                                  front=-                          back=-
+Serena           ow=-                                  front=-                          back=-
+Elio             ow=-                                  front=-                          back=-
+Selene           ow=-                                  front=-                          back=-
+Victor           ow=-                                  front=-                          back=-
+Gloria           ow=-                                  front=-                          back=-
+Blue             ow=-                                  front=-                          back=-
+Lance            ow=-                                  front=-                          back=-
+Steven           ow=OBJ_EVENT_GFX_STEVEN               front=TRAINER_PIC_STEVEN         back=TRAINER_BACK_PIC_STEVEN
+Iris             ow=-                                  front=-                          back=-
+Kukui            ow=-                                  front=-                          back=-
+Koga             ow=-                                  front=-                          back=-
+Flint            ow=-                                  front=-                          back=-
+Brock            ow=-                                  front=-                          back=-
+Misty            ow=-                                  front=-                          back=-
+Lt. Surge        ow=-                                  front=-                          back=-
+Erika            ow=-                                  front=-                          back=-
+Sabrina          ow=-                                  front=-                          back=-
+Crasher Wake     ow=-                                  front=-                          back=-
+Silver           ow=-                                  front=-                          back=-
+Wally            ow=OBJ_EVENT_GFX_WALLY                front=TRAINER_PIC_WALLY          back=TRAINER_BACK_PIC_WALLY
+Barry            ow=-                                  front=-                          back=-
+Bianca           ow=-                                  front=-                          back=-
+Shauna           ow=-                                  front=-                          back=-
+Ash              ow=-                                  front=-                          back=-
+Misty (anime)    ow=-                                  front=-                          back=-
+Brock (anime)    ow=-                                  front=-                          back=-
+May (anime)      ow=OBJ_EVENT_GFX_MAY_NORMAL           front=TRAINER_PIC_MAY            back=TRAINER_BACK_PIC_MAY
+Dawn (anime)     ow=-                                  front=-                          back=-
+Serena (anime)   ow=-                                  front=-                          back=-
+Iris (anime)     ow=-                                  front=-                          back=-
+Cilan (anime)    ow=-                                  front=-                          back=-
+Clemont (anime)  ow=-                                  front=-                          back=-
+Lillie (anime)   ow=-                                  front=-                          back=-
+Kiawe (anime)    ow=-                                  front=-                          back=-
+Lana (anime)     ow=-                                  front=-                          back=-
