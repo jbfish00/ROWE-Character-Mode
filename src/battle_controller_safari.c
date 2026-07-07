@@ -1,4 +1,5 @@
 #include "global.h"
+#include "character_mode.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_controllers.h"
@@ -359,6 +360,11 @@ static void SafariHandleDrawTrainerPic(void)
 {
     u32 trainerPicId;
 
+    if (GetActiveCharacter() != NULL && GetActiveCharacter()->backPic != CHAR_ASSET_NONE_U8)
+    {
+        trainerPicId = GetActiveCharacter()->backPic;
+    }
+    else
     switch(GetCostume()){
         case EMERALD_COSTUME:
             if(gSaveBlock2Ptr->playerGender == GENDER_MALE)

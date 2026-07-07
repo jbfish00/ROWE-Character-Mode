@@ -1,4 +1,5 @@
 #include "global.h"
+#include "character_mode.h"
 #include "main.h"
 #include "bike.h"
 #include "event_data.h"
@@ -1153,6 +1154,14 @@ void PlayerGoSpeed4(u8 a)
 
 static void PlayerRun(u8 a)
 {
+    const struct CharacterInfo *character = GetActiveCharacter();
+
+    // NPC sprite sheets have no running frames; fast-walk instead.
+    if (character != NULL && character->owGfxId != CHAR_ASSET_NONE)
+    {
+        PlayerGoSpeed2(a);
+        return;
+    }
     PlayerSetAnimId(GetPlayerRunMovementAction(a), 2);
 }
 
@@ -1396,6 +1405,15 @@ u16 GetRivalAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender)
 
 u16 GetPlayerAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender)
 {
+    // Character Mode: characters with their own overworld sprite use it on
+    // foot; bike/surf/etc. fall through to the costume sprites.
+    if (state == PLAYER_AVATAR_STATE_NORMAL)
+    {
+        const struct CharacterInfo *character = GetActiveCharacter();
+
+        if (character != NULL && character->owGfxId != CHAR_ASSET_NONE)
+            return character->owGfxId;
+    }
     switch(VarGet(VAR_COSTUME_NUMBER)){
         case EMERALD_COSTUME:
             return sPlayerAvatarGfxIds[state][gender];
@@ -1568,6 +1586,14 @@ u16 GetPlayerAvatarGraphicsIdByCurrentState(void)
     u8 i;
     u8 flags = gPlayerAvatar.flags;
 	u8 costume = VarGet(VAR_COSTUME_NUMBER);
+
+    if (flags & PLAYER_AVATAR_FLAG_ON_FOOT)
+    {
+        const struct CharacterInfo *character = GetActiveCharacter();
+
+        if (character != NULL && character->owGfxId != CHAR_ASSET_NONE)
+            return character->owGfxId;
+    }
 
 	switch(costume){
 	case EMERALD_COSTUME:

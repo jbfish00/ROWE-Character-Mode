@@ -1,4 +1,5 @@
 #include "global.h"
+#include "character_mode.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_arena.h"
@@ -2889,6 +2890,10 @@ static void PlayerHandleDrawTrainerPic(void)
             }
         }
     }
+    else if (GetActiveCharacter() != NULL && GetActiveCharacter()->backPic != CHAR_ASSET_NONE_U8)
+    {
+        trainerPicId = GetActiveCharacter()->backPic;
+    }
     else
     {
         switch(GetCostume()){
@@ -2960,6 +2965,10 @@ static void PlayerHandleDrawTrainerPic(void)
         gSprites[gBattlerSpriteIds[gActiveBattler]].hFlip = 1;
     }
     // Use the back pic in any other scenario.
+    else if (GetActiveCharacter() != NULL && GetActiveCharacter()->backPic != CHAR_ASSET_NONE_U8)
+    {
+        trainerPicId = GetActiveCharacter()->backPic;
+    }
     else
     {
         switch(GetCostume()){
@@ -3030,6 +3039,10 @@ static void PlayerHandleTrainerSlide(void)
         {
             trainerPicId = gLinkPlayers[GetMultiplayerId()].gender + TRAINER_BACK_PIC_BRENDAN;
         }
+    }
+    else if (GetActiveCharacter() != NULL && GetActiveCharacter()->backPic != CHAR_ASSET_NONE_U8)
+    {
+        trainerPicId = GetActiveCharacter()->backPic;
     }
     else
     {
@@ -3651,6 +3664,9 @@ static void PlayerHandleIntroTrainerBallThrow(void)
 
     paletteNum = AllocSpritePalette(0xD6F8);
 
+    if (GetActiveCharacter() != NULL && GetActiveCharacter()->backPic != CHAR_ASSET_NONE_U8)
+        LoadPlayerTrainerPalette(gTrainerBackPicPaletteTable[GetActiveCharacter()->backPic].data, 0x100 + paletteNum * 16, 32);
+    else
     switch(GetCostume()){
         case EMERALD_COSTUME:
             if(gSaveBlock2Ptr->playerGender == GENDER_MALE)

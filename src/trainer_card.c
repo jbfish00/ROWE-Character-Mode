@@ -1,4 +1,5 @@
 #include "global.h"
+#include "character_mode.h"
 #include "scanline_effect.h"
 #include "palette.h"
 #include "task.h"
@@ -1896,6 +1897,17 @@ static void CreateTrainerCardTrainerPic(void)
     if (InUnionRoom() == TRUE && gReceivedRemoteLinkPlayers == 1)
     {
         CreateTrainerCardTrainerPicSprite(FacilityClassToPicIndex(sData->trainerCard.facilityClass),
+                    TRUE,
+                    sTrainerPicOffset[sData->isHoenn][sData->trainerCard.gender][0],
+                    sTrainerPicOffset[sData->isHoenn][sData->trainerCard.gender][1],
+                    8,
+                    2);
+    }
+    else if (GetActiveCharacter() != NULL && GetActiveCharacter()->trainerFrontPic != CHAR_ASSET_NONE)
+    {
+        // Character Mode: use the character's own trainer pic, without the
+        // RGB cap-color recolor (palette indices only fit player sprites).
+        CreateTrainerCardTrainerPicSprite(GetActiveCharacter()->trainerFrontPic,
                     TRUE,
                     sTrainerPicOffset[sData->isHoenn][sData->trainerCard.gender][0],
                     sTrainerPicOffset[sData->isHoenn][sData->trainerCard.gender][1],
