@@ -125,6 +125,12 @@ def main():
         if only and disp != only:
             continue
         sections = get_sections(page)
+        if sections is None and " (" in page:
+            # Bulbapedia only disambiguates colliding names; try the plain title.
+            plain = page.split(" (")[0]
+            sections = get_sections(plain)
+            if sections is not None:
+                page = plain
         if sections is None:
             problems.append("PAGE MISSING: %s (%s)" % (page, disp))
             continue
