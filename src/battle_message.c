@@ -1383,11 +1383,13 @@ static const u8 sText_PastelVeilProtected[] = _("{B_DEF_NAME_WITH_PREFIX} is pro
 static const u8 sText_TargetStatsWereReset[] = _("{B_DEF_NAME_WITH_PREFIX}'s stat changes were\nall reset!");
 static const u8 sText_TargetGotCursed[] = _("{B_DEF_NAME_WITH_PREFIX} was cursed!");
 static const u8 sText_BattlerBecameXType[] = _("{B_DEF_NAME_WITH_PREFIX} became a {B_BUFF1}-type!");
+static const u8 sText_CharacterBallBlock[] = _("It refuses to join {B_PLAYER_NAME}'s\njourney!");
 #endif
 
 const u8 *const gBattleStringsTable[BATTLESTRINGS_COUNT] =
 {
     [STRINGID_BATTLERBECAMEXTYPE - 12] = sText_BattlerBecameXType,
+    [STRINGID_CHARACTERBALLBLOCK - 12] = sText_CharacterBallBlock,
     [STRINGID_TARGETGOTCURSED - 12] = sText_TargetGotCursed,
     [STRINGID_PICKUPACTIVATED - 12] = sText_PickupActivated,
     [STRINGID_BOTHCANNOLONGERESCAPE - 12] = sText_BothCanNoLongerEscape,

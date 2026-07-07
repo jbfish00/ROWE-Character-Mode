@@ -7,6 +7,7 @@
 #include "battle_pyramid.h"
 #include "battle_ai_script_commands.h"
 #include "battle_scripts.h"
+#include "character_mode.h"
 #include "constants/moves.h"
 #include "constants/abilities.h"
 #include "item.h"
@@ -12514,6 +12515,13 @@ static void Cmd_handleballthrow(void)
         BtlController_EmitBallThrowAnim(0, BALL_TRAINER_BLOCK);
         MarkBattlerForControllerExec(gActiveBattler);
         gBattlescriptCurrInstr = BattleScript_LegendaryPokemonBallBlock;
+    }
+    else if (!IsSpeciesAllowedForCharacter(gBattleMons[gBattlerTarget].species))
+    {
+        // Character Mode: off-roster species cannot be caught.
+        BtlController_EmitBallThrowAnim(0, BALL_TRAINER_BLOCK);
+        MarkBattlerForControllerExec(gActiveBattler);
+        gBattlescriptCurrInstr = BattleScript_CharacterBallBlock;
     }
     else
     {

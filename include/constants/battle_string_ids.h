@@ -612,8 +612,9 @@
 #define STRINGID_TARGETSTATSWERERESET            608
 #define STRINGID_TARGETGOTCURSED                 609
 #define STRINGID_BATTLERBECAMEXTYPE 		     610
+#define STRINGID_CHARACTERBALLBLOCK              611
 
-#define BATTLESTRINGS_COUNT                      (STRINGID_BATTLERBECAMEXTYPE + 1)
+#define BATTLESTRINGS_COUNT                      (STRINGID_CHARACTERBALLBLOCK + 1)
 
 //// multichoice message IDs
 // switch in ability message

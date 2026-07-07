@@ -140,6 +140,14 @@ BattleScript_LegendaryPokemonBallBlock::
 	waitmessage 0x40
 	finishaction
 
+BattleScript_CharacterBallBlock::
+	waitmessage 0x40
+	printstring STRINGID_THEPOKEMONBLOCKEDTHEBALL
+	waitmessage 0x40
+	printstring STRINGID_CHARACTERBALLBLOCK
+	waitmessage 0x40
+	finishaction
+
 BattleScript_PlayerUsesItem::
 	setbyte sMOVEEND_STATE, 0xF
 	moveend 0x1, 0x0

@@ -1,4 +1,5 @@
 #include "global.h"
+#include "character_mode.h"
 #include "malloc.h"
 #include "apprentice.h"
 #include "battle.h"
@@ -5596,6 +5597,11 @@ u8 GiveMonToPlayer(struct Pokemon *mon)
     SetMonData(mon, MON_DATA_OT_NAME, gSaveBlock2Ptr->playerName);
     SetMonData(mon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
     SetMonData(mon, MON_DATA_OT_ID, gSaveBlock2Ptr->playerTrainerId);
+
+    // Character Mode: off-roster gifts/statics go straight to the PC.
+    if (!GetMonData(mon, MON_DATA_IS_EGG, NULL)
+        && !IsSpeciesAllowedForCharacter(GetMonData(mon, MON_DATA_SPECIES, NULL)))
+        return SendMonToPC(mon);
 
     for (i = 0; i < PARTY_SIZE; i++)
     {

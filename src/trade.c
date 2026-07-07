@@ -1,4 +1,5 @@
 #include "global.h"
+#include "character_mode.h"
 #include "malloc.h"
 #include "battle_anim.h"
 #include "battle_interface.h"
@@ -3901,6 +3902,7 @@ static bool8 AnimateTradeSequenceCable(void)
                 FreeMonSpritesGfx();
                 FREE_AND_SET_NULL(sTradeData);
             }
+            CharacterMode_SweepPartyToPC();
             SetMainCallback2(CB2_ReturnToField);
             BufferInGameTradeMonName();
         }
@@ -4417,6 +4419,7 @@ static bool8 AnimateTradeSequenceWireless(void)
                 FreeMonSpritesGfx();
                 FREE_AND_SET_NULL(sTradeData);
             }
+            CharacterMode_SweepPartyToPC();
             SetMainCallback2(CB2_ReturnToField);
             BufferInGameTradeMonName();
         }
@@ -5717,6 +5720,7 @@ static void CB2_FreeTradeData(void)
         FREE_AND_SET_NULL(sTradeData);
         if (gWirelessCommType)
             DestroyWirelessStatusIndicatorSprite();
+        CharacterMode_SweepPartyToPC();
         SetMainCallback2(gMain.savedCallback);
     }
     RunTasks();

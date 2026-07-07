@@ -384,6 +384,7 @@ extern const u8 BattleScript_AttackerMoveSetsStatusEffect[];
 extern const u8 BattleScript_AttackerSecondHitActivates[];
 extern const u8 BattleScript_WildTotemBoostActivated[];
 extern const u8 BattleScript_LegendaryPokemonBallBlock[];
+extern const u8 BattleScript_CharacterBallBlock[];
 extern const u8 BattleScript_WildLegendaryMegaEvolution[];
 extern const u8 BattleScript_BothCanNoLongerEscape[];
 extern const u8 BattleScript_ShootingStarActivate[];
