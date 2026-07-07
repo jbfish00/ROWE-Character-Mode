@@ -339,7 +339,9 @@ def main():
                 report.append("%s: item %s missing in ROWE -> dropped" % (const, v))
 
         eggs = re.findall(r"EGG_GROUP_\w+", field(body, "eggGroups", "") or "")
-        eg1 = eggs[0] if eggs else "EGG_GROUP_NO_EGGS_DISCOVERED"
+        eggs = ["EGG_GROUP_UNDISCOVERED" if e == "EGG_GROUP_NO_EGGS_DISCOVERED" else e
+                for e in eggs]
+        eg1 = eggs[0] if eggs else "EGG_GROUP_UNDISCOVERED"
         eg2 = eggs[1] if len(eggs) > 1 else eg1
 
         evs = {k: v for k, v in re.findall(r"\.(evYield_\w+)\s*=\s*(\d+)", body)}
@@ -405,8 +407,8 @@ def main():
             "name": "Ogerpon", "body": "",
             "type1": "TYPE_GRASS", "type2": "TYPE_GRASS",
             "abilities": ["ABILITY_DEFIANT", "ABILITY_NONE", "ABILITY_NONE"],
-            "items": {}, "egg1": "EGG_GROUP_NO_EGGS_DISCOVERED",
-            "egg2": "EGG_GROUP_NO_EGGS_DISCOVERED",
+            "items": {}, "egg1": "EGG_GROUP_UNDISCOVERED",
+            "egg2": "EGG_GROUP_UNDISCOVERED",
             "evs": {"evYield_Attack": "3"}, "friendship": "70",
             "genderRatio": "MON_FEMALE", "catchRate": "5", "expYield": "275",
             "eggCycles": "10", "growthRate": "GROWTH_SLOW",
