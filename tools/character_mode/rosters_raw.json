@@ -119,6 +119,24 @@
    "Zekrom"
   ]
  },
+ "Hilda": {
+  "category": "protagonist",
+  "page": "Hilda (game)",
+  "species": [
+   "Diancie",
+   "Emboar",
+   "Grapploct",
+   "Iron Leaves",
+   "Leafeon",
+   "Mienfoo",
+   "Pignite",
+   "Reshiram",
+   "Tepig",
+   "Tornadus",
+   "Victini",
+   "Zekrom"
+  ]
+ },
  "Kris": {
   "category": "protagonist",
   "page": "Kris (game)",
@@ -301,6 +319,26 @@
    "Yamask"
   ]
  },
+ "Nate": {
+  "category": "protagonist",
+  "page": "Nate (game)",
+  "species": [
+   "Arcanine",
+   "Braviary",
+   "Dewott",
+   "Emboar",
+   "Haxorus",
+   "Lucario",
+   "Panpour",
+   "Pansage",
+   "Pansear",
+   "Pignite",
+   "Samurott",
+   "Servine",
+   "Seviper",
+   "Tepig"
+  ]
+ },
  "Red": {
   "category": "protagonist",
   "page": "Red (game)",
@@ -339,6 +377,25 @@
    "Volcarona",
    "Wailord",
    "Wooper"
+  ]
+ },
+ "Rosa": {
+  "category": "protagonist",
+  "page": "Rosa (game)",
+  "species": [
+   "Deerling",
+   "Delibird",
+   "Dewott",
+   "Meloetta",
+   "Panpour",
+   "Pansage",
+   "Pansear",
+   "Pignite",
+   "Serperior",
+   "Servine",
+   "Shaymin",
+   "Snivy",
+   "Stoutland"
   ]
  }
 }
