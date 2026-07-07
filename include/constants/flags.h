@@ -69,7 +69,7 @@
 #define FLAG_TYPE_RANDOMIZER_MODE        0x39 // Game Mode
 #define FLAG_ABILITY_RANDOMIZER_MODE     0x3A // Game Mode
 #define FLAG_THIRD_TYPE_MODE             0x3B // Game Mode
-#define FLAG_UNUSED_0x03C                0x3C // Unused Flag
+#define FLAG_CHARACTER_MODE              0x3C // Character Mode active (see character_mode.c)
 #define FLAG_UNUSED_0x03D                0x3D // Unused Flag
 #define FLAG_UNUSED_0x03E                0x3E // Unused Flag
 #define FLAG_UNUSED_0x03F                0x3F // Unused Flag
