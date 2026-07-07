@@ -1,4 +1,5 @@
 #include "global.h"
+#include "character_mode.h"
 #include "ui_mode_menu.h"
 #include "strings.h"
 #include "bg.h"
@@ -129,7 +130,7 @@ static const u8 sStartMenuCursor[] 		= INCBIN_U8("graphics/ui_menu/select_arrow.
 static const u8 sStartModeCheck[] 		= INCBIN_U8("graphics/ui_menu/mode_check.4bpp");
 static const u8 sStartModeSelection[] 	= INCBIN_U8("graphics/ui_menu/mode_selection.4bpp");
 
-#define  NUM_ROWS   	 		 3
+#define  NUM_ROWS   	 		 4
 #define  NUM_MODES  	 		 9
 #define  NUM_STARTERS  	 		 10
 #define  NUM_DIFFICULTY_OPTIONS  3
@@ -142,6 +143,7 @@ EWRAM_DATA static u8 	starterselection 		  = 0;
 EWRAM_DATA static u8 	selection_StartingArea 	  = 0;
 EWRAM_DATA static u8 	Difficulty_Mode 		  = 1;
 EWRAM_DATA static bool8 Mode_Selection 			  = FALSE;
+EWRAM_DATA static u16 	characterSelection 		  = 0;
 //EWRAM_DATA static bool8 Mode_Checks[NUM_MODES];
 
 //Sprites
@@ -171,6 +173,32 @@ static const u16 ModeFlags[] = {
 	FLAG_NO_SPLIT_MODE,
 	FLAG_VANILLA_MODE
 };
+
+// Character Mode: the starter row cycles the chosen character's roster.
+static u16 GetStarterAt(u8 idx)
+{
+    if (characterSelection != 0)
+        return gCharacters[characterSelection - 1].roster[idx];
+    return StarterPokemon[idx];
+}
+
+static u8 GetNumStarters(void)
+{
+    if (characterSelection != 0)
+        return CharacterMode_GetRosterSize(&gCharacters[characterSelection - 1]);
+    return NUM_STARTERS;
+}
+
+static void CycleCharacter(int delta)
+{
+    int count = GetCharacterCount() + 1;
+    int sel = ((int)characterSelection + delta) % count;
+
+    if (sel < 0)
+        sel += count;
+    characterSelection = sel;
+    starterselection = 0;
+}
 
 enum Colors
 {
@@ -288,7 +316,10 @@ static bool8 Menu_DoGfxSetup(void)
         BlendPalettes(0xFFFFFFFF, 16, RGB_BLACK);
 		
 		DestroySpeciesIcon();
-		ShowSpeciesIcon(StarterPokemon[starterselection], 0, (6*8), (14*8)+4);
+		characterSelection = VarGet(VAR_CHARACTER_ID) <= GetCharacterCount() ? VarGet(VAR_CHARACTER_ID) : 0;
+		if (starterselection >= GetNumStarters())
+			starterselection = 0;
+		ShowSpeciesIcon(GetStarterAt(starterselection), 0, (6*8), (14*8)+4);
 		
         gMain.state++;
         break;
@@ -403,6 +434,7 @@ static const u8 sText_Difficulty_Normal[] 		= _("Normal");
 static const u8 sText_Difficulty_Hard[] 		= _("Hard");
 static const u8 sText_Starter[] 				= _("Starter");
 static const u8 sText_Starting_Area[] 			= _("Starting Area");
+static const u8 sText_Character_None[] 			= _("None");
 static const u8 sText_IVs_Mode[] 				= _("Perfect IVs");
 static const u8 sText_StarterChose_Surprise[] 	= _("Surprise Me");
 static const u8 sText_Mode_Enabled[] 			= _("Enabled    ");
@@ -431,7 +463,7 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
     u8 x = 0;
     u8 y = 1;
 	
-	StringCopy(&strArray[0], &gSpeciesNames[StarterPokemon[starterselection]][0]);
+	StringCopy(&strArray[0], &gSpeciesNames[GetStarterAt(starterselection)][0]);
 	
 	switch(selection_StartingArea){
 	case 0:		StartingArea = gText_Littleroot;				break;
@@ -475,13 +507,18 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
 	y = 1;
 	//x = 9;
 	//Config  -------------------------------------------------------------------------------------------
-	if(StarterPokemon[starterselection] != SPECIES_NONE)
+	if(GetStarterAt(starterselection) != SPECIES_NONE)
 		AddTextPrinterParameterized4(windowId, 7, (x*8)+2, (y*8), 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, &strArray[0]);		
 	else
 		AddTextPrinterParameterized4(windowId, 7, (x*8)+2, (y*8), 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, sText_StarterChose_Surprise);	
 	y = y+3; 
 	AddTextPrinterParameterized4(windowId, 7, (x*8)+2, (y*8), 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, StartingArea);			y = y+3;
 	AddTextPrinterParameterized4(windowId, 7, (x*8)+2, (y*8), 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, Difficulty);			y = y+3;
+	if(characterSelection != 0)
+		AddTextPrinterParameterized4(windowId, 7, (x*8)+2, (y*8), 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gCharacters[characterSelection - 1].name);
+	else
+		AddTextPrinterParameterized4(windowId, 7, (x*8)+2, (y*8), 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, sText_Character_None);
+	y = y+3;
 	x = 20;
 	y = 5;
 	
@@ -546,14 +583,25 @@ static void Task_MenuMain(u8 taskId)
 		}
 		else
 		{
-			if(cursorRow == 0 && StarterPokemon[starterselection] != SPECIES_NONE)
-			PlayCry3(StarterPokemon[starterselection], 0, 0);	
+			if(cursorRow == 0 && GetStarterAt(starterselection) != SPECIES_NONE)
+			PlayCry3(GetStarterAt(starterselection), 0, 0);	
 		}
 	}
 	
 	if (JOY_NEW(START_BUTTON))
     {
-        ScriptGiveMon(StarterPokemon[starterselection], 10, ITEM_NONE, 0,0,0);
+        if (characterSelection != 0)
+        {
+            FlagSet(FLAG_CHARACTER_MODE);
+            VarSet(VAR_CHARACTER_ID, characterSelection);
+            CharacterMode_SweepPartyToPC();
+        }
+        else
+        {
+            FlagClear(FLAG_CHARACTER_MODE);
+            VarSet(VAR_CHARACTER_ID, 0);
+        }
+        ScriptGiveMon(GetStarterAt(starterselection), 10, ITEM_NONE, 0,0,0);
 		
 		FlagClear(FLAG_EASY_MODE);
 		FlagClear(FLAG_NORMAL_MODE);
@@ -581,6 +629,14 @@ static void Task_MenuMain(u8 taskId)
     }
 	
 	
+	if (JOY_NEW(L_BUTTON) && !Mode_Selection && cursorRow == 3)
+    {
+		CycleCharacter(10);
+		DestroySpeciesIcon();
+		ShowSpeciesIcon(GetStarterAt(starterselection), 0, (6*8), (14*8)+4);
+		PlaySE(SE_SELECT);
+	}
+
 	if (JOY_NEW(R_BUTTON))
     {
 		if(Mode_Selection)
@@ -632,16 +688,16 @@ static void Task_MenuMain(u8 taskId)
 			switch(cursorRow){
 			//Starter Selection ---------------------------------------------
 			case 0: 
-			if(starterselection < NUM_STARTERS-1)
+			if(starterselection < GetNumStarters()-1)
 				starterselection++;
 			else
 				starterselection = 0; 
 			
 			DestroySpeciesIcon();
-			ShowSpeciesIcon(StarterPokemon[starterselection], 0, (6*8), (14*8)+4);
+			ShowSpeciesIcon(GetStarterAt(starterselection), 0, (6*8), (14*8)+4);
 			
-			if(StarterPokemon[starterselection] != SPECIES_NONE)
-			PlayCry3(StarterPokemon[starterselection], 0, 0);	
+			if(GetStarterAt(starterselection) != SPECIES_NONE)
+			PlayCry3(GetStarterAt(starterselection), 0, 0);	
 			break;
 			//Starting Area ---------------------------------------------------
 			case 1:
@@ -660,6 +716,13 @@ static void Task_MenuMain(u8 taskId)
 				Difficulty_Mode= 0; 
 			
 			PlaySE(SE_SELECT);
+			break;
+			//Character ---------------------------------------------------
+			case 3:
+			CycleCharacter(1);
+			DestroySpeciesIcon();
+			ShowSpeciesIcon(GetStarterAt(starterselection), 0, (6*8), (14*8)+4);
+			PlaySE(SE_SELECT);
 			}
 			
 		}
@@ -675,13 +738,13 @@ static void Task_MenuMain(u8 taskId)
 			if(starterselection != 0)
 				starterselection--;
 			else
-				starterselection = NUM_STARTERS-1;
+				starterselection = GetNumStarters()-1;
 			
 			DestroySpeciesIcon();
-			ShowSpeciesIcon(StarterPokemon[starterselection], 0, (6*8), (14*8)+4);
+			ShowSpeciesIcon(GetStarterAt(starterselection), 0, (6*8), (14*8)+4);
 			
-			if(StarterPokemon[starterselection] != SPECIES_NONE)
-			PlayCry3(StarterPokemon[starterselection], 0, 0);	
+			if(GetStarterAt(starterselection) != SPECIES_NONE)
+			PlayCry3(GetStarterAt(starterselection), 0, 0);	
 		
 			
 			break;
@@ -701,6 +764,13 @@ static void Task_MenuMain(u8 taskId)
 			else
 				Difficulty_Mode = NUM_DIFFICULTY_OPTIONS-1;
 			
+			PlaySE(SE_SELECT);
+			break;
+			//Character ---------------------------------------------------
+			case 3:
+			CycleCharacter(-1);
+			DestroySpeciesIcon();
+			ShowSpeciesIcon(GetStarterAt(starterselection), 0, (6*8), (14*8)+4);
 			PlaySE(SE_SELECT);
 			break;
 			}

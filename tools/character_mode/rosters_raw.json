@@ -156,6 +156,28 @@
    "Yveltal"
   ]
  },
+ "Crasher Wake": {
+  "category": "gymleader",
+  "page": "Crasher Wake",
+  "species": [
+   "Buizel",
+   "Empoleon",
+   "Floatzel",
+   "Gastrodon",
+   "Gyarados",
+   "Huntail",
+   "Kingdra",
+   "Ludicolo",
+   "Lumineon",
+   "Pikachu",
+   "Piplup",
+   "Politoed",
+   "Poliwrath",
+   "Quagsire",
+   "Sharpedo",
+   "Torterra"
+  ]
+ },
  "Dawn": {
   "category": "protagonist",
   "page": "Dawn (game)",
@@ -877,6 +899,51 @@
    "Shaymin",
    "Snivy",
    "Stoutland"
+  ]
+ },
+ "Sabrina": {
+  "category": "gymleader",
+  "page": "Sabrina (game)",
+  "species": [
+   "Abra",
+   "Alakazam",
+   "Articuno",
+   "Charizard",
+   "Chingling",
+   "Clefairy",
+   "Cloyster",
+   "Drowzee",
+   "Espeon",
+   "Exeggutor",
+   "Furret",
+   "Gallade",
+   "Golduck",
+   "Haunter",
+   "Heracross",
+   "Hitmonlee",
+   "Hypno",
+   "Jynx",
+   "Kadabra",
+   "Lapras",
+   "Metagross",
+   "Mewtwo",
+   "Moltres",
+   "Mr. Mime",
+   "Sandslash",
+   "Scizor",
+   "Scyther",
+   "Sigilyph",
+   "Slowbro",
+   "Slowking",
+   "Snorlax",
+   "Swoobat",
+   "Typhlosion",
+   "Venomoth",
+   "Vileplume",
+   "Wigglytuff",
+   "Wobbuffet",
+   "Woobat",
+   "Zapdos"
   ]
  },
  "Selene": {
