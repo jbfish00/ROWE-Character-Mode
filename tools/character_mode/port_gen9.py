@@ -108,7 +108,7 @@ def write(path, text):
 
 def normalize_text(s):
     return (s.replace("’", "'").replace("‘", "'")
-            .replace("“", '"').replace("”", '"')
+            .replace("“", "'").replace("”", "'").replace('"', "'")
             .replace("—", "-").replace("–", "-"))
 
 
@@ -172,7 +172,8 @@ def parse_description(body):
             depth -= 1
         i += 1
     raw = body[m.end():i - 1]
-    return "".join(re.findall(r'"((?:[^"\\]|\\.)*)"', raw))
+    joined = "".join(re.findall(r'"((?:[^"\\]|\\.)*)"', raw))
+    return joined.replace('\\"', "'")
 
 
 def parse_evolutions(body):
