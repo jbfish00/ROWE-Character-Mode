@@ -67,6 +67,13 @@ CROSS_GEN_EVOS = [
     ("SPECIES_GIRAFARIG", "EVO_LEVEL", 32, "SPECIES_FARIGIRAF"),
     ("SPECIES_BISHARP", "EVO_LEVEL", 52, "SPECIES_KINGAMBIT"),
 ]
+# Evolutions whose donor item/method doesn't exist in ROWE: manual replacements.
+OVERRIDE_EVOS = {
+    ("SPECIES_CHARCADET", "SPECIES_ARMAROUGE"): ("EVO_ITEM", "ITEM_FIRE_STONE"),
+    ("SPECIES_CHARCADET", "SPECIES_CERULEDGE"): ("EVO_ITEM", "ITEM_DUSK_STONE"),
+    ("SPECIES_POLTCHAGEIST", "SPECIES_SINISTCHA"): ("EVO_LEVEL", "30"),
+}
+
 # Donor entries keyed by a form constant that IS the species default.
 # donor suffix -> plain suffix used for the ROWE constant and graphics dir.
 DEFAULT_FORMS = {
@@ -601,6 +608,15 @@ def main():
             if e[2] not in ported_consts and e[2] not in target_species:
                 report.append("%s: evo target %s not in ROWE -> dropped" % (s["const"], e[2]))
                 continue
+            if (s["const"], e[2]) in OVERRIDE_EVOS:
+                om, op = OVERRIDE_EVOS[(s["const"], e[2])]
+                e = (om, op, e[2])
+            elif e[0] == "EVO_ITEM" and e[1] not in items_ok:
+                report.append("%s: evo item %s missing -> EVO_LEVEL 36" % (s["const"], e[1]))
+                e = ("EVO_LEVEL", "36", e[2])
+            elif "LEVEL" in e[0] and (not e[1].isdigit() or e[1] == "0"):
+                report.append("%s: evo %s param %r -> level 36" % (s["const"], e[0], e[1]))
+                e = ("EVO_LEVEL", "36", e[2])
             seen_targets.add(e[2])
             rows_list.append(e)
         s["evolutions"] = rows_list
