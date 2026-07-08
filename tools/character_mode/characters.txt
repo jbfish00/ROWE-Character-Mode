@@ -95,8 +95,8 @@ Wattson | Wattson (game) | gymleader
 Flannery | Flannery (game) | gymleader
 Norman | Norman (game) | gymleader
 Winona | Winona (game) | gymleader
-Tate | Tate (game) | gymleader
-Liza | Liza (game) | gymleader
+Tate | Tate and Liza | gymleader
+Liza | Tate and Liza | gymleader
 Juan | Juan (game) | gymleader
 
 # --- Gym Leaders: Sinnoh ---

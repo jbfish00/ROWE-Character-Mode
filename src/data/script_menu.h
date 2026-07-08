@@ -806,6 +806,7 @@ static const struct MenuAction MultichoiceList_New_Game_Questions[] =
 {
     {gText_Difficulty_Level},
     {gText_Game_Modes},
+    {gText_Character_Mode_Option},
     {gText_Start_Game},
 };
 

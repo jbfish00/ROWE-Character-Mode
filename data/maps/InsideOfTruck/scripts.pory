@@ -17,10 +17,17 @@ Start_EventScript_Starter_Chose::
 	switch VAR_RESULT
     case 0, Start_EventScript_Game_Level
 	case 1, Start_EventScript_Game_Modes
-    case 2, Start_EventScript_Game_Start
+	case 2, Start_EventScript_Character_Mode
+	case 3, Start_EventScript_Game_Start
 	case MULTI_B_PRESSED, Start_EventScript_Starter_Chose
 	end
 	
+Start_EventScript_Character_Mode::
+	fadescreen FADE_TO_BLACK
+	special Special_OpenCharacterModeMenu
+	waitstate
+	goto Start_EventScript_Starter_Chose
+
 Game_Start_Text_Introduction:
 	.string "Welcome to Pokémon R.O.W.E.\n"
 	.string "Do you have any questions?$"

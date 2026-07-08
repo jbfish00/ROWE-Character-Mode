@@ -1,4 +1,5 @@
 #include "global.h"
+#include "character_mode.h"
 #include "main.h"
 #include "text.h"
 #include "task.h"
@@ -1613,6 +1614,8 @@ static bool8 MysteryGift_GiveMysteryGiftMon(void){
     }
 	
 	if(GetNumBadges() >= neededBadges){
+		if (!IsSpeciesAllowedForCharacter(GetMonData(&mon, MON_DATA_SPECIES, NULL)))
+			i = PARTY_SIZE; // Character Mode: off-roster gifts go to the PC
 		if (i >= PARTY_SIZE)
 			sentToPc = SendMonToPC(&mon);
 		else

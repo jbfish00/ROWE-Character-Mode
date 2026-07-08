@@ -217,6 +217,13 @@ static const u8 sMenuWindowFontColors[][3] =
 
 //==========FUNCTIONS==========//
 // UI loader template
+// Script entry point (intro truck question, data/specials.inc).
+void Special_OpenCharacterModeMenu(void)
+{
+    CleanupOverworldWindowsAndTilemaps();
+    Menu_Mode_Init(CB2_ReturnToFieldContinueScriptPlayMapMusic);
+}
+
 void Task_OpenModeMenuFromStartMenu(u8 taskId)
 {
     s16 *data = gTasks[taskId].data;

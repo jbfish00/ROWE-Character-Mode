@@ -2890,12 +2890,11 @@ static void PlayerHandleDrawTrainerPic(void)
             }
         }
     }
-    else if (GetActiveCharacter() != NULL && GetActiveCharacter()->backPic != CHAR_ASSET_NONE_U8)
-    {
-        trainerPicId = GetActiveCharacter()->backPic;
-    }
     else
     {
+        if (GetActiveCharacter() != NULL && GetActiveCharacter()->backPic != CHAR_ASSET_NONE_U8)
+            trainerPicId = GetActiveCharacter()->backPic;
+        else
         switch(GetCostume()){
             case EMERALD_COSTUME:
                 if(gSaveBlock2Ptr->playerGender == GENDER_MALE)
@@ -2965,12 +2964,11 @@ static void PlayerHandleDrawTrainerPic(void)
         gSprites[gBattlerSpriteIds[gActiveBattler]].hFlip = 1;
     }
     // Use the back pic in any other scenario.
-    else if (GetActiveCharacter() != NULL && GetActiveCharacter()->backPic != CHAR_ASSET_NONE_U8)
-    {
-        trainerPicId = GetActiveCharacter()->backPic;
-    }
     else
     {
+        if (GetActiveCharacter() != NULL && GetActiveCharacter()->backPic != CHAR_ASSET_NONE_U8)
+            trainerPicId = GetActiveCharacter()->backPic;
+        else
         switch(GetCostume()){
             case EMERALD_COSTUME:
                 if(gSaveBlock2Ptr->playerGender == GENDER_MALE)
@@ -3040,12 +3038,11 @@ static void PlayerHandleTrainerSlide(void)
             trainerPicId = gLinkPlayers[GetMultiplayerId()].gender + TRAINER_BACK_PIC_BRENDAN;
         }
     }
-    else if (GetActiveCharacter() != NULL && GetActiveCharacter()->backPic != CHAR_ASSET_NONE_U8)
-    {
-        trainerPicId = GetActiveCharacter()->backPic;
-    }
     else
     {
+        if (GetActiveCharacter() != NULL && GetActiveCharacter()->backPic != CHAR_ASSET_NONE_U8)
+            trainerPicId = GetActiveCharacter()->backPic;
+        else
         switch(GetCostume()){
             case EMERALD_COSTUME:
                 if(gSaveBlock2Ptr->playerGender == GENDER_MALE)

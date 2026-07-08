@@ -1,4 +1,5 @@
 #include "global.h"
+#include "character_mode.h"
 #include "battle.h"
 #include "battle_gfx_sfx_util.h"
 #include "berry.h"
@@ -356,6 +357,10 @@ u8 ScriptGiveCustomMon(u16 species, u8 level, u16 item, u8 ball, u8 nature, u8 a
         if (GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL) == SPECIES_NONE)
             break;
     }
+
+    // Character Mode: off-roster gifts go straight to the PC.
+    if (!IsSpeciesAllowedForCharacter(GetMonData(&mon, MON_DATA_SPECIES, NULL)))
+        i = PARTY_SIZE;
 
     if (i >= PARTY_SIZE)
     {

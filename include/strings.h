@@ -3170,6 +3170,7 @@ extern const u8 gText_Region_Sinnoh[];
 
 extern const u8 gText_Difficulty_Level[];
 extern const u8 gText_Game_Modes[];
+extern const u8 gText_Character_Mode_Option[];
 extern const u8 gText_About_New_Game_Plus[];
 extern const u8 gText_Start_Game[];
 extern const u8 gText_Difficulty_Easy[];

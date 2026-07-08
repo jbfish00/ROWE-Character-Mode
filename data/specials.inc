@@ -572,3 +572,4 @@ gSpecials:: @ 81DBA64
 	def_special DestroyFollower
 	def_special HideFollower
 	def_special ShouldStaticEncounterBeFirstStage
+	def_special Special_OpenCharacterModeMenu

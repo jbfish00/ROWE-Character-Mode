@@ -1,4 +1,5 @@
 #include "global.h"
+#include "character_mode.h"
 #include "malloc.h"
 #include "bg.h"
 #include "data.h"
@@ -2005,6 +2006,9 @@ static void CreatePCMenu(u8 whichMenu, s16 *windowIdPtr)
 
 static void Cb2_ExitPSS(void)
 {
+    // Character Mode: withdrawing off-roster mons is undone on exit.
+    CharacterMode_SweepPartyToPC();
+
     sPreviousBoxOption = GetCurrentBoxOption();
     gFieldCallback = FieldCb_ReturnToPcMenu;
     SetMainCallback2(CB2_ReturnToField);

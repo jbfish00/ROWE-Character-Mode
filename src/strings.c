@@ -3923,6 +3923,7 @@ const u8 gText_Region_Sinnoh[] = _("Sinnoh");
 
 const u8 gText_Difficulty_Level[] = _("Select Difficulty Level");
 const u8 gText_Game_Modes[] = _("Change Game Modes");
+const u8 gText_Character_Mode_Option[] = _("Character Mode");
 const u8 gText_Start_Game[] = _("{COLOR GREEN}{SHADOW LIGHT_GREEN}Start Game");
 const u8 gText_About_New_Game_Plus[] = _("About New Game Plus");
 
