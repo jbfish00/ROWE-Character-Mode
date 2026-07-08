@@ -92,6 +92,14 @@ NAME_FIXES = {
     "Porygon-Z": "Porygon-z",
     "Blacephalon": "Blacefalon",
     "Type: Null": "Type: Null",
+    "Fletchinder": "Flechinder",
+    "Crabominable": "Crabminabl",
+    "Corvisquire": "Corvisquir",
+    "Corviknight": "Corviknigh",
+    "Barraskewda": "Barraskewd",
+    "Centiskorch": "Centiskorc",
+    "Polteageist": "Polteageis",
+    "Stonjourner": "Stonjourne",
 }
 
 

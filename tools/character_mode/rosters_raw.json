@@ -3385,8 +3385,33 @@
  },
  "Liza": {
   "category": "gymleader",
-  "page": "Liza",
-  "species": []
+  "page": "Tate and Liza",
+  "species": [
+   "Baltoy",
+   "Bronzong",
+   "Celesteela",
+   "Chimecho",
+   "Claydol",
+   "Combusken",
+   "Corphish",
+   "Drowzee",
+   "Gallade",
+   "Gardevoir",
+   "Gothitelle",
+   "Groudon",
+   "Grumpig",
+   "Hypno",
+   "Jirachi",
+   "Kyogre",
+   "Lunatone",
+   "Pikachu",
+   "Reuniclus",
+   "Slowking",
+   "Slowpoke",
+   "Solrock",
+   "Spoink",
+   "Xatu"
+  ]
  },
  "Lorelei": {
   "category": "elite4",
@@ -5195,7 +5220,7 @@
  },
  "Tate": {
   "category": "gymleader",
-  "page": "Tate",
+  "page": "Tate and Liza",
   "species": [
    "Baltoy",
    "Bronzong",
