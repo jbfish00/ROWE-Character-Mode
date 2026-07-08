@@ -130,7 +130,7 @@ static const u8 sStartMenuCursor[] 		= INCBIN_U8("graphics/ui_menu/select_arrow.
 static const u8 sStartModeCheck[] 		= INCBIN_U8("graphics/ui_menu/mode_check.4bpp");
 static const u8 sStartModeSelection[] 	= INCBIN_U8("graphics/ui_menu/mode_selection.4bpp");
 
-#define  NUM_ROWS   	 		 4
+#define  NUM_ROWS   	 		 5
 #define  NUM_MODES  	 		 9
 #define  NUM_STARTERS  	 		 10
 #define  NUM_DIFFICULTY_OPTIONS  3
@@ -144,6 +144,7 @@ EWRAM_DATA static u8 	selection_StartingArea 	  = 0;
 EWRAM_DATA static u8 	Difficulty_Mode 		  = 1;
 EWRAM_DATA static bool8 Mode_Selection 			  = FALSE;
 EWRAM_DATA static u16 	characterSelection 		  = 0;
+EWRAM_DATA static u8 	genSelection 			  = 0; // EWRAM inits are discarded; set on menu open
 //EWRAM_DATA static bool8 Mode_Checks[NUM_MODES];
 
 //Sprites
@@ -189,14 +190,41 @@ static u8 GetNumStarters(void)
     return NUM_STARTERS;
 }
 
+// Cycle within the selected generation; 0 (= None) is always reachable.
 static void CycleCharacter(int delta)
 {
-    int count = GetCharacterCount() + 1;
-    int sel = ((int)characterSelection + delta) % count;
+    int step = delta > 0 ? 1 : -1;
+    int count = delta > 0 ? delta : -delta;
+    int sel = characterSelection;
+    int guard;
 
-    if (sel < 0)
-        sel += count;
+    while (count--)
+    {
+        guard = GetCharacterCount() + 1;
+        do
+        {
+            sel += step;
+            if (sel < 0)
+                sel = GetCharacterCount();
+            else if (sel > (int)GetCharacterCount())
+                sel = 0;
+        } while (guard-- > 0 && sel != 0
+                 && gCharacters[sel - 1].generation != genSelection);
+    }
     characterSelection = sel;
+    starterselection = 0;
+}
+
+static void CycleGeneration(int delta)
+{
+    int gen = (int)genSelection + delta;
+
+    if (gen < 1)
+        gen = 9;
+    else if (gen > 9)
+        gen = 1;
+    genSelection = gen;
+    characterSelection = 0;
     starterselection = 0;
 }
 
@@ -318,16 +346,23 @@ static bool8 Menu_DoGfxSetup(void)
         gMain.state++;
         break;
     case 5:
+        // Restore selections BEFORE the first draw: EWRAM initializers are
+        // discarded on GBA, so genSelection boots as 0 and would index
+        // sGenTexts out of bounds if PrintToWindow ran first.
+		characterSelection = VarGet(VAR_CHARACTER_ID) <= GetCharacterCount() ? VarGet(VAR_CHARACTER_ID) : 0;
+		genSelection = characterSelection != 0 ? gCharacters[characterSelection - 1].generation : 1;
+		if (genSelection < 1 || genSelection > 9)
+			genSelection = 1;
+		if (starterselection >= GetNumStarters())
+			starterselection = 0;
+
         PrintToWindow(WINDOW_1, FONT_BLACK);
         taskId = CreateTask(Task_MenuWaitFadeIn, 0);
         BlendPalettes(0xFFFFFFFF, 16, RGB_BLACK);
-		
+
 		DestroySpeciesIcon();
-		characterSelection = VarGet(VAR_CHARACTER_ID) <= GetCharacterCount() ? VarGet(VAR_CHARACTER_ID) : 0;
-		if (starterselection >= GetNumStarters())
-			starterselection = 0;
-		ShowSpeciesIcon(GetStarterAt(starterselection), 0, (6*8), (14*8)+4);
-		
+		ShowSpeciesIcon(GetStarterAt(starterselection), 0, (13*8)+4, (16*8)+4);
+
         gMain.state++;
         break;
     case 6:
@@ -442,6 +477,20 @@ static const u8 sText_Difficulty_Hard[] 		= _("Hard");
 static const u8 sText_Starter[] 				= _("Starter");
 static const u8 sText_Starting_Area[] 			= _("Starting Area");
 static const u8 sText_Character_None[] 			= _("None");
+static const u8 sText_Gen_1[] = _("Gen I");
+static const u8 sText_Gen_2[] = _("Gen II");
+static const u8 sText_Gen_3[] = _("Gen III");
+static const u8 sText_Gen_4[] = _("Gen IV");
+static const u8 sText_Gen_5[] = _("Gen V");
+static const u8 sText_Gen_6[] = _("Gen VI");
+static const u8 sText_Gen_7[] = _("Gen VII");
+static const u8 sText_Gen_8[] = _("Gen VIII");
+static const u8 sText_Gen_9[] = _("Gen IX");
+static const u8 *const sGenTexts[9] =
+{
+    sText_Gen_1, sText_Gen_2, sText_Gen_3, sText_Gen_4, sText_Gen_5,
+    sText_Gen_6, sText_Gen_7, sText_Gen_8, sText_Gen_9,
+};
 static const u8 sText_IVs_Mode[] 				= _("Perfect IVs");
 static const u8 sText_StarterChose_Surprise[] 	= _("Surprise Me");
 static const u8 sText_Mode_Enabled[] 			= _("Enabled    ");
@@ -521,6 +570,8 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
 	y = y+3; 
 	AddTextPrinterParameterized4(windowId, 7, (x*8)+2, (y*8), 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, StartingArea);			y = y+3;
 	AddTextPrinterParameterized4(windowId, 7, (x*8)+2, (y*8), 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, Difficulty);			y = y+3;
+	AddTextPrinterParameterized4(windowId, 7, (x*8)+2, (y*8), 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, sGenTexts[genSelection - 1]);
+	y = y+3;
 	if(characterSelection != 0)
 		AddTextPrinterParameterized4(windowId, 7, (x*8)+2, (y*8), 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gCharacters[characterSelection - 1].name);
 	else
@@ -602,13 +653,22 @@ static void Task_MenuMain(u8 taskId)
             FlagSet(FLAG_CHARACTER_MODE);
             VarSet(VAR_CHARACTER_ID, characterSelection);
             CharacterMode_SweepPartyToPC();
+            // Give the roster starter only if no roster member remains,
+            // so re-committing can't mint duplicate starters; the second
+            // sweep then clears any off-roster mon the first one spared.
+            if (!CharacterMode_PartyHasAllowedMon())
+            {
+                ScriptGiveMon(GetStarterAt(starterselection), 10, ITEM_NONE, 0,0,0);
+                CharacterMode_SweepPartyToPC();
+            }
         }
         else
         {
             FlagClear(FLAG_CHARACTER_MODE);
             VarSet(VAR_CHARACTER_ID, 0);
+            if (CalculatePlayerPartyCount() == 0)
+                ScriptGiveMon(GetStarterAt(starterselection), 10, ITEM_NONE, 0,0,0);
         }
-        ScriptGiveMon(GetStarterAt(starterselection), 10, ITEM_NONE, 0,0,0);
 		
 		FlagClear(FLAG_EASY_MODE);
 		FlagClear(FLAG_NORMAL_MODE);
@@ -636,11 +696,11 @@ static void Task_MenuMain(u8 taskId)
     }
 	
 	
-	if (JOY_NEW(L_BUTTON) && !Mode_Selection && cursorRow == 3)
+	if (JOY_NEW(L_BUTTON) && !Mode_Selection && cursorRow == 4)
     {
 		CycleCharacter(10);
 		DestroySpeciesIcon();
-		ShowSpeciesIcon(GetStarterAt(starterselection), 0, (6*8), (14*8)+4);
+		ShowSpeciesIcon(GetStarterAt(starterselection), 0, (13*8)+4, (16*8)+4);
 		PlaySE(SE_SELECT);
 	}
 
@@ -701,7 +761,7 @@ static void Task_MenuMain(u8 taskId)
 				starterselection = 0; 
 			
 			DestroySpeciesIcon();
-			ShowSpeciesIcon(GetStarterAt(starterselection), 0, (6*8), (14*8)+4);
+			ShowSpeciesIcon(GetStarterAt(starterselection), 0, (13*8)+4, (16*8)+4);
 			
 			if(GetStarterAt(starterselection) != SPECIES_NONE)
 			PlayCry3(GetStarterAt(starterselection), 0, 0);	
@@ -724,11 +784,18 @@ static void Task_MenuMain(u8 taskId)
 			
 			PlaySE(SE_SELECT);
 			break;
-			//Character ---------------------------------------------------
+			//Generation ---------------------------------------------------
 			case 3:
+			CycleGeneration(1);
+			DestroySpeciesIcon();
+			ShowSpeciesIcon(GetStarterAt(starterselection), 0, (13*8)+4, (16*8)+4);
+			PlaySE(SE_SELECT);
+			break;
+			//Character ---------------------------------------------------
+			case 4:
 			CycleCharacter(1);
 			DestroySpeciesIcon();
-			ShowSpeciesIcon(GetStarterAt(starterselection), 0, (6*8), (14*8)+4);
+			ShowSpeciesIcon(GetStarterAt(starterselection), 0, (13*8)+4, (16*8)+4);
 			PlaySE(SE_SELECT);
 			}
 			
@@ -748,7 +815,7 @@ static void Task_MenuMain(u8 taskId)
 				starterselection = GetNumStarters()-1;
 			
 			DestroySpeciesIcon();
-			ShowSpeciesIcon(GetStarterAt(starterselection), 0, (6*8), (14*8)+4);
+			ShowSpeciesIcon(GetStarterAt(starterselection), 0, (13*8)+4, (16*8)+4);
 			
 			if(GetStarterAt(starterselection) != SPECIES_NONE)
 			PlayCry3(GetStarterAt(starterselection), 0, 0);	
@@ -773,11 +840,18 @@ static void Task_MenuMain(u8 taskId)
 			
 			PlaySE(SE_SELECT);
 			break;
-			//Character ---------------------------------------------------
+			//Generation ---------------------------------------------------
 			case 3:
+			CycleGeneration(-1);
+			DestroySpeciesIcon();
+			ShowSpeciesIcon(GetStarterAt(starterselection), 0, (13*8)+4, (16*8)+4);
+			PlaySE(SE_SELECT);
+			break;
+			//Character ---------------------------------------------------
+			case 4:
 			CycleCharacter(-1);
 			DestroySpeciesIcon();
-			ShowSpeciesIcon(GetStarterAt(starterselection), 0, (6*8), (14*8)+4);
+			ShowSpeciesIcon(GetStarterAt(starterselection), 0, (13*8)+4, (16*8)+4);
 			PlaySE(SE_SELECT);
 			break;
 			}

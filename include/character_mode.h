@@ -14,6 +14,7 @@ struct CharacterInfo
     u16 owGfxId;            // OBJ_EVENT_GFX_* or CHAR_ASSET_NONE
     u16 trainerFrontPic;    // TRAINER_PIC_* or CHAR_ASSET_NONE
     u8 backPic;             // TRAINER_BACK_PIC_* or CHAR_ASSET_NONE_U8
+    u8 generation;          // debut generation, 1-9 (menu grouping)
 };
 
 extern const struct CharacterInfo gCharacters[];
@@ -23,6 +24,7 @@ bool8 InCharacterMode(void);
 const struct CharacterInfo *GetActiveCharacter(void);
 bool8 IsSpeciesAllowedForCharacter(u16 species);
 void CharacterMode_SweepPartyToPC(void);
+bool8 CharacterMode_PartyHasAllowedMon(void);
 u16 CharacterMode_GetRosterSize(const struct CharacterInfo *character);
 
 #endif // GUARD_CHARACTER_MODE_H

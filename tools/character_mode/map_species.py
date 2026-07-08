@@ -73,7 +73,7 @@ def first_stage_map():
 # Bulbapedia name -> in-game display name divergences (10-char cap, forms).
 NAME_FIXES = {
     "Nidoran♀": "Nidoran♀", "Nidoran♂": "Nidoran♂",
-    "Mr. Mime": "Mr. Mime", "Mime Jr.": "Mime Jr.",
+    "Mr. Mime": "Mr. Mime",
     "Farfetch'd": "Farfetch'd", "Sirfetch'd": "Sirfetch'd",
     "Meowscarada": "Meowscrada", "Oinkologne": "Oinkolgne",
     "Squawkabilly": "Squawkbily", "Kilowattrel": "Kilowattrl",
@@ -122,7 +122,7 @@ def main():
                 continue
             consts.add(base.get(const, const))
         mapped[disp] = {"page": info["page"], "category": info["category"],
-                        "species": sorted(consts)}
+                        "gen": info.get("gen", 0), "species": sorted(consts)}
 
     with open(os.path.join(HERE, "rosters_mapped.json"), "w") as f:
         json.dump(mapped, f, indent=1, sort_keys=True)

@@ -111,8 +111,10 @@ def main():
             line = line.strip()
             if not line or line.startswith("#"):
                 continue
-            disp, page, cat = [p.strip() for p in line.split("|")]
-            chars.append((disp, page, cat))
+            parts = [p.strip() for p in line.split("|")]
+            disp, pages, cat = parts[0], parts[1], parts[2]
+            gen = int(parts[3]) if len(parts) > 3 else 0
+            chars.append((disp, [p.strip() for p in pages.split("+")], cat, gen))
 
     out_path = os.path.join(HERE, "rosters_raw.json")
     out = {}
@@ -121,35 +123,50 @@ def main():
             out = json.load(f)
 
     problems = []
-    for disp, page, cat in chars:
+    seed_text = open(os.path.join(HERE, "characters.txt")).read()
+    for disp, pages, cat, gen in chars:
         if only and disp != only:
             continue
-        sections = get_sections(page)
-        if sections is None and " (" in page:
-            # Bulbapedia only disambiguates colliding names; try the plain title.
-            plain = page.split(" (")[0]
-            sections = get_sections(plain)
-            if sections is not None:
-                page = plain
-        if sections is None:
-            problems.append("PAGE MISSING: %s (%s)" % (page, disp))
-            continue
-        picks = [s for s in sections
-                 if any(h in s["line"].lower() for h in SECTION_HINTS)]
+        # auto-union the anime page for every character, per user request:
+        # a character usable in game AND anime gets one combined roster.
+        base = disp.split(" (")[0]
+        auto = base + " (anime)"
+        if auto not in pages:
+            pages = pages + [auto]
         species = set()
-        for s in picks:
-            try:
-                wt = get_section_wikitext(page, s["index"])
-            except Exception as e:
-                problems.append("SECTION FAIL: %s #%s: %s" % (page, s["index"], e))
+        scanned = 0
+        found_any_page = False
+        for page in pages:
+            is_auto = (page == auto and auto not in seed_text)
+            sections = get_sections(page)
+            if sections is None and " (" in page and not is_auto:
+                plain = page.split(" (")[0]
+                sections = get_sections(plain)
+                if sections is not None:
+                    page = plain
+            if sections is None:
+                if not is_auto:
+                    problems.append("PAGE MISSING: %s (%s)" % (page, disp))
                 continue
-            species |= extract_species(wt, valid_names)
+            found_any_page = True
+            picks = [s for s in sections
+                     if any(h in s["line"].lower() for h in SECTION_HINTS)]
+            scanned += len(picks)
+            for s in picks:
+                try:
+                    wt = get_section_wikitext(page, s["index"])
+                except Exception as e:
+                    problems.append("SECTION FAIL: %s #%s: %s" % (page, s["index"], e))
+                    continue
+                species |= extract_species(wt, valid_names)
+        if not found_any_page:
+            continue
         if not species:
             problems.append("EMPTY: %s (%s) - %d sections scanned"
-                            % (page, disp, len(picks)))
-        out[disp] = {"page": page, "category": cat,
+                            % (disp, disp, scanned))
+        out[disp] = {"page": " + ".join(pages), "category": cat, "gen": gen,
                      "species": sorted(species)}
-        print("%-14s %3d species (%d sections)" % (disp, len(species), len(picks)))
+        print("%-14s %3d species (%d sections)" % (disp, len(species), scanned))
         with open(out_path, "w") as f:
             json.dump(out, f, indent=1, sort_keys=True)
 

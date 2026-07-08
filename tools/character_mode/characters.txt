@@ -1,226 +1,207 @@
 # Character seed list for Character Mode.
-# Format: display name | bulbapedia page title | category
-# Categories: protagonist, champion, elite4, gymleader, rival, villain, anime
-# Lines starting with # are ignored. Display names must fit menu width (<=14 chars).
+# Format: display name | bulbapedia page(s, joined with +) | category | generation
+# The scraper also auto-tries '<name> (anime)' for every character and
+# unions it in, so game+anime rosters merge without listing both pages.
 
-# --- Game protagonists ---
-Red | Red (game) | protagonist
-Leaf | Leaf (game) | protagonist
-Ethan | Ethan (game) | protagonist
-Kris | Kris (game) | protagonist
-Lyra | Lyra (game) | protagonist
-Brendan | Brendan (game) | protagonist
-May | May (game) | protagonist
-Lucas | Lucas (game) | protagonist
-Dawn | Dawn (game) | protagonist
-Hilbert | Hilbert (game) | protagonist
-Hilda | Hilda (game) | protagonist
-Nate | Nate (game) | protagonist
-Rosa | Rosa (game) | protagonist
-Calem | Calem (game) | protagonist
-Serena | Serena (game) | protagonist
-Elio | Elio (game) | protagonist
-Selene | Selene (game) | protagonist
-Victor | Victor (game) | protagonist
-Gloria | Gloria (game) | protagonist
+# --- Generation 1 ---
+Red | Red (game) | protagonist | 1
+Leaf | Leaf (game) | protagonist | 1
+Blue | Blue (game) | champion | 1
+Lance | Lance (game) | champion | 1
+Lorelei | Lorelei (game) | elite4 | 1
+Bruno | Bruno (game) | elite4 | 1
+Agatha | Agatha (game) | elite4 | 1
+Koga | Koga (game) | elite4 | 1
+Brock | Brock (game) + Brock (anime) | gymleader | 1
+Misty | Misty (game) + Misty (anime) | gymleader | 1
+Lt. Surge | Lt. Surge (game) | gymleader | 1
+Erika | Erika (game) | gymleader | 1
+Sabrina | Sabrina (game) | gymleader | 1
+Blaine | Blaine (game) | gymleader | 1
+Giovanni | Giovanni (game) | villain | 1
+Ash | Ash Ketchum | anime | 1
+Gary | Gary Oak | anime | 1
+Ritchie | Ritchie | anime | 1
+Tracey | Tracey Sketchit | anime | 1
+Jessie | Jessie | anime | 1
+James | James | anime | 1
 
-# --- Champions ---
-Blue | Blue (game) | champion
-Lance | Lance (game) | champion
-Steven | Steven Stone | champion
-Wallace | Wallace (game) | champion
-Cynthia | Cynthia (game) | champion
-Alder | Alder (game) | champion
-Iris | Iris (game) | champion
-Diantha | Diantha (game) | champion
-Kukui | Professor Kukui | champion
-Hau | Hau (game) | champion
-Leon | Leon (game) | champion
-Geeta | Geeta (game) | champion
-Nemona | Nemona (game) | champion
+# --- Generation 2 ---
+Ethan | Ethan (game) | protagonist | 2
+Kris | Kris (game) | protagonist | 2
+Lyra | Lyra (game) | protagonist | 2
+Will | Will (game) | elite4 | 2
+Karen | Karen (game) | elite4 | 2
+Janine | Janine (game) | gymleader | 2
+Falkner | Falkner (game) | gymleader | 2
+Bugsy | Bugsy (game) | gymleader | 2
+Whitney | Whitney (game) | gymleader | 2
+Morty | Morty (game) | gymleader | 2
+Chuck | Chuck (game) | gymleader | 2
+Jasmine | Jasmine (game) | gymleader | 2
+Pryce | Pryce (game) | gymleader | 2
+Clair | Clair (game) | gymleader | 2
+Silver | Silver (game) | rival | 2
+Archer | Archer (game) | villain | 2
+Ariana | Ariana (game) | villain | 2
 
-# --- Elite Four (by region) ---
-Lorelei | Lorelei (game) | elite4
-Bruno | Bruno (game) | elite4
-Agatha | Agatha (game) | elite4
-Will | Will (game) | elite4
-Koga | Koga (game) | elite4
-Karen | Karen (game) | elite4
-Sidney | Sidney (game) | elite4
-Phoebe | Phoebe (game) | elite4
-Glacia | Glacia (game) | elite4
-Drake | Drake (game) | elite4
-Aaron | Aaron (game) | elite4
-Bertha | Bertha (game) | elite4
-Flint | Flint (game) | elite4
-Lucian | Lucian (game) | elite4
-Shauntal | Shauntal (game) | elite4
-Marshal | Marshal (game) | elite4
-Grimsley | Grimsley (game) | elite4
-Caitlin | Caitlin (game) | elite4
-Malva | Malva (game) | elite4
-Siebold | Siebold (game) | elite4
-Wikstrom | Wikstrom (game) | elite4
-Drasna | Drasna (game) | elite4
-Molayne | Molayne (game) | elite4
-Kahili | Kahili (game) | elite4
-Acerola | Acerola (game) | elite4
-Rika | Rika (game) | elite4
-Poppy | Poppy (game) | elite4
-Hassel | Hassel (game) | elite4
+# --- Generation 3 ---
+Brendan | Brendan (game) | protagonist | 3
+May | May (game) + May (anime) | protagonist | 3
+Steven | Steven Stone | champion | 3
+Wallace | Wallace (game) | champion | 3
+Sidney | Sidney (game) | elite4 | 3
+Phoebe | Phoebe (game) | elite4 | 3
+Glacia | Glacia (game) | elite4 | 3
+Drake | Drake (game) | elite4 | 3
+Roxanne | Roxanne (game) | gymleader | 3
+Brawly | Brawly (game) | gymleader | 3
+Wattson | Wattson (game) | gymleader | 3
+Flannery | Flannery (game) | gymleader | 3
+Norman | Norman (game) | gymleader | 3
+Winona | Winona (game) | gymleader | 3
+Tate | Tate and Liza | gymleader | 3
+Liza | Tate and Liza | gymleader | 3
+Juan | Juan (game) | gymleader | 3
+Wally | Wally (game) | rival | 3
+Maxie | Maxie (game) | villain | 3
+Archie | Archie (game) | villain | 3
+Drew | Drew | anime | 3
 
-# --- Gym Leaders: Kanto ---
-Brock | Brock (game) | gymleader
-Misty | Misty (game) | gymleader
-Lt. Surge | Lt. Surge (game) | gymleader
-Erika | Erika (game) | gymleader
-Sabrina | Sabrina (game) | gymleader
-Blaine | Blaine (game) | gymleader
-Janine | Janine (game) | gymleader
+# --- Generation 4 ---
+Lucas | Lucas (game) | protagonist | 4
+Dawn | Dawn (game) + Dawn (anime) | protagonist | 4
+Cynthia | Cynthia (game) | champion | 4
+Aaron | Aaron (game) | elite4 | 4
+Bertha | Bertha (game) | elite4 | 4
+Flint | Flint (game) | elite4 | 4
+Lucian | Lucian (game) | elite4 | 4
+Roark | Roark (game) | gymleader | 4
+Gardenia | Gardenia (game) | gymleader | 4
+Maylene | Maylene (game) | gymleader | 4
+Crasher Wake | Crasher Wake | gymleader | 4
+Fantina | Fantina (game) | gymleader | 4
+Byron | Byron (game) | gymleader | 4
+Candice | Candice (game) | gymleader | 4
+Volkner | Volkner (game) | gymleader | 4
+Barry | Barry (game) | rival | 4
+Cyrus | Cyrus (game) | villain | 4
+Mars | Mars (game) | villain | 4
+Jupiter | Jupiter (game) | villain | 4
+Saturn | Saturn (game) | villain | 4
+Paul | Paul (anime) | anime | 4
+Zoey | Zoey | anime | 4
+Nando | Nando | anime | 4
 
-# --- Gym Leaders: Johto ---
-Falkner | Falkner (game) | gymleader
-Bugsy | Bugsy (game) | gymleader
-Whitney | Whitney (game) | gymleader
-Morty | Morty (game) | gymleader
-Chuck | Chuck (game) | gymleader
-Jasmine | Jasmine (game) | gymleader
-Pryce | Pryce (game) | gymleader
-Clair | Clair (game) | gymleader
+# --- Generation 5 ---
+Hilbert | Hilbert (game) | protagonist | 5
+Hilda | Hilda (game) | protagonist | 5
+Nate | Nate (game) | protagonist | 5
+Rosa | Rosa (game) | protagonist | 5
+Alder | Alder (game) | champion | 5
+Iris | Iris (game) + Iris (anime) | champion | 5
+Shauntal | Shauntal (game) | elite4 | 5
+Marshal | Marshal (game) | elite4 | 5
+Grimsley | Grimsley (game) | elite4 | 5
+Caitlin | Caitlin (game) | elite4 | 5
+Cilan | Cilan (game) + Cilan (anime) | gymleader | 5
+Chili | Chili (game) | gymleader | 5
+Cress | Cress (game) | gymleader | 5
+Lenora | Lenora (game) | gymleader | 5
+Burgh | Burgh (game) | gymleader | 5
+Elesa | Elesa (game) | gymleader | 5
+Clay | Clay (game) | gymleader | 5
+Skyla | Skyla (game) | gymleader | 5
+Brycen | Brycen (game) | gymleader | 5
+Drayden | Drayden (game) | gymleader | 5
+Cheren | Cheren (game) | gymleader | 5
+Roxie | Roxie (game) | gymleader | 5
+Marlon | Marlon (game) | gymleader | 5
+Bianca | Bianca (game) | rival | 5
+Hugh | Hugh (game) | rival | 5
+N | N (game) | rival | 5
+Ghetsis | Ghetsis (game) | villain | 5
+Colress | Colress (game) | villain | 5
+Trip | Trip | anime | 5
 
-# --- Gym Leaders: Hoenn ---
-Roxanne | Roxanne (game) | gymleader
-Brawly | Brawly (game) | gymleader
-Wattson | Wattson (game) | gymleader
-Flannery | Flannery (game) | gymleader
-Norman | Norman (game) | gymleader
-Winona | Winona (game) | gymleader
-Tate | Tate and Liza | gymleader
-Liza | Tate and Liza | gymleader
-Juan | Juan (game) | gymleader
+# --- Generation 6 ---
+Calem | Calem (game) | protagonist | 6
+Serena | Serena (game) + Serena (anime) | protagonist | 6
+Diantha | Diantha (game) | champion | 6
+Malva | Malva (game) | elite4 | 6
+Siebold | Siebold (game) | elite4 | 6
+Wikstrom | Wikstrom (game) | elite4 | 6
+Drasna | Drasna (game) | elite4 | 6
+Viola | Viola (game) | gymleader | 6
+Grant | Grant (game) | gymleader | 6
+Korrina | Korrina (game) | gymleader | 6
+Ramos | Ramos (game) | gymleader | 6
+Clemont | Clemont (game) + Clemont (anime) | gymleader | 6
+Valerie | Valerie (game) | gymleader | 6
+Olympia | Olympia (game) | gymleader | 6
+Wulfric | Wulfric (game) | gymleader | 6
+Shauna | Shauna (game) | rival | 6
+Lysandre | Lysandre (game) | villain | 6
+Alain | Alain | anime | 6
+Sawyer | Sawyer | anime | 6
 
-# --- Gym Leaders: Sinnoh ---
-Roark | Roark (game) | gymleader
-Gardenia | Gardenia (game) | gymleader
-Maylene | Maylene (game) | gymleader
-Crasher Wake | Crasher Wake | gymleader
-Fantina | Fantina (game) | gymleader
-Byron | Byron (game) | gymleader
-Candice | Candice (game) | gymleader
-Volkner | Volkner (game) | gymleader
+# --- Generation 7 ---
+Elio | Elio (game) | protagonist | 7
+Selene | Selene (game) | protagonist | 7
+Kukui | Professor Kukui | champion | 7
+Hau | Hau (game) | champion | 7
+Molayne | Molayne (game) | elite4 | 7
+Kahili | Kahili (game) | elite4 | 7
+Acerola | Acerola (game) | elite4 | 7
+Hala | Hala (game) | gymleader | 7
+Olivia | Olivia (game) | gymleader | 7
+Nanu | Nanu (game) | gymleader | 7
+Hapu | Hapu (game) | gymleader | 7
+Gladion | Gladion (game) | rival | 7
+Guzma | Guzma (game) | villain | 7
+Plumeria | Plumeria (game) | villain | 7
+Lusamine | Lusamine (game) | villain | 7
+Lillie (anime) | Lillie (anime) | anime | 7
+Kiawe (anime) | Kiawe (anime) | anime | 7
+Lana (anime) | Lana (anime) | anime | 7
+Mallow (anime) | Mallow (anime) | anime | 7
+Sophocles | Sophocles (anime) | anime | 7
 
-# --- Gym Leaders: Unova ---
-Cilan | Cilan (game) | gymleader
-Chili | Chili (game) | gymleader
-Cress | Cress (game) | gymleader
-Lenora | Lenora (game) | gymleader
-Burgh | Burgh (game) | gymleader
-Elesa | Elesa (game) | gymleader
-Clay | Clay (game) | gymleader
-Skyla | Skyla (game) | gymleader
-Brycen | Brycen (game) | gymleader
-Drayden | Drayden (game) | gymleader
-Cheren | Cheren (game) | gymleader
-Roxie | Roxie (game) | gymleader
-Marlon | Marlon (game) | gymleader
+# --- Generation 8 ---
+Victor | Victor (game) | protagonist | 8
+Gloria | Gloria (game) | protagonist | 8
+Leon | Leon (game) | champion | 8
+Milo | Milo (game) | gymleader | 8
+Nessa | Nessa (game) | gymleader | 8
+Kabu | Kabu (game) | gymleader | 8
+Bea | Bea (game) | gymleader | 8
+Allister | Allister (game) | gymleader | 8
+Opal | Opal (game) | gymleader | 8
+Gordie | Gordie (game) | gymleader | 8
+Melony | Melony (game) | gymleader | 8
+Piers | Piers (game) | gymleader | 8
+Raihan | Raihan (game) | gymleader | 8
+Hop | Hop (game) | rival | 8
+Bede | Bede (game) | rival | 8
+Marnie | Marnie (game) | rival | 8
+Rose | Rose (game) | villain | 8
+Goh | Goh | anime | 8
+Chloe | Chloe (anime) | anime | 8
 
-# --- Gym Leaders: Kalos ---
-Viola | Viola (game) | gymleader
-Grant | Grant (game) | gymleader
-Korrina | Korrina (game) | gymleader
-Ramos | Ramos (game) | gymleader
-Clemont | Clemont (game) | gymleader
-Valerie | Valerie (game) | gymleader
-Olympia | Olympia (game) | gymleader
-Wulfric | Wulfric (game) | gymleader
+# --- Generation 9 ---
+Geeta | Geeta (game) | champion | 9
+Nemona | Nemona (game) | champion | 9
+Rika | Rika (game) | elite4 | 9
+Poppy | Poppy (game) | elite4 | 9
+Hassel | Hassel (game) | elite4 | 9
+Katy | Katy (game) | gymleader | 9
+Brassius | Brassius (game) | gymleader | 9
+Iono | Iono (game) | gymleader | 9
+Kofu | Kofu (game) | gymleader | 9
+Larry | Larry (game) | gymleader | 9
+Ryme | Ryme (game) | gymleader | 9
+Tulip | Tulip (game) | gymleader | 9
+Grusha | Grusha (game) | gymleader | 9
+Arven | Arven (game) | rival | 9
+Penny | Penny (game) | rival | 9
 
-# --- Island Kahunas: Alola ---
-Hala | Hala (game) | gymleader
-Olivia | Olivia (game) | gymleader
-Nanu | Nanu (game) | gymleader
-Hapu | Hapu (game) | gymleader
-
-# --- Gym Leaders: Galar ---
-Milo | Milo (game) | gymleader
-Nessa | Nessa (game) | gymleader
-Kabu | Kabu (game) | gymleader
-Bea | Bea (game) | gymleader
-Allister | Allister (game) | gymleader
-Opal | Opal (game) | gymleader
-Gordie | Gordie (game) | gymleader
-Melony | Melony (game) | gymleader
-Piers | Piers (game) | gymleader
-Raihan | Raihan (game) | gymleader
-
-# --- Gym Leaders: Paldea ---
-Katy | Katy (game) | gymleader
-Brassius | Brassius (game) | gymleader
-Iono | Iono (game) | gymleader
-Kofu | Kofu (game) | gymleader
-Larry | Larry (game) | gymleader
-Ryme | Ryme (game) | gymleader
-Tulip | Tulip (game) | gymleader
-Grusha | Grusha (game) | gymleader
-
-# --- Rivals ---
-Silver | Silver (game) | rival
-Wally | Wally (game) | rival
-Barry | Barry (game) | rival
-Bianca | Bianca (game) | rival
-Hugh | Hugh (game) | rival
-Shauna | Shauna (game) | rival
-Gladion | Gladion (game) | rival
-Hop | Hop (game) | rival
-Bede | Bede (game) | rival
-Marnie | Marnie (game) | rival
-Arven | Arven (game) | rival
-Penny | Penny (game) | rival
-N | N (game) | rival
-
-# --- Villains ---
-Giovanni | Giovanni (game) | villain
-Archer | Archer (game) | villain
-Ariana | Ariana (game) | villain
-Maxie | Maxie (game) | villain
-Archie | Archie (game) | villain
-Cyrus | Cyrus (game) | villain
-Mars | Mars (game) | villain
-Jupiter | Jupiter (game) | villain
-Saturn | Saturn (game) | villain
-Ghetsis | Ghetsis (game) | villain
-Colress | Colress (game) | villain
-Lysandre | Lysandre (game) | villain
-Guzma | Guzma (game) | villain
-Plumeria | Plumeria (game) | villain
-Lusamine | Lusamine (game) | villain
-Rose | Rose (game) | villain
-
-# --- Anime ---
-Ash | Ash Ketchum | anime
-Misty (anime) | Misty (anime) | anime
-Brock (anime) | Brock (anime) | anime
-May (anime) | May (anime) | anime
-Dawn (anime) | Dawn (anime) | anime
-Serena (anime) | Serena (anime) | anime
-Iris (anime) | Iris (anime) | anime
-Cilan (anime) | Cilan (anime) | anime
-Clemont (anime) | Clemont (anime) | anime
-Lillie (anime) | Lillie (anime) | anime
-Kiawe (anime) | Kiawe (anime) | anime
-Lana (anime) | Lana (anime) | anime
-Mallow (anime) | Mallow (anime) | anime
-Sophocles | Sophocles (anime) | anime
-Goh | Goh | anime
-Chloe | Chloe (anime) | anime
-Gary | Gary Oak | anime
-Ritchie | Ritchie | anime
-Tracey | Tracey Sketchit | anime
-Paul | Paul (anime) | anime
-Trip | Trip | anime
-Zoey | Zoey | anime
-Drew | Drew | anime
-Jessie | Jessie | anime
-James | James | anime
-Alain | Alain | anime
-Nando | Nando | anime
-Sawyer | Sawyer | anime

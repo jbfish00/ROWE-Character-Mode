@@ -62,6 +62,22 @@ bool8 IsSpeciesAllowedForCharacter(u16 species)
     return FALSE;
 }
 
+bool8 CharacterMode_PartyHasAllowedMon(void)
+{
+    u32 i;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        u16 species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES, NULL);
+
+        if (species != SPECIES_NONE
+            && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG, NULL)
+            && IsSpeciesAllowedForCharacter(species))
+            return TRUE;
+    }
+    return FALSE;
+}
+
 // Move every off-roster party member to the PC. Never leaves the party
 // empty: if all members are off-roster, slot 0 is kept. Mons stay in the
 // party if the boxes are full.
