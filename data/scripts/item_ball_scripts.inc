@@ -776,8 +776,16 @@ MegaStone_EventScript_Alakazite::
 	
 MegaStone_EventScript_Mewtwonite_Y::
 	addscaleditem ITEM_MEWTWONITE_Y
-	end	
-	
+	end
+
+MegaStone_EventScript_Mewtwonite_X::
+	addscaleditem ITEM_MEWTWONITE_X
+	end
+
+SeafloorCavern_EventScript_ItemBlueOrb::
+	addscaleditem ITEM_BLUE_ORB
+	end
+
 PrimevalForest_EventScript_ItemGrassKnot::
 	addscaleditem ITEM_TM86
 	end	

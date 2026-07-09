@@ -206,7 +206,22 @@ static void RandomizeStarterSelection(void)
         starterselection = 0;
 }
 
-// Cycle within the selected generation; 0 (= None) is always reachable.
+// 1-based index of the first character in a generation (a character always
+// exists in every generation 1-9).
+static u16 FirstCharacterInGen(u8 gen)
+{
+    u16 i;
+
+    for (i = 0; i < GetCharacterCount(); i++)
+    {
+        if (gCharacters[i].generation == gen)
+            return i + 1;
+    }
+    return 1;
+}
+
+// Cycle within the selected generation; there is no "None" entry - a
+// character is always selected.
 static void CycleCharacter(int delta)
 {
     int step = delta > 0 ? 1 : -1;
@@ -220,11 +235,11 @@ static void CycleCharacter(int delta)
         do
         {
             sel += step;
-            if (sel < 0)
+            if (sel < 1)
                 sel = GetCharacterCount();
             else if (sel > (int)GetCharacterCount())
-                sel = 0;
-        } while (guard-- > 0 && sel != 0
+                sel = 1;
+        } while (guard-- > 0
                  && gCharacters[sel - 1].generation != genSelection);
     }
     characterSelection = sel;
@@ -240,8 +255,8 @@ static void CycleGeneration(int delta)
     else if (gen > 9)
         gen = 1;
     genSelection = gen;
-    characterSelection = 0;
-    starterselection = 0;
+    characterSelection = FirstCharacterInGen(gen);
+    RandomizeStarterSelection();
 }
 
 enum Colors
@@ -369,6 +384,8 @@ static bool8 Menu_DoGfxSetup(void)
 		genSelection = characterSelection != 0 ? gCharacters[characterSelection - 1].generation : 1;
 		if (genSelection < 1 || genSelection > 9)
 			genSelection = 1;
+		if (characterSelection == 0) // no "None" entry: always have a pick
+			characterSelection = FirstCharacterInGen(genSelection);
 		if (starterselection >= GetNumStarters())
 			starterselection = 0;
 
@@ -492,7 +509,6 @@ static const u8 sText_Difficulty_Normal[] 		= _("Normal");
 static const u8 sText_Difficulty_Hard[] 		= _("Hard");
 static const u8 sText_Starter[] 				= _("Starter");
 static const u8 sText_Starting_Area[] 			= _("Starting Area");
-static const u8 sText_Character_None[] 			= _("None");
 static const u8 sText_Gen_1[] = _("Gen I");
 static const u8 sText_Gen_2[] = _("Gen II");
 static const u8 sText_Gen_3[] = _("Gen III");
@@ -588,10 +604,9 @@ static void PrintToWindow(u8 windowId, u8 colorIdx)
 	AddTextPrinterParameterized4(windowId, 7, (x*8)+2, (y*8), 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, Difficulty);			y = y+3;
 	AddTextPrinterParameterized4(windowId, 7, (x*8)+2, (y*8), 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, sGenTexts[genSelection - 1]);
 	y = y+3;
-	if(characterSelection != 0)
-		AddTextPrinterParameterized4(windowId, 7, (x*8)+2, (y*8), 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gCharacters[characterSelection - 1].name);
-	else
-		AddTextPrinterParameterized4(windowId, 7, (x*8)+2, (y*8), 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, sText_Character_None);
+	if(characterSelection == 0) // safety: should be preselected on menu open
+		characterSelection = FirstCharacterInGen(genSelection);
+	AddTextPrinterParameterized4(windowId, 7, (x*8)+2, (y*8), 0, 0, sMenuWindowFontColors[colorIdx], 0xFF, gCharacters[characterSelection - 1].name);
 	y = y+3;
 	x = 20;
 	y = 5;
@@ -614,8 +629,10 @@ static u8 ShowSpeciesIcon(u16 species, u16 formId, u8 x, u8 y)
 
 static void DestroySpeciesIcon(void)
 {
+    // FreeAndDestroyMonIconSprite also releases the icon's VRAM tiles;
+    // plain DestroySprite leaked them, blanking icons after ~60 cycles.
     if (StarterSpriteId != 0xFF)
-        DestroySprite(&gSprites[StarterSpriteId]);
+        FreeAndDestroyMonIconSprite(&gSprites[StarterSpriteId]);
     StarterSpriteId = 0xFF;
 }
 

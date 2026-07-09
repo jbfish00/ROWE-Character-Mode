@@ -38,7 +38,10 @@ WO_CHIEN CHIEN_PAO TING_LU CHI_YU KORAIDON MIRAIDON OKIDOGI MUNKIDORI FEZANDIPIT
 
 # Manual asset overrides: display name -> dict of asset constants.
 # (Auto-matching covers most; add entries here only when it picks wrong.)
-ASSET_OVERRIDES = {}
+ASSET_OVERRIDES = {
+    "Tate": {"front": "TRAINER_PIC_LEADER_TATE_AND_LIZA"},
+    "Liza": {"front": "TRAINER_PIC_LEADER_TATE_AND_LIZA"},
+}
 
 
 def ident(disp):
@@ -65,6 +68,7 @@ def const_candidates(disp, prefix):
         return [prefix + key,
                 prefix + "LEADER_" + key,
                 prefix + "ELITE_FOUR_" + key,
+                prefix + "CHAMPION_" + key,
                 prefix + "MAGMA_LEADER_" + key,
                 prefix + "AQUA_LEADER_" + key,
                 prefix + "RS_" + key]
