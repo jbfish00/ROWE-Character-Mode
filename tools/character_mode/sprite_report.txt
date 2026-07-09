@@ -148,8 +148,6 @@ Kiawe (anime)    ow=-                                  front=-                  
 Lana (anime)     ow=-                                  front=-                          back=-
 Mallow (anime)   ow=-                                  front=-                          back=-
 Sophocles        ow=-                                  front=-                          back=-
-Victor           ow=-                                  front=-                          back=-
-Gloria           ow=-                                  front=-                          back=-
 Leon             ow=-                                  front=-                          back=-
 Milo             ow=-                                  front=-                          back=-
 Nessa            ow=-                                  front=-                          back=-

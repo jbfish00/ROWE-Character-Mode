@@ -265,7 +265,7 @@
   "category": "anime",
   "gen": 1,
   "page": "Ash Ketchum + Ash (anime)",
-  "signature": "SPECIES_PICHU",
+  "signature": "SPECIES_PIKACHU",
   "species": [
    "SPECIES_BERGMITE",
    "SPECIES_CHARMANDER",
@@ -1618,7 +1618,7 @@
   "category": "gymleader",
   "gen": 2,
   "page": "Falkner (game) + Falkner (anime)",
-  "signature": "SPECIES_PIDGEY",
+  "signature": "SPECIES_HOOTHOOT",
   "species": [
    "SPECIES_AERODACTYL",
    "SPECIES_ARCEUS",
@@ -2526,7 +2526,7 @@
   "category": "anime",
   "gen": 1,
   "page": "Jessie + Jessie (anime)",
-  "signature": "SPECIES_WYNAUT",
+  "signature": "SPECIES_EKANS",
   "species": [
    "SPECIES_AIPOM",
    "SPECIES_BUNEARY",
@@ -3220,7 +3220,7 @@
   "category": "gymleader",
   "gen": 1,
   "page": "Lt. Surge (game) + Lt. Surge (anime)",
-  "signature": "SPECIES_PICHU",
+  "signature": "SPECIES_PIKACHU",
   "species": [
    "SPECIES_ABRA",
    "SPECIES_BELLSPROUT",
@@ -4322,7 +4322,7 @@
   "category": "protagonist",
   "gen": 1,
   "page": "Red (game) + Red (anime)",
-  "signature": "SPECIES_PICHU",
+  "signature": "SPECIES_PIKACHU",
   "species": [
    "SPECIES_ARTICUNO",
    "SPECIES_BULBASAUR",
@@ -4377,7 +4377,7 @@
   "category": "anime",
   "gen": 1,
   "page": "Ritchie + Ritchie (anime)",
-  "signature": "SPECIES_PICHU",
+  "signature": "SPECIES_PIKACHU",
   "species": [
    "SPECIES_BAGON",
    "SPECIES_CATERPIE",
@@ -5018,7 +5018,7 @@
   "category": "gymleader",
   "gen": 4,
   "page": "Volkner (game) + Volkner (anime)",
-  "signature": "SPECIES_ELEKID",
+  "signature": "SPECIES_SHINX",
   "species": [
    "SPECIES_AIPOM",
    "SPECIES_BLITZLE",

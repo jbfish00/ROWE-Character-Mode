@@ -4,7 +4,7 @@
 
 static const u16 sRoster_Red[] =
 {
-    SPECIES_PICHU,
+    SPECIES_PIKACHU,
     SPECIES_BULBASAUR,
     SPECIES_CATERPIE,
     SPECIES_CHARMANDER,
@@ -19,6 +19,7 @@ static const u16 sRoster_Red[] =
     SPECIES_MUNCHLAX,
     SPECIES_NOIBAT,
     SPECIES_NOSEPASS,
+    SPECIES_PICHU,
     SPECIES_SCYTHER,
     SPECIES_SLAKOTH,
     SPECIES_SQUIRTLE,
@@ -391,7 +392,7 @@ static const u8 sName_Misty[] = _("Misty");
 
 static const u16 sRoster_LtSurge[] =
 {
-    SPECIES_PICHU,
+    SPECIES_PIKACHU,
     SPECIES_ABRA,
     SPECIES_BELLSPROUT,
     SPECIES_CHARMANDER,
@@ -413,6 +414,7 @@ static const u16 sRoster_LtSurge[] =
     SPECIES_MISDREAVUS,
     SPECIES_ONIX,
     SPECIES_PACHIRISU,
+    SPECIES_PICHU,
     SPECIES_POLIWAG,
     SPECIES_PORYGON,
     SPECIES_SEEL,
@@ -596,7 +598,7 @@ static const u8 sName_Giovanni[] = _("Giovanni");
 
 static const u16 sRoster_Ash[] =
 {
-    SPECIES_PICHU,
+    SPECIES_PIKACHU,
     SPECIES_BERGMITE,
     SPECIES_CHARMANDER,
     SPECIES_CHIMCHAR,
@@ -615,6 +617,7 @@ static const u16 sRoster_Ash[] =
     SPECIES_MIMIKYU,
     SPECIES_MURKROW,
     SPECIES_ODDISH,
+    SPECIES_PICHU,
     SPECIES_PIDOVE,
     SPECIES_RIOLU,
     SPECIES_ROCKRUFF,
@@ -687,7 +690,7 @@ static const u8 sName_Gary[] = _("Gary");
 
 static const u16 sRoster_Ritchie[] =
 {
-    SPECIES_PICHU,
+    SPECIES_PIKACHU,
     SPECIES_BAGON,
     SPECIES_CATERPIE,
     SPECIES_CHARMANDER,
@@ -695,6 +698,7 @@ static const u16 sRoster_Ritchie[] =
     SPECIES_EEVEE,
     SPECIES_ELEKID,
     SPECIES_LARVITAR,
+    SPECIES_PICHU,
     SPECIES_POLIWAG,
     SPECIES_PONYTA,
     SPECIES_POOCHYENA,
@@ -729,7 +733,7 @@ static const u8 sName_Tracey[] = _("Tracey");
 
 static const u16 sRoster_Jessie[] =
 {
-    SPECIES_WYNAUT,
+    SPECIES_EKANS,
     SPECIES_AIPOM,
     SPECIES_BUNEARY,
     SPECIES_CACNEA,
@@ -737,7 +741,6 @@ static const u16 sRoster_Jessie[] =
     SPECIES_CYNDAQUIL,
     SPECIES_DITTO,
     SPECIES_DRUDDIGON,
-    SPECIES_EKANS,
     SPECIES_FEEBAS,
     SPECIES_FRILLISH,
     SPECIES_GASTLY,
@@ -778,6 +781,7 @@ static const u16 sRoster_Jessie[] =
     SPECIES_TYROGUE,
     SPECIES_WOOBAT,
     SPECIES_WURMPLE,
+    SPECIES_WYNAUT,
     SPECIES_YANMA,
     SPECIES_ZUBAT,
     SPECIES_CELEBI,
@@ -998,7 +1002,7 @@ static const u8 sName_Janine[] = _("Janine");
 
 static const u16 sRoster_Falkner[] =
 {
-    SPECIES_PIDGEY,
+    SPECIES_HOOTHOOT,
     SPECIES_AERODACTYL,
     SPECIES_CHARMANDER,
     SPECIES_CHIKORITA,
@@ -1009,11 +1013,11 @@ static const u16 sRoster_Falkner[] =
     SPECIES_FARFETCHD,
     SPECIES_GLIGAR,
     SPECIES_GRIMER,
-    SPECIES_HOOTHOOT,
     SPECIES_MAREEP,
     SPECIES_MURKROW,
     SPECIES_NATU,
     SPECIES_PICHU,
+    SPECIES_PIDGEY,
     SPECIES_SKARMORY,
     SPECIES_SPEAROW,
     SPECIES_SPINARAK,
@@ -2302,13 +2306,14 @@ static const u8 sName_Candice[] = _("Candice");
 
 static const u16 sRoster_Volkner[] =
 {
-    SPECIES_ELEKID,
+    SPECIES_SHINX,
     SPECIES_AIPOM,
     SPECIES_BLITZLE,
     SPECIES_BURMY,
     SPECIES_CHIMCHAR,
     SPECIES_CHINCHOU,
     SPECIES_EEVEE,
+    SPECIES_ELEKID,
     SPECIES_HOUNDOUR,
     SPECIES_JOLTIK,
     SPECIES_MAGBY,
@@ -2318,7 +2323,6 @@ static const u16 sRoster_Volkner[] =
     SPECIES_PONYTA,
     SPECIES_REMORAID,
     SPECIES_ROTOM,
-    SPECIES_SHINX,
     SPECIES_SNEASEL,
     SPECIES_TURTWIG,
     SPECIES_TYNAMO,
@@ -4327,33 +4331,6 @@ static const u16 sRoster_Sophocles[] =
 
 static const u8 sName_Sophocles[] = _("Sophocles");
 
-static const u16 sRoster_Victor[] =
-{
-    SPECIES_FARFETCHD_GALARIAN,
-    SPECIES_GROOKEY,
-    SPECIES_SKWOVET,
-    SPECIES_SOBBLE,
-    SPECIES_ETERNATUS,
-    SPECIES_SPECTRIER,
-    SPECIES_ZACIAN,
-    SPECIES_ZAMAZENTA,
-    SPECIES_NONE,
-};
-
-static const u8 sName_Victor[] = _("Victor");
-
-static const u16 sRoster_Gloria[] =
-{
-    SPECIES_GROOKEY,
-    SPECIES_SCORBUNNY,
-    SPECIES_SOBBLE,
-    SPECIES_KUBFU,
-    SPECIES_ZACIAN,
-    SPECIES_NONE,
-};
-
-static const u8 sName_Gloria[] = _("Gloria");
-
 static const u16 sRoster_Leon[] =
 {
     SPECIES_CHARMANDER,
@@ -5115,7 +5092,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = TRAINER_PIC_RED,
         .backPic = TRAINER_BACK_PIC_RED,
         .generation = 1,
-        .starterCount = 22,
+        .starterCount = 23,
         .hasSignature = 1,
     },
     {
@@ -5215,7 +5192,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 1,
-        .starterCount = 28,
+        .starterCount = 29,
         .hasSignature = 1,
     },
     {
@@ -5265,7 +5242,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 1,
-        .starterCount = 28,
+        .starterCount = 29,
         .hasSignature = 1,
     },
     {
@@ -5285,7 +5262,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 1,
-        .starterCount = 16,
+        .starterCount = 17,
         .hasSignature = 1,
     },
     {
@@ -6607,26 +6584,6 @@ const struct CharacterInfo gCharacters[] =
         .generation = 7,
         .starterCount = 19,
         .hasSignature = 1,
-    },
-    {
-        .name = sName_Victor,
-        .roster = sRoster_Victor,
-        .owGfxId = CHAR_ASSET_NONE,
-        .trainerFrontPic = CHAR_ASSET_NONE,
-        .backPic = CHAR_ASSET_NONE_U8,
-        .generation = 8,
-        .starterCount = 4,
-        .hasSignature = 0,
-    },
-    {
-        .name = sName_Gloria,
-        .roster = sRoster_Gloria,
-        .owGfxId = CHAR_ASSET_NONE,
-        .trainerFrontPic = CHAR_ASSET_NONE,
-        .backPic = CHAR_ASSET_NONE_U8,
-        .generation = 8,
-        .starterCount = 3,
-        .hasSignature = 0,
     },
     {
         .name = sName_Leon,

@@ -109,12 +109,12 @@ NAME_FIXES = {
 SIGNATURES = {
  "Red":"Pikachu","Leaf":"Eevee","Blue":"Pidgeot","Lance":"Dragonite",
  "Lorelei":"Lapras","Bruno":"Machamp","Agatha":"Gengar","Koga":"Weezing",
- "Brock":"Onix","Misty":"Starmie","Lt. Surge":"Raichu","Erika":"Vileplume",
+ "Brock":"Onix","Misty":"Starmie","Lt. Surge":"Pikachu","Erika":"Vileplume",
  "Sabrina":"Alakazam","Blaine":"Arcanine","Giovanni":"Rhydon","Ash":"Pikachu",
- "Gary":"Blastoise","Ritchie":"Pikachu","Tracey":"Scyther","Jessie":"Wobbuffet",
+ "Gary":"Blastoise","Ritchie":"Pikachu","Tracey":"Scyther","Jessie":"Ekans",
  "James":"Weezing",
  "Ethan":"Cyndaquil","Kris":"Totodile","Lyra":"Chikorita","Silver":"Totodile",
- "Falkner":"Pidgeot","Bugsy":"Scyther","Whitney":"Miltank","Morty":"Gengar",
+ "Falkner":"Hoothoot","Bugsy":"Scyther","Whitney":"Miltank","Morty":"Gengar",
  "Chuck":"Poliwrath","Jasmine":"Steelix","Pryce":"Piloswine","Clair":"Kingdra",
  "Will":"Xatu","Karen":"Umbreon","Janine":"Ariados","Archer":"Houndoom",
  "Ariana":"Arbok",
@@ -127,7 +127,7 @@ SIGNATURES = {
  "Lucas":"Turtwig","Dawn":"Piplup","Barry":"Empoleon","Cynthia":"Garchomp",
  "Aaron":"Drapion","Bertha":"Hippowdon","Flint":"Infernape","Lucian":"Bronzong",
  "Roark":"Rampardos","Gardenia":"Roserade","Maylene":"Lucario","Crasher Wake":"Floatzel",
- "Fantina":"Mismagius","Byron":"Bastiodon","Candice":"Froslass","Volkner":"Electivire",
+ "Fantina":"Mismagius","Byron":"Bastiodon","Candice":"Froslass","Volkner":"Shinx",
  "Cyrus":"Weavile","Mars":"Purugly","Jupiter":"Skuntank","Saturn":"Toxicroak",
  "Paul":"Electivire","Zoey":"Glameow","Nando":"Roserade",
  "Hilbert":"Oshawott","Hilda":"Tepig","Rosa":"Snivy","Cheren":"Stoutland",
@@ -159,6 +159,10 @@ SIGNATURES = {
  "Grusha":"Cetitan","Arven":"Mabosstiff","Penny":"Sylveon",
 }
 
+# Signatures used as the EXACT species (not reduced to first stage):
+# these characters' partner is famously the mid-stage itself.
+SIGNATURES_EXACT = {"Red", "Lt. Surge", "Ash", "Ritchie"}
+
 def main():
     with open(os.path.join(HERE, "rosters_raw.json")) as f:
         raw = json.load(f)
@@ -186,8 +190,9 @@ def main():
                 print("SIGNATURE UNRESOLVED: %s -> %s" % (disp, ace))
             else:
                 sig_base = base.get(const, const)
+                sig = const if disp in SIGNATURES_EXACT else sig_base
                 if sig_base in consts:
-                    entry["signature"] = sig_base
+                    entry["signature"] = sig
                 else:
                     print("SIGNATURE NOT ON ROSTER: %s -> %s (%s)" % (disp, ace, sig_base))
         mapped[disp] = entry
