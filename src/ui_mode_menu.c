@@ -25,6 +25,7 @@
 #include "palette.h"
 #include "party_menu.h"
 #include "pokemon_icon.h"
+#include "random.h"
 #include "scanline_effect.h"
 #include "script.h"
 #include "sound.h"
@@ -186,8 +187,23 @@ static u16 GetStarterAt(u8 idx)
 static u8 GetNumStarters(void)
 {
     if (characterSelection != 0)
+    {
+        // Legendaries sit at the roster tail and are never starter options.
+        if (gCharacters[characterSelection - 1].starterCount != 0)
+            return gCharacters[characterSelection - 1].starterCount;
         return CharacterMode_GetRosterSize(&gCharacters[characterSelection - 1]);
+    }
     return NUM_STARTERS;
+}
+
+// Default starter: the character's signature ace when known (roster[0]),
+// otherwise a random non-legendary roster member.
+static void RandomizeStarterSelection(void)
+{
+    if (characterSelection != 0 && !gCharacters[characterSelection - 1].hasSignature)
+        starterselection = Random() % GetNumStarters();
+    else
+        starterselection = 0;
 }
 
 // Cycle within the selected generation; 0 (= None) is always reachable.
@@ -212,7 +228,7 @@ static void CycleCharacter(int delta)
                  && gCharacters[sel - 1].generation != genSelection);
     }
     characterSelection = sel;
-    starterselection = 0;
+    RandomizeStarterSelection();
 }
 
 static void CycleGeneration(int delta)

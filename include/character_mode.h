@@ -15,6 +15,9 @@ struct CharacterInfo
     u16 trainerFrontPic;    // TRAINER_PIC_* or CHAR_ASSET_NONE
     u8 backPic;             // TRAINER_BACK_PIC_* or CHAR_ASSET_NONE_U8
     u8 generation;          // debut generation, 1-9 (menu grouping)
+    u8 starterCount;        // leading roster entries offerable as starters
+                            // (legendaries sort to the tail; 0 = no filter)
+    u8 hasSignature;        // roster[0] is the character's known ace/starter
 };
 
 extern const struct CharacterInfo gCharacters[];

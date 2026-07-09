@@ -103,6 +103,62 @@ NAME_FIXES = {
 }
 
 
+
+# Known signature/ace Pokemon per character (any stage; resolved to the
+# family's first stage below). Characters absent here get a random starter.
+SIGNATURES = {
+ "Red":"Pikachu","Leaf":"Eevee","Blue":"Pidgeot","Lance":"Dragonite",
+ "Lorelei":"Lapras","Bruno":"Machamp","Agatha":"Gengar","Koga":"Weezing",
+ "Brock":"Onix","Misty":"Starmie","Lt. Surge":"Raichu","Erika":"Vileplume",
+ "Sabrina":"Alakazam","Blaine":"Arcanine","Giovanni":"Rhydon","Ash":"Pikachu",
+ "Gary":"Blastoise","Ritchie":"Pikachu","Tracey":"Scyther","Jessie":"Wobbuffet",
+ "James":"Weezing",
+ "Ethan":"Cyndaquil","Kris":"Totodile","Lyra":"Chikorita","Silver":"Totodile",
+ "Falkner":"Pidgeot","Bugsy":"Scyther","Whitney":"Miltank","Morty":"Gengar",
+ "Chuck":"Poliwrath","Jasmine":"Steelix","Pryce":"Piloswine","Clair":"Kingdra",
+ "Will":"Xatu","Karen":"Umbreon","Janine":"Ariados","Archer":"Houndoom",
+ "Ariana":"Arbok",
+ "Brendan":"Treecko","May":"Blaziken","Wally":"Gallade","Steven":"Metagross",
+ "Wallace":"Milotic","Sidney":"Absol","Phoebe":"Dusclops","Glacia":"Walrein",
+ "Drake":"Salamence","Roxanne":"Nosepass","Brawly":"Hariyama","Wattson":"Manectric",
+ "Flannery":"Torkoal","Norman":"Slaking","Winona":"Altaria","Tate":"Solrock",
+ "Liza":"Lunatone","Juan":"Kingdra","Maxie":"Camerupt","Archie":"Sharpedo",
+ "Drew":"Roserade",
+ "Lucas":"Turtwig","Dawn":"Piplup","Barry":"Empoleon","Cynthia":"Garchomp",
+ "Aaron":"Drapion","Bertha":"Hippowdon","Flint":"Infernape","Lucian":"Bronzong",
+ "Roark":"Rampardos","Gardenia":"Roserade","Maylene":"Lucario","Crasher Wake":"Floatzel",
+ "Fantina":"Mismagius","Byron":"Bastiodon","Candice":"Froslass","Volkner":"Electivire",
+ "Cyrus":"Weavile","Mars":"Purugly","Jupiter":"Skuntank","Saturn":"Toxicroak",
+ "Paul":"Electivire","Zoey":"Glameow","Nando":"Roserade",
+ "Hilbert":"Oshawott","Hilda":"Tepig","Rosa":"Snivy","Cheren":"Stoutland",
+ "Bianca":"Emboar","N":"Zorua","Alder":"Volcarona","Iris":"Haxorus",
+ "Cilan":"Pansage","Chili":"Pansear","Cress":"Panpour","Lenora":"Watchog",
+ "Burgh":"Leavanny","Elesa":"Zebstrika","Clay":"Excadrill","Skyla":"Swanna",
+ "Brycen":"Beartic","Drayden":"Haxorus","Roxie":"Whirlipede","Marlon":"Jellicent",
+ "Shauntal":"Chandelure","Marshal":"Conkeldurr","Grimsley":"Bisharp","Caitlin":"Gothitelle",
+ "Ghetsis":"Hydreigon","Colress":"Klinklang","Trip":"Serperior",
+ "Serena":"Fennekin","Shauna":"Chespin","Diantha":"Gardevoir","Malva":"Talonflame",
+ "Siebold":"Clawitzer","Wikstrom":"Aegislash","Drasna":"Noivern","Viola":"Vivillon",
+ "Grant":"Tyrunt","Korrina":"Lucario","Ramos":"Gogoat","Clemont":"Heliolisk",
+ "Valerie":"Sylveon","Olympia":"Meowstic","Wulfric":"Avalugg","Lysandre":"Gyarados",
+ "Alain":"Charizard","Sawyer":"Sceptile",
+ "Elio":"Popplio","Selene":"Rowlet","Kukui":"Incineroar","Hau":"Raichu",
+ "Molayne":"Dugtrio","Kahili":"Toucannon","Acerola":"Palossand","Hala":"Crabominable",
+ "Olivia":"Lycanroc","Nanu":"Persian","Hapu":"Mudsdale","Gladion":"Type: Null",
+ "Guzma":"Golisopod","Plumeria":"Salazzle","Lusamine":"Bewear","Lillie (anime)":"Vulpix",
+ "Kiawe (anime)":"Turtonator","Lana (anime)":"Popplio","Mallow (anime)":"Tsareena",
+ "Sophocles":"Togedemaru",
+ "Leon":"Charizard","Milo":"Eldegoss","Nessa":"Drednaw","Kabu":"Centiskorch",
+ "Bea":"Machamp","Allister":"Gengar","Opal":"Alcremie","Gordie":"Coalossal",
+ "Melony":"Lapras","Piers":"Obstagoon","Raihan":"Duraludon","Hop":"Dubwool",
+ "Bede":"Hatterene","Marnie":"Morpeko","Rose":"Copperajah","Goh":"Cinderace",
+ "Chloe":"Eevee",
+ "Geeta":"Glimmora","Nemona":"Pawmot","Rika":"Clodsire","Poppy":"Tinkaton",
+ "Hassel":"Baxcalibur","Katy":"Teddiursa","Brassius":"Sudowoodo","Iono":"Bellibolt",
+ "Kofu":"Crabominable","Larry":"Staraptor","Ryme":"Toxtricity","Tulip":"Florges",
+ "Grusha":"Cetitan","Arven":"Mabosstiff","Penny":"Sylveon",
+}
+
 def main():
     with open(os.path.join(HERE, "rosters_raw.json")) as f:
         raw = json.load(f)
@@ -121,8 +177,20 @@ def main():
                 unmatched.add(name)
                 continue
             consts.add(base.get(const, const))
-        mapped[disp] = {"page": info["page"], "category": info["category"],
-                        "gen": info.get("gen", 0), "species": sorted(consts)}
+        entry = {"page": info["page"], "category": info["category"],
+                 "gen": info.get("gen", 0), "species": sorted(consts)}
+        ace = SIGNATURES.get(disp)
+        if ace:
+            const = n2c.get(NAME_FIXES.get(ace, ace))
+            if const is None:
+                print("SIGNATURE UNRESOLVED: %s -> %s" % (disp, ace))
+            else:
+                sig_base = base.get(const, const)
+                if sig_base in consts:
+                    entry["signature"] = sig_base
+                else:
+                    print("SIGNATURE NOT ON ROSTER: %s -> %s (%s)" % (disp, ace, sig_base))
+        mapped[disp] = entry
 
     with open(os.path.join(HERE, "rosters_mapped.json"), "w") as f:
         json.dump(mapped, f, indent=1, sort_keys=True)

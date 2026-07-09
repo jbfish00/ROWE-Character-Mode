@@ -3,6 +3,7 @@
   "category": "elite4",
   "gen": 4,
   "page": "Aaron (game) + Aaron (anime)",
+  "signature": "SPECIES_SKORUPI",
   "species": [
    "SPECIES_CARNIVINE",
    "SPECIES_CLEFFA",
@@ -25,6 +26,7 @@
   "category": "elite4",
   "gen": 7,
   "page": "Acerola (game) + Acerola (anime)",
+  "signature": "SPECIES_SANDYGAST",
   "species": [
    "SPECIES_CELESTEELA",
    "SPECIES_COSMOG",
@@ -55,6 +57,7 @@
   "category": "elite4",
   "gen": 1,
   "page": "Agatha (game) + Agatha (anime)",
+  "signature": "SPECIES_GASTLY",
   "species": [
    "SPECIES_ABRA",
    "SPECIES_BULBASAUR",
@@ -80,6 +83,7 @@
   "category": "anime",
   "gen": 6,
   "page": "Alain + Alain (anime)",
+  "signature": "SPECIES_CHARMANDER",
   "species": [
    "SPECIES_BELDUM",
    "SPECIES_CHARMANDER",
@@ -104,6 +108,7 @@
   "category": "champion",
   "gen": 5,
   "page": "Alder (game) + Alder (anime)",
+  "signature": "SPECIES_LARVESTA",
   "species": [
    "SPECIES_ARCHEN",
    "SPECIES_AXEW",
@@ -133,6 +138,7 @@
   "category": "gymleader",
   "gen": 8,
   "page": "Allister (game) + Allister (anime)",
+  "signature": "SPECIES_GASTLY",
   "species": [
    "SPECIES_CORSOLA_GALARIAN",
    "SPECIES_DREEPY",
@@ -155,6 +161,7 @@
   "category": "villain",
   "gen": 2,
   "page": "Archer (game) + Archer (anime)",
+  "signature": "SPECIES_HOUNDOUR",
   "species": [
    "SPECIES_ARCEUS",
    "SPECIES_BELLSPROUT",
@@ -183,6 +190,7 @@
   "category": "villain",
   "gen": 3,
   "page": "Archie (game) + Archie (anime)",
+  "signature": "SPECIES_CARVANHA",
   "species": [
    "SPECIES_CARVANHA",
    "SPECIES_DRATINI",
@@ -208,6 +216,7 @@
   "category": "villain",
   "gen": 2,
   "page": "Ariana (game) + Ariana (anime)",
+  "signature": "SPECIES_EKANS",
   "species": [
    "SPECIES_BELLSPROUT",
    "SPECIES_DROWZEE",
@@ -228,6 +237,7 @@
   "category": "rival",
   "gen": 9,
   "page": "Arven (game) + Arven (anime)",
+  "signature": "SPECIES_MASCHIFF",
   "species": [
    "SPECIES_BOMBIRDIER",
    "SPECIES_BRUTE_BONNET",
@@ -255,6 +265,7 @@
   "category": "anime",
   "gen": 1,
   "page": "Ash Ketchum + Ash (anime)",
+  "signature": "SPECIES_PICHU",
   "species": [
    "SPECIES_BERGMITE",
    "SPECIES_CHARMANDER",
@@ -299,6 +310,7 @@
   "category": "rival",
   "gen": 4,
   "page": "Barry (game) + Barry (anime)",
+  "signature": "SPECIES_PIPLUP",
   "species": [
    "SPECIES_BUDEW",
    "SPECIES_BUIZEL",
@@ -327,6 +339,7 @@
   "category": "gymleader",
   "gen": 8,
   "page": "Bea (game) + Bea (anime)",
+  "signature": "SPECIES_MACHOP",
   "species": [
    "SPECIES_CHARMANDER",
    "SPECIES_CLOBBOPUS",
@@ -355,6 +368,7 @@
   "category": "rival",
   "gen": 8,
   "page": "Bede (game) + Bede (anime)",
+  "signature": "SPECIES_HATENNA",
   "species": [
    "SPECIES_ARTICUNO",
    "SPECIES_CALYREX",
@@ -386,6 +400,7 @@
   "category": "elite4",
   "gen": 4,
   "page": "Bertha (game) + Bertha (anime)",
+  "signature": "SPECIES_HIPPOPOTAS",
   "species": [
    "SPECIES_BARBOACH",
    "SPECIES_BONSLY",
@@ -407,6 +422,7 @@
   "category": "rival",
   "gen": 5,
   "page": "Bianca (game) + Bianca (anime)",
+  "signature": "SPECIES_TEPIG",
   "species": [
    "SPECIES_AUDINO",
    "SPECIES_AXEW",
@@ -444,6 +460,7 @@
   "category": "gymleader",
   "gen": 1,
   "page": "Blaine (game) + Blaine (anime)",
+  "signature": "SPECIES_GROWLITHE",
   "species": [
    "SPECIES_ARTICUNO",
    "SPECIES_CHARMANDER",
@@ -481,6 +498,7 @@
   "category": "champion",
   "gen": 1,
   "page": "Blue (game) + Blue (anime)",
+  "signature": "SPECIES_PIDGEY",
   "species": [
    "SPECIES_ABRA",
    "SPECIES_AERODACTYL",
@@ -523,6 +541,7 @@
   "category": "gymleader",
   "gen": 9,
   "page": "Brassius (game) + Brassius (anime)",
+  "signature": "SPECIES_BONSLY",
   "species": [
    "SPECIES_APPLIN",
    "SPECIES_BONSLY",
@@ -543,6 +562,7 @@
   "category": "gymleader",
   "gen": 3,
   "page": "Brawly (game) + Brawly (anime)",
+  "signature": "SPECIES_MAKUHITA",
   "species": [
    "SPECIES_CLEFFA",
    "SPECIES_GROUDON",
@@ -563,6 +583,7 @@
   "category": "protagonist",
   "gen": 3,
   "page": "Brendan (game) + Brendan (anime)",
+  "signature": "SPECIES_TREECKO",
   "species": [
    "SPECIES_ARON",
    "SPECIES_BAGON",
@@ -596,6 +617,7 @@
   "category": "gymleader",
   "gen": 1,
   "page": "Brock (game) + Brock (anime)",
+  "signature": "SPECIES_ONIX",
   "species": [
    "SPECIES_AERODACTYL",
    "SPECIES_AIPOM",
@@ -658,6 +680,7 @@
   "category": "elite4",
   "gen": 1,
   "page": "Bruno (game) + Bruno (anime)",
+  "signature": "SPECIES_MACHOP",
   "species": [
    "SPECIES_CLEFFA",
    "SPECIES_DIGLETT",
@@ -696,6 +719,7 @@
   "category": "gymleader",
   "gen": 5,
   "page": "Brycen (game) + Brycen (anime)",
+  "signature": "SPECIES_CUBCHOO",
   "species": [
    "SPECIES_CARVANHA",
    "SPECIES_CRYOGONAL",
@@ -729,6 +753,7 @@
   "category": "gymleader",
   "gen": 2,
   "page": "Bugsy (game) + Bugsy (anime)",
+  "signature": "SPECIES_SCYTHER",
   "species": [
    "SPECIES_ANORITH",
    "SPECIES_BELLSPROUT",
@@ -766,6 +791,7 @@
   "category": "gymleader",
   "gen": 5,
   "page": "Burgh (game) + Burgh (anime)",
+  "signature": "SPECIES_SEWADDLE",
   "species": [
    "SPECIES_AUDINO",
    "SPECIES_COMBEE",
@@ -788,6 +814,7 @@
   "category": "gymleader",
   "gen": 4,
   "page": "Byron (game) + Byron (anime)",
+  "signature": "SPECIES_SHIELDON",
   "species": [
    "SPECIES_ANORITH",
    "SPECIES_ARON",
@@ -816,6 +843,7 @@
   "category": "elite4",
   "gen": 5,
   "page": "Caitlin (game) + Caitlin (anime)",
+  "signature": "SPECIES_GOTHITA",
   "species": [
    "SPECIES_ABRA",
    "SPECIES_BELDUM",
@@ -850,6 +878,7 @@
   "category": "gymleader",
   "gen": 4,
   "page": "Candice (game) + Candice (anime)",
+  "signature": "SPECIES_SNORUNT",
   "species": [
    "SPECIES_BUNEARY",
    "SPECIES_CHIMCHAR",
@@ -883,6 +912,7 @@
   "category": "gymleader",
   "gen": 5,
   "page": "Cheren (game) + Cheren (anime)",
+  "signature": "SPECIES_LILLIPUP",
   "species": [
    "SPECIES_AXEW",
    "SPECIES_BASCULIN",
@@ -923,6 +953,7 @@
   "category": "gymleader",
   "gen": 5,
   "page": "Chili (game) + Chili (anime)",
+  "signature": "SPECIES_PANSEAR",
   "species": [
    "SPECIES_CLEFFA",
    "SPECIES_DARUMAKA",
@@ -942,6 +973,7 @@
   "category": "anime",
   "gen": 8,
   "page": "Chloe (anime)",
+  "signature": "SPECIES_EEVEE",
   "species": [
    "SPECIES_CLAMPERL",
    "SPECIES_CLEFFA",
@@ -970,6 +1002,7 @@
   "category": "gymleader",
   "gen": 2,
   "page": "Chuck (game) + Chuck (anime)",
+  "signature": "SPECIES_POLIWAG",
   "species": [
    "SPECIES_ARCEUS",
    "SPECIES_CHIKORITA",
@@ -996,6 +1029,7 @@
   "category": "gymleader",
   "gen": 5,
   "page": "Cilan (game) + Cilan (anime)",
+  "signature": "SPECIES_PANSAGE",
   "species": [
    "SPECIES_AIPOM",
    "SPECIES_AXEW",
@@ -1034,6 +1068,7 @@
   "category": "gymleader",
   "gen": 2,
   "page": "Clair (game) + Clair (anime)",
+  "signature": "SPECIES_HORSEA",
   "species": [
    "SPECIES_AERODACTYL",
    "SPECIES_BAGON",
@@ -1063,6 +1098,7 @@
   "category": "gymleader",
   "gen": 5,
   "page": "Clay (game) + Clay (anime)",
+  "signature": "SPECIES_DRILBUR",
   "species": [
    "SPECIES_BALTOY",
    "SPECIES_DRILBUR",
@@ -1090,6 +1126,7 @@
   "category": "gymleader",
   "gen": 6,
   "page": "Clemont (game) + Clemont (anime)",
+  "signature": "SPECIES_HELIOPTILE",
   "species": [
    "SPECIES_AIPOM",
    "SPECIES_BUNNELBY",
@@ -1134,6 +1171,7 @@
   "category": "villain",
   "gen": 5,
   "page": "Colress (game) + Colress (anime)",
+  "signature": "SPECIES_KLINK",
   "species": [
    "SPECIES_AXEW",
    "SPECIES_BELDUM",
@@ -1176,6 +1214,7 @@
   "category": "gymleader",
   "gen": 4,
   "page": "Crasher Wake + Crasher Wake (anime)",
+  "signature": "SPECIES_BUIZEL",
   "species": [
    "SPECIES_BUIZEL",
    "SPECIES_CARVANHA",
@@ -1196,6 +1235,7 @@
   "category": "gymleader",
   "gen": 5,
   "page": "Cress (game) + Cress (anime)",
+  "signature": "SPECIES_PANPOUR",
   "species": [
    "SPECIES_AZURILL",
    "SPECIES_BASCULIN",
@@ -1216,6 +1256,7 @@
   "category": "champion",
   "gen": 4,
   "page": "Cynthia (game) + Cynthia (anime)",
+  "signature": "SPECIES_GIBLE",
   "species": [
    "SPECIES_ARCEUS",
    "SPECIES_AXEW",
@@ -1264,6 +1305,7 @@
   "category": "villain",
   "gen": 4,
   "page": "Cyrus (game) + Cyrus (anime)",
+  "signature": "SPECIES_SNEASEL",
   "species": [
    "SPECIES_AZELF",
    "SPECIES_CROAGUNK",
@@ -1297,6 +1339,7 @@
   "category": "protagonist",
   "gen": 4,
   "page": "Dawn (game) + Dawn (anime)",
+  "signature": "SPECIES_PIPLUP",
   "species": [
    "SPECIES_ABRA",
    "SPECIES_AIPOM",
@@ -1357,6 +1400,7 @@
   "category": "champion",
   "gen": 6,
   "page": "Diantha (game) + Diantha (anime)",
+  "signature": "SPECIES_RALTS",
   "species": [
    "SPECIES_ABSOL",
    "SPECIES_AMAURA",
@@ -1383,6 +1427,7 @@
   "category": "elite4",
   "gen": 3,
   "page": "Drake (game) + Drake (anime)",
+  "signature": "SPECIES_BAGON",
   "species": [
    "SPECIES_AXEW",
    "SPECIES_BAGON",
@@ -1402,6 +1447,7 @@
   "category": "elite4",
   "gen": 6,
   "page": "Drasna (game) + Drasna (anime)",
+  "signature": "SPECIES_NOIBAT",
   "species": [
    "SPECIES_DRUDDIGON",
    "SPECIES_KARRABLAST",
@@ -1414,6 +1460,7 @@
   "category": "gymleader",
   "gen": 5,
   "page": "Drayden (game) + Drayden (anime)",
+  "signature": "SPECIES_AXEW",
   "species": [
    "SPECIES_AXEW",
    "SPECIES_BAGON",
@@ -1432,6 +1479,7 @@
   "category": "anime",
   "gen": 3,
   "page": "Drew + Drew (anime)",
+  "signature": "SPECIES_BUDEW",
   "species": [
    "SPECIES_ABSOL",
    "SPECIES_ARON",
@@ -1459,6 +1507,7 @@
   "category": "gymleader",
   "gen": 5,
   "page": "Elesa (game) + Elesa (anime)",
+  "signature": "SPECIES_BLITZLE",
   "species": [
    "SPECIES_BLITZLE",
    "SPECIES_EMOLGA",
@@ -1484,6 +1533,7 @@
   "category": "protagonist",
   "gen": 7,
   "page": "Elio (game) + Elio (anime)",
+  "signature": "SPECIES_POPPLIO",
   "species": [
    "SPECIES_BLACEPHALON",
    "SPECIES_COSMOG",
@@ -1510,6 +1560,7 @@
   "category": "gymleader",
   "gen": 1,
   "page": "Erika (game) + Erika (anime)",
+  "signature": "SPECIES_ODDISH",
   "species": [
    "SPECIES_BELLSPROUT",
    "SPECIES_BUDEW",
@@ -1547,6 +1598,7 @@
   "category": "protagonist",
   "gen": 2,
   "page": "Ethan (game) + Ethan (anime)",
+  "signature": "SPECIES_CYNDAQUIL",
   "species": [
    "SPECIES_AZURILL",
    "SPECIES_CYNDAQUIL",
@@ -1566,6 +1618,7 @@
   "category": "gymleader",
   "gen": 2,
   "page": "Falkner (game) + Falkner (anime)",
+  "signature": "SPECIES_PIDGEY",
   "species": [
    "SPECIES_AERODACTYL",
    "SPECIES_ARCEUS",
@@ -1606,6 +1659,7 @@
   "category": "gymleader",
   "gen": 4,
   "page": "Fantina (game) + Fantina (anime)",
+  "signature": "SPECIES_MISDREAVUS",
   "species": [
    "SPECIES_BRONZOR",
    "SPECIES_CHIMCHAR",
@@ -1631,6 +1685,7 @@
   "category": "gymleader",
   "gen": 3,
   "page": "Flannery (game) + Flannery (anime)",
+  "signature": "SPECIES_TORKOAL",
   "species": [
    "SPECIES_CORPHISH",
    "SPECIES_GROWLITHE",
@@ -1652,6 +1707,7 @@
   "category": "elite4",
   "gen": 4,
   "page": "Flint (game) + Flint (anime)",
+  "signature": "SPECIES_CHIMCHAR",
   "species": [
    "SPECIES_BUIZEL",
    "SPECIES_BUNEARY",
@@ -1678,6 +1734,7 @@
   "category": "gymleader",
   "gen": 4,
   "page": "Gardenia (game) + Gardenia (anime)",
+  "signature": "SPECIES_BUDEW",
   "species": [
    "SPECIES_AIPOM",
    "SPECIES_BELLSPROUT",
@@ -1710,6 +1767,7 @@
   "category": "anime",
   "gen": 1,
   "page": "Gary Oak + Gary (anime)",
+  "signature": "SPECIES_SQUIRTLE",
   "species": [
    "SPECIES_ABRA",
    "SPECIES_AERODACTYL",
@@ -1757,6 +1815,7 @@
   "category": "champion",
   "gen": 9,
   "page": "Geeta (game) + Geeta (anime)",
+  "signature": "SPECIES_GLIMMET",
   "species": [
    "SPECIES_BERGMITE",
    "SPECIES_CHESPIN",
@@ -1772,6 +1831,7 @@
   "category": "villain",
   "gen": 5,
   "page": "Ghetsis (game) + Ghetsis (anime)",
+  "signature": "SPECIES_DEINO",
   "species": [
    "SPECIES_BOUFFALANT",
    "SPECIES_CROAGUNK",
@@ -1795,6 +1855,7 @@
   "category": "villain",
   "gen": 1,
   "page": "Giovanni (game) + Giovanni (anime)",
+  "signature": "SPECIES_RHYHORN",
   "species": [
    "SPECIES_BELLSPROUT",
    "SPECIES_CHARMANDER",
@@ -1849,6 +1910,7 @@
   "category": "elite4",
   "gen": 3,
   "page": "Glacia (game) + Glacia (anime)",
+  "signature": "SPECIES_SPHEAL",
   "species": [
    "SPECIES_CELEBI",
    "SPECIES_CUBCHOO",
@@ -1865,6 +1927,7 @@
   "category": "rival",
   "gen": 7,
   "page": "Gladion (game) + Gladion (anime)",
+  "signature": "SPECIES_TYPE_NULL",
   "species": [
    "SPECIES_ABSOL",
    "SPECIES_BULBASAUR",
@@ -1921,6 +1984,7 @@
   "category": "anime",
   "gen": 8,
   "page": "Goh + Goh (anime)",
+  "signature": "SPECIES_SCORBUNNY",
   "species": [
    "SPECIES_BULBASAUR",
    "SPECIES_BUNNELBY",
@@ -1970,6 +2034,7 @@
   "category": "gymleader",
   "gen": 8,
   "page": "Gordie (game) + Gordie (anime)",
+  "signature": "SPECIES_ROLYCOLY",
   "species": [
    "SPECIES_BINACLE",
    "SPECIES_ETERNATUS",
@@ -1986,6 +2051,7 @@
   "category": "gymleader",
   "gen": 6,
   "page": "Grant (game) + Grant (anime)",
+  "signature": "SPECIES_TYRUNT",
   "species": [
    "SPECIES_AMAURA",
    "SPECIES_MIMEJR",
@@ -2002,6 +2068,7 @@
   "category": "elite4",
   "gen": 5,
   "page": "Grimsley (game) + Grimsley (anime)",
+  "signature": "SPECIES_PAWNIARD",
   "species": [
    "SPECIES_ABSOL",
    "SPECIES_CARVANHA",
@@ -2027,6 +2094,7 @@
   "category": "gymleader",
   "gen": 9,
   "page": "Grusha (game) + Grusha (anime)",
+  "signature": "SPECIES_CETODDLE",
   "species": [
    "SPECIES_CETODDLE",
    "SPECIES_CUBCHOO",
@@ -2044,6 +2112,7 @@
   "category": "villain",
   "gen": 7,
   "page": "Guzma (game) + Guzma (anime)",
+  "signature": "SPECIES_WIMPOD",
   "species": [
    "SPECIES_BLACEPHALON",
    "SPECIES_BUZZWOLE",
@@ -2073,6 +2142,7 @@
   "category": "gymleader",
   "gen": 7,
   "page": "Hala (game) + Hala (anime)",
+  "signature": "SPECIES_CRABRAWLER",
   "species": [
    "SPECIES_BUZZWOLE",
    "SPECIES_COSMOG",
@@ -2103,6 +2173,7 @@
   "category": "gymleader",
   "gen": 7,
   "page": "Hapu (game) + Hapu (anime)",
+  "signature": "SPECIES_MUDBRAY",
   "species": [
    "SPECIES_BLACEPHALON",
    "SPECIES_CORSOLA",
@@ -2127,6 +2198,7 @@
   "category": "elite4",
   "gen": 9,
   "page": "Hassel (game) + Hassel (anime)",
+  "signature": "SPECIES_FRIGIBAX",
   "species": [
    "SPECIES_APPLIN",
    "SPECIES_AXEW",
@@ -2145,6 +2217,7 @@
   "category": "champion",
   "gen": 7,
   "page": "Hau (game) + Hau (anime)",
+  "signature": "SPECIES_PICHU",
   "species": [
    "SPECIES_BLACEPHALON",
    "SPECIES_BUZZWOLE",
@@ -2178,6 +2251,7 @@
   "category": "protagonist",
   "gen": 5,
   "page": "Hilbert (game) + Hilbert (anime)",
+  "signature": "SPECIES_OSHAWOTT",
   "species": [
    "SPECIES_EEVEE",
    "SPECIES_GENESECT",
@@ -2193,6 +2267,7 @@
   "category": "protagonist",
   "gen": 5,
   "page": "Hilda (game) + Hilda (anime)",
+  "signature": "SPECIES_TEPIG",
   "species": [
    "SPECIES_CLOBBOPUS",
    "SPECIES_DIANCIE",
@@ -2210,6 +2285,7 @@
   "category": "rival",
   "gen": 8,
   "page": "Hop (game) + Hop (anime)",
+  "signature": "SPECIES_WOOLOO",
   "species": [
    "SPECIES_ARROKUDA",
    "SPECIES_ARTICUNO",
@@ -2266,6 +2342,7 @@
   "category": "gymleader",
   "gen": 9,
   "page": "Iono (game) + Iono (anime)",
+  "signature": "SPECIES_TADBULB",
   "species": [
    "SPECIES_CHARCADET",
    "SPECIES_CUFANT",
@@ -2289,6 +2366,7 @@
   "category": "champion",
   "gen": 5,
   "page": "Iris (game) + Iris (anime)",
+  "signature": "SPECIES_AXEW",
   "species": [
    "SPECIES_ARCHEN",
    "SPECIES_ARON",
@@ -2327,6 +2405,7 @@
   "category": "anime",
   "gen": 1,
   "page": "James + James (anime)",
+  "signature": "SPECIES_KOFFING",
   "species": [
    "SPECIES_BELLSPROUT",
    "SPECIES_CACNEA",
@@ -2383,6 +2462,7 @@
   "category": "gymleader",
   "gen": 2,
   "page": "Janine (game) + Janine (anime)",
+  "signature": "SPECIES_SPINARAK",
   "species": [
    "SPECIES_BUDEW",
    "SPECIES_CHIKORITA",
@@ -2410,6 +2490,7 @@
   "category": "gymleader",
   "gen": 2,
   "page": "Jasmine (game) + Jasmine (anime)",
+  "signature": "SPECIES_ONIX",
   "species": [
    "SPECIES_BELDUM",
    "SPECIES_BRONZOR",
@@ -2445,6 +2526,7 @@
   "category": "anime",
   "gen": 1,
   "page": "Jessie + Jessie (anime)",
+  "signature": "SPECIES_WYNAUT",
   "species": [
    "SPECIES_AIPOM",
    "SPECIES_BUNEARY",
@@ -2507,6 +2589,7 @@
   "category": "gymleader",
   "gen": 3,
   "page": "Juan (game) + Juan (anime)",
+  "signature": "SPECIES_HORSEA",
   "species": [
    "SPECIES_AZURILL",
    "SPECIES_BARBOACH",
@@ -2536,6 +2619,7 @@
   "category": "villain",
   "gen": 4,
   "page": "Jupiter (game) + Jupiter (anime)",
+  "signature": "SPECIES_STUNKY",
   "species": [
    "SPECIES_ARCEUS",
    "SPECIES_AZELF",
@@ -2566,6 +2650,7 @@
   "category": "gymleader",
   "gen": 8,
   "page": "Kabu (game) + Kabu (anime)",
+  "signature": "SPECIES_SIZZLIPEDE",
   "species": [
    "SPECIES_ARROKUDA",
    "SPECIES_ETERNATUS",
@@ -2588,6 +2673,7 @@
   "category": "elite4",
   "gen": 7,
   "page": "Kahili (game) + Kahili (anime)",
+  "signature": "SPECIES_PIKIPEK",
   "species": [
    "SPECIES_BUZZWOLE",
    "SPECIES_CELESTEELA",
@@ -2610,6 +2696,7 @@
   "category": "elite4",
   "gen": 2,
   "page": "Karen (game) + Karen (anime)",
+  "signature": "SPECIES_EEVEE",
   "species": [
    "SPECIES_ABSOL",
    "SPECIES_ARTICUNO",
@@ -2641,6 +2728,7 @@
   "category": "gymleader",
   "gen": 9,
   "page": "Katy (game) + Katy (anime)",
+  "signature": "SPECIES_TEDDIURSA",
   "species": [
    "SPECIES_CLODSIRE",
    "SPECIES_COMBEE",
@@ -2659,6 +2747,7 @@
   "category": "anime",
   "gen": 7,
   "page": "Kiawe (anime)",
+  "signature": "SPECIES_TURTONATOR",
   "species": [
    "SPECIES_CHARMANDER",
    "SPECIES_CORPHISH",
@@ -2687,6 +2776,7 @@
   "category": "gymleader",
   "gen": 9,
   "page": "Kofu (game) + Kofu (anime)",
+  "signature": "SPECIES_CRABRAWLER",
   "species": [
    "SPECIES_CLAUNCHER",
    "SPECIES_CRABRAWLER",
@@ -2705,6 +2795,7 @@
   "category": "elite4",
   "gen": 1,
   "page": "Koga (game) + Koga (anime)",
+  "signature": "SPECIES_KOFFING",
   "species": [
    "SPECIES_ARTICUNO",
    "SPECIES_CHARMANDER",
@@ -2750,6 +2841,7 @@
   "category": "gymleader",
   "gen": 6,
   "page": "Korrina (game) + Korrina (anime)",
+  "signature": "SPECIES_RIOLU",
   "species": [
    "SPECIES_ABSOL",
    "SPECIES_CHARMANDER",
@@ -2779,6 +2871,7 @@
   "category": "protagonist",
   "gen": 2,
   "page": "Kris (game) + Kris (anime)",
+  "signature": "SPECIES_TOTODILE",
   "species": [
    "SPECIES_BONSLY",
    "SPECIES_CHIKORITA",
@@ -2802,6 +2895,7 @@
   "category": "champion",
   "gen": 7,
   "page": "Professor Kukui + Kukui (anime)",
+  "signature": "SPECIES_LITTEN",
   "species": [
    "SPECIES_ABRA",
    "SPECIES_BRUXISH",
@@ -2845,6 +2939,7 @@
   "category": "anime",
   "gen": 7,
   "page": "Lana (anime)",
+  "signature": "SPECIES_POPPLIO",
   "species": [
    "SPECIES_BLACEPHALON",
    "SPECIES_BOUNSWEET",
@@ -2883,6 +2978,7 @@
   "category": "champion",
   "gen": 1,
   "page": "Lance (game) + Lance (anime)",
+  "signature": "SPECIES_DRATINI",
   "species": [
    "SPECIES_AERODACTYL",
    "SPECIES_ARCEUS",
@@ -2923,6 +3019,7 @@
   "category": "gymleader",
   "gen": 9,
   "page": "Larry (game) + Larry (anime)",
+  "signature": "SPECIES_STARLY",
   "species": [
    "SPECIES_CLODSIRE",
    "SPECIES_DUNSPARCE",
@@ -2951,6 +3048,7 @@
   "category": "protagonist",
   "gen": 1,
   "page": "Leaf (game) + Leaf (anime)",
+  "signature": "SPECIES_EEVEE",
   "species": [
    "SPECIES_BULBASAUR",
    "SPECIES_CHARMANDER",
@@ -2966,6 +3064,7 @@
   "category": "gymleader",
   "gen": 5,
   "page": "Lenora (game) + Lenora (anime)",
+  "signature": "SPECIES_PATRAT",
   "species": [
    "SPECIES_AUDINO",
    "SPECIES_CLEFFA",
@@ -2987,6 +3086,7 @@
   "category": "champion",
   "gen": 8,
   "page": "Leon (game) + Leon (anime)",
+  "signature": "SPECIES_CHARMANDER",
   "species": [
    "SPECIES_AMAURA",
    "SPECIES_AXEW",
@@ -3028,6 +3128,7 @@
   "category": "anime",
   "gen": 7,
   "page": "Lillie (anime)",
+  "signature": "SPECIES_VULPIX",
   "species": [
    "SPECIES_BOUNSWEET",
    "SPECIES_CATERPIE",
@@ -3063,6 +3164,7 @@
   "category": "gymleader",
   "gen": 3,
   "page": "Tate and Liza + Liza (anime)",
+  "signature": "SPECIES_LUNATONE",
   "species": [
    "SPECIES_BALTOY",
    "SPECIES_BRONZOR",
@@ -3089,6 +3191,7 @@
   "category": "elite4",
   "gen": 1,
   "page": "Lorelei (game) + Lorelei (anime)",
+  "signature": "SPECIES_LAPRAS",
   "species": [
    "SPECIES_ABRA",
    "SPECIES_ARTICUNO",
@@ -3117,6 +3220,7 @@
   "category": "gymleader",
   "gen": 1,
   "page": "Lt. Surge (game) + Lt. Surge (anime)",
+  "signature": "SPECIES_PICHU",
   "species": [
    "SPECIES_ABRA",
    "SPECIES_BELLSPROUT",
@@ -3154,6 +3258,7 @@
   "category": "protagonist",
   "gen": 4,
   "page": "Lucas (game) + Lucas (anime)",
+  "signature": "SPECIES_TURTWIG",
   "species": [
    "SPECIES_ABRA",
    "SPECIES_ABSOL",
@@ -3188,6 +3293,7 @@
   "category": "elite4",
   "gen": 4,
   "page": "Lucian (game) + Lucian (anime)",
+  "signature": "SPECIES_BRONZOR",
   "species": [
    "SPECIES_ABRA",
    "SPECIES_BRONZOR",
@@ -3208,6 +3314,7 @@
   "category": "villain",
   "gen": 7,
   "page": "Lusamine (game) + Lusamine (anime)",
+  "signature": "SPECIES_STUFFUL",
   "species": [
    "SPECIES_ABSOL",
    "SPECIES_BELDUM",
@@ -3250,6 +3357,7 @@
   "category": "protagonist",
   "gen": 2,
   "page": "Lyra (game) + Lyra (anime)",
+  "signature": "SPECIES_CHIKORITA",
   "species": [
    "SPECIES_AZURILL",
    "SPECIES_CELEBI",
@@ -3272,6 +3380,7 @@
   "category": "villain",
   "gen": 6,
   "page": "Lysandre (game) + Lysandre (anime)",
+  "signature": "SPECIES_MAGIKARP",
   "species": [
    "SPECIES_BINACLE",
    "SPECIES_CHARMANDER",
@@ -3298,6 +3407,7 @@
   "category": "anime",
   "gen": 7,
   "page": "Mallow (anime)",
+  "signature": "SPECIES_BOUNSWEET",
   "species": [
    "SPECIES_BOUNSWEET",
    "SPECIES_BUZZWOLE",
@@ -3325,6 +3435,7 @@
   "category": "elite4",
   "gen": 6,
   "page": "Malva (game) + Malva (anime)",
+  "signature": "SPECIES_FLETCHLING",
   "species": [
    "SPECIES_CHARMANDER",
    "SPECIES_ELECTRIKE",
@@ -3347,6 +3458,7 @@
   "category": "gymleader",
   "gen": 5,
   "page": "Marlon (game) + Marlon (anime)",
+  "signature": "SPECIES_FRILLISH",
   "species": [
    "SPECIES_ALOMOMOLA",
    "SPECIES_ELGYEM",
@@ -3365,6 +3477,7 @@
   "category": "rival",
   "gen": 8,
   "page": "Marnie (game) + Marnie (anime)",
+  "signature": "SPECIES_MORPEKO",
   "species": [
    "SPECIES_ARTICUNO",
    "SPECIES_CROAGUNK",
@@ -3393,6 +3506,7 @@
   "category": "villain",
   "gen": 4,
   "page": "Mars (game) + Mars (anime)",
+  "signature": "SPECIES_GLAMEOW",
   "species": [
    "SPECIES_ARCEUS",
    "SPECIES_AZELF",
@@ -3423,6 +3537,7 @@
   "category": "elite4",
   "gen": 5,
   "page": "Marshal (game) + Marshal (anime)",
+  "signature": "SPECIES_TIMBURR",
   "species": [
    "SPECIES_CROAGUNK",
    "SPECIES_GOLETT",
@@ -3448,6 +3563,7 @@
   "category": "villain",
   "gen": 3,
   "page": "Maxie (game) + Maxie (anime)",
+  "signature": "SPECIES_NUMEL",
   "species": [
    "SPECIES_FEEBAS",
    "SPECIES_GROUDON",
@@ -3468,6 +3584,7 @@
   "category": "protagonist",
   "gen": 3,
   "page": "May (game) + May (anime)",
+  "signature": "SPECIES_TORCHIC",
   "species": [
    "SPECIES_ARON",
    "SPECIES_AUDINO",
@@ -3509,6 +3626,7 @@
   "category": "gymleader",
   "gen": 4,
   "page": "Maylene (game) + Maylene (anime)",
+  "signature": "SPECIES_RIOLU",
   "species": [
    "SPECIES_AIPOM",
    "SPECIES_BUNEARY",
@@ -3534,6 +3652,7 @@
   "category": "gymleader",
   "gen": 8,
   "page": "Melony (game) + Melony (anime)",
+  "signature": "SPECIES_LAPRAS",
   "species": [
    "SPECIES_DARUMAKA",
    "SPECIES_DRACOVISH",
@@ -3553,6 +3672,7 @@
   "category": "gymleader",
   "gen": 8,
   "page": "Milo (game) + Milo (anime)",
+  "signature": "SPECIES_GOSSIFLEUR",
   "species": [
    "SPECIES_APPLIN",
    "SPECIES_BOUNSWEET",
@@ -3572,6 +3692,7 @@
   "category": "gymleader",
   "gen": 1,
   "page": "Misty (game) + Misty (anime)",
+  "signature": "SPECIES_STARYU",
   "species": [
    "SPECIES_BUIZEL",
    "SPECIES_CATERPIE",
@@ -3629,6 +3750,7 @@
   "category": "elite4",
   "gen": 7,
   "page": "Molayne (game) + Molayne (anime)",
+  "signature": "SPECIES_DIGLETT",
   "species": [
    "SPECIES_BELDUM",
    "SPECIES_CELESTEELA",
@@ -3653,6 +3775,7 @@
   "category": "gymleader",
   "gen": 2,
   "page": "Morty (game) + Morty (anime)",
+  "signature": "SPECIES_GASTLY",
   "species": [
    "SPECIES_ARCEUS",
    "SPECIES_BONSLY",
@@ -3689,6 +3812,7 @@
   "category": "rival",
   "gen": 5,
   "page": "N (game) + N (anime)",
+  "signature": "SPECIES_ZORUA",
   "species": [
    "SPECIES_ALOMOMOLA",
    "SPECIES_ANORITH",
@@ -3749,6 +3873,7 @@
   "category": "anime",
   "gen": 4,
   "page": "Nando + Nando (anime)",
+  "signature": "SPECIES_BUDEW",
   "species": [
    "SPECIES_ANORITH",
    "SPECIES_BUDEW",
@@ -3768,6 +3893,7 @@
   "category": "gymleader",
   "gen": 7,
   "page": "Nanu (game) + Nanu (anime)",
+  "signature": "SPECIES_MEOWTH",
   "species": [
    "SPECIES_ABSOL",
    "SPECIES_BUZZWOLE",
@@ -3808,6 +3934,7 @@
   "category": "champion",
   "gen": 9,
   "page": "Nemona (game) + Nemona (anime)",
+  "signature": "SPECIES_PAWMI",
   "species": [
    "SPECIES_CHIMCHAR",
    "SPECIES_CUTIEFLY",
@@ -3853,6 +3980,7 @@
   "category": "gymleader",
   "gen": 8,
   "page": "Nessa (game) + Nessa (anime)",
+  "signature": "SPECIES_CHEWTLE",
   "species": [
    "SPECIES_ARROKUDA",
    "SPECIES_CHEWTLE",
@@ -3875,6 +4003,7 @@
   "category": "gymleader",
   "gen": 3,
   "page": "Norman (game) + Norman (anime)",
+  "signature": "SPECIES_SLAKOTH",
   "species": [
    "SPECIES_AIPOM",
    "SPECIES_BOUFFALANT",
@@ -3904,6 +4033,7 @@
   "category": "gymleader",
   "gen": 7,
   "page": "Olivia (game) + Olivia (anime)",
+  "signature": "SPECIES_ROCKRUFF",
   "species": [
    "SPECIES_ANORITH",
    "SPECIES_BONSLY",
@@ -3930,6 +4060,7 @@
   "category": "gymleader",
   "gen": 6,
   "page": "Olympia (game) + Olympia (anime)",
+  "signature": "SPECIES_ESPURR",
   "species": [
    "SPECIES_ESPURR",
    "SPECIES_FROAKIE",
@@ -3944,6 +4075,7 @@
   "category": "gymleader",
   "gen": 8,
   "page": "Opal (game) + Opal (anime)",
+  "signature": "SPECIES_MILCERY",
   "species": [
    "SPECIES_DRACOVISH",
    "SPECIES_ETERNATUS",
@@ -3960,6 +4092,7 @@
   "category": "anime",
   "gen": 4,
   "page": "Paul (anime)",
+  "signature": "SPECIES_ELEKID",
   "species": [
    "SPECIES_ARON",
    "SPECIES_AZURILL",
@@ -3998,6 +4131,7 @@
   "category": "rival",
   "gen": 9,
   "page": "Penny (game) + Penny (anime)",
+  "signature": "SPECIES_EEVEE",
   "species": [
    "SPECIES_BRUTE_BONNET",
    "SPECIES_EEVEE",
@@ -4024,6 +4158,7 @@
   "category": "elite4",
   "gen": 3,
   "page": "Phoebe (game) + Phoebe (anime)",
+  "signature": "SPECIES_DUSKULL",
   "species": [
    "SPECIES_CELEBI",
    "SPECIES_DRIFLOON",
@@ -4042,6 +4177,7 @@
   "category": "gymleader",
   "gen": 8,
   "page": "Piers (game) + Piers (anime)",
+  "signature": "SPECIES_ZIGZAGOON_GALARIAN",
   "species": [
    "SPECIES_ETERNATUS",
    "SPECIES_HONEDGE",
@@ -4060,6 +4196,7 @@
   "category": "villain",
   "gen": 7,
   "page": "Plumeria (game) + Plumeria (anime)",
+  "signature": "SPECIES_SALANDIT",
   "species": [
    "SPECIES_CELESTEELA",
    "SPECIES_COSMOG",
@@ -4084,6 +4221,7 @@
   "category": "elite4",
   "gen": 9,
   "page": "Poppy (game) + Poppy (anime)",
+  "signature": "SPECIES_TINKATINK",
   "species": [
    "SPECIES_BRONZOR",
    "SPECIES_CUFANT",
@@ -4101,6 +4239,7 @@
   "category": "gymleader",
   "gen": 2,
   "page": "Pryce (game) + Pryce (anime)",
+  "signature": "SPECIES_SWINUB",
   "species": [
    "SPECIES_ARTICUNO",
    "SPECIES_CELEBI",
@@ -4136,6 +4275,7 @@
   "category": "gymleader",
   "gen": 8,
   "page": "Raihan (game) + Raihan (anime)",
+  "signature": "SPECIES_DURALUDON",
   "species": [
    "SPECIES_CHARMANDER",
    "SPECIES_DREEPY",
@@ -4159,6 +4299,7 @@
   "category": "gymleader",
   "gen": 6,
   "page": "Ramos (game) + Ramos (anime)",
+  "signature": "SPECIES_SKIDDO",
   "species": [
    "SPECIES_BELLSPROUT",
    "SPECIES_EXEGGCUTE",
@@ -4181,6 +4322,7 @@
   "category": "protagonist",
   "gen": 1,
   "page": "Red (game) + Red (anime)",
+  "signature": "SPECIES_PICHU",
   "species": [
    "SPECIES_ARTICUNO",
    "SPECIES_BULBASAUR",
@@ -4216,6 +4358,7 @@
   "category": "elite4",
   "gen": 9,
   "page": "Rika (game) + Rika (anime)",
+  "signature": "SPECIES_CLODSIRE",
   "species": [
    "SPECIES_BARBOACH",
    "SPECIES_CLODSIRE",
@@ -4234,6 +4377,7 @@
   "category": "anime",
   "gen": 1,
   "page": "Ritchie + Ritchie (anime)",
+  "signature": "SPECIES_PICHU",
   "species": [
    "SPECIES_BAGON",
    "SPECIES_CATERPIE",
@@ -4259,6 +4403,7 @@
   "category": "gymleader",
   "gen": 4,
   "page": "Roark (game) + Roark (anime)",
+  "signature": "SPECIES_CRANIDOS",
   "species": [
    "SPECIES_AERODACTYL",
    "SPECIES_ANORITH",
@@ -4287,6 +4432,7 @@
   "category": "protagonist",
   "gen": 5,
   "page": "Rosa (game) + Rosa (anime)",
+  "signature": "SPECIES_SNIVY",
   "species": [
    "SPECIES_DEERLING",
    "SPECIES_DELIBIRD",
@@ -4305,6 +4451,7 @@
   "category": "villain",
   "gen": 8,
   "page": "Rose (game) + Rose (anime)",
+  "signature": "SPECIES_CUFANT",
   "species": [
    "SPECIES_CHARMANDER",
    "SPECIES_CUFANT",
@@ -4325,6 +4472,7 @@
   "category": "gymleader",
   "gen": 3,
   "page": "Roxanne (game) + Roxanne (anime)",
+  "signature": "SPECIES_NOSEPASS",
   "species": [
    "SPECIES_AERODACTYL",
    "SPECIES_ANORITH",
@@ -4348,6 +4496,7 @@
   "category": "gymleader",
   "gen": 5,
   "page": "Roxie (game) + Roxie (anime)",
+  "signature": "SPECIES_VENIPEDE",
   "species": [
    "SPECIES_CROAGUNK",
    "SPECIES_FOONGUS",
@@ -4367,6 +4516,7 @@
   "category": "gymleader",
   "gen": 9,
   "page": "Ryme (game) + Ryme (anime)",
+  "signature": "SPECIES_TOXEL",
   "species": [
    "SPECIES_FUECOCO",
    "SPECIES_GOLETT",
@@ -4383,6 +4533,7 @@
   "category": "gymleader",
   "gen": 1,
   "page": "Sabrina (game) + Sabrina (anime)",
+  "signature": "SPECIES_ABRA",
   "species": [
    "SPECIES_ABRA",
    "SPECIES_ARTICUNO",
@@ -4423,6 +4574,7 @@
   "category": "villain",
   "gen": 4,
   "page": "Saturn (game) + Saturn (anime)",
+  "signature": "SPECIES_CROAGUNK",
   "species": [
    "SPECIES_ABRA",
    "SPECIES_AZELF",
@@ -4454,6 +4606,7 @@
   "category": "anime",
   "gen": 6,
   "page": "Sawyer + Sawyer (anime)",
+  "signature": "SPECIES_TREECKO",
   "species": [
    "SPECIES_BAGON",
    "SPECIES_CLAUNCHER",
@@ -4478,6 +4631,7 @@
   "category": "protagonist",
   "gen": 7,
   "page": "Selene (game) + Selene (anime)",
+  "signature": "SPECIES_ROWLET",
   "species": [
    "SPECIES_BLACEPHALON",
    "SPECIES_COSMOG",
@@ -4502,6 +4656,7 @@
   "category": "protagonist",
   "gen": 6,
   "page": "Serena (game) + Serena (anime)",
+  "signature": "SPECIES_FENNEKIN",
   "species": [
    "SPECIES_ABSOL",
    "SPECIES_BULBASAUR",
@@ -4536,6 +4691,7 @@
   "category": "rival",
   "gen": 6,
   "page": "Shauna (game) + Shauna (anime)",
+  "signature": "SPECIES_CHESPIN",
   "species": [
    "SPECIES_BULBASAUR",
    "SPECIES_CHARMANDER",
@@ -4560,6 +4716,7 @@
   "category": "elite4",
   "gen": 5,
   "page": "Shauntal (game) + Shauntal (anime)",
+  "signature": "SPECIES_LITWICK",
   "species": [
    "SPECIES_DRIFLOON",
    "SPECIES_FRILLISH",
@@ -4576,6 +4733,7 @@
   "category": "elite4",
   "gen": 3,
   "page": "Sidney (game) + Sidney (anime)",
+  "signature": "SPECIES_ABSOL",
   "species": [
    "SPECIES_ABSOL",
    "SPECIES_CACNEA",
@@ -4597,6 +4755,7 @@
   "category": "elite4",
   "gen": 6,
   "page": "Siebold (game) + Siebold (anime)",
+  "signature": "SPECIES_CLAUNCHER",
   "species": [
    "SPECIES_BINACLE",
    "SPECIES_CHARMANDER",
@@ -4611,6 +4770,7 @@
   "category": "rival",
   "gen": 2,
   "page": "Silver (game) + Silver (anime)",
+  "signature": "SPECIES_TOTODILE",
   "species": [
    "SPECIES_ABRA",
    "SPECIES_BAGON",
@@ -4635,6 +4795,7 @@
   "category": "gymleader",
   "gen": 5,
   "page": "Skyla (game) + Skyla (anime)",
+  "signature": "SPECIES_DUCKLETT",
   "species": [
    "SPECIES_ARCHEN",
    "SPECIES_DRIFLOON",
@@ -4661,6 +4822,7 @@
   "category": "anime",
   "gen": 7,
   "page": "Sophocles (anime)",
+  "signature": "SPECIES_TOGEDEMARU",
   "species": [
    "SPECIES_BELDUM",
    "SPECIES_BOUNSWEET",
@@ -4692,6 +4854,7 @@
   "category": "champion",
   "gen": 3,
   "page": "Steven Stone + Steven (anime)",
+  "signature": "SPECIES_BELDUM",
   "species": [
    "SPECIES_AERODACTYL",
    "SPECIES_ANORITH",
@@ -4727,6 +4890,7 @@
   "category": "gymleader",
   "gen": 3,
   "page": "Tate and Liza + Tate (anime)",
+  "signature": "SPECIES_SOLROCK",
   "species": [
    "SPECIES_BALTOY",
    "SPECIES_BRONZOR",
@@ -4753,6 +4917,7 @@
   "category": "anime",
   "gen": 1,
   "page": "Tracey Sketchit + Tracey (anime)",
+  "signature": "SPECIES_SCYTHER",
   "species": [
    "SPECIES_AZURILL",
    "SPECIES_BULBASAUR",
@@ -4770,6 +4935,7 @@
   "category": "anime",
   "gen": 5,
   "page": "Trip + Trip (anime)",
+  "signature": "SPECIES_SNIVY",
   "species": [
    "SPECIES_DWEBBLE",
    "SPECIES_FRILLISH",
@@ -4788,6 +4954,7 @@
   "category": "gymleader",
   "gen": 9,
   "page": "Tulip (game) + Tulip (anime)",
+  "signature": "SPECIES_FLABEBE",
   "species": [
    "SPECIES_CHARCADET",
    "SPECIES_CLODSIRE",
@@ -4804,6 +4971,7 @@
   "category": "gymleader",
   "gen": 6,
   "page": "Valerie (game) + Valerie (anime)",
+  "signature": "SPECIES_EEVEE",
   "species": [
    "SPECIES_BAGON",
    "SPECIES_EEVEE",
@@ -4834,6 +5002,7 @@
   "category": "gymleader",
   "gen": 6,
   "page": "Viola (game) + Viola (anime)",
+  "signature": "SPECIES_SCATTERBUG",
   "species": [
    "SPECIES_FLETCHLING",
    "SPECIES_HONEDGE",
@@ -4849,6 +5018,7 @@
   "category": "gymleader",
   "gen": 4,
   "page": "Volkner (game) + Volkner (anime)",
+  "signature": "SPECIES_ELEKID",
   "species": [
    "SPECIES_AIPOM",
    "SPECIES_BLITZLE",
@@ -4878,6 +5048,7 @@
   "category": "champion",
   "gen": 3,
   "page": "Wallace (game) + Wallace (anime)",
+  "signature": "SPECIES_FEEBAS",
   "species": [
    "SPECIES_BARBOACH",
    "SPECIES_BELDUM",
@@ -4914,6 +5085,7 @@
   "category": "rival",
   "gen": 3,
   "page": "Wally (game) + Wally (anime)",
+  "signature": "SPECIES_RALTS",
   "species": [
    "SPECIES_AZURILL",
    "SPECIES_BUDEW",
@@ -4930,6 +5102,7 @@
   "category": "gymleader",
   "gen": 3,
   "page": "Wattson (game) + Wattson (anime)",
+  "signature": "SPECIES_ELECTRIKE",
   "species": [
    "SPECIES_CLEFFA",
    "SPECIES_ELECTRIKE",
@@ -4953,6 +5126,7 @@
   "category": "gymleader",
   "gen": 2,
   "page": "Whitney (game) + Whitney (anime)",
+  "signature": "SPECIES_MILTANK",
   "species": [
    "SPECIES_AIPOM",
    "SPECIES_BIDOOF",
@@ -4994,6 +5168,7 @@
   "category": "elite4",
   "gen": 6,
   "page": "Wikstrom (game) + Wikstrom (anime)",
+  "signature": "SPECIES_HONEDGE",
   "species": [
    "SPECIES_DEDENNE",
    "SPECIES_FARFETCHD",
@@ -5011,6 +5186,7 @@
   "category": "elite4",
   "gen": 2,
   "page": "Will (game) + Will (anime)",
+  "signature": "SPECIES_NATU",
   "species": [
    "SPECIES_ABRA",
    "SPECIES_ARTICUNO",
@@ -5040,6 +5216,7 @@
   "category": "gymleader",
   "gen": 3,
   "page": "Winona (game) + Winona (anime)",
+  "signature": "SPECIES_SWABLU",
   "species": [
    "SPECIES_ARON",
    "SPECIES_DRATINI",
@@ -5067,6 +5244,7 @@
   "category": "gymleader",
   "gen": 6,
   "page": "Wulfric (game) + Wulfric (anime)",
+  "signature": "SPECIES_BERGMITE",
   "species": [
    "SPECIES_BERGMITE",
    "SPECIES_CRYOGONAL",
@@ -5083,6 +5261,7 @@
   "category": "anime",
   "gen": 4,
   "page": "Zoey + Zoey (anime)",
+  "signature": "SPECIES_GLAMEOW",
   "species": [
    "SPECIES_AIPOM",
    "SPECIES_BUIZEL",
