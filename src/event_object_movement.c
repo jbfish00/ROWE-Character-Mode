@@ -593,7 +593,35 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_CM_SILVER            0x11C0
 #define OBJ_EVENT_PAL_CM_ARCHER            0x11C1
 #define OBJ_EVENT_PAL_CM_ARIANA            0x11C2
+#define OBJ_EVENT_PAL_CM_HILDA             0x11C3
+#define OBJ_EVENT_PAL_CM_NATE              0x11C4
+#define OBJ_EVENT_PAL_CM_ROSA              0x11C5
+#define OBJ_EVENT_PAL_CM_ALDER             0x11C6
+#define OBJ_EVENT_PAL_CM_IRIS              0x11C7
+#define OBJ_EVENT_PAL_CM_SHAUNTAL          0x11C8
+#define OBJ_EVENT_PAL_CM_GRIMSLEY          0x11C9
+#define OBJ_EVENT_PAL_CM_CAITLIN           0x11CA
+#define OBJ_EVENT_PAL_CM_MARSHAL           0x11CB
+#define OBJ_EVENT_PAL_CM_CHILI             0x11CC
+#define OBJ_EVENT_PAL_CM_CILAN             0x11CD
+#define OBJ_EVENT_PAL_CM_CRESS             0x11CE
+#define OBJ_EVENT_PAL_CM_LENORA            0x11CF
+#define OBJ_EVENT_PAL_CM_BURGH             0x11D0
+#define OBJ_EVENT_PAL_CM_ELESA             0x11D1
+#define OBJ_EVENT_PAL_CM_CLAY              0x11D2
+#define OBJ_EVENT_PAL_CM_SKYLA             0x11D3
+#define OBJ_EVENT_PAL_CM_BRYCEN            0x11D4
+#define OBJ_EVENT_PAL_CM_DRAYDEN           0x11D5
+#define OBJ_EVENT_PAL_CM_CHEREN            0x11D6
+#define OBJ_EVENT_PAL_CM_ROXIE             0x11D7
+#define OBJ_EVENT_PAL_CM_MARLON            0x11D8
+#define OBJ_EVENT_PAL_CM_BIANCA            0x11D9
+#define OBJ_EVENT_PAL_CM_HUGH              0x11DA
+#define OBJ_EVENT_PAL_CM_N                 0x11DB
+#define OBJ_EVENT_PAL_CM_GHETSIS           0x11DC
+#define OBJ_EVENT_PAL_CM_COLRESS           0x11DD
 // CHARMODE-SPRITES-END pal-tags
+
 
 
 
@@ -1583,6 +1611,33 @@ const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_CmSilver, OBJ_EVENT_PAL_CM_SILVER},
     {gObjectEventPalette_CmArcher, OBJ_EVENT_PAL_CM_ARCHER},
     {gObjectEventPalette_CmAriana, OBJ_EVENT_PAL_CM_ARIANA},
+    {gObjectEventPalette_CmHilda, OBJ_EVENT_PAL_CM_HILDA},
+    {gObjectEventPalette_CmNate, OBJ_EVENT_PAL_CM_NATE},
+    {gObjectEventPalette_CmRosa, OBJ_EVENT_PAL_CM_ROSA},
+    {gObjectEventPalette_CmAlder, OBJ_EVENT_PAL_CM_ALDER},
+    {gObjectEventPalette_CmIris, OBJ_EVENT_PAL_CM_IRIS},
+    {gObjectEventPalette_CmShauntal, OBJ_EVENT_PAL_CM_SHAUNTAL},
+    {gObjectEventPalette_CmGrimsley, OBJ_EVENT_PAL_CM_GRIMSLEY},
+    {gObjectEventPalette_CmCaitlin, OBJ_EVENT_PAL_CM_CAITLIN},
+    {gObjectEventPalette_CmMarshal, OBJ_EVENT_PAL_CM_MARSHAL},
+    {gObjectEventPalette_CmChili, OBJ_EVENT_PAL_CM_CHILI},
+    {gObjectEventPalette_CmCilan, OBJ_EVENT_PAL_CM_CILAN},
+    {gObjectEventPalette_CmCress, OBJ_EVENT_PAL_CM_CRESS},
+    {gObjectEventPalette_CmLenora, OBJ_EVENT_PAL_CM_LENORA},
+    {gObjectEventPalette_CmBurgh, OBJ_EVENT_PAL_CM_BURGH},
+    {gObjectEventPalette_CmElesa, OBJ_EVENT_PAL_CM_ELESA},
+    {gObjectEventPalette_CmClay, OBJ_EVENT_PAL_CM_CLAY},
+    {gObjectEventPalette_CmSkyla, OBJ_EVENT_PAL_CM_SKYLA},
+    {gObjectEventPalette_CmBrycen, OBJ_EVENT_PAL_CM_BRYCEN},
+    {gObjectEventPalette_CmDrayden, OBJ_EVENT_PAL_CM_DRAYDEN},
+    {gObjectEventPalette_CmCheren, OBJ_EVENT_PAL_CM_CHEREN},
+    {gObjectEventPalette_CmRoxie, OBJ_EVENT_PAL_CM_ROXIE},
+    {gObjectEventPalette_CmMarlon, OBJ_EVENT_PAL_CM_MARLON},
+    {gObjectEventPalette_CmBianca, OBJ_EVENT_PAL_CM_BIANCA},
+    {gObjectEventPalette_CmHugh, OBJ_EVENT_PAL_CM_HUGH},
+    {gObjectEventPalette_CmN, OBJ_EVENT_PAL_CM_N},
+    {gObjectEventPalette_CmGhetsis, OBJ_EVENT_PAL_CM_GHETSIS},
+    {gObjectEventPalette_CmColress, OBJ_EVENT_PAL_CM_COLRESS},
 // CHARMODE-SPRITES-END pal-entries
 	{gObjectEventPalette_Steven,  	     OBJ_EVENT_PAL_STEVEN},				//Champion
 	{gObjectEventPalette_Wally,  	     OBJ_EVENT_PAL_WALLY},				//Champion
