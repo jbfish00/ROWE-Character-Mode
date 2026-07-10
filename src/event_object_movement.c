@@ -620,7 +620,9 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_CM_N                 0x11DB
 #define OBJ_EVENT_PAL_CM_GHETSIS           0x11DC
 #define OBJ_EVENT_PAL_CM_COLRESS           0x11DD
+#define OBJ_EVENT_PAL_CM_ASH               0x11DE
 // CHARMODE-SPRITES-END pal-tags
+
 
 
 
@@ -1638,6 +1640,7 @@ const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_CmN, OBJ_EVENT_PAL_CM_N},
     {gObjectEventPalette_CmGhetsis, OBJ_EVENT_PAL_CM_GHETSIS},
     {gObjectEventPalette_CmColress, OBJ_EVENT_PAL_CM_COLRESS},
+    {gObjectEventPalette_CmAsh, OBJ_EVENT_PAL_CM_ASH},
 // CHARMODE-SPRITES-END pal-entries
 	{gObjectEventPalette_Steven,  	     OBJ_EVENT_PAL_STEVEN},				//Champion
 	{gObjectEventPalette_Wally,  	     OBJ_EVENT_PAL_WALLY},				//Champion

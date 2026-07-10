@@ -3279,4 +3279,6 @@ const u32 gObjectEventPic_CmGhetsis[] = INCBIN_U32("graphics/object_events/pics/
 const u16 gObjectEventPalette_CmGhetsis[] = INCBIN_U16("graphics/object_events/pics/people/cm_ghetsis.gbapal");
 const u32 gObjectEventPic_CmColress[] = INCBIN_U32("graphics/object_events/pics/people/cm_colress.4bpp");
 const u16 gObjectEventPalette_CmColress[] = INCBIN_U16("graphics/object_events/pics/people/cm_colress.gbapal");
+const u32 gObjectEventPic_CmAsh[] = INCBIN_U32("graphics/object_events/pics/people/cm_ash.4bpp");
+const u16 gObjectEventPalette_CmAsh[] = INCBIN_U16("graphics/object_events/pics/people/cm_ash.gbapal");
 // CHARMODE-SPRITES-END ow-incbins

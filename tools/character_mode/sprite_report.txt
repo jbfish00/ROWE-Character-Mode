@@ -13,7 +13,7 @@ Erika            ow=OBJ_EVENT_GFX_CM_ERIKA             front=TRAINER_PIC_ERIKA  
 Sabrina          ow=OBJ_EVENT_GFX_CM_SABRINA           front=TRAINER_PIC_SABRINA        back=-
 Blaine           ow=OBJ_EVENT_GFX_CM_BLAINE            front=TRAINER_PIC_BLAINE         back=-
 Giovanni         ow=OBJ_EVENT_GFX_CM_GIOVANNI          front=TRAINER_PIC_GIOVANNI       back=-
-Ash              ow=-                                  front=-                          back=-
+Ash              ow=OBJ_EVENT_GFX_CM_ASH               front=-                          back=-
 Gary             ow=-                                  front=-                          back=-
 Ritchie          ow=-                                  front=-                          back=-
 Tracey           ow=-                                  front=-                          back=-

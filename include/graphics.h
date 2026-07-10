@@ -10373,6 +10373,8 @@ extern const u32 gObjectEventPic_CmGhetsis[];
 extern const u16 gObjectEventPalette_CmGhetsis[];
 extern const u32 gObjectEventPic_CmColress[];
 extern const u16 gObjectEventPalette_CmColress[];
+extern const u32 gObjectEventPic_CmAsh[];
+extern const u16 gObjectEventPalette_CmAsh[];
 extern const u32 gTrainerFrontPic_CmBlue[];
 extern const u16 gTrainerPalette_CmBlue[];
 extern const u32 gTrainerFrontPic_CmLance[];

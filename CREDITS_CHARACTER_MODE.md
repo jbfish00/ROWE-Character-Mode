@@ -25,6 +25,10 @@ This mod is distributed as a patch only, never as a prebuilt ROM.
   Downscaled 0.5x to GBA proportions for this mod. Credit required by
   the resource terms; please keep this notice with any redistribution.
 
+- **StreakOfSprites** (https://www.deviantart.com/streakofsprites) —
+  Ash Ketchum FRLG-style overworld sprite set
+  (tools/character_mode/donor_sheets/ash_streakofsprites.png).
+
 ## Rosters
 - Character Pokémon rosters compiled from **Bulbapedia**
   (https://bulbapedia.bulbagarden.net), CC BY-NC-SA.

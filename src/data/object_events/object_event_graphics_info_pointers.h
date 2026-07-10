@@ -2346,6 +2346,7 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_CM_N] = &gObjectEventGraphicsInfo_CmN,
     [OBJ_EVENT_GFX_CM_GHETSIS] = &gObjectEventGraphicsInfo_CmGhetsis,
     [OBJ_EVENT_GFX_CM_COLRESS] = &gObjectEventGraphicsInfo_CmColress,
+    [OBJ_EVENT_GFX_CM_ASH] = &gObjectEventGraphicsInfo_CmAsh,
 // CHARMODE-SPRITES-END ow-ptrs
 };
 

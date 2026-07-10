@@ -14190,4 +14190,24 @@ static const struct SpriteFrameImage gObjectEventPicTable_CmColress[] = {
     overworld_frame(gObjectEventPic_CmColress, 4, 4, 16),
     overworld_frame(gObjectEventPic_CmColress, 4, 4, 17),
 };
+static const struct SpriteFrameImage gObjectEventPicTable_CmAsh[] = {
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 0),
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 1),
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 2),
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 3),
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 4),
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 5),
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 6),
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 7),
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 8),
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 9),
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 10),
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 11),
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 12),
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 13),
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 14),
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 15),
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 16),
+    overworld_frame(gObjectEventPic_CmAsh, 4, 4, 17),
+};
 // CHARMODE-SPRITES-END ow-pics

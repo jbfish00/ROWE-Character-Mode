@@ -5238,7 +5238,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Ash,
         .roster = sRoster_Ash,
-        .owGfxId = CHAR_ASSET_NONE,
+        .owGfxId = OBJ_EVENT_GFX_CM_ASH,
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 1,
