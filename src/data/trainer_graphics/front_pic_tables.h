@@ -128,6 +128,19 @@ const struct MonCoords gTrainerFrontPicCoords[] =
 	[TRAINER_PIC_MARS] = {.size = 8, .y_offset = 1},
 	[TRAINER_PIC_JUPITER] = {.size = 8, .y_offset = 1},
 	[TRAINER_PIC_SATURN] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_FALKNER] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_BUGSY] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_WHITNEY] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_MORTY] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_CHUCK] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_JASMINE] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_PRYCE] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_CLAIR] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_JANINE] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_WILL] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_KAREN] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_ARCHER] = {.size = 8, .y_offset = 1},
+	[TRAINER_PIC_ARIANA] = {.size = 8, .y_offset = 1},
 // CHARMODE-SPRITES-END front-coords
 };
 
@@ -261,6 +274,19 @@ const struct CompressedSpriteSheet gTrainerFrontPicTable[] =
 	TRAINER_SPRITE(MARS, gTrainerFrontPic_CmMars, 0x800),
 	TRAINER_SPRITE(JUPITER, gTrainerFrontPic_CmJupiter, 0x800),
 	TRAINER_SPRITE(SATURN, gTrainerFrontPic_CmSaturn, 0x800),
+	TRAINER_SPRITE(FALKNER, gTrainerFrontPic_CmFalkner, 0x800),
+	TRAINER_SPRITE(BUGSY, gTrainerFrontPic_CmBugsy, 0x800),
+	TRAINER_SPRITE(WHITNEY, gTrainerFrontPic_CmWhitney, 0x800),
+	TRAINER_SPRITE(MORTY, gTrainerFrontPic_CmMorty, 0x800),
+	TRAINER_SPRITE(CHUCK, gTrainerFrontPic_CmChuck, 0x800),
+	TRAINER_SPRITE(JASMINE, gTrainerFrontPic_CmJasmine, 0x800),
+	TRAINER_SPRITE(PRYCE, gTrainerFrontPic_CmPryce, 0x800),
+	TRAINER_SPRITE(CLAIR, gTrainerFrontPic_CmClair, 0x800),
+	TRAINER_SPRITE(JANINE, gTrainerFrontPic_CmJanine, 0x800),
+	TRAINER_SPRITE(WILL, gTrainerFrontPic_CmWill, 0x800),
+	TRAINER_SPRITE(KAREN, gTrainerFrontPic_CmKaren, 0x800),
+	TRAINER_SPRITE(ARCHER, gTrainerFrontPic_CmArcher, 0x800),
+	TRAINER_SPRITE(ARIANA, gTrainerFrontPic_CmAriana, 0x800),
 // CHARMODE-SPRITES-END front-sprites
 };
 
@@ -394,5 +420,18 @@ const struct SpritePalette gTrainerFrontPicPaletteTable[] =
 	TRAINER_PAL(MARS, gTrainerPalette_CmMars),
 	TRAINER_PAL(JUPITER, gTrainerPalette_CmJupiter),
 	TRAINER_PAL(SATURN, gTrainerPalette_CmSaturn),
+	TRAINER_PAL(FALKNER, gTrainerPalette_CmFalkner),
+	TRAINER_PAL(BUGSY, gTrainerPalette_CmBugsy),
+	TRAINER_PAL(WHITNEY, gTrainerPalette_CmWhitney),
+	TRAINER_PAL(MORTY, gTrainerPalette_CmMorty),
+	TRAINER_PAL(CHUCK, gTrainerPalette_CmChuck),
+	TRAINER_PAL(JASMINE, gTrainerPalette_CmJasmine),
+	TRAINER_PAL(PRYCE, gTrainerPalette_CmPryce),
+	TRAINER_PAL(CLAIR, gTrainerPalette_CmClair),
+	TRAINER_PAL(JANINE, gTrainerPalette_CmJanine),
+	TRAINER_PAL(WILL, gTrainerPalette_CmWill),
+	TRAINER_PAL(KAREN, gTrainerPalette_CmKaren),
+	TRAINER_PAL(ARCHER, gTrainerPalette_CmArcher),
+	TRAINER_PAL(ARIANA, gTrainerPalette_CmAriana),
 // CHARMODE-SPRITES-END front-pals
 };

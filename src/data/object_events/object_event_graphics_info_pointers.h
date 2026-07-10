@@ -2303,6 +2303,20 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_CM_MARS] = &gObjectEventGraphicsInfo_CmMars,
     [OBJ_EVENT_GFX_CM_JUPITER] = &gObjectEventGraphicsInfo_CmJupiter,
     [OBJ_EVENT_GFX_CM_SATURN] = &gObjectEventGraphicsInfo_CmSaturn,
+    [OBJ_EVENT_GFX_CM_FALKNER] = &gObjectEventGraphicsInfo_CmFalkner,
+    [OBJ_EVENT_GFX_CM_BUGSY] = &gObjectEventGraphicsInfo_CmBugsy,
+    [OBJ_EVENT_GFX_CM_WHITNEY] = &gObjectEventGraphicsInfo_CmWhitney,
+    [OBJ_EVENT_GFX_CM_MORTY] = &gObjectEventGraphicsInfo_CmMorty,
+    [OBJ_EVENT_GFX_CM_CHUCK] = &gObjectEventGraphicsInfo_CmChuck,
+    [OBJ_EVENT_GFX_CM_JASMINE] = &gObjectEventGraphicsInfo_CmJasmine,
+    [OBJ_EVENT_GFX_CM_PRYCE] = &gObjectEventGraphicsInfo_CmPryce,
+    [OBJ_EVENT_GFX_CM_CLAIR] = &gObjectEventGraphicsInfo_CmClair,
+    [OBJ_EVENT_GFX_CM_JANINE] = &gObjectEventGraphicsInfo_CmJanine,
+    [OBJ_EVENT_GFX_CM_WILL] = &gObjectEventGraphicsInfo_CmWill,
+    [OBJ_EVENT_GFX_CM_KAREN] = &gObjectEventGraphicsInfo_CmKaren,
+    [OBJ_EVENT_GFX_CM_SILVER] = &gObjectEventGraphicsInfo_CmSilver,
+    [OBJ_EVENT_GFX_CM_ARCHER] = &gObjectEventGraphicsInfo_CmArcher,
+    [OBJ_EVENT_GFX_CM_ARIANA] = &gObjectEventGraphicsInfo_CmAriana,
 // CHARMODE-SPRITES-END ow-ptrs
 };
 

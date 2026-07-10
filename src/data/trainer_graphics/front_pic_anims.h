@@ -504,5 +504,18 @@ const union AnimCmd *const *const gTrainerFrontAnimsPtrTable[] =
 	[TRAINER_PIC_MARS] = sAnims_RubySapphireMay,
 	[TRAINER_PIC_JUPITER] = sAnims_RubySapphireMay,
 	[TRAINER_PIC_SATURN] = sAnims_RubySapphireMay,
+	[TRAINER_PIC_FALKNER] = sAnims_RubySapphireMay,
+	[TRAINER_PIC_BUGSY] = sAnims_RubySapphireMay,
+	[TRAINER_PIC_WHITNEY] = sAnims_RubySapphireMay,
+	[TRAINER_PIC_MORTY] = sAnims_RubySapphireMay,
+	[TRAINER_PIC_CHUCK] = sAnims_RubySapphireMay,
+	[TRAINER_PIC_JASMINE] = sAnims_RubySapphireMay,
+	[TRAINER_PIC_PRYCE] = sAnims_RubySapphireMay,
+	[TRAINER_PIC_CLAIR] = sAnims_RubySapphireMay,
+	[TRAINER_PIC_JANINE] = sAnims_RubySapphireMay,
+	[TRAINER_PIC_WILL] = sAnims_RubySapphireMay,
+	[TRAINER_PIC_KAREN] = sAnims_RubySapphireMay,
+	[TRAINER_PIC_ARCHER] = sAnims_RubySapphireMay,
+	[TRAINER_PIC_ARIANA] = sAnims_RubySapphireMay,
 // CHARMODE-SPRITES-END front-anims
 };
