@@ -2303,6 +2303,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_CM_MARS] = &gObjectEventGraphicsInfo_CmMars,
     [OBJ_EVENT_GFX_CM_JUPITER] = &gObjectEventGraphicsInfo_CmJupiter,
     [OBJ_EVENT_GFX_CM_SATURN] = &gObjectEventGraphicsInfo_CmSaturn,
+    [OBJ_EVENT_GFX_CM_ETHAN] = &gObjectEventGraphicsInfo_CmEthan,
+    [OBJ_EVENT_GFX_CM_KRIS] = &gObjectEventGraphicsInfo_CmKris,
     [OBJ_EVENT_GFX_CM_FALKNER] = &gObjectEventGraphicsInfo_CmFalkner,
     [OBJ_EVENT_GFX_CM_BUGSY] = &gObjectEventGraphicsInfo_CmBugsy,
     [OBJ_EVENT_GFX_CM_WHITNEY] = &gObjectEventGraphicsInfo_CmWhitney,

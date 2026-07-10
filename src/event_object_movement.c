@@ -577,21 +577,24 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_CM_MARS              0x11B0
 #define OBJ_EVENT_PAL_CM_JUPITER           0x11B1
 #define OBJ_EVENT_PAL_CM_SATURN            0x11B2
-#define OBJ_EVENT_PAL_CM_FALKNER           0x11B3
-#define OBJ_EVENT_PAL_CM_BUGSY             0x11B4
-#define OBJ_EVENT_PAL_CM_WHITNEY           0x11B5
-#define OBJ_EVENT_PAL_CM_MORTY             0x11B6
-#define OBJ_EVENT_PAL_CM_CHUCK             0x11B7
-#define OBJ_EVENT_PAL_CM_JASMINE           0x11B8
-#define OBJ_EVENT_PAL_CM_PRYCE             0x11B9
-#define OBJ_EVENT_PAL_CM_CLAIR             0x11BA
-#define OBJ_EVENT_PAL_CM_JANINE            0x11BB
-#define OBJ_EVENT_PAL_CM_WILL              0x11BC
-#define OBJ_EVENT_PAL_CM_KAREN             0x11BD
-#define OBJ_EVENT_PAL_CM_SILVER            0x11BE
-#define OBJ_EVENT_PAL_CM_ARCHER            0x11BF
-#define OBJ_EVENT_PAL_CM_ARIANA            0x11C0
+#define OBJ_EVENT_PAL_CM_ETHAN             0x11B3
+#define OBJ_EVENT_PAL_CM_KRIS              0x11B4
+#define OBJ_EVENT_PAL_CM_FALKNER           0x11B5
+#define OBJ_EVENT_PAL_CM_BUGSY             0x11B6
+#define OBJ_EVENT_PAL_CM_WHITNEY           0x11B7
+#define OBJ_EVENT_PAL_CM_MORTY             0x11B8
+#define OBJ_EVENT_PAL_CM_CHUCK             0x11B9
+#define OBJ_EVENT_PAL_CM_JASMINE           0x11BA
+#define OBJ_EVENT_PAL_CM_PRYCE             0x11BB
+#define OBJ_EVENT_PAL_CM_CLAIR             0x11BC
+#define OBJ_EVENT_PAL_CM_JANINE            0x11BD
+#define OBJ_EVENT_PAL_CM_WILL              0x11BE
+#define OBJ_EVENT_PAL_CM_KAREN             0x11BF
+#define OBJ_EVENT_PAL_CM_SILVER            0x11C0
+#define OBJ_EVENT_PAL_CM_ARCHER            0x11C1
+#define OBJ_EVENT_PAL_CM_ARIANA            0x11C2
 // CHARMODE-SPRITES-END pal-tags
+
 
 
 
@@ -1564,6 +1567,8 @@ const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_CmMars, OBJ_EVENT_PAL_CM_MARS},
     {gObjectEventPalette_CmJupiter, OBJ_EVENT_PAL_CM_JUPITER},
     {gObjectEventPalette_CmSaturn, OBJ_EVENT_PAL_CM_SATURN},
+    {gObjectEventPalette_CmEthan, OBJ_EVENT_PAL_CM_ETHAN},
+    {gObjectEventPalette_CmKris, OBJ_EVENT_PAL_CM_KRIS},
     {gObjectEventPalette_CmFalkner, OBJ_EVENT_PAL_CM_FALKNER},
     {gObjectEventPalette_CmBugsy, OBJ_EVENT_PAL_CM_BUGSY},
     {gObjectEventPalette_CmWhitney, OBJ_EVENT_PAL_CM_WHITNEY},

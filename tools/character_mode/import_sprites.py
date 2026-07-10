@@ -102,6 +102,13 @@ MANIFEST = [
     ("JUPITER",  ("plat", "graphics/object_events/pics/people/jupiter_pt.png"), ("plat", "jupiter_dp")),
     ("SATURN",   ("plat", "graphics/object_events/pics/people/saturn_pt.png"), ("plat", "saturn_dp")),
     # --- Gen II from PokemonHnS-Development/pokemonHnS (9-frame walking) ---
+    # HnS reskins the player: brendan/ = Ethan, may/ = Kris (real walk+run).
+    ("ETHAN",    ("hnsrun", "graphics/object_events/pics/people/brendan/walking.png",
+                            "graphics/object_events/pics/people/brendan/running.png"),
+                 ("hns", "brendan")),
+    ("KRIS",     ("hnsrun", "graphics/object_events/pics/people/may/walking.png",
+                            "graphics/object_events/pics/people/may/running.png"),
+                 ("hns", "may")),
     ("FALKNER",  ("hns", "graphics/object_events/pics/people/gym_leaders/falkner.png"), ("hns", "leader_falkner")),
     ("BUGSY",    ("hns", "graphics/object_events/pics/people/gym_leaders/bugsy.png"),   ("hns", "leader_bugsy")),
     ("WHITNEY",  ("hns", "graphics/object_events/pics/people/gym_leaders/whitney.png"), ("hns", "leader_whitney")),
@@ -299,6 +306,10 @@ def main():
         elif ow[0] == "platrun":
             img = build_ow_sheet_walkrun(os.path.join(DONOR_PT, ow[1]),
                                          os.path.join(DONOR_PT, ow[2]),
+                                         os.path.join(ow_dir, s + ".png"), fw)
+        elif ow[0] == "hnsrun":
+            img = build_ow_sheet_walkrun(os.path.join(DONOR_HNS, ow[1]),
+                                         os.path.join(DONOR_HNS, ow[2]),
                                          os.path.join(ow_dir, s + ".png"), fw)
         else:
             raise SystemExit("unknown ow source " + ow[0])

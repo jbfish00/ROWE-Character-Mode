@@ -5298,8 +5298,8 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Ethan,
         .roster = sRoster_Ethan,
-        .owGfxId = CHAR_ASSET_NONE,
-        .trainerFrontPic = CHAR_ASSET_NONE,
+        .owGfxId = OBJ_EVENT_GFX_CM_ETHAN,
+        .trainerFrontPic = TRAINER_PIC_ETHAN,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 2,
         .starterCount = 9,
@@ -5308,8 +5308,8 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Kris,
         .roster = sRoster_Kris,
-        .owGfxId = CHAR_ASSET_NONE,
-        .trainerFrontPic = CHAR_ASSET_NONE,
+        .owGfxId = OBJ_EVENT_GFX_CM_KRIS,
+        .trainerFrontPic = TRAINER_PIC_KRIS,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 2,
         .starterCount = 12,

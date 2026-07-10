@@ -19,8 +19,8 @@ Ritchie          ow=-                                  front=-                  
 Tracey           ow=-                                  front=-                          back=-
 Jessie           ow=-                                  front=-                          back=-
 James            ow=-                                  front=-                          back=-
-Ethan            ow=-                                  front=-                          back=-
-Kris             ow=-                                  front=-                          back=-
+Ethan            ow=OBJ_EVENT_GFX_CM_ETHAN             front=TRAINER_PIC_ETHAN          back=-
+Kris             ow=OBJ_EVENT_GFX_CM_KRIS              front=TRAINER_PIC_KRIS           back=-
 Lyra             ow=-                                  front=-                          back=-
 Will             ow=OBJ_EVENT_GFX_CM_WILL              front=TRAINER_PIC_WILL           back=-
 Karen            ow=OBJ_EVENT_GFX_CM_KAREN             front=TRAINER_PIC_KAREN          back=-
