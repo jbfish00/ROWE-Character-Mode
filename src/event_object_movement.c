@@ -557,7 +557,28 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_CM_DRAKE             0x119C
 #define OBJ_EVENT_PAL_CM_MAXIE             0x119D
 #define OBJ_EVENT_PAL_CM_ARCHIE            0x119E
+#define OBJ_EVENT_PAL_CM_LUCAS             0x119F
+#define OBJ_EVENT_PAL_CM_DAWN              0x11A0
+#define OBJ_EVENT_PAL_CM_BARRY             0x11A1
+#define OBJ_EVENT_PAL_CM_CYNTHIA           0x11A2
+#define OBJ_EVENT_PAL_CM_ROARK             0x11A3
+#define OBJ_EVENT_PAL_CM_GARDENIA          0x11A4
+#define OBJ_EVENT_PAL_CM_MAYLENE           0x11A5
+#define OBJ_EVENT_PAL_CM_CRASHER_WAKE      0x11A6
+#define OBJ_EVENT_PAL_CM_FANTINA           0x11A7
+#define OBJ_EVENT_PAL_CM_BYRON             0x11A8
+#define OBJ_EVENT_PAL_CM_CANDICE           0x11A9
+#define OBJ_EVENT_PAL_CM_VOLKNER           0x11AA
+#define OBJ_EVENT_PAL_CM_AARON             0x11AB
+#define OBJ_EVENT_PAL_CM_BERTHA            0x11AC
+#define OBJ_EVENT_PAL_CM_FLINT             0x11AD
+#define OBJ_EVENT_PAL_CM_LUCIAN            0x11AE
+#define OBJ_EVENT_PAL_CM_CYRUS             0x11AF
+#define OBJ_EVENT_PAL_CM_MARS              0x11B0
+#define OBJ_EVENT_PAL_CM_JUPITER           0x11B1
+#define OBJ_EVENT_PAL_CM_SATURN            0x11B2
 // CHARMODE-SPRITES-END pal-tags
+
 
 
 
@@ -1508,6 +1529,26 @@ const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_CmDrake, OBJ_EVENT_PAL_CM_DRAKE},
     {gObjectEventPalette_CmMaxie, OBJ_EVENT_PAL_CM_MAXIE},
     {gObjectEventPalette_CmArchie, OBJ_EVENT_PAL_CM_ARCHIE},
+    {gObjectEventPalette_CmLucas, OBJ_EVENT_PAL_CM_LUCAS},
+    {gObjectEventPalette_CmDawn, OBJ_EVENT_PAL_CM_DAWN},
+    {gObjectEventPalette_CmBarry, OBJ_EVENT_PAL_CM_BARRY},
+    {gObjectEventPalette_CmCynthia, OBJ_EVENT_PAL_CM_CYNTHIA},
+    {gObjectEventPalette_CmRoark, OBJ_EVENT_PAL_CM_ROARK},
+    {gObjectEventPalette_CmGardenia, OBJ_EVENT_PAL_CM_GARDENIA},
+    {gObjectEventPalette_CmMaylene, OBJ_EVENT_PAL_CM_MAYLENE},
+    {gObjectEventPalette_CmCrasherWake, OBJ_EVENT_PAL_CM_CRASHER_WAKE},
+    {gObjectEventPalette_CmFantina, OBJ_EVENT_PAL_CM_FANTINA},
+    {gObjectEventPalette_CmByron, OBJ_EVENT_PAL_CM_BYRON},
+    {gObjectEventPalette_CmCandice, OBJ_EVENT_PAL_CM_CANDICE},
+    {gObjectEventPalette_CmVolkner, OBJ_EVENT_PAL_CM_VOLKNER},
+    {gObjectEventPalette_CmAaron, OBJ_EVENT_PAL_CM_AARON},
+    {gObjectEventPalette_CmBertha, OBJ_EVENT_PAL_CM_BERTHA},
+    {gObjectEventPalette_CmFlint, OBJ_EVENT_PAL_CM_FLINT},
+    {gObjectEventPalette_CmLucian, OBJ_EVENT_PAL_CM_LUCIAN},
+    {gObjectEventPalette_CmCyrus, OBJ_EVENT_PAL_CM_CYRUS},
+    {gObjectEventPalette_CmMars, OBJ_EVENT_PAL_CM_MARS},
+    {gObjectEventPalette_CmJupiter, OBJ_EVENT_PAL_CM_JUPITER},
+    {gObjectEventPalette_CmSaturn, OBJ_EVENT_PAL_CM_SATURN},
 // CHARMODE-SPRITES-END pal-entries
 	{gObjectEventPalette_Steven,  	     OBJ_EVENT_PAL_STEVEN},				//Champion
 	{gObjectEventPalette_Wally,  	     OBJ_EVENT_PAL_WALLY},				//Champion
