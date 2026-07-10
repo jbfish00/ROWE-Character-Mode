@@ -632,6 +632,7 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 
 
 
+
 #define OBJ_EVENT_PAL_TAG_NONE 					  0x11FF
 
 #define OBJ_EVENT_PAL_TAG_POKEMON_START 0x1800

@@ -14,13 +14,13 @@ Sabrina          ow=OBJ_EVENT_GFX_CM_SABRINA           front=TRAINER_PIC_SABRINA
 Blaine           ow=OBJ_EVENT_GFX_CM_BLAINE            front=TRAINER_PIC_BLAINE         back=-
 Giovanni         ow=OBJ_EVENT_GFX_CM_GIOVANNI          front=TRAINER_PIC_GIOVANNI       back=-
 Ash              ow=OBJ_EVENT_GFX_CM_ASH               front=-                          back=-
-Gary             ow=-                                  front=-                          back=-
+Gary             ow=OBJ_EVENT_GFX_CM_BLUE              front=TRAINER_PIC_BLUE           back=-
 Ritchie          ow=-                                  front=-                          back=-
 Tracey           ow=-                                  front=-                          back=-
 Jessie           ow=-                                  front=-                          back=-
 James            ow=-                                  front=-                          back=-
-Ethan            ow=OBJ_EVENT_GFX_CM_ETHAN             front=TRAINER_PIC_ETHAN          back=-
-Kris             ow=OBJ_EVENT_GFX_CM_KRIS              front=TRAINER_PIC_KRIS           back=-
+Ethan            ow=OBJ_EVENT_GFX_CM_ETHAN             front=TRAINER_PIC_ETHAN          back=TRAINER_BACK_PIC_CM_ETHAN
+Kris             ow=OBJ_EVENT_GFX_CM_KRIS              front=TRAINER_PIC_KRIS           back=TRAINER_BACK_PIC_CM_KRIS
 Lyra             ow=-                                  front=-                          back=-
 Will             ow=OBJ_EVENT_GFX_CM_WILL              front=TRAINER_PIC_WILL           back=-
 Karen            ow=OBJ_EVENT_GFX_CM_KAREN             front=TRAINER_PIC_KAREN          back=-
@@ -57,8 +57,8 @@ Wally            ow=OBJ_EVENT_GFX_CM_WALLY             front=TRAINER_PIC_WALLY  
 Maxie            ow=OBJ_EVENT_GFX_CM_MAXIE             front=TRAINER_PIC_MAGMA_LEADER_MAXIE back=-
 Archie           ow=OBJ_EVENT_GFX_CM_ARCHIE            front=TRAINER_PIC_AQUA_LEADER_ARCHIE back=-
 Drew             ow=-                                  front=-                          back=-
-Lucas            ow=OBJ_EVENT_GFX_CM_LUCAS             front=TRAINER_PIC_LUCAS          back=-
-Dawn             ow=OBJ_EVENT_GFX_CM_DAWN              front=TRAINER_PIC_DAWN           back=-
+Lucas            ow=OBJ_EVENT_GFX_CM_LUCAS             front=TRAINER_PIC_LUCAS          back=TRAINER_BACK_PIC_CM_LUCAS
+Dawn             ow=OBJ_EVENT_GFX_CM_DAWN              front=TRAINER_PIC_DAWN           back=TRAINER_BACK_PIC_CM_DAWN
 Cynthia          ow=OBJ_EVENT_GFX_CM_CYNTHIA           front=TRAINER_PIC_CYNTHIA        back=-
 Aaron            ow=OBJ_EVENT_GFX_CM_AARON             front=-                          back=-
 Bertha           ow=OBJ_EVENT_GFX_CM_BERTHA            front=TRAINER_PIC_BERTHA         back=-
@@ -72,7 +72,7 @@ Fantina          ow=OBJ_EVENT_GFX_CM_FANTINA           front=TRAINER_PIC_FANTINA
 Byron            ow=OBJ_EVENT_GFX_CM_BYRON             front=TRAINER_PIC_BYRON          back=-
 Candice          ow=OBJ_EVENT_GFX_CM_CANDICE           front=TRAINER_PIC_CANDICE        back=-
 Volkner          ow=OBJ_EVENT_GFX_CM_VOLKNER           front=TRAINER_PIC_VOLKNER        back=-
-Barry            ow=OBJ_EVENT_GFX_CM_BARRY             front=TRAINER_PIC_BARRY          back=-
+Barry            ow=OBJ_EVENT_GFX_CM_BARRY             front=TRAINER_PIC_BARRY          back=TRAINER_BACK_PIC_CM_BARRY
 Cyrus            ow=OBJ_EVENT_GFX_CM_CYRUS             front=TRAINER_PIC_CYRUS          back=-
 Mars             ow=OBJ_EVENT_GFX_CM_MARS              front=TRAINER_PIC_MARS           back=-
 Jupiter          ow=OBJ_EVENT_GFX_CM_JUPITER           front=TRAINER_PIC_JUPITER        back=-

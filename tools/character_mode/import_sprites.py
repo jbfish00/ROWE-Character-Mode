@@ -175,6 +175,16 @@ MANIFEST = [
                  None),
 ]
 
+# Battle back sprites: 64x256 donors (4 frames of 64x64, Emerald-style
+# throw animation). HnS reskins the player, so brendan=Ethan and may=Kris.
+BACK_MANIFEST = [
+    ("ETHAN", "hns",  "graphics/trainers/back_pics/brendan.png"),
+    ("KRIS",  "hns",  "graphics/trainers/back_pics/may.png"),
+    ("LUCAS", "plat", "graphics/trainers/back_pics/lucas.png"),
+    ("DAWN",  "plat", "graphics/trainers/back_pics/dawn.png"),
+    ("BARRY", "plat", "graphics/trainers/back_pics/barry.png"),
+]
+
 # frame width per character (pixels); default 16. Platinum sheets are 32.
 FRAME_W = {n: 32 for n in ("LUCAS","DAWN","BARRY","CYNTHIA","ROARK","GARDENIA",
     "MAYLENE","CRASHER_WAKE","FANTINA","BYRON","CANDICE","VOLKNER","AARON",
@@ -483,8 +493,19 @@ def main():
             assert fp.size == (64, 64), stem
             fp.save(os.path.join(fp_dir, s + ".png"))
 
+    # --- battle back sprites (64x256, 4 frames)
+    bp_dir = os.path.join(TARGET, "graphics/trainers/back_pics")
+    for name, root, rel in BACK_MANIFEST:
+        src = os.path.join({"hns": DONOR_HNS, "plat": DONOR_PT}[root], rel)
+        img = normalize_indexed(Image.open(src))
+        assert img.size == (64, 256), (rel, img.size)
+        s = snake(name)
+        img.save(os.path.join(bp_dir, s + "_back_pic.png"))
+        png_to_jasc(img, os.path.join(tp_dir, s + "_back.pal"))
+
     names = [n for n, _, _ in MANIFEST]
     front_names = [n for n, _, f in MANIFEST if f is not None]
+    back_names = [n for n, _, _ in BACK_MANIFEST]
 
     # --- constants: OBJ_EVENT_GFX ids + NUM extension
     lines = ["#define OBJ_EVENT_GFX_CM_%s%s(OBJ_EVENT_GFX_POKEMON_904 + %d)"
@@ -625,9 +646,107 @@ def main():
                           for n in front_names),
                   r"^};", before=True)
 
+    # --- TRAINER_BACK_PIC ids (sequential after the last stock id)
+    trainers_h = read(os.path.join(TARGET, "include/constants/trainers.h"))
+    stock = [int(m) for m in re.findall(r"#define TRAINER_BACK_PIC_(?!CM_)\w+\s+(\d+)", trainers_h)]
+    maxback = max(stock)
+    lines = ["#define TRAINER_BACK_PIC_CM_%s%s%d" % (n, " " * max(1, 17 - len(n)), maxback + 1 + i)
+             for i, n in enumerate(back_names)]
+    replace_block(os.path.join(TARGET, "include/constants/trainers.h"), "back-ids",
+                  "\n".join(lines), r"^#define TRAINER_BACK_PIC_HILBERT.*$", before=False)
+
+    # --- back pic INCBINs
+    block = "".join(
+        'const u8 gTrainerBackPic_Cm%s[] = INCBIN_U8("graphics/trainers/back_pics/%s_back_pic.4bpp");\n'
+        'const u16 gTrainerBackPicPalette_Cm%s[] = INCBIN_U16("graphics/trainers/palettes/%s_back.gbapal");\n'
+        % (camel(n), snake(n), camel(n), snake(n)) for n in back_names)
+    replace_block(os.path.join(TARGET, "src/data/graphics/trainers.h"),
+                  "back-incbins", block, r"\Z", before=True)
+
+    # --- externs (graphics.h for data.c; data.h for pokemon.c)
+    externs = "".join(
+        "extern const u8 gTrainerBackPic_Cm%s[];\n"
+        "extern const u16 gTrainerBackPicPalette_Cm%s[];\n"
+        % (camel(n), camel(n)) for n in back_names)
+    path = os.path.join(TARGET, "include/graphics.h")
+    text = read(path)
+    start, end = MS.format(tag="back-externs"), ME.format(tag="back-externs")
+    text = re.sub(re.escape(start) + r".*?" + re.escape(end) + r"\n?", "", text, flags=re.S)
+    pos = text.rfind("#endif")
+    text = text[:pos] + "%s\n%s%s\n" % (start, externs, end) + text[pos:]
+    write(path, text)
+    replace_block(os.path.join(TARGET, "include/data.h"), "back-frame-externs",
+                  "".join("extern const struct SpriteFrameImage gTrainerBackPicTable_Cm%s[];\n"
+                          % camel(n) for n in back_names),
+                  r"^extern const struct SpriteFrameImage gTrainerBackPicTable_Hilbert\[\];.*$",
+                  before=False)
+
+    # --- back_pic_tables.h: coords, palettes, sheets (three separate arrays;
+    # insert right after each array's HILBERT line, like the front tables)
+    path = os.path.join(TARGET, "src/data/trainer_graphics/back_pic_tables.h")
+    text = read(path)
+    for tag, anchor, block in (
+        ("back-coords", "[TRAINER_BACK_PIC_HILBERT]",
+         "".join("    [TRAINER_BACK_PIC_CM_%s] = {.size = 8, .y_offset = 4},\n" % n
+                 for n in back_names)),
+        ("back-pals", "TRAINER_BACK_PAL(HILBERT,",
+         "".join("    TRAINER_BACK_PAL(CM_%s, gTrainerBackPicPalette_Cm%s),\n"
+                 % (n, camel(n)) for n in back_names)),
+        ("back-sheets", "gTrainerBackPic_Hilbert,",
+         "".join("    (const u32 *)gTrainerBackPic_Cm%s, 0x2000, TRAINER_BACK_PIC_CM_%s,\n"
+                 % (camel(n), n) for n in back_names)),
+    ):
+        start, end = MS.format(tag=tag), ME.format(tag=tag)
+        text = re.sub(re.escape(start) + r".*?" + re.escape(end) + r"\n?", "", text, flags=re.S)
+        line_end = text.index("\n", text.index(anchor)) + 1
+        text = text[:line_end] + "%s\n%s%s\n" % (start, block, end) + text[line_end:]
+    write(path, text)
+
+    # --- back_pic_anims.h: anim ptr arrays + dispatch table entries
+    replace_block(os.path.join(TARGET, "src/data/trainer_graphics/back_pic_anims.h"),
+                  "back-anims",
+                  "".join("static const union AnimCmd *const sBackAnims_Cm%s[] =\n{\n"
+                          "    sAnim_GeneralFrame3,\n    gAnimCmd_May_Steven_1,\n};\n"
+                          % camel(n) for n in back_names),
+                  r"^const union AnimCmd \*const \*const gTrainerBackAnimsPtrTable",
+                  before=True)
+    replace_block(os.path.join(TARGET, "src/data/trainer_graphics/back_pic_anims.h"),
+                  "back-anim-ptrs",
+                  "".join("    [TRAINER_BACK_PIC_CM_%s] = sBackAnims_Cm%s,\n"
+                          % (n, camel(n)) for n in back_names),
+                  r"^\};", before=True)
+
+    # --- data.c: SpriteFrameImage tables (4 frames of 0x800)
+    replace_block(os.path.join(TARGET, "src/data.c"), "back-frameimgs",
+                  "".join("const struct SpriteFrameImage gTrainerBackPicTable_Cm%s[] =\n{\n"
+                          "    gTrainerBackPic_Cm%s, 0x0800,\n"
+                          "    gTrainerBackPic_Cm%s + 0x0800, 0x0800,\n"
+                          "    gTrainerBackPic_Cm%s + 0x1000, 0x0800,\n"
+                          "    gTrainerBackPic_Cm%s + 0x1800, 0x0800,\n};\n"
+                          % ((camel(n),) * 5) for n in back_names),
+                  r"^static const union AnimCmd sAnim_GeneralFrame0", before=True)
+
+    # --- pokemon.c: sprite template per back pic id (table is indexed by id,
+    # so entries must land inside gSpriteTemplateTable_TrainerBackSprites)
+    path = os.path.join(TARGET, "src/pokemon.c")
+    text = read(path)
+    start, end = MS.format(tag="back-templates"), ME.format(tag="back-templates")
+    text = re.sub(re.escape(start) + r".*?" + re.escape(end) + r"\n?", "", text, flags=re.S)
+    m = re.search(r"gSpriteTemplateTable_TrainerBackSprites\[\]\s*=\s*\{", text)
+    close = text.index("\n};", m.end())
+    block = "".join("    {\n        .tileTag = 0xFFFF,\n        .paletteTag = 0,\n"
+                    "        .oam = &gOamData_831ACB0,\n        .anims = NULL,\n"
+                    "        .images = gTrainerBackPicTable_Cm%s,\n"
+                    "        .affineAnims = gUnknown_082FF618,\n"
+                    "        .callback = sub_8039BB4,\n    },\n" % camel(n)
+                    for n in back_names)
+    wrapped = "%s\n%s%s\n" % (start, block, end)
+    write(path, text[:close + 1] + wrapped + text[close + 1:])
+
     with open(os.path.join(HERE, "imported_ow.txt"), "w") as f:
         f.write("\n".join("OBJ_EVENT_GFX_CM_" + n for n in names) + "\n")
-    print("imported %d characters' sprites; now run emit_characters.py and make" % len(names))
+    print("imported %d characters' sprites (%d back pics); now run emit_characters.py and make"
+          % (len(names), len(back_names)))
 
 
 if __name__ == "__main__":

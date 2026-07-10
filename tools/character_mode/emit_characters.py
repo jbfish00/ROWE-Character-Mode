@@ -41,6 +41,8 @@ WO_CHIEN CHIEN_PAO TING_LU CHI_YU KORAIDON MIRAIDON OKIDOGI MUNKIDORI FEZANDIPIT
 ASSET_OVERRIDES = {
     "Tate": {"front": "TRAINER_PIC_LEADER_TATE_AND_LIZA"},
     "Liza": {"front": "TRAINER_PIC_LEADER_TATE_AND_LIZA"},
+    # Gary is Blue (user: "Gary and Blue can be the same sprites exactly")
+    "Gary": {"ow": "OBJ_EVENT_GFX_CM_BLUE", "front": "TRAINER_PIC_BLUE"},
 }
 
 
@@ -72,6 +74,8 @@ def const_candidates(disp, prefix):
                 prefix + "MAGMA_LEADER_" + key,
                 prefix + "AQUA_LEADER_" + key,
                 prefix + "RS_" + key]
+    if prefix == "TRAINER_BACK_PIC_":
+        return [prefix + "CM_" + key, prefix + key]
     return [prefix + key]
 
 
