@@ -539,7 +539,26 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_CM_SABRINA           0x118A
 #define OBJ_EVENT_PAL_CM_BLAINE            0x118B
 #define OBJ_EVENT_PAL_CM_GIOVANNI          0x118C
+#define OBJ_EVENT_PAL_CM_STEVEN            0x118D
+#define OBJ_EVENT_PAL_CM_WALLACE           0x118E
+#define OBJ_EVENT_PAL_CM_WALLY             0x118F
+#define OBJ_EVENT_PAL_CM_ROXANNE           0x1190
+#define OBJ_EVENT_PAL_CM_BRAWLY            0x1191
+#define OBJ_EVENT_PAL_CM_WATTSON           0x1192
+#define OBJ_EVENT_PAL_CM_FLANNERY          0x1193
+#define OBJ_EVENT_PAL_CM_NORMAN            0x1194
+#define OBJ_EVENT_PAL_CM_WINONA            0x1195
+#define OBJ_EVENT_PAL_CM_TATE              0x1196
+#define OBJ_EVENT_PAL_CM_LIZA              0x1197
+#define OBJ_EVENT_PAL_CM_JUAN              0x1198
+#define OBJ_EVENT_PAL_CM_SIDNEY            0x1199
+#define OBJ_EVENT_PAL_CM_PHOEBE            0x119A
+#define OBJ_EVENT_PAL_CM_GLACIA            0x119B
+#define OBJ_EVENT_PAL_CM_DRAKE             0x119C
+#define OBJ_EVENT_PAL_CM_MAXIE             0x119D
+#define OBJ_EVENT_PAL_CM_ARCHIE            0x119E
 // CHARMODE-SPRITES-END pal-tags
+
 
 
 
@@ -1471,6 +1490,24 @@ const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_CmSabrina, OBJ_EVENT_PAL_CM_SABRINA},
     {gObjectEventPalette_CmBlaine, OBJ_EVENT_PAL_CM_BLAINE},
     {gObjectEventPalette_CmGiovanni, OBJ_EVENT_PAL_CM_GIOVANNI},
+    {gObjectEventPalette_CmSteven, OBJ_EVENT_PAL_CM_STEVEN},
+    {gObjectEventPalette_CmWallace, OBJ_EVENT_PAL_CM_WALLACE},
+    {gObjectEventPalette_CmWally, OBJ_EVENT_PAL_CM_WALLY},
+    {gObjectEventPalette_CmRoxanne, OBJ_EVENT_PAL_CM_ROXANNE},
+    {gObjectEventPalette_CmBrawly, OBJ_EVENT_PAL_CM_BRAWLY},
+    {gObjectEventPalette_CmWattson, OBJ_EVENT_PAL_CM_WATTSON},
+    {gObjectEventPalette_CmFlannery, OBJ_EVENT_PAL_CM_FLANNERY},
+    {gObjectEventPalette_CmNorman, OBJ_EVENT_PAL_CM_NORMAN},
+    {gObjectEventPalette_CmWinona, OBJ_EVENT_PAL_CM_WINONA},
+    {gObjectEventPalette_CmTate, OBJ_EVENT_PAL_CM_TATE},
+    {gObjectEventPalette_CmLiza, OBJ_EVENT_PAL_CM_LIZA},
+    {gObjectEventPalette_CmJuan, OBJ_EVENT_PAL_CM_JUAN},
+    {gObjectEventPalette_CmSidney, OBJ_EVENT_PAL_CM_SIDNEY},
+    {gObjectEventPalette_CmPhoebe, OBJ_EVENT_PAL_CM_PHOEBE},
+    {gObjectEventPalette_CmGlacia, OBJ_EVENT_PAL_CM_GLACIA},
+    {gObjectEventPalette_CmDrake, OBJ_EVENT_PAL_CM_DRAKE},
+    {gObjectEventPalette_CmMaxie, OBJ_EVENT_PAL_CM_MAXIE},
+    {gObjectEventPalette_CmArchie, OBJ_EVENT_PAL_CM_ARCHIE},
 // CHARMODE-SPRITES-END pal-entries
 	{gObjectEventPalette_Steven,  	     OBJ_EVENT_PAL_STEVEN},				//Champion
 	{gObjectEventPalette_Wally,  	     OBJ_EVENT_PAL_WALLY},				//Champion

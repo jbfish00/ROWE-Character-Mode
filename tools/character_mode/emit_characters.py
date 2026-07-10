@@ -62,8 +62,8 @@ def const_candidates(disp, prefix):
         base = base[:-len(" (anime)")]
     key = re.sub(r"[^A-Za-z0-9]+", "_", base).strip("_").upper()
     if prefix == "OBJ_EVENT_GFX_":
-        # player-grade sheet (_NORMAL) beats plain NPC sprite
-        return [prefix + key + "_NORMAL", prefix + key]
+        # imported player-safe sheet (CM_) or player-grade costume (_NORMAL)
+        return [prefix + "CM_" + key, prefix + key + "_NORMAL", prefix + key]
     if prefix == "TRAINER_PIC_":
         return [prefix + key,
                 prefix + "LEADER_" + key,
