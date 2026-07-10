@@ -79,6 +79,15 @@ def main():
     with open(os.path.join(HERE, "rosters_mapped.json")) as f:
         mapped = json.load(f)
 
+    # Only overworld sprites built by import_sprites.py are safe to use as the
+    # player avatar (they carry the full 24-entry player animation table).
+    # Assigning ROWE's native NPC gfx ids (Steven, gym leaders, ...) as the
+    # player OW sprite crashes on run - so restrict owGfxId to the imported set.
+    imported_ow = set()
+    imp_path = os.path.join(HERE, "imported_ow.txt")
+    if os.path.isfile(imp_path):
+        imported_ow = set(read(imp_path).split())
+
     obj_gfx = set(re.findall(r"#define (OBJ_EVENT_GFX_\w+)",
                              read(os.path.join(TARGET, "include/constants/event_objects.h"))))
     trainer_consts = read(os.path.join(TARGET, "include/constants/trainers.h"))
@@ -110,8 +119,12 @@ def main():
 
         ow = ov.get("ow")
         if ow is None:
+            # Safe player OW sprites: our imports, or ROWE's own player-costume
+            # sprites (the *_NORMAL ids: Red/Leaf/Brendan/May/Hilbert). Plain
+            # NPC ids (Steven, gym leaders) use a short anim table and crash.
             ow = next((c for c in const_candidates(disp, "OBJ_EVENT_GFX_")
-                       if c in obj_gfx), None)
+                       if c in obj_gfx
+                       and (c in imported_ow or c.endswith("_NORMAL"))), None)
         front = ov.get("front")
         if front is None:
             front = next((c for c in const_candidates(disp, "TRAINER_PIC_")

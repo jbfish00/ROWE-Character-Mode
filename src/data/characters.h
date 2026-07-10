@@ -5488,7 +5488,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Steven,
         .roster = sRoster_Steven,
-        .owGfxId = OBJ_EVENT_GFX_STEVEN,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_STEVEN,
         .backPic = TRAINER_BACK_PIC_STEVEN,
         .generation = 3,
@@ -5498,7 +5498,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Wallace,
         .roster = sRoster_Wallace,
-        .owGfxId = OBJ_EVENT_GFX_WALLACE,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_CHAMPION_WALLACE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 3,
@@ -5508,7 +5508,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Sidney,
         .roster = sRoster_Sidney,
-        .owGfxId = OBJ_EVENT_GFX_SIDNEY,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_ELITE_FOUR_SIDNEY,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 3,
@@ -5518,7 +5518,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Phoebe,
         .roster = sRoster_Phoebe,
-        .owGfxId = OBJ_EVENT_GFX_PHOEBE,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_ELITE_FOUR_PHOEBE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 3,
@@ -5528,7 +5528,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Glacia,
         .roster = sRoster_Glacia,
-        .owGfxId = OBJ_EVENT_GFX_GLACIA,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_ELITE_FOUR_GLACIA,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 3,
@@ -5538,7 +5538,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Drake,
         .roster = sRoster_Drake,
-        .owGfxId = OBJ_EVENT_GFX_DRAKE,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_ELITE_FOUR_DRAKE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 3,
@@ -5548,7 +5548,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Roxanne,
         .roster = sRoster_Roxanne,
-        .owGfxId = OBJ_EVENT_GFX_ROXANNE,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_LEADER_ROXANNE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 3,
@@ -5558,7 +5558,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Brawly,
         .roster = sRoster_Brawly,
-        .owGfxId = OBJ_EVENT_GFX_BRAWLY,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_LEADER_BRAWLY,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 3,
@@ -5568,7 +5568,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Wattson,
         .roster = sRoster_Wattson,
-        .owGfxId = OBJ_EVENT_GFX_WATTSON,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_LEADER_WATTSON,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 3,
@@ -5578,7 +5578,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Flannery,
         .roster = sRoster_Flannery,
-        .owGfxId = OBJ_EVENT_GFX_FLANNERY,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_LEADER_FLANNERY,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 3,
@@ -5588,7 +5588,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Norman,
         .roster = sRoster_Norman,
-        .owGfxId = OBJ_EVENT_GFX_NORMAN,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_LEADER_NORMAN,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 3,
@@ -5598,7 +5598,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Winona,
         .roster = sRoster_Winona,
-        .owGfxId = OBJ_EVENT_GFX_WINONA,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_LEADER_WINONA,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 3,
@@ -5608,7 +5608,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Tate,
         .roster = sRoster_Tate,
-        .owGfxId = OBJ_EVENT_GFX_TATE,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 3,
@@ -5618,7 +5618,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Liza,
         .roster = sRoster_Liza,
-        .owGfxId = OBJ_EVENT_GFX_LIZA,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_LEADER_TATE_AND_LIZA,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 3,
@@ -5628,7 +5628,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Juan,
         .roster = sRoster_Juan,
-        .owGfxId = OBJ_EVENT_GFX_JUAN,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_LEADER_JUAN,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 3,
@@ -5638,7 +5638,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Wally,
         .roster = sRoster_Wally,
-        .owGfxId = OBJ_EVENT_GFX_WALLY,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_WALLY,
         .backPic = TRAINER_BACK_PIC_WALLY,
         .generation = 3,
@@ -5648,7 +5648,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Maxie,
         .roster = sRoster_Maxie,
-        .owGfxId = OBJ_EVENT_GFX_MAXIE,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_MAGMA_LEADER_MAXIE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 3,
@@ -5658,7 +5658,7 @@ const struct CharacterInfo gCharacters[] =
     {
         .name = sName_Archie,
         .roster = sRoster_Archie,
-        .owGfxId = OBJ_EVENT_GFX_ARCHIE,
+        .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = TRAINER_PIC_AQUA_LEADER_ARCHIE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 3,

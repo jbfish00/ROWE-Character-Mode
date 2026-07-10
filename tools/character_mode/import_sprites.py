@@ -89,6 +89,24 @@ def png_to_jasc(img, path):
     write(path, "\r\n".join(lines) + "\r\n")
 
 
+# The player avatar drives the full BrendanMayNormal (24-entry) animation
+# table, whose walk/run anims reference frames 0-17. ROWE's auto-run in
+# particular seeks the Run anims (frames 9-17); an NPC-style sprite that
+# only supplies 9 frames indexes past its pic table and crashes. So build
+# an 18-frame pic table where every walk/run frame maps back to one of the
+# three facing frames (S=0, N=1, side=2) - the character glides, but never
+# reads out of bounds. This mirrors ROWE's own Hilbert player costume.
+NUM_PLAYER_FRAMES = 18
+_S, _N, _E = 0, 1, 2  # source facing frames
+PLAYER_FRAME_MAP = [
+    _S, _N, _E,          # 0-2  face south/north/side
+    _S, _S, _N, _N, _E, _E,   # 3-8  walk step frames
+    _S, _N, _E,          # 9-11 run base
+    _S, _S, _N, _N, _E, _E,   # 12-17 run step frames
+]
+assert len(PLAYER_FRAME_MAP) == NUM_PLAYER_FRAMES
+
+
 def build_ow_sheet(src_png, dst_png):
     img = Image.open(src_png)
     assert img.mode == "P", src_png
@@ -96,16 +114,14 @@ def build_ow_sheet(src_png, dst_png):
     assert fh == 32, (src_png, img.size)
     n = img.width // fw
     frames = [img.crop((i*fw, 0, (i+1)*fw, fh)) for i in range(n)]
-    if n >= 9:
-        order = list(range(9))
-    elif n == 3:
-        order = [0, 1, 2, 0, 0, 1, 1, 2, 2]  # S,N,E + gliding walk frames
+    if n >= 3:
+        src = [0, 1, 2]  # first three frames are the facings
     else:
         raise SystemExit("unexpected frame count %d in %s" % (n, src_png))
-    sheet = Image.new("P", (fw, fh*9))
+    sheet = Image.new("P", (fw, fh*NUM_PLAYER_FRAMES))
     sheet.putpalette(img.getpalette())
-    for i, f in enumerate(order):
-        sheet.paste(frames[f], (0, i*fh))
+    for i, m in enumerate(PLAYER_FRAME_MAP):
+        sheet.paste(frames[src[m]], (0, i*fh))
     if "transparency" in img.info:
         sheet.save(dst_png, transparency=img.info["transparency"])
     else:
@@ -156,7 +172,7 @@ def main():
     block = "".join(
         "static const struct SpriteFrameImage gObjectEventPicTable_Cm%s[] = {\n%s};\n"
         % (camel(n), "".join("    overworld_frame(gObjectEventPic_Cm%s, 2, 4, %d),\n"
-                             % (camel(n), i) for i in range(9)))
+                             % (camel(n), i) for i in range(NUM_PLAYER_FRAMES)))
         for n in names)
     replace_block(os.path.join(TARGET, "src/data/object_events/object_event_pic_tables.h"),
                   "ow-pics", block, r"\Z", before=True)
@@ -166,17 +182,27 @@ def main():
         "const struct ObjectEventGraphicsInfo gObjectEventGraphicsInfo_Cm%s = "
         "{0xFFFF, OBJ_EVENT_PAL_CM_%s, OBJ_EVENT_PAL_TAG_NONE, 256, 16, 32, 5, "
         "SHADOW_SIZE_M, FALSE, FALSE, TRACKS_FOOT, &gObjectEventBaseOam_16x32, "
-        "gObjectEventSpriteOamTables_16x32, gObjectEventImageAnimTable_Standard, "
+        "gObjectEventSpriteOamTables_16x32, gObjectEventImageAnimTable_BrendanMayNormal, "
         "gObjectEventPicTable_Cm%s, gDummySpriteAffineAnimTable};\n"
         % (camel(n), n, camel(n)) for n in names)
     replace_block(os.path.join(TARGET, "src/data/object_events/object_event_graphics_info.h"),
                   "ow-info", block, r"\Z", before=True)
 
-    # --- pointers
+    # --- pointers (must land inside gObjectEventGraphicsInfoPointers, NOT the
+    # gMauvilleOldManGraphicsInfoPointers array that follows it - a bare `^};`
+    # anchor picks the file's last brace and silently drops the entries, so the
+    # lookup returns NULL and the player avatar crashes).
     block = "".join("    [OBJ_EVENT_GFX_%s] = &gObjectEventGraphicsInfo_Cm%s,\n"
                     % (n, camel(n)) for n in names)
     path = os.path.join(TARGET, "src/data/object_events/object_event_graphics_info_pointers.h")
-    replace_block(path, "ow-ptrs", block, r"^};", before=True)
+    text = read(path)
+    text = re.sub(re.escape(MS.format(tag="ow-ptrs")) + r".*?"
+                  + re.escape(ME.format(tag="ow-ptrs")) + r"\n?", "", text, flags=re.S)
+    m = re.search(r"gObjectEventGraphicsInfoPointers\[[^\]]*\]\s*=\s*\{", text)
+    close = text.index("\n};", m.end())
+    wrapped = "%s\n%s\n%s\n" % (MS.format(tag="ow-ptrs"), block.rstrip("\n"),
+                               ME.format(tag="ow-ptrs"))
+    write(path, text[:close + 1] + wrapped + text[close + 1:])
 
     # --- palette tags + registration
     tag_defs = "".join("#define OBJ_EVENT_PAL_CM_%s%s0x%04X\n"
@@ -256,6 +282,8 @@ def main():
                           for n in names),
                   r"^};", before=True)
 
+    with open(os.path.join(HERE, "imported_ow.txt"), "w") as f:
+        f.write("\n".join("OBJ_EVENT_GFX_" + n for n in names) + "\n")
     print("imported %d characters' sprites; now run emit_characters.py and make" % len(names))
 
 
