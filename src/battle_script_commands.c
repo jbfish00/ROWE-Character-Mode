@@ -1654,7 +1654,7 @@ static void Cmd_attackcanceler(void)
     }
 
     if (gProtectStructs[gBattlerTarget].bounceMove
-        && gBattleMoves[gCurrentMove].flags & FLAG_MAGICCOAT_AFFECTED
+        && GetBattlerMoveFlags(gBattlerAttacker, gCurrentMove) & FLAG_MAGICCOAT_AFFECTED
         && !gProtectStructs[gBattlerAttacker].usesBouncedMove)
     {
         PressurePPLose(gBattlerAttacker, gBattlerTarget, MOVE_MAGIC_COAT);
@@ -1666,7 +1666,7 @@ static void Cmd_attackcanceler(void)
         return;
     }
     else if (GetBattlerAbility(gBattlerTarget) == ABILITY_MAGIC_BOUNCE
-             && gBattleMoves[gCurrentMove].flags & FLAG_MAGICCOAT_AFFECTED
+             && GetBattlerMoveFlags(gBattlerAttacker, gCurrentMove) & FLAG_MAGICCOAT_AFFECTED
              && !gProtectStructs[gBattlerAttacker].usesBouncedMove)
     {
         RecordAbilityBattle(gBattlerTarget, ABILITY_MAGIC_BOUNCE);
@@ -1679,7 +1679,7 @@ static void Cmd_attackcanceler(void)
 
     for (i = 0; i < gBattlersCount; i++)
     {
-        if ((gProtectStructs[gBattlerByTurnOrder[i]].stealMove) && gBattleMoves[gCurrentMove].flags & FLAG_SNATCH_AFFECTED)
+        if ((gProtectStructs[gBattlerByTurnOrder[i]].stealMove) && GetBattlerMoveFlags(gBattlerAttacker, gCurrentMove) & FLAG_SNATCH_AFFECTED)
         {
             PressurePPLose(gBattlerAttacker, gBattlerByTurnOrder[i], MOVE_SNATCH);
             gProtectStructs[gBattlerByTurnOrder[i]].stealMove = 0;
@@ -2059,7 +2059,7 @@ s32 CalcCritChanceStage(u8 battlerAtk, u8 battlerDef, u32 move, bool32 recordAbi
         u32 holdEffectAtk = GetBattlerHoldEffect(battlerAtk, TRUE);
 
         critChance  = 2 * ((gBattleMons[gBattlerAttacker].status2 & STATUS2_FOCUS_ENERGY) != 0)
-                    + ((gBattleMoves[gCurrentMove].flags & FLAG_HIGH_CRIT) != 0)
+                    + ((GetBattlerMoveFlags(gBattlerAttacker, gCurrentMove) & FLAG_HIGH_CRIT) != 0)
                     + (holdEffectAtk == HOLD_EFFECT_SCOPE_LENS)
                     + 2 * (holdEffectAtk == HOLD_EFFECT_LUCKY_PUNCH && gBattleMons[gBattlerAttacker].species == SPECIES_CHANSEY)
                     + 2 * (holdEffectAtk == HOLD_EFFECT_STICK && gBattleMons[gBattlerAttacker].species == SPECIES_FARFETCHD)
@@ -2785,7 +2785,7 @@ void SetMoveEffect(bool32 primary, u32 certain)
         INCREMENT_RESET_RETURN
 
     if (GetBattlerAbility(gBattlerAttacker) == ABILITY_SHEER_FORCE
-        && gBattleMoves[gCurrentMove].flags & FLAG_SHEER_FORCE_BOOST
+        && GetBattlerMoveFlags(gBattlerAttacker, gCurrentMove) & FLAG_SHEER_FORCE_BOOST
         && affectsUser != MOVE_EFFECT_AFFECTS_USER)
         INCREMENT_RESET_RETURN
 
@@ -5147,7 +5147,7 @@ static void Cmd_moveend(void)
         switch (gBattleScripting.moveendState)
         {
         case MOVEEND_PROTECT_LIKE_EFFECT:
-            if (gBattleMoves[gCurrentMove].flags & FLAG_MAKES_CONTACT)
+            if (GetBattlerMoveFlags(gBattlerAttacker, gCurrentMove) & FLAG_MAKES_CONTACT)
             {
                 if (gProtectStructs[gBattlerTarget].spikyShielded && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD)
                 {
@@ -5458,7 +5458,7 @@ static void Cmd_moveend(void)
                     gBattleScripting.moveendState = 0;
                     MoveValuesCleanUp();
                     gBattleScripting.moveEffect = gBattleScripting.savedMoveEffect;
-                    BattleScriptPush(gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect]);
+                    BattleScriptPush(gBattleScriptsForMoveEffects[GetBattlerMoveEffect(gBattlerAttacker, gCurrentMove)]);
                     gBattlescriptCurrInstr = BattleScript_FlushMessageBox;
                     return;
                 }
@@ -5474,7 +5474,7 @@ static void Cmd_moveend(void)
         case MOVEEND_LIFE_ORB:
             if (GetBattlerHoldEffect(gBattlerAttacker, TRUE) == HOLD_EFFECT_LIFE_ORB
                 && IsBattlerAlive(gBattlerAttacker)
-                && !(GetBattlerAbility(gBattlerAttacker) == ABILITY_SHEER_FORCE && gBattleMoves[gCurrentMove].flags & FLAG_SHEER_FORCE_BOOST)
+                && !(GetBattlerAbility(gBattlerAttacker) == ABILITY_SHEER_FORCE && GetBattlerMoveFlags(gBattlerAttacker, gCurrentMove) & FLAG_SHEER_FORCE_BOOST)
                 && GetBattlerAbility(gBattlerAttacker) != ABILITY_MAGIC_GUARD
                 && gSpecialStatuses[gBattlerAttacker].damagedMons)
             {
@@ -5489,7 +5489,7 @@ static void Cmd_moveend(void)
             gBattleScripting.moveendState++;
             break;
         case MOVEEND_DANCER: // Special case because it's so annoying
-            if (gBattleMoves[gCurrentMove].flags & FLAG_DANCE)
+            if (GetBattlerMoveFlags(gBattlerAttacker, gCurrentMove) & FLAG_DANCE)
             {
                 u8 battler, nextDancer = 0;
 
@@ -6894,7 +6894,7 @@ static void Cmd_jumptocalledmove(void)
     else
         gChosenMove = gCurrentMove = gCalledMove;
 
-    gBattlescriptCurrInstr = gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect];
+    gBattlescriptCurrInstr = gBattleScriptsForMoveEffects[GetBattlerMoveEffect(gBattlerAttacker, gCurrentMove)];
 }
 
 static void Cmd_statusanimation(void)
@@ -8272,7 +8272,7 @@ static void Cmd_various(void)
         }
         else
         {
-            if (GetBattlerAbility(gBattlerAttacker) == ABILITY_MEGA_LAUNCHER && gBattleMoves[gCurrentMove].flags & FLAG_MEGA_LAUNCHER_BOOST)
+            if (GetBattlerAbility(gBattlerAttacker) == ABILITY_MEGA_LAUNCHER && GetBattlerMoveFlags(gBattlerAttacker, gCurrentMove) & FLAG_MEGA_LAUNCHER_BOOST)
                 gBattleMoveDamage = -(gBattleMons[gActiveBattler].maxHP * 75 / 100);
             else
                 gBattleMoveDamage = -(gBattleMons[gActiveBattler].maxHP / 2);
@@ -9215,7 +9215,7 @@ static void Cmd_trymirrormove(void)
         gHitMarker &= ~(HITMARKER_ATTACKSTRING_PRINTED);
         gCurrentMove = move;
         gBattlerTarget = GetMoveTarget(gCurrentMove, 0);
-        gBattlescriptCurrInstr = gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect];
+        gBattlescriptCurrInstr = gBattleScriptsForMoveEffects[GetBattlerMoveEffect(gBattlerAttacker, gCurrentMove)];
     }
     else if (validMovesCount)
     {
@@ -9223,7 +9223,7 @@ static void Cmd_trymirrormove(void)
         i = Random() % validMovesCount;
         gCurrentMove = movesArray[i];
         gBattlerTarget = GetMoveTarget(gCurrentMove, 0);
-        gBattlescriptCurrInstr = gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect];
+        gBattlescriptCurrInstr = gBattleScriptsForMoveEffects[GetBattlerMoveEffect(gBattlerAttacker, gCurrentMove)];
     }
     else
     {
@@ -9855,6 +9855,28 @@ static void Cmd_setmultihitcounter(void)
 				gMultiHitCounter = 5;
 		break;
 	}
+
+    // 2.X signature multi-hit mods (table-driven, unlike the switch above)
+    {
+        u16 speciesId = GetFormSpeciesId(gBattleMons[gBattlerAttacker].species,
+                                         gBattleMons[gBattlerAttacker].formId);
+        u32 hits;
+
+        if (GetSignatureMod(speciesId, gCurrentMove, SIGNATURE_MOD_MULTI_HIT_ALWAYS,
+                            &hits, NULL, NULL))
+        {
+            gMultiHitCounter = hits;
+        }
+        else
+        {
+            if (GetSignatureMod(speciesId, gCurrentMove, SIGNATURE_MOD_MULTI_HIT_MIN_TIMES,
+                                &hits, NULL, NULL) && gMultiHitCounter < hits)
+                gMultiHitCounter = hits;
+            if (GetSignatureMod(speciesId, gCurrentMove, SIGNATURE_MOD_MULTI_HIT_MAX_TIMES,
+                                &hits, NULL, NULL) && gMultiHitCounter > hits)
+                gMultiHitCounter = hits;
+        }
+    }
 
     gBattlescriptCurrInstr += 2;
 }
@@ -10538,7 +10560,7 @@ static void Cmd_metronome(void)
         if (!(sForbiddenMoves[gCurrentMove] & FORBIDDEN_METRONOME))
         {
             gHitMarker &= ~(HITMARKER_ATTACKSTRING_PRINTED);
-            gBattlescriptCurrInstr = gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect];
+            gBattlescriptCurrInstr = gBattleScriptsForMoveEffects[GetBattlerMoveEffect(gBattlerAttacker, gCurrentMove)];
             gBattlerTarget = GetMoveTarget(gCurrentMove, 0);
             return;
         }
@@ -11736,7 +11758,7 @@ static void Cmd_callterrainattack(void) // nature power
     gHitMarker &= ~(HITMARKER_ATTACKSTRING_PRINTED);
     gCurrentMove = sNaturePowerMoves[gBattleTerrain];
     gBattlerTarget = GetMoveTarget(gCurrentMove, 0);
-    BattleScriptPush(gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect]);
+    BattleScriptPush(gBattleScriptsForMoveEffects[GetBattlerMoveEffect(gBattlerAttacker, gCurrentMove)]);
     gBattlescriptCurrInstr++;
 }
 

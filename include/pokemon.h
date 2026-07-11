@@ -336,6 +336,17 @@ enum{
     SIGNATURE_MOD_DEFENSE_STAT,        //Changes the stat used for defense, includes non-defensive stats
     SIGNATURE_MOD_PENETRATING,         //Ignores the target defense stat changes if they are above the normal ones
     SIGNATURE_MOD_CRITICAL,            //Makes the move have high critical if you add a var of 0 and always critical if you add a var of 1 //Not Done Yet
+    // 2.X mods (ported from RoweRepo's signature list)
+    SIGNATURE_MOD_EFFECT_CHANGE,       //Changes the move's EFFECT_* (battle script)
+    SIGNATURE_MOD_CHANGE_TARGET,       //Changes the move's target
+    SIGNATURE_MOD_NEUTRAL_AGAINST_TYPE,//Makes the move neutral against a type it would resist
+    SIGNATURE_MOD_MULTI_HIT_ALWAYS,    //Move always hits var times
+    SIGNATURE_MOD_MULTI_HIT_MIN_TIMES, //Lower bound of the multi-hit roll
+    SIGNATURE_MOD_MULTI_HIT_MAX_TIMES, //Upper bound of the multi-hit roll
+    SIGNATURE_MOD_ADD_FLAG,            //Adds a move flag
+    SIGNATURE_MOD_REMOVE_FLAG,         //Removes a move flag
+    SIGNATURE_MOD_HIT_AIRBONE_TARGETS, //Hits semi-invulnerable airborne targets                //Not Done Yet
+    SIGNATURE_MOD_SPEED,               //Modifies the user's speed while using the move         //Not Done Yet
 };
 
 enum{
@@ -386,6 +397,16 @@ enum{
     SIGNATURE_SECONDARY_EFFECT_TAUNT,                       //Taunt effect to the target
     SIGNATURE_SECONDARY_EFFECT_GIVE_THIRD_TYPE,             //Gives the Pokemon a third type
     SIGNATURE_SECONDARY_EFFECT_DISABLE,                     //Disable effect to the target             //Not Done Yet
+    // 2.X secondary effects (ported from RoweRepo's signature list)
+    SIGNATURE_SECONDARY_EFFECT_DRAIN,                       //Drains a portion of the damage dealt
+    SIGNATURE_SECONDARY_EFFECT_RECKOIL,                     //Recoils the user for a portion of the damage
+    SIGNATURE_SECONDARY_EFFECT_CURE,                        //Cures the user's status
+    SIGNATURE_SECONDARY_EFFECT_HEAL_STATUS,                 //Heals the user's status                  //Not Done Yet
+    SIGNATURE_SECONDARY_EFFECT_FROSTBITE,                   //Frostbites the target                    //Not Done Yet (no frostbite status)
+    SIGNATURE_SECONDARY_EFFECT_SET_HEAL_BLOCK,              //Heal Blocks the target                   //Not Done Yet
+    SIGNATURE_SECONDARY_EFFECT_CHARGE_USER,                 //Charges the user (Charge effect)         //Not Done Yet
+    SIGNATURE_SECONDARY_EFFECT_CURSE_SELF,                  //Curses the user                          //Not Done Yet
+    SIGNATURE_SECONDARY_EFFECT_USE_NON_GHOST_CURSE,         //Uses the non-Ghost Curse effect          //Not Done Yet
 };
 
 enum{
@@ -419,32 +440,32 @@ struct SignatureMove
     const u8 description[SIGNATURE_MOVE_DESCRIPTION_TEXT_LENGTH];
     //First Effect
     u8  modification;
-    u16 variable;
+    u32 variable;
     u8  argument;
     u8  chance;
     // Second Effect
     u8  modification2;
-    u16 variable2;
+    u32 variable2;
     u8  argument2;
     u8  chance2;
     // Third Effect
     u8  modification3;
-    u16 variable3;
+    u32 variable3;
     u8  argument3;
     u8  chance3;
     // Fourth Effect
     u8  modification4;
-    u16 variable4;
+    u32 variable4;
     u8  argument4;
     u8  chance4;
     // Fifth Effect
     u8  modification5;
-    u16 variable5;
+    u32 variable5;
     u8  argument5;
     u8  chance5;
     // Sixth Effect
     u8  modification6;
-    u16 variable6;
+    u32 variable6;
     u8  argument6;
     u8  chance6;
 };

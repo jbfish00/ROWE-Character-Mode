@@ -315,7 +315,7 @@ void HandleAction_UseMove(void)
     }
     else
     {
-        gBattlescriptCurrInstr = gBattleScriptsForMoveEffects[gBattleMoves[gCurrentMove].effect];
+        gBattlescriptCurrInstr = gBattleScriptsForMoveEffects[GetBattlerMoveEffect(gBattlerAttacker, gCurrentMove)];
     }
 
     if (gBattleTypeFlags & BATTLE_TYPE_ARENA)
@@ -3250,7 +3250,7 @@ u8 AtkCanceller_UnableToUseMove(void)
             gBattleStruct->atkCancellerTracker++;
             break;
         case CANCELLER_POWDER_MOVE:
-            if (gBattleMoves[gCurrentMove].flags & FLAG_POWDER)
+            if (GetBattlerMoveFlags(gBattlerAttacker, gCurrentMove) & FLAG_POWDER)
             {
                 if ((B_POWDER_GRASS >= GEN_6 && IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_GRASS))
                     || GetBattlerAbility(gBattlerTarget) == ABILITY_OVERCOAT)
@@ -3285,7 +3285,7 @@ u8 AtkCanceller_UnableToUseMove(void)
             gBattleStruct->atkCancellerTracker++;
             break;
         case CANCELLER_THROAT_CHOP:
-            if (gDisableStructs[gBattlerAttacker].throatChopTimer && gBattleMoves[gCurrentMove].flags & FLAG_SOUND)
+            if (gDisableStructs[gBattlerAttacker].throatChopTimer && GetBattlerMoveFlags(gBattlerAttacker, gCurrentMove) & FLAG_SOUND)
             {
                 gProtectStructs[gBattlerAttacker].usedThroatChopPreventedMove = 1;
                 CancelMultiTurnMoves(gBattlerAttacker);
@@ -4813,7 +4813,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
              && gBattleStruct->hpBefore[battler] > gBattleMons[battler].maxHP / 2
              && gBattleMons[battler].hp < gBattleMons[battler].maxHP / 2
              && (gMultiHitCounter == 0 || gMultiHitCounter == 1)
-             && !(GetBattlerAbility(gBattlerAttacker) == ABILITY_SHEER_FORCE && gBattleMoves[gCurrentMove].flags & FLAG_SHEER_FORCE_BOOST)
+             && !(GetBattlerAbility(gBattlerAttacker) == ABILITY_SHEER_FORCE && GetBattlerMoveFlags(gBattlerAttacker, gCurrentMove) & FLAG_SHEER_FORCE_BOOST)
              && gBattleMons[battler].statStages[STAT_SPATK] != 12)
             {
                 SET_STATCHANGER(STAT_SPATK, 1, FALSE);
@@ -4831,7 +4831,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
              && gBattleStruct->hpBefore[battler] > gBattleMons[battler].maxHP / 2
              && gBattleMons[battler].hp < gBattleMons[battler].maxHP / 2
              && (gMultiHitCounter == 0 || gMultiHitCounter == 1)
-             && !(GetBattlerAbility(gBattlerAttacker) == ABILITY_SHEER_FORCE && gBattleMoves[gCurrentMove].flags & FLAG_SHEER_FORCE_BOOST)
+             && !(GetBattlerAbility(gBattlerAttacker) == ABILITY_SHEER_FORCE && GetBattlerMoveFlags(gBattlerAttacker, gCurrentMove) & FLAG_SHEER_FORCE_BOOST)
              && (CanBattlerSwitch(battler) || !(gBattleTypeFlags & BATTLE_TYPE_TRAINER))
              && !(gBattleTypeFlags & BATTLE_TYPE_ARENA)
              && CountUsablePartyMons(battler) > 0)
@@ -5966,6 +5966,31 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                             effect++;
                         }
                     break;
+                    case SIGNATURE_SECONDARY_EFFECT_RECKOIL:
+                        if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                        && IsBattlerAlive(gBattlerAttacker))
+                        {
+                            gBattleScripting.moveEffect = MOVE_EFFECT_RECOIL_33;
+                            gLastUsedAbility = ABILITY_SIGNATURE_MOVE;
+                            PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                            BattleScriptPushCursor();
+                            gBattlescriptCurrInstr = BattleScript_AttackerMoveSetsStatusEffect;
+                            effect++;
+                        }
+                    break;
+                    case SIGNATURE_SECONDARY_EFFECT_CURE:
+                        if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                        && IsBattlerAlive(gBattlerAttacker)
+                        && gBattleMons[gBattlerAttacker].status1 & STATUS1_ANY)
+                        {
+                            gBattleMons[gBattlerAttacker].status1 = 0;
+                            gActiveBattler = gBattlerAttacker;
+                            BtlController_EmitSetMonData(0, REQUEST_STATUS_BATTLE, 0, 4,
+                                                         &gBattleMons[gActiveBattler].status1);
+                            MarkBattlerForControllerExec(gActiveBattler);
+                            effect++;
+                        }
+                    break;
                     case SIGNATURE_SECONDARY_EFFECT_REMOVE_STAT_CHANGES:
                         if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                         && IsBattlerAlive(gBattlerTarget)
@@ -6014,7 +6039,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
         {
         case ABILITY_DANCER:
             if (IsBattlerAlive(battler)
-             && (gBattleMoves[gCurrentMove].flags & FLAG_DANCE)
+             && (GetBattlerMoveFlags(gBattlerAttacker, gCurrentMove) & FLAG_DANCE)
              && !gSpecialStatuses[battler].dancerUsedMove
              && gBattlerAttacker != battler)
             {
@@ -6266,7 +6291,7 @@ u32 GetBattlerAbility(u8 battlerId)
             || gBattleMons[gBattlerAttacker].ability == ABILITY_TERAVOLT
             || gBattleMons[gBattlerAttacker].ability == ABILITY_TURBOBLAZE)
             && !(gStatuses3[gBattlerAttacker] & STATUS3_GASTRO_ACID))
-            || gBattleMoves[gCurrentMove].flags & FLAG_TARGET_ABILITY_IGNORED)
+            || GetBattlerMoveFlags(gBattlerAttacker, gCurrentMove) & FLAG_TARGET_ABILITY_IGNORED)
             && sAbilitiesAffectedByMoldBreaker[gBattleMons[battlerId].ability]
             && gBattlerByTurnOrder[gCurrentTurnActionNumber] == gBattlerAttacker
             && gActionsByTurnOrder[gBattlerByTurnOrder[gBattlerAttacker]] == B_ACTION_USE_MOVE
@@ -7153,7 +7178,7 @@ u8 ItemBattleEffects(u8 caseID, u8 battlerId, bool8 moveTurn)
                 if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                     && TARGET_TURN_DAMAGED
                     && (Random() % 100) < atkHoldEffectParam
-                    && gBattleMoves[gCurrentMove].flags & FLAG_KINGSROCK_AFFECTED
+                    && GetBattlerMoveFlags(gBattlerAttacker, gCurrentMove) & FLAG_KINGSROCK_AFFECTED
                     && gBattleMons[gBattlerTarget].hp)
                 {
                     gBattleScripting.moveEffect = MOVE_EFFECT_FLINCH;
@@ -7350,15 +7375,97 @@ u32 SetRandomTarget(u32 battlerId)
     return target;
 }
 
+// Signature moves store up to six independent effect slots as flat fields.
+// Scan them for `mod` in one place instead of repeating a six-way if-chain at
+// every call site (the older mods still use their hand-written chains).
+bool8 GetSignatureMod(u16 speciesId, u16 move, u8 mod, u32 *variable, u8 *argument, u8 *chance)
+{
+    const struct SignatureMove *sig = &gSignatureMoveList[speciesId];
+    u8 mods[6];
+    u32 vars[6];
+    u8 args[6];
+    u8 chances[6];
+    u8 i;
+
+    if (sig->move != move || mod == SIGNATURE_MOD_NONE)
+        return FALSE;
+
+    mods[0] = sig->modification;  vars[0] = sig->variable;  args[0] = sig->argument;  chances[0] = sig->chance;
+    mods[1] = sig->modification2; vars[1] = sig->variable2; args[1] = sig->argument2; chances[1] = sig->chance2;
+    mods[2] = sig->modification3; vars[2] = sig->variable3; args[2] = sig->argument3; chances[2] = sig->chance3;
+    mods[3] = sig->modification4; vars[3] = sig->variable4; args[3] = sig->argument4; chances[3] = sig->chance4;
+    mods[4] = sig->modification5; vars[4] = sig->variable5; args[4] = sig->argument5; chances[4] = sig->chance5;
+    mods[5] = sig->modification6; vars[5] = sig->variable6; args[5] = sig->argument6; chances[5] = sig->chance6;
+
+    for (i = 0; i < 6; i++)
+    {
+        if (mods[i] == mod)
+        {
+            if (variable != NULL)
+                *variable = vars[i];
+            if (argument != NULL)
+                *argument = args[i];
+            if (chance != NULL)
+                *chance = chances[i];
+            return TRUE;
+        }
+    }
+    return FALSE;
+}
+
+// SIGNATURE_MOD_EFFECT_CHANGE swaps the move's EFFECT_*, which is what selects
+// the battle script; without this the signature's power/type overrides would
+// land but the move would still run its original script.
+u16 GetMoveEffectForSpecies(u16 move, u16 speciesId)
+{
+    u16 effect = gBattleMoves[move].effect;
+    u32 var;
+
+    if (GetSignatureMod(speciesId, move, SIGNATURE_MOD_EFFECT_CHANGE, &var, NULL, NULL))
+        effect = var;
+
+    return effect;
+}
+
+u16 GetBattlerMoveEffect(u8 battlerId, u16 move)
+{
+    return GetMoveEffectForSpecies(
+        move, GetFormSpeciesId(gBattleMons[battlerId].species, gBattleMons[battlerId].formId));
+}
+
+// SIGNATURE_MOD_ADD_FLAG / _REMOVE_FLAG. Only ever applied to the attacker's
+// own move, so callers pass gCurrentMove and the attacker's battler id.
+u32 GetBattlerMoveFlags(u8 battlerId, u16 move)
+{
+    u32 flags = gBattleMoves[move].flags;
+    u16 speciesId = GetFormSpeciesId(gBattleMons[battlerId].species,
+                                     gBattleMons[battlerId].formId);
+    u32 var;
+
+    if (GetSignatureMod(speciesId, move, SIGNATURE_MOD_ADD_FLAG, &var, NULL, NULL))
+        flags |= var;
+    if (GetSignatureMod(speciesId, move, SIGNATURE_MOD_REMOVE_FLAG, &var, NULL, NULL))
+        flags &= ~var;
+
+    return flags;
+}
+
 u8 GetMoveTarget(u16 move, u8 setTarget)
 {
     u8 targetBattler = 0;
     u32 i, moveTarget, side;
+    u32 sigTarget;
 
     if (setTarget)
         moveTarget = setTarget - 1;
     else
         moveTarget = gBattleMoves[move].target;
+
+    if (!setTarget
+     && GetSignatureMod(GetFormSpeciesId(gBattleMons[gBattlerAttacker].species,
+                                         gBattleMons[gBattlerAttacker].formId),
+                        move, SIGNATURE_MOD_CHANGE_TARGET, &sigTarget, NULL, NULL))
+        moveTarget = sigTarget;
 
     switch (moveTarget)
     {
@@ -9195,6 +9302,16 @@ static void MulByTypeEffectiveness(u16 *modifier, u16 move, u8 moveType, u8 batt
             mod = UQ_4_12(2.0);
         else if(gSignatureMoveList[speciesId].modification6 == SIGNATURE_MOD_SE_AGAINST_TYPE && defType == gSignatureMoveList[speciesId].variable6)
             mod = UQ_4_12(2.0);
+    }
+    // 2.X: inverse of the above -- a type that would resist (or be immune to)
+    // the move takes neutral damage instead.
+    {
+        u32 neutralType;
+
+        if (GetSignatureMod(speciesId, move, SIGNATURE_MOD_NEUTRAL_AGAINST_TYPE,
+                            &neutralType, NULL, NULL)
+         && defType == neutralType && mod < UQ_4_12(1.0))
+            mod = UQ_4_12(1.0);
     }
 
     if (gProtectStructs[battlerDef].kingsShielded && gBattleMoves[move].effect != EFFECT_FEINT)
