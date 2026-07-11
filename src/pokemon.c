@@ -4111,7 +4111,7 @@ u16 GetExioliteSpecies(u16 basespecies, u8 level){
     SetMonData(mon, field, &n);                                 \
 }
 
-const u16 LevelCaps[NUM_SOFT_CAPS] = {16, 23, 29, 36, 43, 51, 57, 69, 77, 100};
+const u16 LevelCaps[NUM_SOFT_CAPS] = {16, 21, 26, 29, 32, 36, 39, 42, 45, 48, 52, 55, 57, 60, 63, 70, 76, 82, 100};  // 2.X: 19 entries (16 badges + post-league)
 
 void CalculateMonStats(struct Pokemon *mon)
 {

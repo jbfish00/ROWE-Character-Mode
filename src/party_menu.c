@@ -6434,7 +6434,7 @@ void ItemUseCB_RareCandy(u8 taskId, TaskFunc task)
     struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
     struct PartyMenuInternal *ptr = sPartyMenuInternal;
 	//const u8 rareCandyLimit[]          = { 5, 10, 15, 20, 25, 35, 50, 70, 90, 100, 200};
-	const u8 LevelCapsLimit[NUM_SOFT_CAPS] = {16, 23, 29, 36, 43, 51, 57, 69, 77, 100};
+	const u8 LevelCapsLimit[NUM_SOFT_CAPS] = {16, 21, 26, 29, 32, 36, 39, 42, 45, 48, 52, 55, 57, 60, 63, 70, 76, 82, 100};  // 2.X: 19 entries (16 badges + post-league)
     s16 *arrayPtr = ptr->data;
     u16 *itemPtr = &gSpecialVar_ItemId;
     bool8 cannotUseEffect;

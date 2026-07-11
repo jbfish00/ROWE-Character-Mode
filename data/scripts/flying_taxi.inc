@@ -21,18 +21,42 @@ EventScript_FlyingTaxi_Goodbye::
     return
 	
 //Gym Items
+// 2.X: 16 badges (8 Hoenn + the 8 Johto leaders on the Sevii Islands), each
+// with its own reward. The Mega Bracelet is the 11th, not the 7th -- the mega
+// stone gurus in gym_scripts.inc all gate on `compare VAR_NUM_BADGES, 11`.
+//
+// Slots 9-16 follow 2.X. Slots 1-6 keep the 1.9.4 items rather than 2.X's:
+// 2.X hands out HM-replacement tools there (Axe, Waterfall Tool, ...), which
+// only make sense once the tool-based field-move system is ported. Those items
+// exist in our tree but are still fieldUseFunc = CannotUse, so giving them here
+// would replace working rewards with dead ones. Revisit when that system lands.
+// Dispatch on VAR_NUM_BADGES, not on the badge flags -- this is what 2.X does,
+// and it is load-bearing. The 8 Johto leaders each `setflag FLAG_RECEIVED_BADGE_NN`
+// *before* calling here (Hoenn's leaders do not), so a flag-keyed chain would
+// see the badge already set, skip its reward, and hand out the next slot's item
+// instead. VAR_NUM_BADGES is the count of rewards handed out, so it stays correct
+// either way.
 Special_Gym_EventScript_Give_Item::
 	setflag (FLAG_GYM_ATTENDANT_CALL)
-	goto_if_unset FLAG_RECEIVED_BADGE_01, Special_Gym_EventScript_Amulet_Coin
-	goto_if_unset FLAG_RECEIVED_BADGE_02, Special_Gym_EventScript_Item_Finder
-	goto_if_unset FLAG_RECEIVED_BADGE_03, Special_Gym_EventScript_Good_Rod
-	goto_if_unset FLAG_RECEIVED_BADGE_04, Special_Gym_EventScript_Catching_Charm
-	goto_if_unset FLAG_RECEIVED_BADGE_05, Special_Gym_EventScript_Super_Rod
-	goto_if_unset FLAG_RECEIVED_BADGE_06, Special_Gym_EventScript_Lucky_Egg
-	goto_if_unset FLAG_RECEIVED_BADGE_07, Special_Gym_EventScript_Mega_Bracelet
-	goto_if_unset FLAG_RECEIVED_BADGE_08, Special_Gym_EventScript_Shiny_Charm
-	end
-	
+	switch VAR_NUM_BADGES
+	case  0, Special_Gym_EventScript_Amulet_Coin
+	case  1, Special_Gym_EventScript_Item_Finder
+	case  2, Special_Gym_EventScript_Good_Rod
+	case  3, Special_Gym_EventScript_Catching_Charm
+	case  4, Special_Gym_EventScript_Super_Rod
+	case  5, Special_Gym_EventScript_Lucky_Egg
+	case  6, Special_Gym_EventScript_Exp_Charm
+	case  7, Special_Gym_EventScript_Oval_Charm
+	case  8, Special_Gym_EventScript_Fly_Charm
+	case  9, Special_Gym_EventScript_Fly_Tool
+	case 10, Special_Gym_EventScript_Mega_Bracelet
+	case 11, Special_Gym_EventScript_Effort_Tool
+	case 12, Special_Gym_EventScript_Alpha_Charm
+	case 13, Special_Gym_EventScript_Wonder_Charm
+	case 14, Special_Gym_EventScript_Master_Ball
+	case 15, Special_Gym_EventScript_Shiny_Charm
+	return
+
 Special_Gym_EventScript_Amulet_Coin::
 	giveitem ITEM_AMULET_COIN
 	msgbox   Special_Gym_Text_Explain_Amulet_Coin, MSGBOX_DEFAULT
@@ -81,19 +105,84 @@ Special_Gym_EventScript_Lucky_Egg::
 	return
 	end
 	
-Special_Gym_EventScript_Mega_Bracelet::
-	giveitem ITEM_MEGA_BRACELET
-	msgbox   Special_Gym_Text_Explain_Mega_Bracelet, MSGBOX_DEFAULT
+Special_Gym_EventScript_Exp_Charm::
+	giveitem ITEM_EXP_CHARM
+	msgbox   Special_Gym_Text_Explain_Exp_Charm, MSGBOX_DEFAULT
 	setflag  FLAG_RECEIVED_BADGE_07
 	setvar   VAR_NUM_BADGES, 7
 	return
 	end
-	
+
+Special_Gym_EventScript_Oval_Charm::
+	giveitem ITEM_OVAL_CHARM
+	msgbox   Special_Gym_Text_Explain_Oval_Charm, MSGBOX_DEFAULT
+	setflag  FLAG_RECEIVED_BADGE_08
+	setvar   VAR_NUM_BADGES, 8
+	return
+	end
+
+// ---- Johto gyms on the Sevii Islands (badges 9-16) ----
+Special_Gym_EventScript_Fly_Charm::
+	giveitem ITEM_FLY_CHARM
+	msgbox   Special_Gym_Text_Explain_Fly_Charm, MSGBOX_DEFAULT
+	setflag  FLAG_RECEIVED_BADGE_09
+	setvar   VAR_NUM_BADGES, 9
+	return
+	end
+
+Special_Gym_EventScript_Fly_Tool::
+	giveitem ITEM_FLY_TOOL
+	msgbox   Special_Gym_Text_Explain_Fly_Tool, MSGBOX_DEFAULT
+	setflag  FLAG_RECEIVED_BADGE_10
+	setvar   VAR_NUM_BADGES, 10
+	return
+	end
+
+Special_Gym_EventScript_Mega_Bracelet::
+	giveitem ITEM_MEGA_BRACELET
+	msgbox   Special_Gym_Text_Explain_Mega_Bracelet, MSGBOX_DEFAULT
+	setflag  FLAG_RECEIVED_BADGE_11
+	setvar   VAR_NUM_BADGES, 11
+	return
+	end
+
+Special_Gym_EventScript_Effort_Tool::
+	giveitem ITEM_EFFORT_TOOL
+	msgbox   Special_Gym_Text_Explain_Effort_Tool, MSGBOX_DEFAULT
+	setflag  FLAG_RECEIVED_BADGE_12
+	setvar   VAR_NUM_BADGES, 12
+	return
+	end
+
+Special_Gym_EventScript_Alpha_Charm::
+	giveitem ITEM_ALPHA_CHARM
+	msgbox   Special_Gym_Text_Explain_Alpha_Charm, MSGBOX_DEFAULT
+	setflag  FLAG_RECEIVED_BADGE_13
+	setvar   VAR_NUM_BADGES, 13
+	return
+	end
+
+Special_Gym_EventScript_Wonder_Charm::
+	giveitem ITEM_WONDER_CHARM
+	msgbox   Special_Gym_Text_Explain_Wonder_Charm, MSGBOX_DEFAULT
+	setflag  FLAG_RECEIVED_BADGE_14
+	setvar   VAR_NUM_BADGES, 14
+	return
+	end
+
+Special_Gym_EventScript_Master_Ball::
+	giveitem ITEM_MASTER_BALL
+	msgbox   Special_Gym_Text_Explain_Master_Ball, MSGBOX_DEFAULT
+	setflag  FLAG_RECEIVED_BADGE_15
+	setvar   VAR_NUM_BADGES, 15
+	return
+	end
+
 Special_Gym_EventScript_Shiny_Charm::
 	giveitem ITEM_SHINY_CHARM
 	msgbox   Special_Gym_Text_Explain_Shiny_Charm, MSGBOX_DEFAULT
-	setflag  FLAG_RECEIVED_BADGE_08
-	setvar   VAR_NUM_BADGES, 8
+	setflag  FLAG_RECEIVED_BADGE_16
+	setvar   VAR_NUM_BADGES, 16
 	return
 	end
 

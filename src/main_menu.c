@@ -2223,7 +2223,21 @@ static void MainMenu_FormatSavegameBadges(void)
     u8 badgeCount = 0;
     u32 i;
 
+    // 2.X: 16 badges. The Hoenn eight still use the vanilla contiguous
+    // FLAG_BADGE01_GET.. block; the Johto eight (Sevii Islands) use the
+    // separate FLAG_RECEIVED_BADGE_09..16 block, so they need their own loop.
+    // Counting only the vanilla eight here would be worse than a wrong display:
+    // this function also writes VAR_NUM_BADGES, which drives the gym reward
+    // chain and the mega stone gurus' `compare VAR_NUM_BADGES, 11` gate. A
+    // 12-badge player who merely looked at the continue screen would have the
+    // var rewound to 8 and the gurus re-locked.
     for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++)
+    {
+        if (FlagGet(i))
+            badgeCount++;
+    }
+
+    for (i = FLAG_RECEIVED_BADGE_09; i <= FLAG_RECEIVED_BADGE_16; i++)
     {
         if (FlagGet(i))
             badgeCount++;
@@ -2233,7 +2247,7 @@ static void MainMenu_FormatSavegameBadges(void)
 
     StringExpandPlaceholders(gStringVar4, gText_ContinueMenuBadges);
     AddTextPrinterParameterized3(2, 1, 0x6C, 33, sTextColor_MenuInfo, -1, gStringVar4);
-    ConvertIntToDecimalStringN(str, badgeCount, STR_CONV_MODE_LEADING_ZEROS, 1);
+    ConvertIntToDecimalStringN(str, badgeCount, STR_CONV_MODE_RIGHT_ALIGN, 2);
     AddTextPrinterParameterized3(2, 1, GetStringRightAlignXOffset(1, str, 0xD0), 33, sTextColor_MenuInfo, -1, str);
 }
 

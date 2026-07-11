@@ -578,11 +578,23 @@ const u16 sLevelCapFlags[NUM_SOFT_CAPS] =
 	FLAG_RECEIVED_BADGE_06,
 	FLAG_RECEIVED_BADGE_07,
 	FLAG_RECEIVED_BADGE_08,
+	// 2.X: the 8 Johto gyms on the Sevii Islands
+	FLAG_RECEIVED_BADGE_09,
+	FLAG_RECEIVED_BADGE_10,
+	FLAG_RECEIVED_BADGE_11,
+	FLAG_RECEIVED_BADGE_12,
+	FLAG_RECEIVED_BADGE_13,
+	FLAG_RECEIVED_BADGE_14,
+	FLAG_RECEIVED_BADGE_15,
+	FLAG_RECEIVED_BADGE_16,
 	FLAG_DEFEATED_WALLY_VICTORY_ROAD,
 	FLAG_SYS_GAME_CLEAR,
+	FLAG_DEFEATED_RAYQUAZA,
 };
 
-const u16 sLevelCaps[NUM_SOFT_CAPS] = {16, 23, 29, 36, 43, 51, 57, 69, 77, 100};
+// 19 entries: GetNumBadges() reaches 18 now (16 badges + after-league + endgame).
+// Values are the 2.X Normal-mode caps (boss level + boss party size).
+const u16 sLevelCaps[NUM_SOFT_CAPS] = {16, 21, 26, 29, 32, 36, 39, 42, 45, 48, 52, 55, 57, 60, 63, 70, 76, 82, 100};
 const double sLevelCapReduction[7] = { .5, .33, .25, .20, .15, .10, .05 };
 const double sRelativePartyScaling[27] =
 {

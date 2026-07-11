@@ -71,28 +71,28 @@
 #include "mgba.h"
 
 //Easy Mode Levels Scaling
-const u8 Easy_Mode_Trainer_Max_Pokemon_Number[]  = {2,3,3,4,4,5,5,5,5,6,6};					//Trainers Number of Pokemon
-const u8 Easy_Mode_Boss_Pokemon_Number[]         = {3,4,4,4,5,5,5,6,6,6,6};					//Gym Leaders Number of Pokemon
-const u8 Easy_Mode_Double_Max_Pokemon_Number[]   = {1,2,2,2,2,2,3,3,3,3,3};					//Number of Pokemon in a Double Battle
-const u8 Easy_Mode_Trainer_Pokemon_Min_Level[]   = {6,10,15,20,25,30,35,40,45,55,60};		//Levels for Trainer Pokemon
-const u8 Easy_Mode_Boss_Pokemon_Min_Level[] 	 = {12,17,22,27,32,37,42,50,55,65,70};		//Levels for Gym Leaders
-const u8 Easy_Mode_Min_Wild_Pokemon_Level[]      = {4,10,15,20,25,30,35,40,45,55,60};		//Levels for Wild Pokemon
+const u8 Easy_Mode_Trainer_Max_Pokemon_Number[] = {2,2,3,3,3,3,4,4,4,4,4,4,5,5,5,5,6,6,6};					//Trainers Number of Pokemon
+const u8 Easy_Mode_Boss_Pokemon_Number[] = {3,3,4,4,4,5,5,5,5,5,6,6,6,6,6,6,6,6,6};					//Gym Leaders Number of Pokemon
+const u8 Easy_Mode_Double_Max_Pokemon_Number[] = {2,2,2,2,2,4,4,4,4,4,4,4,4,4,6,6,6,6,6};					//Number of Pokemon in a Double Battle
+const u8 Easy_Mode_Trainer_Pokemon_Min_Level[] = {6,10,13,16,19,21,23,25,27,29,31,33,35,37,39,42,45,50,60};		//Levels for Trainer Pokemon
+const u8 Easy_Mode_Boss_Pokemon_Min_Level[] = {12,16,20,23,26,28,30,32,34,36,38,41,44,48,52,55,58,64,70};		//Levels for Gym Leaders
+const u8 Easy_Mode_Min_Wild_Pokemon_Level[] = {4,8,12,15,18,20,22,24,26,28,30,32,34,36,38,40,43,48,60};		//Levels for Wild Pokemon
 
 //Normal Mode Levels
-const u8 Normal_Mode_Trainer_Max_Pokemon_Number[]      = {2,3,3,4,4,4,5,5,6,6,6};				//Trainers Number of Pokemon
-const u8 Normal_Mode_Boss_Pokemon_Number[]             = {3,4,4,5,5,6,6,6,6,6,6};				//Gym Leaders Number of Pokemon
-const u8 Normal_Mode_Double_Max_Pokemon_Number[]       = {1,2,2,2,2,2,3,3,3,3,3};				//Number of Pokemon in a Double Battle
-const u8 Normal_Mode_Boss_Pokemon_Min_Level[] 	       = {13,19,25,31,37,43,49,60,68,76,82};	//Levels for Gym Leaders
-const u8 Normal_Mode_Trainer_Pokemon_Min_Level[]       =  {7,12,18,24,30,36,42,48,55,65,70};	//Levels for Trainer Pokemon
-const u8 Normal_Mode_Min_Wild_Pokemon_Level[]          =  {5,10,15,20,25,31,37,43,50,60,65};	//Levels for Wild Pokemon
+const u8 Normal_Mode_Trainer_Max_Pokemon_Number[] = {2,2,3,3,3,3,4,4,4,4,4,4,5,5,5,5,6,6,6};				//Trainers Number of Pokemon
+const u8 Normal_Mode_Boss_Pokemon_Number[] = {3,3,4,4,4,5,5,5,5,5,6,6,6,6,6,6,6,6,6};				//Gym Leaders Number of Pokemon
+const u8 Normal_Mode_Double_Max_Pokemon_Number[] = {2,2,2,2,2,4,4,4,4,4,4,4,4,4,6,6,6,6,6};				//Number of Pokemon in a Double Battle
+const u8 Normal_Mode_Boss_Pokemon_Min_Level[] = {13,18,22,25,28,31,34,37,40,43,46,49,51,54,57,64,70,76,82};	//Levels for Gym Leaders
+const u8 Normal_Mode_Trainer_Pokemon_Min_Level[] = {7,11,14,17,20,23,25,28,31,34,36,39,42,45,48,51,55,60,70};	//Levels for Trainer Pokemon
+const u8 Normal_Mode_Min_Wild_Pokemon_Level[] = {5,9,12,15,17,19,21,23,25,27,30,32,35,37,40,43,47,53,65};	//Levels for Wild Pokemon
 
 //Hard Mode Levels
-const u8 Hard_Mode_Trainer_Max_Pokemon_Number[]      = {3,3,4,4,4,5,5,6,6,6,6};				//Trainers Number of Pokemon
-const u8 Hard_Mode_Boss_Pokemon_Number[]             = {3,4,4,5,5,6,6,6,6,6,6};				//Gym Leaders Number of Pokemon
-const u8 Hard_Mode_Double_Max_Pokemon_Number[]       = {2,2,2,2,2,2,3,3,3,3,3};				//Number of Pokemon in a Double Battle
-const u8 Hard_Mode_Boss_Pokemon_Min_Level[] 	     = {13,19,25,31,38,45,51,62,70,78,85};	//Levels for Gym Leaders
-const u8 Hard_Mode_Trainer_Pokemon_Min_Level[]       =  {7,13,19,25,32,38,44,50,57,67,73};	//Levels for Trainer Pokemon
-const u8 Hard_Mode_Min_Wild_Pokemon_Level[]          =  {5,11,16,21,26,32,38,45,52,62,68};	//Levels for Wild Pokemon
+const u8 Hard_Mode_Trainer_Max_Pokemon_Number[] = {2,2,3,3,3,3,4,4,4,4,4,4,5,5,5,5,6,6,6};				//Trainers Number of Pokemon
+const u8 Hard_Mode_Boss_Pokemon_Number[] = {3,3,4,4,4,5,5,5,5,5,6,6,6,6,6,6,6,6,6};				//Gym Leaders Number of Pokemon
+const u8 Hard_Mode_Double_Max_Pokemon_Number[] = {2,2,2,2,4,4,4,4,4,4,4,4,6,6,6,6,6,6,6};				//Number of Pokemon in a Double Battle
+const u8 Hard_Mode_Boss_Pokemon_Min_Level[] = {13,18,22,25,28,31,34,37,40,44,47,50,53,56,59,66,72,77,85};	//Levels for Gym Leaders
+const u8 Hard_Mode_Trainer_Pokemon_Min_Level[] = {7,12,15,18,21,24,27,30,33,36,39,42,45,48,52,57,62,68,73};	//Levels for Trainer Pokemon
+const u8 Hard_Mode_Min_Wild_Pokemon_Level[] = {5,9,12,15,18,20,23,25,27,30,33,36,39,42,46,51,56,61,68};	//Levels for Wild Pokemon
 
 //Order Mode
 const u8 Normal_Mode_Min_Wild_Pokemon_Level_Order[] = {5,8,11,14,17,20,23,26,29,32,35,38,41,44,47,50,53,56,59,62,65};
@@ -109,8 +109,15 @@ u8 getOrder(u8 id);
 u8 getCityOrder(u8 id);
 u8 getScaledWildPokemonLevel();
 
+// NB: these legacy per-mode arrays are superseded by gScalingInfo, but 53 call
+// sites still index them by GetNumBadges() -- which now reaches 18 (16 badges +
+// after-league + endgame). They are padded to 19 entries with the 2.X values so
+// those indexes stay in bounds.
 //Wild Pokemon Scaling
-const u8 MovePowerLimit[] = {60,60,70,70,80,90,100,250,250,250,250};
+// 19 entries -- GetNumBadges() reaches 18. (GetCurrentMovePowerLimit()
+// reads gScalingInfo instead; this array only survives for one legacy
+// call site, but it must still be long enough to index safely.)
+const u8 MovePowerLimit[] = {60,70,75,80,85,90,95,100,125,150,175,200,250,250,250,250,250,250,250};
 
 u8 GetNumBadges(void);   // defined below; the scaling table keys off it
 
@@ -260,11 +267,37 @@ u16 GetFirstEvolution(u16 species){
     return species;
 }
 
+// 2.X: 16 badges. The 8 Hoenn gyms are still counted the way 1.9.4 did it --
+// by the TM each leader hands out (ROWE never set the vanilla badge flags for
+// them) -- while the 8 Johto gyms on the Sevii Islands set FLAG_RECEIVED_BADGE_09
+// .. _16 directly. Counted highest-first, so the Johto badges stack on top of
+// the Hoenn eight.
+//
+// The post-league values 1.9.4 used (GAME_CLEAR = 9, RAYQUAZA = 10) now map to
+// the scaling table's SCALING_AFTER_LEAGUE (17) and SCALING_ENDGAME (18) rows,
+// which is what those rows are for.
 u8 GetNumBadges()
 {
 	if (FlagGet(FLAG_DEFEATED_RAYQUAZA))
-		return 10;
+		return SCALING_ENDGAME;        // 18
 	if (FlagGet(FLAG_SYS_GAME_CLEAR))
+		return SCALING_AFTER_LEAGUE;   // 17
+
+	if (FlagGet(FLAG_RECEIVED_BADGE_16))
+		return 16;
+	else if (FlagGet(FLAG_RECEIVED_BADGE_15))
+		return 15;
+	else if (FlagGet(FLAG_RECEIVED_BADGE_14))
+		return 14;
+	else if (FlagGet(FLAG_RECEIVED_BADGE_13))
+		return 13;
+	else if (FlagGet(FLAG_RECEIVED_BADGE_12))
+		return 12;
+	else if (FlagGet(FLAG_RECEIVED_BADGE_11))
+		return 11;
+	else if (FlagGet(FLAG_RECEIVED_BADGE_10))
+		return 10;
+	else if (FlagGet(FLAG_RECEIVED_BADGE_09))
 		return 9;
 	else if (FlagGet(FLAG_RECEIVED_TM03))
 		return 8;

@@ -62,7 +62,43 @@ gText_FlyingTaxi_Goodbye::
 	.string "Its an item that doubles the\n"
 	.string "possibilites of getting a shiny\l"
 	.string "Pokémon.$"
-	
+
+	Special_Gym_Text_Explain_Exp_Charm:
+	.string "This item is the Exp Charm.\p"
+	.string "Carry it and every Pokémon in\n"
+	.string "your party will earn more Exp.$"
+
+	Special_Gym_Text_Explain_Fly_Charm:
+	.string "This item is the Fly Charm.\p"
+	.string "Carry it and you can take to the\n"
+	.string "skies from anywhere you please.$"
+
+	Special_Gym_Text_Explain_Fly_Tool:
+	.string "This item is the Fly Tool.\p"
+	.string "With it you no longer need a\n"
+	.string "Pokémon that knows how to Fly.$"
+
+	Special_Gym_Text_Explain_Effort_Tool:
+	.string "This item is the Effort Tool.\p"
+	.string "Use it to control how your\n"
+	.string "Pokémon spend their effort.$"
+
+	Special_Gym_Text_Explain_Alpha_Charm:
+	.string "This item is the Alpha Charm.\p"
+	.string "Its an item that raises the\n"
+	.string "chance of meeting an Alpha\l"
+	.string "Pokémon in the wild.$"
+
+	Special_Gym_Text_Explain_Wonder_Charm:
+	.string "This item is the Wonder Charm.\p"
+	.string "Its an item that improves what\n"
+	.string "you receive from Wonder Trades.$"
+
+	Special_Gym_Text_Explain_Master_Ball:
+	.string "This is a Master Ball.\p"
+	.string "It will catch any Pokémon\n"
+	.string "without fail. Use it wisely!$"
+
 	Special_Gym_Text_Explain_Old_Save:
 	.string "It looks like you are using\n"
 	.string "an old Save File.\p"
