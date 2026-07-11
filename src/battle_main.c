@@ -6054,6 +6054,10 @@ u8 getMoveType(u16 move, u16 speciesId, u16 ability){
             if(gBattleMoves[move].flags & FLAG_SOUND)
 				MoveType = TYPE_WATER;
         break;
+        case ABILITY_ICY_VOICE:  // 2.X: sound moves become Ice-type
+            if(gBattleMoves[move].flags & FLAG_SOUND)
+				MoveType = TYPE_ICE;
+        break;
     }
 
     return MoveType;
@@ -6224,6 +6228,11 @@ void SetTypeBeforeUsingMove(u16 move, u8 battlerAtk)
              && attackerAbility == ABILITY_LIQUID_VOICE)
     {
         gBattleStruct->dynamicMoveType = 0x80 | TYPE_WATER;
+    }
+    else if (gBattleMoves[move].flags & FLAG_SOUND
+             && attackerAbility == ABILITY_ICY_VOICE)
+    {
+        gBattleStruct->dynamicMoveType = 0x80 | TYPE_ICE;
     }
 	else if (moveType == TYPE_NORMAL &&
 		gFieldStatuses & STATUS_FIELD_WATERSPORT){

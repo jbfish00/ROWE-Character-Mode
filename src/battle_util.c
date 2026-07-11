@@ -4133,6 +4133,18 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 effect++;
             }
             break;
+        case ABILITY_TERAFORM_ZERO:  // gen9: removes weather and terrain on entry
+            if (!gSpecialStatuses[battler].switchInAbilityDone
+             && (gBattleWeather != 0 || (gFieldStatuses & STATUS_TERRAIN_ANY)))
+            {
+                gSpecialStatuses[battler].switchInAbilityDone = 1;
+                gBattleWeather = 0;
+                gFieldStatuses &= ~STATUS_TERRAIN_ANY;
+                gBattleCommunication[MULTISTRING_CHOOSER] = MULTI_SWITCHIN_SCREENCLEANER;
+                BattleScriptPushCursorAndCallback(BattleScript_SwitchInAbilityMsg);
+                effect++;
+            }
+            break;
         case ABILITY_SCREEN_CLEANER:
             if (!gSpecialStatuses[battler].switchInAbilityDone)
             {
@@ -4454,6 +4466,18 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                     effect++;
                 }
                 break;
+            case ABILITY_SELF_SUFFICIENT:  // 2.X: 1/16 heal every turn end
+                if (!BATTLER_MAX_HP(battler)
+                 && !(gStatuses3[battler] & STATUS3_HEAL_BLOCK))
+                {
+                    BattleScriptPushCursorAndCallback(BattleScript_RainDishActivates);
+                    gBattleMoveDamage = gBattleMons[battler].maxHP / 16;
+                    if (gBattleMoveDamage == 0)
+                        gBattleMoveDamage = 1;
+                    gBattleMoveDamage *= -1;
+                    effect++;
+                }
+                break;
             case ABILITY_HYDRATION:
                 if (WEATHER_HAS_EFFECT
                  && (gBattleWeather & WEATHER_RAIN_ANY)
@@ -4658,6 +4682,20 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
             case ABILITY_DRY_SKIN:
                 if (moveType == TYPE_WATER)
                     effect = 1;
+                break;
+            case ABILITY_EVAPORATE:  // 2.X: plain immunity to Water moves
+                if (moveType == TYPE_WATER)
+                {
+                    if (gProtectStructs[gBattlerAttacker].notFirstStrike)
+                        gBattlescriptCurrInstr = BattleScript_MonMadeMoveUseless;
+                    else
+                        gBattlescriptCurrInstr = BattleScript_MonMadeMoveUseless_PPLoss;
+                    effect = 3;
+                }
+                break;
+            case ABILITY_THERMAL_EXCHANGE:  // Atk up when hit by Fire (burn immunity in CanBeBurned)
+                if (moveType == TYPE_FIRE)
+                    effect = 2, statId = STAT_ATK;
                 break;
             case ABILITY_INSECT_EATER:
                 if (moveType == TYPE_BUG)
@@ -4870,6 +4908,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
             }
             break;
         case ABILITY_MUMMY:
+        case ABILITY_LINGERING_AROMA:  // 2.X/gen9: contact copies this ability onto the attacker
             if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
              && IsBattlerAlive(gBattlerAttacker)
              && (gBattleMoves[move].flags & FLAG_MAKES_CONTACT))
@@ -4877,6 +4916,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 switch (gBattleMons[gBattlerAttacker].ability)
                 {
                 case ABILITY_MUMMY:
+                case ABILITY_LINGERING_AROMA:
                 case ABILITY_BATTLE_BOND:
                 case ABILITY_COMATOSE:
                 case ABILITY_DISGUISE:
@@ -4888,7 +4928,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 case ABILITY_STANCE_CHANGE:
                     break;
                 default:
-                    gLastUsedAbility = gBattleMons[gBattlerAttacker].ability = ABILITY_MUMMY;
+                    gLastUsedAbility = gBattleMons[gBattlerAttacker].ability = GetBattlerAbility(battler);
                     BattleScriptPushCursor();
                     gBattlescriptCurrInstr = BattleScript_MummyActivates;
                     effect++;
@@ -5225,6 +5265,25 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 effect++;
             }
             break;
+        case ABILITY_TOXIC_DEBRIS:  // 2.X/gen9: physical hit lays Toxic Spikes on the attacker's side
+            if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+             && gBattleMons[gBattlerAttacker].hp != 0
+             && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
+             && TARGET_TURN_DAMAGED
+             && gBattleMoves[move].split == SPLIT_PHYSICAL
+             && gSideTimers[GetBattlerSide(gBattlerAttacker)].toxicSpikesAmount < 2)
+            {
+                u8 targetSide = GetBattlerSide(gBattlerAttacker);
+                gSideStatuses[targetSide] |= SIDE_STATUS_TOXIC_SPIKES;
+                gSideTimers[targetSide].toxicSpikesAmount++;
+
+                gBattlerAttacker = gBattlerTarget;
+                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_EffectLooseQuills;
+                effect++;
+            }
+            break;
         case ABILITY_ILLUSION:
             if (gBattleStruct->illusion[gBattlerTarget].on && !gBattleStruct->illusion[gBattlerTarget].broken && TARGET_TURN_DAMAGED)
             {
@@ -5307,6 +5366,41 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
     case ABILITYEFFECT_MOVE_END_ATTACKER: // Same as above, but for attacker
         switch (gLastUsedAbility)
         {
+        case ABILITY_SHOCKING_MAW:  // 2.X: biting moves may paralyze (power boost in damage calc)
+            if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+             && gBattleMons[gBattlerTarget].hp != 0
+             && !gProtectStructs[gBattlerTarget].confusionSelfDmg
+             && !IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_ELECTRIC)
+             && GetBattlerAbility(gBattlerTarget) != ABILITY_LIMBER
+             && !(gBattleMons[gBattlerTarget].status1 & STATUS1_ANY)
+             && !IsAbilityStatusProtected(gBattlerTarget)
+             && TARGET_TURN_DAMAGED
+             && (gBattleMoves[move].flags & FLAG_STRONG_JAW_BOOST)
+             && (Random() % 4) == 0)
+            {
+                gBattleScripting.moveEffect = MOVE_EFFECT_PARALYSIS;
+                PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_AbilityStatusEffect;
+                gHitMarker |= HITMARKER_IGNORE_SAFEGUARD;
+                effect++;
+            }
+            break;
+        case ABILITY_CURSED_FLAME:  // 2.X: Fire moves may curse the target
+            if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+             && IsBattlerAlive(gBattlerTarget)
+             && !gProtectStructs[gBattlerTarget].confusionSelfDmg
+             && !(gBattleMons[gBattlerTarget].status2 & STATUS2_CURSED)
+             && TARGET_TURN_DAMAGED
+             && gBattleMoves[move].type == TYPE_FIRE
+             && (Random() % 5) == 0)
+            {
+                gBattleMons[gBattlerTarget].status2 |= STATUS2_CURSED;
+                BattleScriptPushCursor();
+                gBattlescriptCurrInstr = BattleScript_BattlerAttackSeededOnHit;
+                effect++;
+            }
+            break;
         case ABILITY_POISON_TOUCH:
             if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
              && gBattleMons[gBattlerTarget].hp != 0
@@ -8238,6 +8332,49 @@ static u32 CalcMoveBasePowerAfterModifiers(u16 move, u8 battlerAtk, u8 battlerDe
         if (moveType == TYPE_ELECTRIC)
             MulModifier(&modifier, UQ_4_12(1.5));
         break;
+    case ABILITY_RADIANCE:  // 2.X: boosts Electric moves (SE-vs-Dark in type calc)
+        if (moveType == TYPE_ELECTRIC)
+            MulModifier(&modifier, UQ_4_12(1.3));
+        break;
+    case ABILITY_OMINOUS_VIBE:  // 2.X: boosts Ghost moves
+        if (moveType == TYPE_GHOST)
+            MulModifier(&modifier, UQ_4_12(1.3));
+        break;
+    case ABILITY_ICY_VOICE:  // 2.X: sound moves become Ice (type hook) and hit harder
+        if (gBattleMoves[move].flags & FLAG_SOUND)
+            MulModifier(&modifier, UQ_4_12(1.2));
+        break;
+    case ABILITY_MYSTIC_BLADES:  // 2.X: slicing moves become special (split hook) + 20%
+        if (gBattleMoves[move].flags & FLAG_BLADEMASTER_BOOST)
+            MulModifier(&modifier, UQ_4_12(1.2));
+        break;
+    case ABILITY_SHOCKING_MAW:  // 2.X: boosts biting moves (paralysis chance on hit)
+        if (gBattleMoves[move].flags & FLAG_STRONG_JAW_BOOST)
+            MulModifier(&modifier, UQ_4_12(1.3));
+        break;
+    case ABILITY_STRONG_GRIP:  // 2.X: boosts hammer moves
+        if (move == MOVE_HAMMER_ARM || move == MOVE_ICE_HAMMER
+         || move == MOVE_WOOD_HAMMER || move == MOVE_DRAGON_HAMMER
+         || move == MOVE_GIGATON_HAMMER)
+            MulModifier(&modifier, UQ_4_12(1.3));
+        break;
+    case ABILITY_SUPREME_OVERLORD:  // gen9: +10% per fainted party member
+        {
+            struct Pokemon *party = GetBattlerSide(battlerAtk) == B_SIDE_PLAYER
+                                    ? gPlayerParty : gEnemyParty;
+            u32 k, fainted = 0;
+
+            for (k = 0; k < PARTY_SIZE; k++)
+            {
+                u16 sp = GetMonData(&party[k], MON_DATA_SPECIES2);
+                if (sp != SPECIES_NONE && sp != SPECIES_EGG
+                 && GetMonData(&party[k], MON_DATA_HP) == 0)
+                    fainted++;
+            }
+            if (fainted)
+                MulModifier(&modifier, UQ_4_12(1.0) + fainted * (UQ_4_12(0.1)));
+        }
+        break;
     case ABILITY_DRAGONS_MAW:
         if (moveType == TYPE_DRAGON)
             MulModifier(&modifier, UQ_4_12(1.3));
@@ -9303,6 +9440,17 @@ static void MulByTypeEffectiveness(u16 *modifier, u16 move, u8 moveType, u8 batt
         else if(gSignatureMoveList[speciesId].modification6 == SIGNATURE_MOD_SE_AGAINST_TYPE && defType == gSignatureMoveList[speciesId].variable6)
             mod = UQ_4_12(2.0);
     }
+    // 2.X abilities that bend the type chart
+    {
+        u16 atkAbility = GetBattlerAbility(battlerAtk);
+
+        if (atkAbility == ABILITY_POLLUTION && moveType == TYPE_POISON
+         && (defType == TYPE_BUG || defType == TYPE_WATER))
+            mod = UQ_4_12(2.0);
+        if (atkAbility == ABILITY_RADIANCE && moveType == TYPE_ELECTRIC
+         && defType == TYPE_DARK && mod < UQ_4_12(2.0))
+            mod = UQ_4_12(2.0);
+    }
     // 2.X: inverse of the above -- a type that would resist (or be immune to)
     // the move takes neutral damage instead.
     {
@@ -10054,6 +10202,10 @@ u8 GetBattleMoveSplitFromSpecies(u32 moveId, u16 speciesID, u16 attackerAbility,
                     split = SPLIT_PHYSICAL;
              }
         break;
+        case ABILITY_MYSTIC_BLADES:  // 2.X: slicing moves become special
+            if(gBattleMoves[moveId].flags & FLAG_BLADEMASTER_BOOST)
+                split = SPLIT_SPECIAL;
+        break;
     }
 
     //For Signature Moves
@@ -10166,6 +10318,7 @@ bool32 CanBeBurned(u8 battlerId)
       || gBattleMons[battlerId].status1 & STATUS1_ANY
       || ability == ABILITY_WATER_VEIL
       || ability == ABILITY_WATER_BUBBLE
+      || ability == ABILITY_THERMAL_EXCHANGE
       || ability == ABILITY_COMATOSE
       || IsAbilityStatusProtected(battlerId)
       || (gFieldStatuses & STATUS_FIELD_MISTY_TERRAIN))
