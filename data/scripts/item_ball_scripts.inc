@@ -809,3 +809,11 @@ Oldale_Ruins_EventScript_ItemTM80::
 Route106_EventScript_ItemTM99::
 	addscaleditem ITEM_TM99
 	end
+
+MegaStone_EventScript_Sandacondite::
+	addscaleditem ITEM_SANDACONDITE
+	end
+
+MegaStone_EventScript_Centisite::
+	addscaleditem ITEM_CENTISITE
+	end

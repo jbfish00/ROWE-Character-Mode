@@ -73,8 +73,8 @@
 #define FLAG_ITEM_MEWTWONITE_X           0x3D // Character-mode mod: item ball
 #define FLAG_ITEM_MEWTWONITE_Y           0x3E // Character-mode mod: item ball
 #define FLAG_ITEM_BLUE_ORB               0x3F // Character-mode mod: item ball
-#define FLAG_UNUSED_0x040                0x40 // Unused Flag
-#define FLAG_UNUSED_0x041                0x41 // Unused Flag
+#define FLAG_ITEM_SANDACONDITE           0x40 // 2.X parity: Granite Cave gem chamber
+#define FLAG_ITEM_CENTISITE              0x41 // 2.X parity: Fiery Path 1F
 #define FLAG_IS_OUTBREAK_ENCOUNTER       0x42 // Outbreak
 #define FLAG_MGBA_PRINT_ENABLED          0x43 // Debug
 #define FLAG_SAILED_FROM_SLATEPORT       0x44 //
