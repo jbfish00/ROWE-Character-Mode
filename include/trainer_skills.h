@@ -14,4 +14,7 @@ u16 calculateTrainerExp(u16 exp, u16 species, bool8 isTrainer);
 bool8 tryToGivePlayerExp(u16 exp);
 u8  GetSkillIV(u8 statId);
 
+void TrainerSkillsMenu_Open(void);
+void Task_OpenTrainerSkillsMenu(u8 taskId);
+
 #endif // GUARD_TRAINER_SKILLS_H

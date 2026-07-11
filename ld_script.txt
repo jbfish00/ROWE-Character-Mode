@@ -85,6 +85,7 @@ SECTIONS {
         src/battle_bg.o(.text);
 		src/level_scaling.o(.text);
 		src/trainer_skills.o(.text);
+		src/trainer_skills_menu.o(.text);
         src/battle_main.o(.text);
         src/battle_util.o(.text);
         src/battle_script_commands.o(.text);
@@ -726,6 +727,7 @@ SECTIONS {
         src/ud_trade.o(.rodata);
 		src/level_scaling.o(.rodata);
 		src/trainer_skills.o(.rodata);
+		src/trainer_skills_menu.o(.rodata);
 		src/tx_pokemon_follower.o(.rodata);
 		src/ui_mode_menu.o(.rodata);
 		src/ui_start_menu.o(.rodata);
@@ -1647,6 +1649,7 @@ SECTIONS {
         src/libisagbprn.o(.rodata);
 		src/level_scaling.o(.data);
 		src/trainer_skills.o(.data);
+		src/trainer_skills_menu.o(.data);
 		src/event_data.o(.data);
     } =0
 

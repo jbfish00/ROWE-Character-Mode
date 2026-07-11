@@ -41,6 +41,7 @@
 #include "string_util.h"
 #include "strings.h"
 #include "task.h"
+#include "trainer_skills.h"
 #include "quests.h"
 #include "debug.h"
 #include "trainer_card.h"
@@ -232,6 +233,20 @@ void Task_OpenStartMenuFromStartMenu(u8 taskId)
     {
         CleanupOverworldWindowsAndTilemaps();
         Menu_Start_Init(CB2_ReturnToField);
+        DestroyTask(taskId);
+    }
+}
+
+static void Menu_FreeResources(void);
+
+static void Task_OpenTrainerSkillsFromStartMenu(u8 taskId)
+{
+    if (!gPaletteFade.active)
+    {
+        CleanupOverworldWindowsAndTilemaps();
+        Menu_FreeResources();
+        SetMainCallback2(CB2_ReturnToFieldWithOpenMenu);
+        TrainerSkillsMenu_Open();
         DestroyTask(taskId);
     }
 }
@@ -1019,6 +1034,16 @@ static void Task_MenuMain(u8 taskId)
 		gTasks[taskId].func = Task_ChangeTrainerName;
     }
 	
+	// 2.X Trainer Skills: START opens the skills screen from the Start menu
+	// (the 4x2 grid is full and a 5th row would need new tilemap art).
+	if (JOY_NEW(START_BUTTON))
+    {
+		PlaySE(SE_SELECT);
+		BeginNormalPaletteFade(0xFFFFFFFF, 0, 0, 16, RGB_BLACK);
+		gTasks[taskId].func = Task_OpenTrainerSkillsFromStartMenu;
+		return;
+    }
+
 	if (JOY_NEW(B_BUTTON))
     {
 		//Konami Code
