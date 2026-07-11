@@ -191,6 +191,7 @@ void TrainerSkillsMenu_Open(void)
 
     CopyWindowToVram(windowId, 3);
 
+    ScriptContext2_Enable();   // freeze the field while the overlay is up
     inputTaskId = CreateTask(SkillsMenu_HandleInput, 3);
     gTasks[inputTaskId].data[0] = menuTaskId;
     gTasks[inputTaskId].data[1] = windowId;

@@ -41,6 +41,7 @@
 #include "script.h"
 #include "sound.h"
 #include "start_menu.h"
+#include "trainer_skills.h"
 #include "strings.h"
 #include "string_util.h"
 #include "task.h"
@@ -83,6 +84,7 @@ enum
     MENU_ACTION_DEXNAV,
     MENU_ACTION_UI_MODE_MENU,
 	MENU_ACTION_UI_START_MENU,
+    MENU_ACTION_TRAINER_SKILLS,   // 2.X Trainer Skills (appended: never shift existing ids)
 };
 
 // Save status
@@ -102,7 +104,7 @@ EWRAM_DATA static u8 sSafariBallsWindowId = 0;
 EWRAM_DATA static u8 sBattlePyramidFloorWindowId = 0;
 EWRAM_DATA static u8 sStartMenuCursorPos = 0;
 EWRAM_DATA static u8 sNumStartMenuActions = 0;
-EWRAM_DATA static u8 sCurrentStartMenuActions[9] = {0};
+EWRAM_DATA static u8 sCurrentStartMenuActions[12] = {0}; // was 9: the normal menu was already full
 EWRAM_DATA static u8 sInitStartMenuData[2] = {0};
 
 EWRAM_DATA static u8 (*sSaveDialogCallback)(void) = NULL;
@@ -207,6 +209,7 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_PLAYER]        	= {gText_MenuPlayer, {.u8_void = StartMenuPlayerNameCallback}},
     [MENU_ACTION_SAVE]          	= {gText_MenuSave, {.u8_void = StartMenuSaveCallback}},
     [MENU_ACTION_OPTION]        	= {gText_MenuOption, {.u8_void = StartMenuOptionCallback}},
+    [MENU_ACTION_TRAINER_SKILLS]	= {gText_MenuTrainerSkills, {.u8_void = StartMenuTrainerSkillsCallback}},
     [MENU_ACTION_EXIT]          	= {gText_MenuExit, {.u8_void = StartMenuExitCallback}},
     [MENU_ACTION_RETIRE_SAFARI] 	= {gText_MenuRetire, {.u8_void = StartMenuSafariZoneRetireCallback}},
     [MENU_ACTION_PLAYER_LINK]   	= {gText_MenuPlayer, {.u8_void = StartMenuLinkModePlayerNameCallback}},
@@ -349,11 +352,25 @@ bool8 HasMapMons(void){
     return FALSE;
 }
 
+bool8 StartMenuTrainerSkillsCallback(void)
+{
+    // Field-hosted overlay: the skills menu uses AddWindow on the field, so it
+    // has to open from the field start menu. (Opening it from the graphical
+    // menu's teardown got its windows wiped by the field re-init.)
+    RemoveExtraStartMenuWindows();
+    HideStartMenu();
+    FreeAllWindowBuffers();   // the overlay allocates its own windows; without
+                              // this the screen stays black (same as the debug menu)
+    TrainerSkillsMenu_Open();
+    return TRUE;
+}
+
 static void BuildSaveMenu(void)
 {
 	isSaveMenu = TRUE;
 	
 	AddStartMenuAction(MENU_ACTION_SAVE);
+    AddStartMenuAction(MENU_ACTION_TRAINER_SKILLS);
     AddStartMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -380,6 +397,7 @@ static void BuildNormalStartMenu(void)
     AddStartMenuAction(MENU_ACTION_PLAYER);
     AddStartMenuAction(MENU_ACTION_SAVE);
     AddStartMenuAction(MENU_ACTION_OPTION);
+    AddStartMenuAction(MENU_ACTION_TRAINER_SKILLS);
 	//AddStartMenuAction(MENU_ACTION_UI_START_MENU);
 	//AddStartMenuAction(MENU_ACTION_UI_MODE_MENU);
     AddStartMenuAction(MENU_ACTION_EXIT);
@@ -764,6 +782,7 @@ static bool8 HandleStartMenuInput(void)
 
         if (gMenuCallback != StartMenuSaveCallback
             && gMenuCallback != StartMenuExitCallback
+            && gMenuCallback != StartMenuTrainerSkillsCallback
             && gMenuCallback != StartMenuSafariZoneRetireCallback
             && gMenuCallback != StartMenuBattlePyramidRetireCallback)
         {
@@ -875,6 +894,7 @@ static bool8 HandleStartMenuInput(void)
 		gMenuCallback = StartMenuSaveCallback;
         if (gMenuCallback != StartMenuSaveCallback
             && gMenuCallback != StartMenuExitCallback
+            && gMenuCallback != StartMenuTrainerSkillsCallback
             && gMenuCallback != StartMenuSafariZoneRetireCallback
             && gMenuCallback != StartMenuBattlePyramidRetireCallback)
         {

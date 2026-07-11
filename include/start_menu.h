@@ -22,6 +22,7 @@ bool8 StartMenuPokeNavCallback(void);
 bool8 StartMenuPlayerNameCallback(void);
 bool8 StartMenuSaveCallback(void);
 bool8 StartMenuOptionCallback(void);
+bool8 StartMenuTrainerSkillsCallback(void);
 bool8 StartMenuExitCallback(void);
 bool8 StartMenuSafariZoneRetireCallback(void);
 bool8 StartMenuLinkModePlayerNameCallback(void);
