@@ -5141,11 +5141,13 @@ const struct Item gItems[] =
 #else
         .name = _("Red Orb"),
 #endif
+        // Held item (as in ORAS): Groudon holding it can primal revert
+        // through the mega evolution trigger.
         .itemId = ITEM_RED_ORB,
-        .price = 0,
+        .price = 200,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = sRedOrbDesc,
-        .importance = 2,
-        .pocket = POCKET_KEY_ITEMS,
+        .pocket = POCKET_MEGA_STONES,
         .type = 4,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .secondaryId = 0,
@@ -5158,11 +5160,13 @@ const struct Item gItems[] =
 #else
         .name = _("Blue Orb"),
 #endif
+        // Held item (as in ORAS): Kyogre holding it can primal revert
+        // through the mega evolution trigger.
         .itemId = ITEM_BLUE_ORB,
-        .price = 0,
+        .price = 200,
+        .holdEffect = HOLD_EFFECT_MEGA_STONE,
         .description = sBlueOrbDesc,
-        .importance = 2,
-        .pocket = POCKET_KEY_ITEMS,
+        .pocket = POCKET_MEGA_STONES,
         .type = 4,
         .fieldUseFunc = ItemUseOutOfBattle_CannotUse,
         .secondaryId = 0,

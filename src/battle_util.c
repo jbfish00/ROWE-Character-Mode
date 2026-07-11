@@ -9505,9 +9505,10 @@ bool32 CanMegaEvolve(u8 battlerId)
     // Check if there is an entry in the evolution table for regular Mega Evolution.
     // The player must own the Mega Bracelet (the old FLAG_RECEIVED_TM04 gate was
     // never set anywhere, leaving item megas permanently disabled); opponents
-    // are ungated so trainer megas work.
+    // are ungated so trainer megas work. Primal orbs need no bracelet, as in ORAS.
     if (GetMegaEvolutionSpecies(species, itemId) != SPECIES_NONE
-        && (GetBattlerSide(battlerId) != B_SIDE_PLAYER || CheckBagHasItem(ITEM_MEGA_BRACELET, 1))
+        && (GetBattlerSide(battlerId) != B_SIDE_PLAYER || CheckBagHasItem(ITEM_MEGA_BRACELET, 1)
+            || itemId == ITEM_RED_ORB || itemId == ITEM_BLUE_ORB)
         && !FlagGet(FLAG_NO_EVOLUTION_MODE))
     {
         if (USE_BATTLE_DEBUG && gBattleStruct->debugHoldEffects[battlerId])

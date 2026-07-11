@@ -26078,7 +26078,9 @@ const struct BaseStats gBaseStats[] =
 
     [SPECIES_AGGRON_MEGA] =
     {
-        .baseHP        = 70,
+        // HP matches ROWE's rebalanced Aggron (85); mega evolution must
+        // never change max HP mid-battle.
+        .baseHP        = 85,
         .baseAttack    = 140,
         .baseDefense   = 230,
         .baseSpeed     = 50,

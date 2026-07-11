@@ -301,6 +301,10 @@ const struct Evolution gEvolutionTable[NUM_SPECIES][EVOS_PER_MON] =
     [SPECIES_LATIAS]                = {{EVO_MEGA_EVOLUTION, ITEM_LATIASITE, SPECIES_LATIAS_MEGA}},
     [SPECIES_LATIOS]                = {{EVO_MEGA_EVOLUTION, ITEM_LATIOSITE, SPECIES_LATIOS_MEGA}},
     [SPECIES_RAYQUAZA]              = {{EVO_MOVE_MEGA_EVOLUTION, MOVE_DRAGON_ASCENT, SPECIES_RAYQUAZA_MEGA}},
+    // Primal reversion rides the mega evolution machinery: orb held ->
+    // trigger -> form change (1.9.4 has no dedicated switch-in reversion).
+    [SPECIES_KYOGRE]                = {{EVO_MEGA_EVOLUTION, ITEM_BLUE_ORB, SPECIES_KYOGRE_PRIMAL}},
+    [SPECIES_GROUDON]               = {{EVO_MEGA_EVOLUTION, ITEM_RED_ORB, SPECIES_GROUDON_PRIMAL}},
 
     // Gens 4-7
     [SPECIES_TURTWIG]               = {{EVO_LEVEL, 18, SPECIES_GROTLE}},
