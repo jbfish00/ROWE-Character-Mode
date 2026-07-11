@@ -1,0 +1,83 @@
+Ported (55):
+  ITEM_ALPHA_CHARM               Alpha Charm    POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_AUSPICIOUS_ARMOR          AuspiciousArmor POCKET_POWER_UP          HOLD_EFFECT_NONE
+  ITEM_BLACK_AUGURITE            Black Augurite POCKET_POWER_UP          HOLD_EFFECT_NONE
+  ITEM_BLUNDER_POLICY            Blunder Policy POCKET_BATTLE_ITEMS      HOLD_EFFECT_GEMS
+  ITEM_BOOSTER_STONE             Delta Orb      POCKET_MEGA_STONES       HOLD_EFFECT_MEGA_STONE
+  ITEM_BP_TICKET                 BP Ticket      POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_CHIPPED_POT               Chipped Pot    POCKET_POWER_UP          HOLD_EFFECT_NONE
+  ITEM_CRACKED_POT               Cracked Pot    POCKET_POWER_UP          HOLD_EFFECT_NONE
+  ITEM_CUT_TOOL                  Axe            POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_DIVE_TOOL                 Dive Gear      POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_EFFORT_TOOL               Effort Tool    POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_EJECT_PACK                Eject Pack     POCKET_BATTLE_ITEMS      HOLD_EFFECT_GEMS
+  ITEM_FLASH_TOOL                Lantern        POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_FLOETTITE                 Floettite      POCKET_MEGA_STONES       HOLD_EFFECT_MEGA_STONE
+  ITEM_FLY_CHARM                 Fly Charm      POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_FLY_TOOL                  Fly Tool       POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_FOSSILIZED_BIRD           Fossilized Bird POCKET_ITEMS             HOLD_EFFECT_NONE
+  ITEM_FOSSILIZED_DINO           Fossilized Dino POCKET_ITEMS             HOLD_EFFECT_NONE
+  ITEM_FOSSILIZED_DRAKE          Fossilized Drake POCKET_ITEMS             HOLD_EFFECT_NONE
+  ITEM_FOSSILIZED_FISH           Fossilized Fish POCKET_ITEMS             HOLD_EFFECT_NONE
+  ITEM_GALARICA_CUFF             Galarica Cuff  POCKET_POWER_UP          HOLD_EFFECT_NONE
+  ITEM_GALARICA_TWIG             Galarica Twig  POCKET_POWER_UP          HOLD_EFFECT_NONE
+  ITEM_HEADBUTT_TOOL             Shaking Tool   POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_INVERSE_GEM               Inverse Gem    POCKET_BATTLE_ITEMS      HOLD_EFFECT_INVERSE_GEM
+  ITEM_INVERSE_SHIELD            Inverse Shield POCKET_BATTLE_ITEMS      HOLD_EFFECT_INVERSE_SHIELD
+  ITEM_LOADED_DICE               Loaded Dice    POCKET_BATTLE_ITEMS      HOLD_EFFECT_LOADED_DICE
+  ITEM_MALICIOUS_ARMOR           Malicious Armor POCKET_POWER_UP          HOLD_EFFECT_NONE
+  ITEM_MASTERPIECE_TEACUP        M. Teacup      POCKET_POWER_UP          HOLD_EFFECT_NONE
+  ITEM_METAL_ALLOY               Metal Alloy    POCKET_POWER_UP          HOLD_EFFECT_NONE
+  ITEM_NECROZMANITE              Necrozmanite   POCKET_MEGA_STONES       HOLD_EFFECT_MEGA_STONE
+  ITEM_PEAT_BLOCK                Peat Block     POCKET_POWER_UP          HOLD_EFFECT_NONE
+  ITEM_RAINBOW_SWEET             Rainbow Sweet  POCKET_POWER_UP          HOLD_EFFECT_NONE
+  ITEM_ROCK_SMASH_TOOL           Pick-axe       POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_ROTOM_CATALOG             Rotom Catalog  POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_SCROLL_OF_DARKNESS        ScrollofDarkness POCKET_POWER_UP          HOLD_EFFECT_NONE
+  ITEM_SCROLL_OF_WATERS          Scroll of Waters POCKET_POWER_UP          HOLD_EFFECT_NONE
+  ITEM_SEVII_TICKET_1            Sevii Ticket 1 POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_SEVII_TICKET_2            Sevii Ticket 2 POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_SEVII_TICKET_3            Sevii Ticket 3 POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_SEVII_TICKET_4            Sevii Ticket 4 POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_SEVII_TICKET_5            Sevii Ticket 5 POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_SEVII_TICKET_6            Sevii Ticket 6 POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_SEVII_TICKET_7            Sevii Ticket 7 POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_SEVII_TICKET_8            Sevii Ticket 8 POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_SHEDINJITE                Shedinjite     POCKET_MEGA_STONES       HOLD_EFFECT_MEGA_STONE
+  ITEM_STRENGTH_TOOL             Power Glove    POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_SURF_TOOL                 Surfboard      POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_SWEET_APPLE               Sweet Apple    POCKET_POWER_UP          HOLD_EFFECT_NONE
+  ITEM_SYRUP_APPLE               Syrup Apple    POCKET_POWER_UP          HOLD_EFFECT_NONE
+  ITEM_TART_APPLE                Tart Apple     POCKET_POWER_UP          HOLD_EFFECT_NONE
+  ITEM_UNREMARKABLE_TEACUP       U. Teacup      POCKET_POWER_UP          HOLD_EFFECT_NONE
+  ITEM_UTILITY_UMBRELLA          U-Umbrella     POCKET_BATTLE_ITEMS      HOLD_EFFECT_UTILITY_UMBRELLA
+  ITEM_VANILLUXITE               Vanilluxite    POCKET_MEGA_STONES       HOLD_EFFECT_MEGA_STONE
+  ITEM_WATERFALL_TOOL            Waterfall Tool POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+  ITEM_WONDER_CHARM              Wonder Charm   POCKET_KEY_ITEMS         HOLD_EFFECT_NONE
+
+New hold effects (5, constants only -- no battle logic):
+  HOLD_EFFECT_MEGA_STONE_R
+  HOLD_EFFECT_MEGA_STONE_G
+  HOLD_EFFECT_INVERSE_GEM
+  HOLD_EFFECT_INVERSE_SHIELD
+  HOLD_EFFECT_LOADED_DICE
+
+Skipped (18):
+  SKIP ITEM_ABILITY_SHIELD          no donor entry
+  SKIP ITEM_ABILITY_SUPPRESOR       no donor entry
+  SKIP ITEM_BOOSTER_ENERGY          no donor entry
+  SKIP ITEM_CLEAR_AMULET            no donor entry
+  SKIP ITEM_CORNERSTONE_MASK        no donor entry
+  SKIP ITEM_COVERT_CLOAK            no donor entry
+  SKIP ITEM_FAIRY_FEATHER           no donor entry
+  SKIP ITEM_HEARTHFLAME_MASK        no donor entry
+  SKIP ITEM_MIRROR_HERB             no donor entry
+  SKIP ITEM_PUNCHING_GLOVE          no donor entry
+  SKIP ITEM_ROOM_SERVICE            no donor entry
+  SKIP ITEM_RUSTED_SHIELD           no donor entry
+  SKIP ITEM_RUSTED_SWORD            no donor entry
+  SKIP ITEM_SKILL_CHARM             no donor entry
+  SKIP ITEM_TEAL_MASK               no donor entry
+  SKIP ITEM_THROAT_SPRAY            no donor entry
+  SKIP ITEM_TYPE_SUPPRESOR          no donor entry
+  SKIP ITEM_WELLSPRING_MASK         no donor entry
