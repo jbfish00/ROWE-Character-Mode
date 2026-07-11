@@ -728,21 +728,21 @@
 #define FLAG_RECEIVED_BADGE_15  0x2AA // Unused Flag
 #define FLAG_RECEIVED_BADGE_16  0x2AB // Unused Flag
 #define FLAG_PASSWORD_TRAINER   0x2AC
-#define FLAG_UNUSED_0x2AD  0x2AD // Unused Flag
-#define FLAG_UNUSED_0x2AE  0x2AE // Unused Flag
-#define FLAG_UNUSED_0x2AF  0x2AF // Unused Flag
-#define FLAG_UNUSED_0x2B0  0x2B0 // Unused Flag
-#define FLAG_UNUSED_0x2B1  0x2B1 // Unused Flag
-#define FLAG_UNUSED_0x2B2  0x2B2 // Unused Flag
-#define FLAG_UNUSED_0x2B3  0x2B3 // Unused Flag
-#define FLAG_UNUSED_0x2B4  0x2B4 // Unused Flag
-#define FLAG_UNUSED_0x2B5  0x2B5 // Unused Flag
-#define FLAG_UNUSED_0x2B6  0x2B6 // Unused Flag
-#define FLAG_UNUSED_0x2B7  0x2B7 // Unused Flag
-#define FLAG_UNUSED_0x2B8  0x2B8 // Unused Flag
-#define FLAG_UNUSED_0x2B9  0x2B9 // Unused Flag
-#define FLAG_UNUSED_0x2BA  0x2BA // Unused Flag
-#define FLAG_UNUSED_0x2BB  0x2BB // Unused Flag
+#define FLAG_ITEM_GRIMMSNARLITE          0x2AD // 2.X parity: Altering Cave mega stone
+#define FLAG_ITEM_TINKATITE              0x2AE // 2.X parity: Meteor Falls 1F mega stone
+#define FLAG_ITEM_TATSIGIRITE            0x2AF // 2.X parity: Meteor Falls back room mega stone
+#define FLAG_ITEM_SLOWKINGITE            0x2B0 // 2.X parity: Oldale Ruins 2F mega stone
+#define FLAG_ITEM_TSEERENITE             0x2B1 // 2.X parity: Petalburg City mega stone
+#define FLAG_ITEM_RIBOMBITE              0x2B2 // 2.X parity: Primeval Forest mega stone
+#define FLAG_ITEM_QUAGSIRITE             0x2B3 // 2.X parity: Route 103 mega stone
+#define FLAG_ITEM_LUXRAYNITE             0x2B4 // 2.X parity: Route 110 mega stone
+#define FLAG_ITEM_GLIMMORITE             0x2B5 // 2.X parity: Route 113 mega stone
+#define FLAG_ITEM_DRAMPANITE             0x2B6 // 2.X parity: Route 115 mega stone
+#define FLAG_ITEM_RAICHUNITE_X           0x2B7 // 2.X parity: Route 117 mega stone
+#define FLAG_ITEM_STARAPTORITE           0x2B8 // 2.X parity: Route 121 mega stone
+#define FLAG_ITEM_BAXCALIBURITE          0x2B9 // 2.X parity: Route 132 mega stone
+#define FLAG_ITEM_HAWLUCHANITE           0x2BA // 2.X parity: Safari Zone North mega stone
+#define FLAG_ITEM_GOLISPODITE            0x2BB // 2.X parity: Underwater Route 126 mega stone
 
 // Event Flags
 #define FLAG_HIDE_ROUTE_101_BIRCH_STARTERS_BAG                      0x2BC

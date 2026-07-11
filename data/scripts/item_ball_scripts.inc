@@ -817,3 +817,63 @@ MegaStone_EventScript_Sandacondite::
 MegaStone_EventScript_Centisite::
 	addscaleditem ITEM_CENTISITE
 	end
+
+MegaStone_EventScript_Grimmsnarlite::
+	addscaleditem ITEM_GRIMMSNARLITE
+	end
+
+MegaStone_EventScript_Tinkatite::
+	addscaleditem ITEM_TINKATITE
+	end
+
+MegaStone_EventScript_Tatsigirite::
+	addscaleditem ITEM_TATSIGIRITE
+	end
+
+MegaStone_EventScript_Slowkingite::
+	addscaleditem ITEM_SLOWKINGITE
+	end
+
+MegaStone_EventScript_Tseerenite::
+	addscaleditem ITEM_TSEERENITE
+	end
+
+MegaStone_EventScript_Ribombite::
+	addscaleditem ITEM_RIBOMBITE
+	end
+
+MegaStone_EventScript_Quagsirite::
+	addscaleditem ITEM_QUAGSIRITE
+	end
+
+MegaStone_EventScript_Luxraynite::
+	addscaleditem ITEM_LUXRAYNITE
+	end
+
+MegaStone_EventScript_Glimmorite::
+	addscaleditem ITEM_GLIMMORITE
+	end
+
+MegaStone_EventScript_Drampanite::
+	addscaleditem ITEM_DRAMPANITE
+	end
+
+MegaStone_EventScript_RaichuniteX::
+	addscaleditem ITEM_RAICHUNITE_X
+	end
+
+MegaStone_EventScript_Staraptorite::
+	addscaleditem ITEM_STARAPTORITE
+	end
+
+MegaStone_EventScript_Baxcaliburite::
+	addscaleditem ITEM_BAXCALIBURITE
+	end
+
+MegaStone_EventScript_Hawluchanite::
+	addscaleditem ITEM_HAWLUCHANITE
+	end
+
+MegaStone_EventScript_Golispodite::
+	addscaleditem ITEM_GOLISPODITE
+	end

@@ -65,6 +65,19 @@
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MeteorFalls_1F_1R_EventScript_ItemPPUP",
       "flag": "FLAG_ITEM_METEOR_FALLS_1F_1R_PP_UP"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
+      "x": 26,
+      "y": 32,
+      "elevation": 3,
+      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_range_x": 1,
+      "movement_range_y": 1,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "MegaStone_EventScript_Tinkatite",
+      "flag": "FLAG_ITEM_TINKATITE"
     }
   ],
   "warp_events": [
@@ -111,9 +124,7 @@
       "dest_warp_id": 0
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",
