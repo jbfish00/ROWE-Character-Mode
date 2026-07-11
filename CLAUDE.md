@@ -80,59 +80,42 @@ Recurring traps (all handled inside the scripts — keep it that way):
 
 ## Current state (2026-07-11)
 
-Phases 1, 2 and most of 3 are COMMITTED and build-clean. `git log --oneline -12`.
+Phases 1-4 (partially) COMMITTED and build-clean. `git log --oneline -15`.
 
-**Phase 3 progress:**
-- 3.1 Level caps: DONE. 2.X `gScalingInfo[difficulty][what][badges]` table in
-  `level_scaling.c` (16-badge ready). NOTE: 1.9.4 ALREADY had level caps (stat
-  clamp in CalculateMonStats + Hard-mode XP block in GetPkmnExpMultiplier);
-  what 2.X changes is the VALUES (badge 8: 45, not 77). Both pre-existing paths
-  now call `GetCurrentRawLevelCap()`. Do not add a second cap system.
-- 3.2 Battle Styles: DONE. 8 styles, stat reshaping in `ApplyBattleStyle()`
-  (called at the tail of CalculateMonStats + CalculateTrainerMonStats).
-  Per-mon storage = 3 bits stolen from `hidden_nature` (u8 -> :5 + style:3),
-  no save growth. Player picks with START on the summary Skills page.
-  Opponents use them (trainer data's `.style`, wired in battle_main).
-- 3.3 Trainer Skills: DONE (core + menu). `src/trainer_skills.c` +
-  `src/trainer_skills_menu.c`. SaveBlock1 gained `trainerSkillLevel[100]` +
-  `trainerExp`. The six stat skills REPLACE IVs under
-  `FLAG_TRAINER_SKILLS_MODE` (3 IVs/point, final point 4 = exactly 31).
-  Menu opens with START on the Start menu.
-- **Exiolite: NEEDED NO WORK** -- 1.9.4 already ships it whole.
-- 3.4 Blue Nurse suite: NOT STARTED (egg/tutor/TM tutoring by badge count,
-  wonder trade, PC-storage battles, season change). Season change also
-  unblocks MOVE_SEASONAL_BEAM, still stubbed.
-- 3.5 Badge key-item rewards: NOT STARTED (most tool items already exist in
-  1.9.4; this is gating alignment).
+**Phase 3 — DONE, and PLAY-TESTED** (testing found 3 real bugs, all fixed):
+- Level caps (2.X gScalingInfo table). NB 1.9.4 ALREADY had level caps; 2.X only
+  changes the VALUES. Do not add a second cap system.
+- Battle Styles (8 styles; storage = 3 bits freed from hidden_nature).
+- Trainer Skills (core + menu). Menu = "Skills" in the FIELD start menu.
+  VERIFIED in-game: renders, lists skills, shows points, closes cleanly.
+- **Exiolite and the Blue Nurse suite NEEDED NO WORK** -- 1.9.4 already ships
+  both (PkmnCenterJack already does tutoring/wonder trade/PC battles/costumes).
+- Skill EFFECTS beyond the six IV ones + XP Boost-Trainer are still stubs.
 
-**Skill effects still unimplemented** (constants + points exist; only the six
-stat/IV ones and XP Boost-Trainer actually do anything): Gold Rush, Bargain,
-Sniper Ball, Step Heal, Rebirth, Stay Away, Skill Restore, Joy Boost,
-Revitalize, Deep Scan, Eggcelerate, Rare Sight, Quick Exit, Bonus Battle,
-Loot Boost, Max PP Boost, Rock Smash Boost, XP Boost-Pokemon.
+**Phase 4 — maps + access DONE; gyms/badges NOT DONE:**
+- 4.1: 107 Sevii/Kanto maps imported (633 -> 740 maps). VERIFIED in the built
+  ROM: all 658 layout pointers valid (incl. the 108 new), sane dimensions, real
+  blockdata; the island MapScripts symbols all resolve.
+- 4.2: travel wired -- "Travel to Sevii" added to the Pokemon Center menu ->
+  Colress -> ticket-gated warp. Intro grants one random ticket (FAQ #12).
+  VERIFIED in-game: Sevii Tickets appear in the Key Items pocket with the right
+  icon and description.
+- CRIES: no work needed. 1.9.4 already ships only 23 (the other ~957 sit unused
+  in sound/direct_sound_data _with_cries.inc). ROM is 23.8 MB / 32 MB.
+- STILL TO DO: Johto leaders as gyms 9-16, badge count -> 16, Mega Bracelet
+  7 -> 11 badges, legendary placements, Victory Road gate at 16.
+- 10 scripts are STUBBED (data/scripts/sevii_stubs.inc): Alpha Pokemon,
+  legendary encounters, gift mons, Mega Stone Gurus -- 2.X systems that live
+  only in the donor's .pory and are out of scope for a map import. The NPCs
+  exist and are interactable, they just say nothing.
+- InsideOfTruck2 (2.X's alternate intro) is deliberately EXCLUDED.
 
-**Trainer parties VERIFIED STATICALLY in the built ROM** (cheaper than driving
-the emulator, which eats budget fast): dump `gTrainers` from the .gba (stride
-0x28; partyFlags at +0, partySize at +0x20, party ptr at +0x24) and decode the
-party. Roxanne = Onix with a real 6/252/252 EV spread; Brendan Route 103 =
-Treecko. Both match the donor data, `partyFlags == 0x3`
-(CUSTOM_MOVESET|HELD_ITEM), pointers valid. Reuse this technique -- it beats
-navigating to a trainer.
+**Phase 5 (QoL/quests/achievements/NG+): NOT STARTED.**
 
-**RUNTIME-UNTESTED (all committed, all build-clean):** everything in Phase 3
-(level caps, Battle Styles, Trainer Skills + its menu), the ability effects,
-most new move effects, and an actual trainer BATTLE (data is verified, but
-CreateNPCTrainerParty has never been exercised on the rewritten structs).
-Test ROM ready: `~/Documents/rowe_test_phase3.gba` (fresh save; any mode
-commit grants a Lv40 Snorlax). Fastest live checks: fight the Route 103 rival,
-open Trainer Skills with START on the Start menu, cycle a Battle Style with
-START on the summary Skills page.
-
-**Recently FIXED:** the Trick-o-nome crash was `gBattleAnims_Moves` (assembly,
-so it escaped the MOVES_COUNT sweep) still having 756 entries for 943 moves --
-ANY new move animating jumped through garbage. Ported all 188 via
-`port_2x_move_anims.py`; verified 188/188 valid ROM pointers and 7 clean
-Trickonome uses in-battle.
+**RUNTIME-UNTESTED:** actually standing on a Sevii island (data verified, but
+navigating there in the emulator was never completed); a real trainer battle
+(party data verified statically -- Roxanne = Onix w/ 6/252/252 EVs); Battle
+Styles; level caps; ability effects; most new move effects.
 
 ## Donor facts
 
