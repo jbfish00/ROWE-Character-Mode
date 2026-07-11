@@ -4165,6 +4165,11 @@ static void Cmd_getexp(void)
 						gBattleMoveDamage = *exp;
 					else
 						gBattleMoveDamage = 0;
+
+					// 2.X level cap (FAQ #13): on Hard, a mon at or past the
+					// cap earns no XP at all until the next gym falls.
+					if (IsExpBlockedByLevelCap(GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_LEVEL, NULL)))
+						gBattleMoveDamage = 0;
 					
                     // only give exp share bonus in later gens if the mon wasn't sent out
                     if (gSaveBlock2Ptr->expShare || ((holdEffect == HOLD_EFFECT_EXP_SHARE) && ((gBattleMoveDamage == 0) || (B_SPLIT_EXP < GEN_6))))

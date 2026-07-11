@@ -4135,6 +4135,7 @@ void CalculateMonStats(struct Pokemon *mon)
     u16 formSpeciesId 	= GetFormSpeciesId(species, formId);
 	u8 nature 			= GetNature(mon, TRUE);
 	s32 level 			= GetLevelFromMonExp(mon);
+
 	u16 evolvedform;
     s32 newMaxHP;
 	s32 newAtk;
@@ -4144,8 +4145,15 @@ void CalculateMonStats(struct Pokemon *mon)
 	s32 newSpe;
 	s32 n;
 	bool8 specialExioliteSpecies = FALSE;
-	
+
 	SetMonData(mon, MON_DATA_LEVEL, &level);
+
+	// 2.X level cap (FAQ #13): on Normal the mon keeps gaining XP AND LEVELS,
+	// but its STATS stay locked at the cap until the next gym falls. The true
+	// level is stored above first; only the stat formulas below see the capped
+	// value, so the mon really does level up -- it just doesn't get stronger.
+	if (!GetMonData(mon, MON_DATA_IS_EGG, NULL))
+		level = ApplyLevelCapToStatLevel(level);
 	
 	if(FlagGet(FLAG_PERFECT_IVS_MODE)){
 		hpIV 		= 31;

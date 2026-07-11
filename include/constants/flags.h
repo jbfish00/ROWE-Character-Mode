@@ -55,6 +55,7 @@
 #define FLAG_NO_EVOLUTION_MODE    	     0x2B // Game Mode
 #define FLAG_UPDATED_SAVE_3    		     0x2C // System Flag
 #define FLAG_LEVELESS_MODE    	         0x2D // Game Mode
+#define FLAG_GRINDLESS_MODE              FLAG_LEVELESS_MODE // 2.X name for the same flag
 #define FLAG_NO_SPLIT_MODE    		     0x2E // Game Mode
 #define FLAG_VANILLA_MODE    		     0x2F // Game Mode
 #define FLAG_FULL_RANDOMIZED_MODE        0x30 // Game Mode
@@ -705,7 +706,7 @@
 #define FLAG_GOT_GYARADOSITE  0x293 // Gyaradosite*
 #define FLAG_GOT_SLOWBROITE  0x294 // Slowbroite
 #define FLAG_UNUSED_0x295  0x295 // Portal Stuff
-#define FLAG_UNUSED_0x296  0x296 // Unused Flag
+#define FLAG_LITTLE_CUP_MODE 0x296 // 2.X: Little Cup (level cap 5)
 #define FLAG_UNUSED_0x297  0x297 // Unused Flag
 #define FLAG_UNUSED_0x298  0x298 // Unused Flag
 #define FLAG_UNUSED_0x299  0x299 // Unused Flag

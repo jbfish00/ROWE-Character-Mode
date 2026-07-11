@@ -190,4 +190,13 @@
 #define CRY_TYPE_NORMAL   2
 #define CRY_TYPE_ANIME    3
 
+// 2.X difficulty levels. NOTE the ordering: EASY < NORMAL < HARD. Our old
+// GetGameDifficultyLevel() returned HARD=1/NORMAL=2, which would have indexed
+// gScalingInfo backwards -- it is realigned to this ordering (it had no
+// callers outside level_scaling.c).
+#define DIFFICULTY_EASY    0
+#define DIFFICULTY_NORMAL  1
+#define DIFFICULTY_HARD    2
+#define NUM_DIFFICULTIES   3
+
 #endif // GUARD_CONSTANTS_GLOBAL_H

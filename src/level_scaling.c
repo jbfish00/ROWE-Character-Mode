@@ -112,13 +112,142 @@ u8 getScaledWildPokemonLevel();
 //Wild Pokemon Scaling
 const u8 MovePowerLimit[] = {60,60,70,70,80,90,100,250,250,250,250};
 
+u8 GetNumBadges(void);   // defined below; the scaling table keys off it
+
+// ===== 2.X scaling table + level caps (ported from RoweRepo) =====
+// 2.X replaced the flat per-badge arrays with one table keyed by
+// [difficulty][what][badges], which is also what drives its level caps.
+// 19 badge columns: 0-16 badges, then post-league and endgame.
+#define SCALING_AFTER_LEAGUE        17
+#define SCALING_ENDGAME             18
+#define NUM_CURRENT_SCALING_LEVELS  19
+#define LITTLE_CUP_LEVEL            5
+
+enum{
+	SCALING_WILD_MON_LEVEL,
+	SCALING_TRAINER_MON_LEVEL,
+	SCALING_BOSS_MON_LEVEL,
+	SCALING_TRAINER_MAX_MON_NUM,
+	SCALING_DOUBLE_MAX_MON_NUM,
+	SCALING_BOSS_MAX_MON_NUM,
+	SCALING_WHITEOUT_MONEY,
+	SCALING_MOVE_POWER_LIMIT,
+	NUM_SCALING_OPTIONS,
+};
+
+const u16 gScalingInfo[NUM_DIFFICULTIES][NUM_SCALING_OPTIONS][NUM_CURRENT_SCALING_LEVELS] = {
+	[DIFFICULTY_EASY] = {               //  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
+		[SCALING_WILD_MON_LEVEL]      = {  4,  8, 12, 15, 18, 20, 22, 24, 26, 28, 30, 32, 34, 36, 38, 40, 43, 48, 60 },
+		[SCALING_TRAINER_MON_LEVEL]   = {  6, 10, 13, 16, 19, 21, 23, 25, 27, 29, 31, 33, 35, 37, 39, 42, 45, 50, 60 },
+		[SCALING_BOSS_MON_LEVEL]      = { 12, 16, 20, 23, 26, 28, 30, 32, 34, 36, 38, 41, 44, 48, 52, 55, 58, 64, 70 },
+		[SCALING_TRAINER_MAX_MON_NUM] = {  2,  2,  3,  3,  3,  3,  4,  4,  4,  4,  4,  4,  5,  5,  5,  5,  6,  6,  6 },
+		[SCALING_DOUBLE_MAX_MON_NUM]  = {  2,  2,  2,  2,  2,  4,  4,  4,  4,  4,  4,  4,  4,  4,  6,  6,  6,  6,  6 },
+		[SCALING_BOSS_MAX_MON_NUM]    = {  3,  3,  4,  4,  4,  5,  5,  5,  5,  5,  6,  6,  6,  6,  6,  6,  6,  6,  6 },
+		[SCALING_MOVE_POWER_LIMIT]    = { 60, 70, 75, 80, 85, 90, 95,100,125,150,175,200,250,275,300,325,350,375,500 },
+		[SCALING_WHITEOUT_MONEY]      = {  8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96,104,116,120,120,120,120,120 },
+	},
+	[DIFFICULTY_NORMAL] = {             //  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
+		[SCALING_WILD_MON_LEVEL]      = {  5,  9, 12, 15, 17, 19, 21, 23, 25, 27, 30, 32, 35, 37, 40, 43, 47, 53, 65 },
+		[SCALING_TRAINER_MON_LEVEL]   = {  7, 11, 14, 17, 20, 23, 25, 28, 31, 34, 36, 39, 42, 45, 48, 51, 55, 60, 70 },
+		[SCALING_BOSS_MON_LEVEL]      = { 13, 18, 22, 25, 28, 31, 34, 37, 40, 43, 46, 49, 51, 54, 57, 64, 70, 76, 82 },
+		[SCALING_TRAINER_MAX_MON_NUM] = {  2,  2,  3,  3,  3,  3,  4,  4,  4,  4,  4,  4,  5,  5,  5,  5,  6,  6,  6 },
+		[SCALING_DOUBLE_MAX_MON_NUM]  = {  2,  2,  2,  2,  2,  4,  4,  4,  4,  4,  4,  4,  4,  4,  6,  6,  6,  6,  6 },
+		[SCALING_BOSS_MAX_MON_NUM]    = {  3,  3,  4,  4,  4,  5,  5,  5,  5,  5,  6,  6,  6,  6,  6,  6,  6,  6,  6 },
+		[SCALING_MOVE_POWER_LIMIT]    = { 60, 70, 75, 80, 85, 90, 95,100,125,150,175,200,250,275,300,325,350,375,500 },
+		[SCALING_WHITEOUT_MONEY]      = {  8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96,104,116,120,120,120,120,120 },
+	},
+	[DIFFICULTY_HARD] = {               //  0   1   2   3   4   5   6   7   8   9  10  11  12  13  14  15  16  17  18
+		[SCALING_WILD_MON_LEVEL]      = {  5,  9, 12, 15, 18, 20, 23, 25, 27, 30, 33, 36, 39, 42, 46, 51, 56, 61, 68 },
+		[SCALING_TRAINER_MON_LEVEL]   = {  7, 12, 15, 18, 21, 24, 27, 30, 33, 36, 39, 42, 45, 48, 52, 57, 62, 68, 73 },
+		[SCALING_BOSS_MON_LEVEL]      = { 13, 18, 22, 25, 28, 31, 34, 37, 40, 44, 47, 50, 53, 56, 59, 66, 72, 77, 85 },
+		[SCALING_TRAINER_MAX_MON_NUM] = {  2,  2,  3,  3,  3,  3,  4,  4,  4,  4,  4,  4,  5,  5,  5,  5,  6,  6,  6 },
+		[SCALING_DOUBLE_MAX_MON_NUM]  = {  2,  2,  2,  2,  4,  4,  4,  4,  4,  4,  4,  4,  6,  6,  6,  6,  6,  6,  6 },
+		[SCALING_BOSS_MAX_MON_NUM]    = {  3,  3,  4,  4,  4,  5,  5,  5,  5,  5,  6,  6,  6,  6,  6,  6,  6,  6,  6 },
+		[SCALING_MOVE_POWER_LIMIT]    = { 60, 70, 75, 80, 85, 90, 95,100,125,150,175,200,250,275,300,325,350,375,500 },
+		[SCALING_WHITEOUT_MONEY]      = {  8, 16, 24, 32, 40, 48, 56, 64, 72, 80, 88, 96,104,116,120,120,120,120,120 },
+	},
+};
+
+// 2.X ordering (EASY, NORMAL, HARD) -- gScalingInfo is indexed by this.
 u8 GetGameDifficultyLevel(){
 	if (FlagGet(FLAG_EASY_MODE))
-		return 0;
+		return DIFFICULTY_EASY;
 	else if (FlagGet(FLAG_HARD_MODE))
-		return 1;
+		return DIFFICULTY_HARD;
 	else
-		return 2;
+		return DIFFICULTY_NORMAL;
+}
+
+static u16 getScalingDataForBadge(u8 type, u8 numBadges){
+	if (numBadges >= NUM_CURRENT_SCALING_LEVELS)
+		numBadges = NUM_CURRENT_SCALING_LEVELS - 1;
+	return gScalingInfo[GetGameDifficultyLevel()][type][numBadges];
+}
+
+static u16 getScalingData(u8 type){
+	return getScalingDataForBadge(type, GetNumBadges());
+}
+
+// The cap is the level of the current gym leader's ace: boss level for the
+// badge count, plus its party size (2.X adds the two).
+u16 GetCurrentRawLevelCap(void)
+{
+	if (GetNumBadges() >= SCALING_ENDGAME)
+		return MAX_LEVEL;
+
+	return getScalingData(SCALING_BOSS_MON_LEVEL)
+	     + getScalingData(SCALING_BOSS_MAX_MON_NUM);
+}
+
+u16 GetCurrentLevelCap(void)
+{
+	if (FlagGet(FLAG_LITTLE_CUP_MODE) && !FlagGet(FLAG_GRINDLESS_MODE))
+		return LITTLE_CUP_LEVEL;
+
+	return GetCurrentRawLevelCap();
+}
+
+u16 GetNextLevelCap(void)
+{
+	u8 badges = GetNumBadges();
+
+	if (badges >= SCALING_ENDGAME)
+		return MAX_LEVEL;
+
+	return getScalingDataForBadge(SCALING_BOSS_MON_LEVEL, badges + 1)
+	     + getScalingDataForBadge(SCALING_BOSS_MAX_MON_NUM, badges + 1);
+}
+
+// Level caps only bite on Normal and Hard (FAQ #13):
+//   Normal: XP and levels keep flowing, but STATS lock at the cap.
+//   Hard:   no XP at all past the cap.
+bool8 IsLevelCapActive(void)
+{
+	return (GetGameDifficultyLevel() != DIFFICULTY_EASY);
+}
+
+// The level a mon's stats are computed at (Normal clamps; Easy never does).
+u8 ApplyLevelCapToStatLevel(u8 level)
+{
+	u16 cap;
+
+	if (!IsLevelCapActive())
+		return level;
+
+	cap = GetCurrentLevelCap();
+	if (level > cap)
+		return cap;
+
+	return level;
+}
+
+// Hard mode: a mon at/over the cap earns nothing.
+bool8 IsExpBlockedByLevelCap(u8 level)
+{
+	if (GetGameDifficultyLevel() != DIFFICULTY_HARD)
+		return FALSE;
+
+	return (level >= GetCurrentLevelCap());
 }
 
 u8 IsHardMode(){
@@ -187,10 +316,17 @@ u8 GetNumBadges()
 };
 
 u8 GetCurrentMovePowerLimit(){
-	if(!FlagGet(FLAG_NEW_GAME_PLUS))
-		return MovePowerLimit[GetNumBadges()];
-	else
+	u16 limit;
+
+	if (FlagGet(FLAG_NEW_GAME_PLUS))
 		return 250;
+
+	// 2.X sources this from gScalingInfo (difficulty-aware, 16-badge aware)
+	limit = getScalingData(SCALING_MOVE_POWER_LIMIT);
+	if (limit > 255)
+		limit = 255;
+
+	return limit;
 }
 
 u8 checkLevel(u8 level){

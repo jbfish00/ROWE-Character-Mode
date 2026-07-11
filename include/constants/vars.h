@@ -267,7 +267,7 @@
 #define VAR_DEXNAV_STEP_COUNTER              0x40F8 // steps for finding hidden pokemon
 #define VAR_UNUSED_0x40F9                    0x40F9 // Unused Var
 #define VAR_CHARACTER_ID                     0x40FA // Character Mode: 1-based index into gCharacters, 0 = none
-#define VAR_UNUSED_0x40FB                    0x40FB // Unused Var
+#define VAR_LEVEL_CAP_LEVEL                  0x40FB // 2.X: level-cap strictness
 #define VAR_UNUSED_0x40FC                    0x40FC // Unused Var
 #define VAR_UNUSED_0x40FD                    0x40FD // Unused Var
 #define VAR_SAVE_VERSION                     0x40FE
