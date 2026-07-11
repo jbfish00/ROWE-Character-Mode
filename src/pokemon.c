@@ -4331,6 +4331,98 @@ void CalculateMonStats(struct Pokemon *mon)
 	}
 	
     SetMonData(mon, MON_DATA_HP, &currentHP);
+
+	ApplyBattleStyle(mon);
+}
+
+// ===== 2.X Battle Styles =====
+// Reshape a mon's final stats per its chosen style (doc sheet "Battle Styles").
+// Applied after the normal stat math so it composes with Exiolite, special
+// forms and the vanilla-mode branch instead of fighting them. HP is never
+// touched. A style does nothing until the mon reaches its unlock level.
+u8 GetStyleUnlockLevel(u8 style)
+{
+	switch (style)
+	{
+	case STYLE_DISRUPTOR:   return STYLE_DISRUPTOR_LEVEL;
+	case STYLE_TANK:        return STYLE_TANK_LEVEL;
+	case STYLE_STRIKER:     return STYLE_STRIKER_LEVEL;
+	case STYLE_SPEEDSTER:   return STYLE_SPEEDSTER_LEVEL;
+	case STYLE_BRUISER:     return STYLE_BRUISER_LEVEL;
+	case STYLE_JUGGERNAUT:  return STYLE_JUGGERNAUT_LEVEL;
+	case STYLE_ALL_ROUNDER: return STYLE_ALL_ROUNDER_LEVEL;
+	default:                return 1;   // STYLE_BALANCED
+	}
+}
+
+void ApplyBattleStyle(struct Pokemon *mon)
+{
+	u8 style = GetMonData(mon, MON_DATA_STYLE, NULL);
+	u8 level = GetMonData(mon, MON_DATA_LEVEL, NULL);
+	s32 atk, def, spe, spa, spd, avg;
+
+	if (style == STYLE_BALANCED || style >= NUM_STYLES)
+		return;
+	if (level < GetStyleUnlockLevel(style))
+		return;
+
+	atk = GetMonData(mon, MON_DATA_ATK,   NULL);
+	def = GetMonData(mon, MON_DATA_DEF,   NULL);
+	spe = GetMonData(mon, MON_DATA_SPEED, NULL);
+	spa = GetMonData(mon, MON_DATA_SPATK, NULL);
+	spd = GetMonData(mon, MON_DATA_SPDEF, NULL);
+
+	switch (style)
+	{
+	case STYLE_DISRUPTOR:   // -33% offensive, +33% Speed
+		atk = atk * 67 / 100;
+		spa = spa * 67 / 100;
+		spe = spe * 133 / 100;
+		break;
+	case STYLE_TANK:        // -33% Speed, +25% defensive
+		spe = spe * 67 / 100;
+		def = def * 125 / 100;
+		spd = spd * 125 / 100;
+		break;
+	case STYLE_STRIKER:     // -33% defensive, +25% offensive
+		def = def * 67 / 100;
+		spd = spd * 67 / 100;
+		atk = atk * 125 / 100;
+		spa = spa * 125 / 100;
+		break;
+	case STYLE_SPEEDSTER:   // -33% defensive, +33% Speed
+		def = def * 67 / 100;
+		spd = spd * 67 / 100;
+		spe = spe * 133 / 100;
+		break;
+	case STYLE_BRUISER:     // -33% offensive, +25% defensive
+		atk = atk * 67 / 100;
+		spa = spa * 67 / 100;
+		def = def * 125 / 100;
+		spd = spd * 125 / 100;
+		break;
+	case STYLE_JUGGERNAUT:  // -50% Speed, +33% offensive
+		spe = spe / 2;
+		atk = atk * 133 / 100;
+		spa = spa * 133 / 100;
+		break;
+	case STYLE_ALL_ROUNDER: // every stat becomes the average of them all
+		avg = (atk + def + spe + spa + spd) / 5;
+		atk = def = spe = spa = spd = avg;
+		break;
+	}
+
+	if (atk < 1) atk = 1;
+	if (def < 1) def = 1;
+	if (spe < 1) spe = 1;
+	if (spa < 1) spa = 1;
+	if (spd < 1) spd = 1;
+
+	SetMonData(mon, MON_DATA_ATK,   &atk);
+	SetMonData(mon, MON_DATA_DEF,   &def);
+	SetMonData(mon, MON_DATA_SPEED, &spe);
+	SetMonData(mon, MON_DATA_SPATK, &spa);
+	SetMonData(mon, MON_DATA_SPDEF, &spd);
 }
 
 void CalculateTrainerMonStats(struct Pokemon *mon)
@@ -4503,6 +4595,8 @@ void CalculateTrainerMonStats(struct Pokemon *mon)
 	}
 	
     SetMonData(mon, MON_DATA_HP, &currentHP);
+
+	ApplyBattleStyle(mon);   // 2.X: opponents use styles too (trainer data carries .style)
 }
 
 void BoxMonToMon(const struct BoxPokemon *src, struct Pokemon *dest)
@@ -5438,6 +5532,9 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
 	case MON_DATA_EXIOLITE_ENABLED:
         retVal = substruct0->exiolite;
         break;
+	case MON_DATA_STYLE:
+        retVal = substruct0->style;
+        break;
     default:
         break;
     }
@@ -5764,6 +5861,9 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         break;
 	case MON_DATA_EXIOLITE_ENABLED:
         SET8(substruct0->exiolite);
+        break;
+	case MON_DATA_STYLE:
+        SET8(substruct0->style);
         break;
     default:
         break;

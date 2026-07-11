@@ -1976,6 +1976,31 @@ static void Task_HandleInput(u8 taskId)
 		{
 			if (sMonSummaryScreen->currPageIndex == PSS_PAGE_SKILLS)
 			{
+				// 2.X Battle Styles: cycle the mon's style on the Skills page.
+				// Only styles the mon's level has unlocked are offered, so the
+				// list grows as it levels (doc: "unlocked as your pokemon level
+				// up"). Balanced is always available.
+				if (!sMonSummaryScreen->isBoxMon)
+				{
+					struct Pokemon *mon = &gPlayerParty[sMonSummaryScreen->curMonIndex];
+					u8 level = GetMonData(mon, MON_DATA_LEVEL, NULL);
+					u8 style = GetMonData(mon, MON_DATA_STYLE, NULL);
+					u8 guard = NUM_STYLES;
+
+					do
+					{
+						style = (style + 1) % NUM_STYLES;
+					} while (guard-- > 0 && level < GetStyleUnlockLevel(style));
+
+					if (level < GetStyleUnlockLevel(style))
+						style = STYLE_BALANCED;
+
+					SetMonData(mon, MON_DATA_STYLE, &style);
+					SetMonData(&sMonSummaryScreen->currentMon, MON_DATA_STYLE, &style);
+					CalculateMonStats(mon);
+					CalculateMonStats(&sMonSummaryScreen->currentMon);
+					FillWindowPixelBuffer(PSS_WINDOW_MIDDLE_RIGHT, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+				}
 				PrintStatPage_Midde();
 			}
 		}
@@ -2219,6 +2244,27 @@ static const u8 sText_Help_Bar_Cancel[]    = _("{A_BUTTON} Cancel");
 static const u8 sText_Help_Bar_Switch[]    = _("{A_BUTTON} Switch");
 static const u8 sText_Help_Bar_Info[]      = _("{A_BUTTON} Info");
 static const u8 sText_Help_Bar_Reset_Evs[] = _("{SELECT_BUTTON} Reset Evs");
+
+// 2.X Battle Styles (cycled with START on the Skills page)
+static const u8 sText_Style_Balanced[]   = _("Balanced");
+static const u8 sText_Style_Disruptor[]  = _("Disruptor");
+static const u8 sText_Style_Tank[]       = _("Tank");
+static const u8 sText_Style_Striker[]    = _("Striker");
+static const u8 sText_Style_Speedster[]  = _("Speedster");
+static const u8 sText_Style_Bruiser[]    = _("Bruiser");
+static const u8 sText_Style_Juggernaut[] = _("Juggernaut");
+static const u8 sText_Style_AllRounder[] = _("All Rounder");
+
+static const u8 *const sStyleNames[NUM_STYLES] = {
+    [STYLE_BALANCED]    = sText_Style_Balanced,
+    [STYLE_DISRUPTOR]   = sText_Style_Disruptor,
+    [STYLE_TANK]        = sText_Style_Tank,
+    [STYLE_STRIKER]     = sText_Style_Striker,
+    [STYLE_SPEEDSTER]   = sText_Style_Speedster,
+    [STYLE_BRUISER]     = sText_Style_Bruiser,
+    [STYLE_JUGGERNAUT]  = sText_Style_Juggernaut,
+    [STYLE_ALL_ROUNDER] = sText_Style_AllRounder,
+};
 
 static void ChangePage(u8 taskId, s8 delta)
 {
@@ -2619,6 +2665,15 @@ static void PrintStatPage_Midde(void)
 		
     if(sMonSummaryScreen->ModifyStatMode)
         FillWindowPixelBuffer(PSS_WINDOW_MIDDLE_RIGHT, PIXEL_FILL(TEXT_COLOR_TRANSPARENT));
+
+    // 2.X Battle Style: show which one is active (START cycles it)
+    {
+        u8 style = GetMonData(&sMonSummaryScreen->currentMon, MON_DATA_STYLE, NULL);
+
+        if (style < NUM_STYLES)
+            PrintSmallTextOnWindow(windowId, sStyleNames[style], 0, 92, 0,
+                                   SUMMARY_FONT_COLOR_WHITE);
+    }
 
     CalculateMonStats(&sMonSummaryScreen->currentMon);
 	

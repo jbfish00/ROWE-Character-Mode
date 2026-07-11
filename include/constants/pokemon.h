@@ -192,6 +192,7 @@
 #define MON_DATA_FORM_ID           89
 #define MON_DATA_HIDDEN_NATURE     90
 #define MON_DATA_EXIOLITE_ENABLED  91
+#define MON_DATA_STYLE             92
 
 #define MIN_LEVEL 1
 #define MAX_LEVEL 100

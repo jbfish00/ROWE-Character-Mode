@@ -19,7 +19,8 @@ struct PokemonSubstruct0
     /*0x0A*/ u8 pokeball:5; //31 balls
              u8 unused0_A:2;
 			 u8 exiolite:1;
-    /*0x0B*/ u8 hidden_nature;
+    /*0x0B*/ u8 hidden_nature:5;  // 25 natures fit in 5 bits
+             u8 style:3;          // 2.X Battle Style (8 styles) -- no save growth
 }; /* size = 12 */
 
 struct PokemonSubstruct1
@@ -568,6 +569,8 @@ u16 GetUnionRoomTrainerPic(void);
 u16 GetUnionRoomTrainerClass(void);
 void CreateObedientEnemyMon(void);
 void CalculateMonStats(struct Pokemon *mon);
+void ApplyBattleStyle(struct Pokemon *mon);
+u8 GetStyleUnlockLevel(u8 style);
 void CalculateTrainerMonStats(struct Pokemon *mon);
 void BoxMonToMon(const struct BoxPokemon *src, struct Pokemon *dest);
 u8 GetLevelFromMonExp(struct Pokemon *mon);

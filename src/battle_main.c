@@ -2462,6 +2462,9 @@ static u8 CreateNPCTrainerParty(struct Pokemon *party, u16 trainerNum, bool8 fir
 				//Sets the Pokemon Hidden Nature
 				SetMonData(&party[i], MON_DATA_HIDDEN_NATURE, &partyData[speciesnumber].hiddenNature);
 				
+				//Sets the 2.X Battle Style (opponents use styles too)
+				SetMonData(&party[i], MON_DATA_STYLE, &partyData[speciesnumber].style);
+				
 				//Pokemon Ivs
 				for (j = 0; j < NUM_STATS; j++)
                 {
