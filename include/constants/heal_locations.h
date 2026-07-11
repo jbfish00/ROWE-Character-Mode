@@ -72,5 +72,13 @@
 #define HEAL_LOCATION_ONE_ISLAND 69
 #define HEAL_LOCATION_TWO_ISLAND 70
 #define HEAL_LOCATION_THREE_ISLAND 71
+// 2.X Sevii: islands 4-8 shipped with maps but no heal location, so the player
+// could start/respawn on them with nowhere to white out to. Appended, never
+// renumbered -- these ids are stored in the save.
+#define HEAL_LOCATION_FOUR_ISLAND 72
+#define HEAL_LOCATION_FIVE_ISLAND 73
+#define HEAL_LOCATION_SIX_ISLAND 74
+#define HEAL_LOCATION_SEVEN_ISLAND 75
+#define HEAL_LOCATION_EIGHT_ISLAND 76
 
 #endif // GUARD_CONSTANTS_HEAL_LOCATIONS_H

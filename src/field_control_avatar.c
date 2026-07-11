@@ -230,6 +230,24 @@ int ProcessPlayerFieldInput(struct FieldInput *input)
         return TRUE;
     if (input->pressedStartButton)
     {
+#ifdef DEBUG_MENU
+        // Dev only: R + Start opens the debug menu (Utilities > Warp warps to any
+        // map, which is how the Sevii islands get tested without playing to them).
+        // It needs its own trigger: ROWE's graphical start menu is a fixed 8-slot
+        // tilemap grid with no room for another entry, and the classic list menu
+        // that does carry the entry only opens in dark caves (the flash check below).
+        if (gMain.heldKeys & R_BUTTON)
+        {
+            PlaySE(SE_WIN_OPEN);
+            FreezeObjectEvents();
+            sub_808B864();
+            sub_808BCF4();
+            ScriptContext2_Enable();
+            FreeAllWindowBuffers();   // debug.c allocates its own windows
+            Debug_ShowMainMenu();
+            return TRUE;
+        }
+#endif
         if (FlagGet(FLAG_SYS_DEXNAV_SEARCH))
         {
             ResetDexNavSearch();

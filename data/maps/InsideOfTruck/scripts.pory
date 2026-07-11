@@ -1349,6 +1349,16 @@ Start_EventScript_Chose_City::
 	case 13, Start_City_Sootopolis_City
 	case 14, Start_City_Pacifidlog_Town
 	case 15, Start_EventScript_Chose_City_Surprise
+// 2.X Sevii: the eight islands are startable too. Appended after "Surprise Me"
+// (case 15) so no existing case index moves.
+	case 16, Start_Island_One
+	case 17, Start_Island_Two
+	case 18, Start_Island_Three
+	case 19, Start_Island_Four
+	case 20, Start_Island_Five
+	case 21, Start_Island_Six
+	case 22, Start_Island_Seven
+	case 23, Start_Island_Eight
 	end	
 	
 Start_EventScript_Chose_City_Surprise::
@@ -1835,6 +1845,107 @@ Start_EventScript_Give_Items_New_Game_Plus::
 
 Text_Received_Items_NewGamePlus:
 	.string "{PLAYER} received a LOT of special items!$"
+
+@ ==========================================================================
+@ 2.X Sevii: start a new game on any of the eight islands. Same shape as the
+@ Start_City_* scripts above -- confirm, set the respawn point, warp in.
+@ ==========================================================================
+
+Start_Island_One::
+	msgbox Text_Start_Island_One, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq Start_EventScript_Chose_City
+	setrespawn HEAL_LOCATION_ONE_ISLAND
+	warp MAP_ONE_ISLAND, 255, 14, 6
+	end
+
+Text_Start_Island_One::
+	.string "Do you want to start at\n"
+	.string "One Island?$"
+
+Start_Island_Two::
+	msgbox Text_Start_Island_Two, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq Start_EventScript_Chose_City
+	setrespawn HEAL_LOCATION_TWO_ISLAND
+	warp MAP_TWO_ISLAND, 255, 21, 8
+	end
+
+Text_Start_Island_Two::
+	.string "Do you want to start at\n"
+	.string "Two Island?$"
+
+Start_Island_Three::
+	msgbox Text_Start_Island_Three, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq Start_EventScript_Chose_City
+	setrespawn HEAL_LOCATION_THREE_ISLAND
+	warp MAP_THREE_ISLAND, 255, 14, 28
+	end
+
+Text_Start_Island_Three::
+	.string "Do you want to start at\n"
+	.string "Three Island?$"
+
+Start_Island_Four::
+	msgbox Text_Start_Island_Four, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq Start_EventScript_Chose_City
+	setrespawn HEAL_LOCATION_FOUR_ISLAND
+	warp MAP_FOUR_ISLAND, 255, 18, 21
+	end
+
+Text_Start_Island_Four::
+	.string "Do you want to start at\n"
+	.string "Four Island?$"
+
+Start_Island_Five::
+	msgbox Text_Start_Island_Five, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq Start_EventScript_Chose_City
+	setrespawn HEAL_LOCATION_FIVE_ISLAND
+	warp MAP_FIVE_ISLAND, 255, 29, 16
+	end
+
+Text_Start_Island_Five::
+	.string "Do you want to start at\n"
+	.string "Five Island?$"
+
+Start_Island_Six::
+	msgbox Text_Start_Island_Six, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq Start_EventScript_Chose_City
+	setrespawn HEAL_LOCATION_SIX_ISLAND
+	warp MAP_SIX_ISLAND, 255, 27, 12
+	end
+
+Text_Start_Island_Six::
+	.string "Do you want to start at\n"
+	.string "Six Island?$"
+
+Start_Island_Seven::
+	msgbox Text_Start_Island_Seven, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq Start_EventScript_Chose_City
+	setrespawn HEAL_LOCATION_SEVEN_ISLAND
+	warp MAP_SEVEN_ISLAND, 255, 15, 4
+	end
+
+Text_Start_Island_Seven::
+	.string "Do you want to start at\n"
+	.string "Seven Island?$"
+
+Start_Island_Eight::
+	msgbox Text_Start_Island_Eight, MSGBOX_YESNO
+	compare VAR_RESULT, NO
+	goto_if_eq Start_EventScript_Chose_City
+	setrespawn HEAL_LOCATION_EIGHT_ISLAND
+	warp MAP_EIGHT_ISLAND, 255, 13, 13
+	end
+
+Text_Start_Island_Eight::
+	.string "Do you want to start at\n"
+	.string "Eight Island?$"
 `
 text Game_Start_Text_Introduction_NewGamePlus{
 	format("I'm Glad to see you again, Welcome to New Game+. Do you have any Question?")

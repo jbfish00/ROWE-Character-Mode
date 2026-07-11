@@ -42,6 +42,7 @@
 #include "sound.h"
 #include "start_menu.h"
 #include "trainer_skills.h"
+#include "debug.h"
 #include "strings.h"
 #include "string_util.h"
 #include "task.h"
@@ -85,6 +86,7 @@ enum
     MENU_ACTION_UI_MODE_MENU,
 	MENU_ACTION_UI_START_MENU,
     MENU_ACTION_TRAINER_SKILLS,   // 2.X Trainer Skills (appended: never shift existing ids)
+    MENU_ACTION_DEBUG,            // dev only, gated on DEBUG_MENU (include/debug.h)
 };
 
 // Save status
@@ -210,6 +212,7 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_SAVE]          	= {gText_MenuSave, {.u8_void = StartMenuSaveCallback}},
     [MENU_ACTION_OPTION]        	= {gText_MenuOption, {.u8_void = StartMenuOptionCallback}},
     [MENU_ACTION_TRAINER_SKILLS]	= {gText_MenuTrainerSkills, {.u8_void = StartMenuTrainerSkillsCallback}},
+    [MENU_ACTION_DEBUG]         	= {gText_MenuDebug, {.u8_void = StartMenuDebugCallback}},
     [MENU_ACTION_EXIT]          	= {gText_MenuExit, {.u8_void = StartMenuExitCallback}},
     [MENU_ACTION_RETIRE_SAFARI] 	= {gText_MenuRetire, {.u8_void = StartMenuSafariZoneRetireCallback}},
     [MENU_ACTION_PLAYER_LINK]   	= {gText_MenuPlayer, {.u8_void = StartMenuLinkModePlayerNameCallback}},
@@ -365,12 +368,35 @@ bool8 StartMenuTrainerSkillsCallback(void)
     return TRUE;
 }
 
+// The debug menu (src/debug.c) shipped complete but was never reachable -- nothing
+// in the tree called Debug_ShowMainMenu(). Its Utilities > Warp submenu picks a
+// destination by map group + map number, which covers the Sevii maps (they were
+// appended to the existing groups), so this is the fastest way to start play on
+// any island or city.
+#ifdef DEBUG_MENU
+bool8 StartMenuDebugCallback(void)
+{
+    RemoveExtraStartMenuWindows();
+    HideStartMenu();
+    FreeAllWindowBuffers();   // debug.c allocates its own windows; without this
+                              // the screen stays black (same trap as the skills menu)
+    Debug_ShowMainMenu();
+    return TRUE;
+}
+#endif
+
 static void BuildSaveMenu(void)
 {
 	isSaveMenu = TRUE;
-	
+
 	AddStartMenuAction(MENU_ACTION_SAVE);
     AddStartMenuAction(MENU_ACTION_TRAINER_SKILLS);
+#ifdef DEBUG_MENU
+    // This is the reachable home for the debug menu. ROWE's graphical start menu
+    // is a fixed 8-slot tilemap grid with no free slot, and the classic list menu
+    // only appears in dark caves -- but this save menu opens from Select anywhere.
+    AddStartMenuAction(MENU_ACTION_DEBUG);
+#endif
     AddStartMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -400,6 +426,9 @@ static void BuildNormalStartMenu(void)
     AddStartMenuAction(MENU_ACTION_TRAINER_SKILLS);
 	//AddStartMenuAction(MENU_ACTION_UI_START_MENU);
 	//AddStartMenuAction(MENU_ACTION_UI_MODE_MENU);
+#ifdef DEBUG_MENU
+    AddStartMenuAction(MENU_ACTION_DEBUG);
+#endif
     AddStartMenuAction(MENU_ACTION_EXIT);
 }
 
@@ -783,6 +812,9 @@ static bool8 HandleStartMenuInput(void)
         if (gMenuCallback != StartMenuSaveCallback
             && gMenuCallback != StartMenuExitCallback
             && gMenuCallback != StartMenuTrainerSkillsCallback
+#ifdef DEBUG_MENU
+            && gMenuCallback != StartMenuDebugCallback
+#endif
             && gMenuCallback != StartMenuSafariZoneRetireCallback
             && gMenuCallback != StartMenuBattlePyramidRetireCallback)
         {
@@ -895,6 +927,9 @@ static bool8 HandleStartMenuInput(void)
         if (gMenuCallback != StartMenuSaveCallback
             && gMenuCallback != StartMenuExitCallback
             && gMenuCallback != StartMenuTrainerSkillsCallback
+#ifdef DEBUG_MENU
+            && gMenuCallback != StartMenuDebugCallback
+#endif
             && gMenuCallback != StartMenuSafariZoneRetireCallback
             && gMenuCallback != StartMenuBattlePyramidRetireCallback)
         {

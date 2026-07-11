@@ -842,6 +842,15 @@ static const u8 gText_City_12[] = _("Lilycove City");
 static const u8 gText_City_13[] = _("Mossdeep City");
 static const u8 gText_City_14[] = _("Sootopolis City");
 static const u8 gText_City_15[] = _("Pacifidlog Town");
+
+static const u8 gText_Island_01[] = _("One Island");
+static const u8 gText_Island_02[] = _("Two Island");
+static const u8 gText_Island_03[] = _("Three Island");
+static const u8 gText_Island_04[] = _("Four Island");
+static const u8 gText_Island_05[] = _("Five Island");
+static const u8 gText_Island_06[] = _("Six Island");
+static const u8 gText_Island_07[] = _("Seven Island");
+static const u8 gText_Island_08[] = _("Eight Island");
 static const u8 gText_City_16[] = _("Ever Grande City");
 static const u8 gText_City_17[] = _("Battle Frontier");
 
@@ -878,6 +887,16 @@ static const struct ListMenuItem sSet0[] =
     {gText_City_14, 13},
     {gText_City_15, 14},
     {sText_Surprise, 15},
+    // 2.X Sevii. Appended after "Surprise Me" so the existing indices (which the
+    // case labels in InsideOfTruck/scripts.inc key off) do not move.
+    {gText_Island_01, 16},
+    {gText_Island_02, 17},
+    {gText_Island_03, 18},
+    {gText_Island_04, 19},
+    {gText_Island_05, 20},
+    {gText_Island_06, 21},
+    {gText_Island_07, 22},
+    {gText_Island_08, 23},
 };
 
 //Starter Selection -------------------------------------------------------------------------
