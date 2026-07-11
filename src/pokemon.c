@@ -19,6 +19,7 @@
 #include "field_weather.h"
 #include "item.h"
 #include "level_scaling.h"
+#include "trainer_skills.h"
 #include "link.h"
 #include "main.h"
 #include "overworld.h"
@@ -4147,13 +4148,6 @@ void CalculateMonStats(struct Pokemon *mon)
 	bool8 specialExioliteSpecies = FALSE;
 
 	SetMonData(mon, MON_DATA_LEVEL, &level);
-
-	// 2.X level cap (FAQ #13): on Normal the mon keeps gaining XP AND LEVELS,
-	// but its STATS stay locked at the cap until the next gym falls. The true
-	// level is stored above first; only the stat formulas below see the capped
-	// value, so the mon really does level up -- it just doesn't get stronger.
-	if (!GetMonData(mon, MON_DATA_IS_EGG, NULL))
-		level = ApplyLevelCapToStatLevel(level);
 	
 	if(FlagGet(FLAG_PERFECT_IVS_MODE)){
 		hpIV 		= 31;
@@ -4163,13 +4157,28 @@ void CalculateMonStats(struct Pokemon *mon)
 		spDefenseIV = 31;
 		speedIV 	= 31;
 	}
+	else if(FlagGet(FLAG_TRAINER_SKILLS_MODE)){
+		// 2.X: Trainer Skills REPLACE IVs. A mon's rolled IVs are ignored --
+		// every Pokemon the player owns (party, PC, and ones not yet caught)
+		// derives its IVs from the trainer's stat-boost skill levels instead.
+		hpIV 		= GetSkillIV(STAT_HP);
+		attackIV 	= GetSkillIV(STAT_ATK);
+		defenseIV 	= GetSkillIV(STAT_DEF);
+		speedIV 	= GetSkillIV(STAT_SPEED);
+		spAttackIV 	= GetSkillIV(STAT_SPATK);
+		spDefenseIV = GetSkillIV(STAT_SPDEF);
+	}
 	
 	if(FlagGet(FLAG_LEVELESS_MODE) && !FlagGet(FLAG_NO_EVOLUTION_MODE))
 		level = getGymLeaderMinLevel();
 	if(FlagGet(FLAG_LEVELESS_MODE) && FlagGet(FLAG_NO_EVOLUTION_MODE))
 		level = 5;
-	else if(level >= sLevelCaps[GetNumBadges()] && !FlagGet(FLAG_DEFEATED_RAYQUAZA) && !FlagGet(FLAG_EASY_MODE))
-		level = LevelCaps[GetNumBadges()];
+	// 2.X rebalanced the caps (badge 8: 45, not 77) and made them table-driven
+	// and difficulty-aware. This is the SAME clamp 1.9.4 already had -- it just
+	// sources the number from gScalingInfo now. Stats only: the true level was
+	// stored above, so mons still level up, they just stop getting stronger.
+	else if(level >= GetCurrentRawLevelCap() && !FlagGet(FLAG_DEFEATED_RAYQUAZA) && !FlagGet(FLAG_EASY_MODE))
+		level = GetCurrentRawLevelCap();
 
     if (species == SPECIES_SHEDINJA)
     {

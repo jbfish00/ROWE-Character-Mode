@@ -449,6 +449,7 @@ struct StolenItem
 struct BattleStruct
 {
     u8 timesGotHit[2][PARTY_SIZE];  // 2.X: Rage Fist power scaling
+    bool8 trainerExpAwarded;        // 2.X: Trainer XP is per fainted foe, not per party member
     u8 turnEffectsTracker;
     u8 turnEffectsBattlerId;
     u8 turnCountersTracker;

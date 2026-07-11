@@ -218,37 +218,8 @@ u16 GetNextLevelCap(void)
 	     + getScalingDataForBadge(SCALING_BOSS_MAX_MON_NUM, badges + 1);
 }
 
-// Level caps only bite on Normal and Hard (FAQ #13):
-//   Normal: XP and levels keep flowing, but STATS lock at the cap.
-//   Hard:   no XP at all past the cap.
-bool8 IsLevelCapActive(void)
-{
-	return (GetGameDifficultyLevel() != DIFFICULTY_EASY);
-}
 
-// The level a mon's stats are computed at (Normal clamps; Easy never does).
-u8 ApplyLevelCapToStatLevel(u8 level)
-{
-	u16 cap;
 
-	if (!IsLevelCapActive())
-		return level;
-
-	cap = GetCurrentLevelCap();
-	if (level > cap)
-		return cap;
-
-	return level;
-}
-
-// Hard mode: a mon at/over the cap earns nothing.
-bool8 IsExpBlockedByLevelCap(u8 level)
-{
-	if (GetGameDifficultyLevel() != DIFFICULTY_HARD)
-		return FALSE;
-
-	return (level >= GetCurrentLevelCap());
-}
 
 u8 IsHardMode(){
 	if (FlagGet(FLAG_HARD_MODE))

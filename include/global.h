@@ -6,6 +6,7 @@
 #include "config.h" // we need to define config before gba headers as print stuff needs the functions nulled before defines.
 #include "gba/gba.h"
 #include "constants/global.h"
+#include "constants/trainer_skills.h"
 #include "constants/flags.h"
 #include "constants/vars.h"
 #include "constants/species.h"
@@ -1079,6 +1080,9 @@ struct SaveBlock1
     /*0x3???*/ struct WaldaPhrase waldaPhrase;
                u8 dexNavSearchLevels[NUM_SPECIES];
                u8 dexNavChain;
+    // 2.X Trainer Skills (SaveBlock1 had ~1.7KB free; this uses ~108 bytes)
+               u8 trainerSkillLevel[MAX_SKILL_NUM];
+               u32 trainerExp;
     /*0x3D88*/ u16 registeredItemL;
     /*0x3D8A*/ u16 registeredItemR;
     // sizeof: 0x3???

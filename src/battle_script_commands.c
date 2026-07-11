@@ -30,6 +30,7 @@
 #include "reshow_battle_screen.h"
 #include "main.h"
 #include "level_scaling.h"
+#include "trainer_skills.h"
 #include "palette.h"
 #include "money.h"
 #include "bg.h"
@@ -4008,7 +4009,9 @@ u8 GetTeamLevel(void)
 
 double GetPkmnExpMultiplier(u8 level)
 {
-	if (level >= sLevelCaps[GetNumBadges()] && IsHardMode() && !FlagGet(FLAG_DEFEATED_RAYQUAZA))
+	// 2.X: Hard mode grants no XP at or past the cap (FAQ #13). Same rule
+	// 1.9.4 had; the cap value now comes from gScalingInfo.
+	if (level >= GetCurrentRawLevelCap() && IsHardMode() && !FlagGet(FLAG_DEFEATED_RAYQUAZA))
     {
         return 0.0;
     }
@@ -4117,6 +4120,7 @@ static void Cmd_getexp(void)
 
             gBattleScripting.getexpState++;
             gBattleStruct->expGetterMonId = 0;
+            gBattleStruct->trainerExpAwarded = FALSE;   // one Trainer XP award per fainted foe
             gBattleStruct->sentInPokes = sentIn;
         }
         // fall through
@@ -4164,11 +4168,6 @@ static void Cmd_getexp(void)
 					if (gBattleStruct->sentInPokes & 1)
 						gBattleMoveDamage = *exp;
 					else
-						gBattleMoveDamage = 0;
-
-					// 2.X level cap (FAQ #13): on Hard, a mon at or past the
-					// cap earns no XP at all until the next gym falls.
-					if (IsExpBlockedByLevelCap(GetMonData(&gPlayerParty[gBattleStruct->expGetterMonId], MON_DATA_LEVEL, NULL)))
 						gBattleMoveDamage = 0;
 					
                     // only give exp share bonus in later gens if the mon wasn't sent out
@@ -4254,6 +4253,16 @@ static void Cmd_getexp(void)
 						PrepareStringBattle(STRINGID_PKMNGAINEDEXP, gBattleStruct->expGetterBattlerId);
 					}
                     MonGainEVs(&gPlayerParty[gBattleStruct->expGetterMonId], gBattleMons[gBattlerFainted].species, gBattleMons[gBattlerFainted].formId);
+
+                    // 2.X Trainer Skills: the trainer earns XP for every enemy
+                    // Pokemon defeated (skill points come at milestones).
+                    if (!gBattleStruct->trainerExpAwarded)
+                    {
+                        tryToGivePlayerExp(calculateTrainerExp(*exp,
+                                           gBattleMons[gBattlerFainted].species,
+                                           (gBattleTypeFlags & BATTLE_TYPE_TRAINER) != 0));
+                        gBattleStruct->trainerExpAwarded = TRUE;
+                    }
                 }
                 gBattleStruct->sentInPokes >>= 1;
                 gBattleScripting.getexpState++;

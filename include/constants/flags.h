@@ -707,7 +707,7 @@
 #define FLAG_GOT_SLOWBROITE  0x294 // Slowbroite
 #define FLAG_UNUSED_0x295  0x295 // Portal Stuff
 #define FLAG_LITTLE_CUP_MODE 0x296 // 2.X: Little Cup (level cap 5)
-#define FLAG_UNUSED_0x297  0x297 // Unused Flag
+#define FLAG_TRAINER_SKILLS_MODE 0x297 // 2.X: Trainer Skills replace IVs
 #define FLAG_UNUSED_0x298  0x298 // Unused Flag
 #define FLAG_UNUSED_0x299  0x299 // Unused Flag
 #define FLAG_UNUSED_0x29A  0x29A // Unused Flag
