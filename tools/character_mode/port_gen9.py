@@ -552,7 +552,8 @@ def main():
     insert_block(tgt("src/data/pokemon/pokedex_entries.h"), "dexentries", block, r"^};", count=1)
 
     # 5. species -> natdex map (designated entries after positional block)
-    block = "".join("    [%s] = NATIONAL_DEX_%s,\n" % (s["const"], s["suffix"])
+    # NOTE: array is [SPECIES_X - 1]-indexed (see SPECIES_TO_NATIONAL macro)
+    block = "".join("    [%s - 1] = NATIONAL_DEX_%s,\n" % (s["const"], s["suffix"])
                     for s in species)
     path = tgt("src/pokemon.c")
     text = strip_marker_block(read(path), "spec2nat")
