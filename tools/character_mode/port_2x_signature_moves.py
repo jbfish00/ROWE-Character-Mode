@@ -45,6 +45,7 @@ IMPLEMENTED_MODS = {
     "SIGNATURE_MOD_NEUTRAL_AGAINST_TYPE", "SIGNATURE_MOD_MULTI_HIT_ALWAYS",
     "SIGNATURE_MOD_MULTI_HIT_MIN_TIMES", "SIGNATURE_MOD_MULTI_HIT_MAX_TIMES",
     "SIGNATURE_MOD_ADD_FLAG", "SIGNATURE_MOD_REMOVE_FLAG",
+    "SIGNATURE_MOD_SPEED",
 }
 # secondary effects our SIGNATURE_MOD_SECONDARY_EFFECT switch handles
 IMPLEMENTED_SECONDARY = {
@@ -57,6 +58,10 @@ IMPLEMENTED_SECONDARY = {
     "SIGNATURE_SECONDARY_EFFECT_REMOVE_STAT_CHANGES",
     "SIGNATURE_SECONDARY_EFFECT_TAUNT", "SIGNATURE_SECONDARY_EFFECT_GIVE_THIRD_TYPE",
     "SIGNATURE_SECONDARY_EFFECT_RECKOIL", "SIGNATURE_SECONDARY_EFFECT_CURE",
+    "SIGNATURE_SECONDARY_EFFECT_DRAIN", "SIGNATURE_SECONDARY_EFFECT_HEAL_STATUS",
+    "SIGNATURE_SECONDARY_EFFECT_SET_HEAL_BLOCK",
+    "SIGNATURE_SECONDARY_EFFECT_INFESTATION",
+    "SIGNATURE_SECONDARY_EFFECT_STEAL_POSITIVE_STAT_CHANGES",
 }
 MAX_SLOTS = 6
 
@@ -129,6 +134,12 @@ def main():
             arg = arg.group(1).strip() if arg else "0"
             chance = chance.group(1).strip() if chance else "0"
 
+            # donor data shorthands: enum members used directly as mods
+            if mod == "SIGNATURE_STAT_STAGES_IGNORED":
+                mod, var = "SIGNATURE_MOD_ADD_FLAG", "FLAG_STAT_STAGES_IGNORED"
+            elif mod == "SIGNATURE_PRIORITY_IN_CONDITIONS":
+                mod, chance, var = ("SIGNATURE_MOD_PRIORITY", var,
+                                    "SIGNATURE_PRIORITY_IN_CONDITIONS")
             if mod not in IMPLEMENTED_MODS:
                 dropped.append(mod)
                 continue

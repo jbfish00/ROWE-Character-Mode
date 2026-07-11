@@ -4906,6 +4906,16 @@ u32 GetBattlerTotalSpeedStat(u8 battlerId)
     u32 speed = gBattleMons[battlerId].speed;
     u32 ability = GetBattlerAbility(battlerId);
     u32 holdEffect = GetBattlerHoldEffect(battlerId, TRUE);
+    u32 sigSpeed;
+
+    // 2.X SIGNATURE_MOD_SPEED: speed scaled (percent) while its move is chosen
+    if (gChosenMoveByBattler[battlerId] != MOVE_NONE
+     && GetSignatureMod(GetFormSpeciesId(gBattleMons[battlerId].species,
+                                         gBattleMons[battlerId].formId),
+                        gChosenMoveByBattler[battlerId], SIGNATURE_MOD_SPEED,
+                        &sigSpeed, NULL, NULL)
+     && sigSpeed > 0)
+        speed = speed * sigSpeed / 100;
 
     // weather abilities
     if (WEATHER_HAS_EFFECT)

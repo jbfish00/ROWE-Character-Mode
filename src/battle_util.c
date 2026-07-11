@@ -1598,6 +1598,11 @@ u8 CheckMoveLimitations(u8 battlerId, u8 unusableMoves, u8 check)
             unusableMoves |= gBitTable[i];
         else if (gBattleMons[battlerId].moves[i] == gLastMoves[battlerId] && check & MOVE_LIMITATION_TORMENTED && gBattleMons[battlerId].status2 & STATUS2_TORMENT)
             unusableMoves |= gBitTable[i];
+        // 2.X/gen9: these two can't be used twice in a row (self-torment)
+        else if ((gBattleMons[battlerId].moves[i] == MOVE_GIGATON_HAMMER || gBattleMons[battlerId].moves[i] == MOVE_BLOOD_MOON)
+              && gBattleMons[battlerId].moves[i] == gLastResultingMoves[battlerId]
+              && check & MOVE_LIMITATION_TORMENTED)
+            unusableMoves |= gBitTable[i];
         else if (gDisableStructs[battlerId].tauntTimer && check & MOVE_LIMITATION_TAUNT && gBattleMoves[gBattleMons[battlerId].moves[i]].power == 0)
             unusableMoves |= gBitTable[i];
         else if (GetImprisonedMovesCount(battlerId, gBattleMons[battlerId].moves[i]) && check & MOVE_LIMITATION_IMPRISON)
@@ -6060,6 +6065,77 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                             effect++;
                         }
                     break;
+                    case SIGNATURE_SECONDARY_EFFECT_DRAIN:
+                        if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                        && IsBattlerAlive(gBattlerAttacker)
+                        && !BATTLER_MAX_HP(gBattlerAttacker)
+                        && !(gStatuses3[gBattlerAttacker] & STATUS3_HEAL_BLOCK)
+                        && gHpDealt > 0)
+                        {
+                            gBattleMoveDamage = gHpDealt / 2;
+                            if (gBattleMoveDamage == 0)
+                                gBattleMoveDamage = 1;
+                            gBattleMoveDamage *= -1;
+                            gBattlerTarget = gBattlerAttacker;
+                            BattleScriptPushCursor();
+                            gBattlescriptCurrInstr = BattleScript_SignatureMoveDrain;
+                            effect++;
+                        }
+                    break;
+                    case SIGNATURE_SECONDARY_EFFECT_SET_HEAL_BLOCK:
+                        if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                        && IsBattlerAlive(gBattlerTarget)
+                        && !gProtectStructs[gBattlerTarget].confusionSelfDmg
+                        && !(gStatuses3[gBattlerTarget] & STATUS3_HEAL_BLOCK)
+                        && gBattlerAttacker != gBattlerTarget)
+                        {
+                            gStatuses3[gBattlerTarget] |= STATUS3_HEAL_BLOCK;
+                            gDisableStructs[gBattlerTarget].healBlockTimer = 5;
+                            BattleScriptPushCursor();
+                            gBattlescriptCurrInstr = BattleScript_BattlerAttackSeededOnHit;
+                            effect++;
+                        }
+                    break;
+                    case SIGNATURE_SECONDARY_EFFECT_INFESTATION:
+                        if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                        && IsBattlerAlive(gBattlerTarget)
+                        && !gProtectStructs[gBattlerTarget].confusionSelfDmg
+                        && !(gBattleMons[gBattlerTarget].status2 & STATUS2_WRAPPED)
+                        && gBattlerAttacker != gBattlerTarget)
+                        {
+                            gBattleScripting.moveEffect = MOVE_EFFECT_WRAP;
+                            gLastUsedAbility = ABILITY_SIGNATURE_MOVE;
+                            PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
+                            BattleScriptPushCursor();
+                            gBattlescriptCurrInstr = BattleScript_AttackerMoveSetsStatusEffect;
+                            gHitMarker |= HITMARKER_IGNORE_SAFEGUARD;
+                            effect++;
+                        }
+                    break;
+                    case SIGNATURE_SECONDARY_EFFECT_STEAL_POSITIVE_STAT_CHANGES:
+                        if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
+                        && IsBattlerAlive(gBattlerTarget)
+                        && gBattlerAttacker != gBattlerTarget)
+                        {
+                            u32 st;
+                            bool8 stole = FALSE;
+
+                            for (st = 0; st < NUM_BATTLE_STATS; st++)
+                            {
+                                if (gBattleMons[gBattlerTarget].statStages[st] > DEFAULT_STAT_STAGE)
+                                {
+                                    s32 gain = gBattleMons[gBattlerTarget].statStages[st] - DEFAULT_STAT_STAGE;
+                                    gBattleMons[gBattlerAttacker].statStages[st] += gain;
+                                    if (gBattleMons[gBattlerAttacker].statStages[st] > MAX_STAT_STAGE)
+                                        gBattleMons[gBattlerAttacker].statStages[st] = MAX_STAT_STAGE;
+                                    gBattleMons[gBattlerTarget].statStages[st] = DEFAULT_STAT_STAGE;
+                                    stole = TRUE;
+                                }
+                            }
+                            if (stole)
+                                effect++;   // silent transfer (no dedicated string)
+                        }
+                    break;
                     case SIGNATURE_SECONDARY_EFFECT_RECKOIL:
                         if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                         && IsBattlerAlive(gBattlerAttacker))
@@ -6073,6 +6149,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                         }
                     break;
                     case SIGNATURE_SECONDARY_EFFECT_CURE:
+                    case SIGNATURE_SECONDARY_EFFECT_HEAL_STATUS:
                         if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                         && IsBattlerAlive(gBattlerAttacker)
                         && gBattleMons[gBattlerAttacker].status1 & STATUS1_ANY)
@@ -8033,6 +8110,38 @@ static u16 CalcMoveBasePower(u16 move, u8 battlerAtk, u8 battlerDef)
     u32 weight, hpFraction, speed;
 	u16 speciesId = GetFormSpeciesId(gBattleMons[battlerAtk].species, gBattleMons[battlerAtk].formId);
 	u8 powerLimit = GetCurrentMovePowerLimit();
+
+    // 2.X move-id keyed variable power (their EFFECT_MISC_HIT family)
+    switch (move)
+    {
+    case MOVE_LAST_RESPECTS:
+    {
+        struct Pokemon *party = GetBattlerSide(battlerAtk) == B_SIDE_PLAYER
+                                ? gPlayerParty : gEnemyParty;
+        u32 k, fainted = 0;
+
+        for (k = 0; k < PARTY_SIZE; k++)
+        {
+            u16 sp = GetMonData(&party[k], MON_DATA_SPECIES2);
+            if (sp != SPECIES_NONE && sp != SPECIES_EGG
+             && GetMonData(&party[k], MON_DATA_HP) == 0)
+                fainted++;
+        }
+        basePower = 50 + 50 * fainted;
+        if (basePower > 250)
+            basePower = 250;
+        break;
+    }
+    case MOVE_RAGE_FIST:
+        basePower = 50 + 50 * gBattleStruct->timesGotHit[GetBattlerSide(battlerAtk)][gBattlerPartyIndexes[battlerAtk]];
+        if (basePower > 250)
+            basePower = 250;
+        break;
+    case MOVE_PSYBLADE:
+        if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
+            basePower = basePower * 3 / 2;
+        break;
+    }
 
     switch (gBattleMoves[move].effect)
     {

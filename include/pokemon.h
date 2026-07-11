@@ -366,8 +366,13 @@ enum{
     SIGNATURE_MOD_ADD_FLAG,            //Adds a move flag
     SIGNATURE_MOD_REMOVE_FLAG,         //Removes a move flag
     SIGNATURE_MOD_HIT_AIRBONE_TARGETS, //Hits semi-invulnerable airborne targets                //Not Done Yet
-    SIGNATURE_MOD_SPEED,               //Modifies the user's speed while using the move         //Not Done Yet
+    SIGNATURE_MOD_SPEED,               //Modifies the user's speed (percent) while its move is chosen
 };
+
+// 2.X data uses shorter names for the priority conditions
+#define SIGNATURE_CONDITION_WEATHER_SUN  SIGNATURE_PRIORITY_CONDITION_WEATHER_SUN
+#define SIGNATURE_CONDITION_WEATHER_RAIN SIGNATURE_PRIORITY_CONDITION_WEATHER_RAIN
+#define SIGNATURE_CONDITION_WEATHER_SAND SIGNATURE_PRIORITY_CONDITION_WEATHER_SAND
 
 enum{
     FIELD_EFFECT_NONE,              //No effect

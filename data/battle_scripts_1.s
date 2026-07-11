@@ -378,6 +378,9 @@ gBattleScriptsForMoveEffects:: @ 82D86A8
 	.4byte BattleScript_EffectRisingVoltage				@ EFFECT_RISING_VOLTAGE 			357
 	.4byte BattleScript_EffectNoRetreat 				@ EFFECT_NO_RETREAT					358
 	.4byte BattleScript_EffectJawLock 					@ EFFECT_JAW_LOCK					359
+	.4byte BattleScript_EffectChillyReception			@ EFFECT_CHILLY_RECEPTION			360
+	.4byte BattleScript_EffectShedTail					@ EFFECT_SHED_TAIL					361
+	.4byte BattleScript_EffectInverseRoom				@ EFFECT_INVERSE_ROOM				362
 
 BattleScript_EffectJawLock:
 	setmoveeffect MOVE_EFFECT_TRAP_BOTH | MOVE_EFFECT_CERTAIN
@@ -2044,6 +2047,7 @@ BattleScript_EffectMagnetRise:
 BattleScript_EffectTrickRoom:
 BattleScript_EffectWonderRoom:
 BattleScript_EffectMagicRoom:
+BattleScript_EffectInverseRoom:
 	attackcanceler
 	attackstring
 	ppreduce
@@ -4477,6 +4481,76 @@ BattleScript_SwallowFail::
 	printfromtable gSwallowFailStringIds
 	waitmessage 0x40
 	goto BattleScript_MoveEnd
+
+BattleScript_SignatureMoveDrain::
+	healthbarupdate BS_TARGET
+	datahpupdate BS_TARGET
+	return
+
+BattleScript_EffectChillyReception::
+	attackcanceler
+	attackstring
+	ppreduce
+	sethail
+	attackanimation
+	waitanimation
+	printfromtable gMoveWeatherChangeStringIds
+	waitmessage 0x40
+	call BattleScript_WeatherFormChanges
+	moveendall
+	jumpifbattletype BATTLE_TYPE_ARENA, BattleScript_ChillyReceptionEnd
+	jumpifcantswitch SWITCH_IGNORE_ESCAPE_PREVENTION | BS_ATTACKER, BattleScript_ChillyReceptionEnd
+	openpartyscreen 0x1, BattleScript_ChillyReceptionEnd
+	switchoutabilities BS_ATTACKER
+	waitstate
+	switchhandleorder BS_ATTACKER, 0x2
+	returntoball BS_ATTACKER
+	getswitchedmondata BS_ATTACKER
+	switchindataupdate BS_ATTACKER
+	hpthresholds BS_ATTACKER
+	printstring STRINGID_SWITCHINMON
+	switchinanim BS_ATTACKER, TRUE
+	waitstate
+	switchineffects BS_ATTACKER
+BattleScript_ChillyReceptionEnd:
+	end
+
+BattleScript_EffectShedTail::
+	attackcanceler
+	ppreduce
+	attackstring
+	waitstate
+	jumpifstatus2 BS_ATTACKER, STATUS2_SUBSTITUTE, BattleScript_AlreadyHasSubstitute
+	setsubstitute
+	jumpifbyte CMP_NOT_EQUAL, cMULTISTRING_CHOOSER, 0x1, BattleScript_ShedTailAnim
+	pause 0x20
+	goto BattleScript_ShedTailString
+BattleScript_ShedTailAnim:
+	attackanimation
+	waitanimation
+	healthbarupdate BS_ATTACKER
+	datahpupdate BS_ATTACKER
+BattleScript_ShedTailString:
+	printfromtable gSubsituteUsedStringIds
+	waitmessage 0x40
+	jumpifbyte CMP_EQUAL, cMULTISTRING_CHOOSER, 0x1, BattleScript_ShedTailEnd
+	moveendall
+	jumpifbattletype BATTLE_TYPE_ARENA, BattleScript_ShedTailEnd
+	jumpifcantswitch SWITCH_IGNORE_ESCAPE_PREVENTION | BS_ATTACKER, BattleScript_ShedTailEnd
+	openpartyscreen 0x1, BattleScript_ShedTailEnd
+	switchoutabilities BS_ATTACKER
+	waitstate
+	switchhandleorder BS_ATTACKER, 0x2
+	returntoball BS_ATTACKER
+	getswitchedmondata BS_ATTACKER
+	switchindataupdate BS_ATTACKER
+	hpthresholds BS_ATTACKER
+	printstring STRINGID_SWITCHINMON
+	switchinanim BS_ATTACKER, TRUE
+	waitstate
+	switchineffects BS_ATTACKER
+BattleScript_ShedTailEnd:
+	end
 
 BattleScript_EffectHail::
 	attackcanceler

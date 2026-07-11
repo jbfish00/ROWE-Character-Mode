@@ -448,6 +448,7 @@ struct StolenItem
 
 struct BattleStruct
 {
+    u8 timesGotHit[2][PARTY_SIZE];  // 2.X: Rage Fist power scaling
     u8 turnEffectsTracker;
     u8 turnEffectsBattlerId;
     u8 turnCountersTracker;

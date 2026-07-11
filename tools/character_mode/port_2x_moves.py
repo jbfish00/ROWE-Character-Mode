@@ -32,13 +32,15 @@ ME = "// ROWEMOVE-PORT-END {tag}"
 # donor effects we don't implement -> nearest effect we do (approximation;
 # revisit when the battle-effects phase lands)
 EFFECT_FALLBACK = {
-    "EFFECT_CHILLY_RECEPTION": "EFFECT_HIT",
+    # implemented natively now: CHILLY_RECEPTION/SHED_TAIL/INVERSE_ROOM have
+    # real scripts; GIGATON_HAMMER = EFFECT_HIT + a consecutive-use selection
+    # block in CheckMoveLimitations; MISC_HIT moves get move-id-keyed power
+    # hooks (Last Respects/Rage Fist/Psyblade); TOXIC_WASTE turned out to be
+    # the -onome categorized Metronomes (per donor descriptions).
     "EFFECT_DRACO_METEOR": "EFFECT_OVERHEAT",       # same -2 SpA self-drop
     "EFFECT_GIGATON_HAMMER": "EFFECT_HIT",
-    "EFFECT_INVERSE_ROOM": "EFFECT_WONDER_ROOM",
     "EFFECT_MISC_HIT": "EFFECT_HIT",
-    "EFFECT_SHED_TAIL": "EFFECT_SUBSTITUTE",
-    "EFFECT_TOXIC_WASTE": "EFFECT_TOXIC_SPIKES",
+    "EFFECT_TOXIC_WASTE": "EFFECT_METRONOME",
 }
 
 
@@ -230,7 +232,13 @@ def main():
     text = strip_block(read(path), "forbidden")
     m = re.search(r"sForbiddenMoves\[MOVES_COUNT\] =\s*\{", text)
     close = text.find("\n};", m.end())
-    block = "".join("    [%s] = FALSE,\n" % p["move"] for p in ports)
+    # call-moves must not be callable by Metronome (call chains)
+    CALLERS = {"MOVE_HITONOME", "MOVE_TRICKONOME", "MOVE_AMPONOME",
+               "MOVE_WEAKONOME"}
+    block = "".join("    [%s] = %s,\n"
+                    % (p["move"],
+                       "FORBIDDEN_METRONOME" if p["move"] in CALLERS else "FALSE")
+                    for p in ports)
     write(path, text[:close + 1] + wrap("forbidden", block) + text[close + 1:])
 
     path = tgt("src/battle_dome.c")

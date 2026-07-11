@@ -363,5 +363,9 @@
 #define EFFECT_RISING_VOLTAGE 357
 #define EFFECT_NO_RETREAT 358
 #define EFFECT_JAW_LOCK 359
+// 2.X move effects (gen 9 semantics per the donor's move descriptions)
+#define EFFECT_CHILLY_RECEPTION 360
+#define EFFECT_SHED_TAIL 361
+#define EFFECT_INVERSE_ROOM 362
 
 #endif  // GUARD_CONSTANTS_BATTLE_MOVE_EFFECTS_H

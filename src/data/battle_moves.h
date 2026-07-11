@@ -11589,7 +11589,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     },
     [MOVE_CHILLY_RECEPTION] =
     {
-        .effect = EFFECT_HIT,
+        .effect = EFFECT_CHILLY_RECEPTION,
         .power = 0,
         .type = TYPE_ICE,
         .accuracy = 0,
@@ -12108,7 +12108,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     },
     [MOVE_SHED_TAIL] =
     {
-        .effect = EFFECT_SUBSTITUTE,
+        .effect = EFFECT_SHED_TAIL,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 0,
@@ -12386,7 +12386,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     },
     [MOVE_HITONOME] =
     {
-        .effect = EFFECT_TOXIC_SPIKES,
+        .effect = EFFECT_METRONOME,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 100,
@@ -12399,7 +12399,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     },
     [MOVE_TRICKONOME] =
     {
-        .effect = EFFECT_TOXIC_SPIKES,
+        .effect = EFFECT_METRONOME,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 80,
@@ -12412,7 +12412,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     },
     [MOVE_AMPONOME] =
     {
-        .effect = EFFECT_TOXIC_SPIKES,
+        .effect = EFFECT_METRONOME,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 100,
@@ -12425,7 +12425,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     },
     [MOVE_WEAKONOME] =
     {
-        .effect = EFFECT_TOXIC_SPIKES,
+        .effect = EFFECT_METRONOME,
         .power = 0,
         .type = TYPE_NORMAL,
         .accuracy = 100,
@@ -12451,7 +12451,7 @@ const struct BattleMove gBattleMoves[MOVES_COUNT] =
     },
     [MOVE_INVERSE_ROOM] =
     {
-        .effect = EFFECT_WONDER_ROOM,
+        .effect = EFFECT_INVERSE_ROOM,
         .power = 0,
         .type = TYPE_PSYCHIC,
         .accuracy = 0,
@@ -13933,6 +13933,9 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .variable = 100,
         .modification2 = SIGNATURE_MOD_EFFECT_CHANGE,
         .variable2 = EFFECT_HIT,
+        .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable3 = SIGNATURE_SECONDARY_EFFECT_DRAIN,
+        .argument3 = 20,
     },
     [SPECIES_VENUSAUR_MEGA] =
     {
@@ -13943,6 +13946,9 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .variable = 110,
         .modification2 = SIGNATURE_MOD_EFFECT_CHANGE,
         .variable2 = EFFECT_HIT,
+        .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable3 = SIGNATURE_SECONDARY_EFFECT_DRAIN,
+        .argument3 = 25,
     },
     [SPECIES_VENUSAUR_MEGA_G] =
     {
@@ -13953,8 +13959,11 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .variable = 110,
         .modification2 = SIGNATURE_MOD_EFFECT_CHANGE,
         .variable2 = EFFECT_HIT,
-        .modification3 = SIGNATURE_MOD_PSS_CHANGE,
-        .variable3 = SPLIT_PHYSICAL,
+        .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable3 = SIGNATURE_SECONDARY_EFFECT_DRAIN,
+        .argument3 = 25,
+        .modification4 = SIGNATURE_MOD_PSS_CHANGE,
+        .variable4 = SPLIT_PHYSICAL,
     },
     [SPECIES_CHARMANDER] =
     {
@@ -14053,8 +14062,11 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .variable2 = EFFECT_HIT,
         .modification3 = SIGNATURE_MOD_TARGET_STAT_DOWN,
         .variable3 = STAT_SPEED,
-        .modification4 = SIGNATURE_MOD_PSS_CHANGE,
-        .variable4 = SPLIT_HIGHEST,
+        .modification4 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable4 = SIGNATURE_SECONDARY_EFFECT_INFESTATION,
+        .chance4 = 30,
+        .modification5 = SIGNATURE_MOD_PSS_CHANGE,
+        .variable5 = SPLIT_HIGHEST,
     },
     [SPECIES_METAPOD] =
     {
@@ -14266,6 +14278,8 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
         .variable3 = SIGNATURE_SECONDARY_EFFECT_PARALYSIS,
         .chance3 = 30,
+        .modification4 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable4 = SIGNATURE_SECONDARY_EFFECT_SET_HEAL_BLOCK,
     },
     [SPECIES_JIGGLYPUFF] =
     {
@@ -14549,10 +14563,13 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .move = MOVE_BONEMERANG,
         .differentDescription = TRUE,
         .description = _("Gains priority in sandstorms and hits Flying-types super effectively also hits airborne targets."),
-        .modification = SIGNATURE_MOD_SE_AGAINST_TYPE,
-        .variable = TYPE_FLYING,
-        .modification2 = SIGNATURE_MOD_ADD_FLAG,
-        .variable2 = FLAG_HIT_IN_AIR,
+        .modification = SIGNATURE_MOD_PRIORITY,
+        .variable = SIGNATURE_PRIORITY_IN_CONDITIONS,
+        .chance = SIGNATURE_CONDITION_WEATHER_SAND,
+        .modification2 = SIGNATURE_MOD_SE_AGAINST_TYPE,
+        .variable2 = TYPE_FLYING,
+        .modification3 = SIGNATURE_MOD_ADD_FLAG,
+        .variable3 = FLAG_HIT_IN_AIR,
     },
     [SPECIES_MAROWAK] =
     {
@@ -14561,10 +14578,13 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .description = _("Becomes a 75BP move that gains priority in sandstorms, hits Flying-types super effectively and hits airborne targets."),
         .modification = SIGNATURE_MOD_POWER,
         .variable = 75,
-        .modification2 = SIGNATURE_MOD_SE_AGAINST_TYPE,
-        .variable2 = TYPE_FLYING,
-        .modification3 = SIGNATURE_MOD_ADD_FLAG,
-        .variable3 = FLAG_HIT_IN_AIR,
+        .modification2 = SIGNATURE_MOD_PRIORITY,
+        .variable2 = SIGNATURE_PRIORITY_IN_CONDITIONS,
+        .chance2 = SIGNATURE_CONDITION_WEATHER_SAND,
+        .modification3 = SIGNATURE_MOD_SE_AGAINST_TYPE,
+        .variable3 = TYPE_FLYING,
+        .modification4 = SIGNATURE_MOD_ADD_FLAG,
+        .variable4 = FLAG_HIT_IN_AIR,
     },
     [SPECIES_MAROWAK_ALOLA] =
     {
@@ -14746,8 +14766,11 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .move = MOVE_RAGE_FIST,
         .differentDescription = TRUE,
         .description = _("Now heals a portion of the damage done and can hit normal-type targets."),
-        .modification = SIGNATURE_MOD_NEUTRAL_AGAINST_TYPE,
-        .variable = TYPE_NORMAL,
+        .modification = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable = SIGNATURE_SECONDARY_EFFECT_DRAIN,
+        .argument = 30,
+        .modification2 = SIGNATURE_MOD_NEUTRAL_AGAINST_TYPE,
+        .variable2 = TYPE_NORMAL,
     },
     [SPECIES_VOLTORB] =
     {
@@ -15002,6 +15025,9 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .modification = SIGNATURE_MOD_ATTACKER_STAT_UP,
         .variable = STAT_DEF,
         .chance = 50,
+        .modification2 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable2 = SIGNATURE_SECONDARY_EFFECT_HEAL_STATUS,
+        .chance2 = 20,
     },
     [SPECIES_BLISSEY] =
     {
@@ -15011,6 +15037,9 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .modification = SIGNATURE_MOD_ATTACKER_STAT_UP,
         .variable = STAT_DEF,
         .chance = 50,
+        .modification2 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable2 = SIGNATURE_SECONDARY_EFFECT_HEAL_STATUS,
+        .chance2 = 20,
     },
     [SPECIES_MAGIKARP] =
     {
@@ -15127,6 +15156,9 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .variable = TYPE_FLYING,
         .modification2 = SIGNATURE_MOD_POWER,
         .variable2 = 70,
+        .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable3 = SIGNATURE_SECONDARY_EFFECT_DRAIN,
+        .argument3 = 25,
     },
     [SPECIES_ARTICUNO] =
     {
@@ -15544,6 +15576,8 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .variable = STAT_DEF,
         .modification2 = SIGNATURE_MOD_ACCURACY,
         .variable2 = 100,
+        .modification3 = SIGNATURE_MOD_SPEED,
+        .variable3 = 200,
     },
     [SPECIES_CHINCHOU] =
     {
@@ -15691,8 +15725,11 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .variable = TYPE_ICE,
         .modification2 = SIGNATURE_MOD_MODIFY_FIELD,
         .variable2 = FIELD_SET_WEATHER_HAIL,
-        .modification3 = SIGNATURE_MOD_PSS_CHANGE,
-        .variable3 = SPLIT_HIGHEST,
+        .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable3 = SIGNATURE_SECONDARY_EFFECT_DRAIN,
+        .argument3 = 25,
+        .modification4 = SIGNATURE_MOD_PSS_CHANGE,
+        .variable4 = SPLIT_HIGHEST,
     },
     [SPECIES_IRON_BUNDLE] =
     {
@@ -15735,6 +15772,8 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .modification3 = SIGNATURE_MOD_TARGET_STAT_DOWN,
         .variable3 = STAT_DEF,
         .chance3 = 30,
+        .modification4 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable4 = SIGNATURE_SECONDARY_EFFECT_SET_HEAL_BLOCK,
     },
     [SPECIES_CROBAT_MEGA] =
     {
@@ -15748,6 +15787,8 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .modification3 = SIGNATURE_MOD_TARGET_STAT_DOWN,
         .variable3 = STAT_DEF,
         .chance3 = 30,
+        .modification4 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable4 = SIGNATURE_SECONDARY_EFFECT_SET_HEAL_BLOCK,
     },
     [SPECIES_SCEPTILE] =
     {
@@ -16015,8 +16056,10 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .modification = SIGNATURE_MOD_TYPE,
         .variable = TYPE_PSYCHIC,
         .modification2 = SIGNATURE_MOD_SECONDARY_EFFECT,
-        .variable2 = SIGNATURE_SECONDARY_EFFECT_FLINCH,
-        .chance2 = 30,
+        .variable2 = SIGNATURE_SECONDARY_EFFECT_HEAL_STATUS,
+        .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable3 = SIGNATURE_SECONDARY_EFFECT_FLINCH,
+        .chance3 = 30,
     },
     [SPECIES_CHIMECHO_MEGA] =
     {
@@ -16026,11 +16069,13 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .modification = SIGNATURE_MOD_TYPE,
         .variable = TYPE_STEEL,
         .modification2 = SIGNATURE_MOD_SECONDARY_EFFECT,
-        .variable2 = SIGNATURE_SECONDARY_EFFECT_FLINCH,
-        .chance2 = 30,
+        .variable2 = SIGNATURE_SECONDARY_EFFECT_HEAL_STATUS,
         .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
-        .variable3 = SIGNATURE_SECONDARY_EFFECT_CURE,
-        .argument3 = 25,
+        .variable3 = SIGNATURE_SECONDARY_EFFECT_FLINCH,
+        .chance3 = 30,
+        .modification4 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable4 = SIGNATURE_SECONDARY_EFFECT_CURE,
+        .argument4 = 25,
     },
     [SPECIES_ABSOL] =
     {
@@ -16039,6 +16084,9 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .description = _("Becomes a 90BP move that heals some of the damage done as HP."),
         .modification = SIGNATURE_MOD_POWER,
         .variable = 85,
+        .modification2 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable2 = SIGNATURE_SECONDARY_EFFECT_DRAIN,
+        .argument2 = 50,
     },
     [SPECIES_ABSOL_MEGA] =
     {
@@ -16048,10 +16096,13 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .modification = SIGNATURE_MOD_POWER,
         .variable = 95,
         .modification2 = SIGNATURE_MOD_SECONDARY_EFFECT,
-        .variable2 = SIGNATURE_SECONDARY_EFFECT_FLINCH,
-        .chance2 = 30,
-        .modification3 = SIGNATURE_MOD_PENETRATING,
-        .variable3 = 0,
+        .variable2 = SIGNATURE_SECONDARY_EFFECT_DRAIN,
+        .argument2 = 50,
+        .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable3 = SIGNATURE_SECONDARY_EFFECT_FLINCH,
+        .chance3 = 30,
+        .modification4 = SIGNATURE_MOD_PENETRATING,
+        .variable4 = 0,
     },
     [SPECIES_ABSOL_MEGA_Z] =
     {
@@ -16061,12 +16112,15 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .modification = SIGNATURE_MOD_POWER,
         .variable = 95,
         .modification2 = SIGNATURE_MOD_SECONDARY_EFFECT,
-        .variable2 = SIGNATURE_SECONDARY_EFFECT_FLINCH,
-        .chance2 = 30,
-        .modification3 = SIGNATURE_MOD_PENETRATING,
-        .variable3 = 0,
-        .modification4 = SIGNATURE_MOD_TYPE,
-        .variable4 = TYPE_GHOST,
+        .variable2 = SIGNATURE_SECONDARY_EFFECT_DRAIN,
+        .argument2 = 50,
+        .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable3 = SIGNATURE_SECONDARY_EFFECT_FLINCH,
+        .chance3 = 30,
+        .modification4 = SIGNATURE_MOD_PENETRATING,
+        .variable4 = 0,
+        .modification5 = SIGNATURE_MOD_TYPE,
+        .variable5 = TYPE_GHOST,
     },
     [SPECIES_MAWILE] =
     {
@@ -16079,6 +16133,8 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .variable2 = EFFECT_HIT_PREVENT_ESCAPE,
         .modification3 = SIGNATURE_MOD_TYPE,
         .variable3 = TYPE_FAIRY,
+        .modification4 = SIGNATURE_MOD_ADD_FLAG,
+        .variable4 = FLAG_STAT_STAGES_IGNORED,
     },
     [SPECIES_MAWILE_MEGA] =
     {
@@ -16091,9 +16147,11 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .variable2 = EFFECT_DOUBLE_HIT,
         .modification3 = SIGNATURE_MOD_TYPE,
         .variable3 = TYPE_FAIRY,
-        .modification4 = SIGNATURE_MOD_ATTACKER_STAT_UP,
-        .variable4 = STAT_ATK,
-        .chance4 = 15,
+        .modification4 = SIGNATURE_MOD_ADD_FLAG,
+        .variable4 = FLAG_STAT_STAGES_IGNORED,
+        .modification5 = SIGNATURE_MOD_ATTACKER_STAT_UP,
+        .variable5 = STAT_ATK,
+        .chance5 = 15,
     },
     [SPECIES_NINJASK] =
     {
@@ -16171,11 +16229,13 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .move = MOVE_DRAINING_KISS,
         .differentDescription = TRUE,
         .description = _("It becomes a 90 bp move and doubles your speed while using it, has a chance of infatuating the target."),
-        .modification = SIGNATURE_MOD_POWER,
-        .variable = 90,
-        .modification2 = SIGNATURE_MOD_SECONDARY_EFFECT,
-        .variable2 = SIGNATURE_SECONDARY_EFFECT_INFATUATION,
-        .chance2 = 30,
+        .modification = SIGNATURE_MOD_SPEED,
+        .variable = 200,
+        .modification2 = SIGNATURE_MOD_POWER,
+        .variable2 = 90,
+        .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable3 = SIGNATURE_SECONDARY_EFFECT_INFATUATION,
+        .chance3 = 30,
     },
     [SPECIES_KECLEON] =
     {
@@ -16189,6 +16249,8 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .chance2 = 20,
         .modification3 = SIGNATURE_MOD_TYPE,
         .variable3 = TYPE_NORMAL,
+        .modification4 = SIGNATURE_MOD_SPEED,
+        .variable4 = 200,
     },
     [SPECIES_RELICANTH] =
     {
@@ -16231,11 +16293,14 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .description = _("Becomes a 75 BP move that has priority in the rain and can raise the user speed."),
         .modification = SIGNATURE_MOD_POWER,
         .variable = 75,
-        .modification2 = SIGNATURE_MOD_ATTACKER_STAT_UP,
-        .variable2 = STAT_SPEED,
-        .chance2 = 15,
-        .modification3 = SIGNATURE_MOD_EFFECT_CHANGE,
-        .variable3 = EFFECT_HIT,
+        .modification2 = SIGNATURE_MOD_PRIORITY,
+        .variable2 = SIGNATURE_PRIORITY_IN_CONDITIONS,
+        .chance2 = SIGNATURE_CONDITION_WEATHER_RAIN,
+        .modification3 = SIGNATURE_MOD_ATTACKER_STAT_UP,
+        .variable3 = STAT_SPEED,
+        .chance3 = 15,
+        .modification4 = SIGNATURE_MOD_EFFECT_CHANGE,
+        .variable4 = EFFECT_HIT,
     },
     [SPECIES_ARMALDO] =
     {
@@ -16381,8 +16446,11 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .move = MOVE_EARTHQUAKE,
         .differentDescription = TRUE,
         .description = _("Absorbs some of the damage done as HP, can now hit flying-types and airbone targets."),
-        .modification = SIGNATURE_MOD_NEUTRAL_AGAINST_TYPE,
-        .variable = TYPE_FLYING,
+        .modification = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable = SIGNATURE_SECONDARY_EFFECT_DRAIN,
+        .argument = 50,
+        .modification2 = SIGNATURE_MOD_NEUTRAL_AGAINST_TYPE,
+        .variable2 = TYPE_FLYING,
     },
     [SPECIES_INFERNAPE] =
     {
@@ -16568,6 +16636,8 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .modification2 = SIGNATURE_MOD_SECONDARY_EFFECT,
         .variable2 = SIGNATURE_SECONDARY_EFFECT_PARALYSIS,
         .chance2 = 20,
+        .modification3 = SIGNATURE_MOD_SPEED,
+        .variable3 = 150,
     },
     [SPECIES_CROAGUNK] =
     {
@@ -16781,8 +16851,10 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .variable = EFFECT_HIT,
         .modification2 = SIGNATURE_MOD_POWER,
         .variable2 = 55,
-        .modification3 = SIGNATURE_MOD_ADD_FLAG,
-        .variable3 = FLAG_DMG_UNDERGROUND,
+        .modification3 = SIGNATURE_MOD_SPEED,
+        .variable3 = 200,
+        .modification4 = SIGNATURE_MOD_ADD_FLAG,
+        .variable4 = FLAG_DMG_UNDERGROUND,
     },
     [SPECIES_GARCHOMP_MEGA] =
     {
@@ -16863,8 +16935,10 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .variable2 = EFFECT_HIT_PREVENT_ESCAPE,
         .modification3 = SIGNATURE_MOD_TYPE,
         .variable3 = TYPE_GRASS,
-        .modification4 = SIGNATURE_MOD_PSS_CHANGE,
-        .variable4 = SPLIT_SPECIAL,
+        .modification4 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable4 = SIGNATURE_SECONDARY_EFFECT_STEAL_POSITIVE_STAT_CHANGES,
+        .modification5 = SIGNATURE_MOD_PSS_CHANGE,
+        .variable5 = SPLIT_SPECIAL,
     },
     [SPECIES_EMBOAR] =
     {
@@ -17007,6 +17081,9 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .variable = SIGNATURE_SECONDARY_EFFECT_TAUNT,
         .modification2 = SIGNATURE_MOD_TYPE,
         .variable2 = TYPE_DARK,
+        .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable3 = SIGNATURE_SECONDARY_EFFECT_DRAIN,
+        .argument3 = 20,
     },
     [SPECIES_EELEKTROSS] =
     {
@@ -17046,10 +17123,12 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
         .variable3 = SIGNATURE_SECONDARY_EFFECT_BURN,
         .chance3 = 25,
-        .modification4 = SIGNATURE_MOD_PSS_CHANGE,
-        .variable4 = SPLIT_SPECIAL,
-        .modification5 = SIGNATURE_MOD_TYPE,
-        .variable5 = TYPE_GHOST,
+        .modification4 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable4 = SIGNATURE_SECONDARY_EFFECT_SET_HEAL_BLOCK,
+        .modification5 = SIGNATURE_MOD_PSS_CHANGE,
+        .variable5 = SPLIT_SPECIAL,
+        .modification6 = SIGNATURE_MOD_TYPE,
+        .variable6 = TYPE_GHOST,
     },
     [SPECIES_CHANDELURE_MEGA] =
     {
@@ -17063,10 +17142,12 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
         .variable3 = SIGNATURE_SECONDARY_EFFECT_BURN,
         .chance3 = 35,
-        .modification4 = SIGNATURE_MOD_PSS_CHANGE,
-        .variable4 = SPLIT_SPECIAL,
-        .modification5 = SIGNATURE_MOD_TYPE,
-        .variable5 = TYPE_GHOST,
+        .modification4 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable4 = SIGNATURE_SECONDARY_EFFECT_SET_HEAL_BLOCK,
+        .modification5 = SIGNATURE_MOD_PSS_CHANGE,
+        .variable5 = SPLIT_SPECIAL,
+        .modification6 = SIGNATURE_MOD_TYPE,
+        .variable6 = TYPE_GHOST,
     },
     [SPECIES_SAWK] =
     {
@@ -17181,6 +17262,9 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .modification2 = SIGNATURE_MOD_TARGET_STAT_DOWN,
         .variable2 = STAT_DEF,
         .chance2 = 30,
+        .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable3 = SIGNATURE_SECONDARY_EFFECT_DRAIN,
+        .argument3 = 50,
     },
     [SPECIES_VOLCARONA] =
     {
@@ -17720,6 +17804,8 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
         .variable3 = SIGNATURE_SECONDARY_EFFECT_LEECH_SEED,
         .chance3 = 20,
+        .modification4 = SIGNATURE_MOD_ADD_FLAG,
+        .variable4 = FLAG_STAT_STAGES_IGNORED,
     },
     [SPECIES_RILLABOOM_MEGA] =
     {
@@ -17733,6 +17819,8 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
         .variable3 = SIGNATURE_SECONDARY_EFFECT_LEECH_SEED,
         .chance3 = 20,
+        .modification4 = SIGNATURE_MOD_ADD_FLAG,
+        .variable4 = FLAG_STAT_STAGES_IGNORED,
     },
     [SPECIES_INTELEON] =
     {
@@ -17754,9 +17842,11 @@ const struct SignatureMove gSignatureMoveList[NUM_SPECIES] = {
         .description = _("Becomes a 95BP move that ignores the target defense and can flinch the target."),
         .modification = SIGNATURE_MOD_POWER,
         .variable = 95,
-        .modification2 = SIGNATURE_MOD_SECONDARY_EFFECT,
-        .variable2 = SIGNATURE_SECONDARY_EFFECT_FLINCH,
-        .chance2 = 10,
+        .modification2 = SIGNATURE_MOD_ADD_FLAG,
+        .variable2 = FLAG_STAT_STAGES_IGNORED,
+        .modification3 = SIGNATURE_MOD_SECONDARY_EFFECT,
+        .variable3 = SIGNATURE_SECONDARY_EFFECT_FLINCH,
+        .chance3 = 10,
     },
     [SPECIES_CINDERACE] =
     {

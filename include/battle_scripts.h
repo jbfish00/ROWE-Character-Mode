@@ -156,6 +156,7 @@ extern const u8 BattleScript_SturdyPreventsOHKO[];
 extern const u8 BattleScript_DampStopsExplosion[];
 extern const u8 BattleScript_MoveHPDrain_PPLoss[];
 extern const u8 BattleScript_MoveHPDrain[];
+extern const u8 BattleScript_SignatureMoveDrain[];
 extern const u8 BattleScript_MonMadeMoveUseless_PPLoss[];
 extern const u8 BattleScript_MonMadeMoveUseless[];
 extern const u8 BattleScript_FlashFireBoost_PPLoss[];

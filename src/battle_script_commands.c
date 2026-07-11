@@ -1107,10 +1107,10 @@ static const u8 sForbiddenMoves[MOVES_COUNT] =
     [MOVE_NEUTRAL_PULSE] = FALSE,
     [MOVE_SEASONAL_BEAM] = FALSE,
     [MOVE_RAGING_FURY] = FALSE,
-    [MOVE_HITONOME] = FALSE,
-    [MOVE_TRICKONOME] = FALSE,
-    [MOVE_AMPONOME] = FALSE,
-    [MOVE_WEAKONOME] = FALSE,
+    [MOVE_HITONOME] = FORBIDDEN_METRONOME,
+    [MOVE_TRICKONOME] = FORBIDDEN_METRONOME,
+    [MOVE_AMPONOME] = FORBIDDEN_METRONOME,
+    [MOVE_WEAKONOME] = FORBIDDEN_METRONOME,
     [MOVE_TORCH_SONG] = FALSE,
     [MOVE_INVERSE_ROOM] = FALSE,
     [MOVE_BARB_BARRAGE] = FALSE,
@@ -2408,6 +2408,9 @@ static void Cmd_datahpupdate(void)
                         gTakenDmgByBattler[gActiveBattler] = gBattlerAttacker;
                     else
                         gTakenDmgByBattler[gActiveBattler] = gBattlerTarget;
+                    // Rage Fist: count hits taken, per party slot
+                    if (gBattleStruct->timesGotHit[GetBattlerSide(gActiveBattler)][gBattlerPartyIndexes[gActiveBattler]] < 255)
+                        gBattleStruct->timesGotHit[GetBattlerSide(gActiveBattler)][gBattlerPartyIndexes[gActiveBattler]]++;
                 }
 
                 if (gBattleMons[gActiveBattler].hp > gBattleMoveDamage)
@@ -10551,11 +10554,26 @@ static void Cmd_mimicattackcopy(void)
 
 static void Cmd_metronome(void)
 {
+    // 2.X -onome moves: category-restricted Metronomes
+    u16 caller = gCurrentMove;
+
     while (1)
     {
         gCurrentMove = (Random() % (MOVES_COUNT - 1)) + 1;
         if (gBattleMoves[gCurrentMove].effect == EFFECT_PLACEHOLDER)
             continue;
+        if (caller == MOVE_HITONOME && gBattleMoves[gCurrentMove].power == 0)
+            continue;   // any attacking move
+        if (caller == MOVE_TRICKONOME && gBattleMoves[gCurrentMove].power != 0)
+            continue;   // any status move
+        if (caller == MOVE_AMPONOME
+         && (gBattleMoves[gCurrentMove].power != 0
+          || gBattleMoves[gCurrentMove].target != MOVE_TARGET_USER))
+            continue;   // any self-buffing move
+        if (caller == MOVE_WEAKONOME
+         && (gBattleMoves[gCurrentMove].power != 0
+          || gBattleMoves[gCurrentMove].target == MOVE_TARGET_USER))
+            continue;   // any nerfing move
 
         if (!(sForbiddenMoves[gCurrentMove] & FORBIDDEN_METRONOME))
         {
@@ -12068,6 +12086,9 @@ static void Cmd_setroom(void)
         break;
     case EFFECT_MAGIC_ROOM:
         HandleRoomMove(STATUS_FIELD_MAGIC_ROOM, &gFieldTimers.magicRoomTimer, 4);
+        break;
+    case EFFECT_INVERSE_ROOM:  // 2.X: field machinery already existed (ability-set); string reuses Trick Room's
+        HandleRoomMove(STATUS_FIELD_INVERSE_ROOM, &gFieldTimers.inverseRoomTimer, 0);
         break;
     default:
         gBattleCommunication[MULTISTRING_CHOOSER] = 6;
