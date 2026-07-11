@@ -68,6 +68,7 @@ struct TrainerMonItemCustomMoves
 	bool8 exioliteBoost;
 	u8 hiddenNature;
 	u16 ivs[NUM_STATS];
+	u8 style;   // 2.X Battle Style; stored now, acted on when styles land
 };
 
 union TrainerMonPtr

@@ -298,6 +298,26 @@ struct BaseStats
 };
 
 #include "constants/battle_config.h"
+// 2.X Battle Styles. Ported now because trainer data carries a .style per
+// mon; the stat-reshaping engine itself is a later phase.
+#define STYLE_BALANCED     0
+#define STYLE_DISRUPTOR    1
+#define STYLE_TANK         2
+#define STYLE_STRIKER      3
+#define STYLE_SPEEDSTER    4
+#define STYLE_BRUISER      5
+#define STYLE_JUGGERNAUT   6
+#define STYLE_ALL_ROUNDER  7
+#define NUM_STYLES         8
+
+#define STYLE_DISRUPTOR_LEVEL    15
+#define STYLE_TANK_LEVEL         23
+#define STYLE_STRIKER_LEVEL      31
+#define STYLE_SPEEDSTER_LEVEL    39
+#define STYLE_BRUISER_LEVEL      47
+#define STYLE_JUGGERNAUT_LEVEL   55
+#define STYLE_ALL_ROUNDER_LEVEL  63
+
 struct BattleMove
 {
     u16 effect;
