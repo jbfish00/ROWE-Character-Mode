@@ -80,23 +80,59 @@ Recurring traps (all handled inside the scripts — keep it that way):
 
 ## Current state (2026-07-11)
 
-Phase 1 (megas+stones) and Phase 2 (data parity: species/items/moves/
-signature engine/trainers/abilities) COMMITTED and build-clean. See
-`git log --oneline -12` and the plan file for detail.
+Phases 1, 2 and most of 3 are COMMITTED and build-clean. `git log --oneline -12`.
 
-**OPEN BUG**: Trick-o-nome (categorized Metronome) crashed once — "jumped to
-invalid address" right after its attack string (before the called move
-printed). Script pointer table verified complete/valid; Chilly Reception (in
-its callable pool) runs clean directly. Repro: `rowe_test_effects.gba`, wild
-battle, use Trickonome. Suspects: Cmd_metronome jump path with some specific
-called move. `rowe_test_effects2.gba` grants Chilly Reception/Shed Tail/
-Inverse Room/Gigaton Hammer as direct moves (Chilly Reception verified ✓;
-other three still need runtime verification).
+**Phase 3 progress:**
+- 3.1 Level caps: DONE. 2.X `gScalingInfo[difficulty][what][badges]` table in
+  `level_scaling.c` (16-badge ready). NOTE: 1.9.4 ALREADY had level caps (stat
+  clamp in CalculateMonStats + Hard-mode XP block in GetPkmnExpMultiplier);
+  what 2.X changes is the VALUES (badge 8: 45, not 77). Both pre-existing paths
+  now call `GetCurrentRawLevelCap()`. Do not add a second cap system.
+- 3.2 Battle Styles: DONE. 8 styles, stat reshaping in `ApplyBattleStyle()`
+  (called at the tail of CalculateMonStats + CalculateTrainerMonStats).
+  Per-mon storage = 3 bits stolen from `hidden_nature` (u8 -> :5 + style:3),
+  no save growth. Player picks with START on the summary Skills page.
+  Opponents use them (trainer data's `.style`, wired in battle_main).
+- 3.3 Trainer Skills: DONE (core + menu). `src/trainer_skills.c` +
+  `src/trainer_skills_menu.c`. SaveBlock1 gained `trainerSkillLevel[100]` +
+  `trainerExp`. The six stat skills REPLACE IVs under
+  `FLAG_TRAINER_SKILLS_MODE` (3 IVs/point, final point 4 = exactly 31).
+  Menu opens with START on the Start menu.
+- **Exiolite: NEEDED NO WORK** -- 1.9.4 already ships it whole.
+- 3.4 Blue Nurse suite: NOT STARTED (egg/tutor/TM tutoring by badge count,
+  wonder trade, PC-storage battles, season change). Season change also
+  unblocks MOVE_SEASONAL_BEAM, still stubbed.
+- 3.5 Badge key-item rewards: NOT STARTED (most tool items already exist in
+  1.9.4; this is gating alignment).
 
-**Runtime-untested but committed**: 836 rebalanced trainer parties (needs any
-trainer battle), 91 new trainers, ability effects batch, most new move
-effects. Known-missing effects list: see final summary in the last session or
-`rowe_*_report.txt` files.
+**Skill effects still unimplemented** (constants + points exist; only the six
+stat/IV ones and XP Boost-Trainer actually do anything): Gold Rush, Bargain,
+Sniper Ball, Step Heal, Rebirth, Stay Away, Skill Restore, Joy Boost,
+Revitalize, Deep Scan, Eggcelerate, Rare Sight, Quick Exit, Bonus Battle,
+Loot Boost, Max PP Boost, Rock Smash Boost, XP Boost-Pokemon.
+
+**Trainer parties VERIFIED STATICALLY in the built ROM** (cheaper than driving
+the emulator, which eats budget fast): dump `gTrainers` from the .gba (stride
+0x28; partyFlags at +0, partySize at +0x20, party ptr at +0x24) and decode the
+party. Roxanne = Onix with a real 6/252/252 EV spread; Brendan Route 103 =
+Treecko. Both match the donor data, `partyFlags == 0x3`
+(CUSTOM_MOVESET|HELD_ITEM), pointers valid. Reuse this technique -- it beats
+navigating to a trainer.
+
+**RUNTIME-UNTESTED (all committed, all build-clean):** everything in Phase 3
+(level caps, Battle Styles, Trainer Skills + its menu), the ability effects,
+most new move effects, and an actual trainer BATTLE (data is verified, but
+CreateNPCTrainerParty has never been exercised on the rewritten structs).
+Test ROM ready: `~/Documents/rowe_test_phase3.gba` (fresh save; any mode
+commit grants a Lv40 Snorlax). Fastest live checks: fight the Route 103 rival,
+open Trainer Skills with START on the Start menu, cycle a Battle Style with
+START on the summary Skills page.
+
+**Recently FIXED:** the Trick-o-nome crash was `gBattleAnims_Moves` (assembly,
+so it escaped the MOVES_COUNT sweep) still having 756 entries for 943 moves --
+ANY new move animating jumped through garbage. Ported all 188 via
+`port_2x_move_anims.py`; verified 188/188 valid ROM pointers and 7 clean
+Trickonome uses in-battle.
 
 ## Donor facts
 
