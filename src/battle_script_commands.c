@@ -12962,6 +12962,7 @@ static void Cmd_givecaughtmon(void)
         case SPECIES_RAICHU_MEGA_Y:
         case SPECIES_RIBOMBEE_MEGA:
         case SPECIES_RILLABOOM_MEGA:
+        case SPECIES_SAMUROTT_HISUI_MEGA:
         case SPECIES_SAMUROTT_MEGA:
         case SPECIES_SANDACONDA_MEGA:
         case SPECIES_SANDSLASH_MEGA:
@@ -12971,6 +12972,8 @@ static void Cmd_givecaughtmon(void)
         case SPECIES_SERPERIOR_MEGA:
         case SPECIES_SHUCKLE_MEGA:
         case SPECIES_SKARMORY_MEGA:
+        case SPECIES_SLOWBRO_GALAR_MEGA:
+        case SPECIES_SLOWKING_GALAR_MEGA:
         case SPECIES_SLOWKING_MEGA:
         case SPECIES_SNORLAX_MEGA:
         case SPECIES_STARAPTOR_MEGA:
@@ -12982,7 +12985,9 @@ static void Cmd_givecaughtmon(void)
         case SPECIES_TOXTRICITY_MEGA:
         case SPECIES_TOXTRICITY_MEGA_LOW_KEY:
         case SPECIES_TSAREENA_MEGA:
+        case SPECIES_TYPHLOSION_HISUI_MEGA:
         case SPECIES_TYPHLOSION_MEGA:
+        case SPECIES_URSHIFU_MEGA_RAPID_STRIKE:
         case SPECIES_URSHIFU_MEGA_SINGLE_STRIKE:
         case SPECIES_VENUSAUR_MEGA_G:
         case SPECIES_VICTREEBEL_MEGA:

@@ -15039,6 +15039,15 @@ static const union AnimCmd *const sAnims_RILLABOOM_MEGA[] ={
     sAnim_GeneralFrame0,
     sAnim_RILLABOOM_MEGA_1,
 };
+static const union AnimCmd sAnim_SAMUROTT_HISUI_MEGA_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+static const union AnimCmd *const sAnims_SAMUROTT_HISUI_MEGA[] ={
+    sAnim_GeneralFrame0,
+    sAnim_SAMUROTT_HISUI_MEGA_1,
+};
 static const union AnimCmd sAnim_SAMUROTT_MEGA_1[] =
 {
     ANIMCMD_FRAME(0, 1),
@@ -15119,6 +15128,24 @@ static const union AnimCmd sAnim_SKARMORY_MEGA_1[] =
 static const union AnimCmd *const sAnims_SKARMORY_MEGA[] ={
     sAnim_GeneralFrame0,
     sAnim_SKARMORY_MEGA_1,
+};
+static const union AnimCmd sAnim_SLOWBRO_GALAR_MEGA_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+static const union AnimCmd *const sAnims_SLOWBRO_GALAR_MEGA[] ={
+    sAnim_GeneralFrame0,
+    sAnim_SLOWBRO_GALAR_MEGA_1,
+};
+static const union AnimCmd sAnim_SLOWKING_GALAR_MEGA_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+static const union AnimCmd *const sAnims_SLOWKING_GALAR_MEGA[] ={
+    sAnim_GeneralFrame0,
+    sAnim_SLOWKING_GALAR_MEGA_1,
 };
 static const union AnimCmd sAnim_SLOWKING_MEGA_1[] =
 {
@@ -15219,6 +15246,15 @@ static const union AnimCmd *const sAnims_TSAREENA_MEGA[] ={
     sAnim_GeneralFrame0,
     sAnim_TSAREENA_MEGA_1,
 };
+static const union AnimCmd sAnim_TYPHLOSION_HISUI_MEGA_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+static const union AnimCmd *const sAnims_TYPHLOSION_HISUI_MEGA[] ={
+    sAnim_GeneralFrame0,
+    sAnim_TYPHLOSION_HISUI_MEGA_1,
+};
 static const union AnimCmd sAnim_TYPHLOSION_MEGA_1[] =
 {
     ANIMCMD_FRAME(0, 1),
@@ -15227,6 +15263,15 @@ static const union AnimCmd sAnim_TYPHLOSION_MEGA_1[] =
 static const union AnimCmd *const sAnims_TYPHLOSION_MEGA[] ={
     sAnim_GeneralFrame0,
     sAnim_TYPHLOSION_MEGA_1,
+};
+static const union AnimCmd sAnim_URSHIFU_MEGA_RAPID_STRIKE_1[] =
+{
+    ANIMCMD_FRAME(0, 1),
+    ANIMCMD_END,
+};
+static const union AnimCmd *const sAnims_URSHIFU_MEGA_RAPID_STRIKE[] ={
+    sAnim_GeneralFrame0,
+    sAnim_URSHIFU_MEGA_RAPID_STRIKE_1,
 };
 static const union AnimCmd sAnim_URSHIFU_MEGA_SINGLE_STRIKE_1[] =
 {
@@ -16553,6 +16598,7 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     [SPECIES_RAICHU_MEGA_Y] = sAnims_RAICHU_MEGA_Y,
     [SPECIES_RIBOMBEE_MEGA] = sAnims_RIBOMBEE_MEGA,
     [SPECIES_RILLABOOM_MEGA] = sAnims_RILLABOOM_MEGA,
+    [SPECIES_SAMUROTT_HISUI_MEGA] = sAnims_SAMUROTT_HISUI_MEGA,
     [SPECIES_SAMUROTT_MEGA] = sAnims_SAMUROTT_MEGA,
     [SPECIES_SANDACONDA_MEGA] = sAnims_SANDACONDA_MEGA,
     [SPECIES_SANDSLASH_MEGA] = sAnims_SANDSLASH_MEGA,
@@ -16562,6 +16608,8 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     [SPECIES_SERPERIOR_MEGA] = sAnims_SERPERIOR_MEGA,
     [SPECIES_SHUCKLE_MEGA] = sAnims_SHUCKLE_MEGA,
     [SPECIES_SKARMORY_MEGA] = sAnims_SKARMORY_MEGA,
+    [SPECIES_SLOWBRO_GALAR_MEGA] = sAnims_SLOWBRO_GALAR_MEGA,
+    [SPECIES_SLOWKING_GALAR_MEGA] = sAnims_SLOWKING_GALAR_MEGA,
     [SPECIES_SLOWKING_MEGA] = sAnims_SLOWKING_MEGA,
     [SPECIES_SNORLAX_MEGA] = sAnims_SNORLAX_MEGA,
     [SPECIES_STARAPTOR_MEGA] = sAnims_STARAPTOR_MEGA,
@@ -16573,7 +16621,9 @@ const union AnimCmd *const *const gMonFrontAnimsPtrTable[] =
     [SPECIES_TOXTRICITY_MEGA] = sAnims_TOXTRICITY_MEGA,
     [SPECIES_TOXTRICITY_MEGA_LOW_KEY] = sAnims_TOXTRICITY_MEGA_LOW_KEY,
     [SPECIES_TSAREENA_MEGA] = sAnims_TSAREENA_MEGA,
+    [SPECIES_TYPHLOSION_HISUI_MEGA] = sAnims_TYPHLOSION_HISUI_MEGA,
     [SPECIES_TYPHLOSION_MEGA] = sAnims_TYPHLOSION_MEGA,
+    [SPECIES_URSHIFU_MEGA_RAPID_STRIKE] = sAnims_URSHIFU_MEGA_RAPID_STRIKE,
     [SPECIES_URSHIFU_MEGA_SINGLE_STRIKE] = sAnims_URSHIFU_MEGA_SINGLE_STRIKE,
     [SPECIES_VENUSAUR_MEGA_G] = sAnims_VENUSAUR_MEGA_G,
     [SPECIES_VICTREEBEL_MEGA] = sAnims_VICTREEBEL_MEGA,

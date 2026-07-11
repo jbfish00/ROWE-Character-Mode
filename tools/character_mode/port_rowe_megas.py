@@ -66,6 +66,11 @@ def main():
     # exclude our own generated blocks so re-runs re-discover the same megas
     sp_text = strip_block(read(tgt("include/constants/species.h")), "consts")
     our_species = set(re.findall(r"#define (SPECIES_\w+)", sp_text))
+    # 2.X form names aliased onto our constants (port_2x_species_aliases.py).
+    # Existing table rows use OUR name, so resolve before emitting base rows or
+    # the alias emits a second initializer for the same species id.
+    alias = dict(re.findall(r"#define (SPECIES_\w+)\s+(SPECIES_\w+)", sp_text))
+    canon = lambda s: alias.get(s, s)
     our_items = set(re.findall(
         r"#define (ITEM_\w+)",
         strip_block(read(tgt("include/constants/items.h")), "stone-ids")))
@@ -296,12 +301,23 @@ def main():
     write(path, text)
 
     # ---- 5. form species tables + pointers + base-form map
+    # A base that already belongs to a family table (incl. via an alias name,
+    # e.g. SLOWBRO_GALAR -> our SLOWBRO_GALARIAN in sSlowbroFormSpeciesIdTable)
+    # must have its mega appended to THAT table -- a fresh table would leave the
+    # base pointing at a table that doesn't list its own mega.
+    ptr_text = read(tgt("src/data/pokemon/form_species_table_pointers.h"))
+    existing_table = dict(
+        re.findall(r"\[(SPECIES_\w+)\]\s*=\s*(s\w+FormSpeciesIdTable)", ptr_text))
+
     path = tgt("src/data/pokemon/form_species_table.h")
     text = strip_block(read(path), "formtables")
     new_tables, table_of = {}, {}
     for p in ports:
-        stem = p["base"][len("SPECIES_"):].title().replace("_", "")
-        sym = "s%sFormSpeciesIdTable" % stem
+        base = canon(p["base"])
+        sym = existing_table.get(base)
+        if not sym:
+            stem = base[len("SPECIES_"):].title().replace("_", "")
+            sym = "s%sFormSpeciesIdTable" % stem
         table_of[p["mega"]] = sym
         tm = re.search(r"static const u16 %s\[\] = \{(.*?)\};" % sym, text, re.S)
         if tm:
@@ -314,7 +330,7 @@ def main():
                 "    0xFFFF", "    %s,\n    0xFFFF" % p["mega"], 1)
         else:
             new_tables[sym] = ("static const u16 %s[] = {\n    %s,\n    %s,\n"
-                               "    0xFFFF,\n};\n" % (sym, p["base"], p["mega"]))
+                               "    0xFFFF,\n};\n" % (sym, base, p["mega"]))
     text += wrap("formtables", "".join(new_tables.values()))
     write(path, text)
 
@@ -323,11 +339,12 @@ def main():
     ptr_lines = []
     emitted_bases = set()
     for p in ports:
+        base = canon(p["base"])
         ptr_lines.append("    [%s] = %s,\n" % (p["mega"], table_of[p["mega"]]))
-        if (p["base"] not in emitted_bases
-                and not re.search(r"\[%s\] = s\w+FormSpeciesIdTable" % p["base"], text)):
-            ptr_lines.append("    [%s] = %s,\n" % (p["base"], table_of[p["mega"]]))
-            emitted_bases.add(p["base"])
+        if (base not in emitted_bases
+                and not re.search(r"\[%s\] = s\w+FormSpeciesIdTable" % base, text)):
+            ptr_lines.append("    [%s] = %s,\n" % (base, table_of[p["mega"]]))
+            emitted_bases.add(base)
     m = re.search(r"gFormSpeciesIdTables\[[^\]]*\][^{]*\{", text)
     close = text.find("};", m.end())
     text = text[:close] + wrap("formptrs", "".join(ptr_lines)) + text[close:]

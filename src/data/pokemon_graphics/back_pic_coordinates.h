@@ -7049,6 +7049,11 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0,
         .y_offset = 4,
     },
+    [SPECIES_SAMUROTT_HISUI_MEGA] =
+    {
+        .size = 0,
+        .y_offset = 4,
+    },
     [SPECIES_SAMUROTT_MEGA] =
     {
         .size = 0,
@@ -7090,6 +7095,16 @@ const struct MonCoords gMonBackPicCoords[] =
         .y_offset = 0,
     },
     [SPECIES_SKARMORY_MEGA] =
+    {
+        .size = 0,
+        .y_offset = 0,
+    },
+    [SPECIES_SLOWBRO_GALAR_MEGA] =
+    {
+        .size = 0,
+        .y_offset = 0,
+    },
+    [SPECIES_SLOWKING_GALAR_MEGA] =
     {
         .size = 0,
         .y_offset = 0,
@@ -7149,10 +7164,20 @@ const struct MonCoords gMonBackPicCoords[] =
         .size = 0,
         .y_offset = 2,
     },
+    [SPECIES_TYPHLOSION_HISUI_MEGA] =
+    {
+        .size = 0,
+        .y_offset = 0,
+    },
     [SPECIES_TYPHLOSION_MEGA] =
     {
         .size = 0,
         .y_offset = 0,
+    },
+    [SPECIES_URSHIFU_MEGA_RAPID_STRIKE] =
+    {
+        .size = 0,
+        .y_offset = 4,
     },
     [SPECIES_URSHIFU_MEGA_SINGLE_STRIKE] =
     {

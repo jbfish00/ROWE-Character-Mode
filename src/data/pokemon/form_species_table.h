@@ -147,6 +147,7 @@ static const u16 sSlowbroFormSpeciesIdTable[] = {
     SPECIES_SLOWBRO,
 	SPECIES_SLOWBRO_GALARIAN,
     SPECIES_SLOWBRO_MEGA,
+    SPECIES_SLOWBRO_GALAR_MEGA,
     0xFFFF,
 };
 
@@ -901,6 +902,7 @@ static const u16 sSlowkingFormSpeciesIdTable[] = {
     SPECIES_SLOWKING,
     SPECIES_SLOWKING_GALARIAN,
     SPECIES_SLOWKING_MEGA,
+    SPECIES_SLOWKING_GALAR_MEGA,
     0xFFFF,
 };
 
@@ -1226,6 +1228,11 @@ static const u16 sRillaboomFormSpeciesIdTable[] = {
     SPECIES_RILLABOOM_MEGA,
     0xFFFF,
 };
+static const u16 sSamurottHusianFormSpeciesIdTable[] = {
+    SPECIES_SAMUROTT_HUSIAN,
+    SPECIES_SAMUROTT_HISUI_MEGA,
+    0xFFFF,
+};
 static const u16 sSamurottFormSpeciesIdTable[] = {
     SPECIES_SAMUROTT,
     SPECIES_SAMUROTT_MEGA,
@@ -1312,9 +1319,19 @@ static const u16 sTsareenaFormSpeciesIdTable[] = {
     SPECIES_TSAREENA_MEGA,
     0xFFFF,
 };
+static const u16 sTyphlosionHusianFormSpeciesIdTable[] = {
+    SPECIES_TYPHLOSION_HUSIAN,
+    SPECIES_TYPHLOSION_HISUI_MEGA,
+    0xFFFF,
+};
 static const u16 sTyphlosionFormSpeciesIdTable[] = {
     SPECIES_TYPHLOSION,
     SPECIES_TYPHLOSION_MEGA,
+    0xFFFF,
+};
+static const u16 sUrshifuRapidStrikeStyleFormSpeciesIdTable[] = {
+    SPECIES_URSHIFU_RAPID_STRIKE_STYLE,
+    SPECIES_URSHIFU_MEGA_RAPID_STRIKE,
     0xFFFF,
 };
 static const u16 sUrshifuFormSpeciesIdTable[] = {
