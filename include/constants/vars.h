@@ -184,7 +184,7 @@
 #define VAR_TRICK_HOUSE_BEING_WATCHED_STATE  0x40A5
 #define VAR_TRICK_HOUSE_FOUND_TRICK_MASTER   0x40A6
 #define VAR_TRICK_HOUSE_ENTRANCE_STATE       0x40A7
-#define VAR_UNUSED_0x40A8                    0x40A8 // Unused Var
+#define VAR_MAP_SCENE_FIVE_ISLAND_RESORT_GORGEOUS      0x40A8 // 2.X Sevii // Unused Var
 #define VAR_CYCLING_CHALLENGE_STATE          0x40A9
 #define VAR_SLATEPORT_MUSEUM_1F_STATE        0x40AA
 #define VAR_TRICK_HOUSE_PUZZLE_1_STATE       0x40AB
@@ -200,7 +200,7 @@
 #define VAR_TRICK_HOUSE_ENTER_FROM_CORRIDOR  0x40B5
 #define VAR_TRICK_HOUSE_PUZZLE_7_STATE_2     0x40B6 // Leftover from RS, never set
 #define VAR_SLATEPORT_FAN_CLUB_STATE         0x40B7
-#define VAR_UNUSED_0x40B8                    0x40B8 // Unused Var
+#define VAR_CURRENT_SEVII                              0x40B8 // 2.X Sevii // Unused Var
 #define VAR_MT_PYRE_STATE                    0x40B9
 #define VAR_NEW_MAUVILLE_STATE               0x40BA
 #define VAR_TIMES_WHITED_OUT                 0x40BB // New Flag
@@ -235,8 +235,8 @@
 #define VAR_SOOTOPOLIS_WALLACE_STATE         0x40D8
 #define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
 #define VAR_REGISTER_BIRCH_STATE             0x40DA
-#define VAR_UNUSED_0x40DB                    0x40DB // Unused Var
-#define VAR_UNUSED_0x40DC                    0x40DC // Unused Var
+#define VAR_SHOP_MONEY_TYPE                            0x40DB // 2.X Sevii // Unused Var
+#define VAR_SHOP_TYPE                                  0x40DC // 2.X Sevii // Unused Var
 #define VAR_EVENT_PICHU_SLOT                 0x40DD
 #define VAR_NEVER_READ_0x40DE                0x40DE // Var is written to, but never read
 #define VAR_NEVER_READ_0x40DF                0x40DF // Var is written to, but never read
@@ -245,7 +245,7 @@
 #define VAR_NEVER_READ_0x40E2                0x40E2 // Var is written to, but never read
 #define VAR_NEVER_READ_0x40E3                0x40E3 // Var is written to, but never read
 #define VAR_NEVER_READ_0x40E4                0x40E4 // var is written to, but never read
-#define VAR_UNUSED_0x40E5                    0x40E5 // Unused Var
+#define VAR_VISITED_SEVII                              0x40E5 // 2.X Sevii // Unused Var
 #define VAR_DAILY_SLOTS                      0x40E6
 #define VAR_DAILY_WILDS                      0x40E7
 #define VAR_DAILY_BLENDER                    0x40E8

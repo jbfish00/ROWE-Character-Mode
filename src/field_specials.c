@@ -4567,3 +4567,12 @@ u8 OpenUDTradeMenu (void)
 {
     UDTrade_ShowMainMenu();
 }
+
+// 2.X item balls: the item id is stashed in the object event's
+// trainerRange_berryTreeId field (its map.json "trainer_sight_or_berry_tree_id"
+// is set to an ITEM_* constant). Common_EventScript_FindItem calls this, then
+// `finditem VAR_RESULT` picks the id up.
+void GetObjectEventTrainerRangeFromTemplate(void)
+{
+    gSpecialVar_Result = gObjectEvents[gSelectedObjectEvent].trainerRange_berryTreeId;
+}

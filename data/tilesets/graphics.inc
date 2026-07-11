@@ -2220,3 +2220,67 @@ gTilesetPalettes_SeviiIslands45::
 	.align 2
 gTilesetTiles_SeviiIslands45::
 	.incbin "data/tilesets/secondary/seviiislands45/tiles.4bpp.lz"
+
+gTilesetPalettes_GenericSeviiGym::
+	.incbin "data/tilesets/secondary/generic_sevii_gym/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/generic_sevii_gym/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/generic_sevii_gym/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/generic_sevii_gym/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/generic_sevii_gym/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/generic_sevii_gym/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/generic_sevii_gym/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/generic_sevii_gym/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/generic_sevii_gym/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/generic_sevii_gym/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/generic_sevii_gym/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/generic_sevii_gym/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/generic_sevii_gym/palettes/12.gbapal"
+
+	.align 2
+
+gTilesetTiles_GenericSeviiGym::
+	.incbin "data/tilesets/secondary/generic_sevii_gym/tiles.4bpp.lz"
+
+gTilesetPalettes_MauvilleCityInside::
+	.incbin "data/tilesets/secondary/mauvillecityinside/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/mauvillecityinside/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/mauvillecityinside/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/mauvillecityinside/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/mauvillecityinside/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/mauvillecityinside/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/mauvillecityinside/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/mauvillecityinside/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/mauvillecityinside/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/mauvillecityinside/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/mauvillecityinside/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/mauvillecityinside/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/mauvillecityinside/palettes/12.gbapal"
+
+	.align 2
+
+gTilesetTiles_MauvilleCityInside::
+	.incbin "data/tilesets/secondary/mauvillecityinside/tiles.4bpp.lz"
+
+	.align 2
+
+gTilesetPalettes_SeviiIslands67::
+	.incbin "data/tilesets/secondary/sevii_islands_67/palettes/00.gbapal"
+	.incbin "data/tilesets/secondary/sevii_islands_67/palettes/01.gbapal"
+	.incbin "data/tilesets/secondary/sevii_islands_67/palettes/02.gbapal"
+	.incbin "data/tilesets/secondary/sevii_islands_67/palettes/03.gbapal"
+	.incbin "data/tilesets/secondary/sevii_islands_67/palettes/04.gbapal"
+	.incbin "data/tilesets/secondary/sevii_islands_67/palettes/05.gbapal"
+	.incbin "data/tilesets/secondary/sevii_islands_67/palettes/06.gbapal"
+	.incbin "data/tilesets/secondary/sevii_islands_67/palettes/07.gbapal"
+	.incbin "data/tilesets/secondary/sevii_islands_67/palettes/08.gbapal"
+	.incbin "data/tilesets/secondary/sevii_islands_67/palettes/09.gbapal"
+	.incbin "data/tilesets/secondary/sevii_islands_67/palettes/10.gbapal"
+	.incbin "data/tilesets/secondary/sevii_islands_67/palettes/11.gbapal"
+	.incbin "data/tilesets/secondary/sevii_islands_67/palettes/12.gbapal"
+
+	.align 2
+
+gTilesetTiles_SeviiIslands67::
+	.incbin "data/tilesets/secondary/sevii_islands_67/tiles.4bpp.lz"
+
+	.align 2

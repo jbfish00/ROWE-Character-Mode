@@ -1305,4 +1305,35 @@
 
 #define NUM_COSTUMES 	  4
 
+// ROWESEVII-ALIAS: 2.X map data names these FRLG/Johto NPCs differently.
+// Nearly all already exist here -- the Johto leaders came in with the
+// Character Mode sprite import -- so alias instead of re-porting art.
+
+#define OBJ_EVENT_GFX_BALDING_MAN_FRLG         OBJ_EVENT_GFX_BALDING_MAN
+#define OBJ_EVENT_GFX_BEAUTY_FRLG              OBJ_EVENT_GFX_BEAUTY
+#define OBJ_EVENT_GFX_BLACK_BELT_FRLG          OBJ_EVENT_GFX_BLACK_BELT
+#define OBJ_EVENT_GFX_BUG_CATCHER_FRLG         OBJ_EVENT_GFX_BUG_CATCHER
+#define OBJ_EVENT_GFX_HIKER_FRLG               OBJ_EVENT_GFX_HIKER
+#define OBJ_EVENT_GFX_LASS_FRLG                OBJ_EVENT_GFX_LASS
+#define OBJ_EVENT_GFX_MAN_FRLG                 OBJ_EVENT_GFX_MAN_1
+#define OBJ_EVENT_GFX_WOMAN_1_FRLG             OBJ_EVENT_GFX_WOMAN_1
+#define OBJ_EVENT_GFX_WOMAN_2_FRLG             OBJ_EVENT_GFX_WOMAN_2
+#define OBJ_EVENT_GFX_MAN                      OBJ_EVENT_GFX_MAN_1
+#define OBJ_EVENT_GFX_SUPER_NERD               OBJ_EVENT_GFX_MAN_3
+#define OBJ_EVENT_GFX_ROCKER                   OBJ_EVENT_GFX_MAN_4
+#define OBJ_EVENT_GFX_BATTLE_GIRL              OBJ_EVENT_GFX_GIRL_1
+#define OBJ_EVENT_GFX_COOLTRAINER_F            OBJ_EVENT_GFX_GIRL_2
+#define OBJ_EVENT_GFX_COOLTRAINER_M            OBJ_EVENT_GFX_MAN_2
+#define OBJ_EVENT_GFX_CUT_TREE                 OBJ_EVENT_GFX_CUTTABLE_TREE
+#define OBJ_EVENT_GFX_MEGA_STONE               OBJ_EVENT_GFX_TM_BALL
+#define OBJ_EVENT_GFX_FALKNER                  OBJ_EVENT_GFX_CM_FALKNER
+#define OBJ_EVENT_GFX_BUGSY                    OBJ_EVENT_GFX_CM_BUGSY
+#define OBJ_EVENT_GFX_WHITNEY                  OBJ_EVENT_GFX_CM_WHITNEY
+#define OBJ_EVENT_GFX_MORTY                    OBJ_EVENT_GFX_CM_MORTY
+#define OBJ_EVENT_GFX_CHUCK                    OBJ_EVENT_GFX_CM_CHUCK
+#define OBJ_EVENT_GFX_JASMINE                  OBJ_EVENT_GFX_CM_JASMINE
+#define OBJ_EVENT_GFX_PYRCE                    OBJ_EVENT_GFX_CM_PRYCE
+#define OBJ_EVENT_GFX_CLAIR                    OBJ_EVENT_GFX_CM_CLAIR
+#define OBJ_EVENT_GFX_COLRESS                  OBJ_EVENT_GFX_CM_COLRESS
+
 #endif  // GUARD_CONSTANTS_EVENT_OBJECTS_H

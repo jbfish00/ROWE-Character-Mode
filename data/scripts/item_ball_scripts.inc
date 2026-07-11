@@ -877,3 +877,8 @@ MegaStone_EventScript_Hawluchanite::
 MegaStone_EventScript_Golispodite::
 	addscaleditem ITEM_GOLISPODITE
 	end
+
+Common_EventScript_FindItem::
+	callnative GetObjectEventTrainerRangeFromTemplate
+	finditem VAR_RESULT
+	end

@@ -1,14 +1,13 @@
 #ifndef GUARD_SHOP_H
 #define GUARD_SHOP_H
 
+#include "constants/global.h"
+
 extern EWRAM_DATA struct ItemSlot gMartPurchaseHistory[3];
 
-enum
-{
-    MART_TYPE_NORMAL, // normal mart
-    MART_TYPE_DECOR,
-    MART_TYPE_DECOR2,
-};
+// MART_TYPE_* / MART_MONEY_TYPE_* now live in constants/global.h as #defines,
+// because the assembly scripts are preprocessed against constants/*.h and can't
+// see a C enum. (2.X Sevii adds MART_TYPE_MONS and the BP money type.)
 
 // shop view window NPC info enum
 enum

@@ -817,4 +817,8 @@
 #define METATILE_Underwater_FloorShadow  0x228
 #define METATILE_Underwater_RockWall     0x21E
 
+
+// 2.X Sevii
+#define METATILE_RockTunnel_CaveTile 0x899
+
 #endif // GUARD_METATILE_LABELS_H

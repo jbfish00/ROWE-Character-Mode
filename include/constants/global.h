@@ -199,4 +199,19 @@
 #define DIFFICULTY_HARD    2
 #define NUM_DIFFICULTIES   3
 
+
+// 2.X Sevii: shop kinds + the scrolling-multichoice id the ticket menus use
+#define SCROLLING_SEVII_TICKET          12
+
+
+// 2.X Sevii shops. NB: MART_TYPE_NORMAL/DECOR/DECOR2 are a C enum in shop.h,
+// but the assembly scripts are preprocessed against constants/*.h only -- so
+// the script-visible values live here. Keep the two in sync.
+#define MART_TYPE_NORMAL                0
+#define MART_TYPE_DECOR                 1
+#define MART_TYPE_DECOR2                2
+#define MART_TYPE_MONS                  3
+#define MART_MONEY_TYPE_POKE_DOLLARS    0
+#define MART_MONEY_TYPE_BATTLE_POINTS   1
+
 #endif // GUARD_CONSTANTS_GLOBAL_H

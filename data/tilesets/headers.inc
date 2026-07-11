@@ -1194,3 +1194,58 @@ gTileset_SeviiIslands45::
 	.4byte gMetatileAttributes_SeviiIslands45
 	.4byte NULL @ animation callback
 	.4byte NULL
+
+gTileset_GenericSeviiGym::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_GenericSeviiGym
+	.4byte gTilesetPalettes_GenericSeviiGym
+	.4byte gMetatiles_GenericSeviiGym
+	.4byte gMetatileAttributes_GenericSeviiGym
+	.4byte NULL @ animation callback
+	.4byte NULL @ Overrides
+	.4byte NULL @ Winter_Palette
+	.4byte NULL @ Summer_Palette
+	.4byte NULL @ Autumn_Palette
+	.4byte NULL @ Winter_Tileset
+	.4byte NULL @ Summer_Tileset
+	.4byte NULL @ Autumn_Tileset
+
+gTileset_MauvilleCityInside::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0
+	.4byte gTilesetTiles_MauvilleCityInside
+	.4byte gTilesetPalettes_MauvilleCityInside
+	.4byte gMetatiles_MauvilleCityInside
+	.4byte gMetatileAttributes_MauvilleCityInside
+	.4byte NULL @ animation callback
+	.4byte NULL @ Overrides
+	.4byte NULL @ Winter_Palette
+	.4byte NULL @ Summer_Palette
+	.4byte NULL @ Autumn_Palette
+	.4byte NULL @ Winter_Tileset
+	.4byte NULL @ Summer_Tileset
+	.4byte NULL @ Autumn_Tileset
+
+	.align 2
+
+gTileset_SeviiIslands67::
+	.byte TRUE @ is compressed
+	.byte TRUE @ is secondary
+	.2byte 0 @ padding
+	.4byte gTilesetTiles_SeviiIslands67
+	.4byte gTilesetPalettes_SeviiIslands67
+	.4byte gMetatiles_SeviiIslands67
+	.4byte gMetatileAttributes_SeviiIslands67
+	.4byte NULL @ animation callback
+	.4byte NULL @ Overrides
+	.4byte NULL @ Winter_Palette
+	.4byte NULL @ Summer_Palette
+	.4byte NULL @ Autumn_Palette
+	.4byte NULL @ Winter_Tileset
+	.4byte NULL @ Summer_Tileset
+	.4byte NULL @ Autumn_Tileset
+
+	.align 2

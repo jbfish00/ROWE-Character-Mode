@@ -96,3 +96,55 @@ Special_Gym_EventScript_Shiny_Charm::
 	setvar   VAR_NUM_BADGES, 8
 	return
 	end
+
+Common_EventScript_Colress_Eight_Island::
+# 150 "data/scripts/flying_taxi.pory"
+	lock
+# 151 "data/scripts/flying_taxi.pory"
+	faceplayer
+# 152 "data/scripts/flying_taxi.pory"
+	setvar VAR_CURRENT_SEVII, 7
+# 153 "data/scripts/flying_taxi.pory"
+	goto Common_EventScript_Colress
+	return
+
+
+
+Common_EventScript_Colress_Five_Island::
+# 129 "data/scripts/flying_taxi.pory"
+	lock
+# 130 "data/scripts/flying_taxi.pory"
+	faceplayer
+# 131 "data/scripts/flying_taxi.pory"
+	setvar VAR_CURRENT_SEVII, 4
+# 132 "data/scripts/flying_taxi.pory"
+	goto Common_EventScript_Colress
+	return
+
+
+
+Common_EventScript_Colress_Seven_Island::
+# 143 "data/scripts/flying_taxi.pory"
+	lock
+# 144 "data/scripts/flying_taxi.pory"
+	faceplayer
+# 145 "data/scripts/flying_taxi.pory"
+	setvar VAR_CURRENT_SEVII, 6
+# 146 "data/scripts/flying_taxi.pory"
+	goto Common_EventScript_Colress
+	return
+
+
+
+Common_EventScript_Colress_Six_Island::
+# 136 "data/scripts/flying_taxi.pory"
+	lock
+# 137 "data/scripts/flying_taxi.pory"
+	faceplayer
+# 138 "data/scripts/flying_taxi.pory"
+	setvar VAR_CURRENT_SEVII, 5
+# 139 "data/scripts/flying_taxi.pory"
+	goto Common_EventScript_Colress
+	return
+
+
