@@ -188,6 +188,17 @@ const u8 gMenuText_Confirm[] = _("Vale");
 const u8 gMenuText_Walk[] = _("Caminar");
 const u8 gText_Cancel[] = _("Salir");
 const u8 gText_Cancel2[] = _("Salir");
+const u8 gText_TravelToSevii[] = _("Viajar a Sevii");
+// 2.X Sevii: island names for the ticket menu
+const u8 gText_SeviiOneIsland[] = _("One Island");
+const u8 gText_SeviiTwoIsland[] = _("Two Island");
+const u8 gText_SeviiThreeIsland[] = _("Three Island");
+const u8 gText_SeviiFourIsland[] = _("Four Island");
+const u8 gText_SeviiFiveIsland[] = _("Five Island");
+const u8 gText_SeviiSixIsland[] = _("Six Island");
+const u8 gText_SeviiSevenIsland[] = _("Seven Island");
+const u8 gText_SeviiEightIsland[] = _("Eight Island");
+
 const u8 gMenuText_Show[] = _("Show");
 const u8 gText_EmptyString2[] = _("");
 const u8 gText_Cancel7[] = _("Cancel"); // Unused
@@ -2086,6 +2097,17 @@ const u8 gMenuText_Confirm[] = _("Confirm");
 const u8 gMenuText_Walk[] = _("Walk");
 const u8 gText_Cancel[] = _("Cancel");
 const u8 gText_Cancel2[] = _("Cancel");
+const u8 gText_TravelToSevii[] = _("Travel to Sevii");
+// 2.X Sevii: island names for the ticket menu
+const u8 gText_SeviiOneIsland[] = _("One Island");
+const u8 gText_SeviiTwoIsland[] = _("Two Island");
+const u8 gText_SeviiThreeIsland[] = _("Three Island");
+const u8 gText_SeviiFourIsland[] = _("Four Island");
+const u8 gText_SeviiFiveIsland[] = _("Five Island");
+const u8 gText_SeviiSixIsland[] = _("Six Island");
+const u8 gText_SeviiSevenIsland[] = _("Seven Island");
+const u8 gText_SeviiEightIsland[] = _("Eight Island");
+
 const u8 gMenuText_Show[] = _("Show");
 const u8 gText_EmptyString2[] = _("");
 const u8 gText_Cancel7[] = _("Cancel"); // Unused

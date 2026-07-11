@@ -12,8 +12,15 @@ Common_EventScript_PkmnCenterJack::
 	case 4, Common_EventScript_PkmnCenterJack_Change_Costume
 	case 5, Common_EventScript_PkmnCenterJack_StartARandomBattle
 	case 6, Common_EventScript_PkmnCenterJack_Companion_Stuff
-	case 7, Common_EventScript_PkmnCenterJack_ComeBackAnytime
+	case 7, Common_EventScript_PkmnCenterJack_TravelToSevii
+	case 8, Common_EventScript_PkmnCenterJack_ComeBackAnytime
 	case MULTI_B_PRESSED, Common_EventScript_PkmnCenterJack_ComeBackAnytime
+	end
+
+@ 2.X Sevii: the islands are reached from the Pokemon Center. You need a ticket
+@ (the intro grants a random one; Colress hands out more on each island).
+Common_EventScript_PkmnCenterJack_TravelToSevii::
+	goto Common_EventScript_Colress
 	end
 
 Common_EventScript_PkmnCenterJack_Companion_Stuff::

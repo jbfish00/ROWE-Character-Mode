@@ -1063,10 +1063,38 @@ static const struct ListMenuItem sSetBlueNurse[] =
 	{gText_ChangeCostume,  		4},
 	{gText_StartABattle,  		5},
 	{gText_Companion_Stuff,     6},
-	{gText_Cancel2,  			7},
+	{gText_TravelToSevii,       7},   // 2.X Sevii
+	{gText_Cancel2,  			8},
 };
 
 //------------------------------------------------------------------------------------
+
+
+// 2.X Sevii. NB: sScrollingSets only went up to index 9, but the scripts index
+// it at 10 and 12 -- an out-of-bounds read. Sets 10..12 close that hole.
+static const struct ListMenuItem sSetBlueNurseMoveLearn[] =
+{
+    {gText_TeachAMove,          0},
+    {gText_ForgetAMove,         1},
+    {gText_Cancel2,             2},
+};
+
+static const struct ListMenuItem sSetReserved11[] =
+{
+    {gText_Cancel2,             0},
+};
+
+static const struct ListMenuItem sSetSeviiTicket[] =
+{
+    {gText_SeviiOneIsland,      0},
+    {gText_SeviiTwoIsland,      1},
+    {gText_SeviiThreeIsland,    2},
+    {gText_SeviiFourIsland,     3},
+    {gText_SeviiFiveIsland,     4},
+    {gText_SeviiSixIsland,      5},
+    {gText_SeviiSevenIsland,    6},
+    {gText_SeviiEightIsland,    7},
+};
 
 // Table of your multichoice sets.
 struct
@@ -1085,6 +1113,9 @@ struct
 	{sSet7,  ARRAY_COUNT(sSet7)},
 	{sSet8,  ARRAY_COUNT(sSet8)},
 	{sSetBlueNurse,  ARRAY_COUNT(sSetBlueNurse)},	// 09
+	{sSetBlueNurseMoveLearn, ARRAY_COUNT(sSetBlueNurseMoveLearn)},	// 10
+	{sSetReserved11, ARRAY_COUNT(sSetReserved11)},	// 11
+	{sSetSeviiTicket, ARRAY_COUNT(sSetSeviiTicket)},	// 12 SCROLLING_SEVII_TICKET
 };
 
 static void Task_ScrollingMultichoiceInput(u8 taskId);

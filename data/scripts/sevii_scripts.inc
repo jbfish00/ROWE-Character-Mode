@@ -1850,3 +1850,161 @@ OldaleTown_House1_EventScript_Pokemart_TMs:
 	.2byte ITEM_NONE
 
 
+
+@ 2.X: the intro grants one random Sevii ticket (FAQ #12)
+
+Common_Eventscript_CheckForSeviiTicket::
+# 1425 "data/maps/InsideOfTruck/scripts.pory"
+	checkitem ITEM_SEVII_TICKET_1, 1
+# 1426 "data/maps/InsideOfTruck/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_Eventscript_CheckForSeviiTicket_2
+
+Start_EventScript_Give_Random_Sevii_Ticket::
+# 965 "data/maps/InsideOfTruck/scripts.pory"
+	random 8
+# 966 "data/maps/InsideOfTruck/scripts.pory"
+	switch VAR_RESULT
+# 967 "data/maps/InsideOfTruck/scripts.pory"
+	case 0, Start_EventScript_Give_Random_Sevii_Ticket_2
+# 970 "data/maps/InsideOfTruck/scripts.pory"
+	case 1, Start_EventScript_Give_Random_Sevii_Ticket_3
+# 973 "data/maps/InsideOfTruck/scripts.pory"
+	case 2, Start_EventScript_Give_Random_Sevii_Ticket_4
+# 976 "data/maps/InsideOfTruck/scripts.pory"
+	case 3, Start_EventScript_Give_Random_Sevii_Ticket_5
+# 979 "data/maps/InsideOfTruck/scripts.pory"
+	case 4, Start_EventScript_Give_Random_Sevii_Ticket_6
+# 982 "data/maps/InsideOfTruck/scripts.pory"
+	case 5, Start_EventScript_Give_Random_Sevii_Ticket_7
+# 985 "data/maps/InsideOfTruck/scripts.pory"
+	case 6, Start_EventScript_Give_Random_Sevii_Ticket_8
+# 988 "data/maps/InsideOfTruck/scripts.pory"
+	case 7, Start_EventScript_Give_Random_Sevii_Ticket_9
+	return
+
+
+Start_EventScript_Give_Random_Sevii_Ticket_2:
+# 968 "data/maps/InsideOfTruck/scripts.pory"
+	additem ITEM_SEVII_TICKET_1, 1
+	return
+
+
+Start_EventScript_Give_Random_Sevii_Ticket_3:
+# 971 "data/maps/InsideOfTruck/scripts.pory"
+	additem ITEM_SEVII_TICKET_2, 1
+	return
+
+
+Start_EventScript_Give_Random_Sevii_Ticket_4:
+# 974 "data/maps/InsideOfTruck/scripts.pory"
+	additem ITEM_SEVII_TICKET_3, 1
+	return
+
+
+Start_EventScript_Give_Random_Sevii_Ticket_5:
+# 977 "data/maps/InsideOfTruck/scripts.pory"
+	additem ITEM_SEVII_TICKET_4, 1
+	return
+
+
+Start_EventScript_Give_Random_Sevii_Ticket_6:
+# 980 "data/maps/InsideOfTruck/scripts.pory"
+	additem ITEM_SEVII_TICKET_5, 1
+	return
+
+
+Start_EventScript_Give_Random_Sevii_Ticket_7:
+# 983 "data/maps/InsideOfTruck/scripts.pory"
+	additem ITEM_SEVII_TICKET_6, 1
+	return
+
+
+Start_EventScript_Give_Random_Sevii_Ticket_8:
+# 986 "data/maps/InsideOfTruck/scripts.pory"
+	additem ITEM_SEVII_TICKET_7, 1
+	return
+
+
+Start_EventScript_Give_Random_Sevii_Ticket_9:
+# 989 "data/maps/InsideOfTruck/scripts.pory"
+	additem ITEM_SEVII_TICKET_8, 1
+	return
+
+
+
+@ dependencies of the ticket scripts
+
+Common_Eventscript_CheckForSeviiTicket_1:
+	return
+
+
+Common_Eventscript_CheckForSeviiTicket_10:
+# 1435 "data/maps/InsideOfTruck/scripts.pory"
+	checkitem ITEM_SEVII_TICKET_6, 1
+# 1436 "data/maps/InsideOfTruck/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_Eventscript_CheckForSeviiTicket_12
+	goto Common_Eventscript_CheckForSeviiTicket_1
+
+
+Common_Eventscript_CheckForSeviiTicket_12:
+# 1437 "data/maps/InsideOfTruck/scripts.pory"
+	checkitem ITEM_SEVII_TICKET_7, 1
+# 1438 "data/maps/InsideOfTruck/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_Eventscript_CheckForSeviiTicket_14
+	goto Common_Eventscript_CheckForSeviiTicket_1
+
+
+Common_Eventscript_CheckForSeviiTicket_14:
+# 1439 "data/maps/InsideOfTruck/scripts.pory"
+	checkitem ITEM_SEVII_TICKET_8, 1
+# 1440 "data/maps/InsideOfTruck/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_Eventscript_CheckForSeviiTicket_16
+	goto Common_Eventscript_CheckForSeviiTicket_1
+
+
+Common_Eventscript_CheckForSeviiTicket_16:
+# 1441 "data/maps/InsideOfTruck/scripts.pory"
+	call Start_EventScript_Give_Random_Sevii_Ticket
+	goto Common_Eventscript_CheckForSeviiTicket_1
+
+
+
+Common_Eventscript_CheckForSeviiTicket_2:
+# 1427 "data/maps/InsideOfTruck/scripts.pory"
+	checkitem ITEM_SEVII_TICKET_2, 1
+# 1428 "data/maps/InsideOfTruck/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_Eventscript_CheckForSeviiTicket_4
+	goto Common_Eventscript_CheckForSeviiTicket_1
+
+
+Common_Eventscript_CheckForSeviiTicket_4:
+# 1429 "data/maps/InsideOfTruck/scripts.pory"
+	checkitem ITEM_SEVII_TICKET_3, 1
+# 1430 "data/maps/InsideOfTruck/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_Eventscript_CheckForSeviiTicket_6
+	goto Common_Eventscript_CheckForSeviiTicket_1
+
+
+Common_Eventscript_CheckForSeviiTicket_6:
+# 1431 "data/maps/InsideOfTruck/scripts.pory"
+	checkitem ITEM_SEVII_TICKET_4, 1
+# 1432 "data/maps/InsideOfTruck/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_Eventscript_CheckForSeviiTicket_8
+	goto Common_Eventscript_CheckForSeviiTicket_1
+
+
+Common_Eventscript_CheckForSeviiTicket_8:
+# 1433 "data/maps/InsideOfTruck/scripts.pory"
+	checkitem ITEM_SEVII_TICKET_5, 1
+# 1434 "data/maps/InsideOfTruck/scripts.pory"
+	compare VAR_RESULT, FALSE
+	goto_if_eq Common_Eventscript_CheckForSeviiTicket_10
+	goto Common_Eventscript_CheckForSeviiTicket_1
+

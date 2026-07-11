@@ -3318,4 +3318,16 @@ extern const u8 gText_Pokedex_Ability0[];
 extern const u8 gText_Pokedex_Ability1[];
 extern const u8 gText_Pokedex_Ability2[];
 
+
+// 2.X Sevii island names
+extern const u8 gText_TravelToSevii[];
+extern const u8 gText_SeviiOneIsland[];
+extern const u8 gText_SeviiTwoIsland[];
+extern const u8 gText_SeviiThreeIsland[];
+extern const u8 gText_SeviiFourIsland[];
+extern const u8 gText_SeviiFiveIsland[];
+extern const u8 gText_SeviiSixIsland[];
+extern const u8 gText_SeviiSevenIsland[];
+extern const u8 gText_SeviiEightIsland[];
+
 #endif // GUARD_STRINGS_H
