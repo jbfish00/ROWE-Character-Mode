@@ -853,7 +853,17 @@ static void SetDataFromTrainerCard(void)
     if (sData->trainerCard.battleTowerWins || sData->trainerCard.battleTowerStraightWins)
         sData->hasBattleTowerWins++;
 
-    for (i = 0, badgeFlag = FLAG_BADGE01_GET; badgeFlag < FLAG_BADGE01_GET + NUM_BADGES; badgeFlag++, i++)
+    // Slots 0-7 are the Hoenn badges, 8-15 the Johto (Sevii) ones. These are two
+    // separate flag blocks -- running one loop of NUM_BADGES from FLAG_BADGE01_GET
+    // filled slots 8-15 from FLAG_VISITED_LITTLEROOT_TOWN onwards, so visiting a town
+    // lit up a badge on the card.
+    for (i = 0, badgeFlag = FLAG_BADGE01_GET; i < NUM_BADGES_PER_REGION; badgeFlag++, i++)
+    {
+        if (FlagGet(badgeFlag))
+            sData->badgeCount[i]++;
+    }
+
+    for (badgeFlag = FLAG_RECEIVED_BADGE_09; i < NUM_BADGES; badgeFlag++, i++)
     {
         if (FlagGet(badgeFlag))
             sData->badgeCount[i]++;
@@ -1523,7 +1533,11 @@ static void DrawStarsAndBadgesOnCard(void)
     if (!sData->isLink)
     {
         x = 4;
-        for (i = 0; i < NUM_BADGES; i++, tileNum += 2, x += 3)
+        // Only the Hoenn eight are drawn. The badge row runs x = 4..25 (the card is 30
+        // tiles wide) and the badge tiles run 192..223, so a 16-badge loop would push x
+        // to 49 -- wrapping into the next tilemap row -- and badge 9's tiles would
+        // collide with badge 1's. Showing the Johto eight needs new art and a second row.
+        for (i = 0; i < NUM_BADGES_PER_REGION; i++, tileNum += 2, x += 3)
         {
             if (sData->badgeCount[i])
             {

@@ -558,18 +558,11 @@ static void SetShopMenuCallback(void (* callback)(void))
 
 static u8 GetNumberOfBadges(void)
 {
-    u16 badgeFlag;
-    u8 count = 0;
-    
-    for (badgeFlag = FLAG_BADGE01_GET; badgeFlag < FLAG_BADGE01_GET + NUM_BADGES; badgeFlag++)
-    {
-        if (FlagGet(badgeFlag))
-            count++;
-    }
-	
+    u8 count = GetBadgeCount();
+
 	if (FlagGet(FLAG_SYS_GAME_CLEAR))
         count++;
-    
+
     return count;
 }
 

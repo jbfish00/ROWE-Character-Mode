@@ -1937,13 +1937,7 @@ void TryPutTodaysRivalTrainerOnAir(void)
         show = &gSaveBlock1Ptr->tvShows[sCurTVShowSlot];
         show->rivalTrainer.kind = TVSHOW_TODAYS_RIVAL_TRAINER;
         show->rivalTrainer.active = FALSE;
-        for (i = FLAG_BADGE01_GET, nBadges = 0; i < FLAG_BADGE01_GET + NUM_BADGES; i ++)
-        {
-            if (FlagGet(i))
-            {
-                nBadges ++;
-            }
-        }
+        nBadges = GetBadgeCount();
         show->rivalTrainer.badgeCount = nBadges;
         if (IsNationalPokedexEnabled())
         {

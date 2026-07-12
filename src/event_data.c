@@ -364,3 +364,35 @@ bool8 FlagGet(u16 id)
 
     return TRUE;
 }
+
+// The 16 badges are NOT one contiguous flag block. The Hoenn eight are vanilla's
+// FLAG_BADGE01_GET.. run; the Johto eight (the Sevii gyms) are a separate
+// FLAG_RECEIVED_BADGE_09..16 block. Iterating `FLAG_BADGE01_GET + NUM_BADGES` (16)
+// therefore walks eight flags PAST the Hoenn block, straight into
+// FLAG_VISITED_LITTLEROOT_TOWN and its neighbours -- so every town the player had
+// visited was counted as a badge. Five callers did exactly that, including the one
+// that WRITES VAR_NUM_BADGES, which drives the gym reward chain and the mega
+// bracelet's 11-badge gate. Count both blocks, from one place.
+//
+// NB this is the literal number of badges (0-16), for display and VAR_NUM_BADGES.
+// level_scaling.c's GetNumBadges() is a different thing: a SCALING INDEX, which also
+// returns 17 post-league and 18 in the endgame. Do not conflate them.
+u8 GetBadgeCount(void)
+{
+    u16 flag;
+    u8 count = 0;
+
+    for (flag = FLAG_BADGE01_GET; flag < FLAG_BADGE01_GET + NUM_BADGES_PER_REGION; flag++)
+    {
+        if (FlagGet(flag))
+            count++;
+    }
+
+    for (flag = FLAG_RECEIVED_BADGE_09; flag <= FLAG_RECEIVED_BADGE_16; flag++)
+    {
+        if (FlagGet(flag))
+            count++;
+    }
+
+    return count;
+}

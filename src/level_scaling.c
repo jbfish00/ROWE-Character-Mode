@@ -276,47 +276,39 @@ u16 GetFirstEvolution(u16 species){
 // The post-league values 1.9.4 used (GAME_CLEAR = 9, RAYQUAZA = 10) now map to
 // the scaling table's SCALING_AFTER_LEAGUE (17) and SCALING_ENDGAME (18) rows,
 // which is what those rows are for.
+// This is the index into every scaling table in this file -- wild levels, trainer
+// levels, level caps, trainer party sizes, move power limits, item tiers. Getting it
+// wrong does not crash; the whole game just quietly stops getting harder.
+//
+// It used to infer the Hoenn badge count from the gym leaders' TM flags
+// (FLAG_RECEIVED_TM39 -> 1 badge, TM08 -> 2, ...). NOTHING in the tree ever sets those
+// flags -- the gym scripts hand the TM over with giveitem, which does not flag it -- so
+// this returned 0 for the entire Hoenn game no matter how many gyms you had beaten.
+// Count the badges the gyms actually award instead: the vanilla FLAG_BADGE01_GET.. run
+// for Hoenn and the separate FLAG_RECEIVED_BADGE_09..16 block for the Johto eight.
 u8 GetNumBadges()
 {
+	u16 flag;
+	u8 count = 0;
+
 	if (FlagGet(FLAG_DEFEATED_RAYQUAZA))
 		return SCALING_ENDGAME;        // 18
 	if (FlagGet(FLAG_SYS_GAME_CLEAR))
 		return SCALING_AFTER_LEAGUE;   // 17
 
-	if (FlagGet(FLAG_RECEIVED_BADGE_16))
-		return 16;
-	else if (FlagGet(FLAG_RECEIVED_BADGE_15))
-		return 15;
-	else if (FlagGet(FLAG_RECEIVED_BADGE_14))
-		return 14;
-	else if (FlagGet(FLAG_RECEIVED_BADGE_13))
-		return 13;
-	else if (FlagGet(FLAG_RECEIVED_BADGE_12))
-		return 12;
-	else if (FlagGet(FLAG_RECEIVED_BADGE_11))
-		return 11;
-	else if (FlagGet(FLAG_RECEIVED_BADGE_10))
-		return 10;
-	else if (FlagGet(FLAG_RECEIVED_BADGE_09))
-		return 9;
-	else if (FlagGet(FLAG_RECEIVED_TM03))
-		return 8;
-	else if (FlagGet(FLAG_RECEIVED_TM04))
-		return 7;
-	else if (FlagGet(FLAG_RECEIVED_TM40))
-		return 6;
-	else if (FlagGet(FLAG_RECEIVED_TM42))
-		return 5;
-	else if (FlagGet(FLAG_RECEIVED_TM50))
-		return 4;
-	else if (FlagGet(FLAG_RECEIVED_TM34))
-		return 3;
-	else if (FlagGet(FLAG_RECEIVED_TM08))
-		return 2;
-	else if (FlagGet(FLAG_RECEIVED_TM39))
-		return 1;
+	for (flag = FLAG_BADGE01_GET; flag < FLAG_BADGE01_GET + NUM_BADGES_PER_REGION; flag++)
+	{
+		if (FlagGet(flag))
+			count++;
+	}
 
-	return 0;
+	for (flag = FLAG_RECEIVED_BADGE_09; flag <= FLAG_RECEIVED_BADGE_16; flag++)
+	{
+		if (FlagGet(flag))
+			count++;
+	}
+
+	return count;   // 0..16, and the tables have 19 columns, so this always indexes safely
 };
 
 u8 GetCurrentMovePowerLimit(){

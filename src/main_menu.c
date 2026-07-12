@@ -2223,25 +2223,11 @@ static void MainMenu_FormatSavegameBadges(void)
     u8 badgeCount = 0;
     u32 i;
 
-    // 2.X: 16 badges. The Hoenn eight still use the vanilla contiguous
-    // FLAG_BADGE01_GET.. block; the Johto eight (Sevii Islands) use the
-    // separate FLAG_RECEIVED_BADGE_09..16 block, so they need their own loop.
-    // Counting only the vanilla eight here would be worse than a wrong display:
-    // this function also writes VAR_NUM_BADGES, which drives the gym reward
-    // chain and the mega stone gurus' `compare VAR_NUM_BADGES, 11` gate. A
-    // 12-badge player who merely looked at the continue screen would have the
-    // var rewound to 8 and the gurus re-locked.
-    for (i = FLAG_BADGE01_GET; i < FLAG_BADGE01_GET + NUM_BADGES; i++)
-    {
-        if (FlagGet(i))
-            badgeCount++;
-    }
-
-    for (i = FLAG_RECEIVED_BADGE_09; i <= FLAG_RECEIVED_BADGE_16; i++)
-    {
-        if (FlagGet(i))
-            badgeCount++;
-    }
+    // 2.X: 16 badges, in two non-contiguous flag blocks. See GetBadgeCount().
+    // This writes VAR_NUM_BADGES, which drives the level caps, the gym reward chain
+    // and the mega bracelet's 11-badge gate -- so getting it wrong here silently
+    // rewrites the player's progression just for opening the continue screen.
+    badgeCount = GetBadgeCount();
 
     VarSet(VAR_NUM_BADGES, badgeCount);
 
