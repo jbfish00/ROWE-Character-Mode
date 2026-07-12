@@ -346,6 +346,48 @@ to be a 16-case switch in `.pory` against a list in C, and it drifted.
 - `GetCostume()` (field_control_avatar.c) is the **single clamping choke point** for
   `VAR_COSTUME_NUMBER`; all ~45 readers go through it. Only 4 costumes have sprite data.
 
+## Species tables: a MISSING ROW IS A NULL POINTER, AND NULL IS A CRASH
+
+The species graphics tables are **designated-initializer arrays** (`SPECIES_SPRITE(X, ...)`
+expands to `[SPECIES_X] = ...`). A species with no row therefore gets a **zero entry -- a
+NULL pointer** -- and the battle engine dereferences it the instant that Pokemon is sent out:
+
+    sprite->anims = gMonFrontAnimsPtrTable[species];   // NULL -> "Jumped to invalid address"
+
+That shipped: **120 Gen 9 species (Toedscruel, Annihilape, Armarouge, Baxcalibur, Ceruledge...)
+had front/back/palette art but NO row in `gMonFrontAnimsPtrTable`**, so every one of them hard-
+crashed the game. It is reachable from an ordinary trainer battle -- ROWE's `GetTrainerPokemon()`
+**randomises the species**, so ANY trainer can roll one; the party data in trainers.h is only a
+hint. 622 NULL entries across five tables. `tools/character_mode/fix_species_graphics.py` fills
+every gap and is the thing to re-run after adding species. **Never add a species without running
+it.**
+
+Two more shapes of the same crash, both fixed -- check for them when adding data:
+- **An anim array needs TWO slots.** `sAnims_X[] = {sAnim_GeneralFrame0, sAnim_X_1}`: the engine
+  plays **anims[1]** as the send-out intro, so a ONE-entry array is read out of bounds and its
+  garbage pointer is jumped to. (`sAnims_SPINDA` had this bug in the base tree.)
+- **`sMonFrontAnimIdsTable` feeds a function-pointer table.** `sprite->callback =
+  sMonAnimFunctions[frontAnimId]`, and sMonAnimFunctions has **153 entries (0..152)**. Toxapex and
+  Poipole were set to **153** -- one past the end -- i.e. a garbage function pointer.
+
+## Trainers: parties, sprites, and the .lvl SENTINEL
+
+- **`.lvl` is a SENTINEL, not a level** (battle_main.c): **1** = scale to the badge-appropriate
+  trainer level, **3** = LeaderMinLevel (gym leaders), 2/5/6 = various random modes, anything else
+  = a literal level + boost. The donor's raw `.lvl` must be **MAPPED**, never copied: a donor
+  `.lvl = 2` lands in a branch with no case for 2 and becomes a **literal level 2**, so a Rocket
+  grunt at 16 badges led with a level-2 Pokemon.
+- **`gTrainerFrontPicCoords` missing entry = sprite drawn 32px too low.** The Y is
+  `(8 - size) * 4 + 40`; a missing row means `size = 0`, so 72 instead of 40. Every entry in the
+  table is `{.size = 8, .y_offset = 1}` -- there is no reason for a pic to lack one.
+- **A trainer with `.partySize = 0` is a battle against nobody.** 91 of them shipped -- including
+  **all 8 Johto gym leaders (gyms 9-16)** -- because `port_2x_new_trainers.py` matched
+  `.party = {.Field = sParty_X}` while the donor writes `.party = TRAINER_PARTY(sParty_X)`. The
+  regex matched nothing and the code **fell through and emitted them empty without a skip line**.
+  A generator must FAIL LOUDLY, never emit a silently-empty record.
+- **Only 14 trainer BACK sprites exist.** 170 of the 182 Character Mode characters (Ash included)
+  fall back to the default protagonist in battle. That needs art, not code.
+
 ## Traps that have bitten more than once
 
 - **DO NOT trust the debug menu's "Warp to map warp" for a movement bug.** It drops you on
