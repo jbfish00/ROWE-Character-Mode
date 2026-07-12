@@ -141,6 +141,9 @@
 
 #define ROUND_BITS_TO_BYTES(numBits)(((numBits) / 8) + (((numBits) % 8) ? 1 : 0))
 
+// agbcc is C89, so no _Static_assert. Negative-array trick instead.
+#define STATIC_ASSERT(expr, name) typedef char name[(expr) ? 1 : -1]
+
 #define DEX_FLAGS_NO (ROUND_BITS_TO_BYTES(POKEMON_SLOTS_NUMBER))
 #define NUM_FLAG_BYTES (ROUND_BITS_TO_BYTES(FLAGS_COUNT))
 
@@ -552,8 +555,13 @@ struct SaveBlock2
 	/*0x1EC*/ struct BerryCrush berryCrush;
 	/*0x1FC*/ //struct PokemonJumpResults pokeJump;
 	/*0x20C*/ struct BerryPickingResults berryPick;
-	/*0x21C*/ struct RankingHall1P hallRecords1P[HALL_FACILITIES_COUNT][2][3]; // From record mixing.
-	/*0x57C*/ struct RankingHall2P hallRecords2P[2][3]; // From record mixing.
+	// hallRecords1P/2P (1032 bytes) used to live here. They are ONLY ever populated by
+	// link record mixing, which is dead in a single-player hack -- and SaveBlock2 had
+	// outgrown its 4000-byte sector by 204 bytes, so save.c was silently writing a
+	// TRUNCATED block (roamerFlag[] and some option bits never persisted at all, with a
+	// perfectly valid checksum over the truncated payload). 2.X frees exactly these via
+	// FREE_RECORD_MIXING_HALL_RECORDS. They now live in EWRAM (gHallRecords1P/2P below),
+	// so the Frontier ranking screens still compile and read empty, as they always did.
 	/*0x624*/ u16 contestLinkResults[CONTEST_CATEGORIES_COUNT][CONTESTANT_COUNT];
 	/*0x64C*/ struct BattleFrontier frontier;
 	/*0xF2C*/ u8 itemFlags[ITEM_FLAGS_COUNT];
@@ -570,6 +578,10 @@ struct SaveBlock2
 }; // sizeof=0x???
 
 extern struct SaveBlock2 *gSaveBlock2Ptr;
+
+// Not saved -- see the note in struct SaveBlock2.
+extern struct RankingHall1P gHallRecords1P[HALL_FACILITIES_COUNT][2][3];
+extern struct RankingHall2P gHallRecords2P[2][3];
 
 struct SecretBaseParty
 {

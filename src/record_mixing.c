@@ -35,6 +35,11 @@
 #include "constants/battle_frontier.h"
 #include "dewford_trend.h"
 
+// Moved out of SaveBlock2 (which had overflowed its sector). Record mixing is the only
+// thing that ever writes these, and it is link-only.
+EWRAM_DATA struct RankingHall1P gHallRecords1P[HALL_FACILITIES_COUNT][2][3] = {0};
+EWRAM_DATA struct RankingHall2P gHallRecords2P[2][3] = {0};
+
 
 // Static type declarations
 
@@ -1191,7 +1196,7 @@ static void sub_80E8578(struct RecordMixingHallRecords *dst, void *hallRecords, 
         for (j = 0; j < 2; j++)
         {
             for (k = 0; k < 3; k++)
-                dst->hallRecords1P[i][j][k] = gSaveBlock2Ptr->hallRecords1P[i][j][k];
+                dst->hallRecords1P[i][j][k] = gHallRecords1P[i][j][k];
 
             for (k = 0; k < linkPlayerCount - 1; k++)
             {
@@ -1214,7 +1219,7 @@ static void sub_80E8578(struct RecordMixingHallRecords *dst, void *hallRecords, 
     for (j = 0; j < 2; j++)
     {
         for (k = 0; k < 3; k++)
-            dst->hallRecords2P[j][k] = gSaveBlock2Ptr->hallRecords2P[j][k];
+            dst->hallRecords2P[j][k] = gHallRecords2P[j][k];
 
         for (k = 0; k < linkPlayerCount - 1; k++)
         {
@@ -1292,10 +1297,10 @@ static void sub_80E8924(struct RecordMixingHallRecords *arg0)
     for (i = 0; i < HALL_FACILITIES_COUNT; i++)
     {
         for (j = 0; j < 2; j++)
-            sub_80E8880(gSaveBlock2Ptr->hallRecords1P[i][j], arg0->hallRecords1P[i][j]);
+            sub_80E8880(gHallRecords1P[i][j], arg0->hallRecords1P[i][j]);
     }
     for (j = 0; j < 2; j++)
-        sub_80E88CC(gSaveBlock2Ptr->hallRecords2P[j], arg0->hallRecords2P[j]);
+        sub_80E88CC(gHallRecords2P[j], arg0->hallRecords2P[j]);
 }
 
 static void ReceiveRankingHallRecords(struct PlayerHallRecords *hallRecords, size_t recordSize, u32 arg2)

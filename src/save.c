@@ -26,6 +26,14 @@ static u8 HandleWriteSector(u16 a1, const struct SaveSectionLocation *location);
 
 // Each 4 KiB flash sector contains 3968 bytes of actual data followed by a 128 byte footer
 #define SECTOR_DATA_SIZE 4000
+
+// If a save block outgrows its sectors, SAVEBLOCK_CHUNK's min() silently writes a
+// TRUNCATED payload and checksums only the truncated bytes -- a perfectly valid save
+// that quietly drops its tail. SaveBlock2 had been doing exactly that. Fail the build
+// instead of losing player data.
+STATIC_ASSERT(sizeof(struct SaveBlock2) <= SECTOR_DATA_SIZE * 1, SaveBlock2FitsItsSectors);
+STATIC_ASSERT(sizeof(struct SaveBlock1) <= SECTOR_DATA_SIZE * 4, SaveBlock1FitsItsSectors);
+STATIC_ASSERT(sizeof(struct PokemonStorage) <= SECTOR_DATA_SIZE * 9, PokemonStorageFitsItsSectors);
 #define SECTOR_FOOTER_SIZE 12
 
 /*

@@ -148,6 +148,22 @@ string generate_map_connections_text(Json map_data) {
     return text.str();
 }
 
+
+// Porymap writes dest_warp_id as a JSON STRING ("2"), not a number. json11's
+// int_value() returns 0 for a string, so every warp with a non-zero destination
+// silently became warp 0 -- i.e. every building exit in the game dumped the player
+// at the destination map's FIRST warp. Accept either form.
+static int warp_dest_id(const Json &warp_event) {
+    const Json &v = warp_event["dest_warp_id"];
+    if (v.is_string()) {
+        // Not std::stoi: some warps (elevators, secret bases -> MAP_DYNAMIC) carry a
+        // non-numeric id, and stoi throws on those. atoi yields 0, which is what those
+        // warps mean anyway.
+        return atoi(v.string_value().c_str());
+    }
+    return v.int_value();
+}
+
 string generate_map_events_text(Json map_data) {
     if (map_data.object_items().find("shared_events_map") != map_data.object_items().end())
         return string("\n");
@@ -191,7 +207,7 @@ string generate_map_events_text(Json map_data) {
                  << warp_event["x"].int_value() << ", "
                  << warp_event["y"].int_value() << ", "
                  << warp_event["elevation"].int_value() << ", "
-                 << warp_event["dest_warp_id"].int_value() << ", "
+                 << warp_dest_id(warp_event) << ", "
                  << warp_event["dest_map"].string_value() << "\n";
         }
         text << "\n";

@@ -2274,7 +2274,7 @@ static void Fill1PRecords(struct RankingHall1P *dst, s32 hallFacilityId, s32 lvl
     GetPlayerHallRecords(playerHallRecords);
 
     for (i = 0; i < 3; i++)
-        record1P[i] = gSaveBlock2Ptr->hallRecords1P[hallFacilityId][lvlMode][i];
+        record1P[i] = gHallRecords1P[hallFacilityId][lvlMode][i];
 
     record1P[3] = playerHallRecords->onePlayer[hallFacilityId][lvlMode];
 
@@ -2308,7 +2308,7 @@ static void Fill2PRecords(struct RankingHall2P *dst, s32 lvlMode)
     GetPlayerHallRecords(playerHallRecords);
 
     for (i = 0; i < 3; i++)
-        record2P[i] = gSaveBlock2Ptr->hallRecords2P[lvlMode][i];
+        record2P[i] = gHallRecords2P[lvlMode][i];
 
     record2P[3] = playerHallRecords->twoPlayers[lvlMode];
 
@@ -2389,9 +2389,9 @@ void ClearRankingHallRecords(void)
         {
             for (k = 0; k < 3; k++)
             {
-                CopyTrainerId(gSaveBlock2Ptr->hallRecords1P[i][j][k].id, 0); // BUG: Passing 0 as a pointer instead of a pointer holding a value of 0.
-                gSaveBlock2Ptr->hallRecords1P[i][j][k].name[0] = EOS;
-                gSaveBlock2Ptr->hallRecords1P[i][j][k].winStreak = 0;
+                CopyTrainerId(gHallRecords1P[i][j][k].id, 0); // BUG: Passing 0 as a pointer instead of a pointer holding a value of 0.
+                gHallRecords1P[i][j][k].name[0] = EOS;
+                gHallRecords1P[i][j][k].winStreak = 0;
             }
         }
     }
@@ -2400,11 +2400,11 @@ void ClearRankingHallRecords(void)
     {
         for (k = 0; k < 3; k++)
         {
-            CopyTrainerId(gSaveBlock2Ptr->hallRecords2P[j][k].id1, 0); // BUG: Passing 0 as a pointer instead of a pointer holding a value of 0.
-            CopyTrainerId(gSaveBlock2Ptr->hallRecords2P[j][k].id2, 0); // BUG: Passing 0 as a pointer instead of a pointer holding a value of 0.
-            gSaveBlock2Ptr->hallRecords2P[j][k].name1[0] = EOS;
-            gSaveBlock2Ptr->hallRecords2P[j][k].name2[0] = EOS;
-            gSaveBlock2Ptr->hallRecords2P[j][k].winStreak = 0;
+            CopyTrainerId(gHallRecords2P[j][k].id1, 0); // BUG: Passing 0 as a pointer instead of a pointer holding a value of 0.
+            CopyTrainerId(gHallRecords2P[j][k].id2, 0); // BUG: Passing 0 as a pointer instead of a pointer holding a value of 0.
+            gHallRecords2P[j][k].name1[0] = EOS;
+            gHallRecords2P[j][k].name2[0] = EOS;
+            gHallRecords2P[j][k].winStreak = 0;
         }
     }
 }
