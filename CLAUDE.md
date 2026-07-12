@@ -228,11 +228,25 @@ on Red's roster) and correctly skipping the starter grant.
 **The fossil menu needs no test** -- audited exhaustively: 15 fossils + Cancel, every case
 index matches, every species correct (incl. the four Galar two-item combos), `default:` present.
 
-**STILL UNTESTED: the Alpha BATTLE itself** -- perfect IVs (`FLAG_ALPHA_CREATION` ->
-`fixedIV = 31`, code-audited only) and the mega-stone award on win. To reach one: the nearest
-Alpha to a warp is **Alpha Scrafty, FiveIsland_Meadow (12,23)**. Do NOT debug-warp there --
-warp 0 is the Rocket Warehouse *door* and you land stranded on it. Instead warp to
-**FiveIsland (group 1, map 32)** and cross its **right edge at rows 22-24** into the Meadow.
+**Alpha bosses: PROVEN.** Caught an Alpha Starmie; its summary Skills page reads
+**31/31/31/31/31/31** with **Perfect IVs mode OFF** -- so those are the real IVs from
+`CreateBoxMon` setting `fixedIV = 31` on `FLAG_ALPHA_CREATION`, not a display override.
+(`FLAG_PERFECT_IVS_MODE` forces the IV *display* to 31; leave that mode unticked or the test
+lies to you.) It was also holding `ITEM_STARMINITE`, so the mega-stone award works.
+
+**Fastest way to reach an Alpha: `Debug > Give X > "CHEAT start"`.** `Debug_CheatStart`
+(debug.pory) is literally `goto(Common_EventScript_Alpha_Starmie)` -- an instant Alpha battle
+from anywhere, no navigation. In Character Mode you must play a character whose roster has the
+species or the catch is blocked: **Misty** (Gen I, 9 rights from Red) has Staryu.
+
+**KNOWN BUG: the Master Ball does not catch.** Two Master Balls broke free from a Lv5 Alpha
+Starmie; a plain Poke Ball caught it on the first throw. `Cmd_handleballthrow` reads correctly
+(`if (gLastUsedItem == ITEM_MASTER_BALL) shakes = maxShakes;` then `if (shakes == maxShakes)`
+-> caught), and two *different* failure messages mean the RANDOM branch ran -- so
+`gLastUsedItem` was not `ITEM_MASTER_BALL` (= 1) by then. Suspects: ROWE's `lastUsedBall`
+feature clobbering it, the `F_ULTRA_BEAST` block that forces `ballMultiplier = 1` for any
+non-Beast-Ball, and `if (gLastUsedItem > ITEM_SAFARI_BALL)` which excludes the Master Ball
+from the ball switch entirely.
 
 ## Testing: how to actually drive the game
 
