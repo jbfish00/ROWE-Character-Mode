@@ -625,6 +625,14 @@ static void SetPlayerCoordsFromWarp(void)
         gSaveBlock1Ptr->pos.x = gSaveBlock1Ptr->location.x;
         gSaveBlock1Ptr->pos.y = gSaveBlock1Ptr->location.y;
     }
+    else if (gMapHeader.events->warpCount != 0)
+    {
+        // The warp id points past the end of the destination's warp list. Land on its
+        // first warp: at worst that is the wrong door, whereas the map-centre fallback
+        // below is just as likely to be solid rock, which strands the player.
+        gSaveBlock1Ptr->pos.x = gMapHeader.events->warps[0].x;
+        gSaveBlock1Ptr->pos.y = gMapHeader.events->warps[0].y;
+    }
     else
     {
         gSaveBlock1Ptr->pos.x = gMapHeader.mapLayout->width / 2;

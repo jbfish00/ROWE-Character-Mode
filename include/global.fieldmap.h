@@ -10,7 +10,13 @@
 // the wrong bits (the player ends up boxed in) -- which is exactly what the Sevii
 // islands did before this change.
 #define METATILE_ID_MASK 0x0FFF
-#define METATILE_ID_UNDEFINED 0x0FFF
+// Marks a grid cell as void: outside the map, or a connection margin no neighbouring
+// map filled in. Derived from the id mask on purpose -- fieldmap.c FILLS the grid with
+// this value and every accessor TESTS for it, so if the two ever disagree the void
+// decodes as a real metatile with collision 0, and the player can walk straight off the
+// edge of the map into it (and gets stranded there, since CanCameraMoveInDirection then
+// blocks every direction without a connection).
+#define METATILE_ID_UNDEFINED METATILE_ID_MASK
 #define METATILE_COLLISION_MASK 0x1000
 #define METATILE_COLLISION_SHIFT 12
 #define METATILE_ELEVATION_MASK 0xE000

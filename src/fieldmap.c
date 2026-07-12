@@ -57,9 +57,61 @@ void InitMap(void)
     RunOnLoadMapScript();
 }
 
+// Until the void marker was fixed, the 7-tile connection margin around every map decoded
+// as a walkable metatile, so the player could run off the edge of the map into it. Now
+// that the margin is solid again, a save made out there would be stuck forever. Put such
+// a player back on the nearest tile inside the map. Cannot fire in normal play: the saved
+// position is always within the map's bounds.
+static void RescuePlayerStrandedOutsideMap(void)
+{
+    s16 w, h, x, y, r, dx, dy, nx, ny;
+
+    w = gMapHeader.mapLayout->width;
+    h = gMapHeader.mapLayout->height;
+    x = gSaveBlock1Ptr->pos.x;
+    y = gSaveBlock1Ptr->pos.y;
+
+    if (x >= 0 && x < w && y >= 0 && y < h)
+        return;
+
+    if (x < 0)
+        x = 0;
+    else if (x >= w)
+        x = w - 1;
+    if (y < 0)
+        y = 0;
+    else if (y >= h)
+        y = h - 1;
+
+    for (r = 0; r < 16; r++)
+    {
+        for (dy = -r; dy <= r; dy++)
+        {
+            for (dx = -r; dx <= r; dx++)
+            {
+                nx = x + dx;
+                ny = y + dy;
+                if (nx < 0 || nx >= w || ny < 0 || ny >= h)
+                    continue;
+                // +7: the map grid is addressed in backup-layout coords.
+                if (!MapGridIsImpassableAt(nx + 7, ny + 7))
+                {
+                    gSaveBlock1Ptr->pos.x = nx;
+                    gSaveBlock1Ptr->pos.y = ny;
+                    return;
+                }
+            }
+        }
+    }
+
+    gSaveBlock1Ptr->pos.x = x;
+    gSaveBlock1Ptr->pos.y = y;
+}
+
 void InitMapFromSavedGame(void)
 {
     InitMapLayoutData(&gMapHeader);
+    RescuePlayerStrandedOutsideMap();
     InitSecretBaseAppearance(FALSE);
     SetOccupiedSecretBaseEntranceMetatiles(gMapHeader.events);
     LoadSavedMapView();
@@ -67,15 +119,18 @@ void InitMapFromSavedGame(void)
     UpdateTVScreensOnMap(gBackupMapLayout.width, gBackupMapLayout.height);
 }
 
+// The void value, packed twice for the 32-bit CpuFastFill.
+#define MAPGRID_UNDEFINED_X2 ((METATILE_ID_UNDEFINED << 16) | METATILE_ID_UNDEFINED)
+
 void InitBattlePyramidMap(bool8 setPlayerPosition)
 {
-    CpuFastFill(0x03ff03ff, gBackupMapData, sizeof(gBackupMapData));
+    CpuFastFill(MAPGRID_UNDEFINED_X2, gBackupMapData, sizeof(gBackupMapData));
     GenerateBattlePyramidFloorLayout(gBackupMapData, setPlayerPosition);
 }
 
 void InitTrainerHillMap(void)
 {
-    CpuFastFill(0x03ff03ff, gBackupMapData, sizeof(gBackupMapData));
+    CpuFastFill(MAPGRID_UNDEFINED_X2, gBackupMapData, sizeof(gBackupMapData));
     GenerateTrainerHillFloorLayout(gBackupMapData);
 }
 
@@ -85,7 +140,7 @@ static void InitMapLayoutData(struct MapHeader *mapHeader)
     int width;
     int height;
     mapLayout = mapHeader->mapLayout;
-    CpuFastFill16(0x03ff, gBackupMapData, sizeof(gBackupMapData));
+    CpuFastFill16(METATILE_ID_UNDEFINED, gBackupMapData, sizeof(gBackupMapData));
     gBackupMapLayout.map = gBackupMapData;
     width = mapLayout->width + 15;
     gBackupMapLayout.width = width;
