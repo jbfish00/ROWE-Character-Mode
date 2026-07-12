@@ -127,6 +127,20 @@ reads collision/elevation from the wrong bits (player boxed in, cannot move).
 That was the Sevii bug -- NOT the coordinates. Constants: `METATILE_ID_MASK` etc.
 in `include/global.fieldmap.h`, `NUM_METATILES_IN_PRIMARY 2048` in `fieldmap.h`.
 
+**The void marker moves WITH the id width, and the FILL must move with it.**
+Every map is surrounded by a 7-tile margin (`gBackupMapData`); cells no connection
+fills are set to a void marker, and every accessor tests for it. Widening the id
+moved that marker 0x03FF -> 0x0FFF, but `fieldmap.c` still *filled* with the
+literal `0x03ff` -- so the test never matched, the void decoded as metatile 1023 /
+collision 0 / elevation 0, and **the player could walk (or surf) straight off the
+edge of the map** anywhere an edge tile was walkable but outside a connection's
+overlap (1169 such tiles across 36 maps; Route 106's beach by Dewford has 17).
+Out there `CanCameraMoveInDirection` blocks every direction lacking a connection,
+so you get boxed in -- the "ran too far into the wall" bug. `METATILE_ID_UNDEFINED`
+is now *derived* from `METATILE_ID_MASK` so fill and test cannot drift again.
+`RescuePlayerStrandedOutsideMap()` (fieldmap.c) rescues saves made out in the void.
+Nothing else may use the exact block value 0x0FFF -- verified: no map cell does.
+
 Because 2.X's tilesets are NOT supersets of ours, the maps had to come with the
 format: **`data/maps`, `data/layouts`, `data/tilesets` and `data/scripts` are now
 the donor's, wholesale.** Hoenn is 2.X's Hoenn. Do not re-import piecemeal.
@@ -150,9 +164,13 @@ Deliberately NOT taken from 2.X (each would break something):
 
 **Phase 5 (QoL/quests/achievements/NG+): NOT STARTED.**
 
-**RUNTIME-UNTESTED:** a real trainer battle (party data verified statically --
-Roxanne = Onix w/ 6/252/252 EVs); Battle Styles; level caps; ability effects;
-most new move effects.
+**VERIFIED IN-GAME (2026-07-11):** a full 2-Pokemon trainer battle start to finish
+(Fisherman Ned on Route 106 -- moves, flinch, KO, switch-in, EXP, prize, defeat
+flag); losing -> white-out -> respawn at the Pokemon Center; save -> reload; the
+Dewford <-> Route 106 map connection; the start-location chooser.
+
+**RUNTIME-UNTESTED:** Battle Styles; level caps; ability effects; most new move
+effects; the Colress ticket chain; mega evolution; a gym badge reward.
 
 ## Testing: how to actually drive the game
 
@@ -161,16 +179,26 @@ Do not fight the emulator blind -- this cost hours. What works:
 - **Start on the island you want to test.** New game -> starter -> "What location
   would you like to start in?" -> scroll past "Surprise Me" to the 8 islands
   (indices 16-23). No need to play to the Sevii ferry.
-- **Debug menu**: press Select in the field -> "Debug" (Save/Skills/Debug/Exit).
-  It was dead code (`Debug_ShowMainMenu()` had zero callers) until wired up.
-  Its Utilities > Warp reaches any map. NB ROWE's *graphical* start menu (Start
-  button) is a fixed 8-slot grid with no room for new entries; the classic list
-  menu only opens in dark caves. The Select save-menu is the reachable path.
+- **Debug menu**: Start -> then **Select** (the field Select button alone is just
+  "register an item"). That opens Save/Skills/Debug/Exit. `Debug_ShowMainMenu()`
+  was dead code until wired up; its Utilities > Warp reaches any map. NB ROWE's
+  *graphical* start menu is a fixed 8-slot grid with no room for new entries; the
+  classic list menu only opens in dark caves.
+- **READ THE PLAYER'S EXACT COORDS OUT OF THE SAVE.** Do not guess position from
+  screenshots -- this is what finally made the void bug provable. Save in-game,
+  then: each 4096-byte block of the `.sav` has a footer at +0x0FF4 =
+  `u16 id, u16 checksum, u32 signature(0x08012025), u32 counter`. The block whose
+  `id == 1` is the first SaveBlock1 chunk, and SaveBlock1 *starts* with
+  `struct Coords16 pos`, so its first 4 bytes are `s16 x, s16 y`. (Two save slots
+  alternate: sectors 0-13 and 14-27. Take the higher `counter`.)
 - **mGBA input**: synthetic X events only deliver **letter keys** -- Return,
   arrows and Backspace never arrive. `~/.config/mgba/config.ini` [gba.input.QT_K]
   is rebound to: A=x B=z Up=i Down=k Left=j Right=l Start=m Select=n.
   Send with `xdotool keydown --window <child> KEY` (XSendEvent); plain XTEST does
-  not reach it. **Hold ~0.08s** -- a longer hold repeats and blasts through menus.
+  not reach it. **Menus: tap ~0.08s** (longer repeats and blasts through them).
+  **Field movement: taps get DROPPED -- hold instead**, ~0.27s per tile
+  (`keydown; sleep 0.9; keyup` walks ~3 tiles). Screenshot after every move; NPCs
+  wander into you and trainers' sight lines start battles you did not plan for.
 - Screenshot the 480x344 child window: `import -window <id> out.png`. Screenshot
   after *every* keypress in debug menus; they remember cursor positions, so blind
   key counts land in the wrong submenu.
@@ -231,6 +259,16 @@ build. Found and fixed so far:
   2.X has thousands, so ids truncated 0xBEC -> 0xEC and collided).
   When you grow a data set, grep for every array sized to the old count --
   including ones in **assembly** and in **debug/tool code**.
+- **A sentinel changed, but the code that WRITES it did not.** Same shape as the
+  above, one level nastier: widening the metatile id moved the map-grid void
+  marker 0x03FF -> 0x0FFF and every *reader* was updated, but the three
+  `CpuFastFill`s in fieldmap.c still wrote the old literal. Readers and writers of
+  a magic value must share one constant -- never a literal on either side. This
+  let the player walk off the edge of the map (see THE MAP FORMAT above).
+- **Movement is symmetric, so a walled-in tile you can REACH was entered one-way.**
+  When "I'm stuck and can't move" is reported, the entry was a warp, a ledge jump,
+  a Surf dismount, or walking off the map. Scan those four; do not scan for
+  "tiles with no exit" (there are hundreds, and they are simply unreachable).
 - **The import only copied maps we LACKED.** Donor edits to maps we already had
   were silently skipped -- that is how Colress went missing on islands 1-4 (the
   ticket chain dead-ended) and why 102 objects were absent. The full rebase fixed
