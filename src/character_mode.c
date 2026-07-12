@@ -123,3 +123,16 @@ void CharacterMode_SweepPartyToPC(void)
     CompactPartySlots();
     CalculatePlayerPartyCount();
 }
+
+// Special. Character Mode hands the player their character's starter the moment the mode
+// is committed (ui_mode_menu.c: ScriptGiveMon(GetStarterAt(starterselection), ...)), so the
+// intro must NOT go on to offer the generic starter menu -- doing so handed out a second,
+// off-roster mon (Red walked out with Pikachu AND Meowth, and the party sweep had already
+// run, so the Meowth stayed).
+// NB this tree's `specialvar` uses the special's RETURN VALUE
+// (scrcmd.c: *var = gSpecials[...]()), not gSpecialVar_Result. A void special that only
+// writes gSpecialVar_Result hands the script whatever happened to be in r0.
+u8 IsPlayerInCharacterMode(void)
+{
+    return InCharacterMode();
+}

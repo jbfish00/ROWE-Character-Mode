@@ -527,6 +527,15 @@ script Start_EventScript_Chose_Starter{
 	setflag(FLAG_CHOSING_STARTER)
 	setvar(VAR_STARTER_POKEMON, 0)
 	special(SendUnusableMonsToBoxes)
+	// In Character Mode the starter is part of choosing the character: the mode-select
+	// screen shows it ("STARTER: Pikachu" for Red) and hands it over the moment you commit
+	// with START. Offering the generic menu afterwards gave the player a SECOND mon that
+	// was not even on their roster -- Red walked out with Pikachu and a Meowth, and the
+	// off-roster sweep had already run, so the Meowth stayed in the party.
+	specialvar(VAR_RESULT, IsPlayerInCharacterMode)
+	if(var(VAR_RESULT) == TRUE){
+		goto(Start_EventScript_After_Starter)
+	}
 	goto_if_set(FLAG_FULL_RANDOMIZED_MODE, Script_Give_Starter10)
 	goto_if_set(FLAG_RANDOMIZED_MODE, Script_Give_Starter10)
 	msgbox(format("Please choose the Pokémon that you want to start with."), MSGBOX_DEFAULT)

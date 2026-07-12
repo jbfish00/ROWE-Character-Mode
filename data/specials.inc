@@ -577,3 +577,4 @@ gSpecials:: @ 81DBA64
 	def_special EnableLegendaryMons
 	def_special SendUnusableMonsToBoxes
 	def_special SetGameDate
+	def_special IsPlayerInCharacterMode
