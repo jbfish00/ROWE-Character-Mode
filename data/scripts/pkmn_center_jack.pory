@@ -49,10 +49,28 @@ script Common_EventScript_PkmnCenterJack{
 			goto(Common_EventScript_PkmnCenterJack_ChangeYear)
 		break
 		case 9:
+			//Travel to Sevii -- ours. 2.X reaches the islands only from the
+			//Lilycove/Slateport ferry; this is the shortcut Colress offers.
+			goto(Common_EventScript_PkmnCenterJack_TravelToSevii)
+		break
+		case 10:
+			//Companion Stuff -- ours, kept from 1.9.4. 2.X still defines the script
+			//but dropped it from the menu.
+			goto(Common_EventScript_PkmnCenterJack_Companion_Stuff)
+		break
+		case 11:
 		default:
 			goto(Common_EventScript_PkmnCenterJack_ComeBackAnytime)
 		break
 	}
+}
+
+// 2.X Sevii: the islands are reached from the Pokemon Center. You need a ticket -- the
+// intro grants a random one, and Colress hands out more on each island he sends you to.
+// This script was lost when the 2.X rebase replaced our hand-written pkmn_center_jack.inc
+// with the donor's .pory; the menu entry pointed at Change Season instead.
+script Common_EventScript_PkmnCenterJack_TravelToSevii{
+	goto(Common_EventScript_Colress)
 }
 
 
@@ -102,8 +120,12 @@ script Common_EventScript_PkmnCenterJack_Companion_Stuff {
 	copyvar(VAR_TEMP_1, VAR_RESULT)
 	switch (var(VAR_TEMP_1)) {
 		case 0: goto(Common_EventScript_PkmnCenterJack_Companion_Get_Trainer_Password)
-		case 4: goto(Common_EventScript_PkmnCenterJack)
+		// "Exit" is index 1 -- MultichoiceList_Companion_Stuff only has two entries.
+		// This said `case 4`, so picking Exit matched nothing, fell out of the switch
+		// and hit `end` with the player still locked from PkmnCenterJack's lockall.
+		case 1: goto(Common_EventScript_PkmnCenterJack)
 		case MULTI_B_PRESSED: goto(Common_EventScript_PkmnCenterJack)
+		default: goto(Common_EventScript_PkmnCenterJack_ComeBackAnytime)
 	}
 	end
 }

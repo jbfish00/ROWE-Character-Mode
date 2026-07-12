@@ -865,6 +865,13 @@ static const u8 sText_Fossil_8[] = _("Cover Fossil");
 static const u8 sText_Fossil_9[] = _("Plume Fossil");
 static const u8 sText_Fossil_10[] = _("Jaw Fossil");
 static const u8 sText_Fossil_11[] = _("Sail Fossil");
+// 2.X's Devon script also revives the four Galar fossil combos (cases 11-14). Our list
+// stopped at 10, so those four were simply unreachable. They are keyed by the revived
+// mon, not a single fossil, because each needs two Fossilized items.
+static const u8 sText_Fossil_12[] = _("Dracozolt");
+static const u8 sText_Fossil_13[] = _("Dracovish");
+static const u8 sText_Fossil_14[] = _("Arctozolt");
+static const u8 sText_Fossil_15[] = _("Arctovish");
 
 // Sets of multichoices.
 
@@ -933,6 +940,10 @@ static const u8 gText_OneIsland[]  		= _("One Island");
 static const u8 gText_TwoIsland[]  		= _("Two Island");
 static const u8 gText_ThreeIsland[]  	= _("Three Island");
 static const u8 gText_FourIsland[]  	= _("Four Island");
+static const u8 gText_FiveIsland[]  	= _("Five Island");
+static const u8 gText_SixIsland[]  		= _("Six Island");
+static const u8 gText_SevenIsland[]  	= _("Seven Island");
+static const u8 gText_EightIsland[]  	= _("Eight Island");
 static const u8 gText_BattleFrontier[]  = _("Battle Frontier");
 static const u8 gText_SouthernIsland[]  = _("Southern Island");
 static const u8 gText_NavelRock[]  		= _("Navel Rock");
@@ -940,58 +951,85 @@ static const u8 gText_BirthIsland[]  	= _("Birth Island");
 static const u8 gText_FarawayIsland[]  	= _("Faraway Island");
 static const u8 gText_Cancel2 []  		= _("Cancel");
 
-//Lilycove Harbor
-static const struct ListMenuItem sSet2[] =
-{
-    {gText_Slateport,  	0},
-    {gText_OneIsland,  	1},
-	{gText_TwoIsland,  	2},
-	{gText_ThreeIsland, 3},
-    {gText_FourIsland,  4},
-	{gText_Cancel2,  	5},
-};
+// THE FERRY LISTS BELOW ARE INDEX-CRITICAL.
+// flying_taxi.pory's Common_Evenscript_WarpUsingFerry switches on VAR_RESULT *directly*
+// as a SAIL_TO_* value, so item N here IS destination N. They must read:
+//   0 = the other mainland harbour, 1..8 = Sevii 1..8, 9 = Battle Frontier,
+//   10 = Navel Rock, 11 = Birth Island, 12 = Faraway Island, 13 = Southern Island.
+// The pre-league lists stop at 8 and put Cancel at 9, because the script rejects
+// anything >= SAIL_TO_BATTLE_FRONTIER (9) before the league is cleared.
+// These were previously our 1.9.4 lists, which are a different order: "Battle Frontier"
+// sat at 5 (= SAIL_TO_SEVII_5) and Cancel at 10 (= SAIL_TO_NAVEL_ROCK), so picking
+// Cancel sailed you to Navel Rock. Do not reorder without changing the script.
+// Slateport's list offers Lilycove and vice versa -- the script sets/clears
+// FLAG_SAILED_FROM_SLATEPORT to decide which way destination 0 goes.
 
-//Lilycove Harbor Postgame
-static const struct ListMenuItem sSet3[] =
+// SCROLLING_SLATEPORT_HARBOR_* is the list shown AT Slateport, so destination 0 is Lilycove.
+static const struct ListMenuItem sSet2[] =   // Slateport Harbor, pre-league
 {
-    {gText_Slateport,  		0},
-    {gText_OneIsland,  		1},
-	{gText_TwoIsland,  		2},
-	{gText_ThreeIsland,		3},
+    {gText_Lilycove,        0},   // SAIL_TO_SLATEPORT/LILYCOVE
+    {gText_OneIsland,       1},
+    {gText_TwoIsland,       2},
+    {gText_ThreeIsland,     3},
     {gText_FourIsland,      4},
-	{gText_BattleFrontier,  5},
-	{gText_SouthernIsland,  6},
-	{gText_NavelRock,  		7},
-	{gText_BirthIsland,  	8},
-	{gText_FarawayIsland,  	9},
-	{gText_Cancel2,  		10},
+    {gText_FiveIsland,      5},
+    {gText_SixIsland,       6},
+    {gText_SevenIsland,     7},
+    {gText_EightIsland,     8},
+    {gText_Cancel2,         9},   // >= SAIL_TO_BATTLE_FRONTIER -> the script exits
 };
 
-//Slateport Harbor
-static const struct ListMenuItem sSet4[] =
+static const struct ListMenuItem sSet3[] =   // Slateport Harbor, post-league
 {
-    {gText_Lilycove,  	0},
-    {gText_OneIsland,  	1},
-	{gText_TwoIsland,  	2},
-	{gText_ThreeIsland,	3},
-    {gText_FourIsland,  4},
-	{gText_Cancel2,  	5},
-};
-
-//Slateport Harbor Postgame
-static const struct ListMenuItem sSet8[] =
-{
-    {gText_Lilycove,  		0},
-    {gText_OneIsland,  		1},
-	{gText_TwoIsland,  		2},
-	{gText_ThreeIsland,		3},
+    {gText_Lilycove,        0},
+    {gText_OneIsland,       1},
+    {gText_TwoIsland,       2},
+    {gText_ThreeIsland,     3},
     {gText_FourIsland,      4},
-	{gText_BattleFrontier,  5},
-	{gText_SouthernIsland,  6},
-	{gText_NavelRock,  		7},
-	{gText_BirthIsland,  	8},
-	{gText_FarawayIsland,  	9},
-	{gText_Cancel2,  		10},
+    {gText_FiveIsland,      5},
+    {gText_SixIsland,       6},
+    {gText_SevenIsland,     7},
+    {gText_EightIsland,     8},
+    {gText_BattleFrontier,  9},
+    {gText_NavelRock,      10},
+    {gText_BirthIsland,    11},
+    {gText_FarawayIsland,  12},
+    {gText_SouthernIsland, 13},
+    {gText_Cancel2,        14},   // no SAIL_TO_ case -> the script's default exits
+};
+
+// SCROLLING_LILYCOVE_HARBOR_* is the list shown AT Lilycove, so destination 0 is Slateport.
+static const struct ListMenuItem sSet4[] =   // Lilycove Harbor, pre-league
+{
+    {gText_Slateport,       0},
+    {gText_OneIsland,       1},
+    {gText_TwoIsland,       2},
+    {gText_ThreeIsland,     3},
+    {gText_FourIsland,      4},
+    {gText_FiveIsland,      5},
+    {gText_SixIsland,       6},
+    {gText_SevenIsland,     7},
+    {gText_EightIsland,     8},
+    {gText_Cancel2,         9},
+};
+
+static const struct ListMenuItem sSet8[] =   // Lilycove Harbor, post-league
+{
+    {gText_Slateport,       0},
+    {gText_OneIsland,       1},
+    {gText_TwoIsland,       2},
+    {gText_ThreeIsland,     3},
+    {gText_FourIsland,      4},
+    {gText_FiveIsland,      5},
+    {gText_SixIsland,       6},
+    {gText_SevenIsland,     7},
+    {gText_EightIsland,     8},
+    {gText_BattleFrontier,  9},
+    {gText_NavelRock,      10},
+    {gText_BirthIsland,    11},
+    {gText_FarawayIsland,  12},
+    {gText_SouthernIsland, 13},
+    {gText_Cancel2,        14},
 };
 
 //Devon Corp
@@ -1008,6 +1046,11 @@ static const struct ListMenuItem sSet5[] =
     {sText_Fossil_9, 8},
     {sText_Fossil_10, 9},
     {sText_Fossil_11, 10},
+    {sText_Fossil_12, 11},
+    {sText_Fossil_13, 12},
+    {sText_Fossil_14, 13},
+    {sText_Fossil_15, 14},
+    {gText_Cancel2,   15},   // no case 15 -> the script's default declines
 };
 
 //Mode Selection -------------------------------------------------------------------------
@@ -1072,35 +1115,95 @@ static const u8 gText_TryWondertrading[]  	= _("Try Wonder Trading");
 static const u8 gText_ChangeCostume[]  		= _("Change Costume");
 static const u8 gText_StartABattle[]  		= _("Start a Mock Battle");
 static const u8 gText_Companion_Stuff[]     = _("Companion Stuff");
+static const u8 gText_DoubleBattles[]       = _("Double Battles");
+static const u8 gText_LowerDifficulty[]     = _("Lower Difficulty");
+static const u8 gText_ChangeSeason[]        = _("Change Season");
+static const u8 gText_ChangeDate[]          = _("Change Date");
 
+// INDEX-CRITICAL: this must match the switch in data/scripts/pkmn_center_jack.pory,
+// which is 2.X's and dispatches in 2.X's order -- NOT the 1.9.4 order this list used to
+// be in. While they disagreed every option ran the wrong action (picking "Travel to
+// Sevii" ran Change Season) and the Colress ticket chain was unreachable.
+// 0-8 are 2.X's; 9-11 are ours, appended, with matching cases added to the script.
 static const struct ListMenuItem sSetBlueNurse[] =
 {
-    {gText_RateANickname,  		0},
-    {gText_TeachAMove,  		1},
-	{gText_ForgetAMove,  		2},
-	{gText_TryWondertrading,  	3},
-	{gText_ChangeCostume,  		4},
-	{gText_StartABattle,  		5},
-	{gText_Companion_Stuff,     6},
-	{gText_TravelToSevii,       7},   // 2.X Sevii
-	{gText_Cancel2,  			8},
+    {gText_ChangeCostume,       0},
+    {gText_StartABattle,        1},
+    {gText_RateANickname,       2},
+    {gText_TeachAMove,          3},   // opens the move-tutor submenu
+    {gText_TryWondertrading,    4},
+    {gText_DoubleBattles,       5},
+    {gText_LowerDifficulty,     6},
+    {gText_ChangeSeason,        7},
+    {gText_ChangeDate,          8},
+    {gText_TravelToSevii,       9},   // ours: Colress / the Sevii ferry
+    {gText_Companion_Stuff,    10},   // ours: kept from 1.9.4, 2.X drops it
+    {gText_Cancel2,            11},
 };
 
 //------------------------------------------------------------------------------------
 
 
-// 2.X Sevii. NB: sScrollingSets only went up to index 9, but the scripts index
-// it at 10 and 12 -- an out-of-bounds read. Sets 10..12 close that hole.
+// INDEX-CRITICAL: matches Common_EventScript_PkmnCenterJack_Move_Learner's switch.
+// The old 3-entry list mapped "Teach a Move" onto the move DELETER and "Forget a Move"
+// onto the egg-move tutor. Case 4 has no handler, so it falls to the script's default
+// (come back anytime), which is what Cancel wants anyway.
+static const u8 gText_EggMoves[]            = _("Egg Moves");
+static const u8 gText_TutorMoves[]          = _("Move Tutor");
+static const u8 gText_TmMoves[]             = _("TM Moves");
+
 static const struct ListMenuItem sSetBlueNurseMoveLearn[] =
 {
-    {gText_TeachAMove,          0},
-    {gText_ForgetAMove,         1},
-    {gText_Cancel2,             2},
+    {gText_ForgetAMove,         0},
+    {gText_EggMoves,            1},
+    {gText_TutorMoves,          2},
+    {gText_TmMoves,             3},
+    {gText_Cancel2,             4},
 };
 
-static const struct ListMenuItem sSetReserved11[] =
+// INDEX-CRITICAL: match Common_EventScript_PkmnCenterJack_Change_Costume. These were
+// pointed at a 6-entry numeric placeholder (sSetGeneric5), so the costumes showed as
+// "1..5" and the last three male outfits were unreachable. There is no Cancel entry --
+// the script handles MULTI_B_PRESSED, so B backs out, which is 2.X's design.
+static const u8 gText_CostumeMayRS[]        = _("May (RS)");
+static const u8 gText_CostumeMayEmerald[]   = _("May (Emerald)");
+static const u8 gText_CostumeMayORAS[]      = _("May (ORAS)");
+static const u8 gText_CostumeLeafRBY[]      = _("Leaf (RBY)");
+static const u8 gText_CostumeLeafFRLG[]     = _("Leaf (FRLG)");
+static const u8 gText_CostumeDawnDP[]       = _("Dawn (DP)");
+static const u8 gText_CostumeDawnPt[]       = _("Dawn (Pt)");
+static const u8 gText_CostumeBrendanRS[]    = _("Brendan (RS)");
+static const u8 gText_CostumeBrendanEm[]    = _("Brendan (Emerald)");
+static const u8 gText_CostumeBrendanORAS[]  = _("Brendan (ORAS)");
+static const u8 gText_CostumeRedRBY[]       = _("Red (RBY)");
+static const u8 gText_CostumeRedFRLG[]      = _("Red (FRLG)");
+static const u8 gText_CostumeGreenFRLG[]    = _("Green (FRLG)");
+static const u8 gText_CostumeEthan[]        = _("Ethan");
+static const u8 gText_CostumeLucasDP[]      = _("Lucas (DP)");
+static const u8 gText_CostumeHilbertBW[]    = _("Hilbert (BW)");
+
+static const struct ListMenuItem sSetCostumesFemale[] =
 {
-    {gText_Cancel2,             0},
+    {gText_CostumeMayRS,        0},
+    {gText_CostumeMayEmerald,   1},
+    {gText_CostumeMayORAS,      2},
+    {gText_CostumeLeafRBY,      3},
+    {gText_CostumeLeafFRLG,     4},
+    {gText_CostumeDawnDP,       5},
+    {gText_CostumeDawnPt,       6},
+};
+
+static const struct ListMenuItem sSetCostumesMale[] =
+{
+    {gText_CostumeBrendanRS,    0},
+    {gText_CostumeBrendanEm,    1},
+    {gText_CostumeBrendanORAS,  2},
+    {gText_CostumeRedRBY,       3},
+    {gText_CostumeRedFRLG,      4},
+    {gText_CostumeGreenFRLG,    5},
+    {gText_CostumeEthan,        6},
+    {gText_CostumeLucasDP,      7},
+    {gText_CostumeHilbertBW,    8},
 };
 
 static const struct ListMenuItem sSetSeviiTicket[] =
@@ -1239,8 +1342,8 @@ struct
 	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 21 SCROLLING_DAY
 	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 22 SCROLLING_MONOPOLY
 	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 23 SCROLLING_MONOPOLY_PC
-	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 24 SCROLLING_COSTUMES_MALE
-	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 25 SCROLLING_COSTUMES_FEMALE
+	{sSetCostumesMale, ARRAY_COUNT(sSetCostumesMale)},	// 24 SCROLLING_COSTUMES_MALE
+	{sSetCostumesFemale, ARRAY_COUNT(sSetCostumesFemale)},	// 25 SCROLLING_COSTUMES_FEMALE
 };
 
 static void Task_ScrollingMultichoiceInput(u8 taskId);
