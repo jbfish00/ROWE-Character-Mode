@@ -164,13 +164,17 @@ Deliberately NOT taken from 2.X (each would break something):
 
 **Phase 5 (QoL/quests/achievements/NG+): NOT STARTED.**
 
-**VERIFIED IN-GAME (2026-07-11):** a full 2-Pokemon trainer battle start to finish
-(Fisherman Ned on Route 106 -- moves, flinch, KO, switch-in, EXP, prize, defeat
-flag); losing -> white-out -> respawn at the Pokemon Center; save -> reload; the
-Dewford <-> Route 106 map connection; the start-location chooser.
+**Phase 4 is now VERIFIED IN-GAME, end to end:** a full 2-Pokemon trainer battle
+(moves, flinch, KO, switch-in, EXP, prize, defeat flag); white-out -> respawn;
+save -> reload; map connections; the start-location chooser; the **Blue Nurse menu**;
+the **Colress ticket chain** (menu -> Colress -> pick an island -> "put away Sevii
+Ticket 1" -> teleport, island renders); a **gym badge reward** (beat Roxanne ->
+Stone Badge -> Amulet Coin, i.e. BADGE_ITEM_01); **mega evolution** (Venusaur +
+Venusaurite + Mega Bracelet -> START on the move menu -> Mega Venusaur); catching;
+the Pokedex; badge-driven **level scaling** (wild mons Lv7-8 at 0 badges -> Lv9-11
+at 1 badge).
 
-**RUNTIME-UNTESTED:** Battle Styles; level caps; ability effects; most new move
-effects; the Colress ticket chain; mega evolution; a gym badge reward.
+**RUNTIME-UNTESTED:** Battle Styles; ability effects; most new move effects.
 
 ## Testing: how to actually drive the game
 
@@ -269,6 +273,20 @@ build. Found and fixed so far:
   When "I'm stuck and can't move" is reported, the entry was a warp, a ledge jump,
   a Surf dismount, or walking off the map. Scan those four; do not scan for
   "tiles with no exit" (there are hundreds, and they are simply unreachable).
+- **A C flag test whose flag NOTHING SETS.** `GetNumBadges()` (level_scaling.c --
+  the index into EVERY scaling table) read the gym leaders' TM flags
+  (`FLAG_RECEIVED_TM39` -> 1 badge, ...). No script sets them: the gyms hand the TM
+  over with `giveitem`, which does not flag it. So it returned 0 for the whole Hoenn
+  game and the game never got harder. `battle_util.c`'s mega gate had the SAME bug
+  (`FLAG_RECEIVED_TM04`), which is why item megas were dead. **When a gate reads a
+  flag, grep for a `setflag` of it.** Both now read the real badge flags.
+- **Menu list (C) vs script case index (data) must agree, and nothing checks that.**
+  `scrollingmultichoice`/`multichoice` pass the chosen ROW INDEX to the script, which
+  switches on it. The lists live in `src/script_menu.c` (ours); the switches live in
+  `data/scripts/*.pory` (2.X's, since the rebase). When the rebase replaced the
+  scripts, every menu silently re-pointed: the Blue Nurse ran the wrong action for
+  every entry, and the ferry's "Cancel" (index 10) meant SAIL_TO_NAVEL_ROCK. Audit
+  script by script: `tools/` has no checker, so this is a grep-and-read job.
 - **The import only copied maps we LACKED.** Donor edits to maps we already had
   were silently skipped -- that is how Colress went missing on islands 1-4 (the
   ticket chain dead-ended) and why 102 objects were absent. The full rebase fixed
