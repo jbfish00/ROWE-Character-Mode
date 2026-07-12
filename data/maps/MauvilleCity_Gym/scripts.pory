@@ -144,7 +144,7 @@ MauvilleCity_Gym_EventScript_Start_Rematch_1::
 	end
 	
 MauvilleCity_Gym_EventScript_Start_Rematch_2::
-	goto_if_unset FLAG_RECEIVED_TM08 MauvilleCity_Gym_EventScript_Start_Rematch_Party_1
+	goto_if_unset FLAG_BADGE02_GET, MauvilleCity_Gym_EventScript_Start_Rematch_Party_1
 	checkitem ITEM_TM34_SHOCK_WAVE, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq MauvilleCity_Gym_EventScript_Start_Rematch_3
@@ -155,7 +155,7 @@ MauvilleCity_Gym_EventScript_Start_Rematch_2::
 	end
 	
 MauvilleCity_Gym_EventScript_Start_Rematch_3::
-	goto_if_unset FLAG_RECEIVED_TM42 MauvilleCity_Gym_EventScript_Start_Rematch_Party_2
+	goto_if_unset FLAG_BADGE05_GET, MauvilleCity_Gym_EventScript_Start_Rematch_Party_2
 	checkitem ITEM_TM57_CHARGE_BEAM, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq MauvilleCity_Gym_EventScript_Start_Rematch_4
@@ -166,7 +166,7 @@ MauvilleCity_Gym_EventScript_Start_Rematch_3::
 	end
 	
 MauvilleCity_Gym_EventScript_Start_Rematch_4::
-	goto_if_unset FLAG_RECEIVED_TM40 MauvilleCity_Gym_EventScript_Start_Rematch_Party_3
+	goto_if_unset FLAG_BADGE06_GET, MauvilleCity_Gym_EventScript_Start_Rematch_Party_3
 	checkitem ITEM_TM72_VOLT_SWITCH, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq MauvilleCity_Gym_EventScript_Start_Rematch_5
@@ -177,7 +177,7 @@ MauvilleCity_Gym_EventScript_Start_Rematch_4::
 	end
 	
 MauvilleCity_Gym_EventScript_Start_Rematch_5::
-	goto_if_unset FLAG_RECEIVED_TM04 MauvilleCity_Gym_EventScript_Start_Rematch_Party_4
+	goto_if_unset FLAG_BADGE07_GET, MauvilleCity_Gym_EventScript_Start_Rematch_Party_4
 	goto_if_set FLAG_GOT_MANECTRIC_MEGA_STONE MauvilleCity_Gym_EventScript_Start_Rematch_6
 	trainerbattle_no_intro TRAINER_WATTSON_4, MauvilleCity_Gym_Text_WattsonRematchDefeat
 	msgbox MauvilleCity_Gym_Text_GetMegaStone, MSGBOX_DEFAULT
@@ -187,7 +187,7 @@ MauvilleCity_Gym_EventScript_Start_Rematch_5::
 	end
 	
 MauvilleCity_Gym_EventScript_Start_Rematch_6::
-	goto_if_unset FLAG_RECEIVED_TM03 MauvilleCity_Gym_EventScript_Start_Rematch_Party_4
+	goto_if_unset FLAG_BADGE08_GET, MauvilleCity_Gym_EventScript_Start_Rematch_Party_4
 	checkitem ITEM_TM93_WILD_CHARGE, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq MauvilleCity_Gym_EventScript_Start_Rematch_Final
@@ -209,7 +209,7 @@ MauvilleCity_Gym_EventScript_Start_Rematch_Final::
 	
 MauvilleCity_Gym_EventScript_Start_Rematch_Party_1::
 	trainerbattle_no_intro TRAINER_WATTSON_1, MauvilleCity_Gym_Text_WattsonRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, MauvilleCity_Gym_EventScript_WattsonRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, MauvilleCity_Gym_EventScript_WattsonRematchEnd
 	msgbox MauvilleCity_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_TIMID_MINT, 3
 	goto MauvilleCity_Gym_EventScript_WattsonRematchEnd
@@ -217,7 +217,7 @@ MauvilleCity_Gym_EventScript_Start_Rematch_Party_1::
 	
 MauvilleCity_Gym_EventScript_Start_Rematch_Party_2::
 	trainerbattle_no_intro TRAINER_WATTSON_2, MauvilleCity_Gym_Text_WattsonRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, MauvilleCity_Gym_EventScript_WattsonRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, MauvilleCity_Gym_EventScript_WattsonRematchEnd
 	msgbox MauvilleCity_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_HASTY_MINT, 3
 	goto MauvilleCity_Gym_EventScript_WattsonRematchEnd
@@ -225,7 +225,7 @@ MauvilleCity_Gym_EventScript_Start_Rematch_Party_2::
 	
 MauvilleCity_Gym_EventScript_Start_Rematch_Party_3::
 	trainerbattle_no_intro TRAINER_WATTSON_3, MauvilleCity_Gym_Text_WattsonRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, MauvilleCity_Gym_EventScript_WattsonRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, MauvilleCity_Gym_EventScript_WattsonRematchEnd
 	msgbox MauvilleCity_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_JOLLY_MINT, 3
 	goto MauvilleCity_Gym_EventScript_WattsonRematchEnd
@@ -233,7 +233,7 @@ MauvilleCity_Gym_EventScript_Start_Rematch_Party_3::
 	
 MauvilleCity_Gym_EventScript_Start_Rematch_Party_4::
 	trainerbattle_no_intro TRAINER_WATTSON_4, MauvilleCity_Gym_Text_WattsonRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, MauvilleCity_Gym_EventScript_WattsonRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, MauvilleCity_Gym_EventScript_WattsonRematchEnd
 	msgbox MauvilleCity_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_NAIVE_MINT, 3
 	goto MauvilleCity_Gym_EventScript_WattsonRematchEnd
@@ -241,7 +241,7 @@ MauvilleCity_Gym_EventScript_Start_Rematch_Party_4::
 	
 MauvilleCity_Gym_EventScript_Start_Rematch_Party_5::
 	trainerbattle_no_intro TRAINER_WATTSON_5, MauvilleCity_Gym_Text_WattsonRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, MauvilleCity_Gym_EventScript_WattsonRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, MauvilleCity_Gym_EventScript_WattsonRematchEnd
 	msgbox MauvilleCity_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_MODEST_MINT, 3
 	goto MauvilleCity_Gym_EventScript_WattsonRematchEnd

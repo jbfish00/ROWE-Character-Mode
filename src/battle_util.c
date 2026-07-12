@@ -359,12 +359,15 @@ void HandleAction_UseItem(void)
 
     if (gLastUsedItem <= LAST_BALL) // is ball
     {
-		if(gLastUsedItem != ITEM_MASTER_BALL)
+        // Do NOT rewrite gLastUsedItem here. This used to swap ITEM_MASTER_BALL for
+        // ITEM_POKE_BALL, which made the Master Ball FAIL TO CATCH: Cmd_handleballthrow reads
+        // gLastUsedItem, and ITEM_MASTER_BALL is the only value that forces shakes = maxShakes
+        // (a guaranteed catch) -- as a Poke Ball it went down the random-shake path instead.
+        // Two Master Balls broke free from a level 5 Starmie. It also threw the wrong ball
+        // sprite. Nothing needed the swap: gBattlescriptsForBallThrow has a valid
+        // ITEM_MASTER_BALL row (BattleScript_BallThrow) and ItemIdToBallId maps it to
+        // BALL_MASTER, so both the script and the graphics work with the real item id.
         gBattlescriptCurrInstr = gBattlescriptsForBallThrow[gLastUsedItem];
-		else{
-			gLastUsedItem = ITEM_POKE_BALL;
-			gBattlescriptCurrInstr = gBattlescriptsForBallThrow[gLastUsedItem];
-		}
     }
     else if (gLastUsedItem == ITEM_POKE_DOLL || gLastUsedItem == ITEM_FLUFFY_TAIL)
     {

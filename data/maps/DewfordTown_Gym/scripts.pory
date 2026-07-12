@@ -211,7 +211,7 @@ DewfordTown_Gym_EventScript_Start_Rematch_1::
 	end
 	
 DewfordTown_Gym_EventScript_Start_Rematch_2::
-	goto_if_unset FLAG_RECEIVED_TM08 DewfordTown_Gym_EventScript_Start_Rematch_Party_1
+	goto_if_unset FLAG_BADGE02_GET, DewfordTown_Gym_EventScript_Start_Rematch_Party_1
 	checkitem ITEM_TM51_LOW_SWEEP, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq DewfordTown_Gym_EventScript_Start_Rematch_3
@@ -222,7 +222,7 @@ DewfordTown_Gym_EventScript_Start_Rematch_2::
 	end
 	
 DewfordTown_Gym_EventScript_Start_Rematch_3::
-	goto_if_unset FLAG_RECEIVED_TM42 DewfordTown_Gym_EventScript_Start_Rematch_Party_2
+	goto_if_unset FLAG_BADGE05_GET, DewfordTown_Gym_EventScript_Start_Rematch_Party_2
 	checkitem ITEM_TM87_SWAGGER, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq DewfordTown_Gym_EventScript_Start_Rematch_4
@@ -233,7 +233,7 @@ DewfordTown_Gym_EventScript_Start_Rematch_3::
 	end
 	
 DewfordTown_Gym_EventScript_Start_Rematch_4::
-	goto_if_unset FLAG_RECEIVED_TM40 DewfordTown_Gym_EventScript_Start_Rematch_Party_3
+	goto_if_unset FLAG_BADGE06_GET, DewfordTown_Gym_EventScript_Start_Rematch_Party_3
 	checkitem ITEM_TM52_FOCUS_BLAST, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq DewfordTown_Gym_EventScript_Start_Rematch_5
@@ -244,7 +244,7 @@ DewfordTown_Gym_EventScript_Start_Rematch_4::
 	end
 	
 DewfordTown_Gym_EventScript_Start_Rematch_5::
-	goto_if_unset FLAG_RECEIVED_TM04 DewfordTown_Gym_EventScript_Start_Rematch_Party_4
+	goto_if_unset FLAG_BADGE07_GET, DewfordTown_Gym_EventScript_Start_Rematch_Party_4
 	goto_if_set FLAG_GOT_HERACROSS_MEGA_STONE DewfordTown_Gym_EventScript_Start_Rematch_6
 	trainerbattle_no_intro TRAINER_BRAWLY_4, DewfordTown_Gym_Text_BrawlyRematchDefeat
 	msgbox DewfordTown_Gym_Text_GetMegaStone, MSGBOX_DEFAULT
@@ -254,7 +254,7 @@ DewfordTown_Gym_EventScript_Start_Rematch_5::
 	end
 	
 DewfordTown_Gym_EventScript_Start_Rematch_6::
-	goto_if_unset FLAG_RECEIVED_TM03 DewfordTown_Gym_EventScript_Start_Rematch_Party_4
+	goto_if_unset FLAG_BADGE08_GET, DewfordTown_Gym_EventScript_Start_Rematch_Party_4
 	checkitem ITEM_TM106_AURA_SPHERE, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq DewfordTown_Gym_EventScript_Start_Rematch_Final
@@ -276,7 +276,7 @@ DewfordTown_Gym_EventScript_Start_Rematch_Final::
 	
 DewfordTown_Gym_EventScript_Start_Rematch_Party_1::
 	trainerbattle_no_intro TRAINER_BRAWLY_1, DewfordTown_Gym_Text_BrawlyRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, DewfordTown_Gym_EventScript_BrawlyRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, DewfordTown_Gym_EventScript_BrawlyRematchEnd
 	msgbox DewfordTown_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_LONELY_MINT, 3
 	goto DewfordTown_Gym_EventScript_BrawlyRematchEnd
@@ -284,7 +284,7 @@ DewfordTown_Gym_EventScript_Start_Rematch_Party_1::
 	
 DewfordTown_Gym_EventScript_Start_Rematch_Party_2::
 	trainerbattle_no_intro TRAINER_BRAWLY_2, DewfordTown_Gym_Text_BrawlyRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, DewfordTown_Gym_EventScript_BrawlyRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, DewfordTown_Gym_EventScript_BrawlyRematchEnd
 	msgbox DewfordTown_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_ADAMANT_MINT, 3
 	goto DewfordTown_Gym_EventScript_BrawlyRematchEnd
@@ -292,7 +292,7 @@ DewfordTown_Gym_EventScript_Start_Rematch_Party_2::
 	
 DewfordTown_Gym_EventScript_Start_Rematch_Party_3::
 	trainerbattle_no_intro TRAINER_BRAWLY_3, DewfordTown_Gym_Text_BrawlyRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, DewfordTown_Gym_EventScript_BrawlyRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, DewfordTown_Gym_EventScript_BrawlyRematchEnd
 	msgbox DewfordTown_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_NAUGHTY_MINT, 3
 	goto DewfordTown_Gym_EventScript_BrawlyRematchEnd
@@ -300,7 +300,7 @@ DewfordTown_Gym_EventScript_Start_Rematch_Party_3::
 	
 DewfordTown_Gym_EventScript_Start_Rematch_Party_4::
 	trainerbattle_no_intro TRAINER_BRAWLY_4, DewfordTown_Gym_Text_BrawlyRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, DewfordTown_Gym_EventScript_BrawlyRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, DewfordTown_Gym_EventScript_BrawlyRematchEnd
 	msgbox DewfordTown_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_BRAVE_MINT, 3
 	goto DewfordTown_Gym_EventScript_BrawlyRematchEnd
@@ -308,7 +308,7 @@ DewfordTown_Gym_EventScript_Start_Rematch_Party_4::
 	
 DewfordTown_Gym_EventScript_Start_Rematch_Party_5::
 	trainerbattle_no_intro TRAINER_BRAWLY_5, DewfordTown_Gym_Text_BrawlyRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, DewfordTown_Gym_EventScript_BrawlyRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, DewfordTown_Gym_EventScript_BrawlyRematchEnd
 	msgbox DewfordTown_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_JOLLY_MINT, 3
 	goto DewfordTown_Gym_EventScript_BrawlyRematchEnd

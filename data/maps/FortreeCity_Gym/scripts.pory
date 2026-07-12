@@ -81,7 +81,7 @@ FortreeCity_Gym_EventScript_Start_Rematch_1::
 	end
 	
 FortreeCity_Gym_EventScript_Start_Rematch_2::
-	goto_if_unset FLAG_RECEIVED_TM08 FortreeCity_Gym_EventScript_Start_Rematch_Party_1
+	goto_if_unset FLAG_BADGE02_GET, FortreeCity_Gym_EventScript_Start_Rematch_Party_1
 	checkitem ITEM_TM58_ROOST, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq FortreeCity_Gym_EventScript_Start_Rematch_3
@@ -92,7 +92,7 @@ FortreeCity_Gym_EventScript_Start_Rematch_2::
 	end
 	
 FortreeCity_Gym_EventScript_Start_Rematch_3::
-	goto_if_unset FLAG_RECEIVED_TM42 FortreeCity_Gym_EventScript_Start_Rematch_Party_2
+	goto_if_unset FLAG_BADGE05_GET, FortreeCity_Gym_EventScript_Start_Rematch_Party_2
 	checkitem ITEM_TM62_ACROBATICS, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq FortreeCity_Gym_EventScript_Start_Rematch_4
@@ -103,7 +103,7 @@ FortreeCity_Gym_EventScript_Start_Rematch_3::
 	end
 	
 FortreeCity_Gym_EventScript_Start_Rematch_4::
-	goto_if_unset FLAG_RECEIVED_TM40 FortreeCity_Gym_EventScript_Start_Rematch_Party_3
+	goto_if_unset FLAG_BADGE06_GET, FortreeCity_Gym_EventScript_Start_Rematch_Party_3
 	checkitem ITEM_TM76_FLY, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq FortreeCity_Gym_EventScript_Start_Rematch_5
@@ -114,7 +114,7 @@ FortreeCity_Gym_EventScript_Start_Rematch_4::
 	end
 	
 FortreeCity_Gym_EventScript_Start_Rematch_5::
-	goto_if_unset FLAG_RECEIVED_TM04 FortreeCity_Gym_EventScript_Start_Rematch_Party_4
+	goto_if_unset FLAG_BADGE07_GET, FortreeCity_Gym_EventScript_Start_Rematch_Party_4
 	goto_if_set FLAG_GOT_ALTARIA_MEGA_STONE FortreeCity_Gym_EventScript_Start_Rematch_6
 	trainerbattle_no_intro TRAINER_WINONA_4, FortreeCity_Gym_Text_WinonaRematchDefeat
 	msgbox FortreeCity_Gym_Text_GetMegaStone, MSGBOX_DEFAULT
@@ -124,7 +124,7 @@ FortreeCity_Gym_EventScript_Start_Rematch_5::
 	end
 	
 FortreeCity_Gym_EventScript_Start_Rematch_6::
-	goto_if_unset FLAG_RECEIVED_TM03 FortreeCity_Gym_EventScript_Start_Rematch_Party_4
+	goto_if_unset FLAG_BADGE08_GET, FortreeCity_Gym_EventScript_Start_Rematch_Party_4
 	checkitem ITEM_TM114_BRAVE_BIRD, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq FortreeCity_Gym_EventScript_Start_Rematch_Final
@@ -146,7 +146,7 @@ FortreeCity_Gym_EventScript_Start_Rematch_Final::
 	
 FortreeCity_Gym_EventScript_Start_Rematch_Party_1::
 	trainerbattle_no_intro TRAINER_WINONA_1, FortreeCity_Gym_Text_WinonaRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, FortreeCity_Gym_EventScript_WinonaRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, FortreeCity_Gym_EventScript_WinonaRematchEnd
 	msgbox FortreeCity_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_TIMID_MINT, 3
 	goto FortreeCity_Gym_EventScript_WinonaRematchEnd
@@ -154,7 +154,7 @@ FortreeCity_Gym_EventScript_Start_Rematch_Party_1::
 	
 FortreeCity_Gym_EventScript_Start_Rematch_Party_2::
 	trainerbattle_no_intro TRAINER_WINONA_2, FortreeCity_Gym_Text_WinonaRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, FortreeCity_Gym_EventScript_WinonaRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, FortreeCity_Gym_EventScript_WinonaRematchEnd
 	msgbox FortreeCity_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_HASTY_MINT, 3
 	goto FortreeCity_Gym_EventScript_WinonaRematchEnd
@@ -162,7 +162,7 @@ FortreeCity_Gym_EventScript_Start_Rematch_Party_2::
 	
 FortreeCity_Gym_EventScript_Start_Rematch_Party_3::
 	trainerbattle_no_intro TRAINER_WINONA_3, FortreeCity_Gym_Text_WinonaRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, FortreeCity_Gym_EventScript_WinonaRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, FortreeCity_Gym_EventScript_WinonaRematchEnd
 	msgbox FortreeCity_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_JOLLY_MINT, 3
 	goto FortreeCity_Gym_EventScript_WinonaRematchEnd
@@ -170,7 +170,7 @@ FortreeCity_Gym_EventScript_Start_Rematch_Party_3::
 	
 FortreeCity_Gym_EventScript_Start_Rematch_Party_4::
 	trainerbattle_no_intro TRAINER_WINONA_4, FortreeCity_Gym_Text_WinonaRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, FortreeCity_Gym_EventScript_WinonaRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, FortreeCity_Gym_EventScript_WinonaRematchEnd
 	msgbox FortreeCity_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_NAIVE_MINT, 3
 	goto FortreeCity_Gym_EventScript_WinonaRematchEnd
@@ -178,7 +178,7 @@ FortreeCity_Gym_EventScript_Start_Rematch_Party_4::
 	
 FortreeCity_Gym_EventScript_Start_Rematch_Party_5::
 	trainerbattle_no_intro TRAINER_WINONA_5, FortreeCity_Gym_Text_WinonaRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, FortreeCity_Gym_EventScript_WinonaRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, FortreeCity_Gym_EventScript_WinonaRematchEnd
 	msgbox FortreeCity_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_MODEST_MINT, 3
 	goto FortreeCity_Gym_EventScript_WinonaRematchEnd

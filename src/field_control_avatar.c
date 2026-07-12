@@ -565,7 +565,13 @@ static const u8 *GetInteractedWaterScript(struct MapPosition *unused1, u8 metati
 
     if (MetatileBehavior_IsWaterfall(metatileBehavior) == TRUE)
     {
-        if (FlagGet(FLAG_RECEIVED_TM40) == TRUE && IsPlayerSurfingNorth() == TRUE)
+        // FLAG_BADGE08_GET (the Rain Badge), as in vanilla and as party_menu.c already
+        // requires -- it gates every field move on FLAG_BADGE01_GET + fieldMove, and
+        // FIELD_MOVE_WATERFALL is 7. This used to read FLAG_RECEIVED_TM40, which NOTHING in
+        // the tree ever sets (the gyms hand their TMs over with giveitem, which does not flag
+        // them), so Waterfall could never be used at a waterfall no matter how many badges
+        // you had -- it always fell through to EventScript_CannotUseWaterfall.
+        if (FlagGet(FLAG_BADGE08_GET) == TRUE && IsPlayerSurfingNorth() == TRUE)
             return EventScript_UseWaterfall;
         else
             return EventScript_CannotUseWaterfall;

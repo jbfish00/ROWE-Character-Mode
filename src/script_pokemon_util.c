@@ -26,6 +26,7 @@
 #include "tv.h"
 #include "trade.h"
 #include "constants/items.h"
+#include "constants/vars.h"
 #include "constants/tv.h"
 #include "constants/battle_frontier.h"
 
@@ -157,6 +158,27 @@ bool8 DoesPartyHaveEnigmaBerry(void)
     return hasItem;
 }
 
+// 2.X's boss encounters set VAR_BOSS_BATTLE_HP_MULTIPIER just before setwildbattle:
+// 100 = 1.0x (the Alphas), LEGENDARY_HP_MULTIPLIER = 200 = 2.0x (the legendaries). Nothing in
+// this engine ever READ it, so every legendary boss fought with completely ordinary HP.
+// Applied here, at the one place a scripted boss is created, and the var is reset afterwards
+// so a 200 cannot leak into the NEXT scripted wild battle -- a gift mon or a roamer that
+// never set a multiplier of its own would otherwise inherit double HP.
+void ApplyBossHpMultiplier(struct Pokemon *mon)
+{
+	u32 hp = VarGet(VAR_BOSS_BATTLE_HP_MULTIPIER);
+
+	if (hp > 100)
+	{
+		hp = GetMonData(mon, MON_DATA_MAX_HP, NULL) * hp / 100;
+		if (hp > 0xFFFF)   // MON_DATA_MAX_HP is a u16
+			hp = 0xFFFF;
+		SetMonData(mon, MON_DATA_MAX_HP, &hp);
+		SetMonData(mon, MON_DATA_HP, &hp);
+	}
+	VarSet(VAR_BOSS_BATTLE_HP_MULTIPIER, 100);
+}
+
 void CreateScriptedWildMon(u16 species, u8 level, u16 item)
 {
     u8 heldItem[2];
@@ -185,7 +207,10 @@ void CreateScriptedWildMon(u16 species, u8 level, u16 item)
 	{
         SetMonData(&gEnemyParty[0], MON_DATA_ABILITY_NUM, &abilityNum);
     }
+
+	ApplyBossHpMultiplier(&gEnemyParty[0]);
 }
+
 
 void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species2, u8 level2, u16 item2)
 {
@@ -208,6 +233,16 @@ void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species
         heldItem2[0] = item2;
         heldItem2[1] = item2 >> 8;
         SetMonData(&gEnemyParty[3], MON_DATA_HELD_ITEM, heldItem2);
+    }
+
+    // Scale BOTH before the reset -- ApplyBossHpMultiplier clears the var, so calling it on
+    // gEnemyParty[0] first would leave the second boss at ordinary HP.
+    {
+        u16 mult = VarGet(VAR_BOSS_BATTLE_HP_MULTIPIER);
+
+        ApplyBossHpMultiplier(&gEnemyParty[0]);
+        VarSet(VAR_BOSS_BATTLE_HP_MULTIPIER, mult);
+        ApplyBossHpMultiplier(&gEnemyParty[3]);
     }
 }
 

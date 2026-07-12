@@ -39,7 +39,7 @@ RustboroCity_Gym_EventScript_Start_Rematch_1::
 	end
 	
 RustboroCity_Gym_EventScript_Start_Rematch_2::
-	goto_if_unset FLAG_RECEIVED_TM08 RustboroCity_Gym_EventScript_Start_Rematch_Party_1
+	goto_if_unset FLAG_BADGE02_GET, RustboroCity_Gym_EventScript_Start_Rematch_Party_1
 	checkitem ITEM_TM69_ROCK_POLISH, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq RustboroCity_Gym_EventScript_Start_Rematch_3
@@ -50,7 +50,7 @@ RustboroCity_Gym_EventScript_Start_Rematch_2::
 	end
 	
 RustboroCity_Gym_EventScript_Start_Rematch_3::
-	goto_if_unset FLAG_RECEIVED_TM42 RustboroCity_Gym_EventScript_Start_Rematch_Party_2
+	goto_if_unset FLAG_BADGE05_GET, RustboroCity_Gym_EventScript_Start_Rematch_Party_2
 	checkitem ITEM_TM110_STEALTH_ROCK, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq RustboroCity_Gym_EventScript_Start_Rematch_4
@@ -61,7 +61,7 @@ RustboroCity_Gym_EventScript_Start_Rematch_3::
 	end
 	
 RustboroCity_Gym_EventScript_Start_Rematch_4::
-	goto_if_unset FLAG_RECEIVED_TM40 RustboroCity_Gym_EventScript_Start_Rematch_Party_3
+	goto_if_unset FLAG_BADGE06_GET, RustboroCity_Gym_EventScript_Start_Rematch_Party_3
 	checkitem ITEM_TM107_POWER_GEM, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq RustboroCity_Gym_EventScript_Start_Rematch_5
@@ -72,7 +72,7 @@ RustboroCity_Gym_EventScript_Start_Rematch_4::
 	end
 	
 RustboroCity_Gym_EventScript_Start_Rematch_5::
-	goto_if_unset FLAG_RECEIVED_TM04 RustboroCity_Gym_EventScript_Start_Rematch_Party_4
+	goto_if_unset FLAG_BADGE07_GET, RustboroCity_Gym_EventScript_Start_Rematch_Party_4
 	goto_if_set FLAG_GOT_AGGRON_MEGA_STONE RustboroCity_Gym_EventScript_Start_Rematch_6
 	trainerbattle_no_intro TRAINER_ROXANNE_4, RustboroCity_Gym_Text_RoxanneRematchDefeat
 	msgbox RustboroCity_Gym_Text_GetMegaStone, MSGBOX_DEFAULT
@@ -82,7 +82,7 @@ RustboroCity_Gym_EventScript_Start_Rematch_5::
 	end
 	
 RustboroCity_Gym_EventScript_Start_Rematch_6::
-	goto_if_unset FLAG_RECEIVED_TM03 RustboroCity_Gym_EventScript_Start_Rematch_Party_4
+	goto_if_unset FLAG_BADGE08_GET, RustboroCity_Gym_EventScript_Start_Rematch_Party_4
 	checkitem ITEM_TM71_STONE_EDGE, 1
 	compare VAR_RESULT, TRUE
 	goto_if_eq RustboroCity_Gym_EventScript_Start_Rematch_Final
@@ -104,7 +104,7 @@ RustboroCity_Gym_EventScript_Start_Rematch_Final::
 	
 RustboroCity_Gym_EventScript_Start_Rematch_Party_1::
 	trainerbattle_no_intro TRAINER_ROXANNE_1, RustboroCity_Gym_Text_RoxanneRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, RustboroCity_Gym_EventScript_RoxanneRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, RustboroCity_Gym_EventScript_RoxanneRematchEnd
 	msgbox RustboroCity_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_BOLD_MINT, 3
 	goto RustboroCity_Gym_EventScript_RoxanneRematchEnd
@@ -112,7 +112,7 @@ RustboroCity_Gym_EventScript_Start_Rematch_Party_1::
 	
 RustboroCity_Gym_EventScript_Start_Rematch_Party_2::
 	trainerbattle_no_intro TRAINER_ROXANNE_2, RustboroCity_Gym_Text_RoxanneRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, RustboroCity_Gym_EventScript_RoxanneRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, RustboroCity_Gym_EventScript_RoxanneRematchEnd
 	msgbox RustboroCity_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_IMPISH_MINT, 3
 	goto RustboroCity_Gym_EventScript_RoxanneRematchEnd
@@ -120,7 +120,7 @@ RustboroCity_Gym_EventScript_Start_Rematch_Party_2::
 	
 RustboroCity_Gym_EventScript_Start_Rematch_Party_3::
 	trainerbattle_no_intro TRAINER_ROXANNE_3, RustboroCity_Gym_Text_RoxanneRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, RustboroCity_Gym_EventScript_RoxanneRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, RustboroCity_Gym_EventScript_RoxanneRematchEnd
 	msgbox RustboroCity_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_LAX_MINT, 3
 	goto RustboroCity_Gym_EventScript_RoxanneRematchEnd
@@ -128,7 +128,7 @@ RustboroCity_Gym_EventScript_Start_Rematch_Party_3::
 	
 RustboroCity_Gym_EventScript_Start_Rematch_Party_4::
 	trainerbattle_no_intro TRAINER_ROXANNE_4, RustboroCity_Gym_Text_RoxanneRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, RustboroCity_Gym_EventScript_RoxanneRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, RustboroCity_Gym_EventScript_RoxanneRematchEnd
 	msgbox RustboroCity_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_RELAXED_MINT, 3
 	goto RustboroCity_Gym_EventScript_RoxanneRematchEnd
@@ -136,7 +136,7 @@ RustboroCity_Gym_EventScript_Start_Rematch_Party_4::
 	
 RustboroCity_Gym_EventScript_Start_Rematch_Party_5::
 	trainerbattle_no_intro TRAINER_ROXANNE_5, RustboroCity_Gym_Text_RoxanneRematchDefeat
-	goto_if_unset FLAG_RECEIVED_TM04, RustboroCity_Gym_EventScript_RoxanneRematchEnd
+	goto_if_unset FLAG_BADGE07_GET, RustboroCity_Gym_EventScript_RoxanneRematchEnd
 	msgbox RustboroCity_Gym_Text_GetReward, MSGBOX_DEFAULT
 	giveitem ITEM_ADAMANT_MINT, 3
 	goto RustboroCity_Gym_EventScript_RoxanneRematchEnd
