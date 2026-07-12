@@ -317,6 +317,10 @@ build. Found and fixed so far:
   game and the game never got harder. `battle_util.c`'s mega gate had the SAME bug
   (`FLAG_RECEIVED_TM04`), which is why item megas were dead. **When a gate reads a
   flag, grep for a `setflag` of it.** Both now read the real badge flags.
+- **`special` vs `specialvar` are NOT the same.** This tree's `specialvar` uses the
+  special's **RETURN VALUE** (`scrcmd.c`: `*var = gSpecials[...]()`), not
+  `gSpecialVar_Result`. A `void` special that only writes `gSpecialVar_Result` hands the
+  script whatever was in r0. Cost an hour on the Character Mode starter skip.
 - **A var whose 0-default means "off", and a switch with no `default:`.**
   `VAR_CRY_SPECIES` selects the cry style; 0 is the options menu's "Disabled" choice and
   `PlayCry`'s switch has no case 0 -- so out of the box **every Pokemon was silent**.
