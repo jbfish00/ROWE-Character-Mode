@@ -9643,7 +9643,11 @@ bool8 IsZCoordMismatchAt(u8 z, s16 x, s16 y)
 
     mapZ = MapGridGetZCoordAt(x, y);
 
-    if (mapZ == 0 || mapZ == 0xF)
+    // 2.X's elevation field is 3 bits, so its "cross any elevation" sentinel is
+    // MAX_ELEVATION_LEVEL (7), not vanilla's 15. Checking 0xF here matched nothing,
+    // so every one of those transition tiles counted as a real, mismatched level --
+    // which is what stopped the player from moving.
+    if (mapZ == 0 || mapZ == MAX_ELEVATION_LEVEL)
         return FALSE;
 
     if (mapZ != z)
@@ -9697,12 +9701,12 @@ void ObjectEventUpdateZCoord(struct ObjectEvent *objEvent)
     u8 z = MapGridGetZCoordAt(objEvent->currentCoords.x, objEvent->currentCoords.y);
     u8 z2 = MapGridGetZCoordAt(objEvent->previousCoords.x, objEvent->previousCoords.y);
 
-    if (z == 0xF || z2 == 0xF)
+    if (z == MAX_ELEVATION_LEVEL || z2 == MAX_ELEVATION_LEVEL)
         return;
 
     objEvent->currentElevation = z;
 
-    if (z != 0 && z != 0xF)
+    if (z != 0 && z != MAX_ELEVATION_LEVEL)
         objEvent->previousElevation = z;
 }
 

@@ -4004,7 +4004,7 @@ static void Task_CloseBattlePikeCurtain(u8 taskId)
         {
             for (x = 0; x < 3; x++)
             {
-                MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + x + 6, gSaveBlock1Ptr->pos.y + y + 4, x + 513 + y * 8 + data[3] * 32);
+                MapGridSetMetatileIdAt(gSaveBlock1Ptr->pos.x + x + 6, gSaveBlock1Ptr->pos.y + y + 4, x + (NUM_METATILES_IN_PRIMARY + 1) + y * 8 + data[3] * 32);
             }
         }
         DrawWholeMapView();

@@ -299,7 +299,8 @@
 #define ORAS_COSTUME                             6
 #define EXTRA_COSTUME                            7
 #define GSC_COSTUME                              8
-#define NUM_COSTUMES                             9
+// NB: NOT taking 2.X's NUM_COSTUMES (9) -- our costume sprite data only has 4,
+// and include/constants/event_objects.h already defines it correctly.
 #define NUM_SEASONS                              4
 #define SAVEBLOCK_SEASONS                        0
 #define SAVEBLOCK_DIFFICULTY                     1

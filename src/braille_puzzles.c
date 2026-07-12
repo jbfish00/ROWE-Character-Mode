@@ -132,12 +132,15 @@ void ShouldDoBrailleRegirockEffectOld(void)
 void DoBrailleRegirockEffect(void)
 {
     FieldEffectActiveListRemove(FLDEFF_USE_STRENGTH);
-    MapGridSetMetatileIdAt(14, 26, 554);
-    MapGridSetMetatileIdAt(15, 26, 555);
-    MapGridSetMetatileIdAt(16, 26, 556);
-    MapGridSetMetatileIdAt(14, 27, 3634);
-    MapGridSetMetatileIdAt(15, 27, 563);
-    MapGridSetMetatileIdAt(16, 27, 3636);
+    // Was raw pre-2.X literals (554/555/556/3634/563/3636). Those encoded the OLD
+    // secondary-tileset base (0x200) and the OLD collision bit (0x0C00); both moved in
+    // 2.X. The symbolic form is what the rest of this file already uses.
+    MapGridSetMetatileIdAt(14, 26, METATILE_Cave_SealedChamberEntrance_TopLeft);
+    MapGridSetMetatileIdAt(15, 26, METATILE_Cave_SealedChamberEntrance_TopMid);
+    MapGridSetMetatileIdAt(16, 26, METATILE_Cave_SealedChamberEntrance_TopRight);
+    MapGridSetMetatileIdAt(14, 27, METATILE_Cave_SealedChamberEntrance_BottomLeft | METATILE_COLLISION_MASK);
+    MapGridSetMetatileIdAt(15, 27, METATILE_Cave_SealedChamberEntrance_BottomMid);
+    MapGridSetMetatileIdAt(16, 27, METATILE_Cave_SealedChamberEntrance_BottomRight | METATILE_COLLISION_MASK);
     DrawWholeMapView();
     PlaySE(SE_BANG);
     FlagSet(FLAG_SYS_REGIROCK_PUZZLE_COMPLETED);
@@ -178,12 +181,15 @@ void UseRegisteelHm_Callback(void)
 
 void UseFlyAncientTomb_Finish(void)
 {
-    MapGridSetMetatileIdAt(14, 26, 554);
-    MapGridSetMetatileIdAt(15, 26, 555);
-    MapGridSetMetatileIdAt(16, 26, 556);
-    MapGridSetMetatileIdAt(14, 27, 3634);
-    MapGridSetMetatileIdAt(15, 27, 563);
-    MapGridSetMetatileIdAt(16, 27, 3636);
+    // Was raw pre-2.X literals (554/555/556/3634/563/3636). Those encoded the OLD
+    // secondary-tileset base (0x200) and the OLD collision bit (0x0C00); both moved in
+    // 2.X. The symbolic form is what the rest of this file already uses.
+    MapGridSetMetatileIdAt(14, 26, METATILE_Cave_SealedChamberEntrance_TopLeft);
+    MapGridSetMetatileIdAt(15, 26, METATILE_Cave_SealedChamberEntrance_TopMid);
+    MapGridSetMetatileIdAt(16, 26, METATILE_Cave_SealedChamberEntrance_TopRight);
+    MapGridSetMetatileIdAt(14, 27, METATILE_Cave_SealedChamberEntrance_BottomLeft | METATILE_COLLISION_MASK);
+    MapGridSetMetatileIdAt(15, 27, METATILE_Cave_SealedChamberEntrance_BottomMid);
+    MapGridSetMetatileIdAt(16, 27, METATILE_Cave_SealedChamberEntrance_BottomRight | METATILE_COLLISION_MASK);
     DrawWholeMapView();
     PlaySE(SE_BANG);
     FlagSet(FLAG_SYS_REGISTEEL_PUZZLE_COMPLETED);

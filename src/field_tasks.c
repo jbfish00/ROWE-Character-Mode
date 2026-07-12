@@ -670,7 +670,12 @@ static void AshGrassPerStepCallback(u8 taskId)
 
 static void SetCrackedFloorHoleMetatile(s16 x, s16 y)
 {
-    MapGridSetMetatileIdAt(x, y, MapGridGetMetatileIdAt(x, y) == 0x22f ? 0x206 : 0x237);// unsure what these are referring to
+    // 0x22f/0x206/0x237 were the OLD secondary-tileset base (0x200). They are the Cave
+    // and Sky Pillar cracked-floor metatiles -- which also answers the old "unsure what
+    // these are referring to" comment.
+    MapGridSetMetatileIdAt(x, y, MapGridGetMetatileIdAt(x, y) == METATILE_Cave_CrackedFloor
+                                 ? METATILE_Cave_CrackedFloor_Hole
+                                 : METATILE_Pacifidlog_SkyPillar_CrackedFloor_Hole);
     CurrentMapDrawMetatileAt(x, y);
 }
 

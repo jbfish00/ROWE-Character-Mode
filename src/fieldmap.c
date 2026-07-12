@@ -459,14 +459,14 @@ u32 MapGridGetMetatileBehaviorAt(int x, int y)
 {
     u16 metatile;
     metatile = MapGridGetMetatileIdAt(x, y);
-    return GetBehaviorByMetatileId(metatile) & 0xff;
+    return GetBehaviorByMetatileId(metatile) & METATILE_ATTR_BEHAVIOR_MASK;
 }
 
 u8 MapGridGetMetatileLayerTypeAt(int x, int y)
 {
     u16 metatile;
     metatile = MapGridGetMetatileIdAt(x, y);
-    return (GetBehaviorByMetatileId(metatile) & METATILE_ELEVATION_MASK) >> METATILE_ELEVATION_SHIFT;
+    return (GetBehaviorByMetatileId(metatile) & METATILE_ATTR_LAYER_MASK) >> METATILE_ATTR_LAYER_SHIFT;
 }
 
 void MapGridSetMetatileIdAt(int x, int y, u16 metatile)

@@ -678,10 +678,12 @@ static u16 GetMetatileForFloor(u8 floorId, u32 x, u32 y, u32 stride) // stride i
     u16 elevation;
 
     impassable = (sHillData->floors[floorId].display.collisionData[y] >> (15 - x) & 1);
-    metatile = sHillData->floors[floorId].display.metatileData[stride * y + x] + 0x200;
-    elevation = 0x3000;
+    // Builds a map-grid block by hand: secondary metatile, collision bit, elevation 3.
+    // All three moved in 2.X's format, so none of this can stay hardcoded.
+    metatile = sHillData->floors[floorId].display.metatileData[stride * y + x] + NUM_METATILES_IN_PRIMARY;
+    elevation = 3 << METATILE_ELEVATION_SHIFT;
 
-    return (((impassable << 10) & METATILE_COLLISION_MASK) | elevation) | (metatile & METATILE_ID_MASK);
+    return (((impassable << METATILE_COLLISION_SHIFT) & METATILE_COLLISION_MASK) | elevation) | (metatile & METATILE_ID_MASK);
 }
 
 void GenerateTrainerHillFloorLayout(u16 *mapArg)

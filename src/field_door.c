@@ -329,7 +329,11 @@ static const struct DoorGraphics sDoorAnimGraphicsTable[] =
 	{METATILE_SeviiIslands45_Door,                          DOOR_SOUND_NORMAL,  0, sDoorAnimTiles_Sevii45, sDoorAnimPalettes_Sevii45},
     {METATILE_SeviiIslands45_DayCareDoor,                   DOOR_SOUND_NORMAL,  0, sDoorAnimTiles_FourIslandDayCare, sDoorAnimPalettes_FourIslandDayCare},
     
-	{0x3B0, /* TODO: Missing metatile ID */                 DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_34, sDoorAnimPalettes_34},
+	// Was 0x3B0 -- an OLD secondary-tileset id (base 0x200, local index 0x1B0). Under 2.X's
+	// base (0x800) that value now lands inside the PRIMARY range, where it would false-match
+	// a real gTileset_General metatile and play a sliding-door animation on an unrelated tile.
+	// Rebased to the same local index on the new base. (Upstream never identified this door.)
+	{NUM_METATILES_IN_PRIMARY + 0x1B0,                     DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_34, sDoorAnimPalettes_34},
     {METATILE_BattleFrontierOutsideWest_Door_BattleDome,    DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleDome, sDoorAnimPalettes_BattleDome},
     {METATILE_BattleFrontierOutsideWest_Door_BattleFactory, DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleFactory, sDoorAnimPalettes_BattleFactory},
     {METATILE_BattleFrontierOutsideEast_Door_BattleTower,   DOOR_SOUND_SLIDING, 1, sDoorAnimTiles_BattleTower, sDoorAnimPalettes_BattleTower},

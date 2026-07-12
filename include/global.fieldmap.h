@@ -15,7 +15,18 @@
 #define METATILE_COLLISION_SHIFT 12
 #define METATILE_ELEVATION_MASK 0xE000
 #define METATILE_ELEVATION_SHIFT 13
-#define MAX_ELEVATION_LEVEL 7   // was 15
+#define MAX_ELEVATION_LEVEL 7   // was 15; 2.X uses this as the "cross any elevation"
+                                // sentinel, the way vanilla used 15
+
+// These describe a METATILE ATTRIBUTE word, which is a DIFFERENT thing from a map
+// grid block and did NOT change in 2.X. Our tree used to reuse the map-grid
+// constants above for it -- which happened to work only because vanilla's
+// elevation field (0xF000 >> 12) sat exactly where the attribute layer field is.
+// Once the grid moved to 0xE000 >> 13 that coincidence broke, silently corrupting
+// every layer-type lookup (i.e. how each metatile is drawn). Keep them separate.
+#define METATILE_ATTR_BEHAVIOR_MASK 0x00FF // Bits 0-7
+#define METATILE_ATTR_LAYER_MASK    0xF000 // Bits 12-15
+#define METATILE_ATTR_LAYER_SHIFT   12
 
 #define METATILE_ID(tileset, name) (METATILE_##tileset##_##name)
 
