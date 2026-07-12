@@ -211,7 +211,28 @@ Venusaurite + Mega Bracelet -> START on the move menu -> Mega Venusaur); catchin
 the Pokedex; badge-driven **level scaling** (wild mons Lv7-8 at 0 badges -> Lv9-11
 at 1 badge).
 
-**RUNTIME-UNTESTED:** Battle Styles; ability effects; most new move effects.
+**RUNTIME-UNTESTED:** Battle Styles; ability effects; most new move effects; **the Alpha
+BATTLE** (see below).
+
+## Systems test pass (2026-07-12)
+
+**PROVEN IN-GAME:** the costume menu (all 101 character sprites; wore Ghetsis, restored a
+base outfit, redraws in place); the move tutor (**500 -> 496 BP** for an Egg move); the ferry
+at Slateport (Lilycove leads the list, **Cancel exits** instead of sailing you to Navel Rock,
+sailed to One Island and it rendered); the Mega Stone Guru (**500 -> 300 -> 100 BP**, then
+"You don't have enough BP."); the badge count reading **16**; the **Alpha portal rendering**
+at 16 badges (Alpha Scrafty visible at FiveIsland_Meadow (12,23)); white-out -> respawn;
+Character Mode keeping an off-roster-looking-but-allowed mon (Charizard, since Charmander is
+on Red's roster) and correctly skipping the starter grant.
+
+**The fossil menu needs no test** -- audited exhaustively: 15 fossils + Cancel, every case
+index matches, every species correct (incl. the four Galar two-item combos), `default:` present.
+
+**STILL UNTESTED: the Alpha BATTLE itself** -- perfect IVs (`FLAG_ALPHA_CREATION` ->
+`fixedIV = 31`, code-audited only) and the mega-stone award on win. To reach one: the nearest
+Alpha to a warp is **Alpha Scrafty, FiveIsland_Meadow (12,23)**. Do NOT debug-warp there --
+warp 0 is the Rocket Warehouse *door* and you land stranded on it. Instead warp to
+**FiveIsland (group 1, map 32)** and cross its **right edge at rows 22-24** into the Meadow.
 
 ## Testing: how to actually drive the game
 
@@ -291,9 +312,66 @@ build. Found and fixed so far:
   `roamerFlag[]` + option bits. There are now `STATIC_ASSERT`s on all three blocks --
   **never remove them.**
 
+## The BP economy (fixed 2026-07-12 -- read before touching prices)
+
+2.X prices things in **Battle Points** and says so in the text, but 1.9.4's engine had
+**no BP anywhere**: `shop.c` billed `gSaveBlock1Ptr->money` for everything, the tutor
+scripts call `checkmoney`/`removemoney`, and `VAR_SHOP_MONEY_TYPE` /
+`MART_MONEY_TYPE_BATTLE_POINTS` had **zero C readers**. So every BP price was charged in
+Pokedollars: mega stones cost P200, an Egg move P4, Wonder Trade P5.
+
+BP is now real. Two halves, keep them in step:
+- **Shops**: `CreateShopMenu` captures `VAR_SHOP_MONEY_TYPE` into `gMartInfo.moneyType`
+  **and resets the var**. That reset is load-bearing -- 19 script sites set the var to
+  BATTLE\_POINTS and almost none set it back, so leaving it live makes the *next* ordinary
+  Poke Mart charge BP.
+- **Scripts**: new commands `takebp` / `checkbp` / `showbpbox` / `hidebpbox`
+  (opcodes 0xEE-0xF1 in `asm/macros/event.inc` + `data/script_cmd_table.inc`), mirroring
+  the money four. Any script that prices in BP must use these, never `checkmoney`.
+- BP lives in `gSaveBlock2Ptr->frontier.battlePoints`.
+- The BP box prints "200BP" and draws **no money-label sprite** -- so `Task_ExitBuyMenu`
+  must skip `RemoveMoneyLabelObject()` in BP mode, or it frees a sprite it never made.
+
+## Costumes = characters (rebuilt 2026-07-12)
+
+The costume list is **built at runtime** (`BuildCostumeList` in `script_menu.c`) from the 4
+base outfits plus every `gCharacters[]` entry with overworld art (101 of 182), and consumed
+by `ApplyCostumeChoice` **in the same file**. That co-location is the point: this menu used
+to be a 16-case switch in `.pory` against a list in C, and it drifted.
+- `VAR_COSTUME_CHARACTER` (reused the free 17008 slot, so SaveBlock1 did NOT grow):
+  0 = none (wear the Character Mode character), 1..N = wear character N,
+  `COSTUME_CHARACTER_BASE` (0xFFFF) = explicitly wearing a base outfit.
+- `GetAppearanceCharacter()` drives **appearance** (OW/back/card); `GetActiveCharacter()`
+  still drives the **roster**. Do not merge them.
+- `GetCostume()` (field_control_avatar.c) is the **single clamping choke point** for
+  `VAR_COSTUME_NUMBER`; all ~45 readers go through it. Only 4 costumes have sprite data.
+
 ## Traps that have bitten more than once
 
-- **Hardcoded counts vs grown data.** Six instances so far: `gBattleAnims_Moves`
+- **DO NOT trust the debug menu's "Warp to map warp" for a movement bug.** It drops you on
+  the destination's *warp tile*, and a door warp tile is **collision 1 by design** -- every
+  building exit in the game is. Normally the door-exit animation walks you off it; the debug
+  warp skips that, so you land stranded on a solid tile and it looks exactly like the
+  walk-off-the-map bug. I nearly "fixed" FiveIsland_Meadow (13,20) over this. **Before
+  calling a stuck tile a bug, check a known-good door** (e.g. SlateportCity_PokemonCenter_1F
+  warp 0 -> SlateportCity (19,19), collision 1) and confirm the same shape is normal.
+  Also: the camera CLAMPS at map edges, so "the screen didn't change" does not mean the
+  player didn't move -- read the coords out of the save instead.
+- **Emulator navigation eats sessions.** The debug menu remembers cursor positions, so a
+  blind key sequence lands in the wrong submenu; screenshot after *every* press. In the
+  warp selector, **Left/Right change the STEP SIZE and Up/Down change the value.** To reach
+  a specific tile, BFS a path from the map's blockdata rather than eyeballing it -- but
+  **exclude water** (collision 0 + you start with a Surfboard, so a collision-only path will
+  cheerfully surf you into a wild encounter).
+- **Three parallel badge flag families, all live.** `FLAG_BADGE0N_GET` (Hoenn 8, set by the
+  gym leader scripts), `FLAG_RECEIVED_BADGE_09..16` (Johto 8), and `FLAG_GOT_BADGE_01..16`
+  (set by `Special_Gym_EventScript_Give_Item`, alongside `VAR_NUM_BADGES`). The **Mega Stone
+  Gurus and Alpha portals gate on `FLAG_GOT_BADGE_11`**; the move tutors gate on
+  `VAR_NUM_BADGES`; `GetBadgeCount()` counts the first two. A test patch that sets only some
+  of them will make working content look broken.
+- **Hardcoded counts vs grown data.** Seven instances now -- the latest: `BufferSaveMenuText`
+  wrote the badge count as a **single character** (`flagCount + CHAR_0`), which is only a
+  digit for 0..9, so the save box printed a garbage glyph at 16 badges. Also: `gBattleAnims_Moves`
   (the Trick-o-nome crash), `sScrollingSets`, the badge-indexed scaling arrays,
   `NUM_SOFT_CAPS`, `MAP_GROUP_COUNT[]` in debug.c (216 maps unreachable), and
   `bg_event` packing hiddenItemId into a **byte** (fine under 256 hidden items;
