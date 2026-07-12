@@ -1942,22 +1942,22 @@ static void UnlockQuestMenu(void)
     //Achievement 1 is always unlocked
 	GetSetQuestFlag(SIDE_QUEST_1, FLAG_SET_UNLOCKED);
 	
-	if(FlagGet(FLAG_RECEIVED_BADGE_01))
+	if(FlagGet(FLAG_BADGE01_GET))
 		GetSetQuestFlag(SIDE_QUEST_1, FLAG_SET_COMPLETED);
     //Achievement 2----------------------------------------------------------
-	if(FlagGet(FLAG_RECEIVED_BADGE_01))
+	if(FlagGet(FLAG_BADGE01_GET))
 		GetSetQuestFlag(SIDE_QUEST_2, FLAG_SET_UNLOCKED);
 	
-	if(FlagGet(FLAG_RECEIVED_BADGE_04))
+	if(FlagGet(FLAG_BADGE04_GET))
 		GetSetQuestFlag(SIDE_QUEST_2, FLAG_SET_COMPLETED);
 	//Achievement 3----------------------------------------------------------
-	if(FlagGet(FLAG_RECEIVED_BADGE_04))
+	if(FlagGet(FLAG_BADGE04_GET))
 		GetSetQuestFlag(SIDE_QUEST_3, FLAG_SET_UNLOCKED);
 	
-	if(FlagGet(FLAG_RECEIVED_BADGE_08))
+	if(FlagGet(FLAG_BADGE08_GET))
 		GetSetQuestFlag(SIDE_QUEST_3, FLAG_SET_COMPLETED);
 	//Achievement 4----------------------------------------------------------
-	if(FlagGet(FLAG_RECEIVED_BADGE_08))
+	if(FlagGet(FLAG_BADGE08_GET))
 		GetSetQuestFlag(SIDE_QUEST_4, FLAG_SET_UNLOCKED);
 	
 	if(FlagGet(FLAG_DEFEATED_WALLY_VICTORY_ROAD))

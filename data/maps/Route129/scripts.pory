@@ -13,6 +13,7 @@ Route129_OnLoad: @ 81F7294
 	end
 
 Route129_OnTransition: @ 81F72AB
+	setflag FLAG_VISITED_ROUTE129
 	compare VAR_SHOULD_END_ABNORMAL_WEATHER, 1
 	call_if_eq AbnormalWeather_EventScript_HideMapNamePopup
 	compare VAR_SOOTOPOLIS_CITY_STATE, 4

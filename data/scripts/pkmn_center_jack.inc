@@ -1621,12 +1621,20 @@ Mart_Guru_Stones_Legendaries:
 	.2byte ITEM_BLUE_ORB
 # 942 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_DARKRAITE
+# 943 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_HEATRANITE
+# 944 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_ZERAORANITE
+# 945 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_URISHIFUNITE
 # 946 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_MELMETALITE
 # 947 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_MEWTWONITE_X
 # 948 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_MEWTWONITE_Y
+# 949 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_ZYGARDITE
 # 950 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_FLOETTITE
 # 951 "data/scripts/pkmn_center_jack.pory"

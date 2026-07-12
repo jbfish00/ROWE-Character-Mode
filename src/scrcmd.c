@@ -497,21 +497,21 @@ bool8 ScrCmd_subvar(struct ScriptContext *ctx)
 
 bool8 ScrCmd_getbadgenumber(struct ScriptContext *ctx)
 {
-	if (FlagGet(FLAG_RECEIVED_BADGE_08))
+	if (FlagGet(FLAG_BADGE08_GET))
 		gSpecialVar_Result = 8;
-	else if (FlagGet(FLAG_RECEIVED_BADGE_07))
+	else if (FlagGet(FLAG_BADGE07_GET))
 		gSpecialVar_Result = 7;
-	else if (FlagGet(FLAG_RECEIVED_BADGE_06))
+	else if (FlagGet(FLAG_BADGE06_GET))
 		gSpecialVar_Result = 6;
-	else if (FlagGet(FLAG_RECEIVED_BADGE_05))
+	else if (FlagGet(FLAG_BADGE05_GET))
 		gSpecialVar_Result = 5;
-	else if (FlagGet(FLAG_RECEIVED_BADGE_04))
+	else if (FlagGet(FLAG_BADGE04_GET))
 		gSpecialVar_Result = 4;
-	else if (FlagGet(FLAG_RECEIVED_BADGE_03))
+	else if (FlagGet(FLAG_BADGE03_GET))
 		gSpecialVar_Result = 3;
-	else if (FlagGet(FLAG_RECEIVED_BADGE_02))
+	else if (FlagGet(FLAG_BADGE02_GET))
 		gSpecialVar_Result = 2;
-	else if (FlagGet(FLAG_RECEIVED_BADGE_01))
+	else if (FlagGet(FLAG_BADGE01_GET))
 		gSpecialVar_Result = 1;
 	else
 		gSpecialVar_Result = 0;

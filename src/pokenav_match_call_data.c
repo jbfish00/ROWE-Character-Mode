@@ -160,15 +160,15 @@ static void MatchCall_GetNameAndDescByRematchIdx(u32, const u8 **, const u8 **);
 // .rodata
 
 static const match_call_text_data_t sMrStoneTextScripts[] = {
-    { MatchCall_Text_MrStone1,  0xFFFF,                              FLAG_RECEIVED_BADGE_01 },
-    { MatchCall_Text_MrStone2,  FLAG_RECEIVED_BADGE_01,     0xFFFF },
-    { MatchCall_Text_MrStone3,  FLAG_RECEIVED_BADGE_02,     0xFFFF },
-    { MatchCall_Text_MrStone4,  FLAG_RECEIVED_BADGE_03,     0xFFFF },
-    { MatchCall_Text_MrStone5,  FLAG_RECEIVED_BADGE_04,     0xFFFF },
-    { MatchCall_Text_MrStone6,  FLAG_RECEIVED_BADGE_05,     0xFFFF },
-    { MatchCall_Text_MrStone7,  FLAG_RECEIVED_BADGE_06,     0xFFFF },
-    { MatchCall_Text_MrStone8,  FLAG_RECEIVED_BADGE_07, 	0xFFFF },
-    { MatchCall_Text_MrStone9,  FLAG_RECEIVED_BADGE_08, 	0xFFFF },
+    { MatchCall_Text_MrStone1,  0xFFFF,                              FLAG_BADGE01_GET },
+    { MatchCall_Text_MrStone2,  FLAG_BADGE01_GET,     0xFFFF },
+    { MatchCall_Text_MrStone3,  FLAG_BADGE02_GET,     0xFFFF },
+    { MatchCall_Text_MrStone4,  FLAG_BADGE03_GET,     0xFFFF },
+    { MatchCall_Text_MrStone5,  FLAG_BADGE04_GET,     0xFFFF },
+    { MatchCall_Text_MrStone6,  FLAG_BADGE05_GET,     0xFFFF },
+    { MatchCall_Text_MrStone7,  FLAG_BADGE06_GET,     0xFFFF },
+    { MatchCall_Text_MrStone8,  FLAG_BADGE07_GET, 	0xFFFF },
+    { MatchCall_Text_MrStone9,  FLAG_BADGE08_GET, 	0xFFFF },
     { MatchCall_Text_MrStone10, FLAG_SYS_GAME_CLEAR,        0xFFFF },
     { MatchCall_Text_MrStone11, FLAG_DEFEATED_RAYQUAZA,     0xFFFF },
     { NULL,                     0xFFFF,                     0xFFFF }
