@@ -894,7 +894,7 @@ const struct CompressedSpriteSheet gMonFrontPicTable[] =
     SPECIES_SPRITE(KUBFU, gMonFrontPic_Kubfu),
     SPECIES_SPRITE(URSHIFU, gMonFrontPic_Urshifu),
     SPECIES_SPRITE(ZARUDE, gMonFrontPic_Zarude),
-    SPECIES_SPRITE(REGIELEKI, gMonFrontPic_DoubleQuestionMark/*gMonFrontPic_Regieleki*/),
+    SPECIES_SPRITE(REGIELEKI, gMonFrontPic_Regieleki),
     SPECIES_SPRITE(REGIDRAGO, gMonFrontPic_Regidrago),
     SPECIES_SPRITE(GLASTRIER, gMonFrontPic_Glastrier),
     SPECIES_SPRITE(SPECTRIER, gMonFrontPic_Spectrier),
@@ -1261,7 +1261,7 @@ const struct CompressedSpriteSheet gMonFrontPicTable[] =
 
     SPECIES_SPRITE(ZAMAZENTA_CROWNED_SHIELD, gMonFrontPic_ZamazentaCrownedShield),
 
-    SPECIES_SPRITE(ETERNATUS_ETERNAMAX, gMonFrontPic_Eternatus/*Eternamax*/),
+    SPECIES_SPRITE(ETERNATUS_ETERNAMAX, gMonFrontPic_EternatusEternamax),
 
     SPECIES_SPRITE(URSHIFU_RAPID_STRIKE_STYLE, gMonFrontPic_UrshifuRapidStrikeStyle),
 

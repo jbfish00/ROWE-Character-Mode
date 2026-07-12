@@ -1530,602 +1530,600 @@ Common_EventScript_PkmnCenterJack_ChangeDay::
 	scrollingmultichoice SCROLLING_DAY, 0, 0, 5, TRUE
 # 872 "data/scripts/pkmn_center_jack.pory"
 	switch VAR_RESULT
-# 880 "data/scripts/pkmn_center_jack.pory"
+# 883 "data/scripts/pkmn_center_jack.pory"
 	case MULTI_B_PRESSED, Common_EventScript_PkmnCenterJack_ChangeDay_4
 # 874 "data/scripts/pkmn_center_jack.pory"
 	copyvar VAR_TEMP_3, VAR_RESULT
-# 875 "data/scripts/pkmn_center_jack.pory"
-	setflag FLAG_SYS_RESET_DATE
-# 876 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_OVERWORLD_SPECIALS, SPECIAL_SET_DATE
-# 877 "data/scripts/pkmn_center_jack.pory"
+# 879 "data/scripts/pkmn_center_jack.pory"
+	special SetGameDate
+# 880 "data/scripts/pkmn_center_jack.pory"
 	drawbox
-# 878 "data/scripts/pkmn_center_jack.pory"
+# 881 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_ChangeDay_Text_1
 Common_EventScript_PkmnCenterJack_ChangeDay_1:
-# 887 "data/scripts/pkmn_center_jack.pory"
+# 890 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack
 	return
 
 Common_EventScript_PkmnCenterJack_ChangeDay_4:
-# 881 "data/scripts/pkmn_center_jack.pory"
+# 884 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_TEMP_1, 0
-# 882 "data/scripts/pkmn_center_jack.pory"
+# 885 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_TEMP_1, 1
-# 883 "data/scripts/pkmn_center_jack.pory"
+# 886 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_TEMP_1, 2
 	goto Common_EventScript_PkmnCenterJack_ChangeDay_1
 
 
 	.align 2
-# 893 "data/scripts/pkmn_center_jack.pory"
-Mart_Guru_Stones_XY:
-# 894 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_BOOSTER_STONE
-# 895 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_ABOMASITE
 # 896 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_ABSOLITE
+Mart_Guru_Stones_XY:
 # 897 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_AERODACTYLITE
+	.2byte ITEM_BOOSTER_STONE
 # 898 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_ALAKAZITE
+	.2byte ITEM_ABOMASITE
 # 899 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_AMPHAROSITE
+	.2byte ITEM_ABSOLITE
 # 900 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_AUDINITE
+	.2byte ITEM_AERODACTYLITE
 # 901 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_BANETTITE
+	.2byte ITEM_ALAKAZITE
 # 902 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_BLASTOISINITE
+	.2byte ITEM_AMPHAROSITE
 # 903 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_CHARIZARDITE_X
+	.2byte ITEM_AUDINITE
 # 904 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_CHARIZARDITE_Y
+	.2byte ITEM_BANETTITE
 # 905 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_GALLADITE
+	.2byte ITEM_BLASTOISINITE
 # 906 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_GARCHOMPITE
+	.2byte ITEM_CHARIZARDITE_X
 # 907 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_GARDEVOIRITE
+	.2byte ITEM_CHARIZARDITE_Y
 # 908 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_GENGARITE
+	.2byte ITEM_GALLADITE
 # 909 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_GYARADOSITE
+	.2byte ITEM_GARCHOMPITE
 # 910 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_HERACRONITE
+	.2byte ITEM_GARDEVOIRITE
 # 911 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_HOUNDOOMINITE
+	.2byte ITEM_GENGARITE
 # 912 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_KANGASKHANITE
+	.2byte ITEM_GYARADOSITE
 # 913 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_LUCARIONITE
+	.2byte ITEM_HERACRONITE
 # 914 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_MANECTITE
+	.2byte ITEM_HOUNDOOMINITE
 # 915 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_MAWILITE
+	.2byte ITEM_KANGASKHANITE
 # 916 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_MEDICHAMITE
+	.2byte ITEM_LUCARIONITE
 # 917 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_PINSIRITE
+	.2byte ITEM_MANECTITE
 # 918 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SCIZORITE
+	.2byte ITEM_MAWILITE
 # 919 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_TYRANITARITE
+	.2byte ITEM_MEDICHAMITE
 # 920 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_PINSIRITE
+# 921 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_SCIZORITE
+# 922 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_TYRANITARITE
+# 923 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_VENUSAURITE
 	.2byte ITEM_NONE
 
 	.align 2
-# 923 "data/scripts/pkmn_center_jack.pory"
-Mart_Guru_Stones_ORAS:
-# 924 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_BOOSTER_STONE
-# 925 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_BLAZIKENITE
 # 926 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_BEEDRILLITE
+Mart_Guru_Stones_ORAS:
 # 927 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_PIDGEOTITE
+	.2byte ITEM_BOOSTER_STONE
 # 928 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SLOWBRONITE
+	.2byte ITEM_BLAZIKENITE
 # 929 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_STEELIXITE
+	.2byte ITEM_BEEDRILLITE
 # 930 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SWAMPERTITE
+	.2byte ITEM_PIDGEOTITE
 # 931 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SCEPTILITE
+	.2byte ITEM_SLOWBRONITE
 # 932 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SABLENITE
+	.2byte ITEM_STEELIXITE
 # 933 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SHARPEDONITE
+	.2byte ITEM_SWAMPERTITE
 # 934 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_CAMERUPTITE
+	.2byte ITEM_SCEPTILITE
 # 935 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_ALTARIANITE
+	.2byte ITEM_SABLENITE
 # 936 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_GLALITITE
+	.2byte ITEM_SHARPEDONITE
 # 937 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SALAMENCITE
+	.2byte ITEM_CAMERUPTITE
 # 938 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_METAGROSSITE
+	.2byte ITEM_ALTARIANITE
 # 939 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_GLALITITE
+# 940 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_SALAMENCITE
+# 941 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_METAGROSSITE
+# 942 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_LOPUNNITE
 	.2byte ITEM_NONE
 
 	.align 2
-# 942 "data/scripts/pkmn_center_jack.pory"
-Mart_Guru_Stones_G:
-# 943 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_BOOSTER_STONE
-# 944 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_VENAUSURITE_G
 # 945 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_BLASTOISTE_G
+Mart_Guru_Stones_G:
 # 946 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_GRIMMSNARLITE
+	.2byte ITEM_BOOSTER_STONE
 # 947 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_RILABOOMITE
+	.2byte ITEM_VENAUSURITE_G
 # 948 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_CINDERACITE
+	.2byte ITEM_BLASTOISTE_G
 # 949 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_INTELEONITE
+	.2byte ITEM_GRIMMSNARLITE
 # 950 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_TOXTRICITITE
+	.2byte ITEM_RILABOOMITE
 # 951 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_ALCREMITE
+	.2byte ITEM_CINDERACITE
 # 952 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_APPLETITE
+	.2byte ITEM_INTELEONITE
 # 953 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_BUTTERFRITE
+	.2byte ITEM_TOXTRICITITE
 # 954 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_CENTISITE
+	.2byte ITEM_ALCREMITE
 # 955 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_COALOSSITE
+	.2byte ITEM_APPLETITE
 # 956 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_CORVIKNITE
+	.2byte ITEM_BUTTERFRITE
 # 957 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_DREDNAWITE
+	.2byte ITEM_CENTISITE
 # 958 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_FLAPPLITE
+	.2byte ITEM_COALOSSITE
 # 959 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_GARBODORITE
+	.2byte ITEM_CORVIKNITE
 # 960 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_HATTERENITE
+	.2byte ITEM_DREDNAWITE
 # 961 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_KINGLERITE
+	.2byte ITEM_FLAPPLITE
 # 962 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_LAPRITE
+	.2byte ITEM_GARBODORITE
 # 963 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_MACHAMPITE
+	.2byte ITEM_HATTERENITE
 # 964 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_ORBEETLITE
+	.2byte ITEM_KINGLERITE
 # 965 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SANDACONDITE
+	.2byte ITEM_LAPRITE
 # 966 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_MACHAMPITE
+# 967 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_ORBEETLITE
+# 968 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_SANDACONDITE
+# 969 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SNORLAXITE
 	.2byte ITEM_NONE
 
 	.align 2
-# 969 "data/scripts/pkmn_center_jack.pory"
-Mart_Guru_Stones_ER:
-# 970 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_BOOSTER_STONE
-# 971 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SLOWKINGITE
 # 972 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_CROBATITE
+Mart_Guru_Stones_ER:
 # 973 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_DEWGONGITE
+	.2byte ITEM_BOOSTER_STONE
 # 974 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_TYPHLOSIONITE
+	.2byte ITEM_SLOWKINGITE
 # 975 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_LANTURNITE
+	.2byte ITEM_CROBATITE
 # 976 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_QUAGSIRITE
+	.2byte ITEM_DEWGONGITE
 # 977 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_BRELOOMITE
+	.2byte ITEM_TYPHLOSIONITE
 # 978 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SHEDINJITE
+	.2byte ITEM_LANTURNITE
 # 979 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_FLYGONITE
+	.2byte ITEM_QUAGSIRITE
 # 980 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_MILOTICITE
+	.2byte ITEM_BRELOOMITE
 # 981 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SERPERIORITE
+	.2byte ITEM_SHEDINJITE
 # 982 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SAMUROTTITE
+	.2byte ITEM_FLYGONITE
 # 983 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_RIBOMBITE
+	.2byte ITEM_MILOTICITE
 # 984 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_CLODSIRITE
+	.2byte ITEM_SERPERIORITE
 # 985 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SANDSLASHITE
+	.2byte ITEM_SAMUROTTITE
 # 986 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_TOUCANNONITE
+	.2byte ITEM_RIBOMBITE
 # 987 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_VANILLUXITE
+	.2byte ITEM_CLODSIRITE
 # 988 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_TINKATITE
+	.2byte ITEM_SANDSLASHITE
 # 989 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SHUCKLENITE
+	.2byte ITEM_TOUCANNONITE
 # 990 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_KROOKODILENITE
+	.2byte ITEM_VANILLUXITE
 # 991 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_TSEERENITE
+	.2byte ITEM_TINKATITE
 # 992 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_LUXRAYNITE
+	.2byte ITEM_SHUCKLENITE
 # 993 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_CLEFABLITE_R
+	.2byte ITEM_KROOKODILENITE
+# 994 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_TSEERENITE
 # 995 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_LUXRAYNITE
+# 996 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_CLEFABLITE_R
+# 998 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_ARBOKITE
 	.2byte ITEM_NONE
 
 	.align 2
-# 998 "data/scripts/pkmn_center_jack.pory"
-Mart_Guru_Stones_ZA_DLC:
-# 999 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_BOOSTER_STONE
-# 1000 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_CHIMECHITE
 # 1001 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_ABSOLITE_Z
+Mart_Guru_Stones_ZA_DLC:
 # 1002 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_STARAPTORITE
+	.2byte ITEM_BOOSTER_STONE
 # 1003 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_GARCHOMPITE_Z
+	.2byte ITEM_CHIMECHITE
 # 1004 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_LUCARIONITE_Z
+	.2byte ITEM_ABSOLITE_Z
 # 1005 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_MEOWSTITE
+	.2byte ITEM_STARAPTORITE
 # 1006 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_GOLURKITE
+	.2byte ITEM_GARCHOMPITE_Z
 # 1007 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_CRABOMINABLITE
+	.2byte ITEM_LUCARIONITE_Z
 # 1008 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_GOLISPODITE
+	.2byte ITEM_MEOWSTITE
 # 1009 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_MAGEARNITE
+	.2byte ITEM_GOLURKITE
 # 1010 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SCOVILLAINITE
+	.2byte ITEM_CRABOMINABLITE
 # 1011 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_GLIMMORITE
+	.2byte ITEM_GOLISPODITE
 # 1012 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_TATSIGIRITE
+	.2byte ITEM_MAGEARNITE
 # 1013 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_BAXCALIBURITE
+	.2byte ITEM_SCOVILLAINITE
 # 1014 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_RAICHUNITE_X
+	.2byte ITEM_GLIMMORITE
 # 1015 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_TATSIGIRITE
+# 1016 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_BAXCALIBURITE
+# 1017 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_RAICHUNITE_X
+# 1018 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_RAICHUNITE_Y
 	.2byte ITEM_NONE
 
 	.align 2
-# 1018 "data/scripts/pkmn_center_jack.pory"
-Mart_Guru_Stones_Legendaries:
-# 1019 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_BOOSTER_STONE
-# 1020 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_RED_ORB
 # 1021 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_BLUE_ORB
+Mart_Guru_Stones_Legendaries:
+# 1022 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_BOOSTER_STONE
 # 1023 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_RED_ORB
+# 1024 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_BLUE_ORB
+# 1026 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_DARKRAITE
-# 1027 "data/scripts/pkmn_center_jack.pory"
+# 1030 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_MELMETALITE
-# 1028 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_MEWTWONITE_X
-# 1029 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_MEWTWONITE_Y
 # 1031 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_FLOETTITE
+	.2byte ITEM_MEWTWONITE_X
 # 1032 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_LATIASITE
-# 1033 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_LATIOSITE
+	.2byte ITEM_MEWTWONITE_Y
 # 1034 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_FLOETTITE
+# 1035 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_LATIASITE
+# 1036 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_LATIOSITE
+# 1037 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_DIANCITE
 	.2byte ITEM_NONE
 
 	.align 2
-# 1037 "data/scripts/pkmn_center_jack.pory"
-Mart_Guru_Stones_ZA:
-# 1038 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_BOOSTER_STONE
-# 1039 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_CLEFABLITE
 # 1040 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_VICTRIBELITE
+Mart_Guru_Stones_ZA:
 # 1041 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_STARMINITE
+	.2byte ITEM_BOOSTER_STONE
 # 1042 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_DRAGONINITE
+	.2byte ITEM_CLEFABLITE
 # 1043 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_MEGANIUMITE
+	.2byte ITEM_VICTRIBELITE
 # 1044 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_FERALIGITE
+	.2byte ITEM_STARMINITE
 # 1045 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SKARMORITE
+	.2byte ITEM_DRAGONINITE
 # 1046 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_FROSLASSITE
+	.2byte ITEM_MEGANIUMITE
 # 1047 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_EMBOARITE
+	.2byte ITEM_FERALIGITE
 # 1048 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_EXCADRITE
+	.2byte ITEM_SKARMORITE
 # 1049 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SCOLIPITE
+	.2byte ITEM_FROSLASSITE
 # 1050 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_SCRAFTINITE
+	.2byte ITEM_EMBOARITE
 # 1051 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_EELEKTROSSITE
+	.2byte ITEM_EXCADRITE
 # 1052 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_CHANDELURITE
+	.2byte ITEM_SCOLIPITE
 # 1053 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_DELPHOXITE
+	.2byte ITEM_SCRAFTINITE
 # 1054 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_CHESNAUGHTITE
+	.2byte ITEM_EELEKTROSSITE
 # 1055 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_GRENINJITE
+	.2byte ITEM_CHANDELURITE
 # 1056 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_PYROARITE
+	.2byte ITEM_DELPHOXITE
 # 1057 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_MALAMARITE
+	.2byte ITEM_CHESNAUGHTITE
 # 1058 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_BARBARACITE
+	.2byte ITEM_GRENINJITE
 # 1059 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_DRAGALGITE
+	.2byte ITEM_PYROARITE
 # 1060 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_HAWLUCHANITE
+	.2byte ITEM_MALAMARITE
 # 1061 "data/scripts/pkmn_center_jack.pory"
-	.2byte ITEM_DRAMPANITE
+	.2byte ITEM_BARBARACITE
 # 1062 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_DRAGALGITE
+# 1063 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_HAWLUCHANITE
+# 1064 "data/scripts/pkmn_center_jack.pory"
+	.2byte ITEM_DRAMPANITE
+# 1065 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_FALINKSITE
 	.2byte ITEM_NONE
 
 Common_Mega_Stone_Guru_No_Braclet::
-# 1066 "data/scripts/pkmn_center_jack.pory"
+# 1069 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_Mega_Stone_Guru_No_Braclet_Text_0, MSGBOX_NPC
-# 1067 "data/scripts/pkmn_center_jack.pory"
+# 1070 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 
 Common_Mega_Stone_Guru_XY::
-# 1072 "data/scripts/pkmn_center_jack.pory"
+# 1075 "data/scripts/pkmn_center_jack.pory"
 	lock
-# 1073 "data/scripts/pkmn_center_jack.pory"
+# 1076 "data/scripts/pkmn_center_jack.pory"
 	faceplayer
-# 1074 "data/scripts/pkmn_center_jack.pory"
+# 1077 "data/scripts/pkmn_center_jack.pory"
 	goto_if_unset FLAG_GOT_BADGE_11, Common_Mega_Stone_Guru_XY_2
 Common_Mega_Stone_Guru_XY_1:
-# 1077 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
-# 1078 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 1079 "data/scripts/pkmn_center_jack.pory"
-	message Common_Mega_Stone_Guru_XY_Text_0
 # 1080 "data/scripts/pkmn_center_jack.pory"
-	waitmessage
+	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
 # 1081 "data/scripts/pkmn_center_jack.pory"
-	pokemart Mart_Guru_Stones_XY
+	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
 # 1082 "data/scripts/pkmn_center_jack.pory"
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	message Common_Mega_Stone_Guru_XY_Text_0
 # 1083 "data/scripts/pkmn_center_jack.pory"
+	waitmessage
+# 1084 "data/scripts/pkmn_center_jack.pory"
+	pokemart Mart_Guru_Stones_XY
+# 1085 "data/scripts/pkmn_center_jack.pory"
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+# 1086 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 Common_Mega_Stone_Guru_XY_2:
-# 1075 "data/scripts/pkmn_center_jack.pory"
+# 1078 "data/scripts/pkmn_center_jack.pory"
 	goto Common_Mega_Stone_Guru_No_Braclet
 	goto Common_Mega_Stone_Guru_XY_1
 
 
 Common_Mega_Stone_Guru_ORAS::
-# 1088 "data/scripts/pkmn_center_jack.pory"
+# 1091 "data/scripts/pkmn_center_jack.pory"
 	lock
-# 1089 "data/scripts/pkmn_center_jack.pory"
+# 1092 "data/scripts/pkmn_center_jack.pory"
 	faceplayer
-# 1090 "data/scripts/pkmn_center_jack.pory"
+# 1093 "data/scripts/pkmn_center_jack.pory"
 	goto_if_unset FLAG_GOT_BADGE_11, Common_Mega_Stone_Guru_ORAS_2
 Common_Mega_Stone_Guru_ORAS_1:
-# 1093 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
-# 1094 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 1095 "data/scripts/pkmn_center_jack.pory"
-	message Common_Mega_Stone_Guru_ORAS_Text_0
 # 1096 "data/scripts/pkmn_center_jack.pory"
-	waitmessage
+	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
 # 1097 "data/scripts/pkmn_center_jack.pory"
-	pokemart Mart_Guru_Stones_ORAS
+	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
 # 1098 "data/scripts/pkmn_center_jack.pory"
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	message Common_Mega_Stone_Guru_ORAS_Text_0
 # 1099 "data/scripts/pkmn_center_jack.pory"
+	waitmessage
+# 1100 "data/scripts/pkmn_center_jack.pory"
+	pokemart Mart_Guru_Stones_ORAS
+# 1101 "data/scripts/pkmn_center_jack.pory"
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+# 1102 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 Common_Mega_Stone_Guru_ORAS_2:
-# 1091 "data/scripts/pkmn_center_jack.pory"
+# 1094 "data/scripts/pkmn_center_jack.pory"
 	goto Common_Mega_Stone_Guru_No_Braclet
 	goto Common_Mega_Stone_Guru_ORAS_1
 
 
 Common_Mega_Stone_Guru_SWSH::
-# 1104 "data/scripts/pkmn_center_jack.pory"
+# 1107 "data/scripts/pkmn_center_jack.pory"
 	lock
-# 1105 "data/scripts/pkmn_center_jack.pory"
+# 1108 "data/scripts/pkmn_center_jack.pory"
 	faceplayer
-# 1106 "data/scripts/pkmn_center_jack.pory"
+# 1109 "data/scripts/pkmn_center_jack.pory"
 	goto_if_unset FLAG_GOT_BADGE_11, Common_Mega_Stone_Guru_SWSH_2
 Common_Mega_Stone_Guru_SWSH_1:
-# 1109 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
-# 1110 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 1111 "data/scripts/pkmn_center_jack.pory"
-	message Common_Mega_Stone_Guru_SWSH_Text_0
 # 1112 "data/scripts/pkmn_center_jack.pory"
-	waitmessage
+	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
 # 1113 "data/scripts/pkmn_center_jack.pory"
-	pokemart Mart_Guru_Stones_G
+	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
 # 1114 "data/scripts/pkmn_center_jack.pory"
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	message Common_Mega_Stone_Guru_SWSH_Text_0
 # 1115 "data/scripts/pkmn_center_jack.pory"
+	waitmessage
+# 1116 "data/scripts/pkmn_center_jack.pory"
+	pokemart Mart_Guru_Stones_G
+# 1117 "data/scripts/pkmn_center_jack.pory"
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+# 1118 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 Common_Mega_Stone_Guru_SWSH_2:
-# 1107 "data/scripts/pkmn_center_jack.pory"
+# 1110 "data/scripts/pkmn_center_jack.pory"
 	goto Common_Mega_Stone_Guru_No_Braclet
 	goto Common_Mega_Stone_Guru_SWSH_1
 
 
 Common_Mega_Stone_Guru_ZA::
-# 1120 "data/scripts/pkmn_center_jack.pory"
+# 1123 "data/scripts/pkmn_center_jack.pory"
 	lock
-# 1121 "data/scripts/pkmn_center_jack.pory"
+# 1124 "data/scripts/pkmn_center_jack.pory"
 	faceplayer
-# 1122 "data/scripts/pkmn_center_jack.pory"
+# 1125 "data/scripts/pkmn_center_jack.pory"
 	goto_if_unset FLAG_GOT_BADGE_11, Common_Mega_Stone_Guru_ZA_2
 Common_Mega_Stone_Guru_ZA_1:
-# 1125 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
-# 1126 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 1127 "data/scripts/pkmn_center_jack.pory"
-	message Common_Mega_Stone_Guru_ZA_Text_0
 # 1128 "data/scripts/pkmn_center_jack.pory"
-	waitmessage
+	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
 # 1129 "data/scripts/pkmn_center_jack.pory"
-	pokemart Mart_Guru_Stones_ZA
+	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
 # 1130 "data/scripts/pkmn_center_jack.pory"
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	message Common_Mega_Stone_Guru_ZA_Text_0
 # 1131 "data/scripts/pkmn_center_jack.pory"
+	waitmessage
+# 1132 "data/scripts/pkmn_center_jack.pory"
+	pokemart Mart_Guru_Stones_ZA
+# 1133 "data/scripts/pkmn_center_jack.pory"
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+# 1134 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 Common_Mega_Stone_Guru_ZA_2:
-# 1123 "data/scripts/pkmn_center_jack.pory"
+# 1126 "data/scripts/pkmn_center_jack.pory"
 	goto Common_Mega_Stone_Guru_No_Braclet
 	goto Common_Mega_Stone_Guru_ZA_1
 
 
 Common_Mega_Stone_Guru_ZA_DLC::
-# 1136 "data/scripts/pkmn_center_jack.pory"
+# 1139 "data/scripts/pkmn_center_jack.pory"
 	lock
-# 1137 "data/scripts/pkmn_center_jack.pory"
+# 1140 "data/scripts/pkmn_center_jack.pory"
 	faceplayer
-# 1138 "data/scripts/pkmn_center_jack.pory"
+# 1141 "data/scripts/pkmn_center_jack.pory"
 	goto_if_unset FLAG_GOT_BADGE_11, Common_Mega_Stone_Guru_ZA_DLC_2
 Common_Mega_Stone_Guru_ZA_DLC_1:
-# 1141 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
-# 1142 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 1143 "data/scripts/pkmn_center_jack.pory"
-	message Common_Mega_Stone_Guru_ZA_DLC_Text_0
 # 1144 "data/scripts/pkmn_center_jack.pory"
-	waitmessage
+	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
 # 1145 "data/scripts/pkmn_center_jack.pory"
-	pokemart Mart_Guru_Stones_ZA_DLC
+	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
 # 1146 "data/scripts/pkmn_center_jack.pory"
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	message Common_Mega_Stone_Guru_ZA_DLC_Text_0
 # 1147 "data/scripts/pkmn_center_jack.pory"
+	waitmessage
+# 1148 "data/scripts/pkmn_center_jack.pory"
+	pokemart Mart_Guru_Stones_ZA_DLC
+# 1149 "data/scripts/pkmn_center_jack.pory"
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+# 1150 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 Common_Mega_Stone_Guru_ZA_DLC_2:
-# 1139 "data/scripts/pkmn_center_jack.pory"
+# 1142 "data/scripts/pkmn_center_jack.pory"
 	goto Common_Mega_Stone_Guru_No_Braclet
 	goto Common_Mega_Stone_Guru_ZA_DLC_1
 
 
 Common_Mega_Stone_Guru_ER::
-# 1152 "data/scripts/pkmn_center_jack.pory"
+# 1155 "data/scripts/pkmn_center_jack.pory"
 	lock
-# 1153 "data/scripts/pkmn_center_jack.pory"
+# 1156 "data/scripts/pkmn_center_jack.pory"
 	faceplayer
-# 1154 "data/scripts/pkmn_center_jack.pory"
+# 1157 "data/scripts/pkmn_center_jack.pory"
 	goto_if_unset FLAG_GOT_BADGE_11, Common_Mega_Stone_Guru_ER_2
 Common_Mega_Stone_Guru_ER_1:
-# 1157 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
-# 1158 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 1159 "data/scripts/pkmn_center_jack.pory"
-	message Common_Mega_Stone_Guru_ER_Text_0
 # 1160 "data/scripts/pkmn_center_jack.pory"
-	waitmessage
+	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
 # 1161 "data/scripts/pkmn_center_jack.pory"
-	pokemart Mart_Guru_Stones_ER
+	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
 # 1162 "data/scripts/pkmn_center_jack.pory"
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	message Common_Mega_Stone_Guru_ER_Text_0
 # 1163 "data/scripts/pkmn_center_jack.pory"
+	waitmessage
+# 1164 "data/scripts/pkmn_center_jack.pory"
+	pokemart Mart_Guru_Stones_ER
+# 1165 "data/scripts/pkmn_center_jack.pory"
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+# 1166 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 Common_Mega_Stone_Guru_ER_2:
-# 1155 "data/scripts/pkmn_center_jack.pory"
+# 1158 "data/scripts/pkmn_center_jack.pory"
 	goto Common_Mega_Stone_Guru_No_Braclet
 	goto Common_Mega_Stone_Guru_ER_1
 
 
 Common_Mega_Stone_Guru_Legendary::
-# 1168 "data/scripts/pkmn_center_jack.pory"
+# 1171 "data/scripts/pkmn_center_jack.pory"
 	lock
-# 1169 "data/scripts/pkmn_center_jack.pory"
+# 1172 "data/scripts/pkmn_center_jack.pory"
 	faceplayer
-# 1170 "data/scripts/pkmn_center_jack.pory"
+# 1173 "data/scripts/pkmn_center_jack.pory"
 	goto_if_unset FLAG_GOT_BADGE_11, Common_Mega_Stone_Guru_Legendary_2
 Common_Mega_Stone_Guru_Legendary_1:
-# 1173 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
-# 1174 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 1175 "data/scripts/pkmn_center_jack.pory"
-	message Common_Mega_Stone_Guru_Legendary_Text_0
 # 1176 "data/scripts/pkmn_center_jack.pory"
-	waitmessage
+	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
 # 1177 "data/scripts/pkmn_center_jack.pory"
-	pokemart Mart_Guru_Stones_Legendaries
+	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
 # 1178 "data/scripts/pkmn_center_jack.pory"
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	message Common_Mega_Stone_Guru_Legendary_Text_0
 # 1179 "data/scripts/pkmn_center_jack.pory"
+	waitmessage
+# 1180 "data/scripts/pkmn_center_jack.pory"
+	pokemart Mart_Guru_Stones_Legendaries
+# 1181 "data/scripts/pkmn_center_jack.pory"
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+# 1182 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 Common_Mega_Stone_Guru_Legendary_2:
-# 1171 "data/scripts/pkmn_center_jack.pory"
+# 1174 "data/scripts/pkmn_center_jack.pory"
 	goto Common_Mega_Stone_Guru_No_Braclet
 	goto Common_Mega_Stone_Guru_Legendary_1
 
 
 OldaleTown_House1_EventScript_BattleMart_Mega::
-# 1184 "data/scripts/pkmn_center_jack.pory"
+# 1187 "data/scripts/pkmn_center_jack.pory"
 	lock
-# 1185 "data/scripts/pkmn_center_jack.pory"
+# 1188 "data/scripts/pkmn_center_jack.pory"
 	faceplayer
-# 1186 "data/scripts/pkmn_center_jack.pory"
+# 1189 "data/scripts/pkmn_center_jack.pory"
 	goto_if_unset FLAG_GOT_BADGE_11, OldaleTown_House1_EventScript_BattleMart_Mega_2
 OldaleTown_House1_EventScript_BattleMart_Mega_1:
-# 1189 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
-# 1190 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 1191 "data/scripts/pkmn_center_jack.pory"
-	message Common_Mega_Stone_Guru_XY_Text_0
 # 1192 "data/scripts/pkmn_center_jack.pory"
-	waitmessage
+	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
 # 1193 "data/scripts/pkmn_center_jack.pory"
-	pokemart Mart_Guru_Stones_XY
+	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
 # 1194 "data/scripts/pkmn_center_jack.pory"
-	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+	message Common_Mega_Stone_Guru_XY_Text_0
 # 1195 "data/scripts/pkmn_center_jack.pory"
+	waitmessage
+# 1196 "data/scripts/pkmn_center_jack.pory"
+	pokemart Mart_Guru_Stones_XY
+# 1197 "data/scripts/pkmn_center_jack.pory"
+	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
+# 1198 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 OldaleTown_House1_EventScript_BattleMart_Mega_2:
-# 1187 "data/scripts/pkmn_center_jack.pory"
+# 1190 "data/scripts/pkmn_center_jack.pory"
 	goto Common_Mega_Stone_Guru_No_Braclet
 	goto OldaleTown_House1_EventScript_BattleMart_Mega_1
 
@@ -2313,47 +2311,47 @@ Common_EventScript_PkmnCenterJack_ChangeDay_Text_0:
 	.string "Please tell me the current day$"
 
 Common_EventScript_PkmnCenterJack_ChangeDay_Text_1:
-# 878 "data/scripts/pkmn_center_jack.pory"
+# 881 "data/scripts/pkmn_center_jack.pory"
 	.string "You Changed the Date!$"
 
 Common_Mega_Stone_Guru_No_Braclet_Text_0:
-# 1066 "data/scripts/pkmn_center_jack.pory"
+# 1069 "data/scripts/pkmn_center_jack.pory"
 	.string "I'm an stone collector, I have a big\n"
 	.string "collection but I don't know what to do\l"
 	.string "with it right now, maybe I could sell\l"
 	.string "them in a time of need.$"
 
 Common_Mega_Stone_Guru_XY_Text_0:
-# 1079 "data/scripts/pkmn_center_jack.pory"
+# 1082 "data/scripts/pkmn_center_jack.pory"
 	.string "Hello, I sell rare stones from Kalos!,\n"
 	.string "How may I serve you?$"
 
 Common_Mega_Stone_Guru_ORAS_Text_0:
-# 1095 "data/scripts/pkmn_center_jack.pory"
+# 1098 "data/scripts/pkmn_center_jack.pory"
 	.string "Hello, I sell rare stones!, How may I\n"
 	.string "serve you?$"
 
 Common_Mega_Stone_Guru_SWSH_Text_0:
-# 1111 "data/scripts/pkmn_center_jack.pory"
+# 1114 "data/scripts/pkmn_center_jack.pory"
 	.string "Hello, I sell big stones from Galar!, How\n"
 	.string "may I serve you?$"
 
 Common_Mega_Stone_Guru_ZA_Text_0:
-# 1127 "data/scripts/pkmn_center_jack.pory"
+# 1130 "data/scripts/pkmn_center_jack.pory"
 	.string "Hello, I sell shiny new stones from\n"
 	.string "Kalos!, How may I serve you?$"
 
 Common_Mega_Stone_Guru_ZA_DLC_Text_0:
-# 1143 "data/scripts/pkmn_center_jack.pory"
+# 1146 "data/scripts/pkmn_center_jack.pory"
 	.string "Hello, I sell weird stones from Kalos!,\n"
 	.string "How may I serve you?$"
 
 Common_Mega_Stone_Guru_ER_Text_0:
-# 1159 "data/scripts/pkmn_center_jack.pory"
+# 1162 "data/scripts/pkmn_center_jack.pory"
 	.string "Hello, I sell rare stones from a strange\n"
 	.string "place!, How may I serve you?$"
 
 Common_Mega_Stone_Guru_Legendary_Text_0:
-# 1175 "data/scripts/pkmn_center_jack.pory"
+# 1178 "data/scripts/pkmn_center_jack.pory"
 	.string "Hello, I sell powerful stones!, How may I\n"
 	.string "serve you?$"

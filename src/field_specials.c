@@ -4601,3 +4601,38 @@ void EnableLegendaryMons(void)
 void SendUnusableMonsToBoxes(void)
 {
 }
+
+// Blue Nurse -> "Change Date". The script collects the year, month and day into
+// VAR_TEMP_1/2/3 (SCROLLING_YEAR/MONTH/DAY put the real values in the list ids, not row
+// indices, so these are already 25..40 / 1..12 / 1..31) and then calls this.
+//
+// 2.X instead raised FLAG_SYS_RESET_DATE and set VAR_OVERWORLD_SPECIALS = SPECIAL_SET_DATE
+// for its engine to pick up. None of those three symbols has a single consumer in this
+// tree, so the menu cheerfully announced "You Changed the Date!" and did nothing at all.
+void SetGameDate(void)
+{
+    static const u8 sDaysInMonth[12] = { 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 };
+    u8 year, month, day, maxDay;
+
+    year  = VarGet(VAR_TEMP_1);
+    month = VarGet(VAR_TEMP_2);
+    day   = VarGet(VAR_TEMP_3);
+
+    if (month < 1)
+        month = 1;
+    else if (month > 12)
+        month = 12;
+
+    // The day list always offers 1-31, so clamp: February 31st would otherwise roll the
+    // day count forward into March and silently land the player on the wrong date.
+    maxDay = sDaysInMonth[month - 1];
+    if (month == MONTH_FEB && IsLeapYear(year) == TRUE)
+        maxDay = 29;
+
+    if (day < 1)
+        day = 1;
+    else if (day > maxDay)
+        day = maxDay;
+
+    RtcSetDate(year, month, day);
+}

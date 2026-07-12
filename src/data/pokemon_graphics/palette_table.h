@@ -895,7 +895,7 @@ const struct CompressedSpritePalette gMonPaletteTable[] =
     SPECIES_PAL(KUBFU, gMonPalette_Kubfu),
     SPECIES_PAL(URSHIFU, gMonPalette_Urshifu),
     SPECIES_PAL(ZARUDE, gMonPalette_Zarude),
-    SPECIES_PAL(REGIELEKI, gMonPalette_DoubleQuestionMark/*gMonPalette_Regieleki*/),
+    SPECIES_PAL(REGIELEKI, gMonPalette_Regieleki),
     SPECIES_PAL(REGIDRAGO, gMonPalette_Regidrago),
     SPECIES_PAL(GLASTRIER, gMonPalette_Glastrier),
     SPECIES_PAL(SPECTRIER, gMonPalette_Spectrier),
@@ -1264,7 +1264,7 @@ SPECIES_PAL(CRAMORANT_GULPING, gMonPalette_CramorantGulping),
 
     SPECIES_PAL(ZAMAZENTA_CROWNED_SHIELD, gMonPalette_ZamazentaCrownedShield),
 
-    SPECIES_PAL(ETERNATUS_ETERNAMAX, gMonPalette_Eternatus/*Eternamax*/),
+    SPECIES_PAL(ETERNATUS_ETERNAMAX, gMonPalette_EternatusEternamax),
 
     SPECIES_PAL(URSHIFU_RAPID_STRIKE_STYLE, gMonPalette_UrshifuRapidStrikeStyle),
 

@@ -872,8 +872,11 @@ script Common_EventScript_PkmnCenterJack_ChangeDay{
 	switch(var(VAR_RESULT)){
 		default:
 			copyvar(VAR_TEMP_3, VAR_RESULT)
-			setflag(FLAG_SYS_RESET_DATE)
-			setvar(VAR_OVERWORLD_SPECIALS, SPECIAL_SET_DATE)
+			// 2.X raised FLAG_SYS_RESET_DATE and set VAR_OVERWORLD_SPECIALS =
+			// SPECIAL_SET_DATE for its engine to poll. Neither symbol has a consumer
+			// here, so this claimed success and changed nothing. SetGameDate() shifts
+			// the local-time offset the way the wall-clock setter already does.
+			special(SetGameDate)
 			drawbox
 			msgbox(format("You Changed the Date!"))
 		break

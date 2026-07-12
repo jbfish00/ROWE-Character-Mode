@@ -1306,6 +1306,147 @@ static const u8 sText_Num_4[] = _("4");
 static const u8 sText_Num_5[] = _("5");
 static const u8 sText_Cancel_Opt[] = _("Cancel");
 
+
+// Blue Nurse -> Change Date. INDEX-CRITICAL in the *other* direction from the rest of
+// this file: a scrolling multichoice returns the selected item's `id` (see
+// Task_ScrollingMultichoiceInput -> gSpecialVar_Result = input), not its row number, so
+// these ids carry the REAL year/month/day. The script copies VAR_RESULT straight into
+// VAR_TEMP_1/2/3 and SetGameDate() consumes them as values. They used to point at
+// sSetGeneric5, a 6-entry "1..5, Cancel" placeholder, so the menus showed nonsense.
+// Year ids are the RTC's two-digit form (25 = 2025), which is what ConvertDateToDayCount wants.
+static const u8 sText_Year_25[] = _("2025");
+static const u8 sText_Year_26[] = _("2026");
+static const u8 sText_Year_27[] = _("2027");
+static const u8 sText_Year_28[] = _("2028");
+static const u8 sText_Year_29[] = _("2029");
+static const u8 sText_Year_30[] = _("2030");
+static const u8 sText_Year_31[] = _("2031");
+static const u8 sText_Year_32[] = _("2032");
+static const u8 sText_Year_33[] = _("2033");
+static const u8 sText_Year_34[] = _("2034");
+static const u8 sText_Year_35[] = _("2035");
+static const u8 sText_Year_36[] = _("2036");
+static const u8 sText_Year_37[] = _("2037");
+static const u8 sText_Year_38[] = _("2038");
+static const u8 sText_Year_39[] = _("2039");
+static const u8 sText_Year_40[] = _("2040");
+
+static const u8 sText_Month_01[] = _("January");
+static const u8 sText_Month_02[] = _("February");
+static const u8 sText_Month_03[] = _("March");
+static const u8 sText_Month_04[] = _("April");
+static const u8 sText_Month_05[] = _("May");
+static const u8 sText_Month_06[] = _("June");
+static const u8 sText_Month_07[] = _("July");
+static const u8 sText_Month_08[] = _("August");
+static const u8 sText_Month_09[] = _("September");
+static const u8 sText_Month_10[] = _("October");
+static const u8 sText_Month_11[] = _("November");
+static const u8 sText_Month_12[] = _("December");
+
+static const u8 sText_Day_01[] = _("1");
+static const u8 sText_Day_02[] = _("2");
+static const u8 sText_Day_03[] = _("3");
+static const u8 sText_Day_04[] = _("4");
+static const u8 sText_Day_05[] = _("5");
+static const u8 sText_Day_06[] = _("6");
+static const u8 sText_Day_07[] = _("7");
+static const u8 sText_Day_08[] = _("8");
+static const u8 sText_Day_09[] = _("9");
+static const u8 sText_Day_10[] = _("10");
+static const u8 sText_Day_11[] = _("11");
+static const u8 sText_Day_12[] = _("12");
+static const u8 sText_Day_13[] = _("13");
+static const u8 sText_Day_14[] = _("14");
+static const u8 sText_Day_15[] = _("15");
+static const u8 sText_Day_16[] = _("16");
+static const u8 sText_Day_17[] = _("17");
+static const u8 sText_Day_18[] = _("18");
+static const u8 sText_Day_19[] = _("19");
+static const u8 sText_Day_20[] = _("20");
+static const u8 sText_Day_21[] = _("21");
+static const u8 sText_Day_22[] = _("22");
+static const u8 sText_Day_23[] = _("23");
+static const u8 sText_Day_24[] = _("24");
+static const u8 sText_Day_25[] = _("25");
+static const u8 sText_Day_26[] = _("26");
+static const u8 sText_Day_27[] = _("27");
+static const u8 sText_Day_28[] = _("28");
+static const u8 sText_Day_29[] = _("29");
+static const u8 sText_Day_30[] = _("30");
+static const u8 sText_Day_31[] = _("31");
+
+static const struct ListMenuItem sSetYears[] =
+{
+    {sText_Year_25, 25},
+    {sText_Year_26, 26},
+    {sText_Year_27, 27},
+    {sText_Year_28, 28},
+    {sText_Year_29, 29},
+    {sText_Year_30, 30},
+    {sText_Year_31, 31},
+    {sText_Year_32, 32},
+    {sText_Year_33, 33},
+    {sText_Year_34, 34},
+    {sText_Year_35, 35},
+    {sText_Year_36, 36},
+    {sText_Year_37, 37},
+    {sText_Year_38, 38},
+    {sText_Year_39, 39},
+    {sText_Year_40, 40},
+};
+
+static const struct ListMenuItem sSetMonths[] =
+{
+    {sText_Month_01, 1},
+    {sText_Month_02, 2},
+    {sText_Month_03, 3},
+    {sText_Month_04, 4},
+    {sText_Month_05, 5},
+    {sText_Month_06, 6},
+    {sText_Month_07, 7},
+    {sText_Month_08, 8},
+    {sText_Month_09, 9},
+    {sText_Month_10, 10},
+    {sText_Month_11, 11},
+    {sText_Month_12, 12},
+};
+
+static const struct ListMenuItem sSetDays[] =
+{
+    {sText_Day_01, 1},
+    {sText_Day_02, 2},
+    {sText_Day_03, 3},
+    {sText_Day_04, 4},
+    {sText_Day_05, 5},
+    {sText_Day_06, 6},
+    {sText_Day_07, 7},
+    {sText_Day_08, 8},
+    {sText_Day_09, 9},
+    {sText_Day_10, 10},
+    {sText_Day_11, 11},
+    {sText_Day_12, 12},
+    {sText_Day_13, 13},
+    {sText_Day_14, 14},
+    {sText_Day_15, 15},
+    {sText_Day_16, 16},
+    {sText_Day_17, 17},
+    {sText_Day_18, 18},
+    {sText_Day_19, 19},
+    {sText_Day_20, 20},
+    {sText_Day_21, 21},
+    {sText_Day_22, 22},
+    {sText_Day_23, 23},
+    {sText_Day_24, 24},
+    {sText_Day_25, 25},
+    {sText_Day_26, 26},
+    {sText_Day_27, 27},
+    {sText_Day_28, 28},
+    {sText_Day_29, 29},
+    {sText_Day_30, 30},
+    {sText_Day_31, 31},
+};
+
 static const struct ListMenuItem sSetGeneric5[] =
 {
     {sText_Num_1, 0}, {sText_Num_2, 1}, {sText_Num_3, 2},
@@ -1337,9 +1478,9 @@ struct
 	{sSetGenerations, ARRAY_COUNT(sSetGenerations)},	// 16 SCROLLING_STARTER_REGION
 	{sSetEndlessBattleDifficulty, ARRAY_COUNT(sSetEndlessBattleDifficulty)},	// 17
 	{sSetEndlessBattleQuestion, ARRAY_COUNT(sSetEndlessBattleQuestion)},	// 18
-	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 19 SCROLLING_YEAR
-	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 20 SCROLLING_MONTH
-	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 21 SCROLLING_DAY
+	{sSetYears, ARRAY_COUNT(sSetYears)},	// 19 SCROLLING_YEAR
+	{sSetMonths, ARRAY_COUNT(sSetMonths)},	// 20 SCROLLING_MONTH
+	{sSetDays, ARRAY_COUNT(sSetDays)},	// 21 SCROLLING_DAY
 	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 22 SCROLLING_MONOPOLY
 	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 23 SCROLLING_MONOPOLY_PC
 	{sSetCostumesMale, ARRAY_COUNT(sSetCostumesMale)},	// 24 SCROLLING_COSTUMES_MALE

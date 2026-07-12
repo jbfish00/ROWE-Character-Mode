@@ -353,6 +353,37 @@ void RtcSetDayOfWeek(s8 dayOfWeek)
     RtcCalcTimeDifference(&sRtc, &gSaveBlock2Ptr->localTimeOffset, &gLocalTime);
 }
 
+// Move the game's calendar to `year`-`month`-`day` (year is the RTC's two-digit form).
+// We cannot write the console's hardware clock, so we do what the wall-clock and
+// day-of-week setters already do: shift gSaveBlock2Ptr->localTimeOffset, which is what
+// gLocalTime is derived from. Time of day is preserved; only the day count and the
+// weekday move. Backs the Blue Nurse's "Change Date", which used to set a var
+// (VAR_OVERWORLD_SPECIALS) that nothing in this engine ever read -- it announced
+// "You Changed the Date!" and changed nothing.
+void RtcSetDate(u8 year, u8 month, u8 day)
+{
+    s32 targetDays;
+    s32 currentDays;
+    s32 currentDayOfWeek;
+    s32 delta;
+
+    // Refreshes sRtc and fills gLocalTime, so hours/minutes/seconds below are current.
+    RtcCalcLocalTime();
+    RtcGetInfo(&sRtc);
+
+    currentDays = RtcGetDayCount(&sRtc);
+    currentDayOfWeek = ConvertBcdToBinary(sRtc.dayOfWeek);
+    targetDays = ConvertDateToDayCount(year, month, day);
+    delta = targetDays - currentDays;
+
+    gLocalTime.days = targetDays;
+    // Derive the weekday by walking the day delta rather than a calendar formula: the
+    // RTC already tells us today's weekday, so this stays correct across leap years.
+    gLocalTime.dayOfWeek = ((currentDayOfWeek + delta) % 7 + 7) % 7;
+
+    RtcCalcTimeDifference(&sRtc, &gSaveBlock2Ptr->localTimeOffset, &gLocalTime);
+}
+
 void CalcTimeDifference(struct Time *result, struct Time *t1, struct Time *t2)
 {
     result->seconds = t2->seconds - t1->seconds;

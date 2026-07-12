@@ -1636,3 +1636,15 @@ const u32 gItemIconPalette_Unremarkable_Teacup[] = INCBIN_U32("graphics/items/ic
 const u32 gItemIcon_Utility_Umbrella[] = INCBIN_U32("graphics/items/icons/utility_umbrella.4bpp.lz");
 const u32 gItemIconPalette_Utility_Umbrella[] = INCBIN_U32("graphics/items/icon_palettes/utility_umbrella.gbapal.lz");
 // ROWEITEM-PORT-END incbins
+
+// 2.X ships art for these four but never wires them up, so they showed the question-mark
+// icon in the bag. The palette comes out of the same PNG (gbagfx extracts it), which is
+// how the donor declares them.
+const u32 gItemIcon_BlunderPolicy[]         = INCBIN_U32("graphics/items/icons/blunder_policy.4bpp.lz");
+const u32 gItemIconPalette_BlunderPolicy[]  = INCBIN_U32("graphics/items/icons/blunder_policy.gbapal.lz");
+const u32 gItemIcon_EjectPack[]             = INCBIN_U32("graphics/items/icons/eject_pack.4bpp.lz");
+const u32 gItemIconPalette_EjectPack[]      = INCBIN_U32("graphics/items/icons/eject_pack.gbapal.lz");
+const u32 gItemIcon_InverseGem[]            = INCBIN_U32("graphics/items/icons/inverse_gem.4bpp.lz");
+const u32 gItemIconPalette_InverseGem[]     = INCBIN_U32("graphics/items/icons/inverse_gem.gbapal.lz");
+const u32 gItemIcon_InverseShield[]         = INCBIN_U32("graphics/items/icons/inverse_shield.4bpp.lz");
+const u32 gItemIconPalette_InverseShield[]  = INCBIN_U32("graphics/items/icons/inverse_shield.gbapal.lz");
