@@ -27,6 +27,7 @@ struct MartInfo
     /*0xC*/ u16 itemCount;
     /*0xE*/ u8 windowId;
     /*0xF*/ u8 martType;
+    /*0x10*/ u8 moneyType;   // MART_MONEY_TYPE_*; captured from VAR_SHOP_MONEY_TYPE at open
 };
 
 struct ShopData

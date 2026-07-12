@@ -1,4 +1,5 @@
 #include "global.h"
+#include "field_control_avatar.h"
 #include "malloc.h"
 #include "battle_pyramid.h"
 #include "berry.h"
@@ -3223,13 +3224,13 @@ static u8 TrySetupObjectEventSprite(struct ObjectEventTemplate *objectEventTempl
     objectEvent = &gObjectEvents[objectEventId];
     graphicsInfo = GetObjectEventGraphicsInfo(objectEvent->graphicsId);
 
-	if((spriteTemplate->paletteTag == OBJ_EVENT_PAL_BRENDAN_E  && VarGet(VAR_COSTUME_NUMBER) == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_BRENDAN_RS && VarGet(VAR_COSTUME_NUMBER) == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_RED        && VarGet(VAR_COSTUME_NUMBER) == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_HILBERT    && VarGet(VAR_COSTUME_NUMBER) == BW_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_MAY_E      && VarGet(VAR_COSTUME_NUMBER) == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
-	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_MAY_RS     && VarGet(VAR_COSTUME_NUMBER) == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
-	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_LEAF       && VarGet(VAR_COSTUME_NUMBER) == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_FEMALE))
+	if((spriteTemplate->paletteTag == OBJ_EVENT_PAL_BRENDAN_E  && GetCostume() == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_BRENDAN_RS && GetCostume() == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_RED        && GetCostume() == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_HILBERT    && GetCostume() == BW_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_MAY_E      && GetCostume() == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
+	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_MAY_RS     && GetCostume() == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
+	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_LEAF       && GetCostume() == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_FEMALE))
     {
 		LoadPlayerObjectEventPalette(spriteTemplate->paletteTag, TRUE);
         UpdatePaletteGammaType(IndexOfSpritePaletteTag(spriteTemplate->paletteTag), GAMMA_ALT);
@@ -3367,13 +3368,13 @@ u8 AddPseudoObjectEvent(u16 graphicsId, void (*callback)(struct Sprite *), s16 x
     spriteTemplate = malloc(sizeof(struct SpriteTemplate));
     MakeObjectTemplateFromObjectEventGraphicsInfo(graphicsId, callback, spriteTemplate, &subspriteTables);
 
-	if((spriteTemplate->paletteTag == OBJ_EVENT_PAL_BRENDAN_E  && VarGet(VAR_COSTUME_NUMBER) == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_BRENDAN_RS && VarGet(VAR_COSTUME_NUMBER) == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_RED        && VarGet(VAR_COSTUME_NUMBER) == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_HILBERT    && VarGet(VAR_COSTUME_NUMBER) == BW_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_MAY_E      && VarGet(VAR_COSTUME_NUMBER) == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
-	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_MAY_RS     && VarGet(VAR_COSTUME_NUMBER) == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
-	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_LEAF       && VarGet(VAR_COSTUME_NUMBER) == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_FEMALE))
+	if((spriteTemplate->paletteTag == OBJ_EVENT_PAL_BRENDAN_E  && GetCostume() == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_BRENDAN_RS && GetCostume() == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_RED        && GetCostume() == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_HILBERT    && GetCostume() == BW_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_MAY_E      && GetCostume() == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
+	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_MAY_RS     && GetCostume() == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
+	   (spriteTemplate->paletteTag == OBJ_EVENT_PAL_LEAF       && GetCostume() == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_FEMALE))
     {
 		LoadPlayerObjectEventPalette(spriteTemplate->paletteTag, FALSE);
     }
@@ -3406,13 +3407,13 @@ u8 CreateObjectSprite(u16 graphicsId, u8 objectEventId, s16 x, s16 y, u8 z, u8 d
     graphicsInfo = GetObjectEventGraphicsInfo(graphicsId);
     MakeObjectTemplateFromObjectEventGraphicsInfo(graphicsId, UpdateObjectEventSprite, &spriteTemplate, &subspriteTables);
 	
-    if((spriteTemplate.paletteTag == OBJ_EVENT_PAL_BRENDAN_E  && VarGet(VAR_COSTUME_NUMBER) == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_BRENDAN_RS && VarGet(VAR_COSTUME_NUMBER) == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_RED        && VarGet(VAR_COSTUME_NUMBER) == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_HILBERT    && VarGet(VAR_COSTUME_NUMBER) == BW_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_MAY_E      && VarGet(VAR_COSTUME_NUMBER) == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
-	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_MAY_RS     && VarGet(VAR_COSTUME_NUMBER) == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
-	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_LEAF       && VarGet(VAR_COSTUME_NUMBER) == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_FEMALE))
+    if((spriteTemplate.paletteTag == OBJ_EVENT_PAL_BRENDAN_E  && GetCostume() == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_BRENDAN_RS && GetCostume() == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_RED        && GetCostume() == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_HILBERT    && GetCostume() == BW_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_MAY_E      && GetCostume() == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
+	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_MAY_RS     && GetCostume() == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
+	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_LEAF       && GetCostume() == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_FEMALE))
     {
 		LoadPlayerObjectEventPalette(spriteTemplate.paletteTag, TRUE);
         UpdatePaletteGammaType(IndexOfSpritePaletteTag(spriteTemplate.paletteTag), GAMMA_ALT);
@@ -3562,13 +3563,13 @@ static void sub_808E1B8(u8 objectEventId, s16 x, s16 y)
     spriteFrameImage.size = graphicsInfo->size;
     MakeObjectTemplateFromObjectEventGraphicsInfoWithCallbackIndex(objectEvent->graphicsId, objectEvent->movementType, &spriteTemplate, &subspriteTables);
     spriteTemplate.images = &spriteFrameImage;
-    if ((spriteTemplate.paletteTag == OBJ_EVENT_PAL_BRENDAN_E  && VarGet(VAR_COSTUME_NUMBER) == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_BRENDAN_RS  && VarGet(VAR_COSTUME_NUMBER) == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_RED         && VarGet(VAR_COSTUME_NUMBER) == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_HILBERT    && VarGet(VAR_COSTUME_NUMBER) == BW_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_MAY_E       && VarGet(VAR_COSTUME_NUMBER) == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
-	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_MAY_RS      && VarGet(VAR_COSTUME_NUMBER) == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
-	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_LEAF        && VarGet(VAR_COSTUME_NUMBER) == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_FEMALE))
+    if ((spriteTemplate.paletteTag == OBJ_EVENT_PAL_BRENDAN_E  && GetCostume() == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_BRENDAN_RS  && GetCostume() == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_RED         && GetCostume() == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_HILBERT    && GetCostume() == BW_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_MAY_E       && GetCostume() == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
+	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_MAY_RS      && GetCostume() == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
+	   (spriteTemplate.paletteTag == OBJ_EVENT_PAL_LEAF        && GetCostume() == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_FEMALE))
     {
 		LoadPlayerObjectEventPalette(spriteTemplate.paletteTag, TRUE);
         UpdatePaletteGammaType(IndexOfSpritePaletteTag(spriteTemplate.paletteTag), GAMMA_ALT);
@@ -3640,13 +3641,13 @@ void ObjectEventSetGraphicsId(struct ObjectEvent *objectEvent, u16 graphicsId)
 
     graphicsInfo = GetObjectEventGraphicsInfo(graphicsId);
     sprite = &gSprites[objectEvent->spriteId];
-	if((graphicsInfo->paletteTag1 == OBJ_EVENT_PAL_BRENDAN_E  && VarGet(VAR_COSTUME_NUMBER) == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (graphicsInfo->paletteTag1 == OBJ_EVENT_PAL_BRENDAN_RS && VarGet(VAR_COSTUME_NUMBER) == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (graphicsInfo->paletteTag1 == OBJ_EVENT_PAL_RED        && VarGet(VAR_COSTUME_NUMBER) == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (graphicsInfo->paletteTag1 == OBJ_EVENT_PAL_HILBERT    && VarGet(VAR_COSTUME_NUMBER) == BW_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
-	   (graphicsInfo->paletteTag1 == OBJ_EVENT_PAL_MAY_E      && VarGet(VAR_COSTUME_NUMBER) == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
-	   (graphicsInfo->paletteTag1 == OBJ_EVENT_PAL_MAY_RS     && VarGet(VAR_COSTUME_NUMBER) == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
-	   (graphicsInfo->paletteTag1 == OBJ_EVENT_PAL_LEAF       && VarGet(VAR_COSTUME_NUMBER) == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_FEMALE))
+	if((graphicsInfo->paletteTag1 == OBJ_EVENT_PAL_BRENDAN_E  && GetCostume() == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (graphicsInfo->paletteTag1 == OBJ_EVENT_PAL_BRENDAN_RS && GetCostume() == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (graphicsInfo->paletteTag1 == OBJ_EVENT_PAL_RED        && GetCostume() == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (graphicsInfo->paletteTag1 == OBJ_EVENT_PAL_HILBERT    && GetCostume() == BW_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_MALE)   ||
+	   (graphicsInfo->paletteTag1 == OBJ_EVENT_PAL_MAY_E      && GetCostume() == EMERALD_COSTUME && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
+	   (graphicsInfo->paletteTag1 == OBJ_EVENT_PAL_MAY_RS     && GetCostume() == RS_COSTUME      && gSaveBlock2Ptr->playerGender == GENDER_FEMALE) ||
+	   (graphicsInfo->paletteTag1 == OBJ_EVENT_PAL_LEAF       && GetCostume() == FRLG_COSTUME    && gSaveBlock2Ptr->playerGender == GENDER_FEMALE))
     {
 		LoadPlayerObjectEventPalette(graphicsInfo->paletteTag1, TRUE);
         UpdatePaletteGammaType(IndexOfSpritePaletteTag(graphicsInfo->paletteTag1), GAMMA_ALT);

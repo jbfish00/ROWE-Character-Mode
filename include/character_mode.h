@@ -7,6 +7,13 @@
 #define CHAR_ASSET_NONE     0xFFFF
 #define CHAR_ASSET_NONE_U8  0xFF
 
+// VAR_COSTUME_CHARACTER: 0 = no costume chosen, so the character you are PLAYING AS supplies
+// the sprite (Character Mode's default). 1..N = wearing that character. The sentinel below =
+// you explicitly picked one of the base outfits, so no character sprite should be worn at all
+// -- without it, picking "Emerald" while playing as Red silently did nothing, because the
+// active character always won.
+#define COSTUME_CHARACTER_BASE  0xFFFF
+
 struct CharacterInfo
 {
     const u8 *name;         // display name, charmap-encoded
@@ -25,6 +32,8 @@ extern const struct CharacterInfo gCharacters[];
 u16 GetCharacterCount(void);
 bool8 InCharacterMode(void);
 const struct CharacterInfo *GetActiveCharacter(void);
+const struct CharacterInfo *GetAppearanceCharacter(void);
+bool8 CharacterHasOverworldSprite(u16 index);
 bool8 IsSpeciesAllowedForCharacter(u16 species);
 void CharacterMode_SweepPartyToPC(void);
 bool8 CharacterMode_PartyHasAllowedMon(void);

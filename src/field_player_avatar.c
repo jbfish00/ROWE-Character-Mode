@@ -1,4 +1,5 @@
 #include "global.h"
+#include "field_control_avatar.h"
 #include "character_mode.h"
 #include "main.h"
 #include "bike.h"
@@ -976,6 +977,25 @@ void SetPlayerAvatarTransitionFlags(u16 transitionFlags)
     DoPlayerAvatarTransition();
 }
 
+// Redraw the player with whatever costume/character is now selected, without moving them.
+// 2.X's Change Costume script instead did warp(MAP_LITTLEROOT_TOWN, 192, 192, 192) to force
+// a reload -- but warpId is an s8, so 192 is -64, the warp-id branch of SetPlayerCoordsFromWarp
+// is skipped and the raw (192,192) is used. Littleroot is 30x30, so that dropped the player
+// 162 tiles off the map, into the void, unable to move.
+void RefreshPlayerAvatarGraphics(void)
+{
+    if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_MACH_BIKE)
+        SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_MACH_BIKE);
+    else if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ACRO_BIKE)
+        SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ACRO_BIKE);
+    else if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING)
+        SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_SURFING);
+    else if (gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_UNDERWATER)
+        SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_UNDERWATER);
+    else
+        SetPlayerAvatarTransitionFlags(PLAYER_AVATAR_FLAG_ON_FOOT);
+}
+
 static void DoPlayerAvatarTransition(void)
 {
     u8 i;
@@ -1154,7 +1174,7 @@ void PlayerGoSpeed4(u8 a)
 
 static void PlayerRun(u8 a)
 {
-    const struct CharacterInfo *character = GetActiveCharacter();
+    const struct CharacterInfo *character = GetAppearanceCharacter();
 
     // NPC sprite sheets have no running frames; fast-walk instead.
     if (character != NULL && character->owGfxId != CHAR_ASSET_NONE)
@@ -1405,29 +1425,26 @@ u16 GetRivalAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender)
 
 u16 GetPlayerAvatarGraphicsIdByStateIdAndGender(u8 state, u8 gender)
 {
-    // Character Mode: characters with their own overworld sprite use it on
-    // foot; bike/surf/etc. fall through to the costume sprites.
+    // A worn character (Character Mode, or a costume from the Pokemon Center) uses its
+    // own sprite on foot; bike/surf/etc. fall through to the costume sprites, because
+    // NPC sheets have no frames for those.
     if (state == PLAYER_AVATAR_STATE_NORMAL)
     {
-        const struct CharacterInfo *character = GetActiveCharacter();
+        const struct CharacterInfo *character = GetAppearanceCharacter();
 
         if (character != NULL && character->owGfxId != CHAR_ASSET_NONE)
             return character->owGfxId;
     }
-    switch(VarGet(VAR_COSTUME_NUMBER)){
-        case EMERALD_COSTUME:
-            return sPlayerAvatarGfxIds[state][gender];
-        break;
+    switch(GetCostume()){
         case RS_COSTUME:
             return sPlayerAvatarGfxIdsRS[state][gender];
-        break;
         case FRLG_COSTUME:
             return sPlayerAvatarGfxIdsFRLG[state][gender];
-        break;
         case BW_COSTUME:
             return sPlayerAvatarGfxIdsBW[state][gender];
-        break;
-        
+        case EMERALD_COSTUME:
+        default:
+            return sPlayerAvatarGfxIds[state][gender];
     }
 }
 
@@ -1585,11 +1602,11 @@ u16 GetPlayerAvatarGraphicsIdByCurrentState(void)
 {
     u8 i;
     u8 flags = gPlayerAvatar.flags;
-	u8 costume = VarGet(VAR_COSTUME_NUMBER);
+	u8 costume = GetCostume();
 
     if (flags & PLAYER_AVATAR_FLAG_ON_FOOT)
     {
-        const struct CharacterInfo *character = GetActiveCharacter();
+        const struct CharacterInfo *character = GetAppearanceCharacter();
 
         if (character != NULL && character->owGfxId != CHAR_ASSET_NONE)
             return character->owGfxId;

@@ -325,7 +325,11 @@
 #define VAR_ROUTE125_STATE                     17005
 #define VAR_ROUTE126_STATE                     17006
 #define VAR_ROUTE127_STATE                     17007
-#define VAR_UNUSED_0X408B                      17008
+// Which character's sprites the player is WEARING, as gCharacters index + 1
+// (0 = none, wear the VAR_COSTUME_NUMBER outfit). Separate from VAR_CHARACTER_ID:
+// the character you picked still decides your roster, the costume only decides
+// how you look. Reuses the old unused 17008 slot so SaveBlock1 does not grow.
+#define VAR_COSTUME_CHARACTER                  17008
 
 #define VARS_END                             17008
 #define VARS_COUNT                           (VARS_END - VARS_START + 1)

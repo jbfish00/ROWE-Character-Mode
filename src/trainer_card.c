@@ -1,4 +1,5 @@
 #include "global.h"
+#include "field_control_avatar.h"
 #include "character_mode.h"
 #include "scanline_effect.h"
 #include "palette.h"
@@ -777,7 +778,7 @@ void TrainerCard_GenerateCardForPlayer(struct TrainerCard *trainerCard)
     trainerCard->version = GAME_VERSION;
     //SetPlayerCardData(trainerCard, CARD_TYPE_EMERALD);
 	
-	switch(VarGet(VAR_COSTUME_NUMBER)){
+	switch(GetCostume()){
 		case EMERALD_COSTUME:
 			SetPlayerCardData(trainerCard, CARD_TYPE_EMERALD);
 		break;
@@ -1917,11 +1918,11 @@ static void CreateTrainerCardTrainerPic(void)
                     8,
                     2);
     }
-    else if (GetActiveCharacter() != NULL && GetActiveCharacter()->trainerFrontPic != CHAR_ASSET_NONE)
+    else if (GetAppearanceCharacter() != NULL && GetAppearanceCharacter()->trainerFrontPic != CHAR_ASSET_NONE)
     {
         // Character Mode: use the character's own trainer pic, without the
         // RGB cap-color recolor (palette indices only fit player sprites).
-        CreateTrainerCardTrainerPicSprite(GetActiveCharacter()->trainerFrontPic,
+        CreateTrainerCardTrainerPicSprite(GetAppearanceCharacter()->trainerFrontPic,
                     TRUE,
                     sTrainerPicOffset[sData->isHoenn][sData->trainerCard.gender][0],
                     sTrainerPicOffset[sData->isHoenn][sData->trainerCard.gender][1],
@@ -1931,7 +1932,7 @@ static void CreateTrainerCardTrainerPic(void)
     else
     {
 		//Costumes
-		switch(VarGet(VAR_COSTUME_NUMBER)){
+		switch(GetCostume()){
 			case EMERALD_COSTUME:
 				CreateTrainerCardTrainerPicSprite(FacilityClassToPicIndex(sTrainerPicFacilityClass[CARD_TYPE_EMERALD][sData->trainerCard.gender]),
                     TRUE,

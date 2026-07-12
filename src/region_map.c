@@ -1,4 +1,5 @@
 #include "global.h"
+#include "field_control_avatar.h"
 #include "main.h"
 #include "sound.h"
 #include "text.h"
@@ -1805,7 +1806,7 @@ void CreateRegionMapPlayerIcon(u16 tileTag, u16 paletteTag)
     struct SpriteTemplate template = {tileTag, paletteTag, &sRegionMapPlayerIconOam, sRegionMapPlayerIconAnimTable, NULL, gDummySpriteAffineAnimTable, SpriteCallbackDummy};
 	
 	//Costumes
-	switch(VarGet(VAR_COSTUME_NUMBER)){
+	switch(GetCostume()){
 		case EMERALD_COSTUME:
 			if (gSaveBlock2Ptr->playerGender == FEMALE)
 			{

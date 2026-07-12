@@ -360,9 +360,9 @@ static void SafariHandleDrawTrainerPic(void)
 {
     u32 trainerPicId;
 
-    if (GetActiveCharacter() != NULL && GetActiveCharacter()->backPic != CHAR_ASSET_NONE_U8)
+    if (GetAppearanceCharacter() != NULL && GetAppearanceCharacter()->backPic != CHAR_ASSET_NONE_U8)
     {
-        trainerPicId = GetActiveCharacter()->backPic;
+        trainerPicId = GetAppearanceCharacter()->backPic;
     }
     else
     switch(GetCostume()){

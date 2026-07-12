@@ -399,108 +399,24 @@ script Common_EventScript_PkmnCenterJack_Lower_Difficulty{
     end
 }
 
+// The list is built in C (script_menu.c: BuildCostumeList) from the four base outfits plus
+// every character with an overworld sprite, and applied in C (ApplyCostumeChoice). Keeping
+// both halves in one file is the point: this menu used to be a 16-case switch here against a
+// list over there, and 9 of those cases set a VAR_COSTUME_NUMBER the engine cannot render.
+// The old script also ended every branch with warp(MAP_LITTLEROOT_TOWN, 192, 192, 192) to
+// force the sprite to redraw -- which dropped the player 162 tiles outside a 30x30 map, into
+// the void. ApplyCostumeChoice redraws the avatar in place instead.
 script Common_EventScript_PkmnCenterJack_Change_Costume{
 	lock
 	faceplayer
 	msgbox(format("What outfit do you want to use today?"), MSGBOX_DEFAULT)
-	checkplayergender
-	if(var(VAR_RESULT) == GENDER_FEMALE){
-		scrollingmultichoice(SCROLLING_COSTUMES_FEMALE, 0, 0, 6, TRUE)
-		switch(var(VAR_RESULT)){
-			case 0: //May (RS)
-				setvar(VAR_COSTUME_NUMBER, RS_COSTUME)
-				msgbox(format("Come this way so you can change your outfit"), MSGBOX_DEFAULT)
-				warp(MAP_LITTLEROOT_TOWN, 192, 192, 192)
-			break
-			case 1: //May (Emerald)
-				setvar(VAR_COSTUME_NUMBER, EMERALD_COSTUME)
-				msgbox(format("Come this way so you can change your outfit"), MSGBOX_DEFAULT)
-				warp(MAP_LITTLEROOT_TOWN, 192, 192, 192)
-			break
-			case 2: //May (ORAS)
-				setvar(VAR_COSTUME_NUMBER, ORAS_COSTUME)
-				msgbox(format("Come this way so you can change your outfit"), MSGBOX_DEFAULT)
-				warp(MAP_LITTLEROOT_TOWN, 192, 192, 192)
-			break
-			case 3: //Leaf (RBY)
-				setvar(VAR_COSTUME_NUMBER, RBY_COSTUME)
-				msgbox(format("Come this way so you can change your outfit"), MSGBOX_DEFAULT)
-				warp(MAP_LITTLEROOT_TOWN, 192, 192, 192)
-			break
-			case 4: //Leaf (FRLG)
-				setvar(VAR_COSTUME_NUMBER, FRLG_COSTUME)
-				msgbox(format("Come this way so you can change your outfit"), MSGBOX_DEFAULT)
-				warp(MAP_LITTLEROOT_TOWN, 192, 192, 192)
-			break
-			case 5: //Dawn (DP)
-				setvar(VAR_COSTUME_NUMBER, DP_COSTUME)
-				msgbox(format("Come this way so you can change your outfit"), MSGBOX_DEFAULT)
-				warp(MAP_LITTLEROOT_TOWN, 192, 192, 192)
-			break
-			case 6: //Dawn (Pt)
-				setvar(VAR_COSTUME_NUMBER, EXTRA_COSTUME)
-				msgbox(format("Come this way so you can change your outfit"), MSGBOX_DEFAULT)
-				warp(MAP_LITTLEROOT_TOWN, 192, 192, 192)
-			break
-			default:
-			case MULTI_B_PRESSED:
-				msgbox(format("Come back anytime you want to change outfits!"), MSGBOX_DEFAULT)
-			break
-		}
+	scrollingmultichoice(SCROLLING_COSTUMES, 0, 0, 6, TRUE)
+	special(ApplyCostumeChoice)
+	if(var(VAR_RESULT) == MULTI_B_PRESSED){
+		msgbox(format("Come back anytime you want to change outfits!"), MSGBOX_DEFAULT)
 	}
 	else{
-		scrollingmultichoice(SCROLLING_COSTUMES_MALE, 0, 0, 6, TRUE)
-		switch(var(VAR_RESULT)){
-			case 0: //Brendan (RS)
-				setvar(VAR_COSTUME_NUMBER, RS_COSTUME)
-				msgbox(format("Come this way so you can change your outfit"), MSGBOX_DEFAULT)
-				warp(MAP_LITTLEROOT_TOWN, 192, 192, 192)
-			break
-			case 1: //Brendan (Emerald)
-				setvar(VAR_COSTUME_NUMBER, EMERALD_COSTUME)
-				msgbox(format("Come this way so you can change your outfit"), MSGBOX_DEFAULT)
-				warp(MAP_LITTLEROOT_TOWN, 192, 192, 192)
-			break
-			case 2: //Brendan (ORAS)
-				setvar(VAR_COSTUME_NUMBER, ORAS_COSTUME)
-				msgbox(format("Come this way so you can change your outfit"), MSGBOX_DEFAULT)
-				warp(MAP_LITTLEROOT_TOWN, 192, 192, 192)
-			break
-			case 3: //Red (RBY)
-				setvar(VAR_COSTUME_NUMBER, RBY_COSTUME)
-				msgbox(format("Come this way so you can change your outfit"), MSGBOX_DEFAULT)
-				warp(MAP_LITTLEROOT_TOWN, 192, 192, 192)
-			break
-			case 4: //Red (FRLG)
-				setvar(VAR_COSTUME_NUMBER, FRLG_COSTUME)
-				msgbox(format("Come this way so you can change your outfit"), MSGBOX_DEFAULT)
-				warp(MAP_LITTLEROOT_TOWN, 192, 192, 192)
-			break
-			case 5: //Green (FRLG)
-				setvar(VAR_COSTUME_NUMBER, EXTRA_COSTUME)
-				msgbox(format("Come this way so you can change your outfit"), MSGBOX_DEFAULT)
-				warp(MAP_LITTLEROOT_TOWN, 192, 192, 192)
-			break
-			case 6: //Ethan
-				setvar(VAR_COSTUME_NUMBER, GSC_COSTUME)
-				msgbox(format("Come this way so you can change your outfit"), MSGBOX_DEFAULT)
-				warp(MAP_LITTLEROOT_TOWN, 192, 192, 192)
-			break
-			case 7: //Lucas (DP)
-				setvar(VAR_COSTUME_NUMBER, DP_COSTUME)
-				msgbox(format("Come this way so you can change your outfit"), MSGBOX_DEFAULT)
-				warp(MAP_LITTLEROOT_TOWN, 192, 192, 192)
-			break
-			case 8: //Hilbert (BW)
-				setvar(VAR_COSTUME_NUMBER, BW_COSTUME)
-				msgbox(format("Come this way so you can change your outfit"), MSGBOX_DEFAULT)
-				warp(MAP_LITTLEROOT_TOWN, 192, 192, 192)
-			break
-			default:
-			case MULTI_B_PRESSED:
-				msgbox(format("Come back anytime you want to change outfits!"), MSGBOX_DEFAULT)
-			break
-		}
+		msgbox(format("There you go, that outfit looks great on you!"), MSGBOX_DEFAULT)
 	}
 	releaseall
 	end
@@ -516,7 +432,7 @@ script Common_EventScript_PkmnCenterJack_WonderTrade{
     checkitem(ITEM_WONDER_CHARM, 1)
     if(var(VAR_RESULT) == FALSE){
 		setvar(VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS) //Battle Points
-		showmoneybox(0, 0, 0)
+		showbpbox(0, 0, 0)
 		msgbox(format("Do you want to try Wonder Trading, its only 5BP per try?"), MSGBOX_YESNO)
 	}
 	else{
@@ -530,7 +446,7 @@ script Common_EventScript_PkmnCenterJack_WonderTrade{
 		// Check if the player has enough bp		
 		checkitem(ITEM_WONDER_CHARM, 1)
 		if(var(VAR_RESULT) == FALSE){
-			checkmoney(WONDER_TRADE_PRICE, 0)
+			checkbp(WONDER_TRADE_PRICE, 0)
 		}
 
 		if(var(VAR_RESULT) == 0) {
@@ -560,7 +476,7 @@ script Common_EventScript_PkmnCenterJack_WonderTrade{
 			
 			checkitem(ITEM_WONDER_CHARM, 1)
 			if(var(VAR_RESULT) == FALSE){
-				removemoney(WONDER_TRADE_PRICE, 0)
+				takebp(WONDER_TRADE_PRICE, 0)
 			}
 			
 			clearflag(FLAG_FOLLOWER_IS_ENABLED)
@@ -583,25 +499,25 @@ script Common_EventScript_PkmnCenterJack_EggMoveTutor_Price{
 	setflag(FLAG_IS_MOVE_TUTOR)
 	if(var(VAR_NUM_BADGES) >= 6){
 		setvar(VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS) //Battle Points
-		showmoneybox(0, 0, 0)
+		showbpbox(0, 0, 0)
 		msgbox(format("Learning an Egg move will cost you 4 Battle Points, do you want to continue?"), MSGBOX_YESNO)
 		if(var(VAR_RESULT) == YES){
 			//Check the BP
-			checkmoney(EGG_TUTOR_MOVE_BP_PRICE, 0)
+			checkbp(EGG_TUTOR_MOVE_BP_PRICE, 0)
 			if(var(VAR_RESULT) == YES){
-				hidemoneybox
+				hidebpbox
 				goto(Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon)
 			}
 			else{
 				//No enough BP
-				hidemoneybox
+				hidebpbox
 				msgbox(format("It seems like you don't have enough Battle Points!"), MSGBOX_DEFAULT)
 				goto(Common_EventScript_PkmnCenterJack_Move_Learner)
 			}
 		}
 		else{
 			//Chose I don't want to teach any move
-			hidemoneybox
+			hidebpbox
 			goto(Common_EventScript_PkmnCenterJack_Move_Learner)
 		}
 	}
@@ -638,7 +554,7 @@ script Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon{
 				}
 				else{
 					playse(SE_SHOP)
-					removemoney(EGG_TUTOR_MOVE_BP_PRICE, 0)
+					takebp(EGG_TUTOR_MOVE_BP_PRICE, 0)
 					call(Common_EventScript_PkmnCenterJack_Clear_Move_Tutor_Data)
 					msgbox(format("Your Pokémon was able to learn the move successfuly, please continue to use our services!"), MSGBOX_DEFAULT)
 					releaseall
@@ -656,25 +572,25 @@ script Common_EventScript_PkmnCenterJack_TutorMoveTutor_Price{
 	setflag(FLAG_IS_MOVE_TUTOR)
 	if(var(VAR_NUM_BADGES) >= 9){
 		setvar(VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS) //Battle Points
-		showmoneybox(0, 0, 0)
+		showbpbox(0, 0, 0)
 		msgbox(format("Learning a Tutor move will cost you 6 Battle Points, do you want to continue?"), MSGBOX_YESNO)
 		if(var(VAR_RESULT) == YES){
 			//Check the BP
-			checkmoney(TUTOR_MOVE_BP_PRICE, 0)
+			checkbp(TUTOR_MOVE_BP_PRICE, 0)
 			if(var(VAR_RESULT) == YES){
-				hidemoneybox
+				hidebpbox
 				goto(Common_EventScript_PkmnCenterJack_TutorMoveTutor_ChooseMon)
 			}
 			else{
 				//No enough BP
-				hidemoneybox
+				hidebpbox
 				msgbox(format("It seems like you don't have enough Battle Points!"), MSGBOX_DEFAULT)
 				goto(Common_EventScript_PkmnCenterJack_Move_Learner)
 			}
 		}
 		else{
 			//Chose I don't want to teach any move
-			hidemoneybox
+			hidebpbox
 			goto(Common_EventScript_PkmnCenterJack_Move_Learner)
 		}
 	}
@@ -711,7 +627,7 @@ script Common_EventScript_PkmnCenterJack_TutorMoveTutor_ChooseMon{
 				}
 				else{
 					playse(SE_SHOP)
-					removemoney(TUTOR_MOVE_BP_PRICE, 0)
+					takebp(TUTOR_MOVE_BP_PRICE, 0)
 					call(Common_EventScript_PkmnCenterJack_Clear_Move_Tutor_Data)
 					msgbox(format("Your Pokémon was able to learn the move successfuly, please continue to use our services!"), MSGBOX_DEFAULT)
 					releaseall
@@ -729,25 +645,25 @@ script Common_EventScript_PkmnCenterJack_TmMoveTutor_Price{
 	setflag(FLAG_IS_MOVE_TUTOR)
 	if(var(VAR_NUM_BADGES) >= 12){
 		setvar(VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS) //Battle Points
-		showmoneybox(0, 0, 0)
+		showbpbox(0, 0, 0)
 		msgbox(format("Learning a TM move will cost you 8 Battle Points, do you want to continue?"), MSGBOX_YESNO)
 		if(var(VAR_RESULT) == YES){
 			//Check the BP
-			checkmoney(TM_TUTOR_MOVE_BP_PRICE, 0)
+			checkbp(TM_TUTOR_MOVE_BP_PRICE, 0)
 			if(var(VAR_RESULT) == YES){
-				hidemoneybox
+				hidebpbox
 				goto(Common_EventScript_PkmnCenterJack_TM_TutorMoveTutor_ChooseMon)
 			}
 			else{
 				//No enough BP
-				hidemoneybox
+				hidebpbox
 				msgbox(format("It seems like you don't have enough Battle Points!"), MSGBOX_DEFAULT)
 				goto(Common_EventScript_PkmnCenterJack_Move_Learner)
 			}
 		}
 		else{
 			//Chose I don't want to teach any move
-			hidemoneybox
+			hidebpbox
 			goto(Common_EventScript_PkmnCenterJack_Move_Learner)
 		}
 	}
@@ -784,7 +700,7 @@ script Common_EventScript_PkmnCenterJack_TM_TutorMoveTutor_ChooseMon{
 				}
 				else{
 					playse(SE_SHOP)
-					removemoney(TM_TUTOR_MOVE_BP_PRICE, 0)
+					takebp(TM_TUTOR_MOVE_BP_PRICE, 0)
 					call(Common_EventScript_PkmnCenterJack_Clear_Move_Tutor_Data)
 					msgbox(format("Your Pokémon was able to learn the move successfuly, please continue to use our services!"), MSGBOX_DEFAULT)
 					releaseall

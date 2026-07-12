@@ -716,744 +716,556 @@ Common_EventScript_PkmnCenterJack_Lower_Difficulty_9:
 
 
 Common_EventScript_PkmnCenterJack_Change_Costume::
-# 403 "data/scripts/pkmn_center_jack.pory"
+# 410 "data/scripts/pkmn_center_jack.pory"
 	lock
-# 404 "data/scripts/pkmn_center_jack.pory"
+# 411 "data/scripts/pkmn_center_jack.pory"
 	faceplayer
-# 405 "data/scripts/pkmn_center_jack.pory"
+# 412 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_0, MSGBOX_DEFAULT
-# 406 "data/scripts/pkmn_center_jack.pory"
-	checkplayergender
-# 407 "data/scripts/pkmn_center_jack.pory"
-	compare VAR_RESULT, GENDER_FEMALE
+# 413 "data/scripts/pkmn_center_jack.pory"
+	scrollingmultichoice SCROLLING_COSTUMES, 0, 0, 6, TRUE
+# 414 "data/scripts/pkmn_center_jack.pory"
+	special ApplyCostumeChoice
+# 415 "data/scripts/pkmn_center_jack.pory"
+	compare VAR_RESULT, MULTI_B_PRESSED
 	goto_if_eq Common_EventScript_PkmnCenterJack_Change_Costume_2
-# 452 "data/scripts/pkmn_center_jack.pory"
-	scrollingmultichoice SCROLLING_COSTUMES_MALE, 0, 0, 6, TRUE
-# 453 "data/scripts/pkmn_center_jack.pory"
-	switch VAR_RESULT
-# 454 "data/scripts/pkmn_center_jack.pory"
-	case 0, Common_EventScript_PkmnCenterJack_Change_Costume_15
-# 459 "data/scripts/pkmn_center_jack.pory"
-	case 1, Common_EventScript_PkmnCenterJack_Change_Costume_16
-# 464 "data/scripts/pkmn_center_jack.pory"
-	case 2, Common_EventScript_PkmnCenterJack_Change_Costume_17
-# 469 "data/scripts/pkmn_center_jack.pory"
-	case 3, Common_EventScript_PkmnCenterJack_Change_Costume_18
-# 474 "data/scripts/pkmn_center_jack.pory"
-	case 4, Common_EventScript_PkmnCenterJack_Change_Costume_19
-# 479 "data/scripts/pkmn_center_jack.pory"
-	case 5, Common_EventScript_PkmnCenterJack_Change_Costume_20
-# 484 "data/scripts/pkmn_center_jack.pory"
-	case 6, Common_EventScript_PkmnCenterJack_Change_Costume_21
-# 489 "data/scripts/pkmn_center_jack.pory"
-	case 7, Common_EventScript_PkmnCenterJack_Change_Costume_22
-# 494 "data/scripts/pkmn_center_jack.pory"
-	case 8, Common_EventScript_PkmnCenterJack_Change_Costume_23
-# 500 "data/scripts/pkmn_center_jack.pory"
-	case MULTI_B_PRESSED, Common_EventScript_PkmnCenterJack_Change_Costume_24
-Common_EventScript_PkmnCenterJack_Change_Costume_24:
-# 501 "data/scripts/pkmn_center_jack.pory"
+# 419 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_2, MSGBOX_DEFAULT
 Common_EventScript_PkmnCenterJack_Change_Costume_1:
-# 505 "data/scripts/pkmn_center_jack.pory"
+# 421 "data/scripts/pkmn_center_jack.pory"
 	releaseall
 	end
 
 Common_EventScript_PkmnCenterJack_Change_Costume_2:
-# 408 "data/scripts/pkmn_center_jack.pory"
-	scrollingmultichoice SCROLLING_COSTUMES_FEMALE, 0, 0, 6, TRUE
-# 409 "data/scripts/pkmn_center_jack.pory"
-	switch VAR_RESULT
-# 410 "data/scripts/pkmn_center_jack.pory"
-	case 0, Common_EventScript_PkmnCenterJack_Change_Costume_6
-# 415 "data/scripts/pkmn_center_jack.pory"
-	case 1, Common_EventScript_PkmnCenterJack_Change_Costume_7
-# 420 "data/scripts/pkmn_center_jack.pory"
-	case 2, Common_EventScript_PkmnCenterJack_Change_Costume_8
-# 425 "data/scripts/pkmn_center_jack.pory"
-	case 3, Common_EventScript_PkmnCenterJack_Change_Costume_9
-# 430 "data/scripts/pkmn_center_jack.pory"
-	case 4, Common_EventScript_PkmnCenterJack_Change_Costume_10
-# 435 "data/scripts/pkmn_center_jack.pory"
-	case 5, Common_EventScript_PkmnCenterJack_Change_Costume_11
-# 440 "data/scripts/pkmn_center_jack.pory"
-	case 6, Common_EventScript_PkmnCenterJack_Change_Costume_12
-# 446 "data/scripts/pkmn_center_jack.pory"
-	case MULTI_B_PRESSED, Common_EventScript_PkmnCenterJack_Change_Costume_13
-Common_EventScript_PkmnCenterJack_Change_Costume_13:
-# 447 "data/scripts/pkmn_center_jack.pory"
-	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_2, MSGBOX_DEFAULT
-	goto Common_EventScript_PkmnCenterJack_Change_Costume_1
-
-Common_EventScript_PkmnCenterJack_Change_Costume_6:
-# 411 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_COSTUME_NUMBER, RS_COSTUME
-# 412 "data/scripts/pkmn_center_jack.pory"
-	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_1, MSGBOX_DEFAULT
-# 413 "data/scripts/pkmn_center_jack.pory"
-	warp MAP_LITTLEROOT_TOWN, 192, 192, 192
-	goto Common_EventScript_PkmnCenterJack_Change_Costume_1
-
-Common_EventScript_PkmnCenterJack_Change_Costume_7:
 # 416 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_COSTUME_NUMBER, EMERALD_COSTUME
-# 417 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_1, MSGBOX_DEFAULT
-# 418 "data/scripts/pkmn_center_jack.pory"
-	warp MAP_LITTLEROOT_TOWN, 192, 192, 192
-	goto Common_EventScript_PkmnCenterJack_Change_Costume_1
-
-Common_EventScript_PkmnCenterJack_Change_Costume_8:
-# 421 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_COSTUME_NUMBER, ORAS_COSTUME
-# 422 "data/scripts/pkmn_center_jack.pory"
-	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_1, MSGBOX_DEFAULT
-# 423 "data/scripts/pkmn_center_jack.pory"
-	warp MAP_LITTLEROOT_TOWN, 192, 192, 192
-	goto Common_EventScript_PkmnCenterJack_Change_Costume_1
-
-Common_EventScript_PkmnCenterJack_Change_Costume_9:
-# 426 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_COSTUME_NUMBER, RBY_COSTUME
-# 427 "data/scripts/pkmn_center_jack.pory"
-	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_1, MSGBOX_DEFAULT
-# 428 "data/scripts/pkmn_center_jack.pory"
-	warp MAP_LITTLEROOT_TOWN, 192, 192, 192
-	goto Common_EventScript_PkmnCenterJack_Change_Costume_1
-
-Common_EventScript_PkmnCenterJack_Change_Costume_10:
-# 431 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_COSTUME_NUMBER, FRLG_COSTUME
-# 432 "data/scripts/pkmn_center_jack.pory"
-	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_1, MSGBOX_DEFAULT
-# 433 "data/scripts/pkmn_center_jack.pory"
-	warp MAP_LITTLEROOT_TOWN, 192, 192, 192
-	goto Common_EventScript_PkmnCenterJack_Change_Costume_1
-
-Common_EventScript_PkmnCenterJack_Change_Costume_11:
-# 436 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_COSTUME_NUMBER, DP_COSTUME
-# 437 "data/scripts/pkmn_center_jack.pory"
-	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_1, MSGBOX_DEFAULT
-# 438 "data/scripts/pkmn_center_jack.pory"
-	warp MAP_LITTLEROOT_TOWN, 192, 192, 192
-	goto Common_EventScript_PkmnCenterJack_Change_Costume_1
-
-Common_EventScript_PkmnCenterJack_Change_Costume_12:
-# 441 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_COSTUME_NUMBER, EXTRA_COSTUME
-# 442 "data/scripts/pkmn_center_jack.pory"
-	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_1, MSGBOX_DEFAULT
-# 443 "data/scripts/pkmn_center_jack.pory"
-	warp MAP_LITTLEROOT_TOWN, 192, 192, 192
-	goto Common_EventScript_PkmnCenterJack_Change_Costume_1
-
-Common_EventScript_PkmnCenterJack_Change_Costume_15:
-# 455 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_COSTUME_NUMBER, RS_COSTUME
-# 456 "data/scripts/pkmn_center_jack.pory"
-	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_1, MSGBOX_DEFAULT
-# 457 "data/scripts/pkmn_center_jack.pory"
-	warp MAP_LITTLEROOT_TOWN, 192, 192, 192
-	goto Common_EventScript_PkmnCenterJack_Change_Costume_1
-
-Common_EventScript_PkmnCenterJack_Change_Costume_16:
-# 460 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_COSTUME_NUMBER, EMERALD_COSTUME
-# 461 "data/scripts/pkmn_center_jack.pory"
-	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_1, MSGBOX_DEFAULT
-# 462 "data/scripts/pkmn_center_jack.pory"
-	warp MAP_LITTLEROOT_TOWN, 192, 192, 192
-	goto Common_EventScript_PkmnCenterJack_Change_Costume_1
-
-Common_EventScript_PkmnCenterJack_Change_Costume_17:
-# 465 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_COSTUME_NUMBER, ORAS_COSTUME
-# 466 "data/scripts/pkmn_center_jack.pory"
-	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_1, MSGBOX_DEFAULT
-# 467 "data/scripts/pkmn_center_jack.pory"
-	warp MAP_LITTLEROOT_TOWN, 192, 192, 192
-	goto Common_EventScript_PkmnCenterJack_Change_Costume_1
-
-Common_EventScript_PkmnCenterJack_Change_Costume_18:
-# 470 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_COSTUME_NUMBER, RBY_COSTUME
-# 471 "data/scripts/pkmn_center_jack.pory"
-	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_1, MSGBOX_DEFAULT
-# 472 "data/scripts/pkmn_center_jack.pory"
-	warp MAP_LITTLEROOT_TOWN, 192, 192, 192
-	goto Common_EventScript_PkmnCenterJack_Change_Costume_1
-
-Common_EventScript_PkmnCenterJack_Change_Costume_19:
-# 475 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_COSTUME_NUMBER, FRLG_COSTUME
-# 476 "data/scripts/pkmn_center_jack.pory"
-	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_1, MSGBOX_DEFAULT
-# 477 "data/scripts/pkmn_center_jack.pory"
-	warp MAP_LITTLEROOT_TOWN, 192, 192, 192
-	goto Common_EventScript_PkmnCenterJack_Change_Costume_1
-
-Common_EventScript_PkmnCenterJack_Change_Costume_20:
-# 480 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_COSTUME_NUMBER, EXTRA_COSTUME
-# 481 "data/scripts/pkmn_center_jack.pory"
-	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_1, MSGBOX_DEFAULT
-# 482 "data/scripts/pkmn_center_jack.pory"
-	warp MAP_LITTLEROOT_TOWN, 192, 192, 192
-	goto Common_EventScript_PkmnCenterJack_Change_Costume_1
-
-Common_EventScript_PkmnCenterJack_Change_Costume_21:
-# 485 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_COSTUME_NUMBER, GSC_COSTUME
-# 486 "data/scripts/pkmn_center_jack.pory"
-	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_1, MSGBOX_DEFAULT
-# 487 "data/scripts/pkmn_center_jack.pory"
-	warp MAP_LITTLEROOT_TOWN, 192, 192, 192
-	goto Common_EventScript_PkmnCenterJack_Change_Costume_1
-
-Common_EventScript_PkmnCenterJack_Change_Costume_22:
-# 490 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_COSTUME_NUMBER, DP_COSTUME
-# 491 "data/scripts/pkmn_center_jack.pory"
-	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_1, MSGBOX_DEFAULT
-# 492 "data/scripts/pkmn_center_jack.pory"
-	warp MAP_LITTLEROOT_TOWN, 192, 192, 192
-	goto Common_EventScript_PkmnCenterJack_Change_Costume_1
-
-Common_EventScript_PkmnCenterJack_Change_Costume_23:
-# 495 "data/scripts/pkmn_center_jack.pory"
-	setvar VAR_COSTUME_NUMBER, BW_COSTUME
-# 496 "data/scripts/pkmn_center_jack.pory"
-	msgbox Common_EventScript_PkmnCenterJack_Change_Costume_Text_1, MSGBOX_DEFAULT
-# 497 "data/scripts/pkmn_center_jack.pory"
-	warp MAP_LITTLEROOT_TOWN, 192, 192, 192
 	goto Common_EventScript_PkmnCenterJack_Change_Costume_1
 
 
 Common_EventScript_PkmnCenterJack_WonderTrade::
-# 511 "data/scripts/pkmn_center_jack.pory"
+# 427 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_0x8008, INGAME_TRADE_SEEDOT
-# 512 "data/scripts/pkmn_center_jack.pory"
+# 428 "data/scripts/pkmn_center_jack.pory"
 	copyvar VAR_0x8004, VAR_0x8008
-# 513 "data/scripts/pkmn_center_jack.pory"
+# 429 "data/scripts/pkmn_center_jack.pory"
 	specialvar VAR_RESULT, GetInGameTradeSpeciesInfo
-# 514 "data/scripts/pkmn_center_jack.pory"
+# 430 "data/scripts/pkmn_center_jack.pory"
 	copyvar VAR_0x8009, VAR_RESULT
-# 516 "data/scripts/pkmn_center_jack.pory"
+# 432 "data/scripts/pkmn_center_jack.pory"
 	checkitem ITEM_WONDER_CHARM, 1
-# 517 "data/scripts/pkmn_center_jack.pory"
+# 433 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_PkmnCenterJack_WonderTrade_2
-# 523 "data/scripts/pkmn_center_jack.pory"
+# 439 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_WonderTrade_Text_1, MSGBOX_YESNO
 Common_EventScript_PkmnCenterJack_WonderTrade_1:
-# 526 "data/scripts/pkmn_center_jack.pory"
+# 442 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_RESULT, NO
 	goto_if_eq Common_EventScript_PkmnCenterJack_WonderTrade_6
-# 531 "data/scripts/pkmn_center_jack.pory"
+# 447 "data/scripts/pkmn_center_jack.pory"
 	checkitem ITEM_WONDER_CHARM, 1
-# 532 "data/scripts/pkmn_center_jack.pory"
+# 448 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_PkmnCenterJack_WonderTrade_10
 Common_EventScript_PkmnCenterJack_WonderTrade_9:
-# 536 "data/scripts/pkmn_center_jack.pory"
+# 452 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_RESULT, 0
 	goto_if_eq Common_EventScript_PkmnCenterJack_WonderTrade_12
-# 541 "data/scripts/pkmn_center_jack.pory"
+# 457 "data/scripts/pkmn_center_jack.pory"
 	special ChoosePartyMon
-# 542 "data/scripts/pkmn_center_jack.pory"
+# 458 "data/scripts/pkmn_center_jack.pory"
 	waitstate
-# 544 "data/scripts/pkmn_center_jack.pory"
+# 460 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_0x8004, 0xFF
 	goto_if_eq Common_EventScript_PkmnCenterJack_WonderTrade_16
 Common_EventScript_PkmnCenterJack_WonderTrade_15:
-# 547 "data/scripts/pkmn_center_jack.pory"
+# 463 "data/scripts/pkmn_center_jack.pory"
 	copyvar VAR_0x800A, VAR_0x8004
-# 548 "data/scripts/pkmn_center_jack.pory"
+# 464 "data/scripts/pkmn_center_jack.pory"
 	copyvar VAR_0x8005, VAR_0x800A
-# 549 "data/scripts/pkmn_center_jack.pory"
+# 465 "data/scripts/pkmn_center_jack.pory"
 	specialvar VAR_RESULT, GetTradeSpecies
-# 550 "data/scripts/pkmn_center_jack.pory"
+# 466 "data/scripts/pkmn_center_jack.pory"
 	copyvar VAR_0x800B, VAR_RESULT
-# 551 "data/scripts/pkmn_center_jack.pory"
+# 467 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_RESULT, VAR_0x8009
-# 552 "data/scripts/pkmn_center_jack.pory"
+# 468 "data/scripts/pkmn_center_jack.pory"
 	copyvar VAR_0x8004, VAR_0x8008
-# 553 "data/scripts/pkmn_center_jack.pory"
+# 469 "data/scripts/pkmn_center_jack.pory"
 	copyvar VAR_0x8005, VAR_0x800A
-# 554 "data/scripts/pkmn_center_jack.pory"
+# 470 "data/scripts/pkmn_center_jack.pory"
 	special CreateInGameWonderTradePokemon
-# 555 "data/scripts/pkmn_center_jack.pory"
+# 471 "data/scripts/pkmn_center_jack.pory"
 	special DoInGameTradeScene
-# 556 "data/scripts/pkmn_center_jack.pory"
+# 472 "data/scripts/pkmn_center_jack.pory"
 	waitstate
-# 557 "data/scripts/pkmn_center_jack.pory"
+# 473 "data/scripts/pkmn_center_jack.pory"
 	special DestroyFollower
-# 558 "data/scripts/pkmn_center_jack.pory"
+# 474 "data/scripts/pkmn_center_jack.pory"
 	bufferspeciesname 0, VAR_0x8009
-# 559 "data/scripts/pkmn_center_jack.pory"
+# 475 "data/scripts/pkmn_center_jack.pory"
 	playse SE_SHOP
-# 561 "data/scripts/pkmn_center_jack.pory"
+# 477 "data/scripts/pkmn_center_jack.pory"
 	checkitem ITEM_WONDER_CHARM, 1
-# 562 "data/scripts/pkmn_center_jack.pory"
+# 478 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_RESULT, FALSE
 	goto_if_eq Common_EventScript_PkmnCenterJack_WonderTrade_19
 Common_EventScript_PkmnCenterJack_WonderTrade_18:
-# 566 "data/scripts/pkmn_center_jack.pory"
+# 482 "data/scripts/pkmn_center_jack.pory"
 	clearflag FLAG_FOLLOWER_IS_ENABLED
-# 567 "data/scripts/pkmn_center_jack.pory"
+# 483 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_WonderTrade_Text_3, MSGBOX_DEFAULT
 Common_EventScript_PkmnCenterJack_WonderTrade_5:
-# 570 "data/scripts/pkmn_center_jack.pory"
+# 486 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 Common_EventScript_PkmnCenterJack_WonderTrade_2:
-# 518 "data/scripts/pkmn_center_jack.pory"
+# 434 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 519 "data/scripts/pkmn_center_jack.pory"
-	showmoneybox 0, 0, 0
-# 520 "data/scripts/pkmn_center_jack.pory"
+# 435 "data/scripts/pkmn_center_jack.pory"
+	showbpbox 0, 0, 0
+# 436 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_WonderTrade_Text_0, MSGBOX_YESNO
 	goto Common_EventScript_PkmnCenterJack_WonderTrade_1
 
 Common_EventScript_PkmnCenterJack_WonderTrade_6:
-# 527 "data/scripts/pkmn_center_jack.pory"
+# 443 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_WonderTrade_Cancel
 	goto Common_EventScript_PkmnCenterJack_WonderTrade_5
 
 Common_EventScript_PkmnCenterJack_WonderTrade_10:
-# 533 "data/scripts/pkmn_center_jack.pory"
-	checkmoney WONDER_TRADE_PRICE, 0
+# 449 "data/scripts/pkmn_center_jack.pory"
+	checkbp WONDER_TRADE_PRICE, 0
 	goto Common_EventScript_PkmnCenterJack_WonderTrade_9
 
 Common_EventScript_PkmnCenterJack_WonderTrade_12:
-# 537 "data/scripts/pkmn_center_jack.pory"
+# 453 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_WonderTrade_Text_2, MSGBOX_DEFAULT
-# 538 "data/scripts/pkmn_center_jack.pory"
+# 454 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_MONEY_TYPE, 0
 	goto Common_EventScript_PkmnCenterJack_WonderTrade_5
 
 Common_EventScript_PkmnCenterJack_WonderTrade_16:
-# 545 "data/scripts/pkmn_center_jack.pory"
+# 461 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_WonderTrade_Cancel
 	goto Common_EventScript_PkmnCenterJack_WonderTrade_15
 
 Common_EventScript_PkmnCenterJack_WonderTrade_19:
-# 563 "data/scripts/pkmn_center_jack.pory"
-	removemoney WONDER_TRADE_PRICE, 0
+# 479 "data/scripts/pkmn_center_jack.pory"
+	takebp WONDER_TRADE_PRICE, 0
 	goto Common_EventScript_PkmnCenterJack_WonderTrade_18
 
 
 Common_EventScript_PkmnCenterJack_WonderTrade_Cancel::
-# 575 "data/scripts/pkmn_center_jack.pory"
+# 491 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_WonderTrade_Cancel_Text_0, MSGBOX_DEFAULT
-# 576 "data/scripts/pkmn_center_jack.pory"
+# 492 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack
 	return
 
 
 Common_EventScript_PkmnCenterJack_EggMoveTutor_Price::
-# 582 "data/scripts/pkmn_center_jack.pory"
+# 498 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_PARTY_MENU_TUTOR_STATE, MOVE_TUTOR_EGG_MOVES
-# 583 "data/scripts/pkmn_center_jack.pory"
+# 499 "data/scripts/pkmn_center_jack.pory"
 	setflag FLAG_IS_MOVE_TUTOR
-# 584 "data/scripts/pkmn_center_jack.pory"
+# 500 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_NUM_BADGES, 6
 	goto_if_ge Common_EventScript_PkmnCenterJack_EggMoveTutor_Price_1
-# 609 "data/scripts/pkmn_center_jack.pory"
+# 525 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_EggMoveTutor_Price_Text_2, MSGBOX_DEFAULT
-# 610 "data/scripts/pkmn_center_jack.pory"
+# 526 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_Move_Learner
 	return
 
 Common_EventScript_PkmnCenterJack_EggMoveTutor_Price_1:
-# 585 "data/scripts/pkmn_center_jack.pory"
+# 501 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 586 "data/scripts/pkmn_center_jack.pory"
-	showmoneybox 0, 0, 0
-# 587 "data/scripts/pkmn_center_jack.pory"
+# 502 "data/scripts/pkmn_center_jack.pory"
+	showbpbox 0, 0, 0
+# 503 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_EggMoveTutor_Price_Text_0, MSGBOX_YESNO
-# 588 "data/scripts/pkmn_center_jack.pory"
+# 504 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Common_EventScript_PkmnCenterJack_EggMoveTutor_Price_4
-# 604 "data/scripts/pkmn_center_jack.pory"
-	hidemoneybox
-# 605 "data/scripts/pkmn_center_jack.pory"
+# 520 "data/scripts/pkmn_center_jack.pory"
+	hidebpbox
+# 521 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_Move_Learner
 	return
 
 Common_EventScript_PkmnCenterJack_EggMoveTutor_Price_4:
-# 590 "data/scripts/pkmn_center_jack.pory"
-	checkmoney 4, 0
-# 591 "data/scripts/pkmn_center_jack.pory"
+# 506 "data/scripts/pkmn_center_jack.pory"
+	checkbp 4, 0
+# 507 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Common_EventScript_PkmnCenterJack_EggMoveTutor_Price_7
-# 597 "data/scripts/pkmn_center_jack.pory"
-	hidemoneybox
-# 598 "data/scripts/pkmn_center_jack.pory"
+# 513 "data/scripts/pkmn_center_jack.pory"
+	hidebpbox
+# 514 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_EggMoveTutor_Price_Text_1, MSGBOX_DEFAULT
-# 599 "data/scripts/pkmn_center_jack.pory"
+# 515 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_Move_Learner
 	return
 
 Common_EventScript_PkmnCenterJack_EggMoveTutor_Price_7:
-# 592 "data/scripts/pkmn_center_jack.pory"
-	hidemoneybox
-# 593 "data/scripts/pkmn_center_jack.pory"
+# 508 "data/scripts/pkmn_center_jack.pory"
+	hidebpbox
+# 509 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon
 	return
 
 
 Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon::
-# 615 "data/scripts/pkmn_center_jack.pory"
+# 531 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_0, MSGBOX_DEFAULT
-# 616 "data/scripts/pkmn_center_jack.pory"
+# 532 "data/scripts/pkmn_center_jack.pory"
 	special ChooseMonForMoveRelearner
-# 617 "data/scripts/pkmn_center_jack.pory"
+# 533 "data/scripts/pkmn_center_jack.pory"
 	waitstate
-# 618 "data/scripts/pkmn_center_jack.pory"
+# 534 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_0x8004, 255
 	goto_if_eq Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_1
-# 622 "data/scripts/pkmn_center_jack.pory"
+# 538 "data/scripts/pkmn_center_jack.pory"
 	special IsSelectedMonEgg
-# 623 "data/scripts/pkmn_center_jack.pory"
+# 539 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_4
-# 628 "data/scripts/pkmn_center_jack.pory"
+# 544 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_0x8005, 0
 	goto_if_eq Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_7
-# 633 "data/scripts/pkmn_center_jack.pory"
+# 549 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_3, MSGBOX_DEFAULT
-# 634 "data/scripts/pkmn_center_jack.pory"
+# 550 "data/scripts/pkmn_center_jack.pory"
 	special TeachMoveRelearnerMove
-# 635 "data/scripts/pkmn_center_jack.pory"
+# 551 "data/scripts/pkmn_center_jack.pory"
 	waitstate
-# 636 "data/scripts/pkmn_center_jack.pory"
+# 552 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_0x8004, 0
 	goto_if_eq Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_10
-# 640 "data/scripts/pkmn_center_jack.pory"
+# 556 "data/scripts/pkmn_center_jack.pory"
 	playse SE_SHOP
-# 641 "data/scripts/pkmn_center_jack.pory"
-	removemoney 4, 0
-# 642 "data/scripts/pkmn_center_jack.pory"
+# 557 "data/scripts/pkmn_center_jack.pory"
+	takebp 4, 0
+# 558 "data/scripts/pkmn_center_jack.pory"
 	call Common_EventScript_PkmnCenterJack_Clear_Move_Tutor_Data
-# 643 "data/scripts/pkmn_center_jack.pory"
+# 559 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_4, MSGBOX_DEFAULT
-# 644 "data/scripts/pkmn_center_jack.pory"
+# 560 "data/scripts/pkmn_center_jack.pory"
 	releaseall
 	end
 
 Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_1:
-# 619 "data/scripts/pkmn_center_jack.pory"
+# 535 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_Move_Learner
 	return
 
 Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_4:
-# 624 "data/scripts/pkmn_center_jack.pory"
+# 540 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_1, MSGBOX_DEFAULT
-# 625 "data/scripts/pkmn_center_jack.pory"
+# 541 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_Move_Learner
 	return
 
 Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_7:
-# 629 "data/scripts/pkmn_center_jack.pory"
+# 545 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_2, MSGBOX_DEFAULT
 	return
 
 Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_10:
-# 637 "data/scripts/pkmn_center_jack.pory"
+# 553 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon
 	return
 
 
 Common_EventScript_PkmnCenterJack_TutorMoveTutor_Price::
-# 655 "data/scripts/pkmn_center_jack.pory"
+# 571 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_PARTY_MENU_TUTOR_STATE, MOVE_TUTOR_MOVES
-# 656 "data/scripts/pkmn_center_jack.pory"
+# 572 "data/scripts/pkmn_center_jack.pory"
 	setflag FLAG_IS_MOVE_TUTOR
-# 657 "data/scripts/pkmn_center_jack.pory"
+# 573 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_NUM_BADGES, 9
 	goto_if_ge Common_EventScript_PkmnCenterJack_TutorMoveTutor_Price_1
-# 682 "data/scripts/pkmn_center_jack.pory"
+# 598 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_TutorMoveTutor_Price_Text_1, MSGBOX_DEFAULT
-# 683 "data/scripts/pkmn_center_jack.pory"
+# 599 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_Move_Learner
 	return
 
 Common_EventScript_PkmnCenterJack_TutorMoveTutor_Price_1:
-# 658 "data/scripts/pkmn_center_jack.pory"
+# 574 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 659 "data/scripts/pkmn_center_jack.pory"
-	showmoneybox 0, 0, 0
-# 660 "data/scripts/pkmn_center_jack.pory"
+# 575 "data/scripts/pkmn_center_jack.pory"
+	showbpbox 0, 0, 0
+# 576 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_TutorMoveTutor_Price_Text_0, MSGBOX_YESNO
-# 661 "data/scripts/pkmn_center_jack.pory"
+# 577 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Common_EventScript_PkmnCenterJack_TutorMoveTutor_Price_4
-# 677 "data/scripts/pkmn_center_jack.pory"
-	hidemoneybox
-# 678 "data/scripts/pkmn_center_jack.pory"
+# 593 "data/scripts/pkmn_center_jack.pory"
+	hidebpbox
+# 594 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_Move_Learner
 	return
 
 Common_EventScript_PkmnCenterJack_TutorMoveTutor_Price_4:
-# 663 "data/scripts/pkmn_center_jack.pory"
-	checkmoney 6, 0
-# 664 "data/scripts/pkmn_center_jack.pory"
+# 579 "data/scripts/pkmn_center_jack.pory"
+	checkbp 6, 0
+# 580 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Common_EventScript_PkmnCenterJack_TutorMoveTutor_Price_7
-# 670 "data/scripts/pkmn_center_jack.pory"
-	hidemoneybox
-# 671 "data/scripts/pkmn_center_jack.pory"
+# 586 "data/scripts/pkmn_center_jack.pory"
+	hidebpbox
+# 587 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_EggMoveTutor_Price_Text_1, MSGBOX_DEFAULT
-# 672 "data/scripts/pkmn_center_jack.pory"
+# 588 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_Move_Learner
 	return
 
 Common_EventScript_PkmnCenterJack_TutorMoveTutor_Price_7:
-# 665 "data/scripts/pkmn_center_jack.pory"
-	hidemoneybox
-# 666 "data/scripts/pkmn_center_jack.pory"
+# 581 "data/scripts/pkmn_center_jack.pory"
+	hidebpbox
+# 582 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_TutorMoveTutor_ChooseMon
 	return
 
 
 Common_EventScript_PkmnCenterJack_TutorMoveTutor_ChooseMon::
-# 688 "data/scripts/pkmn_center_jack.pory"
+# 604 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_0, MSGBOX_DEFAULT
-# 689 "data/scripts/pkmn_center_jack.pory"
+# 605 "data/scripts/pkmn_center_jack.pory"
 	special ChooseMonForMoveRelearner
-# 690 "data/scripts/pkmn_center_jack.pory"
+# 606 "data/scripts/pkmn_center_jack.pory"
 	waitstate
-# 691 "data/scripts/pkmn_center_jack.pory"
+# 607 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_0x8004, 255
 	goto_if_eq Common_EventScript_PkmnCenterJack_TutorMoveTutor_ChooseMon_1
-# 695 "data/scripts/pkmn_center_jack.pory"
+# 611 "data/scripts/pkmn_center_jack.pory"
 	special IsSelectedMonEgg
-# 696 "data/scripts/pkmn_center_jack.pory"
+# 612 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Common_EventScript_PkmnCenterJack_TutorMoveTutor_ChooseMon_4
-# 701 "data/scripts/pkmn_center_jack.pory"
+# 617 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_0x8005, 0
 	goto_if_eq Common_EventScript_PkmnCenterJack_TutorMoveTutor_ChooseMon_7
-# 706 "data/scripts/pkmn_center_jack.pory"
+# 622 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_3, MSGBOX_DEFAULT
-# 707 "data/scripts/pkmn_center_jack.pory"
+# 623 "data/scripts/pkmn_center_jack.pory"
 	special TeachMoveRelearnerMove
-# 708 "data/scripts/pkmn_center_jack.pory"
+# 624 "data/scripts/pkmn_center_jack.pory"
 	waitstate
-# 709 "data/scripts/pkmn_center_jack.pory"
+# 625 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_0x8004, 0
 	goto_if_eq Common_EventScript_PkmnCenterJack_TutorMoveTutor_ChooseMon_10
-# 713 "data/scripts/pkmn_center_jack.pory"
+# 629 "data/scripts/pkmn_center_jack.pory"
 	playse SE_SHOP
-# 714 "data/scripts/pkmn_center_jack.pory"
-	removemoney 6, 0
-# 715 "data/scripts/pkmn_center_jack.pory"
+# 630 "data/scripts/pkmn_center_jack.pory"
+	takebp 6, 0
+# 631 "data/scripts/pkmn_center_jack.pory"
 	call Common_EventScript_PkmnCenterJack_Clear_Move_Tutor_Data
-# 716 "data/scripts/pkmn_center_jack.pory"
+# 632 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_4, MSGBOX_DEFAULT
-# 717 "data/scripts/pkmn_center_jack.pory"
+# 633 "data/scripts/pkmn_center_jack.pory"
 	releaseall
 	end
 
 Common_EventScript_PkmnCenterJack_TutorMoveTutor_ChooseMon_1:
-# 692 "data/scripts/pkmn_center_jack.pory"
+# 608 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_Move_Learner
 	return
 
 Common_EventScript_PkmnCenterJack_TutorMoveTutor_ChooseMon_4:
-# 697 "data/scripts/pkmn_center_jack.pory"
+# 613 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_1, MSGBOX_DEFAULT
-# 698 "data/scripts/pkmn_center_jack.pory"
+# 614 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_Move_Learner
 	return
 
 Common_EventScript_PkmnCenterJack_TutorMoveTutor_ChooseMon_7:
-# 702 "data/scripts/pkmn_center_jack.pory"
+# 618 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_2, MSGBOX_DEFAULT
 	return
 
 Common_EventScript_PkmnCenterJack_TutorMoveTutor_ChooseMon_10:
-# 710 "data/scripts/pkmn_center_jack.pory"
+# 626 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_TutorMoveTutor_ChooseMon
 	return
 
 
 Common_EventScript_PkmnCenterJack_TmMoveTutor_Price::
-# 728 "data/scripts/pkmn_center_jack.pory"
+# 644 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_PARTY_MENU_TUTOR_STATE, MOVE_TUTOR_TM_MOVES
-# 729 "data/scripts/pkmn_center_jack.pory"
+# 645 "data/scripts/pkmn_center_jack.pory"
 	setflag FLAG_IS_MOVE_TUTOR
-# 730 "data/scripts/pkmn_center_jack.pory"
+# 646 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_NUM_BADGES, 12
 	goto_if_ge Common_EventScript_PkmnCenterJack_TmMoveTutor_Price_1
-# 755 "data/scripts/pkmn_center_jack.pory"
+# 671 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_TmMoveTutor_Price_Text_1, MSGBOX_DEFAULT
-# 756 "data/scripts/pkmn_center_jack.pory"
+# 672 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_Move_Learner
 	return
 
 Common_EventScript_PkmnCenterJack_TmMoveTutor_Price_1:
-# 731 "data/scripts/pkmn_center_jack.pory"
+# 647 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 732 "data/scripts/pkmn_center_jack.pory"
-	showmoneybox 0, 0, 0
-# 733 "data/scripts/pkmn_center_jack.pory"
+# 648 "data/scripts/pkmn_center_jack.pory"
+	showbpbox 0, 0, 0
+# 649 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_TmMoveTutor_Price_Text_0, MSGBOX_YESNO
-# 734 "data/scripts/pkmn_center_jack.pory"
+# 650 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Common_EventScript_PkmnCenterJack_TmMoveTutor_Price_4
-# 750 "data/scripts/pkmn_center_jack.pory"
-	hidemoneybox
-# 751 "data/scripts/pkmn_center_jack.pory"
+# 666 "data/scripts/pkmn_center_jack.pory"
+	hidebpbox
+# 667 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_Move_Learner
 	return
 
 Common_EventScript_PkmnCenterJack_TmMoveTutor_Price_4:
-# 736 "data/scripts/pkmn_center_jack.pory"
-	checkmoney 8, 0
-# 737 "data/scripts/pkmn_center_jack.pory"
+# 652 "data/scripts/pkmn_center_jack.pory"
+	checkbp 8, 0
+# 653 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Common_EventScript_PkmnCenterJack_TmMoveTutor_Price_7
-# 743 "data/scripts/pkmn_center_jack.pory"
-	hidemoneybox
-# 744 "data/scripts/pkmn_center_jack.pory"
+# 659 "data/scripts/pkmn_center_jack.pory"
+	hidebpbox
+# 660 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_EggMoveTutor_Price_Text_1, MSGBOX_DEFAULT
-# 745 "data/scripts/pkmn_center_jack.pory"
+# 661 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_Move_Learner
 	return
 
 Common_EventScript_PkmnCenterJack_TmMoveTutor_Price_7:
-# 738 "data/scripts/pkmn_center_jack.pory"
-	hidemoneybox
-# 739 "data/scripts/pkmn_center_jack.pory"
+# 654 "data/scripts/pkmn_center_jack.pory"
+	hidebpbox
+# 655 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_TM_TutorMoveTutor_ChooseMon
 	return
 
 
 Common_EventScript_PkmnCenterJack_TM_TutorMoveTutor_ChooseMon::
-# 761 "data/scripts/pkmn_center_jack.pory"
+# 677 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_0, MSGBOX_DEFAULT
-# 762 "data/scripts/pkmn_center_jack.pory"
+# 678 "data/scripts/pkmn_center_jack.pory"
 	special ChooseMonForMoveRelearner
-# 763 "data/scripts/pkmn_center_jack.pory"
+# 679 "data/scripts/pkmn_center_jack.pory"
 	waitstate
-# 764 "data/scripts/pkmn_center_jack.pory"
+# 680 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_0x8004, 255
 	goto_if_eq Common_EventScript_PkmnCenterJack_TM_TutorMoveTutor_ChooseMon_1
-# 768 "data/scripts/pkmn_center_jack.pory"
+# 684 "data/scripts/pkmn_center_jack.pory"
 	special IsSelectedMonEgg
-# 769 "data/scripts/pkmn_center_jack.pory"
+# 685 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_RESULT, YES
 	goto_if_eq Common_EventScript_PkmnCenterJack_TM_TutorMoveTutor_ChooseMon_4
-# 774 "data/scripts/pkmn_center_jack.pory"
+# 690 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_0x8005, 0
 	goto_if_eq Common_EventScript_PkmnCenterJack_TM_TutorMoveTutor_ChooseMon_7
-# 779 "data/scripts/pkmn_center_jack.pory"
+# 695 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_3, MSGBOX_DEFAULT
-# 780 "data/scripts/pkmn_center_jack.pory"
+# 696 "data/scripts/pkmn_center_jack.pory"
 	special TeachMoveRelearnerMove
-# 781 "data/scripts/pkmn_center_jack.pory"
+# 697 "data/scripts/pkmn_center_jack.pory"
 	waitstate
-# 782 "data/scripts/pkmn_center_jack.pory"
+# 698 "data/scripts/pkmn_center_jack.pory"
 	compare VAR_0x8004, 0
 	goto_if_eq Common_EventScript_PkmnCenterJack_TM_TutorMoveTutor_ChooseMon_10
-# 786 "data/scripts/pkmn_center_jack.pory"
+# 702 "data/scripts/pkmn_center_jack.pory"
 	playse SE_SHOP
-# 787 "data/scripts/pkmn_center_jack.pory"
-	removemoney 8, 0
-# 788 "data/scripts/pkmn_center_jack.pory"
+# 703 "data/scripts/pkmn_center_jack.pory"
+	takebp 8, 0
+# 704 "data/scripts/pkmn_center_jack.pory"
 	call Common_EventScript_PkmnCenterJack_Clear_Move_Tutor_Data
-# 789 "data/scripts/pkmn_center_jack.pory"
+# 705 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_4, MSGBOX_DEFAULT
-# 790 "data/scripts/pkmn_center_jack.pory"
+# 706 "data/scripts/pkmn_center_jack.pory"
 	releaseall
 	end
 
 Common_EventScript_PkmnCenterJack_TM_TutorMoveTutor_ChooseMon_1:
-# 765 "data/scripts/pkmn_center_jack.pory"
+# 681 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_Move_Learner
 	return
 
 Common_EventScript_PkmnCenterJack_TM_TutorMoveTutor_ChooseMon_4:
-# 770 "data/scripts/pkmn_center_jack.pory"
+# 686 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_1, MSGBOX_DEFAULT
-# 771 "data/scripts/pkmn_center_jack.pory"
+# 687 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_Move_Learner
 	return
 
 Common_EventScript_PkmnCenterJack_TM_TutorMoveTutor_ChooseMon_7:
-# 775 "data/scripts/pkmn_center_jack.pory"
+# 691 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_2, MSGBOX_DEFAULT
 	return
 
 Common_EventScript_PkmnCenterJack_TM_TutorMoveTutor_ChooseMon_10:
-# 783 "data/scripts/pkmn_center_jack.pory"
+# 699 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_TM_TutorMoveTutor_ChooseMon
 	return
 
 
 Common_EventScript_PkmnCenterJack_ChangeSeason::
-# 799 "data/scripts/pkmn_center_jack.pory"
+# 715 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_ChangeSeason_Text_0, MSGBOX_DEFAULT
-# 800 "data/scripts/pkmn_center_jack.pory"
+# 716 "data/scripts/pkmn_center_jack.pory"
 	waitmessage
-# 801 "data/scripts/pkmn_center_jack.pory"
+# 717 "data/scripts/pkmn_center_jack.pory"
 	scrollingmultichoice SCROLLING_SEASONS, 0, 0, 5, TRUE
-# 802 "data/scripts/pkmn_center_jack.pory"
+# 718 "data/scripts/pkmn_center_jack.pory"
 	switch VAR_RESULT
-# 803 "data/scripts/pkmn_center_jack.pory"
+# 719 "data/scripts/pkmn_center_jack.pory"
 	case SEASON_SPRING, Common_EventScript_PkmnCenterJack_ChangeSeason_3
-# 808 "data/scripts/pkmn_center_jack.pory"
+# 724 "data/scripts/pkmn_center_jack.pory"
 	case SEASON_SUMMER, Common_EventScript_PkmnCenterJack_ChangeSeason_4
-# 813 "data/scripts/pkmn_center_jack.pory"
+# 729 "data/scripts/pkmn_center_jack.pory"
 	case SEASON_AUTUMN, Common_EventScript_PkmnCenterJack_ChangeSeason_5
-# 818 "data/scripts/pkmn_center_jack.pory"
+# 734 "data/scripts/pkmn_center_jack.pory"
 	case SEASON_WINTER, Common_EventScript_PkmnCenterJack_ChangeSeason_6
-# 826 "data/scripts/pkmn_center_jack.pory"
+# 742 "data/scripts/pkmn_center_jack.pory"
 	case MULTI_B_PRESSED, Common_EventScript_PkmnCenterJack_ChangeSeason_8
-# 824 "data/scripts/pkmn_center_jack.pory"
+# 740 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_ChangeSeason_Text_5
 Common_EventScript_PkmnCenterJack_ChangeSeason_1:
-# 829 "data/scripts/pkmn_center_jack.pory"
+# 745 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack
 	return
 
 Common_EventScript_PkmnCenterJack_ChangeSeason_3:
-# 804 "data/scripts/pkmn_center_jack.pory"
+# 720 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_CURRENT_SEASON, SEASON_SPRING
-# 805 "data/scripts/pkmn_center_jack.pory"
+# 721 "data/scripts/pkmn_center_jack.pory"
 	setflag FLAG_SYS_DISABLE_AUTOMATIC_SEASON
-# 806 "data/scripts/pkmn_center_jack.pory"
+# 722 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_ChangeSeason_Text_1
 	goto Common_EventScript_PkmnCenterJack_ChangeSeason_1
 
 Common_EventScript_PkmnCenterJack_ChangeSeason_4:
-# 809 "data/scripts/pkmn_center_jack.pory"
+# 725 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_CURRENT_SEASON, SEASON_SUMMER
-# 810 "data/scripts/pkmn_center_jack.pory"
+# 726 "data/scripts/pkmn_center_jack.pory"
 	setflag FLAG_SYS_DISABLE_AUTOMATIC_SEASON
-# 811 "data/scripts/pkmn_center_jack.pory"
+# 727 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_ChangeSeason_Text_2
 	goto Common_EventScript_PkmnCenterJack_ChangeSeason_1
 
 Common_EventScript_PkmnCenterJack_ChangeSeason_5:
-# 814 "data/scripts/pkmn_center_jack.pory"
+# 730 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_CURRENT_SEASON, SEASON_AUTUMN
-# 815 "data/scripts/pkmn_center_jack.pory"
+# 731 "data/scripts/pkmn_center_jack.pory"
 	setflag FLAG_SYS_DISABLE_AUTOMATIC_SEASON
-# 816 "data/scripts/pkmn_center_jack.pory"
+# 732 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_ChangeSeason_Text_3
 	goto Common_EventScript_PkmnCenterJack_ChangeSeason_1
 
 Common_EventScript_PkmnCenterJack_ChangeSeason_6:
-# 819 "data/scripts/pkmn_center_jack.pory"
+# 735 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_CURRENT_SEASON, SEASON_WINTER
-# 820 "data/scripts/pkmn_center_jack.pory"
+# 736 "data/scripts/pkmn_center_jack.pory"
 	setflag FLAG_SYS_DISABLE_AUTOMATIC_SEASON
-# 821 "data/scripts/pkmn_center_jack.pory"
+# 737 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_ChangeSeason_Text_4
 	goto Common_EventScript_PkmnCenterJack_ChangeSeason_1
 
@@ -1462,668 +1274,668 @@ Common_EventScript_PkmnCenterJack_ChangeSeason_8:
 
 
 Common_EventScript_PkmnCenterJack_ChangeYear::
-# 833 "data/scripts/pkmn_center_jack.pory"
+# 749 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_ChangeYear_Text_0, MSGBOX_DEFAULT
-# 834 "data/scripts/pkmn_center_jack.pory"
+# 750 "data/scripts/pkmn_center_jack.pory"
 	waitmessage
-# 835 "data/scripts/pkmn_center_jack.pory"
+# 751 "data/scripts/pkmn_center_jack.pory"
 	scrollingmultichoice SCROLLING_YEAR, 0, 0, 5, TRUE
-# 836 "data/scripts/pkmn_center_jack.pory"
+# 752 "data/scripts/pkmn_center_jack.pory"
 	switch VAR_RESULT
-# 841 "data/scripts/pkmn_center_jack.pory"
+# 757 "data/scripts/pkmn_center_jack.pory"
 	case MULTI_B_PRESSED, Common_EventScript_PkmnCenterJack_ChangeYear_4
-# 838 "data/scripts/pkmn_center_jack.pory"
+# 754 "data/scripts/pkmn_center_jack.pory"
 	copyvar VAR_TEMP_1, VAR_RESULT
-# 839 "data/scripts/pkmn_center_jack.pory"
+# 755 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_ChangeMonth
 Common_EventScript_PkmnCenterJack_ChangeYear_1:
-# 847 "data/scripts/pkmn_center_jack.pory"
+# 763 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack
 	return
 
 Common_EventScript_PkmnCenterJack_ChangeYear_4:
-# 842 "data/scripts/pkmn_center_jack.pory"
+# 758 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_TEMP_1, 0
-# 843 "data/scripts/pkmn_center_jack.pory"
+# 759 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_TEMP_1, 1
-# 844 "data/scripts/pkmn_center_jack.pory"
+# 760 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_TEMP_1, 2
 	goto Common_EventScript_PkmnCenterJack_ChangeYear_1
 
 
 Common_EventScript_PkmnCenterJack_ChangeMonth::
-# 851 "data/scripts/pkmn_center_jack.pory"
+# 767 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_ChangeMonth_Text_0, MSGBOX_DEFAULT
-# 852 "data/scripts/pkmn_center_jack.pory"
+# 768 "data/scripts/pkmn_center_jack.pory"
 	waitmessage
-# 853 "data/scripts/pkmn_center_jack.pory"
+# 769 "data/scripts/pkmn_center_jack.pory"
 	scrollingmultichoice SCROLLING_MONTH, 0, 0, 5, TRUE
-# 854 "data/scripts/pkmn_center_jack.pory"
+# 770 "data/scripts/pkmn_center_jack.pory"
 	switch VAR_RESULT
-# 859 "data/scripts/pkmn_center_jack.pory"
+# 775 "data/scripts/pkmn_center_jack.pory"
 	case MULTI_B_PRESSED, Common_EventScript_PkmnCenterJack_ChangeMonth_4
-# 856 "data/scripts/pkmn_center_jack.pory"
+# 772 "data/scripts/pkmn_center_jack.pory"
 	copyvar VAR_TEMP_2, VAR_RESULT
-# 857 "data/scripts/pkmn_center_jack.pory"
+# 773 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack_ChangeDay
 Common_EventScript_PkmnCenterJack_ChangeMonth_1:
-# 865 "data/scripts/pkmn_center_jack.pory"
+# 781 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack
 	return
 
 Common_EventScript_PkmnCenterJack_ChangeMonth_4:
-# 860 "data/scripts/pkmn_center_jack.pory"
+# 776 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_TEMP_1, 0
-# 861 "data/scripts/pkmn_center_jack.pory"
+# 777 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_TEMP_1, 1
-# 862 "data/scripts/pkmn_center_jack.pory"
+# 778 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_TEMP_1, 2
 	goto Common_EventScript_PkmnCenterJack_ChangeMonth_1
 
 
 Common_EventScript_PkmnCenterJack_ChangeDay::
-# 869 "data/scripts/pkmn_center_jack.pory"
+# 785 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_ChangeDay_Text_0, MSGBOX_DEFAULT
-# 870 "data/scripts/pkmn_center_jack.pory"
+# 786 "data/scripts/pkmn_center_jack.pory"
 	waitmessage
-# 871 "data/scripts/pkmn_center_jack.pory"
+# 787 "data/scripts/pkmn_center_jack.pory"
 	scrollingmultichoice SCROLLING_DAY, 0, 0, 5, TRUE
-# 872 "data/scripts/pkmn_center_jack.pory"
+# 788 "data/scripts/pkmn_center_jack.pory"
 	switch VAR_RESULT
-# 883 "data/scripts/pkmn_center_jack.pory"
+# 799 "data/scripts/pkmn_center_jack.pory"
 	case MULTI_B_PRESSED, Common_EventScript_PkmnCenterJack_ChangeDay_4
-# 874 "data/scripts/pkmn_center_jack.pory"
+# 790 "data/scripts/pkmn_center_jack.pory"
 	copyvar VAR_TEMP_3, VAR_RESULT
-# 879 "data/scripts/pkmn_center_jack.pory"
+# 795 "data/scripts/pkmn_center_jack.pory"
 	special SetGameDate
-# 880 "data/scripts/pkmn_center_jack.pory"
+# 796 "data/scripts/pkmn_center_jack.pory"
 	drawbox
-# 881 "data/scripts/pkmn_center_jack.pory"
+# 797 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_EventScript_PkmnCenterJack_ChangeDay_Text_1
 Common_EventScript_PkmnCenterJack_ChangeDay_1:
-# 890 "data/scripts/pkmn_center_jack.pory"
+# 806 "data/scripts/pkmn_center_jack.pory"
 	goto Common_EventScript_PkmnCenterJack
 	return
 
 Common_EventScript_PkmnCenterJack_ChangeDay_4:
-# 884 "data/scripts/pkmn_center_jack.pory"
+# 800 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_TEMP_1, 0
-# 885 "data/scripts/pkmn_center_jack.pory"
+# 801 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_TEMP_1, 1
-# 886 "data/scripts/pkmn_center_jack.pory"
+# 802 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_TEMP_1, 2
 	goto Common_EventScript_PkmnCenterJack_ChangeDay_1
 
 
 	.align 2
-# 896 "data/scripts/pkmn_center_jack.pory"
+# 812 "data/scripts/pkmn_center_jack.pory"
 Mart_Guru_Stones_XY:
-# 897 "data/scripts/pkmn_center_jack.pory"
+# 813 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_BOOSTER_STONE
-# 898 "data/scripts/pkmn_center_jack.pory"
+# 814 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_ABOMASITE
-# 899 "data/scripts/pkmn_center_jack.pory"
+# 815 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_ABSOLITE
-# 900 "data/scripts/pkmn_center_jack.pory"
+# 816 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_AERODACTYLITE
-# 901 "data/scripts/pkmn_center_jack.pory"
+# 817 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_ALAKAZITE
-# 902 "data/scripts/pkmn_center_jack.pory"
+# 818 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_AMPHAROSITE
-# 903 "data/scripts/pkmn_center_jack.pory"
+# 819 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_AUDINITE
-# 904 "data/scripts/pkmn_center_jack.pory"
+# 820 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_BANETTITE
-# 905 "data/scripts/pkmn_center_jack.pory"
+# 821 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_BLASTOISINITE
-# 906 "data/scripts/pkmn_center_jack.pory"
+# 822 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_CHARIZARDITE_X
-# 907 "data/scripts/pkmn_center_jack.pory"
+# 823 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_CHARIZARDITE_Y
-# 908 "data/scripts/pkmn_center_jack.pory"
+# 824 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_GALLADITE
-# 909 "data/scripts/pkmn_center_jack.pory"
+# 825 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_GARCHOMPITE
-# 910 "data/scripts/pkmn_center_jack.pory"
+# 826 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_GARDEVOIRITE
-# 911 "data/scripts/pkmn_center_jack.pory"
+# 827 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_GENGARITE
-# 912 "data/scripts/pkmn_center_jack.pory"
+# 828 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_GYARADOSITE
-# 913 "data/scripts/pkmn_center_jack.pory"
+# 829 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_HERACRONITE
-# 914 "data/scripts/pkmn_center_jack.pory"
+# 830 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_HOUNDOOMINITE
-# 915 "data/scripts/pkmn_center_jack.pory"
+# 831 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_KANGASKHANITE
-# 916 "data/scripts/pkmn_center_jack.pory"
+# 832 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_LUCARIONITE
-# 917 "data/scripts/pkmn_center_jack.pory"
+# 833 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_MANECTITE
-# 918 "data/scripts/pkmn_center_jack.pory"
+# 834 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_MAWILITE
-# 919 "data/scripts/pkmn_center_jack.pory"
+# 835 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_MEDICHAMITE
-# 920 "data/scripts/pkmn_center_jack.pory"
+# 836 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_PINSIRITE
-# 921 "data/scripts/pkmn_center_jack.pory"
+# 837 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SCIZORITE
-# 922 "data/scripts/pkmn_center_jack.pory"
+# 838 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_TYRANITARITE
-# 923 "data/scripts/pkmn_center_jack.pory"
+# 839 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_VENUSAURITE
 	.2byte ITEM_NONE
 
 	.align 2
-# 926 "data/scripts/pkmn_center_jack.pory"
+# 842 "data/scripts/pkmn_center_jack.pory"
 Mart_Guru_Stones_ORAS:
-# 927 "data/scripts/pkmn_center_jack.pory"
+# 843 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_BOOSTER_STONE
-# 928 "data/scripts/pkmn_center_jack.pory"
+# 844 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_BLAZIKENITE
-# 929 "data/scripts/pkmn_center_jack.pory"
+# 845 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_BEEDRILLITE
-# 930 "data/scripts/pkmn_center_jack.pory"
+# 846 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_PIDGEOTITE
-# 931 "data/scripts/pkmn_center_jack.pory"
+# 847 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SLOWBRONITE
-# 932 "data/scripts/pkmn_center_jack.pory"
+# 848 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_STEELIXITE
-# 933 "data/scripts/pkmn_center_jack.pory"
+# 849 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SWAMPERTITE
-# 934 "data/scripts/pkmn_center_jack.pory"
+# 850 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SCEPTILITE
-# 935 "data/scripts/pkmn_center_jack.pory"
+# 851 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SABLENITE
-# 936 "data/scripts/pkmn_center_jack.pory"
+# 852 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SHARPEDONITE
-# 937 "data/scripts/pkmn_center_jack.pory"
+# 853 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_CAMERUPTITE
-# 938 "data/scripts/pkmn_center_jack.pory"
+# 854 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_ALTARIANITE
-# 939 "data/scripts/pkmn_center_jack.pory"
+# 855 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_GLALITITE
-# 940 "data/scripts/pkmn_center_jack.pory"
+# 856 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SALAMENCITE
-# 941 "data/scripts/pkmn_center_jack.pory"
+# 857 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_METAGROSSITE
-# 942 "data/scripts/pkmn_center_jack.pory"
+# 858 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_LOPUNNITE
 	.2byte ITEM_NONE
 
 	.align 2
-# 945 "data/scripts/pkmn_center_jack.pory"
+# 861 "data/scripts/pkmn_center_jack.pory"
 Mart_Guru_Stones_G:
-# 946 "data/scripts/pkmn_center_jack.pory"
+# 862 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_BOOSTER_STONE
-# 947 "data/scripts/pkmn_center_jack.pory"
+# 863 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_VENAUSURITE_G
-# 948 "data/scripts/pkmn_center_jack.pory"
+# 864 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_BLASTOISTE_G
-# 949 "data/scripts/pkmn_center_jack.pory"
+# 865 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_GRIMMSNARLITE
-# 950 "data/scripts/pkmn_center_jack.pory"
+# 866 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_RILABOOMITE
-# 951 "data/scripts/pkmn_center_jack.pory"
+# 867 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_CINDERACITE
-# 952 "data/scripts/pkmn_center_jack.pory"
+# 868 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_INTELEONITE
-# 953 "data/scripts/pkmn_center_jack.pory"
+# 869 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_TOXTRICITITE
-# 954 "data/scripts/pkmn_center_jack.pory"
+# 870 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_ALCREMITE
-# 955 "data/scripts/pkmn_center_jack.pory"
+# 871 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_APPLETITE
-# 956 "data/scripts/pkmn_center_jack.pory"
+# 872 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_BUTTERFRITE
-# 957 "data/scripts/pkmn_center_jack.pory"
+# 873 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_CENTISITE
-# 958 "data/scripts/pkmn_center_jack.pory"
+# 874 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_COALOSSITE
-# 959 "data/scripts/pkmn_center_jack.pory"
+# 875 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_CORVIKNITE
-# 960 "data/scripts/pkmn_center_jack.pory"
+# 876 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_DREDNAWITE
-# 961 "data/scripts/pkmn_center_jack.pory"
+# 877 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_FLAPPLITE
-# 962 "data/scripts/pkmn_center_jack.pory"
+# 878 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_GARBODORITE
-# 963 "data/scripts/pkmn_center_jack.pory"
+# 879 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_HATTERENITE
-# 964 "data/scripts/pkmn_center_jack.pory"
+# 880 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_KINGLERITE
-# 965 "data/scripts/pkmn_center_jack.pory"
+# 881 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_LAPRITE
-# 966 "data/scripts/pkmn_center_jack.pory"
+# 882 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_MACHAMPITE
-# 967 "data/scripts/pkmn_center_jack.pory"
+# 883 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_ORBEETLITE
-# 968 "data/scripts/pkmn_center_jack.pory"
+# 884 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SANDACONDITE
-# 969 "data/scripts/pkmn_center_jack.pory"
+# 885 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SNORLAXITE
 	.2byte ITEM_NONE
 
 	.align 2
-# 972 "data/scripts/pkmn_center_jack.pory"
+# 888 "data/scripts/pkmn_center_jack.pory"
 Mart_Guru_Stones_ER:
-# 973 "data/scripts/pkmn_center_jack.pory"
+# 889 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_BOOSTER_STONE
-# 974 "data/scripts/pkmn_center_jack.pory"
+# 890 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SLOWKINGITE
-# 975 "data/scripts/pkmn_center_jack.pory"
+# 891 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_CROBATITE
-# 976 "data/scripts/pkmn_center_jack.pory"
+# 892 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_DEWGONGITE
-# 977 "data/scripts/pkmn_center_jack.pory"
+# 893 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_TYPHLOSIONITE
-# 978 "data/scripts/pkmn_center_jack.pory"
+# 894 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_LANTURNITE
-# 979 "data/scripts/pkmn_center_jack.pory"
+# 895 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_QUAGSIRITE
-# 980 "data/scripts/pkmn_center_jack.pory"
+# 896 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_BRELOOMITE
-# 981 "data/scripts/pkmn_center_jack.pory"
+# 897 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SHEDINJITE
-# 982 "data/scripts/pkmn_center_jack.pory"
+# 898 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_FLYGONITE
-# 983 "data/scripts/pkmn_center_jack.pory"
+# 899 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_MILOTICITE
-# 984 "data/scripts/pkmn_center_jack.pory"
+# 900 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SERPERIORITE
-# 985 "data/scripts/pkmn_center_jack.pory"
+# 901 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SAMUROTTITE
-# 986 "data/scripts/pkmn_center_jack.pory"
+# 902 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_RIBOMBITE
-# 987 "data/scripts/pkmn_center_jack.pory"
+# 903 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_CLODSIRITE
-# 988 "data/scripts/pkmn_center_jack.pory"
+# 904 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SANDSLASHITE
-# 989 "data/scripts/pkmn_center_jack.pory"
+# 905 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_TOUCANNONITE
-# 990 "data/scripts/pkmn_center_jack.pory"
+# 906 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_VANILLUXITE
-# 991 "data/scripts/pkmn_center_jack.pory"
+# 907 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_TINKATITE
-# 992 "data/scripts/pkmn_center_jack.pory"
+# 908 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SHUCKLENITE
-# 993 "data/scripts/pkmn_center_jack.pory"
+# 909 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_KROOKODILENITE
-# 994 "data/scripts/pkmn_center_jack.pory"
+# 910 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_TSEERENITE
-# 995 "data/scripts/pkmn_center_jack.pory"
+# 911 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_LUXRAYNITE
-# 996 "data/scripts/pkmn_center_jack.pory"
+# 912 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_CLEFABLITE_R
-# 998 "data/scripts/pkmn_center_jack.pory"
+# 914 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_ARBOKITE
 	.2byte ITEM_NONE
 
 	.align 2
-# 1001 "data/scripts/pkmn_center_jack.pory"
+# 917 "data/scripts/pkmn_center_jack.pory"
 Mart_Guru_Stones_ZA_DLC:
-# 1002 "data/scripts/pkmn_center_jack.pory"
+# 918 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_BOOSTER_STONE
-# 1003 "data/scripts/pkmn_center_jack.pory"
+# 919 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_CHIMECHITE
-# 1004 "data/scripts/pkmn_center_jack.pory"
+# 920 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_ABSOLITE_Z
-# 1005 "data/scripts/pkmn_center_jack.pory"
+# 921 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_STARAPTORITE
-# 1006 "data/scripts/pkmn_center_jack.pory"
+# 922 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_GARCHOMPITE_Z
-# 1007 "data/scripts/pkmn_center_jack.pory"
+# 923 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_LUCARIONITE_Z
-# 1008 "data/scripts/pkmn_center_jack.pory"
+# 924 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_MEOWSTITE
-# 1009 "data/scripts/pkmn_center_jack.pory"
+# 925 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_GOLURKITE
-# 1010 "data/scripts/pkmn_center_jack.pory"
+# 926 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_CRABOMINABLITE
-# 1011 "data/scripts/pkmn_center_jack.pory"
+# 927 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_GOLISPODITE
-# 1012 "data/scripts/pkmn_center_jack.pory"
+# 928 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_MAGEARNITE
-# 1013 "data/scripts/pkmn_center_jack.pory"
+# 929 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SCOVILLAINITE
-# 1014 "data/scripts/pkmn_center_jack.pory"
+# 930 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_GLIMMORITE
-# 1015 "data/scripts/pkmn_center_jack.pory"
+# 931 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_TATSIGIRITE
-# 1016 "data/scripts/pkmn_center_jack.pory"
+# 932 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_BAXCALIBURITE
-# 1017 "data/scripts/pkmn_center_jack.pory"
+# 933 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_RAICHUNITE_X
-# 1018 "data/scripts/pkmn_center_jack.pory"
+# 934 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_RAICHUNITE_Y
 	.2byte ITEM_NONE
 
 	.align 2
-# 1021 "data/scripts/pkmn_center_jack.pory"
+# 937 "data/scripts/pkmn_center_jack.pory"
 Mart_Guru_Stones_Legendaries:
-# 1022 "data/scripts/pkmn_center_jack.pory"
+# 938 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_BOOSTER_STONE
-# 1023 "data/scripts/pkmn_center_jack.pory"
+# 939 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_RED_ORB
-# 1024 "data/scripts/pkmn_center_jack.pory"
+# 940 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_BLUE_ORB
-# 1026 "data/scripts/pkmn_center_jack.pory"
+# 942 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_DARKRAITE
-# 1030 "data/scripts/pkmn_center_jack.pory"
+# 946 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_MELMETALITE
-# 1031 "data/scripts/pkmn_center_jack.pory"
+# 947 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_MEWTWONITE_X
-# 1032 "data/scripts/pkmn_center_jack.pory"
+# 948 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_MEWTWONITE_Y
-# 1034 "data/scripts/pkmn_center_jack.pory"
+# 950 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_FLOETTITE
-# 1035 "data/scripts/pkmn_center_jack.pory"
+# 951 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_LATIASITE
-# 1036 "data/scripts/pkmn_center_jack.pory"
+# 952 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_LATIOSITE
-# 1037 "data/scripts/pkmn_center_jack.pory"
+# 953 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_DIANCITE
 	.2byte ITEM_NONE
 
 	.align 2
-# 1040 "data/scripts/pkmn_center_jack.pory"
+# 956 "data/scripts/pkmn_center_jack.pory"
 Mart_Guru_Stones_ZA:
-# 1041 "data/scripts/pkmn_center_jack.pory"
+# 957 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_BOOSTER_STONE
-# 1042 "data/scripts/pkmn_center_jack.pory"
+# 958 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_CLEFABLITE
-# 1043 "data/scripts/pkmn_center_jack.pory"
+# 959 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_VICTRIBELITE
-# 1044 "data/scripts/pkmn_center_jack.pory"
+# 960 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_STARMINITE
-# 1045 "data/scripts/pkmn_center_jack.pory"
+# 961 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_DRAGONINITE
-# 1046 "data/scripts/pkmn_center_jack.pory"
+# 962 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_MEGANIUMITE
-# 1047 "data/scripts/pkmn_center_jack.pory"
+# 963 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_FERALIGITE
-# 1048 "data/scripts/pkmn_center_jack.pory"
+# 964 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SKARMORITE
-# 1049 "data/scripts/pkmn_center_jack.pory"
+# 965 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_FROSLASSITE
-# 1050 "data/scripts/pkmn_center_jack.pory"
+# 966 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_EMBOARITE
-# 1051 "data/scripts/pkmn_center_jack.pory"
+# 967 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_EXCADRITE
-# 1052 "data/scripts/pkmn_center_jack.pory"
+# 968 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SCOLIPITE
-# 1053 "data/scripts/pkmn_center_jack.pory"
+# 969 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_SCRAFTINITE
-# 1054 "data/scripts/pkmn_center_jack.pory"
+# 970 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_EELEKTROSSITE
-# 1055 "data/scripts/pkmn_center_jack.pory"
+# 971 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_CHANDELURITE
-# 1056 "data/scripts/pkmn_center_jack.pory"
+# 972 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_DELPHOXITE
-# 1057 "data/scripts/pkmn_center_jack.pory"
+# 973 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_CHESNAUGHTITE
-# 1058 "data/scripts/pkmn_center_jack.pory"
+# 974 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_GRENINJITE
-# 1059 "data/scripts/pkmn_center_jack.pory"
+# 975 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_PYROARITE
-# 1060 "data/scripts/pkmn_center_jack.pory"
+# 976 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_MALAMARITE
-# 1061 "data/scripts/pkmn_center_jack.pory"
+# 977 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_BARBARACITE
-# 1062 "data/scripts/pkmn_center_jack.pory"
+# 978 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_DRAGALGITE
-# 1063 "data/scripts/pkmn_center_jack.pory"
+# 979 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_HAWLUCHANITE
-# 1064 "data/scripts/pkmn_center_jack.pory"
+# 980 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_DRAMPANITE
-# 1065 "data/scripts/pkmn_center_jack.pory"
+# 981 "data/scripts/pkmn_center_jack.pory"
 	.2byte ITEM_FALINKSITE
 	.2byte ITEM_NONE
 
 Common_Mega_Stone_Guru_No_Braclet::
-# 1069 "data/scripts/pkmn_center_jack.pory"
+# 985 "data/scripts/pkmn_center_jack.pory"
 	msgbox Common_Mega_Stone_Guru_No_Braclet_Text_0, MSGBOX_NPC
-# 1070 "data/scripts/pkmn_center_jack.pory"
+# 986 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 
 Common_Mega_Stone_Guru_XY::
-# 1075 "data/scripts/pkmn_center_jack.pory"
+# 991 "data/scripts/pkmn_center_jack.pory"
 	lock
-# 1076 "data/scripts/pkmn_center_jack.pory"
+# 992 "data/scripts/pkmn_center_jack.pory"
 	faceplayer
-# 1077 "data/scripts/pkmn_center_jack.pory"
+# 993 "data/scripts/pkmn_center_jack.pory"
 	goto_if_unset FLAG_GOT_BADGE_11, Common_Mega_Stone_Guru_XY_2
 Common_Mega_Stone_Guru_XY_1:
-# 1080 "data/scripts/pkmn_center_jack.pory"
+# 996 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
-# 1081 "data/scripts/pkmn_center_jack.pory"
+# 997 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 1082 "data/scripts/pkmn_center_jack.pory"
+# 998 "data/scripts/pkmn_center_jack.pory"
 	message Common_Mega_Stone_Guru_XY_Text_0
-# 1083 "data/scripts/pkmn_center_jack.pory"
+# 999 "data/scripts/pkmn_center_jack.pory"
 	waitmessage
-# 1084 "data/scripts/pkmn_center_jack.pory"
+# 1000 "data/scripts/pkmn_center_jack.pory"
 	pokemart Mart_Guru_Stones_XY
-# 1085 "data/scripts/pkmn_center_jack.pory"
+# 1001 "data/scripts/pkmn_center_jack.pory"
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-# 1086 "data/scripts/pkmn_center_jack.pory"
+# 1002 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 Common_Mega_Stone_Guru_XY_2:
-# 1078 "data/scripts/pkmn_center_jack.pory"
+# 994 "data/scripts/pkmn_center_jack.pory"
 	goto Common_Mega_Stone_Guru_No_Braclet
 	goto Common_Mega_Stone_Guru_XY_1
 
 
 Common_Mega_Stone_Guru_ORAS::
-# 1091 "data/scripts/pkmn_center_jack.pory"
+# 1007 "data/scripts/pkmn_center_jack.pory"
 	lock
-# 1092 "data/scripts/pkmn_center_jack.pory"
+# 1008 "data/scripts/pkmn_center_jack.pory"
 	faceplayer
-# 1093 "data/scripts/pkmn_center_jack.pory"
+# 1009 "data/scripts/pkmn_center_jack.pory"
 	goto_if_unset FLAG_GOT_BADGE_11, Common_Mega_Stone_Guru_ORAS_2
 Common_Mega_Stone_Guru_ORAS_1:
-# 1096 "data/scripts/pkmn_center_jack.pory"
+# 1012 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
-# 1097 "data/scripts/pkmn_center_jack.pory"
+# 1013 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 1098 "data/scripts/pkmn_center_jack.pory"
+# 1014 "data/scripts/pkmn_center_jack.pory"
 	message Common_Mega_Stone_Guru_ORAS_Text_0
-# 1099 "data/scripts/pkmn_center_jack.pory"
+# 1015 "data/scripts/pkmn_center_jack.pory"
 	waitmessage
-# 1100 "data/scripts/pkmn_center_jack.pory"
+# 1016 "data/scripts/pkmn_center_jack.pory"
 	pokemart Mart_Guru_Stones_ORAS
-# 1101 "data/scripts/pkmn_center_jack.pory"
+# 1017 "data/scripts/pkmn_center_jack.pory"
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-# 1102 "data/scripts/pkmn_center_jack.pory"
+# 1018 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 Common_Mega_Stone_Guru_ORAS_2:
-# 1094 "data/scripts/pkmn_center_jack.pory"
+# 1010 "data/scripts/pkmn_center_jack.pory"
 	goto Common_Mega_Stone_Guru_No_Braclet
 	goto Common_Mega_Stone_Guru_ORAS_1
 
 
 Common_Mega_Stone_Guru_SWSH::
-# 1107 "data/scripts/pkmn_center_jack.pory"
+# 1023 "data/scripts/pkmn_center_jack.pory"
 	lock
-# 1108 "data/scripts/pkmn_center_jack.pory"
+# 1024 "data/scripts/pkmn_center_jack.pory"
 	faceplayer
-# 1109 "data/scripts/pkmn_center_jack.pory"
+# 1025 "data/scripts/pkmn_center_jack.pory"
 	goto_if_unset FLAG_GOT_BADGE_11, Common_Mega_Stone_Guru_SWSH_2
 Common_Mega_Stone_Guru_SWSH_1:
-# 1112 "data/scripts/pkmn_center_jack.pory"
+# 1028 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
-# 1113 "data/scripts/pkmn_center_jack.pory"
+# 1029 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 1114 "data/scripts/pkmn_center_jack.pory"
+# 1030 "data/scripts/pkmn_center_jack.pory"
 	message Common_Mega_Stone_Guru_SWSH_Text_0
-# 1115 "data/scripts/pkmn_center_jack.pory"
+# 1031 "data/scripts/pkmn_center_jack.pory"
 	waitmessage
-# 1116 "data/scripts/pkmn_center_jack.pory"
+# 1032 "data/scripts/pkmn_center_jack.pory"
 	pokemart Mart_Guru_Stones_G
-# 1117 "data/scripts/pkmn_center_jack.pory"
+# 1033 "data/scripts/pkmn_center_jack.pory"
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-# 1118 "data/scripts/pkmn_center_jack.pory"
+# 1034 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 Common_Mega_Stone_Guru_SWSH_2:
-# 1110 "data/scripts/pkmn_center_jack.pory"
+# 1026 "data/scripts/pkmn_center_jack.pory"
 	goto Common_Mega_Stone_Guru_No_Braclet
 	goto Common_Mega_Stone_Guru_SWSH_1
 
 
 Common_Mega_Stone_Guru_ZA::
-# 1123 "data/scripts/pkmn_center_jack.pory"
+# 1039 "data/scripts/pkmn_center_jack.pory"
 	lock
-# 1124 "data/scripts/pkmn_center_jack.pory"
+# 1040 "data/scripts/pkmn_center_jack.pory"
 	faceplayer
-# 1125 "data/scripts/pkmn_center_jack.pory"
+# 1041 "data/scripts/pkmn_center_jack.pory"
 	goto_if_unset FLAG_GOT_BADGE_11, Common_Mega_Stone_Guru_ZA_2
 Common_Mega_Stone_Guru_ZA_1:
-# 1128 "data/scripts/pkmn_center_jack.pory"
+# 1044 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
-# 1129 "data/scripts/pkmn_center_jack.pory"
+# 1045 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 1130 "data/scripts/pkmn_center_jack.pory"
+# 1046 "data/scripts/pkmn_center_jack.pory"
 	message Common_Mega_Stone_Guru_ZA_Text_0
-# 1131 "data/scripts/pkmn_center_jack.pory"
+# 1047 "data/scripts/pkmn_center_jack.pory"
 	waitmessage
-# 1132 "data/scripts/pkmn_center_jack.pory"
+# 1048 "data/scripts/pkmn_center_jack.pory"
 	pokemart Mart_Guru_Stones_ZA
-# 1133 "data/scripts/pkmn_center_jack.pory"
+# 1049 "data/scripts/pkmn_center_jack.pory"
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-# 1134 "data/scripts/pkmn_center_jack.pory"
+# 1050 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 Common_Mega_Stone_Guru_ZA_2:
-# 1126 "data/scripts/pkmn_center_jack.pory"
+# 1042 "data/scripts/pkmn_center_jack.pory"
 	goto Common_Mega_Stone_Guru_No_Braclet
 	goto Common_Mega_Stone_Guru_ZA_1
 
 
 Common_Mega_Stone_Guru_ZA_DLC::
-# 1139 "data/scripts/pkmn_center_jack.pory"
+# 1055 "data/scripts/pkmn_center_jack.pory"
 	lock
-# 1140 "data/scripts/pkmn_center_jack.pory"
+# 1056 "data/scripts/pkmn_center_jack.pory"
 	faceplayer
-# 1141 "data/scripts/pkmn_center_jack.pory"
+# 1057 "data/scripts/pkmn_center_jack.pory"
 	goto_if_unset FLAG_GOT_BADGE_11, Common_Mega_Stone_Guru_ZA_DLC_2
 Common_Mega_Stone_Guru_ZA_DLC_1:
-# 1144 "data/scripts/pkmn_center_jack.pory"
+# 1060 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
-# 1145 "data/scripts/pkmn_center_jack.pory"
+# 1061 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 1146 "data/scripts/pkmn_center_jack.pory"
+# 1062 "data/scripts/pkmn_center_jack.pory"
 	message Common_Mega_Stone_Guru_ZA_DLC_Text_0
-# 1147 "data/scripts/pkmn_center_jack.pory"
+# 1063 "data/scripts/pkmn_center_jack.pory"
 	waitmessage
-# 1148 "data/scripts/pkmn_center_jack.pory"
+# 1064 "data/scripts/pkmn_center_jack.pory"
 	pokemart Mart_Guru_Stones_ZA_DLC
-# 1149 "data/scripts/pkmn_center_jack.pory"
+# 1065 "data/scripts/pkmn_center_jack.pory"
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-# 1150 "data/scripts/pkmn_center_jack.pory"
+# 1066 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 Common_Mega_Stone_Guru_ZA_DLC_2:
-# 1142 "data/scripts/pkmn_center_jack.pory"
+# 1058 "data/scripts/pkmn_center_jack.pory"
 	goto Common_Mega_Stone_Guru_No_Braclet
 	goto Common_Mega_Stone_Guru_ZA_DLC_1
 
 
 Common_Mega_Stone_Guru_ER::
-# 1155 "data/scripts/pkmn_center_jack.pory"
+# 1071 "data/scripts/pkmn_center_jack.pory"
 	lock
-# 1156 "data/scripts/pkmn_center_jack.pory"
+# 1072 "data/scripts/pkmn_center_jack.pory"
 	faceplayer
-# 1157 "data/scripts/pkmn_center_jack.pory"
+# 1073 "data/scripts/pkmn_center_jack.pory"
 	goto_if_unset FLAG_GOT_BADGE_11, Common_Mega_Stone_Guru_ER_2
 Common_Mega_Stone_Guru_ER_1:
-# 1160 "data/scripts/pkmn_center_jack.pory"
+# 1076 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
-# 1161 "data/scripts/pkmn_center_jack.pory"
+# 1077 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 1162 "data/scripts/pkmn_center_jack.pory"
+# 1078 "data/scripts/pkmn_center_jack.pory"
 	message Common_Mega_Stone_Guru_ER_Text_0
-# 1163 "data/scripts/pkmn_center_jack.pory"
+# 1079 "data/scripts/pkmn_center_jack.pory"
 	waitmessage
-# 1164 "data/scripts/pkmn_center_jack.pory"
+# 1080 "data/scripts/pkmn_center_jack.pory"
 	pokemart Mart_Guru_Stones_ER
-# 1165 "data/scripts/pkmn_center_jack.pory"
+# 1081 "data/scripts/pkmn_center_jack.pory"
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-# 1166 "data/scripts/pkmn_center_jack.pory"
+# 1082 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 Common_Mega_Stone_Guru_ER_2:
-# 1158 "data/scripts/pkmn_center_jack.pory"
+# 1074 "data/scripts/pkmn_center_jack.pory"
 	goto Common_Mega_Stone_Guru_No_Braclet
 	goto Common_Mega_Stone_Guru_ER_1
 
 
 Common_Mega_Stone_Guru_Legendary::
-# 1171 "data/scripts/pkmn_center_jack.pory"
+# 1087 "data/scripts/pkmn_center_jack.pory"
 	lock
-# 1172 "data/scripts/pkmn_center_jack.pory"
+# 1088 "data/scripts/pkmn_center_jack.pory"
 	faceplayer
-# 1173 "data/scripts/pkmn_center_jack.pory"
+# 1089 "data/scripts/pkmn_center_jack.pory"
 	goto_if_unset FLAG_GOT_BADGE_11, Common_Mega_Stone_Guru_Legendary_2
 Common_Mega_Stone_Guru_Legendary_1:
-# 1176 "data/scripts/pkmn_center_jack.pory"
+# 1092 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
-# 1177 "data/scripts/pkmn_center_jack.pory"
+# 1093 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 1178 "data/scripts/pkmn_center_jack.pory"
+# 1094 "data/scripts/pkmn_center_jack.pory"
 	message Common_Mega_Stone_Guru_Legendary_Text_0
-# 1179 "data/scripts/pkmn_center_jack.pory"
+# 1095 "data/scripts/pkmn_center_jack.pory"
 	waitmessage
-# 1180 "data/scripts/pkmn_center_jack.pory"
+# 1096 "data/scripts/pkmn_center_jack.pory"
 	pokemart Mart_Guru_Stones_Legendaries
-# 1181 "data/scripts/pkmn_center_jack.pory"
+# 1097 "data/scripts/pkmn_center_jack.pory"
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-# 1182 "data/scripts/pkmn_center_jack.pory"
+# 1098 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 Common_Mega_Stone_Guru_Legendary_2:
-# 1174 "data/scripts/pkmn_center_jack.pory"
+# 1090 "data/scripts/pkmn_center_jack.pory"
 	goto Common_Mega_Stone_Guru_No_Braclet
 	goto Common_Mega_Stone_Guru_Legendary_1
 
 
 OldaleTown_House1_EventScript_BattleMart_Mega::
-# 1187 "data/scripts/pkmn_center_jack.pory"
+# 1103 "data/scripts/pkmn_center_jack.pory"
 	lock
-# 1188 "data/scripts/pkmn_center_jack.pory"
+# 1104 "data/scripts/pkmn_center_jack.pory"
 	faceplayer
-# 1189 "data/scripts/pkmn_center_jack.pory"
+# 1105 "data/scripts/pkmn_center_jack.pory"
 	goto_if_unset FLAG_GOT_BADGE_11, OldaleTown_House1_EventScript_BattleMart_Mega_2
 OldaleTown_House1_EventScript_BattleMart_Mega_1:
-# 1192 "data/scripts/pkmn_center_jack.pory"
+# 1108 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_TYPE, MART_TYPE_NORMAL
-# 1193 "data/scripts/pkmn_center_jack.pory"
+# 1109 "data/scripts/pkmn_center_jack.pory"
 	setvar VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS
-# 1194 "data/scripts/pkmn_center_jack.pory"
+# 1110 "data/scripts/pkmn_center_jack.pory"
 	message Common_Mega_Stone_Guru_XY_Text_0
-# 1195 "data/scripts/pkmn_center_jack.pory"
+# 1111 "data/scripts/pkmn_center_jack.pory"
 	waitmessage
-# 1196 "data/scripts/pkmn_center_jack.pory"
+# 1112 "data/scripts/pkmn_center_jack.pory"
 	pokemart Mart_Guru_Stones_XY
-# 1197 "data/scripts/pkmn_center_jack.pory"
+# 1113 "data/scripts/pkmn_center_jack.pory"
 	msgbox gText_PleaseComeAgain, MSGBOX_DEFAULT
-# 1198 "data/scripts/pkmn_center_jack.pory"
+# 1114 "data/scripts/pkmn_center_jack.pory"
 	release
 	end
 
 OldaleTown_House1_EventScript_BattleMart_Mega_2:
-# 1190 "data/scripts/pkmn_center_jack.pory"
+# 1106 "data/scripts/pkmn_center_jack.pory"
 	goto Common_Mega_Stone_Guru_No_Braclet
 	goto OldaleTown_House1_EventScript_BattleMart_Mega_1
 
@@ -2175,183 +1987,183 @@ Common_EventScript_PkmnCenterJack_Lower_Difficulty_Text_3:
 	.string "difficulty!$"
 
 Common_EventScript_PkmnCenterJack_Change_Costume_Text_0:
-# 405 "data/scripts/pkmn_center_jack.pory"
+# 412 "data/scripts/pkmn_center_jack.pory"
 	.string "What outfit do you want to use today?$"
 
 Common_EventScript_PkmnCenterJack_Change_Costume_Text_1:
-# 412 "data/scripts/pkmn_center_jack.pory"
-	.string "Come this way so you can change your\n"
-	.string "outfit$"
-
-Common_EventScript_PkmnCenterJack_Change_Costume_Text_2:
-# 447 "data/scripts/pkmn_center_jack.pory"
+# 416 "data/scripts/pkmn_center_jack.pory"
 	.string "Come back anytime you want to change\n"
 	.string "outfits!$"
 
+Common_EventScript_PkmnCenterJack_Change_Costume_Text_2:
+# 419 "data/scripts/pkmn_center_jack.pory"
+	.string "There you go, that outfit looks great\n"
+	.string "on you!$"
+
 Common_EventScript_PkmnCenterJack_WonderTrade_Text_0:
-# 520 "data/scripts/pkmn_center_jack.pory"
+# 436 "data/scripts/pkmn_center_jack.pory"
 	.string "Do you want to try Wonder Trading, its\n"
 	.string "only 5BP per try?$"
 
 Common_EventScript_PkmnCenterJack_WonderTrade_Text_1:
-# 523 "data/scripts/pkmn_center_jack.pory"
+# 439 "data/scripts/pkmn_center_jack.pory"
 	.string "Do you want to try Wonder Trading?, its\n"
 	.string "free for you$"
 
 Common_EventScript_PkmnCenterJack_WonderTrade_Text_2:
-# 537 "data/scripts/pkmn_center_jack.pory"
+# 453 "data/scripts/pkmn_center_jack.pory"
 	.string "But it seems you can't afford wonder\n"
 	.string "trading right now.\p"
 	.string "Please come back when you have atleast\n"
 	.string "5BP.$"
 
 Common_EventScript_PkmnCenterJack_WonderTrade_Text_3:
-# 567 "data/scripts/pkmn_center_jack.pory"
+# 483 "data/scripts/pkmn_center_jack.pory"
 	.string "Please take care of your new Pokémon.$"
 
 Common_EventScript_PkmnCenterJack_WonderTrade_Cancel_Text_0:
-# 575 "data/scripts/pkmn_center_jack.pory"
+# 491 "data/scripts/pkmn_center_jack.pory"
 	.string "All right. Let me know if you want to\n"
 	.string "give it a try.$"
 
 Common_EventScript_PkmnCenterJack_EggMoveTutor_Price_Text_0:
-# 587 "data/scripts/pkmn_center_jack.pory"
+# 503 "data/scripts/pkmn_center_jack.pory"
 	.string "Learning an Egg move will cost you 4\n"
 	.string "Battle Points, do you want to continue?$"
 
 Common_EventScript_PkmnCenterJack_EggMoveTutor_Price_Text_1:
-# 598 "data/scripts/pkmn_center_jack.pory"
+# 514 "data/scripts/pkmn_center_jack.pory"
 	.string "It seems like you don't have enough\n"
 	.string "Battle Points!$"
 
 Common_EventScript_PkmnCenterJack_EggMoveTutor_Price_Text_2:
-# 609 "data/scripts/pkmn_center_jack.pory"
+# 525 "data/scripts/pkmn_center_jack.pory"
 	.string "Sorry, you need 6 badges to use this\n"
 	.string "service!$"
 
 Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_0:
-# 615 "data/scripts/pkmn_center_jack.pory"
+# 531 "data/scripts/pkmn_center_jack.pory"
 	.string "Which Pokémon should I teach a move?$"
 
 Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_1:
-# 624 "data/scripts/pkmn_center_jack.pory"
+# 540 "data/scripts/pkmn_center_jack.pory"
 	.string "Sorry, I can't teach moves to an Egg!$"
 
 Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_2:
-# 629 "data/scripts/pkmn_center_jack.pory"
+# 545 "data/scripts/pkmn_center_jack.pory"
 	.string "Sorry, this Pokémon can't learn any\n"
 	.string "Tutor Move!$"
 
 Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_3:
-# 633 "data/scripts/pkmn_center_jack.pory"
+# 549 "data/scripts/pkmn_center_jack.pory"
 	.string "Which move should I teach it?$"
 
 Common_EventScript_PkmnCenterJack_Egg_TutorMoveTutor_ChooseMon_Text_4:
-# 643 "data/scripts/pkmn_center_jack.pory"
+# 559 "data/scripts/pkmn_center_jack.pory"
 	.string "Your Pokémon was able to learn the move\n"
 	.string "successfuly, please continue to use\l"
 	.string "our services!$"
 
 Common_EventScript_PkmnCenterJack_TutorMoveTutor_Price_Text_0:
-# 660 "data/scripts/pkmn_center_jack.pory"
+# 576 "data/scripts/pkmn_center_jack.pory"
 	.string "Learning a Tutor move will cost you 6\n"
 	.string "Battle Points, do you want to continue?$"
 
 Common_EventScript_PkmnCenterJack_TutorMoveTutor_Price_Text_1:
-# 682 "data/scripts/pkmn_center_jack.pory"
+# 598 "data/scripts/pkmn_center_jack.pory"
 	.string "Sorry, you need 9 badges to use this\n"
 	.string "service!$"
 
 Common_EventScript_PkmnCenterJack_TmMoveTutor_Price_Text_0:
-# 733 "data/scripts/pkmn_center_jack.pory"
+# 649 "data/scripts/pkmn_center_jack.pory"
 	.string "Learning a TM move will cost you 8\n"
 	.string "Battle Points, do you want to continue?$"
 
 Common_EventScript_PkmnCenterJack_TmMoveTutor_Price_Text_1:
-# 755 "data/scripts/pkmn_center_jack.pory"
+# 671 "data/scripts/pkmn_center_jack.pory"
 	.string "Sorry, you need 12 badges to use this\n"
 	.string "service!$"
 
 Common_EventScript_PkmnCenterJack_ChangeSeason_Text_0:
-# 799 "data/scripts/pkmn_center_jack.pory"
+# 715 "data/scripts/pkmn_center_jack.pory"
 	.string "Please chose the season you like the\n"
 	.string "best.$"
 
 Common_EventScript_PkmnCenterJack_ChangeSeason_Text_1:
-# 806 "data/scripts/pkmn_center_jack.pory"
+# 722 "data/scripts/pkmn_center_jack.pory"
 	.string "You will play in Spring!$"
 
 Common_EventScript_PkmnCenterJack_ChangeSeason_Text_2:
-# 811 "data/scripts/pkmn_center_jack.pory"
+# 727 "data/scripts/pkmn_center_jack.pory"
 	.string "You will play in Summer!$"
 
 Common_EventScript_PkmnCenterJack_ChangeSeason_Text_3:
-# 816 "data/scripts/pkmn_center_jack.pory"
+# 732 "data/scripts/pkmn_center_jack.pory"
 	.string "You will play in Autumn!$"
 
 Common_EventScript_PkmnCenterJack_ChangeSeason_Text_4:
-# 821 "data/scripts/pkmn_center_jack.pory"
+# 737 "data/scripts/pkmn_center_jack.pory"
 	.string "You will play in Winter!$"
 
 Common_EventScript_PkmnCenterJack_ChangeSeason_Text_5:
-# 824 "data/scripts/pkmn_center_jack.pory"
+# 740 "data/scripts/pkmn_center_jack.pory"
 	.string "The season will update according to the\n"
 	.string "real time!$"
 
 Common_EventScript_PkmnCenterJack_ChangeYear_Text_0:
-# 833 "data/scripts/pkmn_center_jack.pory"
+# 749 "data/scripts/pkmn_center_jack.pory"
 	.string "Please tell me the current year$"
 
 Common_EventScript_PkmnCenterJack_ChangeMonth_Text_0:
-# 851 "data/scripts/pkmn_center_jack.pory"
+# 767 "data/scripts/pkmn_center_jack.pory"
 	.string "Please tell me the current month$"
 
 Common_EventScript_PkmnCenterJack_ChangeDay_Text_0:
-# 869 "data/scripts/pkmn_center_jack.pory"
+# 785 "data/scripts/pkmn_center_jack.pory"
 	.string "Please tell me the current day$"
 
 Common_EventScript_PkmnCenterJack_ChangeDay_Text_1:
-# 881 "data/scripts/pkmn_center_jack.pory"
+# 797 "data/scripts/pkmn_center_jack.pory"
 	.string "You Changed the Date!$"
 
 Common_Mega_Stone_Guru_No_Braclet_Text_0:
-# 1069 "data/scripts/pkmn_center_jack.pory"
+# 985 "data/scripts/pkmn_center_jack.pory"
 	.string "I'm an stone collector, I have a big\n"
 	.string "collection but I don't know what to do\l"
 	.string "with it right now, maybe I could sell\l"
 	.string "them in a time of need.$"
 
 Common_Mega_Stone_Guru_XY_Text_0:
-# 1082 "data/scripts/pkmn_center_jack.pory"
+# 998 "data/scripts/pkmn_center_jack.pory"
 	.string "Hello, I sell rare stones from Kalos!,\n"
 	.string "How may I serve you?$"
 
 Common_Mega_Stone_Guru_ORAS_Text_0:
-# 1098 "data/scripts/pkmn_center_jack.pory"
+# 1014 "data/scripts/pkmn_center_jack.pory"
 	.string "Hello, I sell rare stones!, How may I\n"
 	.string "serve you?$"
 
 Common_Mega_Stone_Guru_SWSH_Text_0:
-# 1114 "data/scripts/pkmn_center_jack.pory"
+# 1030 "data/scripts/pkmn_center_jack.pory"
 	.string "Hello, I sell big stones from Galar!, How\n"
 	.string "may I serve you?$"
 
 Common_Mega_Stone_Guru_ZA_Text_0:
-# 1130 "data/scripts/pkmn_center_jack.pory"
+# 1046 "data/scripts/pkmn_center_jack.pory"
 	.string "Hello, I sell shiny new stones from\n"
 	.string "Kalos!, How may I serve you?$"
 
 Common_Mega_Stone_Guru_ZA_DLC_Text_0:
-# 1146 "data/scripts/pkmn_center_jack.pory"
+# 1062 "data/scripts/pkmn_center_jack.pory"
 	.string "Hello, I sell weird stones from Kalos!,\n"
 	.string "How may I serve you?$"
 
 Common_Mega_Stone_Guru_ER_Text_0:
-# 1162 "data/scripts/pkmn_center_jack.pory"
+# 1078 "data/scripts/pkmn_center_jack.pory"
 	.string "Hello, I sell rare stones from a strange\n"
 	.string "place!, How may I serve you?$"
 
 Common_Mega_Stone_Guru_Legendary_Text_0:
-# 1178 "data/scripts/pkmn_center_jack.pory"
+# 1094 "data/scripts/pkmn_center_jack.pory"
 	.string "Hello, I sell powerful stones!, How may I\n"
 	.string "serve you?$"

@@ -2150,9 +2150,6 @@ void BlitMenuInfoIcon(u8 windowId, u8 iconId, u16 x, u16 y)
 
 void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
 {
-	s32 curFlag;
-    s32 flagCount;
-    u8 *endOfString;
     u8 *string = dest;
 
     *(string++) = EXT_CTRL_CODE_BEGIN;
@@ -2183,10 +2180,11 @@ void BufferSaveMenuText(u8 textId, u8 *dest, u8 color)
             GetMapNameGeneric(string, gMapHeader.regionMapSectionId);
             break;
         case SAVE_MENU_BADGES:
-            endOfString = string + 1;
-            flagCount = GetBadgeCount();
-            *string = flagCount + CHAR_0;
-            *endOfString = EOS;
+            // Two digits: badges go to 16. The original wrote the count as a SINGLE
+            // character (flagCount + CHAR_0), which is only a digit for 0..9 -- at 10+
+            // it lands past '9' in the charmap and the save box printed a garbage glyph.
+            string = ConvertIntToDecimalStringN(string, GetBadgeCount(), STR_CONV_MODE_LEFT_ALIGN, 2);
+            *string = EOS;
             break;
     }
 }

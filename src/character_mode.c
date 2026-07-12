@@ -30,6 +30,30 @@ const struct CharacterInfo *GetActiveCharacter(void)
     return &gCharacters[VarGet(VAR_CHARACTER_ID) - 1];
 }
 
+// The character whose SPRITES the player wears. A costume from the Pokemon Center
+// overrides the one you are playing as -- a costume changes how you look, while
+// VAR_CHARACTER_ID still decides your roster. Roster code must keep calling
+// GetActiveCharacter(); only appearance code calls this.
+const struct CharacterInfo *GetAppearanceCharacter(void)
+{
+    u16 costume = VarGet(VAR_COSTUME_CHARACTER);
+
+    if (costume == COSTUME_CHARACTER_BASE)
+        return NULL;    // wearing a base outfit on purpose; don't let the character override it
+    if (costume != 0 && costume <= NUM_CHARACTERS)
+        return &gCharacters[costume - 1];
+    return GetActiveCharacter();
+}
+
+// Only characters with overworld art can be worn -- the other 81 have no sprite
+// to put on the map, and handing their id to the avatar code draws garbage.
+bool8 CharacterHasOverworldSprite(u16 index)
+{
+    if (index >= NUM_CHARACTERS)
+        return FALSE;
+    return gCharacters[index].owGfxId != CHAR_ASSET_NONE;
+}
+
 u16 CharacterMode_GetRosterSize(const struct CharacterInfo *character)
 {
     u16 count = 0;

@@ -1840,6 +1840,52 @@ bool8 ScrCmd_hidemoneybox(struct ScriptContext *ctx)
     return FALSE;
 }
 
+// Battle Point counterparts of the four above. 2.X prices the move tutors, Wonder Trade and
+// the flying taxi in BP -- the text says so -- but its scripts call checkmoney/removemoney,
+// and this engine had no BP command at all, so an Egg move that should cost 4 BP cost 4
+// Pokedollars. These give the scripts a real BP wallet to spend.
+bool8 ScrCmd_takebp(struct ScriptContext *ctx)
+{
+    u32 amount = ScriptReadWord(ctx);
+    u8 ignore = ScriptReadByte(ctx);
+
+    if (!ignore)
+    {
+        if (gSaveBlock2Ptr->frontier.battlePoints < amount)
+            gSaveBlock2Ptr->frontier.battlePoints = 0;
+        else
+            gSaveBlock2Ptr->frontier.battlePoints -= amount;
+    }
+    return FALSE;
+}
+
+bool8 ScrCmd_checkbp(struct ScriptContext *ctx)
+{
+    u32 amount = ScriptReadWord(ctx);
+    u8 ignore = ScriptReadByte(ctx);
+
+    if (!ignore)
+        gSpecialVar_Result = (gSaveBlock2Ptr->frontier.battlePoints >= amount);
+    return FALSE;
+}
+
+bool8 ScrCmd_showbpbox(struct ScriptContext *ctx)
+{
+    u8 x = ScriptReadByte(ctx);
+    u8 y = ScriptReadByte(ctx);
+    u8 ignore = ScriptReadByte(ctx);
+
+    if (!ignore)
+        DrawBattlePointsBox(gSaveBlock2Ptr->frontier.battlePoints, x, y);
+    return FALSE;
+}
+
+bool8 ScrCmd_hidebpbox(struct ScriptContext *ctx)
+{
+    HideBattlePointsBox();
+    return FALSE;
+}
+
 bool8 ScrCmd_updatemoneybox(struct ScriptContext *ctx)
 {
     u8 x = ScriptReadByte(ctx);

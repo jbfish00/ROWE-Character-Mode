@@ -5,7 +5,7 @@ script Common_EventScript_FlyingTaxi{
     checkitem(ITEM_FLY_CHARM, 1)
     if(var(VAR_RESULT) == FALSE){
 		setvar(VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_BATTLE_POINTS) //Battle Points
-		showmoneybox(0, 0, 0)
+		showbpbox(0, 0, 0)
 		msgbox(format("Do you want to Fly with us, its only 2BP?"), MSGBOX_YESNO)
 	}
 	else{
@@ -15,7 +15,7 @@ script Common_EventScript_FlyingTaxi{
         // Check if the player has enough bp	
         checkitem(ITEM_FLY_CHARM, 1)
         if(var(VAR_RESULT) == FALSE){
-            checkmoney(FLYING_TAXIS_PRICE, 0)
+            checkbp(FLYING_TAXIS_PRICE, 0)
         }
         
         if(var(VAR_RESULT) == FALSE) {
@@ -26,15 +26,18 @@ script Common_EventScript_FlyingTaxi{
             checkitem(ITEM_FLY_CHARM, 1)
             if(var(VAR_RESULT) == FALSE){
                 playse(SE_SHOP)
+                // 2.X checked you had the 2BP but never took it, so every flight was free
+                // -- which also made the Fly Charm (whose only job is making it free) moot.
+                takebp(FLYING_TAXIS_PRICE, 0)
                 setflag(FLAG_USING_FLYING_TAXIS)
-		        hidemoneybox
+		        hidebpbox
             }
             special(FieldLoadFlyMap)
         }
     }
     checkitem(ITEM_FLY_CHARM, 1)
 	if(var(VAR_RESULT) == FALSE){
-		hidemoneybox
+		hidebpbox
 	}
 	msgbox(gText_WeHopeToSeeYouAgain, MSGBOX_DEFAULT)
     setvar(VAR_LAST_TALKED, 0)

@@ -1,9 +1,13 @@
 #include "global.h"
 #include "main.h"
+#include "character_mode.h"
 #include "event_data.h"
+#include "field_control_avatar.h"
 #include "field_effect.h"
+#include "field_player_avatar.h"
 #include "field_specials.h"
 #include "item.h"
+#include "malloc.h"
 #include "menu.h"
 #include "palette.h"
 #include "script.h"
@@ -14,10 +18,12 @@
 #include "task.h"
 #include "text.h"
 #include "list_menu.h"
+#include "constants/event_objects.h"
 #include "constants/field_specials.h"
 #include "constants/items.h"
 #include "constants/script_menu.h"
 #include "constants/songs.h"
+#include "constants/vars.h"
 #include "data/script_menu.h"
 
 static EWRAM_DATA u8 sProcessInputDelay = 0;
@@ -1161,50 +1167,40 @@ static const struct ListMenuItem sSetBlueNurseMoveLearn[] =
     {gText_Cancel2,             4},
 };
 
-// INDEX-CRITICAL: match Common_EventScript_PkmnCenterJack_Change_Costume. These were
-// pointed at a 6-entry numeric placeholder (sSetGeneric5), so the costumes showed as
-// "1..5" and the last three male outfits were unreachable. There is no Cancel entry --
-// the script handles MULTI_B_PRESSED, so B backs out, which is 2.X's design.
-static const u8 gText_CostumeMayRS[]        = _("May (RS)");
-static const u8 gText_CostumeMayEmerald[]   = _("May (Emerald)");
-static const u8 gText_CostumeMayORAS[]      = _("May (ORAS)");
-static const u8 gText_CostumeLeafRBY[]      = _("Leaf (RBY)");
-static const u8 gText_CostumeLeafFRLG[]     = _("Leaf (FRLG)");
-static const u8 gText_CostumeDawnDP[]       = _("Dawn (DP)");
-static const u8 gText_CostumeDawnPt[]       = _("Dawn (Pt)");
-static const u8 gText_CostumeBrendanRS[]    = _("Brendan (RS)");
-static const u8 gText_CostumeBrendanEm[]    = _("Brendan (Emerald)");
-static const u8 gText_CostumeBrendanORAS[]  = _("Brendan (ORAS)");
-static const u8 gText_CostumeRedRBY[]       = _("Red (RBY)");
-static const u8 gText_CostumeRedFRLG[]      = _("Red (FRLG)");
-static const u8 gText_CostumeGreenFRLG[]    = _("Green (FRLG)");
-static const u8 gText_CostumeEthan[]        = _("Ethan");
-static const u8 gText_CostumeLucasDP[]      = _("Lucas (DP)");
-static const u8 gText_CostumeHilbertBW[]    = _("Hilbert (BW)");
+// ---- Costumes -----------------------------------------------------------------------
+// The costume list is BUILT AT RUNTIME (BuildCostumeList) from the four base outfits plus
+// every gCharacters[] entry that has an overworld sprite, and it is consumed by
+// ApplyCostumeChoice in this same file. That is deliberate: the list and the code that acts
+// on the chosen index now live together, so they cannot drift apart the way a C list and a
+// .pory switch do. The script just shows the list and calls the special.
+//
+// It replaces 2.X's two static lists, which offered nine outfits when only four
+// (EMERALD/RS/FRLG/BW) have sprite data -- nine of their sixteen entries setvar'd
+// VAR_COSTUME_NUMBER to an unrenderable 4..8.
+static const u8 gText_CostumeEmerald[]  = _("Emerald");
+static const u8 gText_CostumeRS[]       = _("Ruby/Sapphire");
+static const u8 gText_CostumeFRLG[]     = _("FireRed/LeafGreen");
+static const u8 gText_CostumeBW[]       = _("Black/White");
 
-static const struct ListMenuItem sSetCostumesFemale[] =
+// Base outfits, indexed BY the costume id so item N is costume N. These are the only four
+// with bike/surf/fishing frames, so they stay first in the list and are the way back to a
+// complete sprite set after wearing a character.
+static const u8 *const sBaseCostumeNames[NUM_COSTUMES] =
 {
-    {gText_CostumeMayRS,        0},
-    {gText_CostumeMayEmerald,   1},
-    {gText_CostumeMayORAS,      2},
-    {gText_CostumeLeafRBY,      3},
-    {gText_CostumeLeafFRLG,     4},
-    {gText_CostumeDawnDP,       5},
-    {gText_CostumeDawnPt,       6},
+    [EMERALD_COSTUME] = gText_CostumeEmerald,
+    [RS_COSTUME]      = gText_CostumeRS,
+    [FRLG_COSTUME]    = gText_CostumeFRLG,
+    [BW_COSTUME]      = gText_CostumeBW,
 };
 
-static const struct ListMenuItem sSetCostumesMale[] =
-{
-    {gText_CostumeBrendanRS,    0},
-    {gText_CostumeBrendanEm,    1},
-    {gText_CostumeBrendanORAS,  2},
-    {gText_CostumeRedRBY,       3},
-    {gText_CostumeRedFRLG,      4},
-    {gText_CostumeGreenFRLG,    5},
-    {gText_CostumeEthan,        6},
-    {gText_CostumeLucasDP,      7},
-    {gText_CostumeHilbertBW,    8},
-};
+// Item ids in the costume list. Characters sit above the base outfits, clear of
+// MULTI_B_PRESSED (0x7F), which Task_ScrollingMultichoiceInput returns on a B press.
+#define COSTUME_CHOICE_CHARACTER_BASE  1000
+
+// EWRAM_DATA, not a plain static: pokeemerald's linker script discards .data, so a mutable
+// initialized global has to be placed explicitly. Six bytes; the list itself is on the heap.
+static EWRAM_DATA struct ListMenuItem *sCostumeItems = NULL;   // freed with the menu task
+static EWRAM_DATA u16 sCostumeItemCount = 0;
 
 static const struct ListMenuItem sSetSeviiTicket[] =
 {
@@ -1483,9 +1479,79 @@ struct
 	{sSetDays, ARRAY_COUNT(sSetDays)},	// 21 SCROLLING_DAY
 	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 22 SCROLLING_MONOPOLY
 	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 23 SCROLLING_MONOPOLY_PC
-	{sSetCostumesMale, ARRAY_COUNT(sSetCostumesMale)},	// 24 SCROLLING_COSTUMES_MALE
-	{sSetCostumesFemale, ARRAY_COUNT(sSetCostumesFemale)},	// 25 SCROLLING_COSTUMES_FEMALE
+	// 24/25 SCROLLING_COSTUMES_MALE/FEMALE are built at runtime by BuildCostumeList and
+	// intercepted in ScriptMenu_ScrollingMultichoice; these entries are never read. Both
+	// genders get the same list -- every character sprite is wearable by anyone.
+	{NULL, 0},	// 24 SCROLLING_COSTUMES_MALE
+	{NULL, 0},	// 25 SCROLLING_COSTUMES_FEMALE
 };
+
+// Every character with overworld art, plus the four base outfits. Built on the heap because
+// static EWRAM is 99% full, and the menu is transient anyway.
+static bool8 BuildCostumeList(void)
+{
+    u16 i;
+
+    sCostumeItemCount = 0;
+    sCostumeItems = Alloc((NUM_COSTUMES + GetCharacterCount() + 1) * sizeof(struct ListMenuItem));
+    if (sCostumeItems == NULL)
+        return FALSE;
+
+    for (i = 0; i < NUM_COSTUMES; i++)
+    {
+        sCostumeItems[sCostumeItemCount].name = sBaseCostumeNames[i];
+        sCostumeItems[sCostumeItemCount].id = i;
+        sCostumeItemCount++;
+    }
+
+    for (i = 0; i < GetCharacterCount(); i++)
+    {
+        if (!CharacterHasOverworldSprite(i))
+            continue;
+        sCostumeItems[sCostumeItemCount].name = gCharacters[i].name;
+        sCostumeItems[sCostumeItemCount].id = COSTUME_CHOICE_CHARACTER_BASE + i;
+        sCostumeItemCount++;
+    }
+
+    sCostumeItems[sCostumeItemCount].name = gText_Cancel2;
+    sCostumeItems[sCostumeItemCount].id = MULTI_B_PRESSED;
+    sCostumeItemCount++;
+    return TRUE;
+}
+
+static void FreeCostumeList(void)
+{
+    if (sCostumeItems != NULL)
+    {
+        Free(sCostumeItems);
+        sCostumeItems = NULL;
+        sCostumeItemCount = 0;
+    }
+}
+
+// Consumes the id BuildCostumeList put on the chosen row. Called by the script straight
+// after the multichoice, so there is no case-index mapping to get wrong.
+void ApplyCostumeChoice(void)
+{
+    u16 choice = gSpecialVar_Result;
+
+    if (choice == MULTI_B_PRESSED)
+        return;
+
+    if (choice >= COSTUME_CHOICE_CHARACTER_BASE)
+    {
+        VarSet(VAR_COSTUME_CHARACTER, choice - COSTUME_CHOICE_CHARACTER_BASE + 1);
+    }
+    else
+    {
+        // Back to a full outfit. Must be the BASE sentinel, not 0: 0 means "no costume
+        // chosen", which falls back to the Character Mode character, so picking Emerald
+        // while playing as Red would leave you looking like Red.
+        VarSet(VAR_COSTUME_CHARACTER, COSTUME_CHARACTER_BASE);
+        SetCostume(choice);
+    }
+    RefreshPlayerAvatarGraphics();
+}
 
 static void Task_ScrollingMultichoiceInput(u8 taskId);
 
@@ -1517,9 +1583,21 @@ void ScriptMenu_ScrollingMultichoice(void)
     int left = gSpecialVar_0x8005;
     int top = gSpecialVar_0x8006;
     int maxShowed = gSpecialVar_0x8007;
+    const struct ListMenuItem *items = sScrollingSets[setId].set;
+    int count = sScrollingSets[setId].count;
 
-    for (i = 0; i < sScrollingSets[setId].count; i++)
-        width = DisplayTextAndGetWidth(sScrollingSets[setId].set[i].name, width);
+    // The costume list has no static table -- it is assembled from gCharacters[].
+    if (setId == SCROLLING_COSTUMES_MALE || setId == SCROLLING_COSTUMES_FEMALE)
+    {
+        FreeCostumeList();   // a previous menu that was torn down without its task finishing
+        if (!BuildCostumeList())
+            return;
+        items = sCostumeItems;
+        count = sCostumeItemCount;
+    }
+
+    for (i = 0; i < count; i++)
+        width = DisplayTextAndGetWidth(items[i].name, width);
 
     width = ConvertPixelWidthToTileWidth(width);
     left = ScriptMenu_AdjustLeftCoordFromWidth(left, width);
@@ -1529,8 +1607,8 @@ void ScriptMenu_ScrollingMultichoice(void)
 
     gMultiuseListMenuTemplate = sMultichoiceListTemplate;
     gMultiuseListMenuTemplate.windowId = windowId;
-    gMultiuseListMenuTemplate.items = sScrollingSets[setId].set;
-    gMultiuseListMenuTemplate.totalItems = sScrollingSets[setId].count;
+    gMultiuseListMenuTemplate.items = items;
+    gMultiuseListMenuTemplate.totalItems = count;
     gMultiuseListMenuTemplate.maxShowed = maxShowed;
 
     taskId = CreateTask(Task_ScrollingMultichoiceInput, 0);
@@ -1567,6 +1645,8 @@ static void Task_ScrollingMultichoiceInput(u8 taskId)
         DestroyListMenuTask(gTasks[taskId].data[0], NULL, NULL);
         ClearStdWindowAndFrame(gTasks[taskId].data[2], TRUE);
         RemoveWindow(gTasks[taskId].data[2]);
+        // No-op unless this was the costume menu; the list menu is done reading it by now.
+        FreeCostumeList();
         EnableBothScriptContexts();
         DestroyTask(taskId);
     }

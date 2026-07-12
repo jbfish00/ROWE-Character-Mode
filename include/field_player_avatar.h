@@ -32,6 +32,7 @@ void PlayerOnBikeCollideWithFarawayIslandMew(u8 direction);
 u8 CheckForObjectEventCollision(struct ObjectEvent *a, s16 b, s16 c, u8 d, u8 e);
 u8 PlayerGetZCoord(void);
 void SetPlayerAvatarTransitionFlags(u16 a);
+void RefreshPlayerAvatarGraphics(void);
 void sub_808BCE8(void);
 void InitPlayerAvatar(s16 a, s16 b, u8 c, u8 d);
 void sub_808B864(void);

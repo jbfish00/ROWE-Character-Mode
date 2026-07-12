@@ -35,6 +35,7 @@
 #include "text_window.h"
 #include "tv.h"
 #include "constants/decorations.h"
+#include "constants/vars.h"
 #include "constants/items.h"
 #include "constants/metatile_behaviors.h"
 #include "constants/rgb.h"
@@ -516,12 +517,65 @@ static const u8 sShopBuyMenuTextColors[][3] =
     {0, 3, 2}
 };
 
+// 19 script sites (the Mega Stone Gurus, the Oldale Battle Mart, the flying taxi) set
+// VAR_SHOP_MONEY_TYPE to MART_MONEY_TYPE_BATTLE_POINTS before `pokemart`, but nothing in
+// this engine ever read it: shop.c billed gSaveBlock1Ptr->money for everything, so mega
+// stones priced at 200 (authored as 200 BP) cost 200 Pokedollars. Capture the var here and
+// reset it immediately -- barely any script sets it back to NORMAL, so leaving it live
+// would make the NEXT ordinary Poke Mart charge BP too.
+static void CaptureShopMoneyType(void)
+{
+    gMartInfo.moneyType = VarGet(VAR_SHOP_MONEY_TYPE);
+    VarSet(VAR_SHOP_MONEY_TYPE, MART_MONEY_TYPE_NORMAL);
+}
+
+static bool8 ShopUsesBattlePoints(void)
+{
+    return gMartInfo.moneyType == MART_MONEY_TYPE_BATTLE_POINTS;
+}
+
+static u32 GetShopCurrency(void)
+{
+    if (ShopUsesBattlePoints())
+        return gSaveBlock2Ptr->frontier.battlePoints;
+    return GetMoney(&gSaveBlock1Ptr->money);
+}
+
+static bool8 IsEnoughShopCurrency(u32 cost)
+{
+    if (ShopUsesBattlePoints())
+        return gSaveBlock2Ptr->frontier.battlePoints >= cost;
+    return IsEnoughMoney(&gSaveBlock1Ptr->money, cost);
+}
+
+static void RemoveShopCurrency(u32 cost)
+{
+    if (ShopUsesBattlePoints())
+    {
+        if (gSaveBlock2Ptr->frontier.battlePoints < cost)
+            gSaveBlock2Ptr->frontier.battlePoints = 0;
+        else
+            gSaveBlock2Ptr->frontier.battlePoints -= cost;
+        return;
+    }
+    RemoveMoney(&gSaveBlock1Ptr->money, cost);
+}
+
+static void PrintShopCurrencyInBox(void)
+{
+    if (ShopUsesBattlePoints())
+        PrintBattlePointsAmountInBox(0, GetShopCurrency(), 0);
+    else
+        PrintMoneyAmountInMoneyBox(0, GetShopCurrency(), 0);
+}
+
 static u8 CreateShopMenu(u8 martType)
 {
     int numMenuItems;
 
     ScriptContext2_Enable();
     gMartInfo.martType = martType;
+    CaptureShopMoneyType();
 
     if (martType == MART_TYPE_NORMAL)
     {
@@ -837,6 +891,8 @@ static void BuyMenuPrintPriceInList(u8 windowId, s32 item, u8 y)
             StringCopy(gStringVar4, gText_SoldOut2);
 		else if (item == ITEM_RARE_CANDY && (CheckBagHasItem(item, 50) || CheckPCHasItem(item, 9)))
             StringCopy(gStringVar4, gText_SoldOut2);
+        else if (ShopUsesBattlePoints())
+            StringExpandPlaceholders(gStringVar4, gText_Var1BP);
         else
             StringExpandPlaceholders(gStringVar4, gText_PokedollarVar1);
         x = GetStringRightAlignXOffset(7, gStringVar4, 0x78);
@@ -968,8 +1024,17 @@ static void BuyMenuDrawGraphics(void)
 {
     BuyMenuDrawMapGraphics();
     BuyMenuCopyMenuBgToBg1TilemapBuffer();
-    AddMoneyLabelObject(19, 11);
-    PrintMoneyAmountInMoneyBoxWithBorder(0, 1, 13, GetMoney(&gSaveBlock1Ptr->money));
+    if (ShopUsesBattlePoints())
+    {
+        // No money label sprite -- the amount reads "200BP" and says so itself.
+        // Task_ExitBuyMenu must skip RemoveMoneyLabelObject() to match.
+        PrintBattlePointsAmountInBoxWithBorder(0, 1, 13, GetShopCurrency());
+    }
+    else
+    {
+        AddMoneyLabelObject(19, 11);
+        PrintMoneyAmountInMoneyBoxWithBorder(0, 1, 13, GetShopCurrency());
+    }
     ScheduleBgCopyTilemapToVram(0);
     ScheduleBgCopyTilemapToVram(1);
     ScheduleBgCopyTilemapToVram(2);
@@ -1208,9 +1273,11 @@ static void Task_BuyMenu(u8 taskId)
                 BuyMenuDisplayMessage(taskId, gText_SoldOut, BuyMenuReturnToItemList);
 			else if (itemId == ITEM_RARE_CANDY && (CheckBagHasItem(itemId, 50) || CheckPCHasItem(itemId, 9)))
 				BuyMenuDisplayMessage(taskId, gText_SoldOut, BuyMenuReturnToItemList);
-            else if (!IsEnoughMoney(&gSaveBlock1Ptr->money, gShopDataPtr->totalCost))
+            else if (!IsEnoughShopCurrency(gShopDataPtr->totalCost))
             {
-                BuyMenuDisplayMessage(taskId, gText_YouDontHaveMoney, BuyMenuReturnToItemList);
+                BuyMenuDisplayMessage(taskId,
+                    ShopUsesBattlePoints() ? gText_YouDontHaveBP : gText_YouDontHaveMoney,
+                    BuyMenuReturnToItemList);
             }
             else
             {
@@ -1361,9 +1428,9 @@ static void BuyMenuTryMakePurchase(u8 taskId)
 static void BuyMenuSubtractMoney(u8 taskId)
 {
     IncrementGameStat(GAME_STAT_SHOPPED);
-    RemoveMoney(&gSaveBlock1Ptr->money, gShopDataPtr->totalCost);
+    RemoveShopCurrency(gShopDataPtr->totalCost);
     PlaySE(SE_SHOP);
-    PrintMoneyAmountInMoneyBox(0, GetMoney(&gSaveBlock1Ptr->money), 0);
+    PrintShopCurrencyInBox();
 
     if (gMartInfo.martType == MART_TYPE_NORMAL)
     {
@@ -1427,7 +1494,10 @@ static void BuyMenuPrintItemQuantityAndPrice(u8 taskId)
     s16 *data = gTasks[taskId].data;
 
     FillWindowPixelBuffer(4, PIXEL_FILL(1));
-    PrintMoneyAmount(4, 32, 1, gShopDataPtr->totalCost, TEXT_SPEED_FF);
+    if (ShopUsesBattlePoints())
+        PrintBattlePointsAmount(4, 32, 1, gShopDataPtr->totalCost, TEXT_SPEED_FF);
+    else
+        PrintMoneyAmount(4, 32, 1, gShopDataPtr->totalCost, TEXT_SPEED_FF);
     ConvertIntToDecimalStringN(gStringVar1, tItemCount, STR_CONV_MODE_LEADING_ZEROS, BAG_ITEM_CAPACITY_DIGITS);
     StringExpandPlaceholders(gStringVar4, gText_xVar1);
     BuyMenuPrint(4, gStringVar4, 0, 1, 0, 0);
@@ -1444,7 +1514,10 @@ static void Task_ExitBuyMenu(u8 taskId)
 {
     if (!gPaletteFade.active)
     {
-        RemoveMoneyLabelObject();
+        // Symmetric with BuyMenuDrawGraphics: a BP mart never created the label sprite,
+        // so destroying it here would free a sprite slot it does not own.
+        if (!ShopUsesBattlePoints())
+            RemoveMoneyLabelObject();
         BuyMenuFreeMemory();
         SetMainCallback2(CB2_ReturnToField);
         DestroyTask(taskId);

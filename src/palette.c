@@ -1,4 +1,5 @@
 #include "global.h"
+#include "field_control_avatar.h"
 #include "data.h"
 #include "event_data.h"
 #include "day_night.h"
@@ -1156,7 +1157,7 @@ void SetCharacterPalette(const u16 *src, u16 *dest, u16 count, u16 rTone, u16 gT
 	u8 tone 	= Q_8_8(0.6);
 	u8 CapColorPaletteIndex[]  	= {0,0,0};
 	u8 CapColorRGB[] 			= {0,0,0};
-	u8 costume 	= VarGet(VAR_COSTUME_NUMBER);
+	u8 costume 	= GetCostume();
 	u8 gender 	= gSaveBlock2Ptr->playerGender;
 	bool8 ShouldDisableColorChange = FALSE;
 	
@@ -1419,7 +1420,7 @@ void SetCharacterPaletteDayNight(const u16 *src, u16 *dest, u16 count, u16 rTone
 	u8 tone 	= Q_8_8(0.6);
 	u8 CapColorPaletteIndex[]  	= {0,0,0};
 	u8 CapColorRGB[] 			= {0,0,0};
-	u8 costume 	= VarGet(VAR_COSTUME_NUMBER);
+	u8 costume 	= GetCostume();
 	u8 gender 	= gSaveBlock2Ptr->playerGender;
 	bool8 ShouldDisableColorChange = FALSE;
 	
@@ -1548,7 +1549,7 @@ void SetCharacterTrainerPalette(const u16 *src, u16 *dest, u16 count)
 	u8 CapColorPaletteIndex[]  	= {0,0,0};
 	u8 CapColorRGB[] 			= {0,0,0};
 	u8 tone = Q_8_8(0.6);
-	u8 costume = VarGet(VAR_COSTUME_NUMBER);
+	u8 costume = GetCostume();
 	u8 gender = gSaveBlock2Ptr->playerGender;
 	bool8 ShouldDisableColorChange = FALSE;
 	
@@ -1680,7 +1681,7 @@ void SetFrontCharacterTrainerPalette(const u16 *src, u16 *dest)
 	u8 CapColorPaletteIndex[]  	= {0,0,0};
 	u8 CapColorRGB[] 			= {0,0,0};
 	u8 tone = Q_8_8(0.6);
-	u8 costume = VarGet(VAR_COSTUME_NUMBER);
+	u8 costume = GetCostume();
 	u8 gender = gSaveBlock2Ptr->playerGender;
 	bool8 ShouldDisableColorChange = FALSE;
     u8 count = 16;

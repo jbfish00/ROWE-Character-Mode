@@ -158,6 +158,39 @@ void PrintMoneyAmountInMoneyBoxWithBorder(u8 windowId, u16 tileStart, u8 pallete
     PrintMoneyAmountInMoneyBox(windowId, amount, 0);
 }
 
+// Battle Point equivalents of the three above, for the marts that price in BP
+// (VAR_SHOP_MONEY_TYPE == MART_MONEY_TYPE_BATTLE_POINTS). Same right-alignment padding,
+// but "200BP" instead of the Pokedollar glyph.
+void PrintBattlePointsAmount(u8 windowId, u8 x, u8 y, int amount, u8 speed)
+{
+    u8 *txtPtr;
+    s32 strLength;
+
+    ConvertIntToDecimalStringN(gStringVar1, amount, STR_CONV_MODE_LEFT_ALIGN, 5);
+
+    // Pad to 5, not 7 as the money version does: the "BP" suffix is two characters where
+    // the Pokedollar glyph is one, so padding to 7 pushed the P off the edge of the box.
+    strLength = 5 - StringLength(gStringVar1);
+    txtPtr = gStringVar4;
+
+    while (strLength-- > 0)
+        *(txtPtr++) = 0x77;
+
+    StringExpandPlaceholders(txtPtr, gText_Var1BP);
+    AddTextPrinterParameterized(windowId, 1, gStringVar4, x, y, speed, NULL);
+}
+
+void PrintBattlePointsAmountInBox(u8 windowId, int amount, u8 speed)
+{
+    PrintBattlePointsAmount(windowId, 0x20, 1, amount, speed);
+}
+
+void PrintBattlePointsAmountInBoxWithBorder(u8 windowId, u16 tileStart, u8 pallete, int amount)
+{
+    DrawStdFrameWithCustomTileAndPalette(windowId, FALSE, tileStart, pallete);
+    PrintBattlePointsAmountInBox(windowId, amount, 0);
+}
+
 void ChangeAmountInMoneyBox(int amount)
 {
     PrintMoneyAmountInMoneyBox(sMoneyBoxWindowId, amount, 0);
@@ -179,6 +212,28 @@ void DrawMoneyBox(int amount, u8 x, u8 y)
 void HideMoneyBox(void)
 {
     RemoveMoneyLabelObject();
+    ClearStdWindowAndFrameToTransparent(sMoneyBoxWindowId, FALSE);
+    CopyWindowToVram(sMoneyBoxWindowId, 2);
+    RemoveWindow(sMoneyBoxWindowId);
+}
+
+// As DrawMoneyBox/HideMoneyBox, minus the label sprite: that sprite reads "MONEY", and the
+// amount already prints its own "BP". Shares sMoneyBoxWindowId -- the two boxes are never
+// open at once.
+void DrawBattlePointsBox(int amount, u8 x, u8 y)
+{
+    struct WindowTemplate template;
+
+    SetWindowTemplateFields(&template, 0, x + 1, y + 1, 10, 2, 15, 8);
+    sMoneyBoxWindowId = AddWindow(&template);
+    FillWindowPixelBuffer(sMoneyBoxWindowId, PIXEL_FILL(0));
+    PutWindowTilemap(sMoneyBoxWindowId);
+    CopyWindowToVram(sMoneyBoxWindowId, 1);
+    PrintBattlePointsAmountInBoxWithBorder(sMoneyBoxWindowId, 0x214, 14, amount);
+}
+
+void HideBattlePointsBox(void)
+{
     ClearStdWindowAndFrameToTransparent(sMoneyBoxWindowId, FALSE);
     CopyWindowToVram(sMoneyBoxWindowId, 2);
     RemoveWindow(sMoneyBoxWindowId);

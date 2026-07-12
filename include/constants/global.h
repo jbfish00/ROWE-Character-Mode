@@ -379,7 +379,11 @@
 #define SCROLLING_DAY               21
 #define SCROLLING_MONOPOLY          22
 #define SCROLLING_MONOPOLY_PC       23
+// Both ids now show the same runtime-built list (every character sprite is wearable by
+// anyone), so scripts should just use SCROLLING_COSTUMES. The gendered names are kept
+// because sScrollingSets is indexed by them.
 #define SCROLLING_COSTUMES_MALE     24
 #define SCROLLING_COSTUMES_FEMALE   25
+#define SCROLLING_COSTUMES          SCROLLING_COSTUMES_MALE
 
 #endif // GUARD_CONSTANTS_GLOBAL_H

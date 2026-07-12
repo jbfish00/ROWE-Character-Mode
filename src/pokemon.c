@@ -3509,6 +3509,12 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 	FlagClear(FLAG_SHINY_CREATION);
 	FlagClear(FLAG_IS_OUTBREAK_ENCOUNTER);
 	FlagClear(FLAG_ALPHA_CREATION);
+	// SetAlphaDefaultData also raises these two, and nothing in 2.X's data or ours reads
+	// them -- so they are inert, but they latch ON permanently once you meet your first
+	// Alpha. Clear them with the other one-shots: if anyone ever writes a reader, it must
+	// not silently apply to every Pokemon created for the rest of the save.
+	FlagClear(FLAG_ENABLE_ALPHA_WILD_BATTLE_BOOST);
+	FlagClear(FLAG_GOOD_MOVESET_CREATION);
 
     GiveBoxMonInitialMoveset(boxMon);
 }

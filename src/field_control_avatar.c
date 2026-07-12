@@ -79,9 +79,19 @@ static void UpdateHappinessStepCounter(void);
 static bool8 UpdatePoisonStepCounter(void);
 static bool8 EnableAutoRun(void);
 
+// The one choke point for the base costume. Only NUM_COSTUMES outfits actually have
+// sprite sets, but 2.X's Pokemon Center menu setvar'd VAR_COSTUME_NUMBER as high as 8
+// directly -- bypassing SetCostume()'s clamp -- so an existing save can legitimately
+// hold an unrenderable value. Clamping here means no reader needs a default case:
+// GetPlayerAvatarGraphicsIdByStateIdAndGender() in particular is a non-void switch
+// with no default, and used to fall off its end and hand back a garbage graphics id.
 u8 GetCostume()
 {
-	return VarGet(VAR_COSTUME_NUMBER);
+	u8 costume = VarGet(VAR_COSTUME_NUMBER);
+
+	if (costume >= NUM_COSTUMES)
+		return EMERALD_COSTUME;
+	return costume;
 }
 
 void NextCostume()

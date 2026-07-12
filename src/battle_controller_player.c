@@ -2892,8 +2892,8 @@ static void PlayerHandleDrawTrainerPic(void)
     }
     else
     {
-        if (GetActiveCharacter() != NULL && GetActiveCharacter()->backPic != CHAR_ASSET_NONE_U8)
-            trainerPicId = GetActiveCharacter()->backPic;
+        if (GetAppearanceCharacter() != NULL && GetAppearanceCharacter()->backPic != CHAR_ASSET_NONE_U8)
+            trainerPicId = GetAppearanceCharacter()->backPic;
         else
         switch(GetCostume()){
             case EMERALD_COSTUME:
@@ -2966,8 +2966,8 @@ static void PlayerHandleDrawTrainerPic(void)
     // Use the back pic in any other scenario.
     else
     {
-        if (GetActiveCharacter() != NULL && GetActiveCharacter()->backPic != CHAR_ASSET_NONE_U8)
-            trainerPicId = GetActiveCharacter()->backPic;
+        if (GetAppearanceCharacter() != NULL && GetAppearanceCharacter()->backPic != CHAR_ASSET_NONE_U8)
+            trainerPicId = GetAppearanceCharacter()->backPic;
         else
         switch(GetCostume()){
             case EMERALD_COSTUME:
@@ -3040,8 +3040,8 @@ static void PlayerHandleTrainerSlide(void)
     }
     else
     {
-        if (GetActiveCharacter() != NULL && GetActiveCharacter()->backPic != CHAR_ASSET_NONE_U8)
-            trainerPicId = GetActiveCharacter()->backPic;
+        if (GetAppearanceCharacter() != NULL && GetAppearanceCharacter()->backPic != CHAR_ASSET_NONE_U8)
+            trainerPicId = GetAppearanceCharacter()->backPic;
         else
         switch(GetCostume()){
             case EMERALD_COSTUME:
@@ -3661,8 +3661,8 @@ static void PlayerHandleIntroTrainerBallThrow(void)
 
     paletteNum = AllocSpritePalette(0xD6F8);
 
-    if (GetActiveCharacter() != NULL && GetActiveCharacter()->backPic != CHAR_ASSET_NONE_U8)
-        LoadPlayerTrainerPalette(gTrainerBackPicPaletteTable[GetActiveCharacter()->backPic].data, 0x100 + paletteNum * 16, 32);
+    if (GetAppearanceCharacter() != NULL && GetAppearanceCharacter()->backPic != CHAR_ASSET_NONE_U8)
+        LoadPlayerTrainerPalette(gTrainerBackPicPaletteTable[GetAppearanceCharacter()->backPic].data, 0x100 + paletteNum * 16, 32);
     else
     switch(GetCostume()){
         case EMERALD_COSTUME:

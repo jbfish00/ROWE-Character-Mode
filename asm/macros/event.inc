@@ -1132,6 +1132,33 @@
 	.byte 0  @ \y
 	.endm
 
+	@ Battle Point counterparts of removemoney/checkmoney/showmoneybox/hidemoneybox.
+	@ 2.X prices the move tutors, Wonder Trade and the flying taxi in BP, but its scripts
+	@ call the money commands, so those prices were charged in Pokedollars.
+	.macro takebp value:req, check:req
+	.byte 0xee
+	.4byte \value
+	.byte \check
+	.endm
+
+	@ Sets VAR_RESULT to TRUE if the player has at least \value Battle Points.
+	.macro checkbp value:req, check:req
+	.byte 0xef
+	.4byte \value
+	.byte \check
+	.endm
+
+	.macro showbpbox x:req, y:req, check:req
+	.byte 0xf0
+	.byte \x
+	.byte \y
+	.byte \check
+	.endm
+
+	.macro hidebpbox
+	.byte 0xf1
+	.endm
+
 	@ Updates the secondary box spawned by showmoney. Consumes but does not use arguments.
 	.macro updatemoneybox x:req, y:req
 	.byte 0x95

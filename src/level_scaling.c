@@ -1,4 +1,5 @@
 #include "global.h"
+#include "field_control_avatar.h"
 #include "battle.h"
 #include "battle_anim.h"
 #include "battle_ai_script_commands.h"
@@ -3037,7 +3038,7 @@ bool8 CreatePlayerPartyPassword(void){
     u16 to[COMPRESSED_PLAYER_PARTY_BYTE_SIZE / 2];
 
     CompressedPlayerParty.trainerGender  = gSaveBlock2Ptr->playerGender;
-    CompressedPlayerParty.trainerCostume = VarGet(VAR_COSTUME_NUMBER);
+    CompressedPlayerParty.trainerCostume = GetCostume();
     CompressedPlayerParty.redColor       = gSaveBlock2Ptr->playerRGB[0];
     CompressedPlayerParty.greenColor     = gSaveBlock2Ptr->playerRGB[1];
     CompressedPlayerParty.blueColor      = gSaveBlock2Ptr->playerRGB[2];
