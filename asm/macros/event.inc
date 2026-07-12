@@ -738,6 +738,17 @@
 	trainerbattle TRAINER_BATTLE_SINGLE_NO_INTRO_TEXT, \trainer, 0, \lose_text
 	.endm
 
+	@ 2.X endless battles: no intro text, and losing does not white the player out.
+	.macro trainerbattle_no_intro_no_whiteout trainer:req, lose_text:req
+	trainerbattle TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT, \trainer, 0, \lose_text
+	.endm
+
+	@ 2.X populates a dynamic starter list here. Our starter menu is the fixed
+	@ 1.9.4 list (script_menu.c sSet1), which the following scrollingmultichoice
+	@ still shows correctly, so this is a no-op until that system is ported.
+	.macro generatestarters
+	.endm
+
 
 	@ Starts a trainer battle using the battle information stored in RAM (usually by trainerbattle, which actually calls this 
 	@ command behind-the-scenes), and blocks script execution until the battle finishes.
@@ -1943,6 +1954,13 @@
 
 	YES = 1
 	NO  = 0
+
+	@ The scripts compare against TRUE/FALSE (e.g. `compare VAR_RESULT, FALSE`
+	@ after checkitem). Those are C macros from gba/defines.h, which the script
+	@ assembly never includes -- so they were undefined symbols, and gas rejects an
+	@ undefined symbol inside the `compare` macro's .if as a non-constant expression.
+	TRUE  = 1
+	FALSE = 0
 
 	.macro msgbox text:req, type=MSGBOX_DEFAULT
 	loadword 0, \text

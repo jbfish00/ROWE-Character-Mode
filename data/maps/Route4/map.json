@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "right",
+      "map": "MAP_CERULEAN_CITY",
       "offset": -10,
-      "map": "MAP_CERULEAN_CITY"
+      "direction": "right"
     },
     {
-      "direction": "down",
+      "map": "MAP_ROUTE3",
       "offset": -60,
-      "map": "MAP_ROUTE3"
+      "direction": "down"
     }
   ],
   "object_events": [
@@ -84,20 +84,16 @@
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_MT_MOON_1F",
-      "dest_warp_id": 3
+      "dest_warp_id": "3"
     },
     {
       "x": 32,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_MT_MOON_B1F",
-      "dest_warp_id": 7
+      "dest_warp_id": "7"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

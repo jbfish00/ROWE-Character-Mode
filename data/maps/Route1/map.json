@@ -14,19 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "down",
+      "map": "MAP_PALLET_TOWN",
       "offset": 0,
-      "map": "MAP_PALLET_TOWN"
+      "direction": "down"
     },
     {
-      "direction": "up",
+      "map": "MAP_VIRIDIAN_CITY",
       "offset": -12,
-      "map": "MAP_VIRIDIAN_CITY"
+      "direction": "up"
     },
     {
-      "direction": "down",
+      "map": "MAP_PALLET_TOWN",
       "offset": 0,
-      "map": "MAP_PALLET_TOWN"
+      "direction": "down"
     }
   ],
   "object_events": [
@@ -57,12 +57,8 @@
       "flag": "0"
     }
   ],
-  "warp_events": [
-
-  ],
-  "coord_events": [
-
-  ],
+  "warp_events": [],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

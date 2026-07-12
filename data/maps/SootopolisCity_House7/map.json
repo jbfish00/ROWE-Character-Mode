@@ -24,7 +24,7 @@
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
-      "script": "SootopolisCity_House7_EventScript_OldMan",
+      "script": "Common_Mega_Stone_Guru_ZA_DLC",
       "flag": "0"
     },
     {
@@ -47,14 +47,14 @@
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_SOOTOPOLIS_CITY",
-      "dest_warp_id": 10
+      "dest_warp_id": "10"
     },
     {
       "x": 4,
       "y": 6,
       "elevation": 0,
       "dest_map": "MAP_SOOTOPOLIS_CITY",
-      "dest_warp_id": 10
+      "dest_warp_id": "10"
     }
   ],
   "coord_events": [

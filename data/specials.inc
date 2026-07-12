@@ -573,3 +573,6 @@ gSpecials:: @ 81DBA64
 	def_special HideFollower
 	def_special ShouldStaticEncounterBeFirstStage
 	def_special Special_OpenCharacterModeMenu
+	def_special DisableLegendaryMons
+	def_special EnableLegendaryMons
+	def_special SendUnusableMonsToBoxes

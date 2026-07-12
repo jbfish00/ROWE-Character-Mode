@@ -1,100 +1,158 @@
-Common_Movement_QuestionMark: @ 8272596
+# 1 "data/scripts/movement.pory"
+Common_Movement_QuestionMark:
+# 2 "data/scripts/movement.pory"
 	emote_question_mark
 	step_end
 
-Common_Movement_ExclamationMark: @ 8272598
+# 5 "data/scripts/movement.pory"
+Common_Movement_ExclamationMark:
+# 6 "data/scripts/movement.pory"
 	emote_exclamation_mark
 	step_end
 
-Common_Movement_Delay48: @ 827259A
+# 9 "data/scripts/movement.pory"
+Common_Movement_Delay48:
+# 10 "data/scripts/movement.pory"
 	delay_16
+# 11 "data/scripts/movement.pory"
 	delay_16
+# 12 "data/scripts/movement.pory"
 	delay_16
 	step_end
 
-Common_Movement_FacePlayer: @ 827259E
+# 15 "data/scripts/movement.pory"
+Common_Movement_FacePlayer:
+# 16 "data/scripts/movement.pory"
 	face_player
 	step_end
 
-Common_Movement_FaceAwayPlayer: @ 82725A0
+# 19 "data/scripts/movement.pory"
+Common_Movement_FaceAwayPlayer:
+# 20 "data/scripts/movement.pory"
 	face_away_player
 	step_end
 
-Common_Movement_FaceOriginalDirection: @ 82725A2
+# 23 "data/scripts/movement.pory"
+Common_Movement_FaceOriginalDirection:
+# 24 "data/scripts/movement.pory"
 	face_original_direction
 	step_end
 
-Common_Movement_WalkInPlaceFastestLeft: @ 82725A4
+# 27 "data/scripts/movement.pory"
+Common_Movement_WalkInPlaceFastestLeft:
+# 28 "data/scripts/movement.pory"
 	walk_in_place_fastest_left
 	step_end
 
-Common_Movement_WalkInPlaceFastestUp: @ 82725A6
+# 31 "data/scripts/movement.pory"
+Common_Movement_WalkInPlaceFastestUp:
+# 32 "data/scripts/movement.pory"
 	walk_in_place_fastest_up
 	step_end
 
-Common_Movement_WalkInPlaceFastestRight: @ 82725A8
+# 35 "data/scripts/movement.pory"
+Common_Movement_WalkInPlaceFastestRight:
+# 36 "data/scripts/movement.pory"
 	walk_in_place_fastest_right
 	step_end
 
-Common_Movement_WalkInPlaceFastestDown: @ 82725AA
+# 39 "data/scripts/movement.pory"
+Common_Movement_WalkInPlaceFastestDown:
+# 40 "data/scripts/movement.pory"
 	walk_in_place_fastest_down
 	step_end
 
-Common_Movement_FaceRight: @ 82725AC
+# 43 "data/scripts/movement.pory"
+Common_Movement_FaceRight:
+# 44 "data/scripts/movement.pory"
 	face_right
 	step_end
 
-Common_Movement_FaceLeft: @ 82725AE
+# 47 "data/scripts/movement.pory"
+Common_Movement_FaceLeft:
+# 48 "data/scripts/movement.pory"
 	face_left
 	step_end
 
-Common_Movement_FaceDown: @ 82725B0
+# 51 "data/scripts/movement.pory"
+Common_Movement_FaceDown:
+# 52 "data/scripts/movement.pory"
 	face_down
 	step_end
 
-Common_Movement_FaceUp: @ 82725B2
+# 55 "data/scripts/movement.pory"
+Common_Movement_FaceUp:
+# 56 "data/scripts/movement.pory"
 	face_up
 	step_end
 
-Common_Movement_WalkInPlaceDown: @ 82725B4
+# 59 "data/scripts/movement.pory"
+Common_Movement_WalkInPlaceDown:
+# 60 "data/scripts/movement.pory"
 	walk_in_place_down
 	step_end
 
-Common_Movement_WalkInPlaceLeft: @ 82725B6
+# 63 "data/scripts/movement.pory"
+Common_Movement_WalkInPlaceLeft:
+# 64 "data/scripts/movement.pory"
 	walk_in_place_left
 	step_end
 
-Common_Movement_WalkInPlaceRight: @ 82725B8
+# 67 "data/scripts/movement.pory"
+Common_Movement_WalkInPlaceRight:
+# 68 "data/scripts/movement.pory"
 	walk_in_place_right
 	step_end
 
-Common_Movement_WalkUp6: @ 82725BA
+# 71 "data/scripts/movement.pory"
+Common_Movement_WalkUp6:
+# 72 "data/scripts/movement.pory"
 	walk_up
+# 73 "data/scripts/movement.pory"
 	walk_up
+# 74 "data/scripts/movement.pory"
 	walk_up
+# 75 "data/scripts/movement.pory"
 	walk_up
+# 76 "data/scripts/movement.pory"
 	walk_up
+# 77 "data/scripts/movement.pory"
 	walk_up
 	step_end
 
-Common_Movement_WalkUp4: @ 82725C1
+# 80 "data/scripts/movement.pory"
+Common_Movement_WalkUp4:
+# 81 "data/scripts/movement.pory"
 	walk_up
+# 82 "data/scripts/movement.pory"
 	walk_up
+# 83 "data/scripts/movement.pory"
 	walk_up
+# 84 "data/scripts/movement.pory"
 	walk_up
 	step_end
 
-Common_Movement_Delay32: @ 82725C6
+# 87 "data/scripts/movement.pory"
+Common_Movement_Delay32:
+# 88 "data/scripts/movement.pory"
 	delay_16
+# 89 "data/scripts/movement.pory"
 	delay_16
 	step_end
 
-Common_Movement_WalkUp: @ 82725C9
+# 92 "data/scripts/movement.pory"
+Common_Movement_WalkUp:
+# 93 "data/scripts/movement.pory"
 	walk_up
 	step_end
 
-@ Unused
-Common_Movement_WalkUp2:: @ 82725CB
+# 97 "data/scripts/movement.pory"
+
+# 98 "data/scripts/movement.pory"
+Common_Movement_WalkUp2::
+# 99 "data/scripts/movement.pory"
 	walk_up
+# 100 "data/scripts/movement.pory"
 	walk_up
+# 101 "data/scripts/movement.pory"
 	step_end

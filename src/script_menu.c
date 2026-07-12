@@ -1116,6 +1116,99 @@ static const struct ListMenuItem sSetSeviiTicket[] =
 };
 
 // Table of your multichoice sets.
+// ---- 2.X sets referenced by the rebased map scripts ----
+static const u8 sText_Gen_1[] = _("Kanto");
+static const u8 sText_Gen_2[] = _("Johto");
+static const u8 sText_Gen_3[] = _("Hoenn");
+static const u8 sText_Gen_4[] = _("Sinnoh");
+static const u8 sText_Gen_5[] = _("Unova");
+static const u8 sText_Gen_6[] = _("Kalos");
+static const u8 sText_Gen_7[] = _("Alola");
+static const u8 sText_Gen_8[] = _("Galar");
+static const u8 sText_Gen_9[] = _("Paldea");
+
+static const struct ListMenuItem sSetGenerations[] =
+{
+    {sText_Gen_1, 0}, {sText_Gen_2, 1}, {sText_Gen_3, 2},
+    {sText_Gen_4, 3}, {sText_Gen_5, 4}, {sText_Gen_6, 5},
+    {sText_Gen_7, 6}, {sText_Gen_8, 7}, {sText_Gen_9, 8},
+};
+
+static const u8 sText_Type_Normal[] = _("Normal");
+static const u8 sText_Type_Fighting[] = _("Fighting");
+static const u8 sText_Type_Flying[] = _("Flying");
+static const u8 sText_Type_Poison[] = _("Poison");
+static const u8 sText_Type_Ground[] = _("Ground");
+static const u8 sText_Type_Rock[] = _("Rock");
+static const u8 sText_Type_Bug[] = _("Bug");
+static const u8 sText_Type_Ghost[] = _("Ghost");
+static const u8 sText_Type_Steel[] = _("Steel");
+static const u8 sText_Type_Fire[] = _("Fire");
+static const u8 sText_Type_Water[] = _("Water");
+static const u8 sText_Type_Grass[] = _("Grass");
+static const u8 sText_Type_Electric[] = _("Electric");
+static const u8 sText_Type_Psychic[] = _("Psychic");
+static const u8 sText_Type_Ice[] = _("Ice");
+static const u8 sText_Type_Dragon[] = _("Dragon");
+static const u8 sText_Type_Dark[] = _("Dark");
+static const u8 sText_Type_Fairy[] = _("Fairy");
+
+static const struct ListMenuItem sSetTypes[] =
+{
+    {sText_Type_Normal, 0},  {sText_Type_Fighting, 1}, {sText_Type_Flying, 2},
+    {sText_Type_Poison, 3},  {sText_Type_Ground, 4},   {sText_Type_Rock, 5},
+    {sText_Type_Bug, 6},     {sText_Type_Ghost, 7},    {sText_Type_Steel, 8},
+    {sText_Type_Fire, 9},    {sText_Type_Water, 10},   {sText_Type_Grass, 11},
+    {sText_Type_Electric, 12},{sText_Type_Psychic, 13},{sText_Type_Ice, 14},
+    {sText_Type_Dragon, 15}, {sText_Type_Dark, 16},    {sText_Type_Fairy, 17},
+};
+
+static const u8 sText_Season_Spring[] = _("Spring");
+static const u8 sText_Season_Summer[] = _("Summer");
+static const u8 sText_Season_Autumn[] = _("Autumn");
+static const u8 sText_Season_Winter[] = _("Winter");
+
+static const struct ListMenuItem sSetSeasons[] =
+{
+    {sText_Season_Spring, 0}, {sText_Season_Summer, 1},
+    {sText_Season_Autumn, 2}, {sText_Season_Winter, 3},
+};
+
+static const u8 sText_EB_Easy[] = _("Easy");
+static const u8 sText_EB_Normal[] = _("Normal");
+static const u8 sText_EB_Hard[] = _("Hard");
+
+static const struct ListMenuItem sSetEndlessBattleDifficulty[] =
+{
+    {sText_EB_Easy, 0}, {sText_EB_Normal, 1}, {sText_EB_Hard, 2},
+};
+
+static const u8 sText_EB_Start[] = _("Start a battle");
+static const u8 sText_EB_Explain[] = _("What is this?");
+static const u8 sText_EB_Leave[] = _("Leave");
+
+static const struct ListMenuItem sSetEndlessBattleQuestion[] =
+{
+    {sText_EB_Start, 0}, {sText_EB_Explain, 1}, {sText_EB_Leave, 2},
+};
+
+
+// 2.X also addresses these sets by name (year/month/day pickers, the Monopoly
+// minigame, costume lists). Placeholder contents: the scripts index them, so they
+// must exist and be the right length, but the systems behind them are not ported.
+static const u8 sText_Num_1[] = _("1");
+static const u8 sText_Num_2[] = _("2");
+static const u8 sText_Num_3[] = _("3");
+static const u8 sText_Num_4[] = _("4");
+static const u8 sText_Num_5[] = _("5");
+static const u8 sText_Cancel_Opt[] = _("Cancel");
+
+static const struct ListMenuItem sSetGeneric5[] =
+{
+    {sText_Num_1, 0}, {sText_Num_2, 1}, {sText_Num_3, 2},
+    {sText_Num_4, 3}, {sText_Num_5, 4}, {sText_Cancel_Opt, 5},
+};
+
 struct
 {
     const struct ListMenuItem *set;
@@ -1133,8 +1226,21 @@ struct
 	{sSet8,  ARRAY_COUNT(sSet8)},
 	{sSetBlueNurse,  ARRAY_COUNT(sSetBlueNurse)},	// 09
 	{sSetBlueNurseMoveLearn, ARRAY_COUNT(sSetBlueNurseMoveLearn)},	// 10
-	{sSetReserved11, ARRAY_COUNT(sSetReserved11)},	// 11
+	{sSetSeasons, ARRAY_COUNT(sSetSeasons)},	// 11 SCROLLING_SEASONS
 	{sSetSeviiTicket, ARRAY_COUNT(sSetSeviiTicket)},	// 12 SCROLLING_SEVII_TICKET
+	{sSetGenerations, ARRAY_COUNT(sSetGenerations)},	// 13 SCROLLING_GENERATIONS
+	{sSetTypes, ARRAY_COUNT(sSetTypes)},	// 14 SCROLLING_TYPES
+	{sSet6,  ARRAY_COUNT(sSet6)},	// 15 SCROLLING_OTHER_GAME_MODES (reuses the game-modes list)
+	{sSetGenerations, ARRAY_COUNT(sSetGenerations)},	// 16 SCROLLING_STARTER_REGION
+	{sSetEndlessBattleDifficulty, ARRAY_COUNT(sSetEndlessBattleDifficulty)},	// 17
+	{sSetEndlessBattleQuestion, ARRAY_COUNT(sSetEndlessBattleQuestion)},	// 18
+	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 19 SCROLLING_YEAR
+	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 20 SCROLLING_MONTH
+	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 21 SCROLLING_DAY
+	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 22 SCROLLING_MONOPOLY
+	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 23 SCROLLING_MONOPOLY_PC
+	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 24 SCROLLING_COSTUMES_MALE
+	{sSetGeneric5, ARRAY_COUNT(sSetGeneric5)},	// 25 SCROLLING_COSTUMES_FEMALE
 };
 
 static void Task_ScrollingMultichoiceInput(u8 taskId);

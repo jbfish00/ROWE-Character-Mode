@@ -12,7 +12,7 @@
   "allow_running": true,
   "show_map_name": true,
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
-  "connections": 0,
+  "connections": null,
   "object_events": [
     {
       "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
@@ -67,17 +67,17 @@
       "flag": "FLAG_ITEM_METEOR_FALLS_1F_1R_PP_UP"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
       "x": 26,
       "y": 32,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 1,
       "movement_range_y": 1,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "MegaStone_EventScript_Tinkatite",
-      "flag": "FLAG_ITEM_TINKATITE"
+      "trainer_sight_or_berry_tree_id": "ITEM_TINKATITE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_GOT_TINKATON_MEGA_STONE"
     }
   ],
   "warp_events": [
@@ -86,53 +86,44 @@
       "y": 18,
       "elevation": 4,
       "dest_map": "MAP_ROUTE114",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 6,
       "y": 39,
       "elevation": 3,
       "dest_map": "MAP_ROUTE115",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 10,
       "y": 3,
       "elevation": 3,
       "dest_map": "MAP_METEOR_FALLS_1F_2R",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 5,
       "y": 4,
       "elevation": 3,
       "dest_map": "MAP_METEOR_FALLS_B1F_1R",
-      "dest_warp_id": 4
+      "dest_warp_id": "4"
     },
     {
       "x": 26,
       "y": 28,
       "elevation": 3,
       "dest_map": "MAP_METEOR_FALLS_B1F_1R",
-      "dest_warp_id": 5
+      "dest_warp_id": "5"
     },
     {
       "x": 4,
       "y": 2,
       "elevation": 0,
       "dest_map": "MAP_METEOR_FALLS_STEVENS_CAVE",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [],
-  "bg_events": [
-    {
-      "type": "sign",
-      "x": 9,
-      "y": 58,
-      "elevation": 0,
-      "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "0x0"
-    }
-  ]
+  "bg_events": []
 }

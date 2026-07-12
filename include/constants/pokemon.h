@@ -366,4 +366,15 @@
 #define NUM_MALE_LINK_FACILITY_CLASSES   8
 #define NUM_FEMALE_LINK_FACILITY_CLASSES 8
 
+// 2.X generation ids, used by the scripts' scrolling menus (starter region, dex filters).
+#define GEN_1 0
+#define GEN_2 1
+#define GEN_3 2
+#define GEN_4 3
+#define GEN_5 4
+#define GEN_6 5
+#define GEN_7 6
+#define GEN_8 7
+#define GEN_9 8
+
 #endif // GUARD_CONSTANTS_POKEMON_H

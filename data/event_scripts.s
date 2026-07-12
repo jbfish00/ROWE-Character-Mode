@@ -457,6 +457,7 @@ gStdScripts_End:: @ 81DC2CC
 	.include "data/maps/BattleColosseum_4P/scripts.inc"
 	.include "data/maps/ContestHall/scripts.inc"
 	.include "data/maps/InsideOfTruck/scripts.inc"
+	.include "data/maps/InsideOfTruck2/scripts.inc"
 	.include "data/maps/SSTidalCorridor/scripts.inc"
 	.include "data/maps/SSTidalLowerDeck/scripts.inc"
 	.include "data/maps/SSTidalRooms/scripts.inc"
@@ -840,7 +841,6 @@ Common_EventScript_FerryDepartIsland:: @ 8272250
 	return
 
 	.include "data/scripts/cave_of_origin.inc"
-	.include "data/scripts/kecleon.inc"
 
 Common_EventScript_NameReceivedPartyMon:: @ 82723DD
 	fadescreen FADE_TO_BLACK
@@ -1097,6 +1097,7 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/scripts/trainer_script.inc"
 	.include "data/scripts/berry_tree.inc"
 	.include "data/scripts/secret_base.inc"
+	.include "data/scripts/secret_power_tm.inc"
 	.include "data/scripts/cable_club.inc"
 	.include "data/text/cable_club.inc"
 	.include "data/scripts/contest_hall.inc"
@@ -1113,7 +1114,9 @@ Common_EventScript_LegendaryFlewAway:: @ 8273776
 	.include "data/scripts/field_move_scripts.inc"
 	.include "data/scripts/item_ball_scripts.inc"
 	.include "data/scripts/sevii_scripts.inc"
-	.include "data/scripts/sevii_stubs.inc"
+	.include "data/scripts/alpha_mon_scripts.inc"
+	.include "data/scripts/gift_mon_scripts.inc"
+	.include "data/scripts/legendary_mon_scripts.inc"
 	.include "data/scripts/gym_scripts.inc"
 	.include "data/scripts/opponent_scripts.inc"
 	.include "data/scripts/wild_mon_scripts.inc"

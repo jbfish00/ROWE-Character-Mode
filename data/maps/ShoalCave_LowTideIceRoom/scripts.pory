@@ -5,4 +5,5 @@ ShoalCave_LowTideIceRoom_MapScripts:: @ 82396A1
 	
 ShoalCave_LowTideIceRoom_OnLoad: @ 8236F16
 	end
+
 `

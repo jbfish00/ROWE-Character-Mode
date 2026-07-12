@@ -14,32 +14,26 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "right",
+      "map": "MAP_ROUTE12",
       "offset": -60,
-      "map": "MAP_ROUTE12"
+      "direction": "right"
     },
     {
-      "direction": "left",
+      "map": "MAP_VERMILLION_CITY",
       "offset": -10,
-      "map": "MAP_VERMILLION_CITY"
+      "direction": "left"
     }
   ],
-  "object_events": [
-
-  ],
+  "object_events": [],
   "warp_events": [
     {
       "x": 6,
       "y": 7,
       "elevation": 0,
       "dest_map": "MAP_DIGLETTS_CAVE_SOUTH_ENTRANCE",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     }
   ],
-  "coord_events": [
-
-  ],
-  "bg_events": [
-
-  ]
+  "coord_events": [],
+  "bg_events": []
 }

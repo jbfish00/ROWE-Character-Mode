@@ -59,8 +59,11 @@
 	.if \kind < 5
 	.4byte \arg6
 	.else
+	@ hiddenItemId is u16 in struct BgEvent, but this used to emit only a byte --
+	@ fine when there were <256 hidden items, but 2.X has thousands, so the ids
+	@ were being truncated (0xBEC -> 0xEC) and collided with each other.
 	.2byte \arg6
-	.byte \arg7, \arg8
+	.2byte \arg7
 	.endif
 	inc _num_signs
 	.endm

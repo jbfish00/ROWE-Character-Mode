@@ -98,7 +98,7 @@
 #define VAR_LOTAD_SIZE_RECORD                0x404F
 #define VAR_LITTLEROOT_TOWN_STATE            0x4050
 #define VAR_OLDALE_TOWN_STATE                0x4051
-#define VAR_LAST_DAMAGE_DONE                 0x4052 // Unused Var
+#define VAR_LAST_DAMAGE_DONE                 0x4052
 #define VAR_LAVARIDGE_TOWN_STATE             0x4053
 #define VAR_CURRENT_SECRET_BASE              0x4054 // was probably allocated for VAR_FALLARBOR_TOWN_STATE at one point
 #define VAR_WILD_AI_FLAGS                    0x4055 // Wild AI Flags
@@ -111,34 +111,34 @@
 #define VAR_NEW_GAME_PLUS_COUNT              0x405C // New Game+
 #define VAR_MOSSDEEP_CITY_STATE              0x405D
 #define VAR_SOOTOPOLIS_CITY_STATE            0x405E
-#define VAR_EVER_GRANDE_CITY_STATE           0x405F // Unused Var
+#define VAR_TRAINER_SKILL_POINTS             0x405F
 #define VAR_ROUTE101_STATE                   0x4060
 #define VAR_NUM_BADGES                       0x4061 // Special
 #define VAR_GYM_POKEMON_SPECIES              0x4062 // Used for Gym leader Pokémon
 #define VAR_ROUTE104_STATE                   0x4063
-#define LAST_GYM_NUM                   		 0x4064 // Gym Shuffle Mode
-#define RUSTBORO_GYM_SHUFFLE_NUM             0x4065 // Gym Shuffle Mode
-#define DEWFORD_GYM_SHUFFLE_NUM              0x4066 // Gym Shuffle Mode
-#define MAUVILLE_GYM_SHUFFLE_NUM             0x4067 // Gym Shuffle Mode
-#define LAVARIDGE_GYM_SHUFFLE_NUM            0x4068 // Gym Shuffle Mode
+#define VAR_LAST_GYM_NUM                   	 0x4064 // Gym Shuffle Mode
+#define VAR_RUSTBORO_GYM_SHUFFLE_NUM         0x4065 // Gym Shuffle Mode
+#define VAR_DEWFORD_GYM_SHUFFLE_NUM          0x4066 // Gym Shuffle Mode
+#define VAR_MAUVILLE_GYM_SHUFFLE_NUM         0x4067 // Gym Shuffle Mode
+#define VAR_LAVARIDGE_GYM_SHUFFLE_NUM        0x4068 // Gym Shuffle Mode
 #define VAR_ROUTE110_STATE                   0x4069
-#define PETALBURG_GYM_SHUFFLE_NUM            0x406A // Gym Shuffle Mode
-#define FORTREE_GYM_SHUFFLE_NUM              0x406B // Gym Shuffle Mode
-#define MOSSDEEP_GYM_SHUFFLE_NUM             0x406C // Gym Shuffle Mode
-#define SOOTOPOLIS_GYM_SHUFFLE_NUM           0x406D // Gym Shuffle Mode
-#define VAR_SIGNATURE_MOVE_TEMP              0x406E // Unused Var
+#define VAR_PETALBURG_GYM_SHUFFLE_NUM        0x406A // Gym Shuffle Mode
+#define VAR_FORTREE_GYM_SHUFFLE_NUM          0x406B // Gym Shuffle Mode
+#define VAR_MOSSDEEP_GYM_SHUFFLE_NUM         0x406C // Gym Shuffle Mode
+#define VAR_SOOTOPOLIS_GYM_SHUFFLE_NUM       0x406D // Gym Shuffle Mode
+#define VAR_SIGNATURE_MOVE_TEMP              0x406E
 #define VAR_ROUTE116_STATE                   0x406F
-#define VAR_ROUTE117_STATE                   0x4070 // Unused Var
+#define VAR_STARTER_POKEMON                  0x4070
 #define VAR_ROUTE118_STATE                   0x4071
 #define VAR_ROUTE119_STATE                   0x4072
-#define VAR_ROUTE120_STATE                   0x4073 // Unused Var
+#define VAR_TRAINER_LEVEL                    0x4073
 #define VAR_ROUTE121_STATE                   0x4074
 #define VAR_START_MENU_CURSOR_X              0x4075 // Start Menu
 #define VAR_START_MENU_CURSOR_Y              0x4076 // Start Menu
 #define VAR_CRY_SPECIES                      0x4077 // Cry Test
-#define VAR_ROUTE125_STATE                   0x4078 // Unused Var
-#define VAR_ROUTE126_STATE                   0x4079 // Unused Var
-#define VAR_ROUTE127_STATE                   0x407A // Unused Var
+#define VAR_TRAINER_EXP                      0x4078
+#define VAR_MAX_DAMAGE_DONE                  0x4079
+#define VAR_DIFFICULTY                       0x407A
 #define VAR_ROUTE128_STATE                   0x407B
 #define VAR_LAST_ROAMER_NUM                  0x407C
 #define VAR_DEXNAV_CHAIN                     0x407D
@@ -155,7 +155,7 @@
 #define VAR_CONTEST_TYPE                     0x4088
 #define VAR_SECRET_BASE_INITIALIZED          0x4089
 #define VAR_CONTEST_PRIZE_PICKUP             0x408A
-#define VAR_UNUSED_0X408B                    0x408B
+#define VAR_UPDATED_TIMES                    0x408B // Achivement
 #define VAR_LITTLEROOT_HOUSES_STATE_BRENDAN  0x408C
 #define VAR_LITTLEROOT_RIVAL_STATE           0x408D
 #define VAR_BOARD_BRINEY_BOAT_STATE          0x408E
@@ -184,7 +184,7 @@
 #define VAR_TRICK_HOUSE_BEING_WATCHED_STATE  0x40A5
 #define VAR_TRICK_HOUSE_FOUND_TRICK_MASTER   0x40A6
 #define VAR_TRICK_HOUSE_ENTRANCE_STATE       0x40A7
-#define VAR_MAP_SCENE_FIVE_ISLAND_RESORT_GORGEOUS      0x40A8 // 2.X Sevii // Unused Var
+#define VAR_MAX_LOTERY_DIGITS                0x40A8
 #define VAR_CYCLING_CHALLENGE_STATE          0x40A9
 #define VAR_SLATEPORT_MUSEUM_1F_STATE        0x40AA
 #define VAR_TRICK_HOUSE_PUZZLE_1_STATE       0x40AB
@@ -200,7 +200,7 @@
 #define VAR_TRICK_HOUSE_ENTER_FROM_CORRIDOR  0x40B5
 #define VAR_TRICK_HOUSE_PUZZLE_7_STATE_2     0x40B6 // Leftover from RS, never set
 #define VAR_SLATEPORT_FAN_CLUB_STATE         0x40B7
-#define VAR_CURRENT_SEVII                              0x40B8 // 2.X Sevii // Unused Var
+#define VAR_CURRENT_SEASON                   0x40B8 // Seasons
 #define VAR_MT_PYRE_STATE                    0x40B9
 #define VAR_NEW_MAUVILLE_STATE               0x40BA
 #define VAR_TIMES_WHITED_OUT                 0x40BB // New Flag
@@ -235,8 +235,8 @@
 #define VAR_SOOTOPOLIS_WALLACE_STATE         0x40D8
 #define VAR_HAS_TALKED_TO_SEAFLOOR_CAVERN_ENTRANCE_GRUNT 0x40D9
 #define VAR_REGISTER_BIRCH_STATE             0x40DA
-#define VAR_SHOP_MONEY_TYPE                            0x40DB // 2.X Sevii // Unused Var
-#define VAR_SHOP_TYPE                                  0x40DC // 2.X Sevii // Unused Var
+#define VAR_DEFEATED_TRAINERS                0x40DB
+#define VAR_TRAINER_BATTLE_POINTS_REWARD     0x40DC
 #define VAR_EVENT_PICHU_SLOT                 0x40DD
 #define VAR_NEVER_READ_0x40DE                0x40DE // Var is written to, but never read
 #define VAR_NEVER_READ_0x40DF                0x40DF // Var is written to, but never read
@@ -245,7 +245,7 @@
 #define VAR_NEVER_READ_0x40E2                0x40E2 // Var is written to, but never read
 #define VAR_NEVER_READ_0x40E3                0x40E3 // Var is written to, but never read
 #define VAR_NEVER_READ_0x40E4                0x40E4 // var is written to, but never read
-#define VAR_VISITED_SEVII                              0x40E5 // 2.X Sevii // Unused Var
+#define VAR_AUTOSAVE_STEP_COUNTER            0x40E5
 #define VAR_DAILY_SLOTS                      0x40E6
 #define VAR_DAILY_WILDS                      0x40E7
 #define VAR_DAILY_BLENDER                    0x40E8
@@ -259,21 +259,75 @@
 #define VAR_SECRET_BASE_IS_NOT_LOCAL         0x40F0 // Set to TRUE while in another player's secret base.
 #define VAR_DAILY_BP                         0x40F1
 #define VAR_WALLY_CALL_STEP_COUNTER          0x40F2
-#define VAR_GYM_ATTENDANT_STEP_COUNTER  0x40F3
+#define VAR_GYM_ATTENDANT_STEP_COUNTER       0x40F3
 #define VAR_ROXANNE_CALL_STEP_COUNTER        0x40F4
 #define VAR_SCOTT_BF_CALL_STEP_COUNTER       0x40F5
 #define VAR_RIVAL_RAYQUAZA_CALL_STEP_COUNTER 0x40F6
 #define VAR_DEXNAV_SPECIES                   0x40F7 // Registered dexnav species
 #define VAR_DEXNAV_STEP_COUNTER              0x40F8 // steps for finding hidden pokemon
-#define VAR_UNUSED_0x40F9                    0x40F9 // Unused Var
-#define VAR_CHARACTER_ID                     0x40FA // Character Mode: 1-based index into gCharacters, 0 = none
-#define VAR_LEVEL_CAP_LEVEL                  0x40FB // 2.X: level-cap strictness
-#define VAR_UNUSED_0x40FC                    0x40FC // Unused Var
+
+#define VAR_WILD_MON_STEP_COUNTER            0x40F9
+#define VAR_AUTOSAVE_SETTING                 0x40FA
+#define VAR_UNUSED_0x40FB                    0x40FB 
+#define VAR_LAST_WILD_MON_TILE_USED          0x40FC
 #define VAR_UNUSED_0x40FD                    0x40FD // Unused Var
 #define VAR_SAVE_VERSION                     0x40FE
-#define VAR_DIMENSION_LINK                   0x40FF
+#define VAR_DIMENSION_LINK                   16639
 
-#define VARS_END                             0x40FF
+#define NEW_VARS_START                       VAR_DIMENSION_LINK + 1
+
+#define VAR_MAP_SCENE_FIVE_ISLAND_RESORT_GORGEOUS NEW_VARS_START + 1
+#define VAR_BATTLE_SPEED                          NEW_VARS_START + 2
+#define VAR_SHOP_MONEY_TYPE                       NEW_VARS_START + 3
+#define VAR_SHOP_TYPE                             NEW_VARS_START + 4
+#define VAR_ONE_ISLAND_GYM_SHUFFLE_NUM            NEW_VARS_START + 5  // Gym Shuffle Mode
+#define VAR_TWO_ISLAND_GYM_SHUFFLE_NUM            NEW_VARS_START + 6  // Gym Shuffle Mode
+#define VAR_THREE_ISLAND_GYM_SHUFFLE_NUM          NEW_VARS_START + 7  // Gym Shuffle Mode
+#define VAR_FOUR_ISLAND_GYM_SHUFFLE_NUM           NEW_VARS_START + 8  // Gym Shuffle Mode
+#define VAR_FIVE_ISLAND_GYM_SHUFFLE_NUM           NEW_VARS_START + 9  // Gym Shuffle Mode
+#define VAR_SIX_ISLAND_GYM_SHUFFLE_NUM            NEW_VARS_START + 10 // Gym Shuffle Mode
+#define VAR_SEVEN_ISLAND_GYM_SHUFFLE_NUM          NEW_VARS_START + 11 // Gym Shuffle Mode
+#define VAR_EIGHT_ISLAND_GYM_SHUFFLE_NUM          NEW_VARS_START + 12 // Gym Shuffle Mode
+#define VAR_SKILL_STEPS                           NEW_VARS_START + 13
+#define VAR_VISITED_SEVII                         NEW_VARS_START + 14
+#define VAR_CURRENT_SEVII                         NEW_VARS_START + 15
+#define VAR_PARTY_MENU_TUTOR_STATE                NEW_VARS_START + 16
+#define VAR_LEVEL_CAP_LEVEL                       NEW_VARS_START + 17
+#define VAR_MONOTYPE_MODE_TYPE                    NEW_VARS_START + 18
+#define VAR_LAST_AVAILABLE_GEN                    NEW_VARS_START + 19
+#define VAR_TEMP_TITLE_SCREEN                     NEW_VARS_START + 20
+#define VAR_MUSIC_GENERATION                      NEW_VARS_START + 21
+#define VAR_OVERWORLD_SPEEDUP                     NEW_VARS_START + 22
+#define VAR_OVERWORLD_SPECIALS                    NEW_VARS_START + 23
+#define VAR_RTC_FAKE_DAYS                         NEW_VARS_START + 24
+#define VAR_DELTA_BOOST_PID                       NEW_VARS_START + 25
+#define VAR_DELTA_BOOST_TYPE1                     NEW_VARS_START + 26
+#define VAR_DELTA_BOOST_TYPE2                     NEW_VARS_START + 27
+#define VAR_ENDLESS_BATTLE_NUM                    NEW_VARS_START + 28
+#define VAR_ENDLESS_BATTLE_ID                     NEW_VARS_START + 29
+#define VAR_ENDLESS_BATTLE_DIFFICULTY             NEW_VARS_START + 30
+#define VAR_ENDLESS_BATTLE_RECORD_EASY            NEW_VARS_START + 31
+#define VAR_ENDLESS_BATTLE_RECORD_NORMAL          NEW_VARS_START + 32
+#define VAR_ENDLESS_BATTLE_RECORD_HARD            NEW_VARS_START + 33
+#define VAR_ENDLESS_BATTLE_STRING_TYPE            NEW_VARS_START + 34
+#define VAR_ENDLESS_BATTLE_CURE_TYPE              NEW_VARS_START + 35
+#define VAR_BOSS_BATTLE_HP_MULTIPIER              NEW_VARS_START + 36
+#define VAR_BATTLE_MENU_MON_ID_X                  NEW_VARS_START + 37
+#define VAR_BATTLE_MENU_MON_ID_Y                  NEW_VARS_START + 38
+#define VAR_BATTLE_CONTROLLER_PLAYER_F            NEW_VARS_START + 39
+
+
+// ---- fork-only vars, appended past 2.X's VARS_END ----
+#define VAR_CHARACTER_ID                       17001
+#define VAR_EVER_GRANDE_CITY_STATE             17002
+#define VAR_ROUTE117_STATE                     17003
+#define VAR_ROUTE120_STATE                     17004
+#define VAR_ROUTE125_STATE                     17005
+#define VAR_ROUTE126_STATE                     17006
+#define VAR_ROUTE127_STATE                     17007
+#define VAR_UNUSED_0X408B                      17008
+
+#define VARS_END                             17008
 #define VARS_COUNT                           (VARS_END - VARS_START + 1)
 
 #define SPECIAL_VARS_START            0x8000
@@ -303,5 +357,18 @@
 #define VAR_TRAINER_BATTLE_OPPONENT_A 0x8015 // Alias of gTrainerBattleOpponent_A
 
 #define SPECIAL_VARS_END              0x8015
+
+
+// 2.X renamed these to VAR_*; our engine code still uses the old names.
+// Aliases, so both spellings resolve to the same var.
+#define LAST_GYM_NUM                         VAR_LAST_GYM_NUM
+#define RUSTBORO_GYM_SHUFFLE_NUM             VAR_RUSTBORO_GYM_SHUFFLE_NUM
+#define DEWFORD_GYM_SHUFFLE_NUM              VAR_DEWFORD_GYM_SHUFFLE_NUM
+#define MAUVILLE_GYM_SHUFFLE_NUM             VAR_MAUVILLE_GYM_SHUFFLE_NUM
+#define LAVARIDGE_GYM_SHUFFLE_NUM            VAR_LAVARIDGE_GYM_SHUFFLE_NUM
+#define PETALBURG_GYM_SHUFFLE_NUM            VAR_PETALBURG_GYM_SHUFFLE_NUM
+#define FORTREE_GYM_SHUFFLE_NUM              VAR_FORTREE_GYM_SHUFFLE_NUM
+#define MOSSDEEP_GYM_SHUFFLE_NUM             VAR_MOSSDEEP_GYM_SHUFFLE_NUM
+#define SOOTOPOLIS_GYM_SHUFFLE_NUM           VAR_SOOTOPOLIS_GYM_SHUFFLE_NUM
 
 #endif // GUARD_CONSTANTS_VARS_H

@@ -5,7 +5,7 @@
   "music": "MUS_ROUTE110",
   "region_map_section": "MAPSEC_ROUTE_114",
   "requires_flash": false,
-  "weather": "WEATHER_SUNNY",
+  "weather": "WEATHER_FALL_LEAVES",
   "map_type": "MAP_TYPE_ROUTE",
   "allow_cycling": true,
   "allow_escaping": false,
@@ -14,14 +14,14 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "left",
+      "map": "MAP_ROUTE115",
       "offset": 40,
-      "map": "MAP_ROUTE115"
+      "direction": "left"
     },
     {
-      "direction": "right",
+      "map": "MAP_FALLARBOR_TOWN",
       "offset": 0,
-      "map": "MAP_FALLARBOR_TOWN"
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -364,17 +364,30 @@
       "flag": "0"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
       "x": 7,
       "y": 5,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
       "movement_range_x": 0,
       "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
       "trainer_sight_or_berry_tree_id": "0",
       "script": "MegaStone_EventScript_ItemCharizardite_X",
-      "flag": "FLAG_UNUSED_0x27B"
+      "flag": "FLAG_GOT_CHARIZARD_X_MEGA_STONE"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_036",
+      "x": 20,
+      "y": 58,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_NONE",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Common_EventScript_Alpha_Clefable",
+      "flag": "FLAG_DISABLE_PORTALS"
     }
   ],
   "warp_events": [
@@ -383,40 +396,38 @@
       "y": 63,
       "elevation": 0,
       "dest_map": "MAP_METEOR_FALLS_1F_1R",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 29,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ROUTE114_FOSSIL_MANIACS_HOUSE",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 27,
       "y": 36,
       "elevation": 0,
       "dest_map": "MAP_ROUTE114_LANETTES_HOUSE",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 6,
       "y": 46,
       "elevation": 0,
       "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 7,
       "y": 4,
       "elevation": 0,
       "dest_map": "MAP_TERRA_CAVE_ENTRANCE",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
-  "coord_events": [
-
-  ],
+  "coord_events": [],
   "bg_events": [
     {
       "type": "sign",

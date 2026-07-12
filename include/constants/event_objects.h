@@ -1336,4 +1336,20 @@
 #define OBJ_EVENT_GFX_CLAIR                    OBJ_EVENT_GFX_CM_CLAIR
 #define OBJ_EVENT_GFX_COLRESS                  OBJ_EVENT_GFX_CM_COLRESS
 
+
+// ---- 2.X object graphics we have no art for. Aliased to the closest sprite we do
+// have, so these NPCs appear (as a stand-in) rather than indexing past the graphics
+// table. OBJ_EVENT_GFX_POKEMON_952 (Scovillain) especially: our Pokemon overworld
+// table stops at 904, so a real id there would read off the end of it. ----
+#define OBJ_EVENT_GFX_CELIO             OBJ_EVENT_GFX_SCIENTIST_1
+#define OBJ_EVENT_GFX_CLERK             OBJ_EVENT_GFX_MAN_1
+#define OBJ_EVENT_GFX_ELECTRIC_WORKER   OBJ_EVENT_GFX_MANIAC
+#define OBJ_EVENT_GFX_GENTLEMAN_FRLG    OBJ_EVENT_GFX_GENTLEMAN
+#define OBJ_EVENT_GFX_GYM_GUY           OBJ_EVENT_GFX_MAN_3
+#define OBJ_EVENT_GFX_LAPRAS_ON_WATER   OBJ_EVENT_GFX_POKEMON_131
+#define OBJ_EVENT_GFX_RED_RBY_NORMAL    OBJ_EVENT_GFX_RED
+#define OBJ_EVENT_GFX_WORKER_F          OBJ_EVENT_GFX_WOMAN_1
+#define OBJ_EVENT_GFX_WORKER_M          OBJ_EVENT_GFX_MAN_1
+#define OBJ_EVENT_GFX_POKEMON_952       OBJ_EVENT_GFX_POKEMON_904
+
 #endif  // GUARD_CONSTANTS_EVENT_OBJECTS_H

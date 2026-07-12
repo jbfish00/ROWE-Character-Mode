@@ -201,7 +201,35 @@
 
 
 // 2.X Sevii: shop kinds + the scrolling-multichoice id the ticket menus use
+// 2.X's map scripts address the scrolling menus by name. These map onto OUR
+// sScrollingSets order (script_menu.c), which is NOT the donor's -- 2.X has
+// STARTERS=0 / STARTING_TOWNS=1, we have them the other way round. Copying its
+// numbering would show the town list when the game asks for a starter.
+// 2.X seasons (the season option in the intro menu).
+#define SEASON_SPRING 0
+#define SEASON_SUMMER 1
+#define SEASON_AUTUMN 2
+#define SEASON_WINTER 3
+
+#define SCROLLING_SET_STARTING_TOWNS                     0
+#define SCROLLING_SET_STARTERS                           1
+#define SCROLLING_SLATEPORT_HARBOR_BEFORE_LEAGUE_OPTIONS 2
+#define SCROLLING_SLATEPORT_HARBOR_AFTER_LEAGUE_OPTIONS  3
+#define SCROLLING_LILYCOVE_HARBOR_BEFORE_LEAGUE_OPTIONS  4
+#define SCROLLING_SET_FOSSILS                            5
+#define SCROLLING_GAME_MODES                             6
+#define SCROLLING_ENABLE_DISABLE_CANCEL                  7
+#define SCROLLING_LILYCOVE_HARBOR_AFTER_LEAGUE_OPTIONS   8
+#define SCROLLING_BLUE_NURSE_OPTIONS                     9
+#define SCROLLING_BLUE_NURSE_MOVE_LEARN                 10
+#define SCROLLING_SEASONS                               11
 #define SCROLLING_SEVII_TICKET          12
+#define SCROLLING_GENERATIONS                           13
+#define SCROLLING_TYPES                                 14
+#define SCROLLING_OTHER_GAME_MODES                      15
+#define SCROLLING_STARTER_REGION                        16
+#define SCROLLING_ENDLESS_BATTLE_DIFFICULTY             17
+#define SCROLLING_ENDLESS_BATTLE_QUESTION               18
 
 
 // 2.X Sevii shops. NB: MART_TYPE_NORMAL/DECOR/DECOR2 are a C enum in shop.h,
@@ -213,5 +241,144 @@
 #define MART_TYPE_MONS                  3
 #define MART_MONEY_TYPE_POKE_DOLLARS    0
 #define MART_MONEY_TYPE_BATTLE_POINTS   1
+
+
+// ---- constants from 2.X's global.h that our headers lacked. Names we already
+// define are deliberately NOT overwritten (e.g. the SCROLLING_* ids, which must
+// stay mapped to OUR sScrollingSets order). ----
+#define OPTIONS_BATTLE_SCENE_1X                  0
+#define OPTIONS_BATTLE_SCENE_2X                  1
+#define OPTIONS_BATTLE_SCENE_3X                  2
+#define OPTIONS_BATTLE_SCENE_4X                  3
+#define OPTIONS_BATTLE_SCENE_DISABLED            4
+#define OPTIONS_BATTLE_SCENE_COUNT               5
+#define NUM_MUSIC_OPTIONS                        4
+#define OPTIONS_OPPONENT_HP_NONE                 0
+#define OPTIONS_OPPONENT_HP_NUMBER               1
+#define OPTIONS_OPPONENT_HP_PERCENTAGE           2
+#define OPTIONS_OPPONENT_HP_COUNT                3
+#define TRAINER_SKILL_EXPERIENCE                 0  //Working
+#define TRAINER_SKILL_MONEY                      1  //Working
+#define TRAINER_SKILL_DISCOUNT                   2  //Working
+#define TRAINER_SKILL_CRITICAL_CAPTURE           3  //Working
+#define TRAINER_SKILL_HP_GAIN                    4  //Working
+#define TRAINER_SKILL_REVIVE                     5  //Working
+#define TRAINER_SKILL_REPEL_STEPS                6  //Working
+#define TRAINER_SKILL_PP_RESTORE                 7  //Working
+#define TRAINER_SKILL_HAPPINESS                  8  //Working
+#define TRAINER_SKILL_HP_RESTORE                 9 //Working
+#define TRAINER_SKILL_DEXNAV_CHAIN_STARTING_LEVEL 10 //Working
+#define TRAINER_SKILL_EGG_CHANCES                11 //Working
+#define TRAINER_SKILL_HIDDEN_MON_CHANCES         12 //Working
+#define TRAINER_SKILL_ESCAPE_CHANCES             13 //Working
+#define TRAINER_SKILL_DOUBLE_BP_CHANCES          14 //Working
+#define TRAINER_SKILL_WILD_MON_DROP_ITEM         15 //Working
+#define TRAINER_SKILL_IVS_HP                     16
+#define TRAINER_SKILL_IVS_ATK                    17
+#define TRAINER_SKILL_IVS_DEF                    18
+#define TRAINER_SKILL_IVS_SPATK                  19
+#define TRAINER_SKILL_IVS_SPDEF                  20
+#define TRAINER_SKILL_IVS_SPEED                  21
+#define TRAINER_SKILL_PP                         22
+#define TRAINER_SKILL_ROCK_SMASH                 23
+#define TRAINER_SKILL_EVS_CHANGES                24
+#define TRAINER_SKILL_COUNT                      TRAINER_SKILL_EVS_CHANGES + 1
+#define WILD_ENCOUNTER_OVERWORLD                 FALSE
+#define STEPS_TO_GET_WILD_MON                    5
+#define WILD_ENCOUNTER_MAX_STEP_COUNT            25
+#define WILD_MONS_MAX_ATTEMPTS                   40
+#define WILD_MONS_ENCOUNTER_RADIUS               8
+#define WILD_MONS_ENCOUNTER_RATE_MULTIPLIER      5
+#define MAX_WILD_POKEMON_TILES                   10
+#define EMERALD_COSTUME                          0
+#define RS_COSTUME                               1
+#define FRLG_COSTUME                             2
+#define BW_COSTUME                               3
+#define DP_COSTUME                               4
+#define RBY_COSTUME                              5
+#define ORAS_COSTUME                             6
+#define EXTRA_COSTUME                            7
+#define GSC_COSTUME                              8
+#define NUM_COSTUMES                             9
+#define NUM_SEASONS                              4
+#define SAVEBLOCK_SEASONS                        0
+#define SAVEBLOCK_DIFFICULTY                     1
+#define SAVEBLOCK_CHECK_PARTY                    2
+#define WONDER_TRADE_PRICE                       5 //Price to Wonder Trade
+#define FLYING_TAXIS_PRICE                       2 //Price to use Flying Taxis
+#define MART_MONEY_TYPE_NORMAL                   0
+#define MART_MONEY_TYPE_CASINO_COINS             2
+#define SPRITE_NONE                              0xFF
+#define HEAD_SENTINEL                            0xFE
+#define TAIL_SENTINEL                            0xFF
+#define TASK_NONE                                TAIL_SENTINEL
+#define TUTOR_FLAG_EGG_MOVES                     FLAG_GOT_BADGE_06
+#define TUTOR_FLAG_TUTOR_MOVES                   FLAG_GOT_BADGE_09
+#define TUTOR_FLAG_TMHM_MOVES                    FLAG_GOT_BADGE_12
+#define GYM_SECOND_TM_BADGES_COUNT               2
+#define GYM_THIRD_TM_BADGES_COUNT                5
+#define GYM_FOURTH_TM_BADGES_COUNT               8
+#define GYM_MEGA_STONES_BADGES_COUNT             11
+#define GYM_FIFTH_TM_BADGES_COUNT                13
+#define DAYS_OF_THE_WEEK_SUNDAY                  0
+#define DAYS_OF_THE_WEEK_MONDAY                  1
+#define DAYS_OF_THE_WEEK_TUESDAY                 2
+#define DAYS_OF_THE_WEEK_WEDNESDAY               3
+#define DAYS_OF_THE_WEEK_THURSDAY                4
+#define DAYS_OF_THE_WEEK_FRIDAY                  5
+#define DAYS_OF_THE_WEEK_SATURDAY                6
+#define NUM_DAYS_OF_THE_WEEK                     7
+#define TITLE_SCREEN_EMERALD                     0
+#define TITLE_SCREEN_RUBY                        1
+#define TITLE_SCREEN_SAPPHIRE                    2
+#define NUM_TITLE_SCREENS                        3
+#define OPTIONS_OVERWORLD_SPEED_1X               0
+#define OPTIONS_OVERWORLD_SPEED_2X               1
+#define OPTIONS_OVERWORLD_SPEED_4X               2
+#define OPTIONS_OVERWORLD_SPEED_8X               3
+#define OPTIONS_OVERWORLD_SPEED_1X_EXTRA_ITERATIONS 0
+#define OPTIONS_OVERWORLD_SPEED_2X_EXTRA_ITERATIONS 1
+#define OPTIONS_OVERWORLD_SPEED_4X_EXTRA_ITERATIONS 3
+#define OPTIONS_OVERWORLD_SPEED_8X_EXTRA_ITERATIONS 7
+#define SPECIAL_NONE                             0
+#define SPECIAL_SET_DATE                         1
+#define DAY_EVENT_NONE                           0
+#define DAY_EVENT_FULL_MOON                      1
+#define DAY_EVENT_HALLOWEEN                      2
+#define DAY_EVENT_CHRISTMAS                      3
+#define DAY_EVENT_BEES_BIRTHDAY                  4 //February 17
+#define DAY_EVENT_JAS_BIRTHDAY                   5 //August 4
+#define DAY_EVENT_LEIGH_BIRTHDAY                 6 //August 7
+#define DAY_EVENT_PHROG_BIRTHDAY                 7 //August 1
+#define DAY_EVENT_PCG_BIRTHDAY                   8 //August 20
+#define DAY_EVENT_DES_BIRTHDAY                   9 //
+#define DAY_EVENT_AGERGO_BIRTHDAY                10 //April 11
+#define DAY_EVENT_NEW_YEAR                       11 //January 1
+#define POKEMON_HUE_STRENGHT                     10
+#define POKEMON_HUE_STRENGHT_2                   10
+#define RGB_ALPHA                                RGB(31,  0,  0)
+#define RGB_DELTA                                RGB( 0, 31,  0)
+#define RGB_TRANSFORMED                          RGB(31,  0, 31)
+#define RGB_DELTA_ALPHA                          RGB(31, 31, 31)
+#define LEGENDARY_HP_MULTIPLIER                  200
+#define ALPHA_HP_MULTIPLIER                      150
+
+
+// ---- more 2.X constants the rebased scripts need ----
+#define LEVEL_SCALE_WILD_BOSS       5   // boss uses the level cap as its level
+#define MOVE_TUTOR_LEVEL_UP_MOVES   0
+#define MOVE_TUTOR_EGG_MOVES        1
+#define MOVE_TUTOR_MOVES            2
+#define MOVE_TUTOR_TM_MOVES         3
+
+// More scrolling menus. Again these are OUR sScrollingSets indices (19+),
+// deliberately not 2.X's (16-25), because our set order differs.
+#define SCROLLING_YEAR              19
+#define SCROLLING_MONTH             20
+#define SCROLLING_DAY               21
+#define SCROLLING_MONOPOLY          22
+#define SCROLLING_MONOPOLY_PC       23
+#define SCROLLING_COSTUMES_MALE     24
+#define SCROLLING_COSTUMES_FEMALE   25
 
 #endif // GUARD_CONSTANTS_GLOBAL_H

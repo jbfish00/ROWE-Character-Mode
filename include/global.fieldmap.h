@@ -1,12 +1,21 @@
 #ifndef GUARD_GLOBAL_FIELDMAP_H
 #define GUARD_GLOBAL_FIELDMAP_H
 
-#define METATILE_COLLISION_MASK 0x0C00
-#define METATILE_ID_MASK 0x03FF
-#define METATILE_ID_UNDEFINED 0x03FF
-#define METATILE_ELEVATION_SHIFT 12
-#define METATILE_COLLISION_SHIFT 10
-#define METATILE_ELEVATION_MASK 0xF000
+// ROWE 2.X map-grid format. 2.X grew the primary tilesets (gTileset_General went
+// 512 -> 2048 metatiles), which needs a 12-bit metatile id; it paid for those two
+// bits out of collision (2 -> 1) and elevation (4 -> 3).
+//   bits 0-11 metatile id | bit 12 collision | bits 13-15 elevation
+// Every 2.X map.bin is encoded this way. Decoding it with vanilla's 10/2/4 layout
+// truncates the metatile ids (garbled tiles) and reads collision/elevation out of
+// the wrong bits (the player ends up boxed in) -- which is exactly what the Sevii
+// islands did before this change.
+#define METATILE_ID_MASK 0x0FFF
+#define METATILE_ID_UNDEFINED 0x0FFF
+#define METATILE_COLLISION_MASK 0x1000
+#define METATILE_COLLISION_SHIFT 12
+#define METATILE_ELEVATION_MASK 0xE000
+#define METATILE_ELEVATION_SHIFT 13
+#define MAX_ELEVATION_LEVEL 7   // was 15
 
 #define METATILE_ID(tileset, name) (METATILE_##tileset##_##name)
 

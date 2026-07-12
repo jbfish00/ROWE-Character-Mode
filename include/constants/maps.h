@@ -57,6 +57,13 @@
 #define ORDER_EVER_GRANDE_CITY                      16
 
 #define MAP_NONE (0x7F | (0x7F << 8))
+
+// 2.X map data uses MAP_DYNAMIC for warps whose destination is decided at runtime
+// (elevators, secret bases). Same value as MAP_NONE; the donor's maps reference it
+// by this name. NB: do NOT adopt the donor's MAP_GROUP/MAP_NUM macros -- 2.X
+// changed them to take a value instead of concatenating a name, which breaks every
+// MAP_GROUP(LITTLEROOT_TOWN) call site in our C.
+#define MAP_DYNAMIC (0x7F | (0x7F << 8))
 #define MAP_UNDEFINED (0xFF | (0xFF << 8))
 
 #define MAP_GROUP(map) (MAP_##map >> 8)

@@ -1,5 +1,4 @@
 {
-  "layouts_table_label": "gMapLayouts",
   "group_order": [
     "gMapGroup0",
     "gMapGroup1",
@@ -283,6 +282,7 @@
     "FourIsland_House2",
     "SixIsland_Mart",
     "SixIsland_OutcastIsland_Mesprit_Cave",
+    "InsideOfTruck2",
     "Mauville_Sewers_1F"
   ],
   "gMapGroup2": [

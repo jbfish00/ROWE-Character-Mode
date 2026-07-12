@@ -4576,3 +4576,28 @@ void GetObjectEventTrainerRangeFromTemplate(void)
 {
     gSpecialVar_Result = gObjectEvents[gSelectedObjectEvent].trainerRange_berryTreeId;
 }
+
+// ---- 2.X specials the rebased map scripts call ----
+
+// 2.X gates legendary encounters behind this while the player is still choosing a
+// starter, then re-enables them in Birch's lab. The flag is tracked here so the
+// state is right; nothing in our engine reads it yet, so legendaries are not
+// actually suppressed -- wire this into the legendary encounter scripts when the
+// Alpha/boss system lands.
+void DisableLegendaryMons(void)
+{
+    FlagSet(FLAG_DISABLE_LEGENDARY_MONS);
+}
+
+void EnableLegendaryMons(void)
+{
+    FlagClear(FLAG_DISABLE_LEGENDARY_MONS);
+}
+
+// 2.X clears out party Pokemon the new run may not keep (its New Game+ and
+// randomized modes). A normal new game reaches the starter menu with an empty
+// party, so there is nothing to move; NG+ is not ported, so this is a no-op
+// rather than a guess at which mons are "unusable".
+void SendUnusableMonsToBoxes(void)
+{
+}

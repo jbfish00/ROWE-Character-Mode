@@ -14,19 +14,19 @@
   "battle_scene": "MAP_BATTLE_SCENE_NORMAL",
   "connections": [
     {
-      "direction": "down",
+      "map": "MAP_ROUTE112",
       "offset": 60,
-      "map": "MAP_ROUTE112"
+      "direction": "down"
     },
     {
-      "direction": "left",
+      "map": "MAP_FALLARBOR_TOWN",
       "offset": 0,
-      "map": "MAP_FALLARBOR_TOWN"
+      "direction": "left"
     },
     {
-      "direction": "right",
+      "map": "MAP_ROUTE111",
       "offset": 0,
-      "map": "MAP_ROUTE111"
+      "direction": "right"
     }
   ],
   "object_events": [
@@ -252,17 +252,30 @@
       "flag": "FLAG_HIDE_ROUTE_120_KECLEON_5"
     },
     {
-      "graphics_id": "OBJ_EVENT_GFX_TM_BALL",
+      "graphics_id": "OBJ_EVENT_GFX_POKEMON_227",
+      "x": 57,
+      "y": 4,
+      "elevation": 0,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
+      "trainer_type": "TRAINER_TYPE_NONE",
+      "trainer_sight_or_berry_tree_id": "0",
+      "script": "Common_EventScript_Alpha_Skarmory",
+      "flag": "FLAG_DISABLE_PORTALS"
+    },
+    {
+      "graphics_id": "OBJ_EVENT_GFX_MEGA_STONE",
       "x": 22,
       "y": 6,
       "elevation": 3,
-      "movement_type": "MOVEMENT_TYPE_LOOK_AROUND",
-      "movement_range_x": 1,
-      "movement_range_y": 1,
+      "movement_type": "MOVEMENT_TYPE_WALK_IN_PLACE_DOWN",
+      "movement_range_x": 0,
+      "movement_range_y": 0,
       "trainer_type": "TRAINER_TYPE_NONE",
-      "trainer_sight_or_berry_tree_id": "0",
-      "script": "MegaStone_EventScript_Glimmorite",
-      "flag": "FLAG_ITEM_GLIMMORITE"
+      "trainer_sight_or_berry_tree_id": "ITEM_GLIMMORITE",
+      "script": "Common_EventScript_FindItem",
+      "flag": "FLAG_GOT_GLIMMORA_MEGA_STONE"
     }
   ],
   "warp_events": [
@@ -271,21 +284,21 @@
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_ROUTE113_GLASS_WORKSHOP",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 41,
       "y": 12,
       "elevation": 0,
       "dest_map": "MAP_FIERY_PATH2",
-      "dest_warp_id": 1
+      "dest_warp_id": "1"
     },
     {
       "x": 89,
       "y": 5,
       "elevation": 0,
       "dest_map": "MAP_RELIC_CAVE",
-      "dest_warp_id": 2
+      "dest_warp_id": "2"
     }
   ],
   "coord_events": [],

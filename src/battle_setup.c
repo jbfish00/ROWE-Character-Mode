@@ -1257,6 +1257,7 @@ const u8 *BattleSetup_ConfigureTrainerBattle(const u8 *data)
     switch (sTrainerBattleMode)
     {
     case TRAINER_BATTLE_SINGLE_NO_INTRO_TEXT:
+    case TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT:
         TrainerBattleLoadArgs(sOrdinaryNoIntroBattleParams, data);
         return EventScript_DoNoIntroTrainerBattle;
     case TRAINER_BATTLE_DOUBLE:
@@ -1471,6 +1472,13 @@ void BattleSetup_StartTrainerBattle(void)
     ScriptContext1_Stop();
 }
 
+// 2.X: an endless-battle trainer never whites the player out on a loss.
+static bool8 BattleHasNoWhiteout(void)
+{
+    return (sTrainerBattleMode == TRAINER_BATTLE_NO_WHITEOUT_CONTINUE_SCRIPT
+         || sTrainerBattleMode == TRAINER_BATTLE_NO_INTRO_NO_WHITEOUT);
+}
+
 static void CB2_EndTrainerBattle(void)
 {
     if (gTrainerBattleOpponent_A == TRAINER_SECRET_BASE)
@@ -1479,7 +1487,7 @@ static void CB2_EndTrainerBattle(void)
     }
     else if (IsPlayerDefeated(gBattleOutcome) == TRUE)
     {
-        if (InBattlePyramid() || InTrainerHillChallenge())
+        if (InBattlePyramid() || InTrainerHillChallenge() || BattleHasNoWhiteout())
             SetMainCallback2(CB2_ReturnToFieldContinueScriptPlayMapMusic);
         else
             SetMainCallback2(CB2_WhiteOut);

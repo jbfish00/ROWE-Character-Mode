@@ -73,21 +73,21 @@
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_ROUTE119",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 10,
       "y": 14,
       "elevation": 0,
       "dest_map": "MAP_ROUTE119",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     },
     {
       "x": 17,
       "y": 1,
       "elevation": 0,
       "dest_map": "MAP_ROUTE119_WEATHER_INSTITUTE_2F",
-      "dest_warp_id": 0
+      "dest_warp_id": "0"
     }
   ],
   "coord_events": [
@@ -100,7 +100,7 @@
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route119_WeatherInstitute_1F_EventScript_Bed"
+      "script": "EventScript_Common_Invert_Time_Bed_Weather_Institute"
     },
     {
       "type": "sign",
@@ -108,7 +108,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route119_WeatherInstitute_1F_EventScript_Bed"
+      "script": "EventScript_Common_Invert_Time_Bed_Weather_Institute"
     },
     {
       "type": "sign",
@@ -116,7 +116,7 @@
       "y": 2,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route119_WeatherInstitute_1F_EventScript_Bed"
+      "script": "EventScript_Common_Invert_Time_Bed_Weather_Institute"
     },
     {
       "type": "sign",
@@ -124,7 +124,7 @@
       "y": 3,
       "elevation": 0,
       "player_facing_dir": "BG_EVENT_PLAYER_FACING_ANY",
-      "script": "Route119_WeatherInstitute_1F_EventScript_Bed"
+      "script": "EventScript_Common_Invert_Time_Bed_Weather_Institute"
     },
     {
       "type": "sign",

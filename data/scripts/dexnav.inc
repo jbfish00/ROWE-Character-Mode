@@ -1,46 +1,70 @@
 EventScript_StartDexNavBattle::
+# 2 "data/scripts/dexnav.pory"
 	lock
+# 3 "data/scripts/dexnav.pory"
 	playse 0x15
-	applymovement OBJ_EVENT_ID_PLAYER Common_Movement_ExclamationMark
+# 4 "data/scripts/dexnav.pory"
+	applymovement OBJ_EVENT_ID_PLAYER, Common_Movement_ExclamationMark
+# 5 "data/scripts/dexnav.pory"
 	waitmovement 0
+# 6 "data/scripts/dexnav.pory"
 	waitse
-	dowildbattle    
+# 7 "data/scripts/dexnav.pory"
+	dowildbattle
+# 8 "data/scripts/dexnav.pory"
 	release
-	end
+	return
 
 
 EventScript_NotFoundNearby::
-    msgbox sText_NotFoundNearby, MSGBOX_SIGN
-    end
-	
-sText_NotFoundNearby:
-    .string "It couldn't be found nearby.\n"
-    .string "Try looking in a different area!$"
-	
+# 12 "data/scripts/dexnav.pory"
+	msgbox sText_NotFoundNearby, MSGBOX_SIGN
+	return
+
+
 EventScript_MovedTooFast::
-    msgbox sText_TryMovingSlower, MSGBOX_SIGN
-    end
-	
-sText_TryMovingSlower:
-    .string "The Pokémon got away! Try moving\n"
-    .string "more slowly by holding the A button.$"
+# 21 "data/scripts/dexnav.pory"
+	msgbox sText_TryMovingSlower, MSGBOX_SIGN
+	return
+
 
 EventScript_PokemonGotAway::
-    msgbox sText_PokemonGotAway, MSGBOX_SIGN
-    end
-sText_PokemonGotAway:
-    .string "The Pokémon got away!$"
+# 30 "data/scripts/dexnav.pory"
+	msgbox sText_PokemonGotAway, MSGBOX_SIGN
+	return
+
 
 EventScript_LostSignal::
-    msgbox sText_LostSignal, MSGBOX_SIGN
-    end
-sText_LostSignal:
-    .string "There is no reaction.\n"
-    .string "The signal was lost!$"
+# 38 "data/scripts/dexnav.pory"
+	msgbox sText_LostSignal, MSGBOX_SIGN
+	return
+
 
 EventScript_TooDark::
-    msgbox sText_TooDark, MSGBOX_SIGN
-    end
-	
-sText_TooDark:
-    .string "It's too dark to search\nfor a Pokémon!$"
+# 47 "data/scripts/dexnav.pory"
+	msgbox sText_TooDark, MSGBOX_SIGN
+	return
+
+
+sText_NotFoundNearby::
+# 15 "data/scripts/dexnav.pory"
+	.string "It couldn't be found nearby.\n"
+	.string "Try looking in a different area!$"
+
+sText_TryMovingSlower::
+# 24 "data/scripts/dexnav.pory"
+	.string "The Pokémon got away! Try moving\n"
+	.string "more slowly by holding the A button.$"
+
+sText_PokemonGotAway::
+# 33 "data/scripts/dexnav.pory"
+	.string "The Pokémon got away!$"
+
+sText_LostSignal::
+# 41 "data/scripts/dexnav.pory"
+	.string "There is no reaction.\n"
+	.string "The signal was lost!$"
+
+sText_TooDark::
+# 50 "data/scripts/dexnav.pory"
+	.string "It's too dark to search\nfor a Pokémon!$"
