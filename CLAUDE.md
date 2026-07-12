@@ -191,6 +191,37 @@ Do not fight the emulator blind -- this cost hours. What works:
   `grep '^Name::'` will report a script "missing from the donor" when it is
   actually there. This wrongly wrote off the Landorus/Alpha/gift scripts once.
 
+## The 2.X-data-on-an-old-engine bug class (read this)
+
+Every bug in the rebase had the same shape: **2.X's data encodes something our
+engine decodes differently, or assumes an engine feature we lack.** None fail the
+build. Found and fixed so far:
+
+- **`METATILE_*` constants name TWO different formats.** The map-grid BLOCK (2.X
+  changed it) and the metatile ATTRIBUTE word (2.X did not). They agreed in vanilla
+  only by coincidence -- the old elevation field (`0xF000 >> 12`) sat exactly where
+  the attribute LAYER field is. `include/global.fieldmap.h` now keeps them apart
+  (`METATILE_ATTR_BEHAVIOR/LAYER_*`). Get this wrong and every tile draws with the
+  wrong layer type.
+- **Elevation "cross any level" sentinel is 7 (`MAX_ELEVATION_LEVEL`), not 15.**
+  3-bit field. Checking `0xF` matches nothing, so every transition tile blocks the
+  player (bridges, cycling road).
+- **Secondary-tileset metatile base is 2048, not 512.** Any hardcoded `0x200`, and
+  any raw metatile literal, is wrong. Use the `METATILE_*` labels.
+- **A MAPSEC must be < `MAPSEC_NONE`.** `gRegionMapEntries[]` is indexed UNGUARDED;
+  a mapsec past the end divides by a garbage width. (`MAPSEC_EIGHT_ISLAND` was 0xD6.)
+- **`SPECIES_NONE` in 2.X scripts means "resolve at runtime"** from the list its
+  `generateStarters` builds. We have no such list -> species 0 -> crash. Our
+  `ScriptGiveMon` has its own randomize sentinel: **`SPECIES_MEW`**.
+- **porymap writes `dest_warp_id` as a STRING.** `tools/mapjson` called
+  `int_value()` on it, which returns 0 -- so **997 of the game's 1700 warps** sent
+  the player to warp 0 of the destination map (every building exit, Hoenn included).
+- **Save blocks silently truncate.** `save.c` clamps each chunk with `min()` and
+  checksums only the clamped bytes: an oversized block writes a VALID checksum over
+  a TRUNCATED payload. SaveBlock2 had been over by 204 bytes and quietly dropping
+  `roamerFlag[]` + option bits. There are now `STATIC_ASSERT`s on all three blocks --
+  **never remove them.**
+
 ## Traps that have bitten more than once
 
 - **Hardcoded counts vs grown data.** Six instances so far: `gBattleAnims_Moves`
