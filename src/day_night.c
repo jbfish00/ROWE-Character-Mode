@@ -24,6 +24,7 @@
 
 EWRAM_DATA u16 gPlttBufferPreDN[PLTT_BUFFER_SIZE] = {0};
 static EWRAM_DATA s8 sOldHour = 0;
+static EWRAM_DATA u8 sOldSeason = 0;
 static EWRAM_DATA bool8 sRetintPhase = FALSE;
 EWRAM_DATA struct PaletteOverride *gPaletteOverrides[4] = {NULL};
 
@@ -54,7 +55,41 @@ static const u16 sTimeOfDayTints[][3] = {
     {TINT_NIGHT},       // 11 PM
 };
 
-const u8 *const gDayOfWeekTable[] = 
+// Seasons. The intro asks which season you want and the Blue Nurse lets you change it,
+// and until now VAR_CURRENT_SEASON had no reader anywhere -- the game said "You will play
+// in Spring!" and looked identical all year. 2.X renders seasons in engine code we do not
+// have, and the donor ships no seasonal art, so there is nothing to import.
+//
+// Instead, layer a season on the day/night tint that already exists: these are RGB scale
+// factors multiplied into the hour's tone before the palette is recoloured. Outdoors only
+// (ShouldTintOverworld), so interiors are untouched. Kept subtle -- this shades the world,
+// it does not repaint it.
+static const u16 sSeasonTints[NUM_SEASONS][3] = {
+    [SEASON_SPRING] = {Q_8_8(1.00), Q_8_8(1.05), Q_8_8(0.97)},  // fresh, a little green
+    [SEASON_SUMMER] = {Q_8_8(1.07), Q_8_8(1.03), Q_8_8(0.93)},  // bright and warm
+    [SEASON_AUTUMN] = {Q_8_8(1.10), Q_8_8(0.93), Q_8_8(0.78)},  // amber
+    [SEASON_WINTER] = {Q_8_8(0.88), Q_8_8(0.94), Q_8_8(1.12)},  // cold and blue
+};
+
+u8 GetCurrentSeason(void)
+{
+    u16 season = VarGet(VAR_CURRENT_SEASON);
+
+    if (season >= NUM_SEASONS)
+        return SEASON_SPRING;
+
+    return season;
+}
+
+// The hour's tone scaled by the season's. Both are Q8.8, so divide back down by 256.
+static u16 GetDayNightTone(s8 hour, u8 channel)
+{
+    u32 tone = (u32)sTimeOfDayTints[hour][channel] * sSeasonTints[GetCurrentSeason()][channel];
+
+    return tone >> 8;
+}
+
+const u8 *const gDayOfWeekTable[] =
 {
     gText_Sunday,
     gText_Monday,
@@ -203,7 +238,7 @@ void TintPaletteForDayNight(u16 offset, u16 size)//check
         s8 hour;
         RtcCalcLocalTimeFast();
         hour = GetTimeOfDayHours();
-        TintPalette_CustomToneWithCopy(gPlttBufferPreDN + offset, gPlttBufferUnfaded + offset, size / 2, sTimeOfDayTints[hour][0], sTimeOfDayTints[hour][1], sTimeOfDayTints[hour][2], FALSE);
+        TintPalette_CustomToneWithCopy(gPlttBufferPreDN + offset, gPlttBufferUnfaded + offset, size / 2, GetDayNightTone(hour, 0), GetDayNightTone(hour, 1), GetDayNightTone(hour, 2), FALSE);
     }
     else
     {
@@ -219,7 +254,7 @@ static void TintPlayerPaletteForDayNight(u16 offset, u16 size)//check
     s8 hour;
     RtcCalcLocalTimeFast();
     hour = GetTimeOfDayHours();
-    SetCharacterPalette(gPlttBufferPreDN + offset, gPlttBufferUnfaded + offset, size / 2, sTimeOfDayTints[hour][0], sTimeOfDayTints[hour][1], sTimeOfDayTints[hour][2], FALSE);
+    SetCharacterPalette(gPlttBufferPreDN + offset, gPlttBufferUnfaded + offset, size / 2, GetDayNightTone(hour, 0), GetDayNightTone(hour, 1), GetDayNightTone(hour, 2), FALSE);
     
     LoadPaletteOverrides();
 }
@@ -290,25 +325,30 @@ void CheckClockForImmediateTimeEvents(void)
 void ProcessImmediateTimeEvents(void)
 {
     s8 hour;
+    u8 season;
 
     if (ShouldTintOverworld())
     {
         if (!sRetintPhase)
         {
             hour = GetTimeOfDayHours();
-            if (hour != sOldHour)
+            season = GetCurrentSeason();
+            // Also retint when the SEASON changes, not just the hour -- otherwise picking a
+            // new season at the Pokemon Center would not repaint until the clock ticked over.
+            if (hour != sOldHour || season != sOldSeason)
             {
                 sOldHour = hour;
+                sOldSeason = season;
                 sRetintPhase = 1;
-				//SetCharacterPaletteDayNight     (gPlttBufferPreDN, gPlttBufferUnfaded, BG_PLTT_SIZE / 2, sTimeOfDayTints[hour][0], sTimeOfDayTints[hour][1], sTimeOfDayTints[hour][2], TRUE);
-                TintPalette_CustomToneWithCopy(gPlttBufferPreDN, gPlttBufferUnfaded, BG_PLTT_SIZE / 2, sTimeOfDayTints[hour][0], sTimeOfDayTints[hour][1], sTimeOfDayTints[hour][2], TRUE);
+				//SetCharacterPaletteDayNight     (gPlttBufferPreDN, gPlttBufferUnfaded, BG_PLTT_SIZE / 2, GetDayNightTone(hour, 0), GetDayNightTone(hour, 1), GetDayNightTone(hour, 2), TRUE);
+                TintPalette_CustomToneWithCopy(gPlttBufferPreDN, gPlttBufferUnfaded, BG_PLTT_SIZE / 2, GetDayNightTone(hour, 0), GetDayNightTone(hour, 1), GetDayNightTone(hour, 2), TRUE);
 			}
         }
         else
         {
             sRetintPhase = 0;
-			SetCharacterPaletteDayNight     (gPlttBufferPreDN + (BG_PLTT_SIZE / 2), gPlttBufferUnfaded + (BG_PLTT_SIZE / 2), OBJ_PLTT_SIZE / 2, sTimeOfDayTints[sOldHour][0], sTimeOfDayTints[sOldHour][1], sTimeOfDayTints[sOldHour][2], TRUE);
-			//TintPalette_CustomToneWithCopy(gPlttBufferPreDN + (BG_PLTT_SIZE / 2), gPlttBufferUnfaded + (BG_PLTT_SIZE / 2), OBJ_PLTT_SIZE / 2, sTimeOfDayTints[sOldHour][0], sTimeOfDayTints[sOldHour][1], sTimeOfDayTints[sOldHour][2], TRUE);
+			SetCharacterPaletteDayNight     (gPlttBufferPreDN + (BG_PLTT_SIZE / 2), gPlttBufferUnfaded + (BG_PLTT_SIZE / 2), OBJ_PLTT_SIZE / 2, GetDayNightTone(sOldHour, 0), GetDayNightTone(sOldHour, 1), GetDayNightTone(sOldHour, 2), TRUE);
+			//TintPalette_CustomToneWithCopy(gPlttBufferPreDN + (BG_PLTT_SIZE / 2), gPlttBufferUnfaded + (BG_PLTT_SIZE / 2), OBJ_PLTT_SIZE / 2, GetDayNightTone(sOldHour, 0), GetDayNightTone(sOldHour, 1), GetDayNightTone(sOldHour, 2), TRUE);
             LoadPaletteOverrides();
             if (gWeatherPtr->palProcessingState != WEATHER_PAL_STATE_SCREEN_FADING_IN &&
                 gWeatherPtr->palProcessingState != WEATHER_PAL_STATE_SCREEN_FADING_OUT)
