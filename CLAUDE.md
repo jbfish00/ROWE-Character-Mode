@@ -192,14 +192,17 @@ Still open, with the reason:
   `FLAG_SYS_RESET_DATE` have zero consumers. It still says "You Changed the Date!".
   Either implement the RTC offset or drop the menu entry (index 8 of `sSetBlueNurse`,
   which must stay in step with `pkmn_center_jack.pory`).
-- **Juan's rematch escalation is a 2.X DATA bug.** `SootopolisCity_Gym_1F` picks his
-  rematch party with `goto_if_unset FLAG_RECEIVED_TM42 / TM40`, but 2.X changed the
-  badge 3-6 gym TMs, so those TMs are never given by anyone. He always uses the weakest
-  party. (Our gyms also never `setflag` the TMs they *do* give.)
-- **`VAR_BOSS_BATTLE_HP_MULTIPIER` is only ever set to 100** (= 1.0x), so implementing it
-  would be a no-op. Deliberately skipped.
 - **Trainer card shows only the Hoenn 8 badges** — the Johto 8 need new art and a second
   row (badge tiles run 192..223 and the row is 22 tiles wide).
+- **`FLAG_FULL_RANDOMIZED_MODE` cannot be enabled without new art.** 22 C reads, zero
+  setters, and it is absent from `ModeFlags[]` (`ui_mode_menu.c`). Adding a 10th mode is
+  a one-line `NUM_MODES` bump *in C* -- but the mode NAMES are **baked into the UI
+  tilemap**, not printed as text (only the checkboxes are blitted, in a `NUM_MODES`
+  loop). A 10th row would get a working checkbox with no label. Needs tilemap art.
+  Same for `FLAG_TRAINER_SKILLS_MODE`, `FLAG_LEVEL_EVO_ONLY`, `FLAG_ENABLE_EV_CHANGES`.
+
+Fixed since (Juan's rematch escalation and `VAR_BOSS_BATTLE_HP_MULTIPIER` used to be
+listed here; both are done -- see the bug-fix pass below).
 
 **Phase 4 is now VERIFIED IN-GAME, end to end:** a full 2-Pokemon trainer battle
 (moves, flinch, KO, switch-in, EXP, prize, defeat flag); white-out -> respawn;
@@ -239,14 +242,47 @@ lies to you.) It was also holding `ITEM_STARMINITE`, so the mega-stone award wor
 from anywhere, no navigation. In Character Mode you must play a character whose roster has the
 species or the catch is blocked: **Misty** (Gen I, 9 rights from Red) has Staryu.
 
-**KNOWN BUG: the Master Ball does not catch.** Two Master Balls broke free from a Lv5 Alpha
-Starmie; a plain Poke Ball caught it on the first throw. `Cmd_handleballthrow` reads correctly
-(`if (gLastUsedItem == ITEM_MASTER_BALL) shakes = maxShakes;` then `if (shakes == maxShakes)`
--> caught), and two *different* failure messages mean the RANDOM branch ran -- so
-`gLastUsedItem` was not `ITEM_MASTER_BALL` (= 1) by then. Suspects: ROWE's `lastUsedBall`
-feature clobbering it, the `F_ULTRA_BEAST` block that forces `ballMultiplier = 1` for any
-non-Beast-Ball, and `if (gLastUsedItem > ITEM_SAFARI_BALL)` which excludes the Master Ball
-from the ball switch entirely.
+## Bug-fix pass (2026-07-12) — commits 0bab1cc4, d349d012
+
+All build-clean. **Everything here is RUNTIME-UNTESTED except where noted** -- the next
+session should regression-test these before adding features.
+
+- **The Master Ball did not catch** (found in the Alpha test above; two broke free from a
+  Lv5 Starmie). Not `Cmd_handleballthrow`, which reads fine -- `HandleAction_UseItem`
+  (battle_util.c) literally did `if (gLastUsedItem == ITEM_MASTER_BALL) gLastUsedItem =
+  ITEM_POKE_BALL;` before dispatching, destroying the guaranteed catch it then looked up.
+  Deleted the special case.
+- **Waterfall was gated on `FLAG_RECEIVED_TM40`, which nothing sets** -- the Sootopolis
+  waterfall could never be climbed, so **the game was uncompletable**. Now `FLAG_BADGE08_GET`.
+- **All 69 gym rematch gates** (8 gyms) read the same dead TM flags, so every leader always
+  used their weakest rematch party. Re-pointed at the badge flags. Juan included.
+- **`VAR_BOSS_BATTLE_HP_MULTIPIER` now has a C reader** (`ApplyBossHpMultiplier`,
+  script_pokemon_util.c), called from both `CreateScriptedWildMon` and the double variant.
+- **The Legendary Mega Stone Guru had a script but no object on any map**, so ~8 stones were
+  unobtainable -- `ITEM_MEWTWONITE_X`'s only reference in the entire repo was one line in a
+  mart no NPC could open. Placed him in `OldaleTown_House1` (2,6) and enabled the 4 commented
+  stones whose Pokemon have real Mega forms. Necrozmanite stays commented: **there is no Mega
+  Necrozma**, so it would be a dead item.
+- **`FiveIsland_LostCave_Entrance` had ZERO warp events** -- entering dropped you at the map
+  centre with no way out. Wired its unused `MB_LADDER` at (5,5) back to Resort Gorgeous.
+- **Achievements 1-4, `getbadgenumber`, Pin Missile's scaling and the Match Call unlocks**
+  all read the dead `FLAG_RECEIVED_BADGE_01..08` aliases. Re-pointed.
+- Six routes never set their `FLAG_VISITED_ROUTE` (un-flyable); Wally's dad was frozen on one
+  line by a `FLAG_RECEIVED_HM03` gate whose giving side no longer exists.
+
+Still open, all minor and all the same "flag with no setter" shape: `FLAG_DEFEATED_SUDOWOODO`
+(never despawns), `FLAG_LEARNED_YES_NAH_CHANSEY` (Rocket Warehouse door never opens),
+`FLAG_OPEN_PC_BOX_FROM_MENU`, `FLAG_EON_LATI`, `FLAG_SCOTT_CALL_BATTLE_FRONTIER`,
+`FLAG_ENABLE_ROXANNE_FIRST_CALL`, `FLAG_RECEIVED_RUNNING_SHOES`,
+`FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT`, `FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES`.
+
+**Upstream-incomplete -- do NOT "fix" these, the donor has the same gaps:** Lost Cave (14
+maps), Seafoam Islands (5), Mt Ember Ruby Path (7) all ship with zero warps in 2.X too.
+
+**Needs ART, not code:** 170 of 182 Character Mode characters have no back sprite (only 14
+`TRAINER_BACK_PIC_*` assets exist); the trainer card's Johto badge row; per-species cries
+(the 934 samples are ~8.1 MB and only ~7.9 MB of ROM is free -- that is why ROWE ships them
+disabled; do not "just enable" them).
 
 ## Testing: how to actually drive the game
 
@@ -451,6 +487,31 @@ Two more shapes of the same crash, both fixed -- check for them when adding data
   game and the game never got harder. `battle_util.c`'s mega gate had the SAME bug
   (`FLAG_RECEIVED_TM04`), which is why item megas were dead. **When a gate reads a
   flag, grep for a `setflag` of it.** Both now read the real badge flags.
+  This is the single most productive bug shape in the repo -- it has now bitten
+  **eight** times (level scaling, item megas, Waterfall, all 69 gym rematch gates,
+  achievements 1-4, `getbadgenumber`, Pin Missile's scaling, the Match Call unlocks).
+  The Waterfall one made the game **uncompletable**: `FLAG_RECEIVED_TM40` gates the
+  field move, and no script sets it, so the Sootopolis waterfall could never be climbed.
+- **THREE badge-flag families exist and only two are live. Know which you are reading.**
+  - `FLAG_BADGE01_GET..08` -- Hoenn. **Set by the gym leader scripts. Real.**
+  - `FLAG_RECEIVED_BADGE_09..16` -- Johto. **Set. Real.** (See the alias trap below.)
+  - `FLAG_RECEIVED_BADGE_01..08` -- **DEAD.** `#define`d to the gym-TM flags
+    (BADGE_01=TM39, 02=TM08, 03=TM34, 04=TM50, 05=TM42, 06=TM40, 07=TM04, 08=TM03),
+    which nothing sets. Any C that reads these is reading zero forever.
+  - `FLAG_GOT_BADGE_01..16` -- a fourth, parallel set written by
+    `Special_Gym_EventScript_Give_Item`. The Mega Stone Gurus and the Alpha portals
+    gate on `FLAG_GOT_BADGE_11`. Live, but not interchangeable with the above.
+- **Poryscript `const` aliases hide flag writes from grep, and a name-based audit will
+  report a FALSE game-breaking bug.** `gym_scripts.pory:2411` says
+  `const FLAG_BADGE09_GET = FLAG_RECEIVED_BADGE_09`, so the Johto gyms *do* set
+  `FLAG_RECEIVED_BADGE_09..16` -- but `grep 'setflag FLAG_RECEIVED_BADGE_09'` over the
+  `.pory` sources finds **nothing**. An audit of mine concluded on that basis that the
+  game could not be finished and told me to fix it first; "fixing" it would have been a
+  pure regression. **Always confirm a flag audit against the GENERATED `.inc`, which has
+  the aliases expanded** -- and resolve constants to NUMBERS, since many alias each other.
+- **Badge flags expand to an expression containing SPACES** (`(SYSTEM_FLAGS + 0x8)`), so
+  in poryscript `goto_if_unset FLAG_BADGE02_GET, Label` **needs the explicit comma**.
+  Without it the macro's arg-splitting swallows the label and the branch silently dies.
 - **`special` vs `specialvar` are NOT the same.** This tree's `specialvar` uses the
   special's **RETURN VALUE** (`scrcmd.c`: `*var = gSpecials[...]()`), not
   `gSpecialVar_Result`. A `void` special that only writes `gSpecialVar_Result` hands the
