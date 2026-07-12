@@ -1,3 +1,8 @@
+// // 2.X passes SPECIES_NONE here and resolves it at runtime from the list its
+// `generateStarters` builds. Our engine has no such list -- it takes SPECIES_NONE
+// literally, creates species 0 and crashes. Our ScriptGiveMon already has a
+// randomize sentinel of its own (SPECIES_MEW -> a random wild mon scaled to the
+// player's level), which is exactly what these sites want.
 mapscripts InsideOfTruck2_MapScripts {
     MAP_SCRIPT_ON_FRAME_TABLE [
         VAR_TEMP_0, 0: Common_Start_Monopoly
@@ -17,13 +22,13 @@ script Common_Start_Monopoly{
 	if(var(VAR_RESULT) == YES){
 		giveitem(ITEM_POKE_BALL, 10)
 
-		givemon(SPECIES_NONE, 10, ITEM_NONE)
+		givemon(SPECIES_MEW, 10, ITEM_NONE)
 		msgbox(format("{PLAYER} received a {STR_VAR_1}!"), MSGBOX_DEFAULT)
 
-		givemon(SPECIES_NONE, 10, ITEM_NONE)
+		givemon(SPECIES_MEW, 10, ITEM_NONE)
 		msgbox(format("{PLAYER} received a {STR_VAR_1}!"), MSGBOX_DEFAULT)
 
-		givemon(SPECIES_NONE, 10, ITEM_NONE)
+		givemon(SPECIES_MEW, 10, ITEM_NONE)
 		msgbox(format("{PLAYER} received a {STR_VAR_1}!"), MSGBOX_DEFAULT)
 
 		setflag(FLAG_SYS_POKEMON_GET)
@@ -190,7 +195,7 @@ script Common_Start_Monopoly_Slot_Script{
 		case SLOT_WILD_8:
 		case SLOT_WILD_9:
 			msgbox(format("Wild Battle Start"), MSGBOX_DEFAULT)
-			setwildbattle(SPECIES_NONE, 2, ITEM_NONE)
+			setwildbattle(SPECIES_ZIGZAGOON, 2, ITEM_NONE)
     		dowildbattle
 		break
 		case SLOT_NPC_1:
@@ -283,7 +288,7 @@ script Common_Start_Monopoly_Slot_Script{
 		case SLOT_DAYCARE:
 			playfanfare (SE_SLIDING_DOOR)
 			msgbox(format("Entering the Daycare"), MSGBOX_DEFAULT)
-			givemon(SPECIES_NONE, 10, ITEM_NONE)
+			givemon(SPECIES_MEW, 10, ITEM_NONE)
 			playfanfare(MUS_OBTAIN_ITEM)
 			msgbox(format("{PLAYER} received a {STR_VAR_1} from the daycare man!"), MSGBOX_DEFAULT)
 			waitfanfare
@@ -325,7 +330,7 @@ script Common_Start_Monopoly_Slot_NPC{
 script Common_Start_Monopoly_Slot_Get_RandomMon{
 	msgbox(format("You find someone Selling a Pokémon for 500¥, seems sketchy will you buy it?"), MSGBOX_YESNO)
 	if(var(VAR_RESULT) == YES){
-		givemon(SPECIES_NONE, 10, ITEM_NONE)
+		givemon(SPECIES_MEW, 10, ITEM_NONE)
 		playfanfare(MUS_OBTAIN_ITEM)
 		msgbox(format("{PLAYER} received a {STR_VAR_1}!"), MSGBOX_DEFAULT)
 		waitfanfare
@@ -365,20 +370,20 @@ script Common_Start_Monopoly_Slot_Starter_Script{
 	scrollingmultichoice(SCROLLING_SET_STARTERS, 0, 0, 6, FALSE)
 	switch(var(VAR_RESULT)){
 		default:  
-			showmonpic(SPECIES_NONE, 10, 3)
+			showmonpic(SPECIES_MEW, 10, 3)
 			msgbox(format("Do you want the {STR_VAR_2} Pokemon {STR_VAR_1} as your Starter Pokemon?"), MSGBOX_YESNO)
 			hidemonpic
 			if (var(VAR_RESULT) == NO){
 				goto(Start_EventScript_Chose_Starter)
 			}
-			givemon(SPECIES_NONE, 10, ITEM_NONE)
+			givemon(SPECIES_MEW, 10, ITEM_NONE)
 			playfanfare(MUS_OBTAIN_ITEM)
 			waitfanfare
 			msgbox(format("{PLAYER} received a {STR_VAR_1}!"), MSGBOX_DEFAULT)
 		break
 		case MULTI_B_PRESSED: 
 		case 9:
-			givemon(SPECIES_NONE, 10, ITEM_NONE)
+			givemon(SPECIES_MEW, 10, ITEM_NONE)
 			playfanfare(MUS_OBTAIN_ITEM)
 			waitfanfare
 			msgbox(format("{PLAYER} received a {STR_VAR_1}!"), MSGBOX_DEFAULT)

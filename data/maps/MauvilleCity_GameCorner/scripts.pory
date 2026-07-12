@@ -852,7 +852,9 @@ script MauvilleCity_GameCorner_EventScript_Gachamon{
 		else{
 			playse(SE_SHOP)
 			msgbox(format("Here you go!"), MSGBOX_DEFAULT)
-			givemon(SPECIES_NONE, 1, ITEM_NONE)
+			// SPECIES_MEW = our engine's "random mon" sentinel (ScriptGiveMon). 2.X passed
+			// SPECIES_NONE and resolved it at runtime; ours took that literally and crashed.
+			givemon(SPECIES_MEW, 1, ITEM_NONE)
 			playfanfare(MUS_OBTAIN_ITEM)
 			msgbox(format("{PLAYER} received a {STR_VAR_1}!"), MSGBOX_DEFAULT)
 			waitfanfare

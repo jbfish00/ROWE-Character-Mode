@@ -114,7 +114,11 @@
 #define MB_DEEP_SOUTH_WARP 0x6E
 #define MB_UNUSED_6F 0x6F
 #define MB_WARP_OR_BRIDGE 0x70
-#define MB_UNUSED_71 0x71
+// 2.X's name for it. 8 Fortree metatiles carry this behaviour. Our engine already
+// treats it as a walkable bridge (MetatileBehavior_IsBridge), so the bridges work --
+// what is NOT implemented is 2.X's hop-off-the-bridge move. Nav QoL only, no crash.
+#define MB_JUMPABLE_BRIDGE 0x71
+#define MB_UNUSED_71 MB_JUMPABLE_BRIDGE   // old name, still used by metatile_behavior.c
 #define MB_ROUTE120_NORTH_BRIDGE_1 0x72
 #define MB_ROUTE120_NORTH_BRIDGE_2 0x73
 #define MB_PACIFIDLOG_VERTICAL_LOG_1 0x74
