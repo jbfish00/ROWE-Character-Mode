@@ -2762,7 +2762,7 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_LYCANROC - 1] = 0x10,
     [SPECIES_WISHIWASHI - 1] = 0x51,
     [SPECIES_MAREANIE - 1] = 0x24,
-    [SPECIES_TOXAPEX - 1] = 0x99,
+    [SPECIES_TOXAPEX - 1] = 0x98,   // was 0x99 = 153: one PAST the end of sMonAnimFunctions (0..152)
     [SPECIES_MUDBRAY - 1] = 0x10,
     [SPECIES_MUDSDALE - 1] = 0x19,
     [SPECIES_DEWPIDER - 1] = 0x13,
@@ -2817,7 +2817,7 @@ static const u8 sMonFrontAnimIdsTable[NUM_SPECIES - 1] =
     [SPECIES_NECROZMA - 1] = 0x09,
     [SPECIES_MAGEARNA - 1] = 0x46,
     [SPECIES_MARSHADOW - 1] = 0x10,
-    [SPECIES_POIPOLE - 1] = 0x99,
+    [SPECIES_POIPOLE - 1] = 0x98,   // was 0x99 = 153: one PAST the end of sMonAnimFunctions (0..152)
     [SPECIES_NAGANADEL - 1] = 0x6a,
     [SPECIES_STAKATAKA - 1] = 0x09,
     [SPECIES_BLACEPHALON - 1] = 0x8f,

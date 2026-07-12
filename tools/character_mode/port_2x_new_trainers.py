@@ -189,14 +189,24 @@ def main():
         if body is None:
             skipped.append((name, "no donor trainer entry"))
             continue
-        pm = re.search(r"\.party = \{\.\w+ = (sParty_\w+)\}", body)
-        party_sym = pm.group(1) if pm else None
-        mons = None
-        if party_sym and party_sym in donor_party:
-            mons = parse_party(donor_party[party_sym], resolvable)
-            if mons is None:
-                skipped.append((name, "party %s unresolved" % party_sym))
-                continue
+        # The donor writes `.party = TRAINER_PARTY(sParty_X)`; older trees write
+        # `.party = {.Field = sParty_X}`. Accept both -- matching only the second is what
+        # left all 91 new trainers with no Pokemon at all.
+        pm = re.search(r"\.party\s*=\s*(?:TRAINER_PARTY\(\s*(sParty_\w+)\s*\)"
+                       r"|\{\s*\.\w+\s*=\s*(sParty_\w+)\s*\})", body)
+        party_sym = (pm.group(1) or pm.group(2)) if pm else None
+        # NEVER emit a trainer with an empty party: a battle against nobody is worse than
+        # a missing trainer, and it used to happen without even a skip line in the report.
+        if not party_sym:
+            skipped.append((name, "no party symbol in the donor entry"))
+            continue
+        if party_sym not in donor_party:
+            skipped.append((name, "party %s absent from donor trainer_parties.h" % party_sym))
+            continue
+        mons = parse_party(donor_party[party_sym], resolvable)
+        if not mons:
+            skipped.append((name, "party %s unresolved" % party_sym))
+            continue
         # pull the scalar header fields
         def field(key, default):
             fm = re.search(r"\.%s = ([^,\n]+)" % key, body)
@@ -211,6 +221,16 @@ def main():
         if not resolvable(cls) or not resolvable(pic) or not resolvable(music):
             skipped.append((name, "unresolved class/pic/music"))
             continue
+        # .lvl is a SENTINEL in battle_main.c, not a literal level: 1 = scale to the badge-
+        # appropriate trainer level, 3 = LeaderMinLevel, 2/5/6 = various random modes.
+        # OVERRIDE the donor's raw .lvl -- 2.X scales its trainers via .partyLevel and its
+        # per-mon .lvl means something else there. Carried through raw, a donor `.lvl = 2`
+        # lands in a branch of battle_main.c that has no case for 2 and becomes a LITERAL
+        # level 2, so a Rocket grunt at 16 badges led with a level-2 Pokemon.
+        plevel = field("partyLevel", "TRAINER_LEVEL_DYNAMIC_NORMAL")
+        lvl = "3" if "GYM_LEADER" in plevel else "1"
+        for _m in mons:
+            _m["lvl"] = lvl
         ported.append({
             "name": name, "id": _id, "class": cls, "pic": pic, "music": music,
             "tname": tname.group(1) if tname else "",
@@ -311,7 +331,7 @@ def main():
     dfront_size = {k: sz for k, _sym, sz in dfront_rows}
     dpal_tbl = dict(re.findall(r"TRAINER_PAL\((\w+),\s*(gTrainerPalette_\w+)\)", read(dn("src/data/trainer_graphics/front_pic_tables.h"))))
     dcoords = read(dn("src/data/trainer_graphics/front_pic_anims.h")) if os.path.isfile(dn("src/data/trainer_graphics/front_pic_anims.h")) else ""
-    dpiccoords = read(dn("src/data/graphics/trainers.h"))
+    dpiccoords = read(dn("src/data/trainer_graphics/front_pic_tables.h"))
 
     our_gfx = strip_block(read(tgt("src/data/graphics/trainers.h")), "incbins")
     our_syms = set(re.findall(r"(gTrainer(?:FrontPic|Palette)_\w+)\[\]", our_gfx))
@@ -376,11 +396,13 @@ def main():
                 ("src/data/trainer_graphics/front_pic_tables.h", "fronttbl", front_rows, r"gTrainerFrontPicTable\[\]"),
                 ("src/data/trainer_graphics/front_pic_tables.h", "paltbl", pal_rows, r"gTrainerFrontPicPaletteTable\[\]"),
                 ("src/data/trainer_graphics/front_pic_anims.h", "animptr", anim_rows, r"gTrainerFrontAnimsPtrTable\[\]"),
-                ("src/data/graphics/trainers.h", "coords", coord_rows, r"gTrainerFrontPicCoords\[\]")):
+                ("src/data/trainer_graphics/front_pic_tables.h", "coords", coord_rows, r"gTrainerFrontPicCoords\[\]")):
             path = tgt(relpath)
             text = strip_block(read(path), tag)
             m = re.search(decl + r"[^{]*\{", text)
             if not m:
+                print("   !! %s not found in %s -- %d rows DROPPED"
+                      % (decl, relpath, len(rows)))
                 continue
             close = text.find("\n};", m.end())
             text = text[:close + 1] + wrap(tag, "".join(rows)) + text[close + 1:]
@@ -395,8 +417,12 @@ def main():
 
     # ---- 5. parties + trainer entries
     party_out = []
+    emitted = set()
     for p in ported:
-        if p["mons"]:
+        # Several donor trainers point at the SAME party symbol (sParty_Dynamic is shared by
+        # dozens). Emit each symbol once, or the C file gets duplicate definitions.
+        if p["mons"] and p["party_sym"] not in emitted:
+            emitted.add(p["party_sym"])
             party_out.append("static const struct TrainerMonItemCustomMoves %s[] = {\n" % p["party_sym"])
             for mon in p["mons"]:
                 party_out.append(emit_mon(mon))
@@ -412,6 +438,7 @@ def main():
         if sym in existing:
             skip_sym.add(sym)
             continue
+        existing.add(sym)
         party_out2.append("static const struct TrainerMonItemCustomMoves " + chunk)
     text = text.rstrip("\n") + "\n\n" + wrap("parties", "".join(party_out2))
     write(path, text)
