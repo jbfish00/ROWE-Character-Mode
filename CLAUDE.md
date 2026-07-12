@@ -317,6 +317,20 @@ build. Found and fixed so far:
   game and the game never got harder. `battle_util.c`'s mega gate had the SAME bug
   (`FLAG_RECEIVED_TM04`), which is why item megas were dead. **When a gate reads a
   flag, grep for a `setflag` of it.** Both now read the real badge flags.
+- **A var whose 0-default means "off", and a switch with no `default:`.**
+  `VAR_CRY_SPECIES` selects the cry style; 0 is the options menu's "Disabled" choice and
+  `PlayCry`'s switch has no case 0 -- so out of the box **every Pokemon was silent**.
+  New games now default it to `CRY_TYPE_GENERIC`. (The "Normal"/"Anime" choices only
+  `mgba_printf` for an external cry player, so Generic is the only one that makes a sound
+  on a stock emulator.) Real per-species cries do NOT fit: the 934 samples in
+  `sound/direct_sound_samples/cries/` would add ~8.1 MB and only ~7.9 MB of ROM is free.
+  That is why ROWE ships them disabled -- do not "just enable" them.
+- **Sprite tables: check by NUMERIC ID, never by constant NAME.** Many `OBJ_EVENT_GFX_*`
+  names alias one id (BALDING_MAN, MAN, CLERK, MAN_FRLG and WORKER_M are all 19), so a
+  name-based "missing entry" scan reports ~55 phantom crashes. Resolve the constants with
+  the C preprocessor and index by value: 1232 entries / 1232 distinct ids / 0 collisions.
+  The real bugs were six entries naming the wrong species (`OBJ_EVENT_GFX_WINGULL` ->
+  `Pokemon_Species_279`, i.e. Pelipper -- that is Mr. Briney's Peeko).
 - **Menu list (C) vs script case index (data) must agree, and nothing checks that.**
   `scrollingmultichoice`/`multichoice` pass the chosen ROW INDEX to the script, which
   switches on it. The lists live in `src/script_menu.c` (ours); the switches live in

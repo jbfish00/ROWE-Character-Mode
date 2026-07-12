@@ -661,7 +661,9 @@ void PlayGenericCry(u16 species, bool32 v0){
                 gMPlay_PokemonCry = SetPokemonCryTone(v0 ? &gCryTable2[CRY_EGG_GROUP_WATER_1] : &gCryTable[CRY_EGG_GROUP_WATER_1]);
             else if(gBaseStats[species].eggGroup2 == EGG_GROUP_WATER_2)
                 gMPlay_PokemonCry = SetPokemonCryTone(v0 ? &gCryTable2[CRY_EGG_GROUP_WATER_2] : &gCryTable[CRY_EGG_GROUP_WATER_2]);
-            else if(gBaseStats[species].eggGroup2 == EGG_GROUP_WATER_2)
+            // was a second EGG_GROUP_WATER_2 test, so CRY_EGG_GROUP_WATER_3 could never be
+            // reached and Water-3 mons fell through to a later branch.
+            else if(gBaseStats[species].eggGroup2 == EGG_GROUP_WATER_3)
                 gMPlay_PokemonCry = SetPokemonCryTone(v0 ? &gCryTable2[CRY_EGG_GROUP_WATER_3] : &gCryTable[CRY_EGG_GROUP_WATER_3]);
             else if(gBaseStats[species].eggGroup2 == EGG_GROUP_DRAGON)
                 gMPlay_PokemonCry = SetPokemonCryTone(v0 ? &gCryTable2[CRY_EGG_GROUP_DRAGON] : &gCryTable[CRY_EGG_GROUP_DRAGON]);

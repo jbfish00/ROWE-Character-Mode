@@ -572,6 +572,14 @@ void NewGameInitData(void)
         VarSet(VAR_NEW_GAME_PLUS_COUNT, newgamepluscount);
         FlagSet(FLAG_NEW_GAME_PLUS);
     }
+    // Cry Type. The var defaults to 0, which is the "Disabled" choice in the options menu,
+    // and PlayCry's switch has no case 0 -- so out of the box every Pokemon in the game was
+    // completely silent. The other two choices ("Normal"/"Anime") only emit an mgba_printf
+    // for an external cry player, so CRY_TYPE_GENERIC is the only one that makes a sound on
+    // a stock emulator. Real per-species cries do not fit: the 934 samples in
+    // sound/direct_sound_samples/cries would add ~8.1 MB and only ~7.9 MB of ROM is free.
+    VarSet(VAR_CRY_SPECIES, CRY_TYPE_GENERIC);
+
     ClearRoamerData();
     ClearRoamerLocationData();
     //gSaveBlock1Ptr->registeredItem = 0;
