@@ -3450,6 +3450,14 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
     SetBoxMonData(boxMon, MON_DATA_POKEBALL, &value);
     SetBoxMonData(boxMon, MON_DATA_OT_GENDER, &gSaveBlock2Ptr->playerGender);
 
+    // 2.X's Alpha bosses (alpha_mon_scripts.pory) call SetAlphaDefaultData, which raises
+    // FLAG_ALPHA_CREATION before setwildbattle. Nothing in our engine read it, so the
+    // 21 Alpha encounters -- the ones that hand out the mega stones -- spawned as ordinary
+    // wild Pokemon with random IVs. Give them perfect IVs so they fight like bosses.
+    // Cleared below next to FLAG_SHINY_CREATION, which is the same one-shot pattern.
+    if (FlagGet(FLAG_ALPHA_CREATION))
+        fixedIV = 31;   // perfect in every stat; fixedIV < 32 takes the fixed-IV path below
+
     if (fixedIV < 32)
     {
         SetBoxMonData(boxMon, MON_DATA_HP_IV, &fixedIV);
@@ -3500,6 +3508,7 @@ void CreateBoxMon(struct BoxPokemon *boxMon, u16 species, u8 level, u8 fixedIV, 
 	
 	FlagClear(FLAG_SHINY_CREATION);
 	FlagClear(FLAG_IS_OUTBREAK_ENCOUNTER);
+	FlagClear(FLAG_ALPHA_CREATION);
 
     GiveBoxMonInitialMoveset(boxMon);
 }

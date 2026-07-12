@@ -162,7 +162,44 @@ Deliberately NOT taken from 2.X (each would break something):
   (its STARTERS=0/TOWNS=1, ours is reversed). The names are defined in
   `include/constants/global.h` mapped to OUR indices. Never copy 2.X's values.
 
-**Phase 5 (QoL/quests/achievements/NG+): NOT STARTED.**
+## Phase 5 (the deferred 2.X systems) — audited; most were already there
+
+Audit result: far less was missing than the old notes claimed. The **full 2.X rebase
+already brought the real scripts** — `data/scripts/sevii_stubs.inc` is GONE, and
+`alpha_mon_scripts.pory` / `legendary_mon_scripts.pory` / the gift-mon and Mega Stone
+Guru scripts are all live. What was actually missing was **C support for the flags
+those scripts raise** — the same "gate reads a flag nothing implements" shape as the
+badge bug.
+
+- **Alpha bosses — FIXED.** `SetAlphaDefaultData` raises `FLAG_ALPHA_CREATION` before
+  `setwildbattle`, but no C read it, so all **21** Alpha encounters (the ones that award
+  the mega stones) spawned as ordinary wild Pokemon with random IVs. `CreateBoxMon` now
+  gives them perfect IVs, cleared one-shot alongside `FLAG_SHINY_CREATION`.
+- **Alpha portals — already work.** `FLAG_DISABLE_PORTALS` is the object's *visibility
+  flag* in map.json, and `Common_Eventscript_Enable_Alphas` clears it at 11 badges. No C
+  needed. Do not "fix" this.
+- **Quests/achievements — already work.** `src/quests.c` is one of the donor's four
+  engine files and `QuestMenu_Init` is reachable from the start menu.
+- **Mega Stone Gurus — already work.** They sell stones for BP, gated on
+  `FLAG_GOT_BADGE_11` (via the `FLAG_UNLOCK_MEGA_STONES` alias).
+
+Still open, with the reason:
+- **Seasons cannot be ported from the donor.** `VAR_CURRENT_SEASON` is written by the
+  picker but has **no C reader**, and the donor ships **no season graphics or palettes**.
+  2.X's seasonal visuals live in engine code we do not have. The picker is honest about
+  storing your choice and nothing more.
+- **"Change Date" is inert.** `VAR_OVERWORLD_SPECIALS` / `SPECIAL_SET_DATE` /
+  `FLAG_SYS_RESET_DATE` have zero consumers. It still says "You Changed the Date!".
+  Either implement the RTC offset or drop the menu entry (index 8 of `sSetBlueNurse`,
+  which must stay in step with `pkmn_center_jack.pory`).
+- **Juan's rematch escalation is a 2.X DATA bug.** `SootopolisCity_Gym_1F` picks his
+  rematch party with `goto_if_unset FLAG_RECEIVED_TM42 / TM40`, but 2.X changed the
+  badge 3-6 gym TMs, so those TMs are never given by anyone. He always uses the weakest
+  party. (Our gyms also never `setflag` the TMs they *do* give.)
+- **`VAR_BOSS_BATTLE_HP_MULTIPIER` is only ever set to 100** (= 1.0x), so implementing it
+  would be a no-op. Deliberately skipped.
+- **Trainer card shows only the Hoenn 8 badges** — the Johto 8 need new art and a second
+  row (badge tiles run 192..223 and the row is 22 tiles wide).
 
 **Phase 4 is now VERIFIED IN-GAME, end to end:** a full 2-Pokemon trainer battle
 (moves, flinch, KO, switch-in, EXP, prize, defeat flag); white-out -> respawn;
