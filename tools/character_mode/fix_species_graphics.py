@@ -102,7 +102,10 @@ if not dry:
     text = strip_block(read(path), "genericanim")
     anchor = "const union AnimCmd *const *const gMonFrontAnimsPtrTable[] ="
     if "sAnims_RoweGeneric[]" not in text:   # the DEFINITION, not the rows that reference it
+        # TWO slots: the engine plays anims[1] as the send-out intro animation, so a
+        # one-entry array is read out of bounds and its garbage pointer is jumped to.
         block = ("static const union AnimCmd *const sAnims_RoweGeneric[] ={\n"
+                 "    sAnim_GeneralFrame0,\n"
                  "    sAnim_GeneralFrame0,\n"
                  "};\n\n")
         i = text.index(anchor)
