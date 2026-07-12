@@ -71,10 +71,15 @@ static const struct HealLocation sHealLocations[] =
     [HEAL_LOCATION_ONE_ISLAND - 1] = {MAP_GROUP(ONE_ISLAND), MAP_NUM(ONE_ISLAND), 14, 6},
     [HEAL_LOCATION_TWO_ISLAND - 1] = {MAP_GROUP(TWO_ISLAND), MAP_NUM(TWO_ISLAND), 21, 8},
     [HEAL_LOCATION_THREE_ISLAND - 1] = {MAP_GROUP(THREE_ISLAND), MAP_NUM(THREE_ISLAND), 14, 28},
-    // Each is the tile just outside that island's Pokemon Center door.
+    // Every one of these is VERIFIED collision==0 in the island's blockdata --
+    // do not copy them from the donor. The donor's own values for One Island
+    // (30,6) and Eight Island (24,25) land on BLOCKED tiles: our One Island is
+    // still the older 1.9.4 layout, and Eight Island's Poke Center is entered
+    // from ABOVE, so the tile below its door is solid. A blocked spawn boxes the
+    // player in with no way to move -- the bug this replaces.
     [HEAL_LOCATION_FOUR_ISLAND - 1] = {MAP_GROUP(FOUR_ISLAND), MAP_NUM(FOUR_ISLAND), 18, 21},
     [HEAL_LOCATION_FIVE_ISLAND - 1] = {MAP_GROUP(FIVE_ISLAND), MAP_NUM(FIVE_ISLAND), 29, 16},
     [HEAL_LOCATION_SIX_ISLAND - 1] = {MAP_GROUP(SIX_ISLAND), MAP_NUM(SIX_ISLAND), 27, 12},
     [HEAL_LOCATION_SEVEN_ISLAND - 1] = {MAP_GROUP(SEVEN_ISLAND), MAP_NUM(SEVEN_ISLAND), 15, 4},
-    [HEAL_LOCATION_EIGHT_ISLAND - 1] = {MAP_GROUP(EIGHT_ISLAND), MAP_NUM(EIGHT_ISLAND), 13, 13},
+    [HEAL_LOCATION_EIGHT_ISLAND - 1] = {MAP_GROUP(EIGHT_ISLAND), MAP_NUM(EIGHT_ISLAND), 24, 23},
 };

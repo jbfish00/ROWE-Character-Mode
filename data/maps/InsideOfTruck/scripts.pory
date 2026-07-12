@@ -1940,7 +1940,7 @@ Start_Island_Eight::
 	compare VAR_RESULT, NO
 	goto_if_eq Start_EventScript_Chose_City
 	setrespawn HEAL_LOCATION_EIGHT_ISLAND
-	warp MAP_EIGHT_ISLAND, 255, 13, 13
+	warp MAP_EIGHT_ISLAND, 255, 24, 23
 	end
 
 Text_Start_Island_Eight::

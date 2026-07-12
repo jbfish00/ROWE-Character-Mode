@@ -237,3 +237,47 @@ Common_EventScript_Colress_Six_Island::
 	return
 
 
+
+@ ---------------------------------------------------------------------------
+@ Colress on islands 1-4. He is how the player gets the ticket to the NEXT
+@ island, so without these four the chain dead-ends: start on One Island and
+@ there is nobody to hand you another ticket.
+@
+@ These were missed because Mt. Ember, Cape Brink, Berry Forest and Icefall Cave
+@ ALREADY EXISTED in the 1.9.4 tree, and the Phase 4 import only copied maps we
+@ did not have -- so it never merged the donor's edits (the Colress objects) into
+@ maps we already owned. Islands 5-8's Colress came in only because those maps
+@ were new.
+@ ---------------------------------------------------------------------------
+
+Common_EventScript_Colress_One_Island::
+	lock
+	faceplayer
+	setvar VAR_CURRENT_SEVII, 0
+	goto Common_EventScript_Colress
+	return
+
+
+Common_EventScript_Colress_Two_Island::
+	lock
+	faceplayer
+	setvar VAR_CURRENT_SEVII, 1
+	goto Common_EventScript_Colress
+	return
+
+
+Common_EventScript_Colress_Three_Island::
+	lock
+	faceplayer
+	setvar VAR_CURRENT_SEVII, 2
+	goto Common_EventScript_Colress
+	return
+
+
+Common_EventScript_Colress_Four_Island::
+	lock
+	faceplayer
+	setvar VAR_CURRENT_SEVII, 3
+	goto Common_EventScript_Colress
+	return
+
