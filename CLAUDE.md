@@ -184,14 +184,6 @@ badge bug.
   `FLAG_GOT_BADGE_11` (via the `FLAG_UNLOCK_MEGA_STONES` alias).
 
 Still open, with the reason:
-- **Seasons cannot be ported from the donor.** `VAR_CURRENT_SEASON` is written by the
-  picker but has **no C reader**, and the donor ships **no season graphics or palettes**.
-  2.X's seasonal visuals live in engine code we do not have. The picker is honest about
-  storing your choice and nothing more.
-- **"Change Date" is inert.** `VAR_OVERWORLD_SPECIALS` / `SPECIAL_SET_DATE` /
-  `FLAG_SYS_RESET_DATE` have zero consumers. It still says "You Changed the Date!".
-  Either implement the RTC offset or drop the menu entry (index 8 of `sSetBlueNurse`,
-  which must stay in step with `pkmn_center_jack.pory`).
 - **Trainer card shows only the Hoenn 8 badges** — the Johto 8 need new art and a second
   row (badge tiles run 192..223 and the row is 22 tiles wide).
 - **`FLAG_FULL_RANDOMIZED_MODE` cannot be enabled without new art.** 22 C reads, zero
@@ -202,7 +194,39 @@ Still open, with the reason:
   Same for `FLAG_TRAINER_SKILLS_MODE`, `FLAG_LEVEL_EVO_ONLY`, `FLAG_ENABLE_EV_CHANGES`.
 
 Fixed since (Juan's rematch escalation and `VAR_BOSS_BATTLE_HP_MULTIPIER` used to be
-listed here; both are done -- see the bug-fix pass below).
+listed here; both are done -- see the bug-fix pass below). **Seasons and "Change Date"
+also used to be listed here as impossible/inert -- both have been REAL since commits
+b6e73031 / e62103c0** (seasons: `day_night.c` reads `VAR_CURRENT_SEASON`, proven
+in-game; date: `RtcSetDate`/`SetGameDate` shift `localTimeOffset` like the wall-clock
+setter). Do not re-audit them.
+
+## The nine "flag with no setter" leftovers — audited 2026-07-13, ALL closed, NO code changes
+
+Every one was checked against the donor: **the donor has the identical gap in all nine**
+(and `FLAG_EON_LATI` doesn't exist there at all — it's 1.9.4's). Per the
+upstream-incomplete rule, none warrants a fix. Do not re-chase these:
+
+- `FLAG_LEARNED_YES_NAH_CHANSEY` — the locked Rocket Warehouse door is CORRECT:
+  `FiveIsland_RocketWareHouse` is **empty** (2 warps back to the Meadow, 0 objects,
+  0 dialogue) — upstream-incomplete like Lost Cave. Opening the door would be worse.
+  The first password ("Goldeen need log") is granted unconditionally by the door script;
+  only the second has no source (FRLG taught it in Icefall Cave; 2.X dropped the grunt).
+- `FLAG_DEFEATED_SUDOWOODO` — moot: **2.X removed the Sudowoodo object itself** from
+  `BattleFrontier_OutsideEast` (25 objects on the map, none is it). The OnLoad show/hide
+  and the old woman's "odd tree" line are dead leftovers, identical in the donor.
+- `FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES` — **not dead at all**: it's a hidden-item
+  bg event flag, set by the engine (`SetHiddenItemFlag`) on pickup. The earlier audit
+  over-included it.
+- `FLAG_OPEN_PC_BOX_FROM_MENU` — a 2.X engine QoL (jump straight to storage from a menu)
+  whose C side we never had. The unset path IS the normal PC; nothing is broken.
+- `FLAG_EON_LATI` — cosmetic: soaring always shows Latios instead of maybe-Latias
+  (`soar.c` sprite pick). The Eon Flute needs BOTH Latis defeated, so "which one" has no
+  principled answer; left as always-Latios.
+- `FLAG_SCOTT_CALL_BATTLE_FRONTIER`, `FLAG_ENABLE_ROXANNE_FIRST_CALL`,
+  `FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT`, `FLAG_RECEIVED_RUNNING_SHOES` — all gate only
+  optional match-call chatter or house-interior flavor text; the unset branch is normal
+  dialogue. 2.X cut the events that set them (Groudon's hideout awakening, the running
+  shoes handout) without cutting the readers.
 
 **Phase 4 is now VERIFIED IN-GAME, end to end:** a full 2-Pokemon trainer battle
 (moves, flinch, KO, switch-in, EXP, prize, defeat flag); white-out -> respawn;
@@ -272,11 +296,9 @@ session should regression-test these before adding features.
 - Six routes never set their `FLAG_VISITED_ROUTE` (un-flyable); Wally's dad was frozen on one
   line by a `FLAG_RECEIVED_HM03` gate whose giving side no longer exists.
 
-Still open, all minor and all the same "flag with no setter" shape: `FLAG_DEFEATED_SUDOWOODO`
-(never despawns), `FLAG_LEARNED_YES_NAH_CHANSEY` (Rocket Warehouse door never opens),
-`FLAG_OPEN_PC_BOX_FROM_MENU`, `FLAG_EON_LATI`, `FLAG_SCOTT_CALL_BATTLE_FRONTIER`,
-`FLAG_ENABLE_ROXANNE_FIRST_CALL`, `FLAG_RECEIVED_RUNNING_SHOES`,
-`FLAG_GROUDON_AWAKENED_MAGMA_HIDEOUT`, `FLAG_HIDDEN_ITEM_ROUTE_116_BLACK_GLASSES`.
+The nine remaining "flag with no setter" leftovers were audited 2026-07-13 and ALL
+closed with no code changes — donor-identical gaps, empty content behind the gates, or
+not actually dead. See "The nine 'flag with no setter' leftovers" section above.
 
 **Upstream-incomplete -- do NOT "fix" these, the donor has the same gaps:** Lost Cave (14
 maps), Seafoam Islands (5), Mt Ember Ruby Path (7) all ship with zero warps in 2.X too.
