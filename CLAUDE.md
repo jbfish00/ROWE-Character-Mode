@@ -252,8 +252,9 @@ session should regression-test these before adding features.
   (battle_util.c) literally did `if (gLastUsedItem == ITEM_MASTER_BALL) gLastUsedItem =
   ITEM_POKE_BALL;` before dispatching, destroying the guaranteed catch it then looked up.
   Deleted the special case.
-- **Waterfall was gated on `FLAG_RECEIVED_TM40`, which nothing sets** -- the Sootopolis
-  waterfall could never be climbed, so **the game was uncompletable**. Now `FLAG_BADGE08_GET`.
+- **Waterfall was gated on `FLAG_RECEIVED_TM40`, which nothing sets** -- the waterfall could
+  never be climbed, so **the game was uncompletable**. Now `FLAG_BADGE08_GET`.
+  **STILL UNCONFIRMED IN-GAME -- do not assume it works.** See the test pass below.
 - **All 69 gym rematch gates** (8 gyms) read the same dead TM flags, so every leader always
   used their weakest rematch party. Re-pointed at the badge flags. Juan included.
 - **`VAR_BOSS_BATTLE_HP_MULTIPIER` now has a C reader** (`ApplyBossHpMultiplier`,
@@ -283,6 +284,53 @@ maps), Seafoam Islands (5), Mt Ember Ruby Path (7) all ship with zero warps in 2
 `TRAINER_BACK_PIC_*` assets exist); the trainer card's Johto badge row; per-species cries
 (the 934 samples are ~8.1 MB and only ~7.9 MB of ROM is free -- that is why ROWE ships them
 disabled; do not "just enable" them).
+
+## Regression test of the bug-fix pass (2026-07-12) — 6 of 7 PROVEN, 1 UNCONFIRMED
+
+Driven in mGBA on a fresh save, Character Mode = Misty, with a temp grant (16 badges,
+5 Master Balls, 999 BP, a Lv70 Gyarados) in the START-commit path of `ui_mode_menu.c`
+(reverted afterwards; tree is clean).
+
+**PROVEN:**
+- **The Master Ball catches.** Alpha Starmie, full HP, first throw -> "Gotcha!". Before the
+  fix two broke free from this exact Pokemon.
+- **The Legendary Mega Stone Guru.** Walked to him in `OldaleTown_House1`, shop opened,
+  **bought Mewtwonite X** -- an item whose only reference in the repo used to be one line in
+  a mart no NPC could open -- and BP went **999 -> 799**, so the BP economy debits correctly.
+  Heatranite / Zeraoranite / Urishifunite (3 of the 4 I re-enabled) are all in the list.
+- **The Lost Cave softlock is gone.** Warped into `FiveIsland_LostCave_Entrance`, stepped on
+  the ladder at (5,5), warped out to Resort Gorgeous. That map used to have ZERO warps.
+- **The badge count renders "16"** in the save box (the `BufferSaveMenuText` single-char bug).
+- **Level scaling is live** -- wild Zubat at **Lv45** with 16 badges.
+
+**UNCONFIRMED -- WATERFALL.** I surfed to the base of the Victory Road B2F waterfall
+(climb tile (9,14), waterfall (9,13), 16 badges) and pressing A facing north produced
+**no response at all**. That is the confusing part: *both* branches of the check emit a
+message (`EventScript_UseWaterfall` asks "want to use it?", `EventScript_CannotUseWaterfall`
+falls through into the Kingdra msgbox), so **getting nothing means
+`MetatileBehavior_IsWaterfall(tile-in-front)` was FALSE** -- i.e. the game did not think I was
+facing the waterfall. I could not separate "my synthetic input never set the north facing"
+from "a real remaining bug". **Next session: verify this first, by hand.** It is the
+game-completability fix and it is NOT yet proven.
+
+## Driving mGBA: things that cost me hours this pass
+
+- **Auto-run is ON by default, so ONE key press moves TWO tiles.** This silently wrecks every
+  dead-reckoned path. Press **R (`s`)** to toggle it off before doing any precise positioning.
+- **Prefer routes that END AT A WALL.** "Hold LEFT until blocked" is self-correcting;
+  "press LEFT 6 times" is not. Overshoot is the default failure.
+- **The naming screen ignores START** (both `m` and a rebound key). Move the cursor onto the
+  OK button instead: DOWN x3, then RIGHT until the cursor leaves the letter grid, then A.
+- **You can only enter water from an ELEVATION-3 land tile** --
+  `IsPlayerFacingSurfableFishableWater()` hardcodes `PlayerGetZCoord() == 3`. 2.X's cave
+  ledges are elevation **4**, so a collision-only BFS will happily route you to a shore you
+  can never surf from (this is not a bug; it is how the multi-level caves are built). Any
+  path-finder must model elevation, not just collision.
+- **The SELECT menu remembers its cursor**, so a blind `DOWN x2, A` lands on Save one time and
+  Debug the next. Screenshot before every A -- several of my "saves" silently opened Debug
+  instead, and I then read a STALE position out of the .sav and chased a phantom.
+- A **message box caught mid-render screenshots as green/black stripes** with no text. It is
+  not corruption -- wait ~1.5s and shoot again.
 
 ## Testing: how to actually drive the game
 
