@@ -1745,6 +1745,9 @@ static void PopulateBattleFrontierStreak(int matchCallId, u8 *destStr)
     ConvertIntToDecimalStringN(destStr, gBattleFrontierStreakInfo.streak, STR_CONV_MODE_LEFT_ALIGN, i);
 }
 
+// NUM_BADGES is 16 and the Johto half sits in a second, non-contiguous flag block.
+// Listing only the 8 Hoenn flags left slots 8..15 zero-filled, and flag id 0 is a real
+// (temp) flag -- so GetNumOwnedBadges() below read a scratch flag as badge 9.
 static const u16 sBadgeFlags[NUM_BADGES] =
 {
     FLAG_BADGE01_GET,
@@ -1755,6 +1758,14 @@ static const u16 sBadgeFlags[NUM_BADGES] =
     FLAG_BADGE06_GET,
     FLAG_BADGE07_GET,
     FLAG_BADGE08_GET,
+    FLAG_RECEIVED_BADGE_09,
+    FLAG_RECEIVED_BADGE_10,
+    FLAG_RECEIVED_BADGE_11,
+    FLAG_RECEIVED_BADGE_12,
+    FLAG_RECEIVED_BADGE_13,
+    FLAG_RECEIVED_BADGE_14,
+    FLAG_RECEIVED_BADGE_15,
+    FLAG_RECEIVED_BADGE_16,
 };
 
 static int GetNumOwnedBadges(void)

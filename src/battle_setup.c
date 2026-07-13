@@ -337,10 +337,16 @@ const struct RematchTrainer gRematchTable[REMATCH_TABLE_ENTRIES] =
     [REMATCH_WALLACE] = REMATCH(TRAINER_WALLACE, TRAINER_WALLACE, TRAINER_WALLACE, TRAINER_WALLACE, TRAINER_WALLACE, EVER_GRANDE_CITY),
 };
 
+// NUM_BADGES is 16, and the Johto half lives in a SECOND, non-contiguous flag block.
+// This listed only the 8 Hoenn flags, so slots 8..15 zero-filled -- and since flag id 0
+// is a real (temp) flag, HasAtLeastFiveBadges() below was calling FlagGet(0) eight times
+// and treating a scratch flag as a badge, while never counting a Johto badge at all.
 static const u16 sBadgeFlags[NUM_BADGES] =
 {
     FLAG_BADGE01_GET, FLAG_BADGE02_GET, FLAG_BADGE03_GET, FLAG_BADGE04_GET,
     FLAG_BADGE05_GET, FLAG_BADGE06_GET, FLAG_BADGE07_GET, FLAG_BADGE08_GET,
+    FLAG_RECEIVED_BADGE_09, FLAG_RECEIVED_BADGE_10, FLAG_RECEIVED_BADGE_11, FLAG_RECEIVED_BADGE_12,
+    FLAG_RECEIVED_BADGE_13, FLAG_RECEIVED_BADGE_14, FLAG_RECEIVED_BADGE_15, FLAG_RECEIVED_BADGE_16,
 };
 
 #define tState data[0]

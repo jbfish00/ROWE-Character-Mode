@@ -562,6 +562,13 @@ static void Cmd_tryworryseed(void);
 static void Cmd_metalburstdamagecalculator(void);
 extern u8 gMaxPartyLevel;
 
+// Deliberately EIGHT, not NUM_BADGES(16), and it must stay that way: the count it
+// produces indexes sWhiteOutBadgeMoney[9] below. Widen this to all 16 badges and the
+// count reaches 16, which reads 7 entries off the end of that money table. If you ever
+// do want the white-out penalty to scale with Johto badges, resize sWhiteOutBadgeMoney
+// to 17 entries IN THE SAME COMMIT. (Unlike the sBadgeFlags in battle_setup.c and
+// match_call.c, this one is sized explicitly and iterated with ARRAY_COUNT, so it is
+// self-consistent and safe as written.)
 static const u16 sBadgeFlags[8] =
 {
     FLAG_BADGE01_GET, FLAG_BADGE02_GET, FLAG_BADGE03_GET, FLAG_BADGE04_GET,
