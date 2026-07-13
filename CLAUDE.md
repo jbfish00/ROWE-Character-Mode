@@ -90,10 +90,10 @@ Phases 1-4 (partially) COMMITTED and build-clean. `git log --oneline -15`.
   VERIFIED in-game: renders, lists skills, shows points, closes cleanly.
 - **Exiolite and the Blue Nurse suite NEEDED NO WORK** -- 1.9.4 already ships
   both (PkmnCenterJack already does tutoring/wonder trade/PC battles/costumes).
-- Skill EFFECTS: 22 of 25 implemented (2026-07-13, RUNTIME-UNTESTED — see the
-  "Trainer Skill effects" section below). Bonus Battle, Loot Boost and Rock Smash
-  Boost remain stubs: each needs a whole system the engine lacks (BP-per-trainer
-  awards, wild item drops, rock-smash item pulls).
+- Skill EFFECTS: **21 of 25** implemented and build-clean (2026-07-13); XP Boost-Pokemon
+  PROVEN in mGBA to the exact formula. See "Trainer Skill effects" below. Bonus Battle,
+  Loot Boost, Rock Smash Boost and **Bargain** are NOT implemented — the first three need
+  systems the engine lacks; Bargain's shop hook **crashed the Poke Mart** and was reverted.
 
 **Phase 4 — maps + access DONE; gyms/badges NOT DONE:**
 - 4.1: 107 Sevii/Kanto maps imported (633 -> 740 maps). VERIFIED in the built
@@ -231,9 +231,9 @@ upstream-incomplete rule, none warrants a fix. Do not re-chase these:
   dialogue. 2.X cut the events that set them (Groudon's hideout awakening, the running
   shoes handout) without cutting the readers.
 
-## Trainer Skill effects (implemented 2026-07-13 — RUNTIME-UNTESTED)
+## Trainer Skill effects (implemented + mGBA-tested 2026-07-13)
 
-22 of 25 skills now do something; all effect math lives in `src/trainer_skills.c` so
+21 of 25 skills do something; all effect math lives in `src/trainer_skills.c` so
 the magnitudes are auditable in one place. The official doc gives each skill's effect
 but NOT its per-level numbers (2.X engine code the donor doesn't ship), so magnitudes
 are reconstructed — each is commented at its function; user play-testing is the
@@ -241,11 +241,27 @@ arbiter. Every effect is a no-op at level 0. Only the IV replacement is gated be
 `FLAG_TRAINER_SKILLS_MODE`; general effects are live in normal play (same as the
 already-shipped XP Boost-Trainer).
 
+### THE BARGAIN CRASH — read before touching shop.c
+
+**Hooking Bargain into shop prices CRASHES the Poke Mart.** Reverted in cfd0fb0f.
+Symptom: select Buy, and the moment the item list draws, mGBA dies with
+`Jumped to invalid address: 75A10800`. Buying anything is impossible — a
+game-breaking regression, and the *only* place it shows up is a real money mart, which
+is why it survived a clean build.
+
+Attribution was bisected, not guessed: built the parent commit (mart **fine**), then
+built HEAD with **shop.c alone reverted** (mart **fine**, all other skills still in).
+So `shop.c` was the sole cause. Crucially it also crashed at **Bargain level 0**, where
+`ApplySkillBargain` returns `price * 100 / 100` — arithmetically identical to the
+expression it replaced. **The fault is the call/codegen, not the discount math**, so
+re-applying the same `static u32 GetItemBuyPrice(u16)` helper will just reproduce it.
+Any retry MUST be re-tested in an actual mart (debug-warp to group 2 / map 4 = Oldale
+Mart), not merely compiled.
+
 Hook points (one line each; the callee does the level check):
 - EXP: `Cmd_getexp` (battle_script_commands.c) — Gold Rush: `Cmd_getmoneyreward` —
   Sniper Ball: `CriticalCapture()`, added AFTER the dex-count scaling so it works
-  early game when a small dex zeroes crit odds — Bargain: `GetItemBuyPrice()` in
-  shop.c (money shops only; **BP prices stay full**, keep it that way).
+  early game when a small dex zeroes crit odds.
 - Rebirth / Revitalize / Skill Restore: one call, `ApplyPostBattleSkills()` in
   `ReturnFromBattleToOverworld` (battle_main.c); skips link/frontier/trainer-hill.
 - Stay Away: both repel `VarSet(VAR_REPEL_STEP_COUNT, ...)` sites (item_use.c +
@@ -261,12 +277,41 @@ Hook points (one line each; the callee does the level check):
   never revives.
 - Deep Scan: chain RESETS to 5*level instead of 0 — `ResetDexNavChain()` replaced all
   five `VarSet(VAR_DEXNAV_CHAIN, 0)` sites in dexnav.c. Increment/decrement untouched.
+  **Quirk, confirmed in-game:** it only bites on the NEXT chain reset (i.e. next map
+  change). Raise Deep Scan while standing on a route and DexNav still reads SEARCH
+  LEVEL 0, because the reset for that map already ran at level 0. Not a bug; don't
+  "fix" it by re-flooring the chain on every read (that would make the chain unloseable).
 - Rare Sight: `TryFindHiddenPokemon` search roll (+2%/level on the base 60).
 - Eggcelerate: daycare compatibility roll (+5%/level).
 
-Still stubs, each blocked on a missing engine system (do NOT fake them with the
-wrong hook): **Bonus Battle** (nothing awards BP per trainer battle), **Loot Boost**
-(no wild-drop system), **Rock Smash Boost** (rock smash yields no items here).
+Not implemented — do NOT fake them with the wrong hook: **Bonus Battle** (nothing awards
+BP per trainer battle), **Loot Boost** (no wild-drop system), **Rock Smash Boost** (rock
+smash yields no items here), and **Bargain** (crashes the mart — see above).
+
+### What the mGBA pass actually proved (2026-07-13)
+
+Driven on a fresh save, Character Mode = Red, temp grant (250k trainerExp = 70 skill
+points, 16 badges, 999 BP, ₽100k) in the START-commit path of `ui_mode_menu.c`
+(reverted after; tree clean).
+
+**PROVEN:**
+- **The Skills menu economy.** 70 points from trainerExp; RIGHT raises / LEFT lowers;
+  each skill caps at 10 and further raises are correctly rejected; spend total tracks
+  (70 → 60 → 50); levels persist across menu close, save and reload.
+- **XP Boost-Pokemon — EXACT.** Same Alpha Starmie kill by the same Lv70 Charizard:
+  **182 EXP at level 0 → 273 EXP at level 10.** 182 × 1.5 = 273 to the point, which is
+  precisely the coded +5%/level. Reproduced twice (273, 273). This also proves the whole
+  `Cmd_getexp` hook path, i.e. the effect plumbing works end to end.
+- **Bargain crashes the mart** (see above) — found here, bisected, reverted.
+- **Deep Scan's next-reset-only quirk** (see above).
+
+**NOT yet proven — the next session should target these:** Rebirth (a fainted Pikachu
+stayed fainted across 3 straight wins at level 10 = 50%/win; that is only a 12.5% run of
+bad luck, so it is *suspicious but not damning* — re-roll it), Revitalize and Skill
+Restore (the test mon was barely scratched, so a 100% heal was indistinguishable from
+full HP — retest with a badly hurt, PP-drained mon), and every RNG-only skill (Sniper
+Ball, Quick Exit, Rare Sight, Eggcelerate, Joy Boost, Step Heal, Stay Away, Gold Rush,
+Max PP).
 
 **Phase 4 is now VERIFIED IN-GAME, end to end:** a full 2-Pokemon trainer battle
 (moves, flinch, KO, switch-in, EXP, prize, defeat flag); white-out -> respawn;
@@ -428,9 +473,16 @@ Do not fight the emulator blind -- this cost hours. What works:
   `id == 1` is the first SaveBlock1 chunk, and SaveBlock1 *starts* with
   `struct Coords16 pos`, so its first 4 bytes are `s16 x, s16 y`. (Two save slots
   alternate: sectors 0-13 and 14-27. Take the higher `counter`.)
+- **START IS `q`, NOT `m`.** The binding in `~/.config/mgba/config.ini`
+  [gba.input.QT_K] is `keyStart=81` = **q**. Older notes in this file said `m` and cost
+  a long false alarm on the Character Mode menu: the commit simply never fired and it
+  looked like the menu was ignoring input. **Read the config, don't trust the note.**
+  Current map: A=x(88) B=z(90) Up=i(73) Down=k(75) Left=j(74) Right=l(76) **Start=q(81)**
+  Select=n(78) L=a(65) R=s(83).
+- **`export DISPLAY=:1`** — this box is a `tty` session (`XDG_SESSION_TYPE=tty`, DISPLAY
+  unset), so mgba-qt aborts on launch until you set it. `who` shows the `:1` seat.
 - **mGBA input**: synthetic X events only deliver **letter keys** -- Return,
-  arrows and Backspace never arrive. `~/.config/mgba/config.ini` [gba.input.QT_K]
-  is rebound to: A=x B=z Up=i Down=k Left=j Right=l Start=m Select=n.
+  arrows and Backspace never arrive.
   Send with `xdotool keydown --window <child> KEY` (XSendEvent); plain XTEST does
   not reach it. **Menus: tap ~0.08s** (longer repeats and blasts through them).
   **Field movement: taps get DROPPED -- hold instead**, ~0.27s per tile
