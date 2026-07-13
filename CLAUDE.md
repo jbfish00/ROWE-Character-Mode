@@ -254,7 +254,8 @@ session should regression-test these before adding features.
   Deleted the special case.
 - **Waterfall was gated on `FLAG_RECEIVED_TM40`, which nothing sets** -- the waterfall could
   never be climbed, so **the game was uncompletable**. Now `FLAG_BADGE08_GET`.
-  **STILL UNCONFIRMED IN-GAME -- do not assume it works.** See the test pass below.
+  **CONFIRMED IN-GAME 2026-07-12** -- climbed Victory Road B2F's waterfall end to end. See the
+  regression-test section below.
 - **All 69 gym rematch gates** (8 gyms) read the same dead TM flags, so every leader always
   used their weakest rematch party. Re-pointed at the badge flags. Juan included.
 - **`VAR_BOSS_BATTLE_HP_MULTIPIER` now has a C reader** (`ApplyBossHpMultiplier`,
@@ -285,7 +286,7 @@ maps), Seafoam Islands (5), Mt Ember Ruby Path (7) all ship with zero warps in 2
 (the 934 samples are ~8.1 MB and only ~7.9 MB of ROM is free -- that is why ROWE ships them
 disabled; do not "just enable" them).
 
-## Regression test of the bug-fix pass (2026-07-12) — 6 of 7 PROVEN, 1 UNCONFIRMED
+## Regression test of the bug-fix pass (2026-07-12) — 7 of 7 PROVEN
 
 Driven in mGBA on a fresh save, Character Mode = Misty, with a temp grant (16 badges,
 5 Master Balls, 999 BP, a Lv70 Gyarados) in the START-commit path of `ui_mode_menu.c`
@@ -302,18 +303,32 @@ Driven in mGBA on a fresh save, Character Mode = Misty, with a temp grant (16 ba
   the ladder at (5,5), warped out to Resort Gorgeous. That map used to have ZERO warps.
 - **The badge count renders "16"** in the save box (the `BufferSaveMenuText` single-char bug).
 - **Level scaling is live** -- wild Zubat at **Lv45** with 16 badges.
-
-**UNCONFIRMED -- WATERFALL.** I surfed to the base of the Victory Road B2F waterfall
-(climb tile (9,14), waterfall (9,13), 16 badges) and pressing A facing north produced
-**no response at all**. That is the confusing part: *both* branches of the check emit a
-message (`EventScript_UseWaterfall` asks "want to use it?", `EventScript_CannotUseWaterfall`
-falls through into the Kingdra msgbox), so **getting nothing means
-`MetatileBehavior_IsWaterfall(tile-in-front)` was FALSE** -- i.e. the game did not think I was
-facing the waterfall. I could not separate "my synthetic input never set the north facing"
-from "a real remaining bug". **Next session: verify this first, by hand.** It is the
-game-completability fix and it is NOT yet proven.
+- **Waterfall works.** Confirmed 2026-07-12 in a second session: surfed to Victory Road B2F's
+  first waterfall (climb tile (9,14), waterfall column (9,11)-(9,13)), set `FLAG_BADGE08_GET`
+  via the debug flag menu, faced north, pressed A -> `EventScript_UseWaterfall`'s Yes/No fired,
+  and confirming it moved the player from (9,14) to (9,10) (read straight out of the .sav both
+  times), i.e. all the way up the shaft and into the upper lake. The prior session's "no
+  response" was **not a code bug** -- see the mGBA input-focus trap below. The fix
+  (`FLAG_RECEIVED_TM40` -> `FLAG_BADGE08_GET` in `field_control_avatar.c`) is correct as shipped.
 
 ## Driving mGBA: things that cost me hours this pass
+
+- **`xdotool keydown --window <id>` silently no-ops if the mGBA window is not the X-active
+  window**, even though it targets a specific window id via XSendEvent. This produced a long
+  false alarm: several consecutive "the waterfall does nothing" attempts across two sessions
+  were actually keypresses that never reached the emulator at all -- the before/after
+  screenshots were pixel-identical because nothing had happened, not because the game ignored
+  a real press. Symptom: two opposite key presses (e.g. Up then Down) both leave the sprite
+  facing the same way. **Run `xdotool windowactivate <parent-window-id>` before any input
+  burst that follows a period of Read/Bash tool use**, and if a screenshot ever looks
+  suspiciously identical to the previous one after a keypress, activate the window and retry
+  before concluding the game didn't respond.
+- **Numeric-entry debug dialogs (Give X, Set Flag XXXX, Warp to map warp) do not always hold
+  input focus over a *batch* of rapid keypresses sent without a screenshot between them.**
+  Batching 5-8 presses at once occasionally leaked the tail of the batch into overworld
+  movement -- once triggering an unwanted wild battle. Sending one key, screenshotting,
+  confirming the dialog is still showing the expected field, then sending the next key was
+  100% reliable across ~40 consecutive presses; batches of >2 were not.
 
 - **Auto-run is ON by default, so ONE key press moves TWO tiles.** This silently wrecks every
   dead-reckoned path. Press **R (`s`)** to toggle it off before doing any precise positioning.
