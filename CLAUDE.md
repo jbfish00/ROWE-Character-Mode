@@ -252,6 +252,35 @@ arbiter. Every effect is a no-op at level 0. Only the IV replacement is gated be
 `FLAG_TRAINER_SKILLS_MODE`; general effects are live in normal play (same as the
 already-shipped XP Boost-Trainer).
 
+### THE BADGE-ARRAY AUDIT (2026-07-13) — this class is now CLOSED, here is how to re-check
+
+Everything indexed by a badge count has been swept. **Two badge-count sources, different
+ranges — always know which one you have:**
+- `GetBadgeCount()` (event_data.c) = literal badges, **0..16**.
+- `GetNumBadges()` (level_scaling.c) = a *scaling index*, **0..18** (16 + after-league +
+  endgame). Anything it indexes needs **19** entries.
+
+Current state:
+- The 21 level-scaling tables are all 19 entries, and `getScalingDataForBadge()` clamps
+  internally — safe.
+- `sShopInventories` (10 entries) overflowed and is now clamped in `GetNumberOfBadges()`.
+- `sBadgeFlags[NUM_BADGES]` in **battle_setup.c** and **match_call.c** declared 16 slots
+  but listed only the 8 Hoenn flags. C zero-fills the tail, and **flag id 0 is a real temp
+  flag**, so `HasAtLeastFiveBadges()` / `GetNumOwnedBadges()` were reading a scratch flag
+  as a badge and never counted Johto. Both now list all 16.
+- `sBadgeFlags[8]` in **battle_script_commands.c** is EIGHT on purpose: its count indexes
+  `sWhiteOutBadgeMoney[9]`. **Do not widen it to 16** without resizing that money table to
+  17 in the same commit. (Consequence, accepted: the white-out penalty stops scaling after
+  badge 8.)
+
+**Two traps that make this class hide from a naive grep — use both checks:**
+1. The index is often a **local**, not a call: `grep 'array\[GetNumBadges()\]'` finds
+   nothing for shop.c, because it reads `sShopInventories[badgeCount]`. Chase variables
+   assigned from a badge function, and multi-dim `t[a][b][badges]` too.
+2. A **short initializer list is silent**. `u16 x[NUM_BADGES] = { ..8 items.. }` compiles
+   clean and zero-fills. Since flag 0 is a valid flag, the zeros do not even crash — they
+   just quietly lie. Count initializers against the declared size, don't eyeball it.
+
 ### THE MART CRASH: 9+ BADGES OVERFLOWED sShopInventories (fixed) — and how I misdiagnosed it
 
 **Every Poke Mart in the game crashed once you had 9 or more badges** — i.e. the whole
