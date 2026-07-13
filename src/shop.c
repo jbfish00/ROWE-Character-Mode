@@ -38,7 +38,6 @@
 #include "constants/vars.h"
 #include "constants/items.h"
 #include "constants/metatile_behaviors.h"
-#include "trainer_skills.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/tv.h"
@@ -535,18 +534,6 @@ static bool8 ShopUsesBattlePoints(void)
     return gMartInfo.moneyType == MART_MONEY_TYPE_BATTLE_POINTS;
 }
 
-// The Bargain trainer skill discounts money-priced goods only; BP prices (the
-// mega-stone gurus, the tutors) stay full.
-static u32 GetItemBuyPrice(u16 itemId)
-{
-    u32 price = ItemId_GetPrice(itemId) >> GetPriceReduction(POKENEWS_SLATEPORT);
-
-    if (!ShopUsesBattlePoints())
-        price = ApplySkillBargain(price);
-
-    return price;
-}
-
 static u32 GetShopCurrency(void)
 {
     if (ShopUsesBattlePoints())
@@ -887,7 +874,7 @@ static void BuyMenuPrintPriceInList(u8 windowId, s32 item, u8 y)
         {
             ConvertIntToDecimalStringN(
                 gStringVar1,
-                GetItemBuyPrice(item),
+                ItemId_GetPrice(item) >> GetPriceReduction(POKENEWS_SLATEPORT),
                 STR_CONV_MODE_LEFT_ALIGN,
                 5);
         }
@@ -1275,7 +1262,7 @@ static void Task_BuyMenu(u8 taskId)
 
             if (gMartInfo.martType == MART_TYPE_NORMAL)
             {
-                gShopDataPtr->totalCost = GetItemBuyPrice(itemId);
+                gShopDataPtr->totalCost = (ItemId_GetPrice(itemId) >> GetPriceReduction(POKENEWS_SLATEPORT));
             }
             else
             {
@@ -1302,7 +1289,7 @@ static void Task_BuyMenu(u8 taskId)
                         ConvertIntToDecimalStringN(gStringVar2, gShopDataPtr->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
                         StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2);
                         tItemCount = 1;
-                        gShopDataPtr->totalCost = GetItemBuyPrice(tItemId) * tItemCount;
+                        gShopDataPtr->totalCost = (ItemId_GetPrice(tItemId) >> GetPriceReduction(POKENEWS_SLATEPORT)) * tItemCount;
                         BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
                     }
                     else
@@ -1363,7 +1350,7 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
 
     if (AdjustQuantityAccordingToDPadInput(&tItemCount, gShopDataPtr->maxQuantity) == TRUE)
     {
-        gShopDataPtr->totalCost = GetItemBuyPrice(tItemId) * tItemCount;
+        gShopDataPtr->totalCost = (ItemId_GetPrice(tItemId) >> GetPriceReduction(POKENEWS_SLATEPORT)) * tItemCount;
         BuyMenuPrintItemQuantityAndPrice(taskId);
     }
     else
