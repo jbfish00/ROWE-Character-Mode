@@ -152,17 +152,7 @@ u32 ApplySkillGoldRush(u32 money)
 }
 
 // Bargain: -1% off shop buy prices per level (the one magnitude the doc states).
-//
-// NOT HOOKED UP -- calling this from shop.c CRASHES the Poke Mart. See the Bargain
-// section in CLAUDE.md before trying again. Routing shop.c's four price sites through
-// a `static u32 GetItemBuyPrice(u16)` helper that calls this made the buy menu die with
-// "Jumped to invalid address" the moment the item list drew -- and it did so even at
-// Bargain level 0, where this function returns `price * 100 / 100`, i.e. is arithmetically
-// identical to the code it replaced. So the fault is in the call/codegen, not the math.
-// Bisected against the parent commit: reverting shop.c ALONE fixes it and every other
-// skill effect is unaffected. Whatever the next attempt is, it must not be "re-apply the
-// same helper" -- and it must be re-tested in a real mart, which is the only place this
-// shows up.
+// Hooked into shop.c's GetItemBuyPrice(); money shops only, BP prices stay full.
 u32 ApplySkillBargain(u32 price)
 {
     return price * (100 - getTrainerSkillLevel(SKILL_BARGAIN)) / 100;

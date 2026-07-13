@@ -101,10 +101,10 @@ Phases 1-4 (partially) COMMITTED and build-clean. `git log --oneline -15`.
   VERIFIED in-game: renders, lists skills, shows points, closes cleanly.
 - **Exiolite and the Blue Nurse suite NEEDED NO WORK** -- 1.9.4 already ships
   both (PkmnCenterJack already does tutoring/wonder trade/PC battles/costumes).
-- Skill EFFECTS: **21 of 25** implemented and build-clean (2026-07-13); XP Boost-Pokemon
-  PROVEN in mGBA to the exact formula. See "Trainer Skill effects" below. Bonus Battle,
-  Loot Boost, Rock Smash Boost and **Bargain** are NOT implemented — the first three need
-  systems the engine lacks; Bargain's shop hook **crashed the Poke Mart** and was reverted.
+- Skill EFFECTS: **22 of 25** implemented and build-clean (2026-07-13); six PROVEN in
+  mGBA to the exact formula (XP Boost-Pokemon, Rebirth, Revitalize, Skill Restore,
+  Max PP, Bargain). See "Trainer Skill effects" below. Only Bonus Battle, Loot Boost and
+  Rock Smash Boost remain — each needs a system the engine lacks.
 
 **Phase 4 — maps + access DONE; gyms/badges NOT DONE:**
 - 4.1: 107 Sevii/Kanto maps imported (633 -> 740 maps). VERIFIED in the built
@@ -244,7 +244,7 @@ upstream-incomplete rule, none warrants a fix. Do not re-chase these:
 
 ## Trainer Skill effects (implemented + mGBA-tested 2026-07-13)
 
-21 of 25 skills do something; all effect math lives in `src/trainer_skills.c` so
+22 of 25 skills do something; all effect math lives in `src/trainer_skills.c` so
 the magnitudes are auditable in one place. The official doc gives each skill's effect
 but NOT its per-level numbers (2.X engine code the donor doesn't ship), so magnitudes
 are reconstructed — each is commented at its function; user play-testing is the
@@ -252,22 +252,35 @@ arbiter. Every effect is a no-op at level 0. Only the IV replacement is gated be
 `FLAG_TRAINER_SKILLS_MODE`; general effects are live in normal play (same as the
 already-shipped XP Boost-Trainer).
 
-### THE BARGAIN CRASH — read before touching shop.c
+### THE MART CRASH: 9+ BADGES OVERFLOWED sShopInventories (fixed) — and how I misdiagnosed it
 
-**Hooking Bargain into shop prices CRASHES the Poke Mart.** Reverted in cfd0fb0f.
-Symptom: select Buy, and the moment the item list draws, mGBA dies with
-`Jumped to invalid address: 75A10800`. Buying anything is impossible — a
-game-breaking regression, and the *only* place it shows up is a real money mart, which
-is why it survived a clean build.
+**Every Poke Mart in the game crashed once you had 9 or more badges** — i.e. the whole
+back half of a playthrough, no items purchasable. Select Buy and the game dies the
+instant the list draws (mGBA reports `Jumped to invalid address`, or the ROM just
+reboots to the copyright screen).
 
-Attribution was bisected, not guessed: built the parent commit (mart **fine**), then
-built HEAD with **shop.c alone reverted** (mart **fine**, all other skills still in).
-So `shop.c` was the sole cause. Crucially it also crashed at **Bargain level 0**, where
-`ApplySkillBargain` returns `price * 100 / 100` — arithmetically identical to the
-expression it replaced. **The fault is the call/codegen, not the discount math**, so
-re-applying the same `static u32 GetItemBuyPrice(u16)` helper will just reproduce it.
-Any retry MUST be re-tested in an actual mart (debug-warp to group 2 / map 4 = Oldale
-Mart), not merely compiled.
+Cause: `sShopInventories[]` (shop.c) has **10 entries** — the 9 Hoenn badge tiers 0..8
+plus one post-league list. `GetNumberOfBadges()` returns `GetBadgeCount()`, which since
+the 16-badge rework **counts the Johto badges too** and so reaches 16 (17 with game
+clear). `SetShopItemsForSale` indexed the array with that **unguarded**, grabbing a
+pointer up to 7 slots past the end, and its `while (gMartInfo.itemList[i])` scan then
+walked unrelated memory. Fixed by clamping the index in `GetNumberOfBadges()`; badges
+9-16 now get the post-league stock.
+
+This is *exactly* the "array sized for 8 badges, now indexed by up to 16" class already
+fixed in ~21 other tables (see Phase 4 notes) — this one was missed because reproducing
+it needs 9+ badges **and** a money mart, a combination no earlier test happened to hit.
+
+**The misdiagnosis is the real lesson.** I first blamed the Bargain skill hook and
+reverted it (cfd0fb0f), on the strength of a bisect that *looked* clean: parent commit →
+mart fine; HEAD with shop.c reverted → mart fine. But that bisect was **confounded** —
+the working ROMs were also built with a *different temp grant* (8 badges) than the
+crashing one (16 badges). I changed two variables at once and read the result as proof.
+Bargain was innocent all along and is now restored.
+
+**Rule: when A/B-ing a ROM, the temp grant is part of the experiment.** Hold it byte-
+identical and vary exactly one thing. The controlled re-run (same 8-badge grant, hook
+ON vs OFF) showed no crash either way in seconds, which is what cracked it.
 
 Hook points (one line each; the callee does the level check):
 - EXP: `Cmd_getexp` (battle_script_commands.c) — Gold Rush: `Cmd_getmoneyreward` —
@@ -297,7 +310,7 @@ Hook points (one line each; the callee does the level check):
 
 Not implemented — do NOT fake them with the wrong hook: **Bonus Battle** (nothing awards
 BP per trainer battle), **Loot Boost** (no wild-drop system), **Rock Smash Boost** (rock
-smash yields no items here), and **Bargain** (crashes the mart — see above).
+smash yields no items here).
 
 ### What the mGBA pass actually proved (2026-07-13)
 
@@ -313,7 +326,13 @@ points, 16 badges, 999 BP, ₽100k) in the START-commit path of `ui_mode_menu.c`
   **182 EXP at level 0 → 273 EXP at level 10.** 182 × 1.5 = 273 to the point, which is
   precisely the coded +5%/level. Reproduced twice (273, 273). This also proves the whole
   `Cmd_getexp` hook path, i.e. the effect plumbing works end to end.
-- **Bargain crashes the mart** (see above) — found here, bisected, reverted.
+- **Bargain — EXACT.** At level 10 (-1%/level) with 16 badges: Poke Ball 200 -> **180**,
+  Great Ball 600 -> **540**, Ultra Ball 1200 -> **1080**, Potion 300 -> **270**, Super
+  Potion 700 -> **630**, Max Potion 2500 -> **2250**. All exactly -10%. And the BP side of
+  the contract holds: the Mega Stone Guru still charges a full **200BP** per orb (the
+  `if (!ShopUsesBattlePoints())` guard), so BP prices are never discounted.
+- **The 9+ badge mart crash** (see above) — found here, misdiagnosed as Bargain, then
+  correctly root-caused to the `sShopInventories` overflow and fixed.
 - **Deep Scan's next-reset-only quirk** (see above).
 - **Max PP Boost.** At level 10 Pikachu's Nasty Plot read max **30** (base 20) and
   Thunder Shock max **45** (base 30) — exactly +50%. Also confirms the documented

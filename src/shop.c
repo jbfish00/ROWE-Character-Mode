@@ -38,6 +38,7 @@
 #include "constants/vars.h"
 #include "constants/items.h"
 #include "constants/metatile_behaviors.h"
+#include "trainer_skills.h"
 #include "constants/rgb.h"
 #include "constants/songs.h"
 #include "constants/tv.h"
@@ -534,6 +535,18 @@ static bool8 ShopUsesBattlePoints(void)
     return gMartInfo.moneyType == MART_MONEY_TYPE_BATTLE_POINTS;
 }
 
+// The Bargain trainer skill discounts money-priced goods only; BP prices (the
+// mega-stone gurus, the tutors) stay full.
+static u32 GetItemBuyPrice(u16 itemId)
+{
+    u32 price = ItemId_GetPrice(itemId) >> GetPriceReduction(POKENEWS_SLATEPORT);
+
+    if (!ShopUsesBattlePoints())
+        price = ApplySkillBargain(price);
+
+    return price;
+}
+
 static u32 GetShopCurrency(void)
 {
     if (ShopUsesBattlePoints())
@@ -610,12 +623,28 @@ static void SetShopMenuCallback(void (* callback)(void))
     gMartInfo.callback = callback;
 }
 
+// Index into sShopInventories, which only has the 9 Hoenn badge tiers (0..8) plus one
+// post-league list -- 10 entries.
+//
+// GetBadgeCount() counts the EIGHT JOHTO BADGES TOO since the 16-badge rework, so it
+// returns up to 16 (17 with game clear). Indexing sShopInventories with that read up to
+// SEVEN pointers past the end of the array, handed SetShopItemsForSale a garbage pointer,
+// and its `while (gMartInfo.itemList[i])` scan then walked unrelated memory -- crashing
+// the game the instant the buy list drew. Every Poke Mart in the game was unusable from
+// badge 9 onward, i.e. the entire back half of a playthrough.
+//
+// This is the same "array sized for 8 badges, now indexed by up to 16" class already
+// fixed in ~21 other tables; this one was missed because a crash needs 9+ badges AND a
+// mart, which no earlier test combined. Clamp, never index raw.
 static u8 GetNumberOfBadges(void)
 {
     u8 count = GetBadgeCount();
 
 	if (FlagGet(FLAG_SYS_GAME_CLEAR))
         count++;
+
+    if (count >= ARRAY_COUNT(sShopInventories))
+        count = ARRAY_COUNT(sShopInventories) - 1;
 
     return count;
 }
@@ -874,7 +903,7 @@ static void BuyMenuPrintPriceInList(u8 windowId, s32 item, u8 y)
         {
             ConvertIntToDecimalStringN(
                 gStringVar1,
-                ItemId_GetPrice(item) >> GetPriceReduction(POKENEWS_SLATEPORT),
+                GetItemBuyPrice(item),
                 STR_CONV_MODE_LEFT_ALIGN,
                 5);
         }
@@ -1262,7 +1291,7 @@ static void Task_BuyMenu(u8 taskId)
 
             if (gMartInfo.martType == MART_TYPE_NORMAL)
             {
-                gShopDataPtr->totalCost = (ItemId_GetPrice(itemId) >> GetPriceReduction(POKENEWS_SLATEPORT));
+                gShopDataPtr->totalCost = GetItemBuyPrice(itemId);
             }
             else
             {
@@ -1289,7 +1318,7 @@ static void Task_BuyMenu(u8 taskId)
                         ConvertIntToDecimalStringN(gStringVar2, gShopDataPtr->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
                         StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2);
                         tItemCount = 1;
-                        gShopDataPtr->totalCost = (ItemId_GetPrice(tItemId) >> GetPriceReduction(POKENEWS_SLATEPORT)) * tItemCount;
+                        gShopDataPtr->totalCost = GetItemBuyPrice(tItemId) * tItemCount;
                         BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
                     }
                     else
@@ -1350,7 +1379,7 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
 
     if (AdjustQuantityAccordingToDPadInput(&tItemCount, gShopDataPtr->maxQuantity) == TRUE)
     {
-        gShopDataPtr->totalCost = (ItemId_GetPrice(tItemId) >> GetPriceReduction(POKENEWS_SLATEPORT)) * tItemCount;
+        gShopDataPtr->totalCost = GetItemBuyPrice(tItemId) * tItemCount;
         BuyMenuPrintItemQuantityAndPrice(taskId);
     }
     else
