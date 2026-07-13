@@ -46,6 +46,7 @@
 #include "tx_pokemon_follower.h"
 #include "printf.h"
 #include "mgba.h"
+#include "trainer_skills.h"
 
 static void SetUpItemUseCallback(u8 taskId);
 static void FieldCB_UseItemOnField(void);
@@ -907,7 +908,7 @@ static void Task_UseRepel(u8 taskId)
 {
     if (!IsSEPlaying())
     {
-        VarSet(VAR_REPEL_STEP_COUNT, ItemId_GetHoldEffectParam(gSpecialVar_ItemId));
+        VarSet(VAR_REPEL_STEP_COUNT, ApplySkillStayAway(ItemId_GetHoldEffectParam(gSpecialVar_ItemId)));
         RemoveUsedItem();
         if (!InBattlePyramid())
             DisplayItemMessage(taskId, 1, gStringVar4, BagMenu_InitListsMenu);

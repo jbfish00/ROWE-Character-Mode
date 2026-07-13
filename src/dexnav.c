@@ -63,6 +63,7 @@
 #ifdef GBA_PRINTF
 #include "printf.h"
 #include "mgba.h"
+#include "trainer_skills.h"
 #endif
 
 // Defines
@@ -1006,7 +1007,7 @@ void EndDexNavSearch(u8 taskId)
 
 static void EndDexNavSearchSetupScript(const u8 *script, u8 taskId)
 {
-    VarSet(VAR_DEXNAV_CHAIN, 0);
+    ResetDexNavChain();
     EndDexNavSearch(taskId);
     ScriptContext1_SetupScript(script);
 }
@@ -1247,7 +1248,7 @@ static void CreateDexNavWildMon(u16 species, u8 potential, u8 level, u8 abilityN
 		species != SPECIES_CHANSEY  &&
 		species != SPECIES_BLISSEY) {
 		FlagSet(FLAG_SHINY_CREATION); // just easier this way
-        VarSet(VAR_DEXNAV_CHAIN, 0);
+        ResetDexNavChain();
 	}
 	
     CreateWildMon(species, level);
@@ -2607,7 +2608,7 @@ static void Task_DexNavMain(u8 taskId)
 				PlayCry5(species, 0);
 			
 			if(VarGet(VAR_DEXNAV_SPECIES) != species)
-				VarSet(VAR_DEXNAV_CHAIN, 0);
+				ResetDexNavChain();
             
             // create value to store in a var
             VarSet(VAR_DEXNAV_SPECIES, ((sDexNavUiDataPtr->environment << 14) | species));
@@ -2628,7 +2629,7 @@ static void Task_DexNavMain(u8 taskId)
         else
         {
 			if(VarGet(VAR_DEXNAV_SPECIES) != species)
-				VarSet(VAR_DEXNAV_CHAIN, 0);
+				ResetDexNavChain();
 			
             gSpecialVar_0x8000 = species;
             gSpecialVar_0x8001 = sDexNavUiDataPtr->environment;
@@ -2657,7 +2658,7 @@ bool8 TryFindHiddenPokemon(void)
     
     (*stepPtr)++;
     (*stepPtr) %= HIDDEN_MON_STEP_COUNT;
-    if ((*stepPtr) == 0 && (Random() % 100 < HIDDEN_MON_SEARCH_RATE))
+    if ((*stepPtr) == 0 && (Random() % 100 < HIDDEN_MON_SEARCH_RATE + GetSkillHiddenMonBonus()))
     {
         // hidden pokemon
         u16 headerId = GetCurrentMapWildMonHeaderId();
@@ -2857,7 +2858,7 @@ bool8 DexNavTryMakeShinyMon(void)
 
 void ResetDexNavSearch(void)
 {   
-    VarSet(VAR_DEXNAV_CHAIN, 0); //reset dex nav chaining on new map
+    ResetDexNavChain(); //Deep Scan floors the restart, 0 at level 0
     VarSet(VAR_DEXNAV_STEP_COUNTER, 0); //reset hidden pokemon step counter
     if (FlagGet(FLAG_SYS_DEXNAV_SEARCH))
         EndDexNavSearch(FindTaskIdByFunc(Task_DexNavSearch));   //moving to new map ends dexnav search

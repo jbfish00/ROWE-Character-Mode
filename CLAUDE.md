@@ -90,7 +90,10 @@ Phases 1-4 (partially) COMMITTED and build-clean. `git log --oneline -15`.
   VERIFIED in-game: renders, lists skills, shows points, closes cleanly.
 - **Exiolite and the Blue Nurse suite NEEDED NO WORK** -- 1.9.4 already ships
   both (PkmnCenterJack already does tutoring/wonder trade/PC battles/costumes).
-- Skill EFFECTS beyond the six IV ones + XP Boost-Trainer are still stubs.
+- Skill EFFECTS: 22 of 25 implemented (2026-07-13, RUNTIME-UNTESTED — see the
+  "Trainer Skill effects" section below). Bonus Battle, Loot Boost and Rock Smash
+  Boost remain stubs: each needs a whole system the engine lacks (BP-per-trainer
+  awards, wild item drops, rock-smash item pulls).
 
 **Phase 4 — maps + access DONE; gyms/badges NOT DONE:**
 - 4.1: 107 Sevii/Kanto maps imported (633 -> 740 maps). VERIFIED in the built
@@ -227,6 +230,43 @@ upstream-incomplete rule, none warrants a fix. Do not re-chase these:
   optional match-call chatter or house-interior flavor text; the unset branch is normal
   dialogue. 2.X cut the events that set them (Groudon's hideout awakening, the running
   shoes handout) without cutting the readers.
+
+## Trainer Skill effects (implemented 2026-07-13 — RUNTIME-UNTESTED)
+
+22 of 25 skills now do something; all effect math lives in `src/trainer_skills.c` so
+the magnitudes are auditable in one place. The official doc gives each skill's effect
+but NOT its per-level numbers (2.X engine code the donor doesn't ship), so magnitudes
+are reconstructed — each is commented at its function; user play-testing is the
+arbiter. Every effect is a no-op at level 0. Only the IV replacement is gated behind
+`FLAG_TRAINER_SKILLS_MODE`; general effects are live in normal play (same as the
+already-shipped XP Boost-Trainer).
+
+Hook points (one line each; the callee does the level check):
+- EXP: `Cmd_getexp` (battle_script_commands.c) — Gold Rush: `Cmd_getmoneyreward` —
+  Sniper Ball: `CriticalCapture()`, added AFTER the dex-count scaling so it works
+  early game when a small dex zeroes crit odds — Bargain: `GetItemBuyPrice()` in
+  shop.c (money shops only; **BP prices stay full**, keep it that way).
+- Rebirth / Revitalize / Skill Restore: one call, `ApplyPostBattleSkills()` in
+  `ReturnFromBattleToOverworld` (battle_main.c); skips link/frontier/trainer-hill.
+- Stay Away: both repel `VarSet(VAR_REPEL_STEP_COUNT, ...)` sites (item_use.c +
+  script_menu.c `HandleRepelMenuChoice`). Repels only — the doc names repels; lures
+  are untouched.
+- Quick Exit: `TryRunFromBattle` (battle_util.c), added in a u16 temp so the roll
+  can't wrap; level 0 preserves the vanilla u8 truncation quirk exactly.
+- Joy Boost: `AdjustFriendship`; ceil so vanilla's tiny 2..5 gains actually grow.
+- Max PP Boost: `CalculatePPWithBonus`. NB current PP is stored separately, so a
+  freshly caught mon shows e.g. 15/17 until its first heal — cosmetic, self-corrects.
+- Step Heal: `ApplySkillStepHeal()` from `TryStartStepCountScript`, counter in
+  `VAR_SKILL_STEPS` (reserved for exactly this). Heals `level` HP per 100 steps,
+  never revives.
+- Deep Scan: chain RESETS to 5*level instead of 0 — `ResetDexNavChain()` replaced all
+  five `VarSet(VAR_DEXNAV_CHAIN, 0)` sites in dexnav.c. Increment/decrement untouched.
+- Rare Sight: `TryFindHiddenPokemon` search roll (+2%/level on the base 60).
+- Eggcelerate: daycare compatibility roll (+5%/level).
+
+Still stubs, each blocked on a missing engine system (do NOT fake them with the
+wrong hook): **Bonus Battle** (nothing awards BP per trainer battle), **Loot Boost**
+(no wild-drop system), **Rock Smash Boost** (rock smash yields no items here).
 
 **Phase 4 is now VERIFIED IN-GAME, end to end:** a full 2-Pokemon trainer battle
 (moves, flinch, KO, switch-in, EXP, prize, defeat flag); white-out -> respawn;

@@ -4096,6 +4096,8 @@ static void Cmd_getexp(void)
             else
                 calculatedExp = gBaseStats[gBattleMons[gBattlerFainted].species].expYield * getGymLeaderMinLevel() / 5;
 
+            calculatedExp = ApplySkillExpBoost(calculatedExp);
+
             if (gSaveBlock2Ptr->expShare) // exp share is turned on
                 viaExpShare = gSaveBlock1Ptr->playerPartyCount;
                 
@@ -6789,6 +6791,7 @@ static void Cmd_getmoneyreward(void)
         money = GetTrainerMoneyToGive(gTrainerBattleOpponent_A);
         if (gBattleTypeFlags & BATTLE_TYPE_TWO_OPPONENTS)
             money += GetTrainerMoneyToGive(gTrainerBattleOpponent_B);
+        money = ApplySkillGoldRush(money);
         AddMoney(&gSaveBlock1Ptr->money, money);
     }
 	else
@@ -13681,6 +13684,7 @@ static bool32 CriticalCapture(u32 odds)
 {
     #if B_CRITICAL_CAPTURE == TRUE
         u32 numCaught = GetNationalPokedexCount(FLAG_GET_CAUGHT);
+        u32 baseOdds = odds;
 
         if (numCaught <= (NATIONAL_DEX_COUNT * 30) / 650)
             odds = 0;
@@ -13699,6 +13703,8 @@ static bool32 CriticalCapture(u32 odds)
         if (CheckBagHasItem(ITEM_CATCHING_CHARM, 1))
             odds = (odds * (100 + B_CATCHING_CHARM_BOOST)) / 100;
         #endif
+
+        odds = ApplySkillSniperBall(odds, baseOdds);
 
         odds /= 6;
         if ((Random() % 255) < odds)

@@ -25,6 +25,7 @@
 #include "constants/songs.h"
 #include "constants/vars.h"
 #include "data/script_menu.h"
+#include "trainer_skills.h"
 
 static EWRAM_DATA u8 sProcessInputDelay = 0;
 
@@ -148,7 +149,7 @@ void TryDrawRepelMenu(void)
 void HandleRepelMenuChoice(void)
 {
     gSpecialVar_0x8004 = VarGet(VAR_0x8004 + gSpecialVar_Result); // Get item Id;
-    VarSet(VAR_REPEL_STEP_COUNT, ItemId_GetHoldEffectParam(gSpecialVar_0x8004));
+    VarSet(VAR_REPEL_STEP_COUNT, ApplySkillStayAway(ItemId_GetHoldEffectParam(gSpecialVar_0x8004)));
 }
 
 void TryDrawLureMenu(void)

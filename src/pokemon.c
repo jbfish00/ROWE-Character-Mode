@@ -6152,7 +6152,8 @@ void GetSpeciesName(u8 *name, u16 species)
 u8 CalculatePPWithBonus(u16 move, u8 ppBonuses, u8 moveIndex)
 {
     u8 basePP = gBattleMoves[move].pp;
-    return basePP + ((basePP * 20 * ((gPPUpGetMask[moveIndex] & ppBonuses) >> (2 * moveIndex))) / 100);
+    return basePP + ((basePP * 20 * ((gPPUpGetMask[moveIndex] & ppBonuses) >> (2 * moveIndex))) / 100)
+                  + GetSkillMaxPpBonus(basePP);
 }
 
 void RemoveMonPPBonus(struct Pokemon *mon, u8 moveIndex)
@@ -7803,6 +7804,7 @@ void AdjustFriendship(struct Pokemon *mon, u8 event)
             s8 mod = sFriendshipEventModifiers[event][friendshipLevel];
             if (mod > 0 && holdEffect == HOLD_EFFECT_HAPPINESS_UP)
                 mod = (150 * mod) / 100;
+            mod = ApplySkillJoyBoost(mod);
             friendship += mod;
             if (mod > 0)
             {

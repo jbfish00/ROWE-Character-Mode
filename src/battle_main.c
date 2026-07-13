@@ -54,6 +54,7 @@
 #include "util.h"
 #include "wild_encounter.h"
 #include "window.h"
+#include "trainer_skills.h"
 #include "constants/abilities.h"
 #include "constants/battle_config.h"
 #include "constants/battle_move_effects.h"
@@ -5828,6 +5829,9 @@ static void ReturnFromBattleToOverworld(void)
     gSpecialVar_Result = gBattleOutcome;
     gMain.inBattle = 0;
     gMain.callback1 = gPreBattleCallback1;
+
+    // Rebirth / Revitalize / Skill Restore trigger here, once the party is settled.
+    ApplyPostBattleSkills(gBattleOutcome, gBattleTypeFlags);
 
     if (gBattleTypeFlags & BATTLE_TYPE_ROAMER)
     {

@@ -43,6 +43,7 @@
 #include "tx_pokemon_follower.h"
 #include "palette.h"
 #include "constants/rgb.h"
+#include "trainer_skills.h"
 
 static EWRAM_DATA u8 sWildEncounterImmunitySteps = 0;
 static EWRAM_DATA u16 sPreviousPlayerMetatileBehavior = 0;
@@ -664,6 +665,7 @@ static bool8 TryStartStepCountScript(u16 metatileBehavior)
     IncrementRematchStepCounter();
     UpdateHappinessStepCounter();
     UpdateFarawayIslandStepCounter();
+    ApplySkillStepHeal();
 
     if (!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_FORCED_MOVE) && !MetatileBehavior_IsForcedMovementTile(metatileBehavior))
     {

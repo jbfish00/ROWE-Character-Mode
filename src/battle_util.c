@@ -49,6 +49,7 @@
 #include "level_scaling.h"
 #include "printf.h"
 #include "mgba.h"
+#include "trainer_skills.h"
 
 /*
 NOTE: The data and functions in this file up until (but not including) sSoundMovesTable
@@ -442,6 +443,7 @@ bool8 TryRunFromBattle(u8 battler)
     u8 holdEffect;
     u8 pyramidMultiplier;
     u8 speedVar;
+    u16 runOdds;
 
     if (gBattleMons[battler].item == ITEM_ENIGMA_BERRY)
         holdEffect = gEnigmaBerries[battler].holdEffect;
@@ -497,7 +499,10 @@ bool8 TryRunFromBattle(u8 battler)
         else if (gBattleMons[battler].speed < gBattleMons[runningFromBattler].speed)
         {
             speedVar = (gBattleMons[battler].speed * 128) / (gBattleMons[runningFromBattler].speed) + (gBattleStruct->runTries * 30);
-            if (speedVar > (Random() & 0xFF))
+            // Quick Exit adds to the roll in a wider temp so a boosted total cannot
+            // wrap; level 0 leaves the vanilla u8 math untouched.
+            runOdds = speedVar + GetSkillEscapeBonus();
+            if (runOdds > (Random() & 0xFF))
                 effect++;
         }
         else // same speed or faster
