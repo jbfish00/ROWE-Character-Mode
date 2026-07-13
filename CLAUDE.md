@@ -77,6 +77,17 @@ Recurring traps (all handled inside the scripts — keep it that way):
 - Temp test patches go in the START-commit path of `src/ui_mode_menu.c`
   (grant party mons/items on mode commit); ALWAYS revert + rebuild clean
   after cutting a test ROM. Test ROMs live in `~/Documents/rowe_test_*.gba`.
+- **Set saveblock state DIRECTLY in the temp patch, don't click it in.** e.g.
+  `gSaveBlock1Ptr->trainerSkillLevel[SKILL_REBIRTH] = 10;` beats navigating the Skills
+  menu — no dropped inputs, and the value is exact. `FlagClear(FLAG_CHARACTER_MODE)` in
+  the same block stops the roster check sweeping your granted test mons to the PC.
+- **Design each test so the prediction is PARTIAL and numeric.** A skill set to its max
+  (a 100% heal) is indistinguishable from "the mon was already full" — that wasted a
+  whole pass. Pick a mid level (30% heal on a mon at 2/28 HP → predict exactly 10/28) so
+  a pass and a fail look different. And for a probabilistic effect, stack N subjects
+  (4 fainted mons = 4 rolls in one battle) instead of re-running the battle N times.
+- **Nasty Plot is the ideal PP-burner**: a status move drains PP over many turns and
+  lets the enemy chip your mon down, without you accidentally killing it.
 
 ## Current state (2026-07-11)
 
@@ -304,14 +315,35 @@ points, 16 badges, 999 BP, ₽100k) in the START-commit path of `ui_mode_menu.c`
   `Cmd_getexp` hook path, i.e. the effect plumbing works end to end.
 - **Bargain crashes the mart** (see above) — found here, bisected, reverted.
 - **Deep Scan's next-reset-only quirk** (see above).
+- **Max PP Boost.** At level 10 Pikachu's Nasty Plot read max **30** (base 20) and
+  Thunder Shock max **45** (base 30) — exactly +50%. Also confirms the documented
+  cosmetic quirk: *current* PP stays at the old value until the mon is healed.
 
-**NOT yet proven — the next session should target these:** Rebirth (a fainted Pikachu
-stayed fainted across 3 straight wins at level 10 = 50%/win; that is only a 12.5% run of
-bad luck, so it is *suspicious but not damning* — re-roll it), Revitalize and Skill
-Restore (the test mon was barely scratched, so a 100% heal was indistinguishable from
-full HP — retest with a badly hurt, PP-drained mon), and every RNG-only skill (Sniper
-Ball, Quick Exit, Rare Sight, Eggcelerate, Joy Boost, Step Heal, Stay Away, Gold Rush,
-Max PP).
+**Rebirth / Revitalize / Skill Restore — ALL THREE PROVEN EXACTLY (second pass).**
+The first attempt was inconclusive for a dumb reason worth not repeating: the test mon
+was barely scratched, so a level-10 (=100%) Revitalize was indistinguishable from simply
+being at full HP, and one fainted mon gave only a single 50% Rebirth coin-flip.
+
+The fix was to pick levels that make **partial, falsifiable** predictions, and to set
+them **directly in the temp patch** (`gSaveBlock1Ptr->trainerSkillLevel[SKILL_X] = N`)
+rather than clicking through the menu — far faster and exact. Setup: Rebirth **10**,
+Revitalize **3**, Skill Restore **1**; party = Pikachu + **four** Lv4-5 Magikarp (four
+independent Rebirth rolls in ONE won battle) + a Lv70 Charizard to close it out. Ground
+Pikachu down to 2/28 HP and 12/20 PP on Nasty Plot (a status move — it burns PP and lets
+the enemy chip you without you killing it), fainted all four Magikarp, then won.
+
+| skill | prediction | observed |
+|---|---|---|
+| Revitalize 3 | HP 2 → 2 + 28×3/10 = **10**/28 (partial) | **10/28** |
+| Rebirth 10 | fainted mon revives at maxHP/4 = **3**/15, ~50% each | **3/15**, 1 of 4 revived |
+| Skill Restore 1 | Nasty Plot 12 → 12 + 20×1/10 = **14**/20 | **14/20** |
+
+Moves already at full PP (30/30) were correctly left alone (the `pp >= maxPP` guard).
+1 revive out of 4 coin-flips is a 25%-likely outcome, so the earlier "3 straight
+non-revives" was ordinary bad luck, **not** a bug — Rebirth is fine.
+
+**Still unproven (RNG-only, low value to chase):** Sniper Ball, Quick Exit, Rare Sight,
+Eggcelerate, Joy Boost, Step Heal, Stay Away, Gold Rush.
 
 **Phase 4 is now VERIFIED IN-GAME, end to end:** a full 2-Pokemon trainer battle
 (moves, flinch, KO, switch-in, EXP, prize, defeat flag); white-out -> respawn;
