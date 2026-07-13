@@ -372,6 +372,9 @@ const u8 gText_Var1CertainlyHowMany2[] = _("¿{STR_VAR_1}? Buena elección.\n¿C
 const u8 gText_Var1AndYouWantedVar2[] = _("{STR_VAR_1}… Y quieres {STR_VAR_2}, ¿no?\nTe costará {STR_VAR_3}¥.");
 const u8 gText_Var1IsItThatllBeVar2[] = _("{STR_VAR_1}, ¿verdad?\nTe costará {STR_VAR_2}¥. ¿De acuerdo?");
 const u8 gText_YouWantedVar1ThatllBeVar2[] = _("¿Quieres {STR_VAR_1}?\nTe costará {STR_VAR_2}¥. ¿Te parece bien?");
+// BP-priced shops (mega stone gurus, tutors): same lines, billed in BP not Pokedollars.
+const u8 gText_Var1AndYouWantedVar2_BP[] = _("{STR_VAR_1}… Y quieres {STR_VAR_2}, ¿no?\nTe costará {STR_VAR_3}PB.");
+const u8 gText_YouWantedVar1ThatllBeVar2_BP[] = _("¿Quieres {STR_VAR_1}?\nTe costará {STR_VAR_2}PB. ¿Te parece bien?");
 const u8 gText_HereYouGoThankYou[] = _("¡Aquí tienes!\nMuchas gracias.");
 const u8 gText_ThankYouIllSendItHome[] = _("¡Gracias!\nSe enviará a tu PC.");
 const u8 gText_ThanksIllSendItHome[] = _("¡Gracias!\nSe enviará a tu PC.");
@@ -2285,6 +2288,9 @@ const u8 gText_Var1CertainlyHowMany2[] = _("{STR_VAR_1}? Certainly.\nHow many wo
 const u8 gText_Var1AndYouWantedVar2[] = _("{STR_VAR_1}? And you wanted {STR_VAR_2}?\nThat will be ¥{STR_VAR_3}.");
 const u8 gText_Var1IsItThatllBeVar2[] = _("{STR_VAR_1}, is it?\nThat'll be ¥{STR_VAR_2}. Do you want it?");
 const u8 gText_YouWantedVar1ThatllBeVar2[] = _("You wanted {STR_VAR_1}?\nThat'll be ¥{STR_VAR_2}. Will that be okay?");
+// BP-priced shops (mega stone gurus, tutors): same lines, billed in BP not Pokedollars.
+const u8 gText_Var1AndYouWantedVar2_BP[] = _("{STR_VAR_1}? And you wanted {STR_VAR_2}?\nThat will be {STR_VAR_3}BP.");
+const u8 gText_YouWantedVar1ThatllBeVar2_BP[] = _("You wanted {STR_VAR_1}?\nThat'll be {STR_VAR_2}BP. Will that be okay?");
 const u8 gText_HereYouGoThankYou[] = _("Here you go!\nThank you very much.");
 const u8 gText_ThankYouIllSendItHome[] = _("Thank you!\nI'll send it to your home PC.");
 const u8 gText_ThanksIllSendItHome[] = _("Thanks!\nI'll send it to your PC at home.");

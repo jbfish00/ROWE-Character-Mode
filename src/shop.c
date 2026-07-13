@@ -1316,7 +1316,9 @@ static void Task_BuyMenu(u8 taskId)
                     if (ItemId_GetPocket(itemId) == POCKET_TM_HM)
                     {
                         ConvertIntToDecimalStringN(gStringVar2, gShopDataPtr->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
-                        StringExpandPlaceholders(gStringVar4, gText_YouWantedVar1ThatllBeVar2);
+                        StringExpandPlaceholders(gStringVar4,
+                            ShopUsesBattlePoints() ? gText_YouWantedVar1ThatllBeVar2_BP
+                                                   : gText_YouWantedVar1ThatllBeVar2);
                         tItemCount = 1;
                         gShopDataPtr->totalCost = GetItemBuyPrice(tItemId) * tItemCount;
                         BuyMenuDisplayMessage(taskId, gStringVar4, BuyMenuConfirmPurchase);
@@ -1395,7 +1397,10 @@ static void Task_BuyHowManyDialogueHandleInput(u8 taskId)
             CopyItemName(tItemId, gStringVar1);
             ConvertIntToDecimalStringN(gStringVar2, tItemCount, STR_CONV_MODE_LEFT_ALIGN, BAG_ITEM_CAPACITY_DIGITS);
             ConvertIntToDecimalStringN(gStringVar3, gShopDataPtr->totalCost, STR_CONV_MODE_LEFT_ALIGN, 6);
-            BuyMenuDisplayMessage(taskId, gText_Var1AndYouWantedVar2, BuyMenuConfirmPurchase);
+            BuyMenuDisplayMessage(taskId,
+                ShopUsesBattlePoints() ? gText_Var1AndYouWantedVar2_BP
+                                       : gText_Var1AndYouWantedVar2,
+                BuyMenuConfirmPurchase);
         }
         else if (JOY_NEW(B_BUTTON))
         {
