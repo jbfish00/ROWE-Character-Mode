@@ -60,11 +60,31 @@ Recurring traps (all handled inside the scripts — keep it that way):
 ## Testing
 
 - mGBA (`mgba-qt`) driven via xdotool: keydown/keyup with ≥0.4s holds
-  (short taps get DROPPED — verify every press with a screenshot; the
-  emulator drops even held arrows sometimes; A=x, B=z, Start=Return).
+  (short taps get DROPPED — verify every press with a screenshot).
+- **KEYBINDINGS ARE PER-CONFIG, NOT DEFAULTS — read them BEFORE driving.**
+  `~/.config/mgba/config.ini` `[gba.input.QT_K]` holds Qt key codes (ASCII).
+  As of 2026-07-14 the user rebound them (for the Unbound project):
+  **D-pad = I/J/K/L (up/left/down/right), A=x, B=z, Start=q, Select=n, L=a, R=s.**
+  Arrow keys and Return DO NOTHING — a 2026-07-13 session lost ~an hour
+  chasing a phantom "player frozen on continue" bug that was exactly this
+  (buttons still worked in menus because A was still x, which perfectly
+  mimicked "field input locked, menu input fine").
+- **Another mGBA instance may be running and STEALING FOCUS** — the user's
+  Unbound automation relaunches `mgba-qt -g .../unbound-cm.gba` on its own.
+  mGBA only feeds keys to the FOCUSED window. Do not kill their instance;
+  `xdotool windowactivate --sync <yours>` and confirm `getactivewindow`
+  matches IMMEDIATELY before every input burst. Definitive input-delivery
+  test: press F12 — mGBA writes `<rom>-N.png` next to the ROM if the app
+  got the key (proves app-level delivery without touching the game).
 - Screenshot: `import -window <game-subwindow-id>` (find via
   `xdotool search --class mgba`, pick the 480x320 child of the running
-  instance; the titled 480x344 window takes the key input).
+  instance; the titled 480x344 window takes the key input; several
+  instances may exist — match the window ids to the right PID via
+  `xdotool getwindowpid`, and the PID to its ROM/sav via `/proc/<pid>/maps`).
+- `rowe_play.sav` is ALL-0xFF (erased flash): the user's play session never
+  in-game-saved. An all-FF .sav is why the menu shows no Continue — check
+  the file before suspecting save-system bugs. Valid pairs for reload tests:
+  `rowe_test_skills.sav` / `rowe_test_bugfix.sav` (28 signed sectors each).
 - Known intro macro: Start, A×~18, name "A" via A+Start+A, A×8 → house;
   A×2 → question menu; Down Down A → Character Mode menu (defaults to
   Gen I/Red); START commits; A, Down×3, A, A×3 → clock; A, Up, A×3;
@@ -280,6 +300,28 @@ Current state:
 2. A **short initializer list is silent**. `u16 x[NUM_BADGES] = { ..8 items.. }` compiles
    clean and zero-fills. Since flag 0 is a valid flag, the zeros do not even crash — they
    just quietly lie. Count initializers against the declared size, don't eyeball it.
+
+### FULL-REPO BUG AUDIT (2026-07-14) — swept clean; the false-positive shapes it found
+
+A scripted sweep of every productive bug class (dead flag/var gates, short
+initializers, id-width truncation, menu↔script index drift, script-data validity,
+mega data tables, signature-move bounds, TM tables, saveblock sizing) found **no new
+real bugs**. A fresh-save mGBA run (intro → overworld → wild battle → KO → field)
+passed end to end. Do not re-sweep these classes without new code; DO reuse these
+**four new grep-evasions** any future flag/var audit must handle:
+- `FlagSet(SomeArray[i])` — computed setters (e.g. `ModeFlags[]` in ui_mode_menu.c).
+  A "no setter for FLAG_X" claim must also chase arrays containing FLAG_X.
+- `*GetVarPointer(VAR_X) = v` — var writes that a `VarSet(` grep never sees
+  (VAR_STARTER_MON, VAR_NATIONAL_DEX, the frontier/Birch vars all write this way).
+- `data/event_scripts.s` — setflags live in **.s** files too, not just .inc
+  (FLAG_RUSTURF_TUNNEL_OPENED, FLAG_PETALBURG_MART_EXPANDED_ITEMS).
+- `removeobject` — sets the object's visibility flag implicitly; a flag "nothing
+  sets" may be set by every removeobject of the object that carries it.
+Also learned: the pokemon_graphics tables carry ~392 DUPLICATE designated
+initializers (placeholder first, real asset later) — benign ONLY because C's
+last-initializer-wins and the port scripts always append after the placeholder
+block. If a port script ever PREPENDS, mons render as question marks; check
+duplicates by "which entry is last", not by presence.
 
 ### THE MART CRASH: 9+ BADGES OVERFLOWED sShopInventories (fixed) — and how I misdiagnosed it
 
