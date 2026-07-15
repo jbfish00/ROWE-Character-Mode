@@ -317,6 +317,51 @@ passed end to end. Do not re-sweep these classes without new code; DO reuse thes
   (FLAG_RUSTURF_TUNNEL_OPENED, FLAG_PETALBURG_MART_EXPANDED_ITEMS).
 - `removeobject` — sets the object's visibility flag implicitly; a flag "nothing
   sets" may be set by every removeobject of the object that carries it.
+### BATTLE-PORT DEEP REVIEW (2026-07-14, commit 77d5bf60) — 10 bugs found + fixed
+
+The inline review below MISSED these; a 4-agent workflow (find -> adversarial verify)
+caught them. Lesson: for battle-engine semantics, the multi-agent pass earns its
+keep -- an inline spot-check does not. All 10 were independently re-verified against
+the code before fixing, build-clean. What was wrong (in case any regress):
+- **Signature SECOND_TYPE effectiveness squared the first type**: the second type's
+  CalcTypeEffectivenessMultiplierInternal was seeded with the running `modifier`
+  (already holding type 1) then multiplied back in. Fixed to start from UQ_4_12(1.0).
+  The SAME bug hit EFFECT_TWO_TYPED_MOVE one line up -- fixed both. (battle_util.c ~9674)
+- **Signature MODIFY_FIELD Misty/Grassy both set PSYCHIC terrain** (copy-paste of the
+  constant). (battle_util.c 5702/5713)
+- **Signature secondary LEECH_SEED wrote the seeder onto the wrong battler** with the
+  mask instead of the attacker id, so opponent-planted seeds drained to battler 0.
+  Vanilla does `gStatuses3[gBattlerTarget] |= gBattlerAttacker`. (battle_util.c 6068)
+- **Signature secondary TAUNT Oblivious guard was `!ability != OBLIVIOUS`** (precedence)
+  -> never blocked Oblivious. (battle_util.c 6188)
+- **Shed Tail made a Substitute then threw it away**: only EFFECT_BATON_PASS preserved
+  status2/substituteHP across the switch. Added EFFECT_SHED_TAIL to BOTH
+  Cmd_switchindataupdate AND SwitchInClearSetData (3 edit sites), transferring ONLY
+  the substitute bit (not stats/status). If Shed Tail ever "does nothing" again, check
+  all three sites still name EFFECT_SHED_TAIL.
+- **Gigaton Hammer / Blood Moon could be re-picked from the menu every turn**: the
+  no-twice-in-a-row lock lived ONLY in CheckMoveLimitations (AI + Struggle), not in the
+  player's selection gate TrySetCantSelectMoveBattleScript. Added the self-torment block
+  there too. (The softlock the inline pass "cleared" was real-adjacent: it doesn't
+  softlock because it rides Torment's Struggle path -- but it also wasn't ENFORCED.)
+- **Psyblade boosted on Electric Terrain even when airborne** -- added IsBattlerGrounded.
+- Cosmetic: Cursed Flame printed Leech Seed's "was seeded!"; Toxic Debris played the
+  Spikes anim + "Spikes scattered". Added BattleScript_EffectToxicDebris; repointed
+  Cursed Flame to BattleScript_BattlerAttackCursedOnHit.
+- **ApplyPostBattleSkills fired on Safari catches** -- added BATTLE_TYPE_SAFARI to the
+  exclusion mask (trainer_skills.c 273), matching the trainer-XP hook.
+
+Refuted (correctly, do not "fix"): Thermal Exchange full Fire immunity (it's the
+intended absorb-to-Atk), Shed Tail 1/4 HP cost (reuses Cmd_setsubstitute, accepted).
+
+IN-GAME status of these 10: NOT yet driven in a live battle. A test ROM was cut
+(temp Tinkaton w/ Gigaton Hammer) but the grant sits in the **Change Game Modes**
+START-commit path, which the plain "Start Game" questions flow does NOT traverse --
+so the grant misfired and the party had only the starter. To actually exercise these:
+enter Change Game Modes and press START (q) to fire the ui_mode_menu grant, THEN Start
+Game. The rebuilt engine itself is healthy (boot -> overworld -> party menu -> Route
+101 movement all clean, which exercises the edited move/species data paths).
+
 Battle-engine ports were reviewed inline too (2026-07-14), the layer that had the
 least in-game testing: the 15 new ability effects in battle_util.c (ids>=304), the
 trainer-skill hooks + guards, the signature-move appliers, and the Gigaton/Blood
