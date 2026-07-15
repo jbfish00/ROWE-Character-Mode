@@ -317,6 +317,22 @@ passed end to end. Do not re-sweep these classes without new code; DO reuse thes
   (FLAG_RUSTURF_TUNNEL_OPENED, FLAG_PETALBURG_MART_EXPANDED_ITEMS).
 - `removeobject` — sets the object's visibility flag implicitly; a flag "nothing
   sets" may be set by every removeobject of the object that carries it.
+Battle-engine ports were reviewed inline too (2026-07-14), the layer that had the
+least in-game testing: the 15 new ability effects in battle_util.c (ids>=304), the
+trainer-skill hooks + guards, the signature-move appliers, and the Gigaton/Blood
+Moon consecutive-use block. All sound — abilities mirror vanilla patterns with
+correct attacker/target/break/effect++ and reset via the standard clear paths;
+skill hooks are overflow-safe (u16/u8 intermediates clamp) and exclude
+link/frontier/trainer-hill and skip egg/fainted/full mons; the Gigaton/Blood Moon
+self-torment rides the SAME `MOVE_LIMITATION_TORMENTED` + `unusableMoves` bitmask
+as Torment, so "all moves unusable -> Struggle" falls out of vanilla infra — no
+softlock even with a single-move Gigaton user. What stays unverified is exactly
+what the repo leaves to user play-testing: reconstructed RNG magnitudes. One
+low-confidence note, NOT a confirmed bug: ABILITY_MYSTIC_BLADES flips slicing
+moves to special unconditionally while ABILITY_LIQUID_VOICE gates its split flip
+on FLAG_NO_SPLIT_MODE (battle_util.c ~10313-10325) — check that asymmetry is
+intended if a Mystic Blades user ever behaves oddly outside split mode.
+
 Also learned: the pokemon_graphics tables carry ~392 DUPLICATE designated
 initializers (placeholder first, real asset later) — benign ONLY because C's
 last-initializer-wins and the port scripts always append after the placeholder
