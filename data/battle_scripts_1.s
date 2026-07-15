@@ -7874,7 +7874,15 @@ BattleScript_EffectLooseQuills::
 	printstring STRINGID_SPIKESSCATTERED
 	waitmessage 0x40
 	return
-	
+
+BattleScript_EffectToxicDebris::
+	call BattleScript_AbilityPopUp
+	playmoveanimation BS_ATTACKER, MOVE_TOXIC_SPIKES
+	waitanimation
+	printstring STRINGID_POISONSPIKESSCATTERED
+	waitmessage 0x40
+	return
+
 BattleScript_EffectWaterSpill::
 	call BattleScript_AbilityPopUp
 	playmoveanimation BS_ATTACKER, MOVE_WATER_SPORT

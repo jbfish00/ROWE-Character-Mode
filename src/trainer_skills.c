@@ -270,7 +270,7 @@ void ApplyPostBattleSkills(u32 battleOutcome, u32 battleTypeFlags)
 
     if (rebirth + revitalize + restore == 0)
         return;
-    if (battleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL))
+    if (battleTypeFlags & (BATTLE_TYPE_LINK | BATTLE_TYPE_FRONTIER | BATTLE_TYPE_TRAINER_HILL | BATTLE_TYPE_SAFARI))
         return;
     if (battleOutcome != B_OUTCOME_WON && battleOutcome != B_OUTCOME_CAUGHT)
         return;

@@ -3623,6 +3623,12 @@ void SwitchInClearSetData(void)
         if (gStatuses3[gActiveBattler] & STATUS3_POWER_TRICK)
             SWAP(gBattleMons[gActiveBattler].attack, gBattleMons[gActiveBattler].defense, i);
     }
+    else if (gBattleMoves[gCurrentMove].effect == EFFECT_SHED_TAIL)
+    {
+        // Keep only the passed Substitute (set in Cmd_switchindataupdate); clear the rest.
+        gBattleMons[gActiveBattler].status2 &= STATUS2_SUBSTITUTE;
+        gStatuses3[gActiveBattler] = 0;
+    }
     else
     {
         gBattleMons[gActiveBattler].status2 = 0;
@@ -3651,6 +3657,10 @@ void SwitchInClearSetData(void)
         gDisableStructs[gActiveBattler].perishSongTimer = disableStructCopy.perishSongTimer;
         gDisableStructs[gActiveBattler].perishSongTimerStartValue = disableStructCopy.perishSongTimerStartValue;
         gDisableStructs[gActiveBattler].battlerPreventingEscape = disableStructCopy.battlerPreventingEscape;
+    }
+    else if (gBattleMoves[gCurrentMove].effect == EFFECT_SHED_TAIL)
+    {
+        gDisableStructs[gActiveBattler].substituteHP = disableStructCopy.substituteHP;
     }
 
     gMoveResultFlags = 0;

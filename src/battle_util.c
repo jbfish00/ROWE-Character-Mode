@@ -1437,6 +1437,26 @@ u8 TrySetCantSelectMoveBattleScript(void)
         }
     }
 
+    // Gigaton Hammer / Blood Moon self-torment: can't be picked two turns running.
+    // CheckMoveLimitations enforces this for the AI and for Struggle, but the human
+    // selection gate needs the same block or the player can just re-pick it.
+    if ((move == MOVE_GIGATON_HAMMER || move == MOVE_BLOOD_MOON)
+        && move == gLastResultingMoves[gActiveBattler]
+        && move != MOVE_STRUGGLE)
+    {
+        CancelMultiTurnMoves(gActiveBattler);
+        if (gBattleTypeFlags & BATTLE_TYPE_PALACE)
+        {
+            gPalaceSelectionBattleScripts[gActiveBattler] = BattleScript_SelectingTormentedMoveInPalace;
+            gProtectStructs[gActiveBattler].palaceUnableToUseMove = 1;
+        }
+        else
+        {
+            gSelectionBattleScripts[gActiveBattler] = BattleScript_SelectingTormentedMove;
+            limitations++;
+        }
+    }
+
     if (gDisableStructs[gActiveBattler].tauntTimer != 0 && gBattleMoves[move].power == 0)
     {
         gCurrentMove = move;
@@ -5293,7 +5313,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                 gBattlerAttacker = gBattlerTarget;
                 PREPARE_ABILITY_BUFFER(gBattleTextBuff1, gLastUsedAbility);
                 BattleScriptPushCursor();
-                gBattlescriptCurrInstr = BattleScript_EffectLooseQuills;
+                gBattlescriptCurrInstr = BattleScript_EffectToxicDebris;
                 effect++;
             }
             break;
@@ -5410,7 +5430,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
             {
                 gBattleMons[gBattlerTarget].status2 |= STATUS2_CURSED;
                 BattleScriptPushCursor();
-                gBattlescriptCurrInstr = BattleScript_BattlerAttackSeededOnHit;
+                gBattlescriptCurrInstr = BattleScript_BattlerAttackCursedOnHit;
                 effect++;
             }
             break;
@@ -5699,7 +5719,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                         if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                         && ((TARGET_TURN_DAMAGED) || gBattleMoves[move].split == SPLIT_STATUS)
                         && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
-                        && TryChangeBattleTerrain(gBattlerAttacker, STATUS_FIELD_PSYCHIC_TERRAIN, &gFieldTimers.mistyTerrainTimer))
+                        && TryChangeBattleTerrain(gBattlerAttacker, STATUS_FIELD_MISTY_TERRAIN, &gFieldTimers.mistyTerrainTimer))
                         {
                             BattleScriptPushCursorAndCallback(BattleScript_SetMistyTerrain);
                             gBattleScripting.battler = battler;
@@ -5710,7 +5730,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                         if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                         && ((TARGET_TURN_DAMAGED) || gBattleMoves[move].split == SPLIT_STATUS)
                         && !gProtectStructs[gBattlerAttacker].confusionSelfDmg
-                        && TryChangeBattleTerrain(gBattlerAttacker, STATUS_FIELD_PSYCHIC_TERRAIN, &gFieldTimers.grassyTerrainTimer))
+                        && TryChangeBattleTerrain(gBattlerAttacker, STATUS_FIELD_GRASSY_TERRAIN, &gFieldTimers.grassyTerrainTimer))
                         {
                             BattleScriptPushCursorAndCallback(BattleScript_SetGrassyTerrain);
                             gBattleScripting.battler = battler;
@@ -6065,7 +6085,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                         && !IS_BATTLER_OF_TYPE(gBattlerTarget, TYPE_GRASS)
                         && gBattlerAttacker != gBattlerTarget)
                         {
-                            gStatuses3[gActiveBattler] |= STATUS3_LEECHSEED_BATTLER;
+                            gStatuses3[gBattlerTarget] |= gBattlerAttacker;
                             gStatuses3[gBattlerTarget] |= STATUS3_LEECHSEED;
 
                             BattleScriptPushCursor();
@@ -6185,7 +6205,7 @@ u8 AbilityBattleEffects(u8 caseID, u8 battler, u16 ability, u8 special, u16 move
                         if (!(gMoveResultFlags & MOVE_RESULT_NO_EFFECT)
                         && IsBattlerAlive(gBattlerTarget)
                         && !IsAbilityOnSide(gBattlerTarget, ABILITY_AROMA_VEIL)
-                        && !GetBattlerAbility(gBattlerTarget) != ABILITY_OBLIVIOUS
+                        && GetBattlerAbility(gBattlerTarget) != ABILITY_OBLIVIOUS
                         && gDisableStructs[gBattlerTarget].tauntTimer == 0
                         && gBattlerAttacker != gBattlerTarget)
                         {
@@ -8146,7 +8166,7 @@ static u16 CalcMoveBasePower(u16 move, u8 battlerAtk, u8 battlerDef)
             basePower = 250;
         break;
     case MOVE_PSYBLADE:
-        if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN)
+        if (gFieldStatuses & STATUS_FIELD_ELECTRIC_TERRAIN && IsBattlerGrounded(battlerAtk))
             basePower = basePower * 3 / 2;
         break;
     }
@@ -9671,21 +9691,25 @@ u16 CalcTypeEffectivenessMultiplier(u16 move, u8 moveType, u8 battlerAtk, u8 bat
     {
         modifier = CalcTypeEffectivenessMultiplierInternal(move, moveType, battlerAtk, battlerDef, recordAbilities, modifier);
         
+        // The second type's effectiveness must be computed standalone (starting
+        // from 1.0), not seeded with `modifier` -- seeding with `modifier` (which
+        // already holds the first type) then multiplying it back in below squares
+        // the first type's effectiveness.
         if (gBattleMoves[move].effect == EFFECT_TWO_TYPED_MOVE)
-            secondtypeModifier = CalcTypeEffectivenessMultiplierInternal(move, gBattleMoves[move].argument, battlerAtk, battlerDef, recordAbilities, modifier);
+            secondtypeModifier = CalcTypeEffectivenessMultiplierInternal(move, gBattleMoves[move].argument, battlerAtk, battlerDef, recordAbilities, UQ_4_12(1.0));
         else if(gSignatureMoveList[species].move == move){
             if(gSignatureMoveList[species].modification == SIGNATURE_MOD_SECOND_TYPE)
-                secondtypeModifier = CalcTypeEffectivenessMultiplierInternal(move, gSignatureMoveList[species].variable, battlerAtk, battlerDef, recordAbilities, modifier);
+                secondtypeModifier = CalcTypeEffectivenessMultiplierInternal(move, gSignatureMoveList[species].variable, battlerAtk, battlerDef, recordAbilities, UQ_4_12(1.0));
             else if(gSignatureMoveList[species].modification2 == SIGNATURE_MOD_SECOND_TYPE)
-                secondtypeModifier = CalcTypeEffectivenessMultiplierInternal(move, gSignatureMoveList[species].variable2, battlerAtk, battlerDef, recordAbilities, modifier);
+                secondtypeModifier = CalcTypeEffectivenessMultiplierInternal(move, gSignatureMoveList[species].variable2, battlerAtk, battlerDef, recordAbilities, UQ_4_12(1.0));
             else if(gSignatureMoveList[species].modification3 == SIGNATURE_MOD_SECOND_TYPE)
-                secondtypeModifier = CalcTypeEffectivenessMultiplierInternal(move, gSignatureMoveList[species].variable3, battlerAtk, battlerDef, recordAbilities, modifier);
+                secondtypeModifier = CalcTypeEffectivenessMultiplierInternal(move, gSignatureMoveList[species].variable3, battlerAtk, battlerDef, recordAbilities, UQ_4_12(1.0));
             else if(gSignatureMoveList[species].modification4 == SIGNATURE_MOD_SECOND_TYPE)
-                secondtypeModifier = CalcTypeEffectivenessMultiplierInternal(move, gSignatureMoveList[species].variable4, battlerAtk, battlerDef, recordAbilities, modifier);
+                secondtypeModifier = CalcTypeEffectivenessMultiplierInternal(move, gSignatureMoveList[species].variable4, battlerAtk, battlerDef, recordAbilities, UQ_4_12(1.0));
             else if(gSignatureMoveList[species].modification5 == SIGNATURE_MOD_SECOND_TYPE)
-                secondtypeModifier = CalcTypeEffectivenessMultiplierInternal(move, gSignatureMoveList[species].variable5, battlerAtk, battlerDef, recordAbilities, modifier);
+                secondtypeModifier = CalcTypeEffectivenessMultiplierInternal(move, gSignatureMoveList[species].variable5, battlerAtk, battlerDef, recordAbilities, UQ_4_12(1.0));
             else if(gSignatureMoveList[species].modification6 == SIGNATURE_MOD_SECOND_TYPE)
-                secondtypeModifier = CalcTypeEffectivenessMultiplierInternal(move, gSignatureMoveList[species].variable6, battlerAtk, battlerDef, recordAbilities, modifier);
+                secondtypeModifier = CalcTypeEffectivenessMultiplierInternal(move, gSignatureMoveList[species].variable6, battlerAtk, battlerDef, recordAbilities, UQ_4_12(1.0));
         }
     }
 

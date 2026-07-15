@@ -5700,6 +5700,12 @@ static void Cmd_switchindataupdate(void)
         }
         gBattleMons[gActiveBattler].status2 = oldData.status2;
     }
+    // Shed Tail hands ONLY the Substitute to the switch-in (not stats/status like
+    // Baton Pass). SwitchInClearSetData preserves this bit for EFFECT_SHED_TAIL.
+    else if (gBattleMoves[gCurrentMove].effect == EFFECT_SHED_TAIL)
+    {
+        gBattleMons[gActiveBattler].status2 |= (oldData.status2 & STATUS2_SUBSTITUTE);
+    }
 
     SwitchInClearSetData();
 
