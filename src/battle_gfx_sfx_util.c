@@ -1074,7 +1074,10 @@ void LoadBattleMonGfxAndAnimate(u8 battlerId, bool8 loadMonSprite, u8 spriteId)
 
 void TrySetBehindSubstituteSpriteBit(u8 battlerId, u16 move)
 {
-    if (move == MOVE_SUBSTITUTE)
+    // Shed Tail makes a Substitute too; its script's `switchinanim BS_ATTACKER,
+    // TRUE` preserves this bit across the switch, so the doll follows the
+    // switch-in (the sub itself already transferred via switchindataupdate).
+    if (move == MOVE_SUBSTITUTE || move == MOVE_SHED_TAIL)
         gBattleSpritesDataPtr->battlerData[battlerId].behindSubstitute = 1;
 }
 
