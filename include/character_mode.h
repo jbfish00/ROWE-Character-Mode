@@ -39,5 +39,6 @@ bool8 IsSpeciesAllowedForCharacter(u16 species);
 void CharacterMode_SweepPartyToPC(void);
 bool8 CharacterMode_PartyHasAllowedMon(void);
 u16 CharacterMode_GetRosterSize(const struct CharacterInfo *character);
+void CharacterMode_RunBootSelftest(void);
 
 #endif // GUARD_CHARACTER_MODE_H

@@ -156,6 +156,7 @@ SECTIONS {
         src/pokemon_storage_system.o(.text);
         src/pokemon_icon.o(.text);
         src/character_mode.o(.text);
+        src/character_mode_selftest.o(.text);
         src/script_movement.o(.text);
         src/fldeff_cut.o(.text);
         src/mail_data.o(.text);
@@ -552,6 +553,7 @@ SECTIONS {
         src/pokemon_storage_system.o(.rodata);
         src/pokemon_icon.o(.rodata);
         src/character_mode.o(.rodata);
+        src/character_mode_selftest.o(.rodata);
         src/fldeff_cut.o(.rodata);
         src/map_name_popup.o(.rodata);
         src/item_menu_icons.o(.rodata);

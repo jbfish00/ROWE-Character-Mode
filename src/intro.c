@@ -23,6 +23,7 @@
 #include "sound.h"
 #include "util.h"
 #include "boot_error_screen.h"
+#include "character_mode.h"
 #include "title_screen.h"
 #include "constants/rgb.h"
 #include "constants/battle_anim.h"
@@ -1078,6 +1079,7 @@ void CB2_InitCopyrightScreenAfterBootup(void)
             Sav2_ClearSetDefault();
         SetPokemonCryStereo(gSaveBlock2Ptr->optionsSound);
         InitHeap(gHeap, HEAP_SIZE);
+        CharacterMode_RunBootSelftest();  // mGBA only; no-op on hardware
     }
 }
 

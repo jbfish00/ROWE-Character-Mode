@@ -152,6 +152,7 @@
 	.include "src/quests.o"
 	.include "src/ui_start_menu.o"
 	.include "src/ui_mode_menu.o"
+	.include "src/character_mode_selftest.o"
 	.include "src/day_night.o"
     .include "src/dexnav.o"
 	.include "src/debug.o"
