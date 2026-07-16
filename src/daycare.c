@@ -6,6 +6,7 @@
 #include "mail.h"
 #include "pokedex.h"
 #include "pokemon_storage_system.h"
+#include "character_mode.h"
 #include "event_data.h"
 #include "random.h"
 #include "main.h"
@@ -988,6 +989,10 @@ static void _GiveEggFromDaycare(struct DayCare *daycare)
     CompactPartySlots();
     CalculatePlayerPartyCount();
     RemoveEggFromDayCare(daycare);
+    // Character Mode: the daycare hands over a hatched baby (not an egg), so the
+    // gift gate never sees it -- and cross-family offspring (Nidoran-M from
+    // Nidoran-F, Volbeat from Illumise) can be off-roster even from allowed parents.
+    CharacterMode_SweepPartyToPC();
 }
 
 void CreateEgg(struct Pokemon *mon, u16 species, bool8 setHotSpringsLocation)

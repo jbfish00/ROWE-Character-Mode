@@ -35,6 +35,7 @@
 #include "field_screen_effect.h"
 #include "data.h"
 #include "battle.h" // to get rid of later
+#include "character_mode.h"
 #include "constants/rgb.h"
 
 struct EggHatchData
@@ -574,6 +575,9 @@ static void EggHatchSetMonNickname(void)
     SetMonData(&gPlayerParty[gSpecialVar_0x8004], MON_DATA_NICKNAME, gStringVar3);
     FreeMonSpritesGfx();
     Free(sEggHatchData);
+    // Character Mode: eggs are exempt from the gift gate, so enforce at hatch --
+    // an off-roster hatchling goes to the PC like any other off-roster acquisition.
+    CharacterMode_SweepPartyToPC();
     SetMainCallback2(CB2_ReturnToField);
 }
 
@@ -700,6 +704,8 @@ static void CB2_EggHatch_1(void)
             UnsetBgTilemapBuffer(0);
             UnsetBgTilemapBuffer(1);
             Free(sEggHatchData);
+            // Character Mode: eggs are exempt from the gift gate, so enforce at hatch.
+            CharacterMode_SweepPartyToPC();
             SetMainCallback2(CB2_ReturnToField);
         }
         break;
