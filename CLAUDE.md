@@ -354,13 +354,30 @@ the code before fixing, build-clean. What was wrong (in case any regress):
 Refuted (correctly, do not "fix"): Thermal Exchange full Fire immunity (it's the
 intended absorb-to-Atk), Shed Tail 1/4 HP cost (reuses Cmd_setsubstitute, accepted).
 
-IN-GAME status of these 10: NOT yet driven in a live battle. A test ROM was cut
-(temp Tinkaton w/ Gigaton Hammer) but the grant sits in the **Change Game Modes**
-START-commit path, which the plain "Start Game" questions flow does NOT traverse --
-so the grant misfired and the party had only the starter. To actually exercise these:
-enter Change Game Modes and press START (q) to fire the ui_mode_menu grant, THEN Start
-Game. The rebuilt engine itself is healthy (boot -> overworld -> party menu -> Route
-101 movement all clean, which exercises the edited move/species data paths).
+IN-GAME status of these 10: NOT yet driven in a live battle. The rebuilt engine
+itself is healthy (boot -> overworld -> party menu -> Route 101 movement all clean,
+which exercises the edited move/species data paths).
+
+**HOW TO FIRE THE ui_mode_menu.c TEMP GRANT — corrected 2026-07-15.** An earlier
+note here said "enter Change Game Modes in the intro questions menu" — WRONG, and
+it cost a whole test run: the intro's "Change Game Modes" is a plain TEXT
+multichoice (sticky text loop, B won't cleanly exit it — mGBA menu Ctrl+R to
+escape). The graphical menu whose START handler holds the grant
+(`src/ui_mode_menu.c` `JOY_NEW(START_BUTTON)`) is opened ONLY from the **field
+start menu** ("Modes" entry -> `Task_OpenModeMenuFromStartMenu`, created at
+`src/start_menu.c:1856`). Correct sequence: finish the intro via Start Game ->
+overworld -> Start menu -> Modes -> press START (q). Also: on the naming keyboard,
+Start (q) does NOT confirm — press A (x) with the cursor anywhere and the preset
+name commits.
+
+**IN-PROGRESS TEST (2026-07-15, resume here if interrupted):** working tree has the
+temp grant in `src/ui_mode_menu.c` (Tinkaton: Gigaton Hammer+Tackle Lv50; Cyclizar:
+Shed Tail+Tackle Lv50; Zigzagoon Lv5), test ROM `~/Documents/rowe_test_gigaton.gba`.
+Goal: (1) Gigaton Hammer blocked on re-selection the turn after it hits (2) Shed
+Tail's switch-in arrives holding the Substitute. Plan + doc-sync steps:
+`~/.claude/plans/is-everything-updated-in-dynamic-rain.md`. After testing: revert
+the patch, rebuild, delete the test ROM/sav, sync the old plan file's status board
+(it is STALE, still lists Shed Tail/Gigaton as merely "unverified").
 
 Battle-engine ports were reviewed inline too (2026-07-14), the layer that had the
 least in-game testing: the 15 new ability effects in battle_util.c (ids>=304), the
