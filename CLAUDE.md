@@ -354,30 +354,54 @@ the code before fixing, build-clean. What was wrong (in case any regress):
 Refuted (correctly, do not "fix"): Thermal Exchange full Fire immunity (it's the
 intended absorb-to-Atk), Shed Tail 1/4 HP cost (reuses Cmd_setsubstitute, accepted).
 
-IN-GAME status of these 10: NOT yet driven in a live battle. The rebuilt engine
-itself is healthy (boot -> overworld -> party menu -> Route 101 movement all clean,
-which exercises the edited move/species data paths).
+IN-GAME status of these 10 (updated 2026-07-16): **Shed Tail PROVEN in-game, at
+memory level.** Fresh save, temp party (Cyclizar w/ Shed Tail, Zigzagoon), wild
+Oddish on Route 101: Shed Tail cost exactly maxHP/4 (40->27 of 53), and after the
+switch an mGBA savestate parse showed the switch-in Zigzagoon holding
+`status2 = 0x01000000` (exactly STATUS2_SUBSTITUTE) and `substituteHP = 13` —
+the doll transferred with the right HP. Before the fix both were 0.
+**Cosmetic follow-up:** the substitute DOLL SPRITE did not render on the switch-in
+(Zigzagoon's own sprite showed) even though the sub is mechanically live — check
+the controller's behindSubstitute handling on the Shed Tail switch-in path someday.
+**Gigaton/Blood Moon selection gate: code-verified only** — it is a line-for-line
+mirror of the Torment selection block 20 lines above it in
+TrySetCantSelectMoveBattleScript. The UI proof needs a MULTI-mon opponent (a wild
+dies to the Lv50 hammer turn 1, ending the battle before the turn-2 re-selection).
+30-second check in any playthrough: use Gigaton Hammer vs a trainer, re-pick it
+next turn, expect the tormented-move "can't use" message; it must work again the
+turn after. The other 8 fixes stay code/build/adversarially-verified (probabilistic
+or species-locked; impractical to drive).
 
-**HOW TO FIRE THE ui_mode_menu.c TEMP GRANT — corrected 2026-07-15.** An earlier
-note here said "enter Change Game Modes in the intro questions menu" — WRONG, and
-it cost a whole test run: the intro's "Change Game Modes" is a plain TEXT
-multichoice (sticky text loop, B won't cleanly exit it — mGBA menu Ctrl+R to
-escape). The graphical menu whose START handler holds the grant
-(`src/ui_mode_menu.c` `JOY_NEW(START_BUTTON)`) is opened ONLY from the **field
-start menu** ("Modes" entry -> `Task_OpenModeMenuFromStartMenu`, created at
-`src/start_menu.c:1856`). Correct sequence: finish the intro via Start Game ->
-overworld -> Start menu -> Modes -> press START (q). Also: on the naming keyboard,
-Start (q) does NOT confirm — press A (x) with the cursor anywhere and the preset
-name commits.
+**THE SAVESTATE MEMORY PROBE (how Shed Tail was proven — reuse this, it beats
+fighting the battle UI):** `Shift+F1` in mGBA writes `<rom>.ss1` — a PNG whose
+`gbAs` chunk zlib-decompresses to the raw core state containing EWRAM. Find
+EWRAM's offset in the blob by scanning for gBattleMons (address from
+pokeemerald.map, e.g. 0x02024bec => offset base+0x24bec) matching both battlers'
+species (u16 low 11 bits); sizeof(BattlePokemon)=0x5C (derive from map: next
+symbol minus gBattleMons, /4); status2 at +0x54; gDisableStructs (0x02024e50)
+substituteHP at +0x0E. Exact, indisputable, immune to input drops.
 
-**IN-PROGRESS TEST (2026-07-15, resume here if interrupted):** working tree has the
-temp grant in `src/ui_mode_menu.c` (Tinkaton: Gigaton Hammer+Tackle Lv50; Cyclizar:
-Shed Tail+Tackle Lv50; Zigzagoon Lv5), test ROM `~/Documents/rowe_test_gigaton.gba`.
-Goal: (1) Gigaton Hammer blocked on re-selection the turn after it hits (2) Shed
-Tail's switch-in arrives holding the Substitute. Plan + doc-sync steps:
-`~/.claude/plans/is-everything-updated-in-dynamic-rain.md`. After testing: revert
-the patch, rebuild, delete the test ROM/sav, sync the old plan file's status board
-(it is STALE, still lists Shed Tail/Gigaton as merely "unverified").
+**HOW TO FIRE TEMP TEST GRANTS — corrected again 2026-07-16.** The 2026-07-15 note
+below about the field "Modes" entry was ALSO wrong: `AddStartMenuAction(
+MENU_ACTION_UI_MODE_MENU)` is COMMENTED OUT (start_menu.c:428), so the graphical
+ui_mode_menu is unreachable in normal play (the intro questions menu's "Character
+Mode" is the only live route, and its START also commits Character Mode + sweeps
+off-roster mons). **The reliable pattern instead: hook the grant into
+`ShowUIStartMenu()` (src/start_menu.c, the field Start-button handler for the grid
+menu) guarded by `CalculatePlayerPartyCount() == 1`** — then save in-game FIRST
+(Select -> Save works from the field), rebuild, swap the ROM under the same .sav,
+Continue, and just open the Start menu once: party goes 1 -> 4. No intro re-drive.
+(Select menu = Save/Skills/Debug/Exit; the debug menu's give-mon flow exists but
+needs digit-by-digit move-id entry — not worth it for specific movesets.)
+Naming screen: A (x) confirms; Start (q) is inert there.
+
+**xdotool under focus contention (another session may be driving its own mGBA):**
+chain focus+press in ONE invocation — `xdotool windowfocus $W keydown --window $W x
+sleep 0.5 keyup --window $W x` — and verify EVERY press with a screenshot; when a
+burst lands zero presses, the other session holds focus, just retry. Beware the
+action-menu toggle trap: A on the battle party menu's Cancel returns to the action
+menu with the cursor still on "Pokémon", so a blind follow-up A reopens the party
+menu and the pair looks like a no-op.
 
 Battle-engine ports were reviewed inline too (2026-07-14), the layer that had the
 least in-game testing: the 15 new ability effects in battle_util.c (ids>=304), the
