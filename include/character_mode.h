@@ -34,6 +34,7 @@ bool8 InCharacterMode(void);
 const struct CharacterInfo *GetActiveCharacter(void);
 const struct CharacterInfo *GetAppearanceCharacter(void);
 bool8 CharacterHasOverworldSprite(u16 index);
+u16 CharacterMode_FamilyBase(u16 species);
 bool8 IsSpeciesAllowedForCharacter(u16 species);
 void CharacterMode_SweepPartyToPC(void);
 bool8 CharacterMode_PartyHasAllowedMon(void);

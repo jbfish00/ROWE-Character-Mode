@@ -605,7 +605,7 @@ static const u16 sRoster_Ash[] =
     SPECIES_CLOBBOPUS,
     SPECIES_DRACOVISH,
     SPECIES_DRATINI,
-    SPECIES_FARFETCHD_GALARIAN,
+    SPECIES_FARFETCHD,
     SPECIES_FROAKIE,
     SPECIES_GASTLY,
     SPECIES_GIBLE,
@@ -1586,7 +1586,7 @@ static const u16 sRoster_Roxanne[] =
     SPECIES_RELICANTH,
     SPECIES_TIRTOUGA,
     SPECIES_VULPIX,
-    SPECIES_YAMASK_GALARIAN,
+    SPECIES_YAMASK,
     SPECIES_GROUDON,
     SPECIES_NONE,
 };
@@ -3498,7 +3498,7 @@ static const u16 sRoster_Korrina[] =
     SPECIES_CHARMANDER,
     SPECIES_CHESPIN,
     SPECIES_CRABRAWLER,
-    SPECIES_FARFETCHD_GALARIAN,
+    SPECIES_FARFETCHD,
     SPECIES_FLETCHLING,
     SPECIES_FROAKIE,
     SPECIES_GASTLY,
@@ -3553,7 +3553,7 @@ static const u16 sRoster_Clemont[] =
     SPECIES_ELECTRIKE,
     SPECIES_EMOLGA,
     SPECIES_ESPURR,
-    SPECIES_FARFETCHD_GALARIAN,
+    SPECIES_FARFETCHD,
     SPECIES_FENNEKIN,
     SPECIES_FURFROU,
     SPECIES_GASTLY,
@@ -4362,7 +4362,7 @@ static const u16 sRoster_Leon[] =
     SPECIES_TYMPOLE,
     SPECIES_TYRUNT,
     SPECIES_WOOLOO,
-    SPECIES_ZIGZAGOON_GALARIAN,
+    SPECIES_ZIGZAGOON,
     SPECIES_CALYREX,
     SPECIES_ETERNATUS,
     SPECIES_ZACIAN,
@@ -4378,7 +4378,7 @@ static const u16 sRoster_Milo[] =
     SPECIES_APPLIN,
     SPECIES_BOUNSWEET,
     SPECIES_CHERUBI,
-    SPECIES_FARFETCHD_GALARIAN,
+    SPECIES_FARFETCHD,
     SPECIES_LOTAD,
     SPECIES_ODDISH,
     SPECIES_SEEDOT,
@@ -4443,7 +4443,7 @@ static const u16 sRoster_Bea[] =
     SPECIES_DRACOVISH,
     SPECIES_DRATINI,
     SPECIES_FALINKS,
-    SPECIES_FARFETCHD_GALARIAN,
+    SPECIES_FARFETCHD,
     SPECIES_HAWLUCHA,
     SPECIES_MORPEKO,
     SPECIES_PANCHAM,
@@ -4466,7 +4466,7 @@ static const u8 sName_Bea[] = _("Bea");
 static const u16 sRoster_Allister[] =
 {
     SPECIES_GASTLY,
-    SPECIES_CORSOLA_GALARIAN,
+    SPECIES_CORSOLA,
     SPECIES_DREEPY,
     SPECIES_DUSKULL,
     SPECIES_LITWICK,
@@ -4478,7 +4478,6 @@ static const u16 sRoster_Allister[] =
     SPECIES_SPIRITOMB,
     SPECIES_TOXEL,
     SPECIES_YAMASK,
-    SPECIES_YAMASK_GALARIAN,
     SPECIES_ETERNATUS,
     SPECIES_NONE,
 };
@@ -4489,7 +4488,7 @@ static const u16 sRoster_Opal[] =
 {
     SPECIES_MILCERY,
     SPECIES_DRACOVISH,
-    SPECIES_FARFETCHD_GALARIAN,
+    SPECIES_FARFETCHD,
     SPECIES_KOFFING,
     SPECIES_MAWILE,
     SPECIES_PICHU,
@@ -4546,6 +4545,7 @@ static const u16 sRoster_Piers[] =
     SPECIES_STUNKY,
     SPECIES_TOXEL,
     SPECIES_TRUBBISH,
+    SPECIES_ZIGZAGOON,
     SPECIES_ETERNATUS,
     SPECIES_ZACIAN,
     SPECIES_ZAMAZENTA,
@@ -4673,7 +4673,7 @@ static const u16 sRoster_Rose[] =
     SPECIES_HATENNA,
     SPECIES_KARRABLAST,
     SPECIES_KLINK,
-    SPECIES_MEOWTH_GALARIAN,
+    SPECIES_MEOWTH,
     SPECIES_RIOLU,
     SPECIES_ROLYCOLY,
     SPECIES_ETERNATUS,
@@ -4813,7 +4813,6 @@ static const u16 sRoster_Nemona[] =
     SPECIES_TINKATINK,
     SPECIES_WATTREL,
     SPECIES_YAMASK,
-    SPECIES_YAMASK_GALARIAN,
     SPECIES_RAYQUAZA,
     SPECIES_TERAPAGOS,
     SPECIES_NONE,
@@ -4823,7 +4822,7 @@ static const u8 sName_Nemona[] = _("Nemona");
 
 static const u16 sRoster_Rika[] =
 {
-    SPECIES_CLODSIRE,
+    SPECIES_WOOPER_PALDEA,
     SPECIES_BARBOACH,
     SPECIES_DIGLETT,
     SPECIES_GREAT_TUSK,
@@ -4877,7 +4876,6 @@ static const u8 sName_Hassel[] = _("Hassel");
 static const u16 sRoster_Katy[] =
 {
     SPECIES_TEDDIURSA,
-    SPECIES_CLODSIRE,
     SPECIES_COMBEE,
     SPECIES_DEWPIDER,
     SPECIES_DIGLETT,
@@ -4887,6 +4885,7 @@ static const u16 sRoster_Katy[] =
     SPECIES_PINECO,
     SPECIES_SPRIGATITO,
     SPECIES_TAROUNTULA,
+    SPECIES_WOOPER,
     SPECIES_NONE,
 };
 
@@ -4956,7 +4955,6 @@ static const u8 sName_Kofu[] = _("Kofu");
 static const u16 sRoster_Larry[] =
 {
     SPECIES_STARLY,
-    SPECIES_CLODSIRE,
     SPECIES_DUNSPARCE,
     SPECIES_FLAMIGO,
     SPECIES_GEODUDE,
@@ -4976,6 +4974,7 @@ static const u16 sRoster_Larry[] =
     SPECIES_TAUROS,
     SPECIES_TINKATINK,
     SPECIES_TROPIUS,
+    SPECIES_WOOPER,
     SPECIES_NONE,
 };
 
@@ -5001,13 +5000,13 @@ static const u16 sRoster_Tulip[] =
 {
     SPECIES_FLABEBE,
     SPECIES_CHARCADET,
-    SPECIES_CLODSIRE,
     SPECIES_DIGLETT,
     SPECIES_FENNEKIN,
     SPECIES_FLITTLE,
     SPECIES_GIRAFARIG,
     SPECIES_NACLI,
     SPECIES_RALTS,
+    SPECIES_WOOPER,
     SPECIES_NONE,
 };
 
@@ -5076,7 +5075,6 @@ static const u16 sRoster_Penny[] =
     SPECIES_VENIPEDE,
     SPECIES_VOLTORB,
     SPECIES_YAMASK,
-    SPECIES_YAMASK_GALARIAN,
     SPECIES_PECHARUNT,
     SPECIES_NONE,
 };
@@ -5919,7 +5917,7 @@ const struct CharacterInfo gCharacters[] =
         .name = sName_Hilda,
         .roster = sRoster_Hilda,
         .owGfxId = OBJ_EVENT_GFX_CM_HILDA,
-        .trainerFrontPic = CHAR_ASSET_NONE,
+        .trainerFrontPic = TRAINER_PIC_HILDA,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 5,
         .starterCount = 5,
@@ -6642,7 +6640,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 8,
-        .starterCount = 14,
+        .starterCount = 13,
         .hasSignature = 1,
     },
     {
@@ -6682,7 +6680,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 8,
-        .starterCount = 8,
+        .starterCount = 9,
         .hasSignature = 1,
     },
     {
@@ -6772,7 +6770,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 9,
-        .starterCount = 36,
+        .starterCount = 35,
         .hasSignature = 1,
     },
     {
@@ -6902,7 +6900,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 9,
-        .starterCount = 18,
+        .starterCount = 17,
         .hasSignature = 1,
     },
 };

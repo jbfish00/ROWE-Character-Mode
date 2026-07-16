@@ -81,7 +81,7 @@ Paul             ow=-                                  front=-                  
 Zoey             ow=-                                  front=-                          back=-
 Nando            ow=-                                  front=-                          back=-
 Hilbert          ow=OBJ_EVENT_GFX_HILBERT_NORMAL       front=TRAINER_PIC_HILBERT        back=TRAINER_BACK_PIC_HILBERT
-Hilda            ow=OBJ_EVENT_GFX_CM_HILDA             front=-                          back=-
+Hilda            ow=OBJ_EVENT_GFX_CM_HILDA             front=TRAINER_PIC_HILDA          back=-
 Nate             ow=OBJ_EVENT_GFX_CM_NATE              front=-                          back=-
 Rosa             ow=OBJ_EVENT_GFX_CM_ROSA              front=-                          back=-
 Alder            ow=OBJ_EVENT_GFX_CM_ALDER             front=-                          back=-

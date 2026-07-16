@@ -94,7 +94,7 @@ Alder,champion,SPECIES_TIMBURR,Y
 Alder,champion,SPECIES_VANILLITE,Y
 Alder,champion,SPECIES_ZEKROM,Y
 Alder,champion,SPECIES_ZORUA,Y
-Allister,gymleader,SPECIES_CORSOLA_GALARIAN,Y
+Allister,gymleader,SPECIES_CORSOLA,Y
 Allister,gymleader,SPECIES_DREEPY,Y
 Allister,gymleader,SPECIES_DUSKULL,Y
 Allister,gymleader,SPECIES_ETERNATUS,Y
@@ -108,7 +108,6 @@ Allister,gymleader,SPECIES_SOBBLE,Y
 Allister,gymleader,SPECIES_SPIRITOMB,Y
 Allister,gymleader,SPECIES_TOXEL,Y
 Allister,gymleader,SPECIES_YAMASK,Y
-Allister,gymleader,SPECIES_YAMASK_GALARIAN,Y
 Archer,villain,SPECIES_ARCEUS,Y
 Archer,villain,SPECIES_BELLSPROUT,Y
 Archer,villain,SPECIES_DIALGA,Y
@@ -190,7 +189,7 @@ Ash,anime,SPECIES_DARKRAI,Y
 Ash,anime,SPECIES_DRACOVISH,Y
 Ash,anime,SPECIES_DRATINI,Y
 Ash,anime,SPECIES_ETERNATUS,Y
-Ash,anime,SPECIES_FARFETCHD_GALARIAN,Y
+Ash,anime,SPECIES_FARFETCHD,Y
 Ash,anime,SPECIES_FROAKIE,Y
 Ash,anime,SPECIES_GASTLY,Y
 Ash,anime,SPECIES_GIBLE,Y
@@ -245,7 +244,7 @@ Bea,gymleader,SPECIES_DRACOVISH,Y
 Bea,gymleader,SPECIES_DRATINI,Y
 Bea,gymleader,SPECIES_ETERNATUS,Y
 Bea,gymleader,SPECIES_FALINKS,Y
-Bea,gymleader,SPECIES_FARFETCHD_GALARIAN,Y
+Bea,gymleader,SPECIES_FARFETCHD,Y
 Bea,gymleader,SPECIES_HAWLUCHA,Y
 Bea,gymleader,SPECIES_MACHOP,Y
 Bea,gymleader,SPECIES_MORPEKO,Y
@@ -835,7 +834,7 @@ Clemont,gymleader,SPECIES_DRACOVISH,Y
 Clemont,gymleader,SPECIES_ELECTRIKE,Y
 Clemont,gymleader,SPECIES_EMOLGA,Y
 Clemont,gymleader,SPECIES_ESPURR,Y
-Clemont,gymleader,SPECIES_FARFETCHD_GALARIAN,Y
+Clemont,gymleader,SPECIES_FARFETCHD,Y
 Clemont,gymleader,SPECIES_FENNEKIN,Y
 Clemont,gymleader,SPECIES_FURFROU,Y
 Clemont,gymleader,SPECIES_GASTLY,Y
@@ -2007,7 +2006,6 @@ Karen,elite4,SPECIES_SWIRLIX,Y
 Karen,elite4,SPECIES_TOTODILE,Y
 Karen,elite4,SPECIES_VOLTORB,Y
 Karen,elite4,SPECIES_ZAPDOS,Y
-Katy,gymleader,SPECIES_CLODSIRE,Y
 Katy,gymleader,SPECIES_COMBEE,Y
 Katy,gymleader,SPECIES_DEWPIDER,Y
 Katy,gymleader,SPECIES_DIGLETT,Y
@@ -2018,6 +2016,7 @@ Katy,gymleader,SPECIES_PINECO,Y
 Katy,gymleader,SPECIES_SPRIGATITO,Y
 Katy,gymleader,SPECIES_TAROUNTULA,Y
 Katy,gymleader,SPECIES_TEDDIURSA,Y
+Katy,gymleader,SPECIES_WOOPER,Y
 Kiawe (anime),anime,SPECIES_CHARMANDER,Y
 Kiawe (anime),anime,SPECIES_CORPHISH,Y
 Kiawe (anime),anime,SPECIES_COSMOG,Y
@@ -2092,7 +2091,7 @@ Korrina,gymleader,SPECIES_ABSOL,Y
 Korrina,gymleader,SPECIES_CHARMANDER,Y
 Korrina,gymleader,SPECIES_CHESPIN,Y
 Korrina,gymleader,SPECIES_CRABRAWLER,Y
-Korrina,gymleader,SPECIES_FARFETCHD_GALARIAN,Y
+Korrina,gymleader,SPECIES_FARFETCHD,Y
 Korrina,gymleader,SPECIES_FLETCHLING,Y
 Korrina,gymleader,SPECIES_FROAKIE,Y
 Korrina,gymleader,SPECIES_GASTLY,Y
@@ -2226,7 +2225,6 @@ Lance,champion,SPECIES_SUICUNE,Y
 Lance,champion,SPECIES_SWABLU,Y
 Lance,champion,SPECIES_TOTODILE,Y
 Lance,champion,SPECIES_TRAPINCH,Y
-Larry,gymleader,SPECIES_CLODSIRE,Y
 Larry,gymleader,SPECIES_DUNSPARCE,Y
 Larry,gymleader,SPECIES_FLAMIGO,Y
 Larry,gymleader,SPECIES_GEODUDE,Y
@@ -2247,6 +2245,7 @@ Larry,gymleader,SPECIES_SWABLU,Y
 Larry,gymleader,SPECIES_TAUROS,Y
 Larry,gymleader,SPECIES_TINKATINK,Y
 Larry,gymleader,SPECIES_TROPIUS,Y
+Larry,gymleader,SPECIES_WOOPER,Y
 Leaf,protagonist,SPECIES_BULBASAUR,Y
 Leaf,protagonist,SPECIES_CHARMANDER,Y
 Leaf,protagonist,SPECIES_CLEFFA,Y
@@ -2302,7 +2301,7 @@ Leon,champion,SPECIES_TYRUNT,Y
 Leon,champion,SPECIES_WOOLOO,Y
 Leon,champion,SPECIES_ZACIAN,Y
 Leon,champion,SPECIES_ZAMAZENTA,Y
-Leon,champion,SPECIES_ZIGZAGOON_GALARIAN,Y
+Leon,champion,SPECIES_ZIGZAGOON,Y
 Lillie (anime),anime,SPECIES_BOUNSWEET,Y
 Lillie (anime),anime,SPECIES_CATERPIE,Y
 Lillie (anime),anime,SPECIES_CLEFFA,Y
@@ -2699,7 +2698,7 @@ Milo,gymleader,SPECIES_APPLIN,Y
 Milo,gymleader,SPECIES_BOUNSWEET,Y
 Milo,gymleader,SPECIES_CHERUBI,Y
 Milo,gymleader,SPECIES_ETERNATUS,Y
-Milo,gymleader,SPECIES_FARFETCHD_GALARIAN,Y
+Milo,gymleader,SPECIES_FARFETCHD,Y
 Milo,gymleader,SPECIES_GOSSIFLEUR,Y
 Milo,gymleader,SPECIES_LOTAD,Y
 Milo,gymleader,SPECIES_ODDISH,Y
@@ -2931,7 +2930,6 @@ Nemona,champion,SPECIES_TERAPAGOS,Y
 Nemona,champion,SPECIES_TINKATINK,Y
 Nemona,champion,SPECIES_WATTREL,Y
 Nemona,champion,SPECIES_YAMASK,Y
-Nemona,champion,SPECIES_YAMASK_GALARIAN,Y
 Nessa,gymleader,SPECIES_ARROKUDA,Y
 Nessa,gymleader,SPECIES_CHEWTLE,Y
 Nessa,gymleader,SPECIES_EISCUE,Y
@@ -2997,7 +2995,7 @@ Olympia,gymleader,SPECIES_YVELTAL,Y
 Olympia,gymleader,SPECIES_ZYGARDE,Y
 Opal,gymleader,SPECIES_DRACOVISH,Y
 Opal,gymleader,SPECIES_ETERNATUS,Y
-Opal,gymleader,SPECIES_FARFETCHD_GALARIAN,Y
+Opal,gymleader,SPECIES_FARFETCHD,Y
 Opal,gymleader,SPECIES_KOFFING,Y
 Opal,gymleader,SPECIES_MAWILE,Y
 Opal,gymleader,SPECIES_MILCERY,Y
@@ -3053,7 +3051,6 @@ Penny,rival,SPECIES_TINKATINK,Y
 Penny,rival,SPECIES_VENIPEDE,Y
 Penny,rival,SPECIES_VOLTORB,Y
 Penny,rival,SPECIES_YAMASK,Y
-Penny,rival,SPECIES_YAMASK_GALARIAN,Y
 Phoebe,elite4,SPECIES_CELEBI,Y
 Phoebe,elite4,SPECIES_DRIFLOON,Y
 Phoebe,elite4,SPECIES_DUSKULL,Y
@@ -3075,7 +3072,7 @@ Piers,gymleader,SPECIES_TOXEL,Y
 Piers,gymleader,SPECIES_TRUBBISH,Y
 Piers,gymleader,SPECIES_ZACIAN,Y
 Piers,gymleader,SPECIES_ZAMAZENTA,Y
-Piers,gymleader,SPECIES_ZIGZAGOON_GALARIAN,Y
+Piers,gymleader,SPECIES_ZIGZAGOON,Y
 Plumeria,villain,SPECIES_CELESTEELA,Y
 Plumeria,villain,SPECIES_COSMOG,Y
 Plumeria,villain,SPECIES_DROWZEE,Y
@@ -3191,7 +3188,6 @@ Red,protagonist,SPECIES_TOTODILE,Y
 Red,protagonist,SPECIES_WAILMER,Y
 Red,protagonist,SPECIES_WOOPER,Y
 Rika,elite4,SPECIES_BARBOACH,Y
-Rika,elite4,SPECIES_CLODSIRE,Y
 Rika,elite4,SPECIES_DIGLETT,Y
 Rika,elite4,SPECIES_GREAT_TUSK,Y
 Rika,elite4,SPECIES_NACLI,Y
@@ -3259,7 +3255,7 @@ Rose,villain,SPECIES_FERROSEED,Y
 Rose,villain,SPECIES_HATENNA,Y
 Rose,villain,SPECIES_KARRABLAST,Y
 Rose,villain,SPECIES_KLINK,Y
-Rose,villain,SPECIES_MEOWTH_GALARIAN,Y
+Rose,villain,SPECIES_MEOWTH,Y
 Rose,villain,SPECIES_RIOLU,Y
 Rose,villain,SPECIES_ROLYCOLY,Y
 Rose,villain,SPECIES_ZACIAN,Y
@@ -3279,7 +3275,7 @@ Roxanne,gymleader,SPECIES_POLIWAG,Y
 Roxanne,gymleader,SPECIES_RELICANTH,Y
 Roxanne,gymleader,SPECIES_TIRTOUGA,Y
 Roxanne,gymleader,SPECIES_VULPIX,Y
-Roxanne,gymleader,SPECIES_YAMASK_GALARIAN,Y
+Roxanne,gymleader,SPECIES_YAMASK,Y
 Roxie,gymleader,SPECIES_CROAGUNK,Y
 Roxie,gymleader,SPECIES_FOONGUS,Y
 Roxie,gymleader,SPECIES_GRIMER,Y
@@ -3595,7 +3591,6 @@ Trip,anime,SPECIES_TYMPOLE,Y
 Trip,anime,SPECIES_VANILLITE,Y
 Trip,anime,SPECIES_VENIPEDE,Y
 Tulip,gymleader,SPECIES_CHARCADET,Y
-Tulip,gymleader,SPECIES_CLODSIRE,Y
 Tulip,gymleader,SPECIES_DIGLETT,Y
 Tulip,gymleader,SPECIES_FENNEKIN,Y
 Tulip,gymleader,SPECIES_FLABEBE,Y
@@ -3603,6 +3598,7 @@ Tulip,gymleader,SPECIES_FLITTLE,Y
 Tulip,gymleader,SPECIES_GIRAFARIG,Y
 Tulip,gymleader,SPECIES_NACLI,Y
 Tulip,gymleader,SPECIES_RALTS,Y
+Tulip,gymleader,SPECIES_WOOPER,Y
 Valerie,gymleader,SPECIES_BAGON,Y
 Valerie,gymleader,SPECIES_EEVEE,Y
 Valerie,gymleader,SPECIES_FLETCHLING,Y
@@ -3612,7 +3608,7 @@ Valerie,gymleader,SPECIES_SPRITZEE,Y
 Valerie,gymleader,SPECIES_XERNEAS,Y
 Valerie,gymleader,SPECIES_YVELTAL,Y
 Victor,protagonist,SPECIES_ETERNATUS,Y
-Victor,protagonist,SPECIES_FARFETCHD_GALARIAN,Y
+Victor,protagonist,SPECIES_FARFETCHD,Y
 Victor,protagonist,SPECIES_GROOKEY,Y
 Victor,protagonist,SPECIES_SKWOVET,Y
 Victor,protagonist,SPECIES_SOBBLE,Y

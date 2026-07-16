@@ -3,9 +3,10 @@
 
 Reads rosters_raw.json, resolves each display name to a SPECIES_* constant
 (parsing src/data/text/species_names.h for the authoritative name->constant
-mapping, which includes the ported Gen 9 block), normalizes every species to
-its evolution-family base stage via src/data/pokemon/first_stage.h, dedupes,
-and writes:
+mapping, which includes the ported Gen 9 block), canonicalizes every species
+to its extended-family base (form-table collapse + evolution walk to a
+fixpoint, mirroring the runtime CharacterMode_FamilyBase), dedupes, and
+writes:
   - rosters_mapped.json   (character -> sorted base-stage SPECIES_* list)
   - roster_review.csv     (for the user to audit: one row per character/species)
   - unmatched_names.txt   (names that resolved to nothing, for fixing)
@@ -68,6 +69,35 @@ def first_stage_map():
     for child in list(parent):
         base[child] = find_base(child)
     return base
+
+
+def base_form_map():
+    """form-table member -> the table's slot-0 species. Mirrors the runtime
+    GetBaseFormSpeciesId() (gFormSpeciesIdTables[id][0])."""
+    text = read(os.path.join(TARGET, "src/data/pokemon/form_species_table.h"))
+    collapse = {}
+    for m in re.finditer(r"static const u16 \w+\[\]\s*=\s*\{(.*?)\};", text, re.S):
+        members = re.findall(r"(SPECIES_\w+)", m.group(1))
+        for member in members[1:]:
+            collapse.setdefault(member, members[0])
+    return collapse
+
+
+def make_canonical(evo_base, form_base):
+    """Family canonicalizer: alternate form-collapse and evolution-walk to a
+    fixpoint, mirroring the runtime CharacterMode_FamilyBase(). One step of
+    each is not enough: forms and evolution interleave (Sirfetch'd devolves to
+    Galarian Farfetch'd, a FORM of Farfetch'd; Clodsire devolves to Paldean
+    Wooper, a form of Wooper)."""
+    def canonical(c):
+        for _ in range(8):
+            prev = c
+            c = form_base.get(c, c)
+            c = evo_base.get(c, c)
+            if c == prev:
+                return c
+        return c
+    return canonical
 
 
 # Bulbapedia name -> in-game display name divergences (10-char cap, forms).
@@ -168,7 +198,8 @@ def main():
         raw = json.load(f)
 
     n2c = name_to_const()
-    base = first_stage_map()
+    evo_base = first_stage_map()
+    canonical = make_canonical(evo_base, base_form_map())
     unmatched = set()
     mapped = {}
 
@@ -180,7 +211,7 @@ def main():
             if const is None:
                 unmatched.add(name)
                 continue
-            consts.add(base.get(const, const))
+            consts.add(canonical(const))
         entry = {"page": info["page"], "category": info["category"],
                  "gen": info.get("gen", 0), "species": sorted(consts)}
         ace = SIGNATURES.get(disp)
@@ -189,12 +220,17 @@ def main():
             if const is None:
                 print("SIGNATURE UNRESOLVED: %s -> %s" % (disp, ace))
             else:
-                sig_base = base.get(const, const)
-                sig = const if disp in SIGNATURES_EXACT else sig_base
-                if sig_base in consts:
+                # The starter keeps its regional form (Piers starts with
+                # Galarian Zigzagoon): walk evolution only, don't collapse
+                # forms. The catch gate canonicalizes forms at runtime, so a
+                # form-species starter still passes it.
+                sig_first_stage = evo_base.get(const, const)
+                sig = const if disp in SIGNATURES_EXACT else sig_first_stage
+                if canonical(const) in consts:
                     entry["signature"] = sig
                 else:
-                    print("SIGNATURE NOT ON ROSTER: %s -> %s (%s)" % (disp, ace, sig_base))
+                    print("SIGNATURE NOT ON ROSTER: %s -> %s (%s)"
+                          % (disp, ace, canonical(const)))
         mapped[disp] = entry
 
     with open(os.path.join(HERE, "rosters_mapped.json"), "w") as f:

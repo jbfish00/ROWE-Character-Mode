@@ -63,8 +63,31 @@ u16 CharacterMode_GetRosterSize(const struct CharacterInfo *character)
     return count;
 }
 
-// A species is allowed if the base stage of its evolution family is on the
-// active character's roster (rosters store base stages only, so whole
+// Canonical representative of a species' whole extended family: alternate
+// form-collapse and evolution-walk until stable. One step of each is NOT
+// enough -- forms and evolution interleave (Sirfetch'd devolves to Galarian
+// Farfetch'd, a FORM of Farfetch'd; Clodsire devolves to Paldean Wooper, a
+// form of Wooper), and the one-shot version made family members canonicalize
+// to DIFFERENT species, so rosters matched some stages and not others.
+// Consequence, accepted: regional variants share the family of their base
+// species (the engine's form tables treat them as one species).
+u16 CharacterMode_FamilyBase(u16 species)
+{
+    u16 prev;
+    u32 guard;
+
+    for (guard = 0; guard < 8; guard++)
+    {
+        prev = species;
+        species = GetFirstEvolution(GetBaseFormSpeciesId(species));
+        if (species == prev)
+            break;
+    }
+    return species;
+}
+
+// A species is allowed if the canonical base of its evolution family is on
+// the active character's roster (rosters store family bases only, so whole
 // families are always allowed together).
 bool8 IsSpeciesAllowedForCharacter(u16 species)
 {
@@ -77,7 +100,7 @@ bool8 IsSpeciesAllowedForCharacter(u16 species)
     if (species == SPECIES_NONE || species >= NUM_SPECIES)
         return FALSE;
 
-    base = GetFirstEvolution(GetBaseFormSpeciesId(species));
+    base = CharacterMode_FamilyBase(species);
     for (i = 0; character->roster[i] != SPECIES_NONE; i++)
     {
         if (character->roster[i] == base)
