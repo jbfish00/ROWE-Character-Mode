@@ -3,6 +3,7 @@
 #include "battle_pyramid.h"
 #include "battle_setup.h"
 #include "berry.h"
+#include "character_mode.h"
 #include "bg.h"
 #include "cable_club.h"
 #include "clock.h"
@@ -1786,10 +1787,11 @@ void CB2_OverworldBasic(void)
 void CB2_Overworld(void)
 {
     bool32 fading = (gPaletteFade.active != 0);
-	
+
     if (fading)
         SetVBlankCallback(NULL);
     OverworldBasic();
+    CharacterMode_PumpTestMailbox();  // headless test harness; no-op outside mGBA
     if (fading)
         SetFieldVBlankCallback();
 }

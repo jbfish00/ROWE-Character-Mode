@@ -1,9 +1,14 @@
 #include "global.h"
 #include "character_mode.h"
+#include "battle_setup.h"
 #include "event_data.h"
+#include "item.h"
 #include "mgba.h"
+#include "script.h"
+#include "script_pokemon_util.h"
 #include "constants/species.h"
 #include "constants/flags.h"
+#include "constants/items.h"
 #include "constants/vars.h"
 
 // Character Mode boot self-test.
@@ -27,6 +32,58 @@ struct CharacterModeSelftestResult
 #define CM_SELFTEST_MAGIC 0x434D5354  // "CMST"
 
 EWRAM_DATA struct CharacterModeSelftestResult gCharacterModeSelftestResult = {0};
+
+// Headless test mailbox. The Lua harness (tools/mgba_scripts/) writes a
+// request into this struct; CB2_Overworld pumps it once per field frame, so
+// every request executes the REAL game calls (FlagSet/AddBagItem/
+// CreateScriptedWildMon/ScriptGiveMon) from a legal overworld context.
+// Gated exactly like the boot self-test: mGBA only (the pump keys off the
+// self-test magic, which only a boot under mGBA ever sets), zero cost on
+// hardware, absent entirely without GBA_PRINTF.
+//
+// Field offsets (the Lua side mirrors these): +0 magic u32, +4 request u8,
+// +5 status u8, +6 argA u16, +8 argB u16, +12 result u32.
+
+// battle_interface.h can't be included here (it pulls battle_controllers.h,
+// which needs the full battle.h type soup); declare the one guard we probe.
+bool32 CanThrowLastUsedBall(void);
+
+#define CM_TESTMB_MAGIC 0x434D5442  // "CMTB"
+
+enum
+{
+    CM_REQ_NONE = 0,
+    CM_REQ_SET_CHARACTER,  // argA: character id (1-based), 0 = mode off; result = InCharacterMode()
+    CM_REQ_GIVE_ITEM,      // argA: item id, argB: quantity; result = AddBagItem()
+    CM_REQ_SET_LAST_BALL,  // argA: ball item id (for the R-button quick throw)
+    CM_REQ_WILD_BATTLE,    // argA: species, argB: level. Level must be >= 5:
+                           // CreateScriptedWildMon treats 1-4 as scaling codes.
+    CM_REQ_GIVE_MON,       // argA: species, argB: level; result = ScriptGiveMon() code
+    CM_REQ_UNLOCK,         // ScriptContext2_Disable() -- a scripted wild battle
+                           // returns to the field with the script lock still held
+    CM_REQ_QUERY_BALL,     // argA: item id. result = lastUsedBall << 16
+                           //   | CanThrowLastUsedBall() << 1 | CheckBagHasItem(argA, 1)
+};
+
+enum
+{
+    CM_STATUS_WORKING = 0,  // Lua sets this before writing request
+    CM_STATUS_DONE = 1,
+    CM_STATUS_REJECTED = 2, // request not runnable right now (script lock held)
+};
+
+struct CharacterModeTestMailbox
+{
+    u32 magic;
+    u8 request;
+    u8 status;
+    u16 argA;
+    u16 argB;
+    u16 padding;
+    u32 result;
+};
+
+EWRAM_DATA struct CharacterModeTestMailbox gCharacterModeTestMailbox = {0};
 
 #ifdef GBA_PRINTF
 
@@ -143,9 +200,74 @@ void CharacterMode_RunBootSelftest(void)
     gCharacterModeSelftestResult.magic = CM_SELFTEST_MAGIC;
 }
 
+void CharacterMode_PumpTestMailbox(void)
+{
+    struct CharacterModeTestMailbox *mb = &gCharacterModeTestMailbox;
+
+    // Only a boot under mGBA sets the self-test magic; on hardware and other
+    // emulators this compare is the whole cost of the pump.
+    if (gCharacterModeSelftestResult.magic != CM_SELFTEST_MAGIC)
+        return;
+
+    mb->magic = CM_TESTMB_MAGIC;  // tells the harness the pump is alive
+    if (mb->request == CM_REQ_NONE)
+        return;
+
+    mb->result = 0;
+    switch (mb->request)
+    {
+    case CM_REQ_SET_CHARACTER:
+        if (mb->argA == 0)
+        {
+            FlagClear(FLAG_CHARACTER_MODE);
+            VarSet(VAR_CHARACTER_ID, 0);
+        }
+        else
+        {
+            FlagSet(FLAG_CHARACTER_MODE);
+            VarSet(VAR_CHARACTER_ID, mb->argA);
+        }
+        mb->result = InCharacterMode();
+        break;
+    case CM_REQ_GIVE_ITEM:
+        mb->result = AddBagItem(mb->argA, mb->argB);
+        break;
+    case CM_REQ_SET_LAST_BALL:
+        gSaveBlock2Ptr->lastUsedBall = mb->argA;
+        break;
+    case CM_REQ_WILD_BATTLE:
+        if (ScriptContext2_IsEnabled())
+        {
+            mb->request = CM_REQ_NONE;
+            mb->status = CM_STATUS_REJECTED;
+            return;
+        }
+        CreateScriptedWildMon(mb->argA, mb->argB, ITEM_NONE);
+        BattleSetup_StartScriptedWildBattle();
+        break;
+    case CM_REQ_GIVE_MON:
+        mb->result = ScriptGiveMon(mb->argA, mb->argB, ITEM_NONE, 3, 0, 0);
+        break;
+    case CM_REQ_UNLOCK:
+        ScriptContext2_Disable();
+        break;
+    case CM_REQ_QUERY_BALL:
+        mb->result = ((u32)gSaveBlock2Ptr->lastUsedBall << 16)
+                   | (CanThrowLastUsedBall() ? 2 : 0)
+                   | (CheckBagHasItem(mb->argA, 1) ? 1 : 0);
+        break;
+    }
+    mb->request = CM_REQ_NONE;
+    mb->status = CM_STATUS_DONE;
+}
+
 #else
 
 void CharacterMode_RunBootSelftest(void)
+{
+}
+
+void CharacterMode_PumpTestMailbox(void)
 {
 }
 

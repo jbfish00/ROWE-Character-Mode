@@ -19,6 +19,7 @@ MAP = os.path.join(TARGET, "pokeemerald.map")
 
 SYMBOLS = [
     "gCharacterModeSelftestResult",
+    "gCharacterModeTestMailbox",
     "gPlayerParty",
     "gPlayerPartyCount",
     "gEnemyParty",
@@ -28,6 +29,11 @@ SYMBOLS = [
     "gCharacters",
     "gMain",
     "CB2_Overworld",
+    "BattleMainCB2",
+    "gBattleOutcome",
+    "gBattlescriptCurrInstr",
+    "gActionSelectionCursor",
+    "BattleScript_CharacterBallBlock",
 ]
 
 

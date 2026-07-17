@@ -109,6 +109,39 @@ Recurring traps (all handled inside the scripts — keep it that way):
 - **Nasty Plot is the ideal PP-burner**: a status move drains PP over many turns and
   lets the enemy chip your mon down, without you accidentally killing it.
 
+## Session 2026-07-17 — battle e2e GREEN: catch gate + gift gate proven live
+
+The big Phase 6 item is closed. `tools/mgba_scripts/catch_gate_e2e.lua` proves,
+in ONE ~10 s headless run against a REAL battle: the catch BLOCK (Red vs wild
+Meowth, Master Ball thrown via the R quick-throw → gBattlescriptCurrInstr
+lands in BattleScript_CharacterBallBlock, no catch, party unchanged), the
+catch ALLOW (wild Pikachu → B_OUTCOME_CAUGHT, joins the party), and the gift
+gate (GiveMonToPlayer: off-roster Meowth → PC, on-roster Pikachu → party).
+14/14 assertions; boot_smoke (21/21) and continue_smoke still green.
+
+How it drives the game — **the test mailbox** (`src/character_mode_selftest.c`):
+an EWRAM request struct pumped once per frame from `CB2_Overworld` AND
+`BattleMainCB2`, gated exactly like the boot self-test (mGBA-only via the
+self-test magic; empty without GBA_PRINTF). Lua writes a request; the pump
+executes REAL game calls: FlagSet/VarSet (set character), AddBagItem,
+lastUsedBall, CreateScriptedWildMon + BattleSetup_StartScriptedWildBattle
+(level must be >= 5 — 1-4 are ROWE scaling codes), ScriptGiveMon,
+ScriptContext2_Disable (a scripted battle returns to the field with the
+script lock held — always UNLOCK after), and a guard-state query.
+
+The one real gotcha (cost most of the session): **the battle intro waits on a
+keypress** — mashing ONLY the key under test (R) leaves the battle stuck
+before the action menu forever and the key looks dead. Diagnosed with a
+late-armed breakpoint (`MGBA_HEADLESS_DEBUGGER=1`) on CanThrowLastUsedBall:
+it was never called. Fix: interleave B taps with the key under test. Full
+gotcha list in `tools/mgba_scripts/README.md`.
+
+**Still open for Phase 6**: Gigaton Hammer re-selection UI check (30 s visual
+vs a multi-mon trainer — needs eyes), starter-rule regression (needs a
+headless NEW-GAME intro drive through the mode menu), Johto-leader-as-player
+vs their gym scripts, and a driven PC-deposit/withdraw sweep check
+(pokemon_storage_system.c:2010) if we want it belt-and-braces.
+
 ## Session 2026-07-16 (evening) — Lazarus port-backs + Phase 6 underway
 
 Everything build-clean and committed (42d5ab83..168721c0). What changed:

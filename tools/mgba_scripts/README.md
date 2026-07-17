@@ -19,6 +19,22 @@ frame-exact pad input, direct RAM read/write at linker-map addresses, and
   roster coverage, and the catch/gift gate, executed by the real in-ROM code
   at every boot under mGBA (hardware and other emulators skip it via
   `mgba_open()`), published to `gCharacterModeSelftestResult` in EWRAM.
+- **The test mailbox** (`gCharacterModeTestMailbox`, same file) — Lua writes a
+  request (set character / give item / set last ball / scripted wild battle /
+  give mon / unlock / query), and the pump — called each frame from
+  `CB2_Overworld` AND `BattleMainCB2`, mGBA-gated like the self-test —
+  executes it with real game calls. Offsets: +0 magic "CMTB" u32, +4 request
+  u8, +5 status u8 (1 done / 2 rejected), +6 argA u16, +8 argB u16,
+  +12 result u32.
+- **`catch_gate_e2e.lua`** — the Phase 6 battle e2e: proves the catch BLOCK
+  (off-roster Meowth, Master Ball → BattleScript_CharacterBallBlock, no
+  catch), the catch ALLOW (on-roster Pikachu → B_OUTCOME_CAUGHT → party), and
+  the gift gate (off-roster → PC, on-roster → party) in one headless run
+  (~10 s). Needs CM_SAV like continue_smoke.
+- **`debug_r_input.lua` / `debug_r_bp.lua`** — one-off diagnostics kept as
+  templates: RAM-probing `gMain.newKeys` for scripted input, and late-armed
+  breakpoints (`MGBA_HEADLESS_DEBUGGER=1`). The bp script hardcodes function
+  addresses from a specific `pokeemerald.map` — refresh before reuse.
 
 ## Run
 
@@ -41,3 +57,9 @@ grep -E "CM-SELFTEST|RESULT" /tmp/boot_smoke.log
 - Breakpoints/watchpoints single-step the core once armed — arm late.
 - `MGBA_HEADLESS_DEBUGGER=1` is required for `H.breakpoint` to register at
   all (stock headless returns id -1 and never fires).
+- **The battle intro waits on a keypress** before the action menu appears —
+  an input mash that only presses the key under test (e.g. R for the
+  quick-throw) leaves the battle stuck in the intro forever, and the key
+  "mysteriously does nothing". Interleave B taps (advance text; no-op at the
+  action menu in singles) with the key under test. Cost a session to find:
+  breakpoint on CanThrowLastUsedBall showed the input handler never ran.
