@@ -37,6 +37,20 @@ SYMBOLS = [
     "gTestMenuPtr",
     "CB2_StartWallClock",
     "Common_Eventscript_Gym_Leader_Falkner",
+    "gBattleMons",
+    "gBattleResults",
+    "gMoveSelectionCursor",
+    "gSelectionBattleScripts",
+    "BattleScript_SelectingTormentedMove",
+    "gBattlerControllerFuncs",
+]
+
+# static (file-local) symbols never reach the linker map; resolve them from
+# the ELF with nm instead. Duplicate names get _2, _3... suffixes in
+# address order.
+LOCAL_SYMBOLS = [
+    "HandleInputChooseAction",
+    "HandleInputChooseMove",
 ]
 
 
@@ -53,6 +67,20 @@ def main():
     missing = [s for s in SYMBOLS if s not in found]
     if missing:
         raise SystemExit("symbols not in map: %s" % ", ".join(missing))
+
+    if LOCAL_SYMBOLS:
+        import subprocess
+        elf = os.path.join(TARGET, "pokeemerald.elf")
+        nm = subprocess.run(["arm-none-eabi-nm", elf], capture_output=True,
+                            text=True, check=True).stdout
+        for sym in LOCAL_SYMBOLS:
+            addrs = sorted(int(m.group(1), 16) for m in re.finditer(
+                r"^([0-9a-f]+) [tTdDbB] %s$" % re.escape(sym), nm, re.M))
+            if not addrs:
+                raise SystemExit("local symbol not in elf: %s" % sym)
+            for i, a in enumerate(addrs):
+                found[sym if i == 0 else "%s_%d" % (sym, i + 1)] = a
+                SYMBOLS.append(sym if i == 0 else "%s_%d" % (sym, i + 1))
 
     digest = hashlib.sha1(text.encode("utf-8", "replace")).hexdigest()[:16]
     out = os.path.join(HERE, "anchors.lua")

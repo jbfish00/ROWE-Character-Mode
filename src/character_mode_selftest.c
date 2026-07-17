@@ -75,6 +75,8 @@ enum
     CM_REQ_SET_BATTLE_STYLE, // argA: 0 = SHIFT, 1 = SET. SET kills the
                              // "will you switch?" prompt a blind battle
                              // drive can wedge on.
+    CM_REQ_SET_MON_MOVE,   // argA: party slot | (move slot << 8),
+                           // argB: move id. PP is set to 10.
 };
 
 enum
@@ -299,6 +301,20 @@ void CharacterMode_PumpTestMailbox(void)
     case CM_REQ_SET_BATTLE_STYLE:
         gSaveBlock2Ptr->optionsBattleStyle = mb->argA;
         mb->result = gSaveBlock2Ptr->optionsBattleStyle;
+        break;
+    case CM_REQ_SET_MON_MOVE:
+        {
+            u8 slot = mb->argA & 0xFF;
+            u8 moveSlot = mb->argA >> 8;
+            u16 move = mb->argB;
+            u8 pp = 10;
+            if (slot < PARTY_SIZE && moveSlot < MAX_MON_MOVES)
+            {
+                SetMonData(&gPlayerParty[slot], MON_DATA_MOVE1 + moveSlot, &move);
+                SetMonData(&gPlayerParty[slot], MON_DATA_PP1 + moveSlot, &pp);
+                mb->result = GetMonData(&gPlayerParty[slot], MON_DATA_MOVE1 + moveSlot, NULL);
+            }
+        }
         break;
     }
     mb->request = CM_REQ_NONE;

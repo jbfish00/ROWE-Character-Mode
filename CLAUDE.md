@@ -109,6 +109,37 @@ Recurring traps (all handled inside the scripts — keep it that way):
 - **Nasty Plot is the ideal PP-burner**: a status move drains PP over many turns and
   lets the enemy chip your mon down, without you accidentally killing it.
 
+## Session 2026-07-17 (later) — Gigaton Hammer re-selection gate PROVEN headlessly
+
+`tools/mgba_scripts/gigaton_reselect_e2e.lua` (9/9, ~2 s) closes the "needs
+eyes" Phase 6 item at memory level: vs a frame-refilled Splash-only Magikarp,
+Gigaton Hammer executes on turn 1 (gBattleResults.lastUsedMovePlayer == 757),
+the turn-2 re-pick is REJECTED (gSelectionBattleScripts[0] ==
+BattleScript_SelectingTormentedMove, zeroed before each pick for a fresh
+edge; the fallback Tackle executes instead), and turn 3 selects it again.
+Only pixels remain unverified, and the message IS the torment script.
+
+**Content note discovered here: Gigaton Hammer and Blood Moon are currently
+UNOBTAINABLE in ROWE** — present in battle_moves/descriptions/engine code but
+in NO level-up learnset, TM list, tutor, or script (Tinkaton's learnset ends
+at Knock Off 52). The lock can't be reached in normal play today; the proof
+covers any future port that adds an acquisition path. If Tinkaton/Ursaluna-BM
+are meant to have their signatures, that's a data addition to make.
+
+Battle-drive breakthrough (reuse everywhere): **read the live menu from
+gBattlerControllerFuncs[0]** — == HandleInputChooseAction+1 → steer the
+action cursor; == HandleInputChooseMove+1 → steer gMoveSelectionCursor;
+anything else → tap B (messages/anims/the rejection text waits on a
+keypress, which is what wedged the blind version). Those handlers are
+STATIC: gen_anchors.py now has an nm-fallback (LOCAL_SYMBOLS) that resolves
+file-local symbols from the ELF, suffixing duplicates _2/_3 in address
+order. New mailbox request: SET_MON_MOVE (slot|moveSlot<<8, move; PP=10).
+Enemy-immortality idiom: wr16 gBattleMons[1] hp=maxHP every frame
+(BattlePokemon: size 0x5C, moves +0x0C, hp +0x2A, maxHP +0x2E — the
+header's comment offsets are unaligned lies; trust these, they match the
+savestate probe). gBattleResults: battleTurnCounter +0x13,
+lastUsedMovePlayer +0x22.
+
 ## Session 2026-07-17 (later) — Johto-leader-as-player gym e2e GREEN
 
 `tools/mgba_scripts/johto_gym_e2e.lua` (13/13, ~6 s): plays AS Falkner
@@ -203,11 +234,10 @@ late-armed breakpoint (`MGBA_HEADLESS_DEBUGGER=1`) on CanThrowLastUsedBall:
 it was never called. Fix: interleave B taps with the key under test. Full
 gotcha list in `tools/mgba_scripts/README.md`.
 
-**Still open for Phase 6**: Gigaton Hammer re-selection UI check (30 s visual
-vs a multi-mon trainer — needs eyes), and a driven PC-deposit/withdraw sweep
-check (pokemon_storage_system.c:2010) if we want it belt-and-braces.
-(Starter-rule regression and Johto-leader-as-player: DONE, see the "later"
-sessions above.)
+**Still open for Phase 6**: a driven PC-deposit/withdraw sweep check
+(pokemon_storage_system.c:2010) if we want it belt-and-braces.
+(Starter-rule regression, Johto-leader-as-player, and the Gigaton Hammer
+re-selection gate: ALL DONE, see the "later" sessions above.)
 
 ## Session 2026-07-16 (evening) — Lazarus port-backs + Phase 6 underway
 
