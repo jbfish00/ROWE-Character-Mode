@@ -109,6 +109,32 @@ Recurring traps (all handled inside the scripts — keep it that way):
 - **Nasty Plot is the ideal PP-burner**: a status move drains PP over many turns and
   lets the enemy chip your mon down, without you accidentally killing it.
 
+## Session 2026-07-17 (later) — PC-withdraw sweep proven; PHASE 6 TEST LIST CLOSED
+
+`tools/mgba_scripts/pc_sweep_e2e.lua` (10/10): drives
+CharacterMode_SweepPartyToPC() — the exact call Cb2_ExitPSS makes on every
+storage-UI exit — via the new SWEEP_PARTY mailbox request against real
+party/PC state: off-roster mon with an on-roster companion → PC + compaction;
+LONE off-roster mon → the keptOne guard keeps it (party never emptied);
+on-roster mons untouched. The Cb2_ExitPSS→sweep link itself is a one-line
+code-verified hook (pokemon_storage_system.c:2010).
+
+**Test-data trap that burned the first version: rosters store CANONICAL
+FAMILY BASES.** "Is Pikachu on Falkner's roster" must be asked as "is PICHU
+on it" (it is — Falkner canonically owned one). Never pick "off-roster"
+control species by checking the literal species name; check the family base,
+or pick from a character verified to lack the whole family (Lance has
+neither the Pichu nor Meowth lines).
+
+**With this, every item on the Phase 6 verification list is closed.** Full
+suite on one build (commit this session): boot selftest 21/21,
+continue_smoke 2/2, catch_gate_e2e 14/14, starter_regression 6/6+6/6,
+johto_gym_e2e 13/13, gigaton_reselect_e2e 9/9, pc_sweep_e2e 10/10.
+What remains outside the suite is only what always was: reconstructed RNG
+skill magnitudes (user play-testing is the arbiter), pixel-level rendering
+(Shed Tail doll visual, battle text appearance), and the needs-art items
+(back sprites, Johto trainer-card badge row).
+
 ## Session 2026-07-17 (later) — Gigaton Hammer re-selection gate PROVEN headlessly
 
 `tools/mgba_scripts/gigaton_reselect_e2e.lua` (9/9, ~2 s) closes the "needs
@@ -234,10 +260,10 @@ late-armed breakpoint (`MGBA_HEADLESS_DEBUGGER=1`) on CanThrowLastUsedBall:
 it was never called. Fix: interleave B taps with the key under test. Full
 gotcha list in `tools/mgba_scripts/README.md`.
 
-**Still open for Phase 6**: a driven PC-deposit/withdraw sweep check
-(pokemon_storage_system.c:2010) if we want it belt-and-braces.
-(Starter-rule regression, Johto-leader-as-player, and the Gigaton Hammer
-re-selection gate: ALL DONE, see the "later" sessions above.)
+**Phase 6 verification list: CLOSED 2026-07-17** — starter-rule regression,
+Johto-leader-as-player, Gigaton Hammer re-selection gate, and the
+PC-withdraw sweep are all proven headlessly (see the "later" sessions
+above). The 8-test suite is the regression gate for any future change.
 
 ## Session 2026-07-16 (evening) — Lazarus port-backs + Phase 6 underway
 

@@ -77,6 +77,9 @@ enum
                              // drive can wedge on.
     CM_REQ_SET_MON_MOVE,   // argA: party slot | (move slot << 8),
                            // argB: move id. PP is set to 10.
+    CM_REQ_SWEEP_PARTY,    // run CharacterMode_SweepPartyToPC() (the exact
+                           // call Cb2_ExitPSS makes on leaving the storage
+                           // UI); result = party count after the sweep
 };
 
 enum
@@ -301,6 +304,10 @@ void CharacterMode_PumpTestMailbox(void)
     case CM_REQ_SET_BATTLE_STYLE:
         gSaveBlock2Ptr->optionsBattleStyle = mb->argA;
         mb->result = gSaveBlock2Ptr->optionsBattleStyle;
+        break;
+    case CM_REQ_SWEEP_PARTY:
+        CharacterMode_SweepPartyToPC();
+        mb->result = CalculatePlayerPartyCount();
         break;
     case CM_REQ_SET_MON_MOVE:
         {
