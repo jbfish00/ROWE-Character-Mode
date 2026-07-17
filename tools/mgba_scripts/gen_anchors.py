@@ -36,6 +36,7 @@ SYMBOLS = [
     "BattleScript_CharacterBallBlock",
     "gTestMenuPtr",
     "CB2_StartWallClock",
+    "Common_Eventscript_Gym_Leader_Falkner",
 ]
 
 

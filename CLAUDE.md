@@ -109,6 +109,36 @@ Recurring traps (all handled inside the scripts — keep it that way):
 - **Nasty Plot is the ideal PP-burner**: a status move drains PP over many turns and
   lets the enemy chip your mon down, without you accidentally killing it.
 
+## Session 2026-07-17 (later) — Johto-leader-as-player gym e2e GREEN
+
+`tools/mgba_scripts/johto_gym_e2e.lua` (13/13, ~6 s): plays AS Falkner
+(character 28) and beats FALKNER'S OWN gym script end to end. Proven live:
+the leader script completes with the player set to that same leader, the
+badge chain fires (FLAG_BADGE09_GET + count-based FLAG_GOT_BADGE_01 +
+VAR_NUM_BADGES 0→1), the gift gate still discriminates while playing a Johto
+leader (Lv100 Aerodactyl → party, Meowth → PC), and the gym rewards leave
+the party untouched. Static audit closes the rest of the class: NO gym
+script reads FLAG_CHARACTER_MODE / VAR_CHARACTER_ID / any CM special (the
+intro truck script is the only CM reader in all of data/), and all 8 Johto
+leaders share the same generated first-victory pattern
+(trainerbattle_no_intro → setflag(FLAG_BADGE_N_GET) →
+Special_Gym_EventScript_Give_Item), so the Falkner proof generalizes.
+
+New mailbox requests (character_mode_selftest.c): RUN_SCRIPT (argA/argB =
+script address lo/hi 16 — any global script label in the map is directly
+invokable from the overworld; trainerbattle works from any map, faceplayer
+no-ops without a selected object), SET_MON_HP (SetMonData; hp 0 makes a
+scripted battle auto-send the next mon — beats driving the switch UI), and
+SET_BATTLE_STYLE (SET kills the "will you switch?" prompt a blind battle
+drive can wedge on). Battle drive idiom: steer gActionSelectionCursor to
+FIGHT (0: A, 1: LEFT, else UP) and A the first move — check the gifted
+species' last-4 learnset moves are all damaging first (Aerodactyl:
+Fly/Rock Slide/Hyper Beam/Giga Impact).
+
+NB when chaining suite runs in one bash call: every headless run burns its
+FULL `timeout` (H.finish never stops the emulator), so the outer command
+timeout must exceed the SUM of the inner ones.
+
 ## Session 2026-07-17 (later) — starter-rule regression GREEN (headless NEW-GAME intro drive)
 
 `tools/mgba_scripts/starter_regression.lua` now drives a REAL new game from
@@ -174,10 +204,10 @@ it was never called. Fix: interleave B taps with the key under test. Full
 gotcha list in `tools/mgba_scripts/README.md`.
 
 **Still open for Phase 6**: Gigaton Hammer re-selection UI check (30 s visual
-vs a multi-mon trainer — needs eyes), Johto-leader-as-player vs their gym
-scripts, and a driven PC-deposit/withdraw sweep check
-(pokemon_storage_system.c:2010) if we want it belt-and-braces.
-(Starter-rule regression: DONE, see the "later" session above.)
+vs a multi-mon trainer — needs eyes), and a driven PC-deposit/withdraw sweep
+check (pokemon_storage_system.c:2010) if we want it belt-and-braces.
+(Starter-rule regression and Johto-leader-as-player: DONE, see the "later"
+sessions above.)
 
 ## Session 2026-07-16 (evening) — Lazarus port-backs + Phase 6 underway
 

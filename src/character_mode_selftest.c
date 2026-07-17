@@ -68,6 +68,13 @@ enum
                            // (0 for an empty/out-of-range slot)
     CM_REQ_QUERY_FLAG,     // argA: flag id. result = FlagGet(argA)
     CM_REQ_QUERY_VAR,      // argA: var id. result = VarGet(argA)
+    CM_REQ_RUN_SCRIPT,     // argA: script address low 16, argB: high 16.
+                           // Rejected while another script holds the lock.
+    CM_REQ_SET_MON_HP,     // argA: party slot, argB: hp (0 faints the mon,
+                           // e.g. so a scripted battle auto-sends the next)
+    CM_REQ_SET_BATTLE_STYLE, // argA: 0 = SHIFT, 1 = SET. SET kills the
+                             // "will you switch?" prompt a blind battle
+                             // drive can wedge on.
 };
 
 enum
@@ -271,6 +278,27 @@ void CharacterMode_PumpTestMailbox(void)
         break;
     case CM_REQ_QUERY_VAR:
         mb->result = VarGet(mb->argA);
+        break;
+    case CM_REQ_RUN_SCRIPT:
+        if (ScriptContext2_IsEnabled())
+        {
+            mb->request = CM_REQ_NONE;
+            mb->status = CM_STATUS_REJECTED;
+            return;
+        }
+        ScriptContext1_SetupScript((const u8 *)((u32)mb->argA | ((u32)mb->argB << 16)));
+        break;
+    case CM_REQ_SET_MON_HP:
+        if (mb->argA < PARTY_SIZE)
+        {
+            u16 hp = mb->argB;
+            SetMonData(&gPlayerParty[mb->argA], MON_DATA_HP, &hp);
+            mb->result = GetMonData(&gPlayerParty[mb->argA], MON_DATA_HP, NULL);
+        }
+        break;
+    case CM_REQ_SET_BATTLE_STYLE:
+        gSaveBlock2Ptr->optionsBattleStyle = mb->argA;
+        mb->result = gSaveBlock2Ptr->optionsBattleStyle;
         break;
     }
     mb->request = CM_REQ_NONE;
