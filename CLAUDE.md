@@ -109,6 +109,43 @@ Recurring traps (all handled inside the scripts — keep it that way):
 - **Nasty Plot is the ideal PP-burner**: a status move drains PP over many turns and
   lets the enemy chip your mon down, without you accidentally killing it.
 
+## Session 2026-07-17 (later) — starter-rule regression GREEN (headless NEW-GAME intro drive)
+
+`tools/mgba_scripts/starter_regression.lua` now drives a REAL new game from
+erased flash to the Littleroot overworld headlessly (~3 s wall), both paths:
+- `CM_PATH=red`: questions menu → Character Mode (index 2) → START commits the
+  default Gen I/Red pick. Proven: the starter is granted AT COMMIT (party
+  0→1), the intro's generic starter menu is SKIPPED (party still exactly 1 on
+  the field — the historical double-starter bug), slot 0 = Pikachu Lv10,
+  FLAG_CHARACTER_MODE + VAR_CHARACTER_ID=1 + FLAG_SYS_POKEMON_GET all set. 6/6.
+- `CM_PATH=normal`: Start Game at index 3 (regression-covers the documented
+  questions-menu index drift), generic menu case 0 → Meowth Lv10, CM flag/var
+  clear, party exactly 1. 6/6.
+
+Enablers (all reusable for future intro drives):
+- **`gTestMenuPtr` (src/menu.c)** exports static `sMenu` to the linker map, so
+  Lua navigates multichoices CLOSED-LOOP (read cursorPos/maxCursorPos at +2/+4,
+  steer, poison maxCursorPos to 0x7F after consuming a menu so a stale value
+  can't satisfy the next wait). Blind key-counts are what the old macro needed.
+- **Mailbox grew 3 query requests** (character_mode_selftest.c): QUERY_PARTY_MON
+  (slot → level<<16|species — party RAM is encrypted, don't parse it), QUERY_FLAG,
+  QUERY_VAR.
+- **The wall clock is an A-mash trap**: its "Is this correct?" yes/no defaults
+  to NO, so pure A cycles open-confirm→pick-NO forever. The driver detects the
+  clock by CB2 range (CB2_WallClock is static; test `cb2 - CB2_StartWallClock
+  < 0x800`) and UPs the cursor to YES, with an A fallback when the sMenu read
+  is stale.
+- **FLAG_SYS_POKEMON_GET is 3280, not the 0x860 the flags.h comment says** —
+  MAX_TRAINERS_COUNT 2000 moved SYSTEM_FLAGS. Never trust the flag-comment
+  hex; resolve with cpp.
+- Boot→questions is a plain A-mash with an occasional START (finishes the
+  naming screen: A fills the buffer, START jumps to OK; START is inert in
+  dialogue/multichoices). An A landing the frame the questions menu opens
+  picks Game Level — harmless, the mash returns to the questions menu.
+
+Suite after the change (rebuild + gen_anchors.py first): boot_smoke 21/21,
+continue_smoke 2/2, catch_gate_e2e 14/14, starter_regression 6/6 + 6/6.
+
 ## Session 2026-07-17 — battle e2e GREEN: catch gate + gift gate proven live
 
 The big Phase 6 item is closed. `tools/mgba_scripts/catch_gate_e2e.lua` proves,
@@ -137,10 +174,10 @@ it was never called. Fix: interleave B taps with the key under test. Full
 gotcha list in `tools/mgba_scripts/README.md`.
 
 **Still open for Phase 6**: Gigaton Hammer re-selection UI check (30 s visual
-vs a multi-mon trainer — needs eyes), starter-rule regression (needs a
-headless NEW-GAME intro drive through the mode menu), Johto-leader-as-player
-vs their gym scripts, and a driven PC-deposit/withdraw sweep check
+vs a multi-mon trainer — needs eyes), Johto-leader-as-player vs their gym
+scripts, and a driven PC-deposit/withdraw sweep check
 (pokemon_storage_system.c:2010) if we want it belt-and-braces.
+(Starter-rule regression: DONE, see the "later" session above.)
 
 ## Session 2026-07-16 (evening) — Lazarus port-backs + Phase 6 underway
 

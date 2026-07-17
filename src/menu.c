@@ -52,6 +52,9 @@ struct Menu
 static EWRAM_DATA u8 sStartMenuWindowId = 0;
 static EWRAM_DATA u8 sMapNamePopupWindowId = 0;
 static EWRAM_DATA struct Menu sMenu = {0};
+// Headless-harness anchor (tools/mgba_scripts): the intro-drive tests read the
+// live multichoice cursor out of sMenu, and statics never reach the linker map.
+struct Menu *const gTestMenuPtr = &sMenu;
 static EWRAM_DATA u16 sTileNum = 0;
 static EWRAM_DATA u8 sPaletteNum = 0;
 static EWRAM_DATA u8 sYesNoWindowId = 0;

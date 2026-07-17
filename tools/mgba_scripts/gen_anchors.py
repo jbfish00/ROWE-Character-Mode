@@ -34,6 +34,8 @@ SYMBOLS = [
     "gBattlescriptCurrInstr",
     "gActionSelectionCursor",
     "BattleScript_CharacterBallBlock",
+    "gTestMenuPtr",
+    "CB2_StartWallClock",
 ]
 
 

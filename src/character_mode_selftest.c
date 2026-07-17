@@ -4,6 +4,7 @@
 #include "event_data.h"
 #include "item.h"
 #include "mgba.h"
+#include "pokemon.h"
 #include "script.h"
 #include "script_pokemon_util.h"
 #include "constants/species.h"
@@ -63,6 +64,10 @@ enum
                            // returns to the field with the script lock still held
     CM_REQ_QUERY_BALL,     // argA: item id. result = lastUsedBall << 16
                            //   | CanThrowLastUsedBall() << 1 | CheckBagHasItem(argA, 1)
+    CM_REQ_QUERY_PARTY_MON,// argA: party slot. result = level << 16 | species
+                           // (0 for an empty/out-of-range slot)
+    CM_REQ_QUERY_FLAG,     // argA: flag id. result = FlagGet(argA)
+    CM_REQ_QUERY_VAR,      // argA: var id. result = VarGet(argA)
 };
 
 enum
@@ -255,6 +260,17 @@ void CharacterMode_PumpTestMailbox(void)
         mb->result = ((u32)gSaveBlock2Ptr->lastUsedBall << 16)
                    | (CanThrowLastUsedBall() ? 2 : 0)
                    | (CheckBagHasItem(mb->argA, 1) ? 1 : 0);
+        break;
+    case CM_REQ_QUERY_PARTY_MON:
+        if (mb->argA < PARTY_SIZE)
+            mb->result = ((u32)GetMonData(&gPlayerParty[mb->argA], MON_DATA_LEVEL, NULL) << 16)
+                       | GetMonData(&gPlayerParty[mb->argA], MON_DATA_SPECIES, NULL);
+        break;
+    case CM_REQ_QUERY_FLAG:
+        mb->result = FlagGet(mb->argA);
+        break;
+    case CM_REQ_QUERY_VAR:
+        mb->result = VarGet(mb->argA);
         break;
     }
     mb->request = CM_REQ_NONE;
