@@ -109,6 +109,78 @@ Recurring traps (all handled inside the scripts — keep it that way):
 - **Nasty Plot is the ideal PP-burner**: a status move drains PP over many turns and
   lets the enemy chip your mon down, without you accidentally killing it.
 
+## Session 2026-07-16 (evening) — Lazarus port-backs + Phase 6 underway
+
+Everything build-clean and committed (42d5ab83..168721c0). What changed:
+
+- **Two Character Mode acquisition bypasses closed** (the Lazarus give-path
+  audit, ported back): egg hatch now sweeps (gift eggs — Water Labyrinth
+  Togepi, mevent Pichu — hatched off-roster and STAYED); the daycare hands
+  over a HATCHED baby (`isEgg = FALSE`, direct party write) so it bypassed the
+  gift gate entirely, and cross-family offspring (Nidoran-M from Nidoran-F,
+  Volbeat from Illumise) can be off-roster even from allowed parents — swept
+  now. Audited-and-fine: wonder trade (trade scene sweeps on exit),
+  GiveMonFromRam (debug-only), Shedinja spawn, mystery gift (own gate).
+- **Family canonicalization fixed across forms+evolution**
+  (`CharacterMode_FamilyBase`, fixpoint of GetBaseFormSpeciesId ∘
+  GetFirstEvolution). The old one-shot version made family members
+  canonicalize to different species: Ash could keep Sirfetch'd but not catch
+  Galarian Farfetch'd; **Rika/Katy/Larry/Tulip couldn't obtain their signature
+  Clodsire line at all**. `map_species.py` now mirrors the exact same
+  canonicalization; characters.h regenerated (Galarian entries → base species,
+  Clodsire → Wooper; regional-form signatures kept verbatim as starters —
+  Piers starts with Galarian Zigzagoon). Accepted consequence: regional
+  variants share their base species' family. `tools/character_mode/
+  audit_rosters.py` proves the data invariant offline (exit 1 on any dead
+  entry) — run it after ANY roster or evolution-data change.
+- **In-ROM boot self-test + headless mGBA harness** (`src/
+  character_mode_selftest.c`, `tools/mgba_scripts/`) — see Testing below.
+- **Shed Tail's substitute doll now renders on the switch-in**
+  (TrySetBehindSubstituteSpriteBit only matched MOVE_SUBSTITUTE; the script
+  side was already right). Closes the cosmetic follow-up noted under the
+  battle-port review. Code-verified + build-clean; visual confirm is a
+  10-second check next time anyone drives a Shed Tail battle.
+- Makefile: `tools/mgba_scripts` filtered out of TOOLDIRS (a new tools/ dir
+  otherwise gets built as a C tool and breaks `make`).
+
+**Still open for Phase 6**: live catch-block/gift-sweep/PC-sweep e2e in a real
+battle (headless intro drive not yet scripted), the Gigaton Hammer re-selection
+UI check (30 seconds in any playthrough vs a multi-mon trainer), starter-rule
+regression, Johto-leader-as-player vs their gym scripts.
+
+## Testing, the fast way (2026-07-16): headless harness + in-ROM self-test
+
+**For anything that doesn't need pixels, do NOT drive mgba-qt with xdotool
+anymore.** `tools/mgba_scripts/` (ported back from Lazarus/Seaglass) runs the
+ROM headlessly with frame-exact scripted input and RAM assertions at exact
+linker-map addresses:
+
+```bash
+python3 tools/mgba_scripts/gen_anchors.py    # refresh anchors after a build
+timeout 120 "../Character Hacks/Seaglass-Character-Mode/tools/mgba_src/build/mgba-headless" \
+    --script tools/mgba_scripts/boot_smoke.lua pokeemerald.gba > /tmp/t.log 2>&1
+grep -E "CM-SELFTEST|RESULT" /tmp/t.log
+```
+
+- `boot_smoke.lua` reads the **in-ROM self-test** (`src/character_mode_selftest.c`):
+  21 checks of FamilyBase/gate/roster-coverage run by the real in-ROM code at
+  every boot **under mGBA only** (`mgba_open()` gates it; zero cost on
+  hardware). Result also lands in `gCharacterModeSelftestResult` (EWRAM).
+- `continue_smoke.lua` proves save→Continue→overworld. **The headless build
+  does NOT auto-load .sav sidecars** — it boots with erased flash, which looks
+  exactly like "the save is corrupt". Use `emu:loadSaveFile(path, false)` +
+  `emu:reset()` (the script does; pass `CM_SAV=<path>`).
+- Gotchas: `H.finish()` doesn't stop the emulator (always `timeout`); never
+  pipe headless output through grep (redirect, then grep); ~1800 fps so bound
+  every wait by frame count; `MGBA_HEADLESS_DEBUGGER=1` needed before
+  `H.breakpoint` works at all.
+- Judge "reached the field" by `gMain.callback2 == CB2_Overworld+1`, not by
+  party count — the party populates during save staging on the copyright
+  screen, hundreds of frames before Continue.
+
+xdotool/mgba-qt (below) remains for visual checks and anything needing the
+user's eyes.
+
 ## Current state (2026-07-11)
 
 Phases 1-4 (partially) COMMITTED and build-clean. `git log --oneline -15`.
@@ -360,9 +432,10 @@ Oddish on Route 101: Shed Tail cost exactly maxHP/4 (40->27 of 53), and after th
 switch an mGBA savestate parse showed the switch-in Zigzagoon holding
 `status2 = 0x01000000` (exactly STATUS2_SUBSTITUTE) and `substituteHP = 13` —
 the doll transferred with the right HP. Before the fix both were 0.
-**Cosmetic follow-up:** the substitute DOLL SPRITE did not render on the switch-in
-(Zigzagoon's own sprite showed) even though the sub is mechanically live — check
-the controller's behindSubstitute handling on the Shed Tail switch-in path someday.
+**Cosmetic follow-up — FIXED 2026-07-16:** the substitute doll didn't render on
+the switch-in because TrySetBehindSubstituteSpriteBit only matched
+MOVE_SUBSTITUTE (battle_gfx_sfx_util.c); it now also matches MOVE_SHED_TAIL.
+Visual confirm pending next Shed Tail drive.
 **Gigaton/Blood Moon selection gate: code-verified only** — it is a line-for-line
 mirror of the Torment selection block 20 lines above it in
 TrySetCantSelectMoveBattleScript. The UI proof needs a MULTI-mon opponent (a wild
