@@ -27,6 +27,7 @@ SYMBOLS = [
     "gPokemonStoragePtr",
     "gCharacters",
     "gMain",
+    "CB2_Overworld",
 ]
 
 
