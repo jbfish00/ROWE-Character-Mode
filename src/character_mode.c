@@ -4,6 +4,7 @@
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
 #include "level_scaling.h"
+#include "random.h"
 #include "constants/species.h"
 #include "constants/flags.h"
 #include "constants/vars.h"
@@ -182,4 +183,169 @@ void CharacterMode_SweepPartyToPC(void)
 u8 IsPlayerInCharacterMode(void)
 {
     return InCharacterMode();
+}
+
+// --- Wild encounter roster override -----------------------------------
+//
+// Character Mode gives every wild-encounter roll (grass/cave, surf, rock
+// smash, headbutt/cut, and all fishing rods -- anything that draws a
+// species out of a WildPokemonInfo table; see wild_encounter.c's
+// TryGenerateWildMon/GenerateFishingWildMon) a 10% chance to be replaced by
+// a random, level-appropriate member of the active character's roster.
+// Legendaries/mythicals/Ultra Beasts never come out of this roll -- they
+// stay route/story-only, exactly like the catch gate already keeps them.
+
+#define WILD_OVERRIDE_CHANCE_PERCENT 10
+
+// Same set as tools/character_mode/emit_characters.py's LEGENDARY_BASES --
+// keep the two in sync by hand if either changes. That script uses this set
+// to keep these species off starter offers; here it keeps them off the wild
+// roster-override roll for the same reason (they're meant to stay
+// route/story encounters, not something that turns up while grinding).
+static const u16 sLegendaryFamilyBases[] =
+{
+    SPECIES_ARTICUNO, SPECIES_ZAPDOS, SPECIES_MOLTRES, SPECIES_MEWTWO, SPECIES_MEW,
+    SPECIES_RAIKOU, SPECIES_ENTEI, SPECIES_SUICUNE, SPECIES_LUGIA, SPECIES_HO_OH, SPECIES_CELEBI,
+    SPECIES_REGIROCK, SPECIES_REGICE, SPECIES_REGISTEEL, SPECIES_LATIAS, SPECIES_LATIOS,
+    SPECIES_KYOGRE, SPECIES_GROUDON, SPECIES_RAYQUAZA, SPECIES_JIRACHI, SPECIES_DEOXYS,
+    SPECIES_UXIE, SPECIES_MESPRIT, SPECIES_AZELF, SPECIES_DIALGA, SPECIES_PALKIA, SPECIES_HEATRAN,
+    SPECIES_REGIGIGAS, SPECIES_GIRATINA, SPECIES_CRESSELIA, SPECIES_PHIONE, SPECIES_MANAPHY,
+    SPECIES_DARKRAI, SPECIES_SHAYMIN, SPECIES_ARCEUS,
+    SPECIES_VICTINI, SPECIES_COBALION, SPECIES_TERRAKION, SPECIES_VIRIZION, SPECIES_TORNADUS,
+    SPECIES_THUNDURUS, SPECIES_RESHIRAM, SPECIES_ZEKROM, SPECIES_LANDORUS, SPECIES_KYUREM,
+    SPECIES_KELDEO, SPECIES_MELOETTA, SPECIES_GENESECT,
+    SPECIES_XERNEAS, SPECIES_YVELTAL, SPECIES_ZYGARDE, SPECIES_DIANCIE, SPECIES_HOOPA, SPECIES_VOLCANION,
+    SPECIES_TYPE_NULL, SPECIES_TAPU_KOKO, SPECIES_TAPU_LELE, SPECIES_TAPU_BULU, SPECIES_TAPU_FINI,
+    SPECIES_COSMOG, SPECIES_NECROZMA, SPECIES_MAGEARNA, SPECIES_MARSHADOW, SPECIES_ZERAORA, SPECIES_MELTAN,
+    SPECIES_NIHILEGO, SPECIES_BUZZWOLE, SPECIES_PHEROMOSA, SPECIES_XURKITREE, SPECIES_CELESTEELA,
+    SPECIES_KARTANA, SPECIES_GUZZLORD, SPECIES_POIPOLE, SPECIES_STAKATAKA, SPECIES_BLACEPHALON,
+    SPECIES_ZACIAN, SPECIES_ZAMAZENTA, SPECIES_ETERNATUS, SPECIES_KUBFU, SPECIES_ZARUDE,
+    SPECIES_REGIELEKI, SPECIES_REGIDRAGO, SPECIES_GLASTRIER, SPECIES_SPECTRIER, SPECIES_CALYREX, SPECIES_ENAMORUS,
+    SPECIES_WO_CHIEN, SPECIES_CHIEN_PAO, SPECIES_TING_LU, SPECIES_CHI_YU, SPECIES_KORAIDON, SPECIES_MIRAIDON,
+    SPECIES_OKIDOGI, SPECIES_MUNKIDORI, SPECIES_FEZANDIPITI, SPECIES_OGERPON, SPECIES_TERAPAGOS, SPECIES_PECHARUNT,
+};
+
+bool8 CharacterMode_IsLegendaryOrMythical(u16 species)
+{
+    u16 base = CharacterMode_FamilyBase(species);
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(sLegendaryFamilyBases); i++)
+    {
+        if (sLegendaryFamilyBases[i] == base)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+// Level assumed for evolutions whose trigger isn't level-based (item, trade,
+// friendship, beauty, ...) -- those methods don't carry a real level number,
+// so a canon mid-game breakpoint stands in per evolution depth (most 1st
+// evolutions land around Lv.16, most 2nd ones around Lv.32-40 across the
+// vanilla games this hack is built on).
+static const u8 sEvoDepthFallbackLevel[EVOS_PER_MON] = {16, 32, 40, 48, 56, 64, 72, 80, 88, 96};
+
+static bool8 IsLevelBasedEvoMethod(u16 method)
+{
+    switch (method)
+    {
+    case EVO_LEVEL:
+    case EVO_LEVEL_ATK_GT_DEF:
+    case EVO_LEVEL_ATK_EQ_DEF:
+    case EVO_LEVEL_ATK_LT_DEF:
+    case EVO_LEVEL_SILCOON:
+    case EVO_LEVEL_CASCOON:
+    case EVO_LEVEL_NINJASK:
+    case EVO_LEVEL_SHEDINJA:
+    case EVO_LEVEL_FEMALE:
+    case EVO_LEVEL_MALE:
+    case EVO_LEVEL_NIGHT:
+    case EVO_LEVEL_DAY:
+    case EVO_LEVEL_DUSK:
+    case EVO_LEVEL_RAIN:
+    case EVO_LEVEL_DARK_TYPE_MON_IN_PARTY:
+    case EVO_LEVEL_NIGHT_ALOLA:
+    case EVO_LEVEL_SEVII:
+    case EVO_LEVEL_NOT_SEVII:
+        return TRUE;
+    default:
+        return FALSE;
+    }
+}
+
+// Walks a family forward from `species` (normally a roster family base),
+// evolving one stage at a time for as long as `level` clears the next
+// stage's evolution requirement. Always lands on *some* stage (the base
+// itself at worst), which is the "closest available stage" fallback the
+// spec asks for -- there's no such thing as a level with no fit since stage
+// 0 always covers levels down to 1. Branching families (Eevee, Wurmple,
+// Tyrogue, ...) pick uniformly at random among whichever branches qualify
+// at the current level; there's no "best" branch by level alone.
+u16 CharacterMode_PickEvolutionStageForLevel(u16 species, u8 level)
+{
+    u32 depth;
+
+    for (depth = 0; depth < EVOS_PER_MON; depth++)
+    {
+        u16 candidates[EVOS_PER_MON];
+        u8 candidateCount = 0;
+        u8 fallbackLevel = sEvoDepthFallbackLevel[depth];
+        u32 k;
+
+        for (k = 0; k < EVOS_PER_MON; k++)
+        {
+            u16 method = gEvolutionTable[species][k].method;
+            u16 target = gEvolutionTable[species][k].targetSpecies;
+            u16 requiredLevel;
+
+            if (target == SPECIES_NONE || target == species)
+                continue;
+            if (method == EVO_MEGA_EVOLUTION || method == EVO_MOVE_MEGA_EVOLUTION)
+                continue; // battle-only forms, not a real wild spawn stage
+
+            requiredLevel = IsLevelBasedEvoMethod(method)
+                          ? gEvolutionTable[species][k].param
+                          : fallbackLevel;
+            if (requiredLevel > level)
+                continue;
+
+            candidates[candidateCount++] = target;
+        }
+
+        if (candidateCount == 0)
+            break; // can't evolve any further at this level -- best fit found
+
+        species = candidates[Random() % candidateCount];
+    }
+
+    return species;
+}
+
+// Called from the wild-encounter species rolls (wild_encounter.c) right
+// after the normal table roll has picked a species+level. Returns
+// SPECIES_NONE if the override doesn't apply (mode off) or didn't fire (90%
+// of the time, or an all-legendary roster with nothing eligible) -- callers
+// keep the table's species in that case.
+u16 CharacterMode_RollWildOverrideSpecies(u8 level)
+{
+    const struct CharacterInfo *character = GetActiveCharacter();
+    u16 candidates[64];
+    u8 candidateCount = 0;
+    u32 i;
+
+    if (character == NULL)
+        return SPECIES_NONE;
+    if (Random() % 100 >= WILD_OVERRIDE_CHANCE_PERCENT)
+        return SPECIES_NONE;
+
+    for (i = 0; character->roster[i] != SPECIES_NONE && candidateCount < ARRAY_COUNT(candidates); i++)
+    {
+        if (!CharacterMode_IsLegendaryOrMythical(character->roster[i]))
+            candidates[candidateCount++] = character->roster[i];
+    }
+
+    if (candidateCount == 0)
+        return SPECIES_NONE;
+
+    return CharacterMode_PickEvolutionStageForLevel(candidates[Random() % candidateCount], level);
 }

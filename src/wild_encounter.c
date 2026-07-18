@@ -1,6 +1,7 @@
 #include "global.h"
 #include "level_scaling.h"
 #include "wild_encounter.h"
+#include "character_mode.h"
 #include "pokemon.h"
 #include "metatile_behavior.h"
 #include "fieldmap.h"
@@ -399,7 +400,17 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
     if (gMapHeader.mapLayoutId != LAYOUT_BATTLE_FRONTIER_BATTLE_PIKE_ROOM_WILD_MONS && flags & WILD_CHECK_KEEN_EYE && !IsAbilityAllowingEncounter(level))
         return FALSE;
 
-    CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
+    // Character Mode: 10% chance for the table's pick to be swapped for a
+    // level-appropriate, non-legendary member of the active character's
+    // roster. No-op (returns SPECIES_NONE) unless the mode is on.
+    {
+        u16 species = wildMonInfo->wildPokemon[wildMonIndex].species;
+        u16 overrideSpecies = CharacterMode_RollWildOverrideSpecies(level);
+
+        if (overrideSpecies != SPECIES_NONE)
+            species = overrideSpecies;
+        CreateWildMon(species, level);
+    }
     return TRUE;
 }
 
@@ -407,9 +418,16 @@ static u16 GenerateFishingWildMon(const struct WildPokemonInfo *wildMonInfo, u8 
 {
     u8 wildMonIndex = ChooseWildMonIndex_Fishing(rod);
     u8 level = ChooseWildMonLevel(&wildMonInfo->wildPokemon[wildMonIndex]);
+    u16 species = wildMonInfo->wildPokemon[wildMonIndex].species;
+    u16 overrideSpecies = CharacterMode_RollWildOverrideSpecies(level);
 
-    CreateWildMon(wildMonInfo->wildPokemon[wildMonIndex].species, level);
-    return wildMonInfo->wildPokemon[wildMonIndex].species;
+    // Character Mode: same 10% roster-override roll as the land/water/rock
+    // smash path above, for every fishing rod tier.
+    if (overrideSpecies != SPECIES_NONE)
+        species = overrideSpecies;
+
+    CreateWildMon(species, level);
+    return species;
 }
 
 static bool8 SetUpMassOutbreakEncounter(u8 flags)

@@ -39,6 +39,9 @@ bool8 IsSpeciesAllowedForCharacter(u16 species);
 void CharacterMode_SweepPartyToPC(void);
 bool8 CharacterMode_PartyHasAllowedMon(void);
 u16 CharacterMode_GetRosterSize(const struct CharacterInfo *character);
+bool8 CharacterMode_IsLegendaryOrMythical(u16 species);
+u16 CharacterMode_PickEvolutionStageForLevel(u16 species, u8 level);
+u16 CharacterMode_RollWildOverrideSpecies(u8 level);
 void CharacterMode_RunBootSelftest(void);
 void CharacterMode_PumpTestMailbox(void);
 

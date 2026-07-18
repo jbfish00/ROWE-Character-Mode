@@ -201,10 +201,51 @@ void CharacterMode_RunBootSelftest(void)
     Check("Red: out-of-range species blocked",
           IsSpeciesAllowedForCharacter(NUM_SPECIES) == FALSE);
 
+    // --- wild encounter roster override (10% swap, never a legendary) ---
+    Check("legendary check: Mewtwo flagged",
+          CharacterMode_IsLegendaryOrMythical(SPECIES_MEWTWO) == TRUE);
+    Check("legendary check: Pikachu not flagged",
+          CharacterMode_IsLegendaryOrMythical(SPECIES_PIKACHU) == FALSE);
+    Check("legendary check: Raichu (evolved form) not flagged",
+          CharacterMode_IsLegendaryOrMythical(SPECIES_RAICHU) == FALSE);
+
+    Check("stage pick: Bulbasaur at Lv.5 stays Bulbasaur",
+          CharacterMode_PickEvolutionStageForLevel(SPECIES_BULBASAUR, 5) == SPECIES_BULBASAUR);
+    Check("stage pick: Bulbasaur at Lv.20 becomes Ivysaur (evolves at 16)",
+          CharacterMode_PickEvolutionStageForLevel(SPECIES_BULBASAUR, 20) == SPECIES_IVYSAUR);
+    Check("stage pick: Bulbasaur at Lv.40 becomes Venusaur (Ivysaur evolves at 32)",
+          CharacterMode_PickEvolutionStageForLevel(SPECIES_BULBASAUR, 40) == SPECIES_VENUSAUR);
+
+    {
+        // Red's roster includes Articuno/Deoxys/Entei/Raikou/Regigigas/Suicune
+        // (6 legendaries) alongside ~23 ordinary members. 200 rolls at 10%
+        // fire close to certainly (P(zero fires) = 0.9^200 ~= 1.6e-10) and
+        // give the legendary exclusion many chances to fail if it's broken.
+        u32 trial, fired = 0;
+        bool8 anyLegendary = FALSE;
+
+        for (trial = 0; trial < 200; trial++)
+        {
+            u16 result = CharacterMode_RollWildOverrideSpecies(30);
+            if (result != SPECIES_NONE)
+            {
+                fired++;
+                if (CharacterMode_IsLegendaryOrMythical(result))
+                    anyLegendary = TRUE;
+            }
+        }
+        Check("wild override: fired at least once in 200 rolls at 10% (Red active)",
+              fired > 0);
+        Check("wild override: never produced a legendary/mythical",
+              anyLegendary == FALSE);
+    }
+
     FlagClear(FLAG_CHARACTER_MODE);
     VarSet(VAR_CHARACTER_ID, 0);
     Check("mode off: everything allowed",
           IsSpeciesAllowedForCharacter(SPECIES_MEOWTH) == TRUE);
+    Check("wild override: mode off never fires",
+          CharacterMode_RollWildOverrideSpecies(30) == SPECIES_NONE);
 
     if (savedFlag)
         FlagSet(FLAG_CHARACTER_MODE);
