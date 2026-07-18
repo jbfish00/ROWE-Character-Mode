@@ -46,3 +46,6 @@ tools/poryscript/
 *.gba
 *.elf
 *.map
+
+# Local Claude Code handoff notes (kept out of the public repo)
+CLAUDE.md
