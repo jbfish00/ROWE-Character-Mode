@@ -58,6 +58,14 @@ def species_display_names():
     return names
 
 
+def pretty(const):
+    """Readable name for a species that species_names.h has no string for
+    (Ursaluna, Wyrdeer, Basculegion, Overqwil: they exist as constants and are
+    reachable as evolutions, but the ported name table never got an entry).
+    Without this the docs print the raw SPECIES_ identifier."""
+    return const[len("SPECIES_"):].replace("_", " ").title()
+
+
 # Battle-only transformations, not evolutions: they live in gEvolutionTable but
 # a Charizard is still a final evolution. Counting them as children would drop
 # every mega-capable species out of the "final evolutions" list.
@@ -111,9 +119,20 @@ def national_dex_numbers():
     for m in re.finditer(r"#define (NATIONAL_DEX_\w+)\s+(\d+)",
                          read(os.path.join(TARGET, "include/constants/species.h"))):
         dex_consts[m.group(1)] = int(m.group(2))
+    pokemon_c = read(os.path.join(TARGET, "src/pokemon.c"))
     nums = {}
-    for m in re.finditer(r"SPECIES_TO_NATIONAL\((\w+)\)", read(os.path.join(TARGET, "src/pokemon.c"))):
+    for m in re.finditer(r"SPECIES_TO_NATIONAL\((\w+)\)", pokemon_c):
         nums["SPECIES_" + m.group(1)] = dex_consts.get("NATIONAL_DEX_" + m.group(1), 0)
+    # The Gen 9 port writes its rows the long way instead of via the macro;
+    # parsing only the macro leaves every Paldea species at dex 0, which shows
+    # up as sprite id 0 and as alphabetical rather than dex ordering.
+    for m in re.finditer(r"\[(SPECIES_\w+) - 1\]\s*=\s*(NATIONAL_DEX_\w+)", pokemon_c):
+        nums.setdefault(m.group(1), dex_consts.get(m.group(2), 0))
+    # Ursaluna, Wyrdeer, Basculegion and Overqwil were ported as evolution
+    # targets without a gSpeciesToNationalPokedexNum row at all; their dex
+    # constants do exist, so match them by name.
+    for const, num in dex_consts.items():
+        nums.setdefault("SPECIES_" + const[len("NATIONAL_DEX_"):], num)
     return nums
 
 
@@ -167,12 +186,12 @@ def main():
         finals = set()
         for base in info["species"]:
             finals |= finals_of(base)
-        ordered = sorted(finals, key=lambda s: (dex.get(s, 9999), names.get(s, s)))
+        ordered = sorted(finals, key=lambda s: (dex.get(s, 9999), names.get(s) or pretty(s)))
         chars.append({
             "name": menu_name,
             "gen": gen,
             "label": CATEGORY_LABEL.get(info["category"], info["category"].title()),
-            "finals": [(names.get(s, s), dex.get(s, 0)) for s in ordered],
+            "finals": [(names.get(s) or pretty(s), dex.get(s, 0)) for s in ordered],
         })
 
     by_gen = defaultdict(list)
