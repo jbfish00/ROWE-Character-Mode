@@ -180,3 +180,19 @@ Tulip            ow=-                                  front=-                  
 Grusha           ow=-                                  front=-                          back=-
 Arven            ow=-                                  front=-                          back=-
 Penny            ow=-                                  front=-                          back=-
+Victor           ow=-                                  front=-                          back=-
+Gloria           ow=-                                  front=-                          back=-
+Oak              ow=-                                  front=-                          back=-
+Elm              ow=-                                  front=-                          back=-
+Birch            ow=-                                  front=-                          back=-
+Rowan            ow=-                                  front=-                          back=-
+Juniper          ow=-                                  front=-                          back=-
+Sycamore         ow=-                                  front=-                          back=-
+Burnet           ow=-                                  front=-                          back=-
+Samson Oak       ow=-                                  front=-                          back=-
+Magnolia         ow=-                                  front=-                          back=-
+Sonia            ow=-                                  front=-                          back=-
+Laventon         ow=-                                  front=-                          back=-
+Cerise           ow=-                                  front=-                          back=-
+Sada             ow=-                                  front=-                          back=-
+Turo             ow=-                                  front=-                          back=-

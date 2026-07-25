@@ -5,10 +5,10 @@
 -- (src/character_mode_selftest.c, pumped by CB2_Overworld under mGBA only):
 --   1. SET_CHARACTER(1) = Red             -> InCharacterMode() == TRUE
 --   2. Master Ball into the bag + set as last-used ball (R = quick throw)
---   3. WILD_BATTLE Meowth (off-roster)    -> R throw lands in
+--   3. WILD_BATTLE Poochyena (off-roster)    -> R throw lands in
 --      BattleScript_CharacterBallBlock, battle does NOT end in a catch
 --   4. WILD_BATTLE Pikachu (on-roster)    -> R throw catches (outcome 7)
---   5. GIVE_MON Meowth  (off-roster gift) -> routed to the PC
+--   5. GIVE_MON Poochyena  (off-roster gift) -> routed to the PC
 --   6. GIVE_MON Pikachu (on-roster gift)  -> party if there is room
 --
 -- Run:
@@ -32,7 +32,11 @@ emu:reset()
 -- ---------------------------------------------------------------- constants
 
 local SPECIES_PIKACHU  = 25
-local SPECIES_MEOWTH   = 52
+-- Off-roster control. This was Meowth until 2026-07-24, when the roster sync
+-- gave Red the Persian line (his researched rematch teams) and Meowth stopped
+-- being off-roster for him. Choose controls by FAMILY BASE and re-check them
+-- after any roster change: Poochyena is absent from Red, Falkner and Lance.
+local SPECIES_POOCHYENA = 261
 local ITEM_MASTER_BALL = 1
 
 local B_OUTCOME_CAUGHT = 7
@@ -163,25 +167,25 @@ mbStep("query quick-throw guard state", REQ_QUERY_BALL, ITEM_MASTER_BALL, 0, fun
     H.assertEq("lastUsedBall == Master Ball", math.floor(r / 65536), ITEM_MASTER_BALL)
 end)
 
--- 2. Off-roster catch attempt: Meowth, Master Ball -> must be BLOCKED.
-local partyBeforeMeowth = 0
+-- 2. Off-roster catch attempt: Poochyena, Master Ball -> must be BLOCKED.
+local partyBeforePoochyena = 0
 local sawBallBlock = false
 
-addStep("snapshot party before Meowth battle",
+addStep("snapshot party before Poochyena battle",
     nil,
     function()
-        partyBeforeMeowth = partyCount()
-        H.log("party count before Meowth battle = " .. partyBeforeMeowth)
+        partyBeforePoochyena = partyCount()
+        H.log("party count before Poochyena battle = " .. partyBeforePoochyena)
         return true
     end)
 
-mbStep("start wild battle vs Meowth", REQ_WILD_BATTLE, SPECIES_MEOWTH, 10)
+mbStep("start wild battle vs Poochyena", REQ_WILD_BATTLE, SPECIES_POOCHYENA, 10)
 
 -- NB the battle intro in this hack waits on a keypress before reaching the
 -- action menu (proven by breakpoint: R-only mashing never even CALLS
 -- CanThrowLastUsedBall). B advances the intro text and is a no-op at the
 -- action menu in singles, so interleave B (text) with R (quick throw).
-addStep("throw at Meowth, expect Character block",
+addStep("throw at Poochyena, expect Character block",
     function() sawBallBlock = false end,
     function(f)
         if inBattle() then
@@ -199,23 +203,23 @@ addStep("throw at Meowth, expect Character block",
             end
         end
         if f - stepStart > 20000 then
-            H.assertTrue("saw BattleScript_CharacterBallBlock vs Meowth", false)
+            H.assertTrue("saw BattleScript_CharacterBallBlock vs Poochyena", false)
             return true
         end
         return false
     end)
 
-addStep("escape the Meowth battle",
+addStep("escape the Poochyena battle",
     nil,
     function(f)
         if not inBattle() and onField() then
             emu:clearKey(H.KEY.B)
             local outcome = H.rd8(H.anchors.gBattleOutcome)
-            H.assertTrue("saw BattleScript_CharacterBallBlock vs Meowth", sawBallBlock)
-            H.assertTrue("Meowth battle did NOT end in a catch (outcome " ..
+            H.assertTrue("saw BattleScript_CharacterBallBlock vs Poochyena", sawBallBlock)
+            H.assertTrue("Poochyena battle did NOT end in a catch (outcome " ..
                          outcome .. ")", outcome ~= B_OUTCOME_CAUGHT)
             H.assertEq("party count unchanged after blocked throw",
-                       partyCount(), partyBeforeMeowth)
+                       partyCount(), partyBeforePoochyena)
             return true
         end
         -- Run: steer the action cursor to bottom-right (Run = 3) and confirm.
@@ -241,7 +245,7 @@ addStep("escape the Meowth battle",
             end
         end
         if f - stepStart > 20000 then
-            H.assertTrue("escaped the Meowth battle before deadline", false)
+            H.assertTrue("escaped the Poochyena battle before deadline", false)
             return true
         end
         return false
@@ -319,8 +323,8 @@ addStep("snapshot party before gifts",
         return true
     end)
 
-mbStep("gift an off-roster Meowth", REQ_GIVE_MON, SPECIES_MEOWTH, 10, function()
-    H.assertEq("off-roster gift Meowth routed to PC",
+mbStep("gift an off-roster Poochyena", REQ_GIVE_MON, SPECIES_POOCHYENA, 10, function()
+    H.assertEq("off-roster gift Poochyena routed to PC",
                mbResult(), MON_GIVEN_TO_PC)
     H.assertEq("party count unchanged by off-roster gift",
                partyCount(), partyBeforeGifts)

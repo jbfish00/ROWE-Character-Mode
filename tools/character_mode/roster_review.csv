@@ -180,11 +180,18 @@ Arven,rival,SPECIES_SHELLDER,Y
 Arven,rival,SPECIES_SKWOVET,Y
 Arven,rival,SPECIES_TATSUGIRI,Y
 Arven,rival,SPECIES_TOEDSCOOL,Y
+Ash,anime,SPECIES_AIPOM,Y
 Ash,anime,SPECIES_BERGMITE,Y
+Ash,anime,SPECIES_BUIZEL,Y
+Ash,anime,SPECIES_BULBASAUR,Y
+Ash,anime,SPECIES_CATERPIE,Y
 Ash,anime,SPECIES_CHARMANDER,Y
+Ash,anime,SPECIES_CHIKORITA,Y
 Ash,anime,SPECIES_CHIMCHAR,Y
 Ash,anime,SPECIES_CLOBBOPUS,Y
+Ash,anime,SPECIES_CORPHISH,Y
 Ash,anime,SPECIES_COSMOG,Y
+Ash,anime,SPECIES_CYNDAQUIL,Y
 Ash,anime,SPECIES_DARKRAI,Y
 Ash,anime,SPECIES_DRACOVISH,Y
 Ash,anime,SPECIES_DRATINI,Y
@@ -193,27 +200,57 @@ Ash,anime,SPECIES_FARFETCHD,Y
 Ash,anime,SPECIES_FROAKIE,Y
 Ash,anime,SPECIES_GASTLY,Y
 Ash,anime,SPECIES_GIBLE,Y
+Ash,anime,SPECIES_GLIGAR,Y
 Ash,anime,SPECIES_GOOMY,Y
+Ash,anime,SPECIES_GRIMER,Y
+Ash,anime,SPECIES_HAWLUCHA,Y
+Ash,anime,SPECIES_HERACROSS,Y
+Ash,anime,SPECIES_HOOTHOOT,Y
 Ash,anime,SPECIES_HOPPIP,Y
+Ash,anime,SPECIES_KRABBY,Y
+Ash,anime,SPECIES_LAPRAS,Y
+Ash,anime,SPECIES_LARVITAR,Y
 Ash,anime,SPECIES_LATIOS,Y
 Ash,anime,SPECIES_LITTEN,Y
 Ash,anime,SPECIES_LUGIA,Y
 Ash,anime,SPECIES_MACHOP,Y
 Ash,anime,SPECIES_MAGIKARP,Y
+Ash,anime,SPECIES_MANKEY,Y
 Ash,anime,SPECIES_MELTAN,Y
+Ash,anime,SPECIES_MIMEJR,Y
 Ash,anime,SPECIES_MIMIKYU,Y
+Ash,anime,SPECIES_MUNCHLAX,Y
 Ash,anime,SPECIES_MURKROW,Y
+Ash,anime,SPECIES_NOIBAT,Y
 Ash,anime,SPECIES_ODDISH,Y
+Ash,anime,SPECIES_OSHAWOTT,Y
+Ash,anime,SPECIES_PHANPY,Y
 Ash,anime,SPECIES_PICHU,Y
+Ash,anime,SPECIES_PIDGEY,Y
 Ash,anime,SPECIES_PIDOVE,Y
+Ash,anime,SPECIES_POIPOLE,Y
 Ash,anime,SPECIES_RESHIRAM,Y
 Ash,anime,SPECIES_RIOLU,Y
 Ash,anime,SPECIES_ROCKRUFF,Y
+Ash,anime,SPECIES_ROGGENROLA,Y
+Ash,anime,SPECIES_ROWLET,Y
+Ash,anime,SPECIES_SANDILE,Y
 Ash,anime,SPECIES_SCATTERBUG,Y
 Ash,anime,SPECIES_SCRAGGY,Y
+Ash,anime,SPECIES_SEWADDLE,Y
+Ash,anime,SPECIES_SNIVY,Y
+Ash,anime,SPECIES_SNORUNT,Y
+Ash,anime,SPECIES_SQUIRTLE,Y
 Ash,anime,SPECIES_STARLY,Y
 Ash,anime,SPECIES_TAILLOW,Y
+Ash,anime,SPECIES_TAUROS,Y
+Ash,anime,SPECIES_TEPIG,Y
 Ash,anime,SPECIES_TORCHIC,Y
+Ash,anime,SPECIES_TORKOAL,Y
+Ash,anime,SPECIES_TOTODILE,Y
+Ash,anime,SPECIES_TREECKO,Y
+Ash,anime,SPECIES_TURTWIG,Y
+Ash,anime,SPECIES_TYMPOLE,Y
 Ash,anime,SPECIES_YUNGOOS,Y
 Ash,anime,SPECIES_ZEKROM,Y
 Ash,anime,SPECIES_ZYGARDE,Y
@@ -291,6 +328,8 @@ Bertha,elite4,SPECIES_GLIGAR,Y
 Bertha,elite4,SPECIES_HIPPOPOTAS,Y
 Bertha,elite4,SPECIES_MAGBY,Y
 Bertha,elite4,SPECIES_NIDORAN_M,Y
+Bertha,elite4,SPECIES_ONIX,Y
+Bertha,elite4,SPECIES_PHANPY,Y
 Bertha,elite4,SPECIES_RHYHORN,Y
 Bertha,elite4,SPECIES_SEVIPER,Y
 Bertha,elite4,SPECIES_STARLY,Y
@@ -327,6 +366,37 @@ Bianca,rival,SPECIES_TIMBURR,Y
 Bianca,rival,SPECIES_TYNAMO,Y
 Bianca,rival,SPECIES_VIRIZION,Y
 Bianca,rival,SPECIES_ZORUA,Y
+Birch,professor,SPECIES_ARON,Y
+Birch,professor,SPECIES_BULBASAUR,Y
+Birch,professor,SPECIES_CHARMANDER,Y
+Birch,professor,SPECIES_CHIKORITA,Y
+Birch,professor,SPECIES_CHIMCHAR,Y
+Birch,professor,SPECIES_CLAMPERL,Y
+Birch,professor,SPECIES_CLEFFA,Y
+Birch,professor,SPECIES_CYNDAQUIL,Y
+Birch,professor,SPECIES_GIRATINA,Y
+Birch,professor,SPECIES_GRIMER,Y
+Birch,professor,SPECIES_JIRACHI,Y
+Birch,professor,SPECIES_MAGIKARP,Y
+Birch,professor,SPECIES_MUDKIP,Y
+Birch,professor,SPECIES_NINCADA,Y
+Birch,professor,SPECIES_OSHAWOTT,Y
+Birch,professor,SPECIES_PIPLUP,Y
+Birch,professor,SPECIES_POOCHYENA,Y
+Birch,professor,SPECIES_RAYQUAZA,Y
+Birch,professor,SPECIES_SEEDOT,Y
+Birch,professor,SPECIES_SNIVY,Y
+Birch,professor,SPECIES_SQUIRTLE,Y
+Birch,professor,SPECIES_TEPIG,Y
+Birch,professor,SPECIES_TORCHIC,Y
+Birch,professor,SPECIES_TOTODILE,Y
+Birch,professor,SPECIES_TREECKO,Y
+Birch,professor,SPECIES_TROPIUS,Y
+Birch,professor,SPECIES_TURTWIG,Y
+Birch,professor,SPECIES_WAILMER,Y
+Birch,professor,SPECIES_WINGULL,Y
+Birch,professor,SPECIES_WURMPLE,Y
+Birch,professor,SPECIES_ZIGZAGOON,Y
 Blaine,gymleader,SPECIES_ARTICUNO,Y
 Blaine,gymleader,SPECIES_CHARMANDER,Y
 Blaine,gymleader,SPECIES_CLEFFA,Y
@@ -470,6 +540,7 @@ Brock,gymleader,SPECIES_MAGIKARP,Y
 Brock,gymleader,SPECIES_MAGNEMITE,Y
 Brock,gymleader,SPECIES_MAREEP,Y
 Brock,gymleader,SPECIES_MIMEJR,Y
+Brock,gymleader,SPECIES_MUDKIP,Y
 Brock,gymleader,SPECIES_MUNCHLAX,Y
 Brock,gymleader,SPECIES_NIDORAN_M,Y
 Brock,gymleader,SPECIES_ODDISH,Y
@@ -601,6 +672,16 @@ Burgh,gymleader,SPECIES_TEPIG,Y
 Burgh,gymleader,SPECIES_TOGEPI,Y
 Burgh,gymleader,SPECIES_TYMPOLE,Y
 Burgh,gymleader,SPECIES_VENIPEDE,Y
+Burnet,professor,SPECIES_BRUXISH,Y
+Burnet,professor,SPECIES_COSMOG,Y
+Burnet,professor,SPECIES_GUZZLORD,Y
+Burnet,professor,SPECIES_JANGMO_O,Y
+Burnet,professor,SPECIES_MANTYKE,Y
+Burnet,professor,SPECIES_MUNCHLAX,Y
+Burnet,professor,SPECIES_NECROZMA,Y
+Burnet,professor,SPECIES_ROCKRUFF,Y
+Burnet,professor,SPECIES_TAPU_BULU,Y
+Burnet,professor,SPECIES_TYPE_NULL,Y
 Byron,gymleader,SPECIES_ANORITH,Y
 Byron,gymleader,SPECIES_ARON,Y
 Byron,gymleader,SPECIES_BRONZOR,Y
@@ -629,10 +710,13 @@ Caitlin,elite4,SPECIES_GIBLE,Y
 Caitlin,elite4,SPECIES_GOLETT,Y
 Caitlin,elite4,SPECIES_GOTHITA,Y
 Caitlin,elite4,SPECIES_MUNNA,Y
+Caitlin,elite4,SPECIES_PAWNIARD,Y
 Caitlin,elite4,SPECIES_RALTS,Y
 Caitlin,elite4,SPECIES_SABLEYE,Y
 Caitlin,elite4,SPECIES_SIGILYPH,Y
 Caitlin,elite4,SPECIES_SOLOSIS,Y
+Calem,protagonist,SPECIES_ABSOL,Y
+Calem,protagonist,SPECIES_BUNNELBY,Y
 Calem,protagonist,SPECIES_CHARMANDER,Y
 Calem,protagonist,SPECIES_CHESPIN,Y
 Calem,protagonist,SPECIES_EEVEE,Y
@@ -640,6 +724,7 @@ Calem,protagonist,SPECIES_ESPURR,Y
 Calem,protagonist,SPECIES_FENNEKIN,Y
 Calem,protagonist,SPECIES_FROAKIE,Y
 Calem,protagonist,SPECIES_GOLETT,Y
+Calem,protagonist,SPECIES_SCATTERBUG,Y
 Calem,protagonist,SPECIES_XERNEAS,Y
 Calem,protagonist,SPECIES_YVELTAL,Y
 Candice,gymleader,SPECIES_BUNEARY,Y
@@ -668,6 +753,18 @@ Candice,gymleader,SPECIES_STARLY,Y
 Candice,gymleader,SPECIES_SWINUB,Y
 Candice,gymleader,SPECIES_TURTWIG,Y
 Candice,gymleader,SPECIES_UXIE,Y
+Cerise,professor,SPECIES_BULBASAUR,Y
+Cerise,professor,SPECIES_CHARMANDER,Y
+Cerise,professor,SPECIES_CLEFFA,Y
+Cerise,professor,SPECIES_EEVEE,Y
+Cerise,professor,SPECIES_LUGIA,Y
+Cerise,professor,SPECIES_MEW,Y
+Cerise,professor,SPECIES_PIPLUP,Y
+Cerise,professor,SPECIES_ROTOM,Y
+Cerise,professor,SPECIES_SQUIRTLE,Y
+Cerise,professor,SPECIES_WEEDLE,Y
+Cerise,professor,SPECIES_YAMPER,Y
+Cerise,professor,SPECIES_ZUBAT,Y
 Cheren,gymleader,SPECIES_AXEW,Y
 Cheren,gymleader,SPECIES_BASCULIN,Y
 Cheren,gymleader,SPECIES_BOUFFALANT,Y
@@ -874,6 +971,7 @@ Colress,villain,SPECIES_FRILLISH,Y
 Colress,villain,SPECIES_GENESECT,Y
 Colress,villain,SPECIES_GOLETT,Y
 Colress,villain,SPECIES_GOTHITA,Y
+Colress,villain,SPECIES_GRIMER,Y
 Colress,villain,SPECIES_JOLTIK,Y
 Colress,villain,SPECIES_KARRABLAST,Y
 Colress,villain,SPECIES_KLINK,Y
@@ -884,6 +982,7 @@ Colress,villain,SPECIES_MIENFOO,Y
 Colress,villain,SPECIES_OSHAWOTT,Y
 Colress,villain,SPECIES_PICHU,Y
 Colress,villain,SPECIES_PIDOVE,Y
+Colress,villain,SPECIES_PORYGON,Y
 Colress,villain,SPECIES_PURRLOIN,Y
 Colress,villain,SPECIES_RALTS,Y
 Colress,villain,SPECIES_RESHIRAM,Y
@@ -896,8 +995,10 @@ Colress,villain,SPECIES_TORNADUS,Y
 Colress,villain,SPECIES_VENIPEDE,Y
 Colress,villain,SPECIES_VICTINI,Y
 Colress,villain,SPECIES_VIRIZION,Y
+Colress,villain,SPECIES_VOLTORB,Y
 Colress,villain,SPECIES_WOOBAT,Y
 Colress,villain,SPECIES_ZEKROM,Y
+Crasher Wake,gymleader,SPECIES_ANORITH,Y
 Crasher Wake,gymleader,SPECIES_BUIZEL,Y
 Crasher Wake,gymleader,SPECIES_CARVANHA,Y
 Crasher Wake,gymleader,SPECIES_CLAMPERL,Y
@@ -905,11 +1006,15 @@ Crasher Wake,gymleader,SPECIES_FINNEON,Y
 Crasher Wake,gymleader,SPECIES_HORSEA,Y
 Crasher Wake,gymleader,SPECIES_LOTAD,Y
 Crasher Wake,gymleader,SPECIES_MAGIKARP,Y
+Crasher Wake,gymleader,SPECIES_MUDKIP,Y
 Crasher Wake,gymleader,SPECIES_PICHU,Y
 Crasher Wake,gymleader,SPECIES_PIPLUP,Y
 Crasher Wake,gymleader,SPECIES_POLIWAG,Y
+Crasher Wake,gymleader,SPECIES_SCYTHER,Y
 Crasher Wake,gymleader,SPECIES_SHELLOS,Y
+Crasher Wake,gymleader,SPECIES_SUICUNE,Y
 Crasher Wake,gymleader,SPECIES_TURTWIG,Y
+Crasher Wake,gymleader,SPECIES_WINGULL,Y
 Crasher Wake,gymleader,SPECIES_WOOPER,Y
 Cress,gymleader,SPECIES_AZURILL,Y
 Cress,gymleader,SPECIES_BASCULIN,Y
@@ -966,11 +1071,13 @@ Cynthia,champion,SPECIES_UNOWN,Y
 Cynthia,champion,SPECIES_WURMPLE,Y
 Cynthia,champion,SPECIES_ZUBAT,Y
 Cyrus,villain,SPECIES_AZELF,Y
+Cyrus,villain,SPECIES_BAGON,Y
 Cyrus,villain,SPECIES_CROAGUNK,Y
 Cyrus,villain,SPECIES_DARKRAI,Y
 Cyrus,villain,SPECIES_DIALGA,Y
 Cyrus,villain,SPECIES_DRATINI,Y
 Cyrus,villain,SPECIES_EEVEE,Y
+Cyrus,villain,SPECIES_ENTEI,Y
 Cyrus,villain,SPECIES_FEEBAS,Y
 Cyrus,villain,SPECIES_GIBLE,Y
 Cyrus,villain,SPECIES_GIRATINA,Y
@@ -995,6 +1102,7 @@ Dawn,protagonist,SPECIES_ABRA,Y
 Dawn,protagonist,SPECIES_AIPOM,Y
 Dawn,protagonist,SPECIES_ARCEUS,Y
 Dawn,protagonist,SPECIES_BIDOOF,Y
+Dawn,protagonist,SPECIES_BUIZEL,Y
 Dawn,protagonist,SPECIES_BUNEARY,Y
 Dawn,protagonist,SPECIES_BURMY,Y
 Dawn,protagonist,SPECIES_CARVANHA,Y
@@ -1148,6 +1256,23 @@ Elio,protagonist,SPECIES_STAKATAKA,Y
 Elio,protagonist,SPECIES_TAPU_KOKO,Y
 Elio,protagonist,SPECIES_TYPE_NULL,Y
 Elio,protagonist,SPECIES_YUNGOOS,Y
+Elm,professor,SPECIES_ARCEUS,Y
+Elm,professor,SPECIES_AZURILL,Y
+Elm,professor,SPECIES_BELLSPROUT,Y
+Elm,professor,SPECIES_BONSLY,Y
+Elm,professor,SPECIES_CHIKORITA,Y
+Elm,professor,SPECIES_CLEFFA,Y
+Elm,professor,SPECIES_CORSOLA,Y
+Elm,professor,SPECIES_CYNDAQUIL,Y
+Elm,professor,SPECIES_EKANS,Y
+Elm,professor,SPECIES_GIRATINA,Y
+Elm,professor,SPECIES_GLIGAR,Y
+Elm,professor,SPECIES_KOFFING,Y
+Elm,professor,SPECIES_LARVITAR,Y
+Elm,professor,SPECIES_SENTRET,Y
+Elm,professor,SPECIES_TOGEPI,Y
+Elm,professor,SPECIES_TOTODILE,Y
+Elm,professor,SPECIES_WHISMUR,Y
 Erika,gymleader,SPECIES_BELLSPROUT,Y
 Erika,gymleader,SPECIES_BUDEW,Y
 Erika,gymleader,SPECIES_BULBASAUR,Y
@@ -1179,6 +1304,8 @@ Erika,gymleader,SPECIES_SWINUB,Y
 Erika,gymleader,SPECIES_TANGELA,Y
 Erika,gymleader,SPECIES_VULPIX,Y
 Ethan,protagonist,SPECIES_AZURILL,Y
+Ethan,protagonist,SPECIES_BULBASAUR,Y
+Ethan,protagonist,SPECIES_CHIKORITA,Y
 Ethan,protagonist,SPECIES_CYNDAQUIL,Y
 Ethan,protagonist,SPECIES_EEVEE,Y
 Ethan,protagonist,SPECIES_EKANS,Y
@@ -1187,9 +1314,12 @@ Ethan,protagonist,SPECIES_LUGIA,Y
 Ethan,protagonist,SPECIES_MAGNEMITE,Y
 Ethan,protagonist,SPECIES_PHANPY,Y
 Ethan,protagonist,SPECIES_PICHU,Y
+Ethan,protagonist,SPECIES_PORYGON,Y
 Ethan,protagonist,SPECIES_RAIKOU,Y
 Ethan,protagonist,SPECIES_RATTATA,Y
+Ethan,protagonist,SPECIES_TANGELA,Y
 Ethan,protagonist,SPECIES_TAUROS,Y
+Ethan,protagonist,SPECIES_TOTODILE,Y
 Falkner,gymleader,SPECIES_AERODACTYL,Y
 Falkner,gymleader,SPECIES_ARCEUS,Y
 Falkner,gymleader,SPECIES_ARTICUNO,Y
@@ -1315,6 +1445,8 @@ Gary,anime,SPECIES_GROWLITHE,Y
 Gary,anime,SPECIES_HATENNA,Y
 Gary,anime,SPECIES_HERACROSS,Y
 Gary,anime,SPECIES_HOOTHOOT,Y
+Gary,anime,SPECIES_HORSEA,Y
+Gary,anime,SPECIES_HOUNDOUR,Y
 Gary,anime,SPECIES_KRABBY,Y
 Gary,anime,SPECIES_LARVITAR,Y
 Gary,anime,SPECIES_MAGBY,Y
@@ -1327,13 +1459,16 @@ Gary,anime,SPECIES_ONIX,Y
 Gary,anime,SPECIES_PALKIA,Y
 Gary,anime,SPECIES_PICHU,Y
 Gary,anime,SPECIES_PIDGEY,Y
+Gary,anime,SPECIES_PINSIR,Y
 Gary,anime,SPECIES_PONYTA,Y
 Gary,anime,SPECIES_REGIDRAGO,Y
 Gary,anime,SPECIES_REGIELEKI,Y
 Gary,anime,SPECIES_RHYHORN,Y
 Gary,anime,SPECIES_SCYTHER,Y
 Gary,anime,SPECIES_SHIELDON,Y
+Gary,anime,SPECIES_SKARMORY,Y
 Gary,anime,SPECIES_SLOWPOKE,Y
+Gary,anime,SPECIES_SPEAROW,Y
 Gary,anime,SPECIES_SQUIRTLE,Y
 Gary,anime,SPECIES_TAUROS,Y
 Gary,anime,SPECIES_VULPIX,Y
@@ -1456,53 +1591,120 @@ Gladion,rival,SPECIES_XURKITREE,Y
 Gladion,rival,SPECIES_ZORUA,Y
 Gladion,rival,SPECIES_ZUBAT,Y
 Gladion,rival,SPECIES_ZYGARDE,Y
+Gloria,protagonist,SPECIES_CALYREX,Y
+Gloria,protagonist,SPECIES_ETERNATUS,Y
 Gloria,protagonist,SPECIES_GROOKEY,Y
 Gloria,protagonist,SPECIES_KUBFU,Y
 Gloria,protagonist,SPECIES_SCORBUNNY,Y
 Gloria,protagonist,SPECIES_SOBBLE,Y
 Gloria,protagonist,SPECIES_ZACIAN,Y
+Gloria,protagonist,SPECIES_ZAMAZENTA,Y
+Goh,anime,SPECIES_ABSOL,Y
+Goh,anime,SPECIES_AERODACTYL,Y
+Goh,anime,SPECIES_ARCTOZOLT,Y
+Goh,anime,SPECIES_BELLSPROUT,Y
+Goh,anime,SPECIES_BINACLE,Y
+Goh,anime,SPECIES_BRUXISH,Y
 Goh,anime,SPECIES_BULBASAUR,Y
 Goh,anime,SPECIES_BUNNELBY,Y
+Goh,anime,SPECIES_CARVANHA,Y
+Goh,anime,SPECIES_CATERPIE,Y
 Goh,anime,SPECIES_CHEWTLE,Y
+Goh,anime,SPECIES_CHINCHOU,Y
+Goh,anime,SPECIES_CORSOLA,Y
 Goh,anime,SPECIES_CUBONE,Y
 Goh,anime,SPECIES_CYNDAQUIL,Y
 Goh,anime,SPECIES_DARUMAKA,Y
 Goh,anime,SPECIES_DIGLETT,Y
+Goh,anime,SPECIES_DROWZEE,Y
 Goh,anime,SPECIES_DURANT,Y
 Goh,anime,SPECIES_EEVEE,Y
+Goh,anime,SPECIES_EKANS,Y
 Goh,anime,SPECIES_ETERNATUS,Y
 Goh,anime,SPECIES_EXEGGCUTE,Y
+Goh,anime,SPECIES_FALINKS,Y
+Goh,anime,SPECIES_FARFETCHD,Y
 Goh,anime,SPECIES_FEEBAS,Y
+Goh,anime,SPECIES_FERROSEED,Y
 Goh,anime,SPECIES_FLABEBE,Y
+Goh,anime,SPECIES_FROAKIE,Y
+Goh,anime,SPECIES_GEODUDE,Y
+Goh,anime,SPECIES_GOLDEEN,Y
 Goh,anime,SPECIES_GOLETT,Y
+Goh,anime,SPECIES_GOSSIFLEUR,Y
+Goh,anime,SPECIES_GRIMER,Y
 Goh,anime,SPECIES_GROOKEY,Y
 Goh,anime,SPECIES_HERACROSS,Y
+Goh,anime,SPECIES_HOOTHOOT,Y
 Goh,anime,SPECIES_HORSEA,Y
+Goh,anime,SPECIES_KRABBY,Y
 Goh,anime,SPECIES_LOTAD,Y
 Goh,anime,SPECIES_LUGIA,Y
+Goh,anime,SPECIES_MAGIKARP,Y
+Goh,anime,SPECIES_MANKEY,Y
+Goh,anime,SPECIES_MANTYKE,Y
+Goh,anime,SPECIES_MILCERY,Y
+Goh,anime,SPECIES_MISDREAVUS,Y
 Goh,anime,SPECIES_MOLTRES,Y
+Goh,anime,SPECIES_MORELULL,Y
 Goh,anime,SPECIES_MUNCHLAX,Y
+Goh,anime,SPECIES_MURKROW,Y
 Goh,anime,SPECIES_NICKIT,Y
+Goh,anime,SPECIES_NIDORAN_F,Y
+Goh,anime,SPECIES_NINCADA,Y
+Goh,anime,SPECIES_NUMEL,Y
+Goh,anime,SPECIES_ODDISH,Y
+Goh,anime,SPECIES_PANPOUR,Y
+Goh,anime,SPECIES_PANSEAR,Y
+Goh,anime,SPECIES_PARAS,Y
+Goh,anime,SPECIES_PASSIMIAN,Y
+Goh,anime,SPECIES_PETILIL,Y
+Goh,anime,SPECIES_PHANTUMP,Y
 Goh,anime,SPECIES_PICHU,Y
+Goh,anime,SPECIES_PIDGEY,Y
+Goh,anime,SPECIES_PINECO,Y
 Goh,anime,SPECIES_PINSIR,Y
+Goh,anime,SPECIES_POLIWAG,Y
+Goh,anime,SPECIES_PYUKUMUKU,Y
+Goh,anime,SPECIES_RATTATA,Y
 Goh,anime,SPECIES_REGIELEKI,Y
+Goh,anime,SPECIES_ROGGENROLA,Y
 Goh,anime,SPECIES_ROTOM,Y
+Goh,anime,SPECIES_SANDILE,Y
+Goh,anime,SPECIES_SCATTERBUG,Y
 Goh,anime,SPECIES_SCORBUNNY,Y
 Goh,anime,SPECIES_SCYTHER,Y
+Goh,anime,SPECIES_SEEL,Y
+Goh,anime,SPECIES_SENTRET,Y
 Goh,anime,SPECIES_SHELLDER,Y
 Goh,anime,SPECIES_SILICOBRA,Y
+Goh,anime,SPECIES_SKWOVET,Y
 Goh,anime,SPECIES_SLOWPOKE,Y
 Goh,anime,SPECIES_SOBBLE,Y
+Goh,anime,SPECIES_SPEAROW,Y
+Goh,anime,SPECIES_SPINARAK,Y
+Goh,anime,SPECIES_STUNFISK,Y
 Goh,anime,SPECIES_SUICUNE,Y
 Goh,anime,SPECIES_SUNKERN,Y
+Goh,anime,SPECIES_SWABLU,Y
+Goh,anime,SPECIES_TAILLOW,Y
+Goh,anime,SPECIES_TENTACOOL,Y
+Goh,anime,SPECIES_TRAPINCH,Y
 Goh,anime,SPECIES_TRUBBISH,Y
 Goh,anime,SPECIES_TURTONATOR,Y
 Goh,anime,SPECIES_TYMPOLE,Y
+Goh,anime,SPECIES_TYROGUE,Y
+Goh,anime,SPECIES_VENONAT,Y
+Goh,anime,SPECIES_VOLTORB,Y
 Goh,anime,SPECIES_VULPIX,Y
+Goh,anime,SPECIES_WEEDLE,Y
 Goh,anime,SPECIES_WHISMUR,Y
+Goh,anime,SPECIES_WINGULL,Y
+Goh,anime,SPECIES_WURMPLE,Y
 Goh,anime,SPECIES_ZACIAN,Y
 Goh,anime,SPECIES_ZAMAZENTA,Y
 Goh,anime,SPECIES_ZIGZAGOON,Y
+Goh,anime,SPECIES_ZUBAT,Y
 Gordie,gymleader,SPECIES_BINACLE,Y
 Gordie,gymleader,SPECIES_ETERNATUS,Y
 Gordie,gymleader,SPECIES_LAPRAS,Y
@@ -1553,17 +1755,22 @@ Guzma,villain,SPECIES_BLACEPHALON,Y
 Guzma,villain,SPECIES_BUZZWOLE,Y
 Guzma,villain,SPECIES_CELESTEELA,Y
 Guzma,villain,SPECIES_COSMOG,Y
+Guzma,villain,SPECIES_CROAGUNK,Y
 Guzma,villain,SPECIES_GRUBBIN,Y
 Guzma,villain,SPECIES_GUZZLORD,Y
 Guzma,villain,SPECIES_JANGMO_O,Y
 Guzma,villain,SPECIES_KANGASKHAN,Y
 Guzma,villain,SPECIES_LITTEN,Y
+Guzma,villain,SPECIES_MAREANIE,Y
+Guzma,villain,SPECIES_MURKROW,Y
 Guzma,villain,SPECIES_NECROZMA,Y
 Guzma,villain,SPECIES_NIHILEGO,Y
+Guzma,villain,SPECIES_PAWNIARD,Y
 Guzma,villain,SPECIES_PHEROMOSA,Y
 Guzma,villain,SPECIES_PICHU,Y
 Guzma,villain,SPECIES_PINSIR,Y
 Guzma,villain,SPECIES_POPPLIO,Y
+Guzma,villain,SPECIES_PURRLOIN,Y
 Guzma,villain,SPECIES_SCYTHER,Y
 Guzma,villain,SPECIES_SPINARAK,Y
 Guzma,villain,SPECIES_SURSKIT,Y
@@ -1612,6 +1819,7 @@ Hapu,gymleader,SPECIES_TAPU_FINI,Y
 Hapu,gymleader,SPECIES_TRAPINCH,Y
 Hapu,gymleader,SPECIES_XURKITREE,Y
 Hassel,elite4,SPECIES_APPLIN,Y
+Hassel,elite4,SPECIES_ARCHALUDON,Y
 Hassel,elite4,SPECIES_AXEW,Y
 Hassel,elite4,SPECIES_DRATINI,Y
 Hassel,elite4,SPECIES_DURALUDON,Y
@@ -1654,6 +1862,8 @@ Hilbert,protagonist,SPECIES_KYUREM,Y
 Hilbert,protagonist,SPECIES_OSHAWOTT,Y
 Hilbert,protagonist,SPECIES_POOCHYENA,Y
 Hilbert,protagonist,SPECIES_RESHIRAM,Y
+Hilbert,protagonist,SPECIES_SNIVY,Y
+Hilbert,protagonist,SPECIES_TEPIG,Y
 Hilbert,protagonist,SPECIES_THUNDURUS,Y
 Hilbert,protagonist,SPECIES_ZEKROM,Y
 Hilda,protagonist,SPECIES_CLOBBOPUS,Y
@@ -1661,7 +1871,9 @@ Hilda,protagonist,SPECIES_DIANCIE,Y
 Hilda,protagonist,SPECIES_EEVEE,Y
 Hilda,protagonist,SPECIES_IRON_LEAVES,Y
 Hilda,protagonist,SPECIES_MIENFOO,Y
+Hilda,protagonist,SPECIES_OSHAWOTT,Y
 Hilda,protagonist,SPECIES_RESHIRAM,Y
+Hilda,protagonist,SPECIES_SNIVY,Y
 Hilda,protagonist,SPECIES_TEPIG,Y
 Hilda,protagonist,SPECIES_TORNADUS,Y
 Hilda,protagonist,SPECIES_VICTINI,Y
@@ -1673,17 +1885,22 @@ Hop,rival,SPECIES_CRAMORANT,Y
 Hop,rival,SPECIES_ETERNATUS,Y
 Hop,rival,SPECIES_GROOKEY,Y
 Hop,rival,SPECIES_HATENNA,Y
+Hop,rival,SPECIES_HEATMOR,Y
 Hop,rival,SPECIES_MACHOP,Y
 Hop,rival,SPECIES_MOLTRES,Y
 Hop,rival,SPECIES_MUNCHLAX,Y
+Hop,rival,SPECIES_PHANTUMP,Y
 Hop,rival,SPECIES_PINCURCHIN,Y
 Hop,rival,SPECIES_REGICE,Y
 Hop,rival,SPECIES_REGIROCK,Y
 Hop,rival,SPECIES_REGISTEEL,Y
 Hop,rival,SPECIES_ROOKIDEE,Y
 Hop,rival,SPECIES_SCORBUNNY,Y
+Hop,rival,SPECIES_SILICOBRA,Y
 Hop,rival,SPECIES_SOBBLE,Y
+Hop,rival,SPECIES_TOXEL,Y
 Hop,rival,SPECIES_WOOLOO,Y
+Hop,rival,SPECIES_YAMPER,Y
 Hop,rival,SPECIES_ZACIAN,Y
 Hop,rival,SPECIES_ZAMAZENTA,Y
 Hop,rival,SPECIES_ZAPDOS,Y
@@ -1755,6 +1972,7 @@ Iris,champion,SPECIES_VENIPEDE,Y
 Iris,champion,SPECIES_VIRIZION,Y
 Iris,champion,SPECIES_WOOBAT,Y
 Iris,champion,SPECIES_YAMASK,Y
+James,anime,SPECIES_ARON,Y
 James,anime,SPECIES_BELLSPROUT,Y
 James,anime,SPECIES_CACNEA,Y
 James,anime,SPECIES_CARNIVINE,Y
@@ -1770,6 +1988,7 @@ James,anime,SPECIES_EKANS,Y
 James,anime,SPECIES_ETERNATUS,Y
 James,anime,SPECIES_FOONGUS,Y
 James,anime,SPECIES_GASTLY,Y
+James,anime,SPECIES_GROWLITHE,Y
 James,anime,SPECIES_HIPPOPOTAS,Y
 James,anime,SPECIES_HOPPIP,Y
 James,anime,SPECIES_INKAY,Y
@@ -1801,6 +2020,7 @@ James,anime,SPECIES_TENTACOOL,Y
 James,anime,SPECIES_TIRTOUGA,Y
 James,anime,SPECIES_WURMPLE,Y
 James,anime,SPECIES_WYNAUT,Y
+James,anime,SPECIES_YAMASK,Y
 James,anime,SPECIES_YANMA,Y
 James,anime,SPECIES_ZUBAT,Y
 James,anime,SPECIES_ZYGARDE,Y
@@ -1892,6 +2112,7 @@ Jessie,anime,SPECIES_PUMPKABOO,Y
 Jessie,anime,SPECIES_RALTS,Y
 Jessie,anime,SPECIES_RATTATA,Y
 Jessie,anime,SPECIES_SEVIPER,Y
+Jessie,anime,SPECIES_SHELLDER,Y
 Jessie,anime,SPECIES_SKORUPI,Y
 Jessie,anime,SPECIES_SMOOCHUM,Y
 Jessie,anime,SPECIES_SNEASEL,Y
@@ -1929,6 +2150,21 @@ Juan,gymleader,SPECIES_SURSKIT,Y
 Juan,gymleader,SPECIES_TENTACOOL,Y
 Juan,gymleader,SPECIES_WAILMER,Y
 Juan,gymleader,SPECIES_WINGULL,Y
+Juniper,professor,SPECIES_ARCHEN,Y
+Juniper,professor,SPECIES_DARUMAKA,Y
+Juniper,professor,SPECIES_DWEBBLE,Y
+Juniper,professor,SPECIES_KARRABLAST,Y
+Juniper,professor,SPECIES_MINCCINO,Y
+Juniper,professor,SPECIES_MUNNA,Y
+Juniper,professor,SPECIES_OSHAWOTT,Y
+Juniper,professor,SPECIES_PATRAT,Y
+Juniper,professor,SPECIES_PICHU,Y
+Juniper,professor,SPECIES_SHELMET,Y
+Juniper,professor,SPECIES_SNIVY,Y
+Juniper,professor,SPECIES_TEPIG,Y
+Juniper,professor,SPECIES_VENIPEDE,Y
+Juniper,professor,SPECIES_VICTINI,Y
+Juniper,professor,SPECIES_ZEKROM,Y
 Jupiter,villain,SPECIES_ARCEUS,Y
 Jupiter,villain,SPECIES_AZELF,Y
 Jupiter,villain,SPECIES_BRONZOR,Y
@@ -1938,11 +2174,13 @@ Jupiter,villain,SPECIES_DIALGA,Y
 Jupiter,villain,SPECIES_DRATINI,Y
 Jupiter,villain,SPECIES_EEVEE,Y
 Jupiter,villain,SPECIES_FEEBAS,Y
+Jupiter,villain,SPECIES_GASTLY,Y
 Jupiter,villain,SPECIES_GIBLE,Y
 Jupiter,villain,SPECIES_GIRATINA,Y
 Jupiter,villain,SPECIES_GLAMEOW,Y
 Jupiter,villain,SPECIES_HEATRAN,Y
 Jupiter,villain,SPECIES_MESPRIT,Y
+Jupiter,villain,SPECIES_NIDORAN_M,Y
 Jupiter,villain,SPECIES_PALKIA,Y
 Jupiter,villain,SPECIES_PIPLUP,Y
 Jupiter,villain,SPECIES_RIOLU,Y
@@ -2246,6 +2484,11 @@ Larry,gymleader,SPECIES_TAUROS,Y
 Larry,gymleader,SPECIES_TINKATINK,Y
 Larry,gymleader,SPECIES_TROPIUS,Y
 Larry,gymleader,SPECIES_WOOPER,Y
+Laventon,professor,SPECIES_CYNDAQUIL,Y
+Laventon,professor,SPECIES_OSHAWOTT,Y
+Laventon,professor,SPECIES_RIOLU,Y
+Laventon,professor,SPECIES_ROWLET,Y
+Laventon,professor,SPECIES_UNOWN,Y
 Leaf,protagonist,SPECIES_BULBASAUR,Y
 Leaf,protagonist,SPECIES_CHARMANDER,Y
 Leaf,protagonist,SPECIES_CLEFFA,Y
@@ -2476,6 +2719,7 @@ Lusamine,villain,SPECIES_TYPE_NULL,Y
 Lusamine,villain,SPECIES_XURKITREE,Y
 Lusamine,villain,SPECIES_ZORUA,Y
 Lyra,protagonist,SPECIES_AZURILL,Y
+Lyra,protagonist,SPECIES_BULBASAUR,Y
 Lyra,protagonist,SPECIES_CELEBI,Y
 Lyra,protagonist,SPECIES_CHIKORITA,Y
 Lyra,protagonist,SPECIES_CHIMCHAR,Y
@@ -2487,8 +2731,11 @@ Lyra,protagonist,SPECIES_GIRAFARIG,Y
 Lyra,protagonist,SPECIES_IGGLYBUFF,Y
 Lyra,protagonist,SPECIES_PHANPY,Y
 Lyra,protagonist,SPECIES_PIPLUP,Y
+Lyra,protagonist,SPECIES_PORYGON,Y
 Lyra,protagonist,SPECIES_RATTATA,Y
 Lyra,protagonist,SPECIES_SENTRET,Y
+Lyra,protagonist,SPECIES_TANGELA,Y
+Lyra,protagonist,SPECIES_TAUROS,Y
 Lyra,protagonist,SPECIES_TOTODILE,Y
 Lysandre,villain,SPECIES_BINACLE,Y
 Lysandre,villain,SPECIES_CHARMANDER,Y
@@ -2509,6 +2756,15 @@ Lysandre,villain,SPECIES_VOLCANION,Y
 Lysandre,villain,SPECIES_XERNEAS,Y
 Lysandre,villain,SPECIES_YVELTAL,Y
 Lysandre,villain,SPECIES_ZYGARDE,Y
+Magnolia,professor,SPECIES_BRONZOR,Y
+Magnolia,professor,SPECIES_CHEWTLE,Y
+Magnolia,professor,SPECIES_DRACOVISH,Y
+Magnolia,professor,SPECIES_ETERNATUS,Y
+Magnolia,professor,SPECIES_GROOKEY,Y
+Magnolia,professor,SPECIES_PANCHAM,Y
+Magnolia,professor,SPECIES_SINISTEA,Y
+Magnolia,professor,SPECIES_SOBBLE,Y
+Magnolia,professor,SPECIES_WIMPOD,Y
 Mallow (anime),anime,SPECIES_BOUNSWEET,Y
 Mallow (anime),anime,SPECIES_BUZZWOLE,Y
 Mallow (anime),anime,SPECIES_DRAMPA,Y
@@ -2540,6 +2796,7 @@ Malva,elite4,SPECIES_LITLEO,Y
 Malva,elite4,SPECIES_LITWICK,Y
 Malva,elite4,SPECIES_MAGIKARP,Y
 Malva,elite4,SPECIES_RALTS,Y
+Malva,elite4,SPECIES_SCATTERBUG,Y
 Malva,elite4,SPECIES_TORKOAL,Y
 Malva,elite4,SPECIES_XERNEAS,Y
 Malva,elite4,SPECIES_YVELTAL,Y
@@ -2634,6 +2891,7 @@ May,protagonist,SPECIES_ARON,Y
 May,protagonist,SPECIES_AUDINO,Y
 May,protagonist,SPECIES_BAGON,Y
 May,protagonist,SPECIES_BALTOY,Y
+May,protagonist,SPECIES_BULBASAUR,Y
 May,protagonist,SPECIES_BUNEARY,Y
 May,protagonist,SPECIES_EEVEE,Y
 May,protagonist,SPECIES_KYOGRE,Y
@@ -2641,6 +2899,7 @@ May,protagonist,SPECIES_LARVITAR,Y
 May,protagonist,SPECIES_LATIAS,Y
 May,protagonist,SPECIES_LATIOS,Y
 May,protagonist,SPECIES_LOTAD,Y
+May,protagonist,SPECIES_MANAPHY,Y
 May,protagonist,SPECIES_MUDKIP,Y
 May,protagonist,SPECIES_MUNCHLAX,Y
 May,protagonist,SPECIES_NOSEPASS,Y
@@ -2706,12 +2965,14 @@ Milo,gymleader,SPECIES_SEEDOT,Y
 Milo,gymleader,SPECIES_SNORUNT,Y
 Milo,gymleader,SPECIES_TIMBURR,Y
 Milo,gymleader,SPECIES_WOOLOO,Y
+Misty,gymleader,SPECIES_AZURILL,Y
 Misty,gymleader,SPECIES_BUIZEL,Y
 Misty,gymleader,SPECIES_CATERPIE,Y
 Misty,gymleader,SPECIES_CHARMANDER,Y
 Misty,gymleader,SPECIES_CHINCHOU,Y
 Misty,gymleader,SPECIES_CLAUNCHER,Y
 Misty,gymleader,SPECIES_CLEFFA,Y
+Misty,gymleader,SPECIES_CORSOLA,Y
 Misty,gymleader,SPECIES_DIGLETT,Y
 Misty,gymleader,SPECIES_DRATINI,Y
 Misty,gymleader,SPECIES_DUCKLETT,Y
@@ -2730,6 +2991,7 @@ Misty,gymleader,SPECIES_KOFFING,Y
 Misty,gymleader,SPECIES_LAPRAS,Y
 Misty,gymleader,SPECIES_LATIOS,Y
 Misty,gymleader,SPECIES_LICKITUNG,Y
+Misty,gymleader,SPECIES_LUVDISC,Y
 Misty,gymleader,SPECIES_MAGIKARP,Y
 Misty,gymleader,SPECIES_MANTYKE,Y
 Misty,gymleader,SPECIES_MAREEP,Y
@@ -2822,6 +3084,8 @@ N,rival,SPECIES_KYUREM,Y
 N,rival,SPECIES_LANDORUS,Y
 N,rival,SPECIES_LARVESTA,Y
 N,rival,SPECIES_LILEEP,Y
+N,rival,SPECIES_LILLIPUP,Y
+N,rival,SPECIES_MINCCINO,Y
 N,rival,SPECIES_NINCADA,Y
 N,rival,SPECIES_OMANYTE,Y
 N,rival,SPECIES_PETILIL,Y
@@ -2967,6 +3231,18 @@ Norman,gymleader,SPECIES_WHISMUR,Y
 Norman,gymleader,SPECIES_WURMPLE,Y
 Norman,gymleader,SPECIES_ZANGOOSE,Y
 Norman,gymleader,SPECIES_ZIGZAGOON,Y
+Oak,professor,SPECIES_ARTICUNO,Y
+Oak,professor,SPECIES_BULBASAUR,Y
+Oak,professor,SPECIES_CHARMANDER,Y
+Oak,professor,SPECIES_DITTO,Y
+Oak,professor,SPECIES_EEVEE,Y
+Oak,professor,SPECIES_MELTAN,Y
+Oak,professor,SPECIES_MEW,Y
+Oak,professor,SPECIES_MEWTWO,Y
+Oak,professor,SPECIES_NIDORAN_M,Y
+Oak,professor,SPECIES_PICHU,Y
+Oak,professor,SPECIES_PIDGEY,Y
+Oak,professor,SPECIES_SQUIRTLE,Y
 Olivia,gymleader,SPECIES_ANORITH,Y
 Olivia,gymleader,SPECIES_BONSLY,Y
 Olivia,gymleader,SPECIES_BUZZWOLE,Y
@@ -2982,6 +3258,7 @@ Olivia,gymleader,SPECIES_PHEROMOSA,Y
 Olivia,gymleader,SPECIES_RELICANTH,Y
 Olivia,gymleader,SPECIES_ROCKRUFF,Y
 Olivia,gymleader,SPECIES_ROGGENROLA,Y
+Olivia,gymleader,SPECIES_STUFFUL,Y
 Olivia,gymleader,SPECIES_TAPU_KOKO,Y
 Olivia,gymleader,SPECIES_TAPU_LELE,Y
 Olivia,gymleader,SPECIES_TAUROS,Y
@@ -3077,6 +3354,7 @@ Plumeria,villain,SPECIES_CELESTEELA,Y
 Plumeria,villain,SPECIES_COSMOG,Y
 Plumeria,villain,SPECIES_DROWZEE,Y
 Plumeria,villain,SPECIES_EEVEE,Y
+Plumeria,villain,SPECIES_FOMANTIS,Y
 Plumeria,villain,SPECIES_GASTLY,Y
 Plumeria,villain,SPECIES_GRIMER,Y
 Plumeria,villain,SPECIES_GUZZLORD,Y
@@ -3128,6 +3406,7 @@ Pryce,gymleader,SPECIES_TENTACOOL,Y
 Pryce,gymleader,SPECIES_TOTODILE,Y
 Pryce,gymleader,SPECIES_TYROGUE,Y
 Pryce,gymleader,SPECIES_WOOPER,Y
+Raihan,gymleader,SPECIES_ARCHALUDON,Y
 Raihan,gymleader,SPECIES_CHARMANDER,Y
 Raihan,gymleader,SPECIES_DREEPY,Y
 Raihan,gymleader,SPECIES_DURALUDON,Y
@@ -3160,33 +3439,52 @@ Ramos,gymleader,SPECIES_VANILLITE,Y
 Ramos,gymleader,SPECIES_XERNEAS,Y
 Ramos,gymleader,SPECIES_YVELTAL,Y
 Red,protagonist,SPECIES_ARTICUNO,Y
+Red,protagonist,SPECIES_BELLSPROUT,Y
 Red,protagonist,SPECIES_BULBASAUR,Y
 Red,protagonist,SPECIES_CATERPIE,Y
 Red,protagonist,SPECIES_CHARMANDER,Y
 Red,protagonist,SPECIES_CHIKORITA,Y
 Red,protagonist,SPECIES_CYNDAQUIL,Y
 Red,protagonist,SPECIES_DEOXYS,Y
+Red,protagonist,SPECIES_DODUO,Y
 Red,protagonist,SPECIES_DRATINI,Y
 Red,protagonist,SPECIES_EEVEE,Y
+Red,protagonist,SPECIES_EKANS,Y
 Red,protagonist,SPECIES_ENTEI,Y
+Red,protagonist,SPECIES_GASTLY,Y
 Red,protagonist,SPECIES_GROWLITHE,Y
+Red,protagonist,SPECIES_HAPPINY,Y
+Red,protagonist,SPECIES_KABUTO,Y
 Red,protagonist,SPECIES_LAPRAS,Y
 Red,protagonist,SPECIES_LARVESTA,Y
 Red,protagonist,SPECIES_MACHOP,Y
+Red,protagonist,SPECIES_MAGIKARP,Y
+Red,protagonist,SPECIES_MEOWTH,Y
+Red,protagonist,SPECIES_MEWTWO,Y
+Red,protagonist,SPECIES_MOLTRES,Y
 Red,protagonist,SPECIES_MUNCHLAX,Y
+Red,protagonist,SPECIES_NIDORAN_F,Y
 Red,protagonist,SPECIES_NOIBAT,Y
 Red,protagonist,SPECIES_NOSEPASS,Y
 Red,protagonist,SPECIES_PICHU,Y
+Red,protagonist,SPECIES_PIDGEY,Y
+Red,protagonist,SPECIES_PONYTA,Y
+Red,protagonist,SPECIES_PSYDUCK,Y
 Red,protagonist,SPECIES_RAIKOU,Y
+Red,protagonist,SPECIES_RATTATA,Y
 Red,protagonist,SPECIES_REGIGIGAS,Y
 Red,protagonist,SPECIES_SCYTHER,Y
 Red,protagonist,SPECIES_SLAKOTH,Y
+Red,protagonist,SPECIES_SPEAROW,Y
 Red,protagonist,SPECIES_SQUIRTLE,Y
 Red,protagonist,SPECIES_SUICUNE,Y
 Red,protagonist,SPECIES_TAUROS,Y
+Red,protagonist,SPECIES_TENTACOOL,Y
 Red,protagonist,SPECIES_TOTODILE,Y
+Red,protagonist,SPECIES_TYROGUE,Y
 Red,protagonist,SPECIES_WAILMER,Y
 Red,protagonist,SPECIES_WOOPER,Y
+Red,protagonist,SPECIES_ZAPDOS,Y
 Rika,elite4,SPECIES_BARBOACH,Y
 Rika,elite4,SPECIES_DIGLETT,Y
 Rika,elite4,SPECIES_GREAT_TUSK,Y
@@ -3260,6 +3558,21 @@ Rose,villain,SPECIES_RIOLU,Y
 Rose,villain,SPECIES_ROLYCOLY,Y
 Rose,villain,SPECIES_ZACIAN,Y
 Rose,villain,SPECIES_ZAMAZENTA,Y
+Rowan,professor,SPECIES_AIPOM,Y
+Rowan,professor,SPECIES_CHIMCHAR,Y
+Rowan,professor,SPECIES_CYNDAQUIL,Y
+Rowan,professor,SPECIES_DIALGA,Y
+Rowan,professor,SPECIES_GIRATINA,Y
+Rowan,professor,SPECIES_MESPRIT,Y
+Rowan,professor,SPECIES_ONIX,Y
+Rowan,professor,SPECIES_PALKIA,Y
+Rowan,professor,SPECIES_PIPLUP,Y
+Rowan,professor,SPECIES_SHIELDON,Y
+Rowan,professor,SPECIES_SHUCKLE,Y
+Rowan,professor,SPECIES_SPINARAK,Y
+Rowan,professor,SPECIES_STARLY,Y
+Rowan,professor,SPECIES_TURTWIG,Y
+Rowan,professor,SPECIES_YVELTAL,Y
 Roxanne,gymleader,SPECIES_AERODACTYL,Y
 Roxanne,gymleader,SPECIES_ANORITH,Y
 Roxanne,gymleader,SPECIES_ARON,Y
@@ -3330,9 +3643,41 @@ Sabrina,gymleader,SPECIES_VENONAT,Y
 Sabrina,gymleader,SPECIES_WOOBAT,Y
 Sabrina,gymleader,SPECIES_WYNAUT,Y
 Sabrina,gymleader,SPECIES_ZAPDOS,Y
+Sada,professor,SPECIES_BRUTE_BONNET,Y
+Sada,professor,SPECIES_FLUTTER_MANE,Y
+Sada,professor,SPECIES_KORAIDON,Y
+Sada,professor,SPECIES_ROARING_MOON,Y
+Sada,professor,SPECIES_SANDY_SHOCKS,Y
+Sada,professor,SPECIES_SCREAM_TAIL,Y
+Sada,professor,SPECIES_SLITHER_WING,Y
+Samson Oak,professor,SPECIES_BRONZOR,Y
+Samson Oak,professor,SPECIES_CUBONE,Y
+Samson Oak,professor,SPECIES_CUTIEFLY,Y
+Samson Oak,professor,SPECIES_DEWPIDER,Y
+Samson Oak,professor,SPECIES_DIGLETT,Y
+Samson Oak,professor,SPECIES_EXEGGCUTE,Y
+Samson Oak,professor,SPECIES_FOMANTIS,Y
+Samson Oak,professor,SPECIES_GEODUDE,Y
+Samson Oak,professor,SPECIES_GRIMER,Y
+Samson Oak,professor,SPECIES_GRUBBIN,Y
+Samson Oak,professor,SPECIES_JANGMO_O,Y
+Samson Oak,professor,SPECIES_KOMALA,Y
+Samson Oak,professor,SPECIES_MEOWTH,Y
+Samson Oak,professor,SPECIES_MIMIKYU,Y
+Samson Oak,professor,SPECIES_MINIOR,Y
+Samson Oak,professor,SPECIES_NECROZMA,Y
+Samson Oak,professor,SPECIES_NIHILEGO,Y
+Samson Oak,professor,SPECIES_PICHU,Y
+Samson Oak,professor,SPECIES_PORYGON,Y
+Samson Oak,professor,SPECIES_RATTATA,Y
+Samson Oak,professor,SPECIES_SALANDIT,Y
+Samson Oak,professor,SPECIES_TOGEDEMARU,Y
+Samson Oak,professor,SPECIES_VULPIX,Y
+Samson Oak,professor,SPECIES_YUNGOOS,Y
 Saturn,villain,SPECIES_ABRA,Y
 Saturn,villain,SPECIES_AZELF,Y
 Saturn,villain,SPECIES_BRONZOR,Y
+Saturn,villain,SPECIES_CARVANHA,Y
 Saturn,villain,SPECIES_CROAGUNK,Y
 Saturn,villain,SPECIES_DIALGA,Y
 Saturn,villain,SPECIES_GEODUDE,Y
@@ -3352,6 +3697,7 @@ Saturn,villain,SPECIES_RHYHORN,Y
 Saturn,villain,SPECIES_RIOLU,Y
 Saturn,villain,SPECIES_SHIELDON,Y
 Saturn,villain,SPECIES_SHINX,Y
+Saturn,villain,SPECIES_STUNKY,Y
 Saturn,villain,SPECIES_UNOWN,Y
 Saturn,villain,SPECIES_ZUBAT,Y
 Sawyer,anime,SPECIES_BAGON,Y
@@ -3498,6 +3844,16 @@ Skyla,gymleader,SPECIES_TOGEPI,Y
 Skyla,gymleader,SPECIES_TORNADUS,Y
 Skyla,gymleader,SPECIES_VULLABY,Y
 Skyla,gymleader,SPECIES_WOOBAT,Y
+Sonia,professor,SPECIES_BOUNSWEET,Y
+Sonia,professor,SPECIES_CHARMANDER,Y
+Sonia,professor,SPECIES_ETERNATUS,Y
+Sonia,professor,SPECIES_KLINK,Y
+Sonia,professor,SPECIES_ORANGURU,Y
+Sonia,professor,SPECIES_ROOKIDEE,Y
+Sonia,professor,SPECIES_SCORBUNNY,Y
+Sonia,professor,SPECIES_YAMPER,Y
+Sonia,professor,SPECIES_ZACIAN,Y
+Sonia,professor,SPECIES_ZAMAZENTA,Y
 Sophocles,anime,SPECIES_BELDUM,Y
 Sophocles,anime,SPECIES_BOUNSWEET,Y
 Sophocles,anime,SPECIES_CELESTEELA,Y
@@ -3550,6 +3906,23 @@ Steven,champion,SPECIES_SKARMORY,Y
 Steven,champion,SPECIES_TORCHIC,Y
 Steven,champion,SPECIES_TREECKO,Y
 Steven,champion,SPECIES_WAILMER,Y
+Sycamore,professor,SPECIES_ABSOL,Y
+Sycamore,professor,SPECIES_BULBASAUR,Y
+Sycamore,professor,SPECIES_CHARMANDER,Y
+Sycamore,professor,SPECIES_CHESPIN,Y
+Sycamore,professor,SPECIES_DRUDDIGON,Y
+Sycamore,professor,SPECIES_FENNEKIN,Y
+Sycamore,professor,SPECIES_FROAKIE,Y
+Sycamore,professor,SPECIES_GIBLE,Y
+Sycamore,professor,SPECIES_HAWLUCHA,Y
+Sycamore,professor,SPECIES_PINSIR,Y
+Sycamore,professor,SPECIES_RALTS,Y
+Sycamore,professor,SPECIES_SKIDDO,Y
+Sycamore,professor,SPECIES_SKORUPI,Y
+Sycamore,professor,SPECIES_SQUIRTLE,Y
+Sycamore,professor,SPECIES_TORCHIC,Y
+Sycamore,professor,SPECIES_XERNEAS,Y
+Sycamore,professor,SPECIES_YVELTAL,Y
 Tate,gymleader,SPECIES_BALTOY,Y
 Tate,gymleader,SPECIES_BRONZOR,Y
 Tate,gymleader,SPECIES_CELESTEELA,Y
@@ -3599,6 +3972,13 @@ Tulip,gymleader,SPECIES_GIRAFARIG,Y
 Tulip,gymleader,SPECIES_NACLI,Y
 Tulip,gymleader,SPECIES_RALTS,Y
 Tulip,gymleader,SPECIES_WOOPER,Y
+Turo,professor,SPECIES_IRON_BUNDLE,Y
+Turo,professor,SPECIES_IRON_HANDS,Y
+Turo,professor,SPECIES_IRON_JUGULIS,Y
+Turo,professor,SPECIES_IRON_MOTH,Y
+Turo,professor,SPECIES_IRON_THORNS,Y
+Turo,professor,SPECIES_IRON_VALIANT,Y
+Turo,professor,SPECIES_MIRAIDON,Y
 Valerie,gymleader,SPECIES_BAGON,Y
 Valerie,gymleader,SPECIES_EEVEE,Y
 Valerie,gymleader,SPECIES_FLETCHLING,Y
@@ -3607,9 +3987,13 @@ Valerie,gymleader,SPECIES_MIMEJR,Y
 Valerie,gymleader,SPECIES_SPRITZEE,Y
 Valerie,gymleader,SPECIES_XERNEAS,Y
 Valerie,gymleader,SPECIES_YVELTAL,Y
+Victor,protagonist,SPECIES_CALYREX,Y
 Victor,protagonist,SPECIES_ETERNATUS,Y
 Victor,protagonist,SPECIES_FARFETCHD,Y
+Victor,protagonist,SPECIES_GLASTRIER,Y
 Victor,protagonist,SPECIES_GROOKEY,Y
+Victor,protagonist,SPECIES_KUBFU,Y
+Victor,protagonist,SPECIES_SCORBUNNY,Y
 Victor,protagonist,SPECIES_SKWOVET,Y
 Victor,protagonist,SPECIES_SOBBLE,Y
 Victor,protagonist,SPECIES_SPECTRIER,Y
@@ -3680,6 +4064,7 @@ Wally,rival,SPECIES_FLETCHLING,Y
 Wally,rival,SPECIES_GIBLE,Y
 Wally,rival,SPECIES_MAGNEMITE,Y
 Wally,rival,SPECIES_RALTS,Y
+Wally,rival,SPECIES_SCATTERBUG,Y
 Wally,rival,SPECIES_SKITTY,Y
 Wally,rival,SPECIES_SWABLU,Y
 Wally,rival,SPECIES_ZIGZAGOON,Y

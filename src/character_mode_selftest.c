@@ -192,8 +192,11 @@ void CharacterMode_RunBootSelftest(void)
           IsSpeciesAllowedForCharacter(SPECIES_RAICHU) == TRUE);
     Check("Red: Charizard allowed",
           IsSpeciesAllowedForCharacter(SPECIES_CHARIZARD) == TRUE);
-    Check("Red: Meowth blocked",
-          IsSpeciesAllowedForCharacter(SPECIES_MEOWTH) == FALSE);
+    // Off-roster control: Meowth until 2026-07-24, when the roster sync gave
+    // Red the Persian line (his researched rematch teams). Controls must be
+    // picked by FAMILY BASE and re-checked after any roster change.
+    Check("Red: Poochyena blocked",
+          IsSpeciesAllowedForCharacter(SPECIES_POOCHYENA) == FALSE);
     Check("Red: Treecko blocked",
           IsSpeciesAllowedForCharacter(SPECIES_TREECKO) == FALSE);
     Check("Red: SPECIES_NONE blocked",
@@ -218,7 +221,7 @@ void CharacterMode_RunBootSelftest(void)
 
     {
         // Red's roster includes Articuno/Deoxys/Entei/Raikou/Regigigas/Suicune
-        // (6 legendaries) alongside ~23 ordinary members. 200 rolls at 10%
+        // (6 legendaries) alongside ~41 ordinary members. 200 rolls at 10%
         // fire close to certainly (P(zero fires) = 0.9^200 ~= 1.6e-10) and
         // give the legendary exclusion many chances to fail if it's broken.
         u32 trial, fired = 0;

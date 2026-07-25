@@ -193,9 +193,40 @@ SIGNATURES = {
 # these characters' partner is famously the mid-stage itself.
 SIGNATURES_EXACT = {"Red", "Lt. Surge", "Ash", "Ritchie"}
 
+def load_additions():
+    """roster_additions.json: an OVERLAY of extra species per character, merged
+    into rosters_raw.json here at map time rather than baked into it.
+
+    Kept separate so the provenance of each add stays visible and a future
+    re-scrape (which produces a strictly smaller set than the curated raw file)
+    cannot silently drop them. Missing file = no additions."""
+    path = os.path.join(HERE, "roster_additions.json")
+    if not os.path.isfile(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return json.load(f).get("additions", {})
+
+
 def main():
-    with open(os.path.join(HERE, "rosters_raw.json")) as f:
+    with open(os.path.join(HERE, "rosters_raw.json"), encoding="utf-8") as f:
         raw = json.load(f)
+
+    additions = load_additions()
+    added = 0
+    for disp, adds in additions.items():
+        if disp not in raw:
+            print("ADDITION FOR UNKNOWN CHARACTER: %s" % disp)
+            continue
+        have = set(raw[disp]["species"])
+        for a in adds:
+            name = a["species"] if isinstance(a, dict) else a
+            if name not in have:
+                have.add(name)
+                added += 1
+        raw[disp]["species"] = sorted(have)
+    if additions:
+        print("overlay: %d species added across %d characters"
+              % (added, len(additions)))
 
     n2c = name_to_const()
     evo_base = first_stage_map()

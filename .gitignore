@@ -47,5 +47,9 @@ tools/poryscript/
 *.elf
 *.map
 
+# Python byte-cache (emit_roster_docs.py imports map_species.py as a module)
+__pycache__/
+*.pyc
+
 # Local Claude Code handoff notes (kept out of the public repo)
 CLAUDE.md

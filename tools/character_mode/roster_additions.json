@@ -1,0 +1,1042 @@
+{
+ "additions": {
+  "Ash": [
+   {
+    "base": "Bulbasaur",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Venusaur"
+   },
+   {
+    "base": "Squirtle",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Blastoise"
+   },
+   {
+    "base": "Caterpie",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Butterfree"
+   },
+   {
+    "base": "Pidgey",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Pidgeot"
+   },
+   {
+    "base": "Grimer",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Muk"
+   },
+   {
+    "base": "Krabby",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Kingler"
+   },
+   {
+    "base": "Tauros",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Tauros"
+   },
+   {
+    "base": "Lapras",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Lapras"
+   },
+   {
+    "base": "Munchlax",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Snorlax"
+   },
+   {
+    "base": "Chikorita",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Meganium"
+   },
+   {
+    "base": "Cyndaquil",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Typhlosion"
+   },
+   {
+    "base": "Totodile",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Feraligatr"
+   },
+   {
+    "base": "Hoothoot",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Noctowl"
+   },
+   {
+    "base": "Heracross",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Heracross"
+   },
+   {
+    "base": "Phanpy",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Donphan"
+   },
+   {
+    "base": "Larvitar",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Tyranitar"
+   },
+   {
+    "base": "Treecko",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Sceptile"
+   },
+   {
+    "base": "Torkoal",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Torkoal"
+   },
+   {
+    "base": "Corphish",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Crawdaunt"
+   },
+   {
+    "base": "Snorunt",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Glalie"
+   },
+   {
+    "base": "Turtwig",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Torterra"
+   },
+   {
+    "base": "Buizel",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Floatzel"
+   },
+   {
+    "base": "Aipom",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Ambipom"
+   },
+   {
+    "base": "Gligar",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Gliscor"
+   },
+   {
+    "base": "Snivy",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Serperior"
+   },
+   {
+    "base": "Tepig",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Emboar"
+   },
+   {
+    "base": "Oshawott",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Samurott"
+   },
+   {
+    "base": "Roggenrola",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Gigalith"
+   },
+   {
+    "base": "Tympole",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Seismitoad"
+   },
+   {
+    "base": "Sewaddle",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Leavanny"
+   },
+   {
+    "base": "Sandile",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Krookodile"
+   },
+   {
+    "base": "Hawlucha",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Hawlucha"
+   },
+   {
+    "base": "Noibat",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Noivern"
+   },
+   {
+    "base": "Rowlet",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Decidueye"
+   },
+   {
+    "base": "Poipole",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Naganadel"
+   },
+   {
+    "base": "Mime jr.",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Mr. Rime"
+   },
+   {
+    "base": "Mankey",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Annihilape"
+   }
+  ],
+  "Bertha": [
+   {
+    "base": "Onix",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Steelix"
+   },
+   {
+    "base": "Phanpy",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Donphan"
+   }
+  ],
+  "Brock": [
+   {
+    "base": "Mudkip",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Swampert"
+   }
+  ],
+  "Caitlin": [
+   {
+    "base": "Pawniard",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Kingambit"
+   }
+  ],
+  "Calem": [
+   {
+    "base": "Absol",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Absol"
+   },
+   {
+    "base": "Bunnelby",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Diggersby"
+   },
+   {
+    "base": "Scatterbug",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Vivillon"
+   }
+  ],
+  "Colress": [
+   {
+    "base": "Grimer",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Muk"
+   },
+   {
+    "base": "Voltorb",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Electrode"
+   },
+   {
+    "base": "Porygon",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Porygon-Z"
+   }
+  ],
+  "Crasher Wake": [
+   {
+    "base": "Scyther",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Scizor"
+   },
+   {
+    "base": "Suicune",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Suicune"
+   },
+   {
+    "base": "Mudkip",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Swampert"
+   },
+   {
+    "base": "Wingull",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Pelipper"
+   },
+   {
+    "base": "Anorith",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Armaldo"
+   }
+  ],
+  "Cyrus": [
+   {
+    "base": "Entei",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Entei"
+   },
+   {
+    "base": "Bagon",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Salamence"
+   }
+  ],
+  "Dawn": [
+   {
+    "base": "Buizel",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Floatzel"
+   }
+  ],
+  "Ethan": [
+   {
+    "base": "Bulbasaur",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Venusaur"
+   },
+   {
+    "base": "Chikorita",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Meganium"
+   },
+   {
+    "base": "Totodile",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Feraligatr"
+   },
+   {
+    "base": "Tangela",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Tangrowth"
+   },
+   {
+    "base": "Porygon",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Porygon-Z"
+   }
+  ],
+  "Gary": [
+   {
+    "base": "Spearow",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Fearow"
+   },
+   {
+    "base": "Pinsir",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Pinsir"
+   },
+   {
+    "base": "Skarmory",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Skarmory"
+   },
+   {
+    "base": "Houndour",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Houndoom"
+   },
+   {
+    "base": "Horsea",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Kingdra"
+   }
+  ],
+  "Gloria": [
+   {
+    "base": "Zamazenta",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Zamazenta"
+   },
+   {
+    "base": "Eternatus",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Eternatus"
+   },
+   {
+    "base": "Calyrex",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Calyrex"
+   }
+  ],
+  "Goh": [
+   {
+    "base": "Caterpie",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Butterfree"
+   },
+   {
+    "base": "Weedle",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Beedrill"
+   },
+   {
+    "base": "Pidgey",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Pidgeot"
+   },
+   {
+    "base": "Rattata",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Raticate"
+   },
+   {
+    "base": "Spearow",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Fearow"
+   },
+   {
+    "base": "Ekans",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Arbok"
+   },
+   {
+    "base": "Nidoran♀",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Nidoqueen"
+   },
+   {
+    "base": "Oddish",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Vileplume"
+   },
+   {
+    "base": "Paras",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Parasect"
+   },
+   {
+    "base": "Venonat",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Venomoth"
+   },
+   {
+    "base": "Poliwag",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Poliwrath"
+   },
+   {
+    "base": "Bellsprout",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Victreebel"
+   },
+   {
+    "base": "Tentacool",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Tentacruel"
+   },
+   {
+    "base": "Geodude",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Golem"
+   },
+   {
+    "base": "Seel",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Dewgong"
+   },
+   {
+    "base": "Grimer",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Muk"
+   },
+   {
+    "base": "Drowzee",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Hypno"
+   },
+   {
+    "base": "Krabby",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Kingler"
+   },
+   {
+    "base": "Voltorb",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Electrode"
+   },
+   {
+    "base": "Tyrogue",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Hitmonchan"
+   },
+   {
+    "base": "Goldeen",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Seaking"
+   },
+   {
+    "base": "Magikarp",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Gyarados"
+   },
+   {
+    "base": "Aerodactyl",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Aerodactyl"
+   },
+   {
+    "base": "Sentret",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Furret"
+   },
+   {
+    "base": "Hoothoot",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Noctowl"
+   },
+   {
+    "base": "Spinarak",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Ariados"
+   },
+   {
+    "base": "Zubat",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Crobat"
+   },
+   {
+    "base": "Chinchou",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Lanturn"
+   },
+   {
+    "base": "Pineco",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Forretress"
+   },
+   {
+    "base": "Mantyke",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Mantine"
+   },
+   {
+    "base": "Wurmple",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Beautifly"
+   },
+   {
+    "base": "Taillow",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Swellow"
+   },
+   {
+    "base": "Wingull",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Pelipper"
+   },
+   {
+    "base": "Nincada",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Shedinja"
+   },
+   {
+    "base": "Carvanha",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Sharpedo"
+   },
+   {
+    "base": "Numel",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Camerupt"
+   },
+   {
+    "base": "Trapinch",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Flygon"
+   },
+   {
+    "base": "Swablu",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Altaria"
+   },
+   {
+    "base": "Absol",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Absol"
+   },
+   {
+    "base": "Misdreavus",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Mismagius"
+   },
+   {
+    "base": "Murkrow",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Honchkrow"
+   },
+   {
+    "base": "Pansear",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Simisear"
+   },
+   {
+    "base": "Panpour",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Simipour"
+   },
+   {
+    "base": "Roggenrola",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Gigalith"
+   },
+   {
+    "base": "Petilil",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Lilligant"
+   },
+   {
+    "base": "Sandile",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Krookodile"
+   },
+   {
+    "base": "Ferroseed",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Ferrothorn"
+   },
+   {
+    "base": "Stunfisk",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Stunfisk"
+   },
+   {
+    "base": "Froakie",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Greninja"
+   },
+   {
+    "base": "Scatterbug",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Vivillon"
+   },
+   {
+    "base": "Binacle",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Barbaracle"
+   },
+   {
+    "base": "Phantump",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Trevenant"
+   },
+   {
+    "base": "Morelull",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Shiinotic"
+   },
+   {
+    "base": "Passimian",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Passimian"
+   },
+   {
+    "base": "Pyukumuku",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Pyukumuku"
+   },
+   {
+    "base": "Bruxish",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Bruxish"
+   },
+   {
+    "base": "Skwovet",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Greedent"
+   },
+   {
+    "base": "Gossifleur",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Eldegoss"
+   },
+   {
+    "base": "Corsola",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Cursola"
+   },
+   {
+    "base": "Farfetch'd",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Sirfetch'd"
+   },
+   {
+    "base": "Milcery",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Alcremie"
+   },
+   {
+    "base": "Falinks",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Falinks"
+   },
+   {
+    "base": "Arctozolt",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Arctozolt"
+   },
+   {
+    "base": "Mankey",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Annihilape"
+   }
+  ],
+  "Guzma": [
+   {
+    "base": "Murkrow",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Honchkrow"
+   },
+   {
+    "base": "Croagunk",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Toxicroak"
+   },
+   {
+    "base": "Purrloin",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Liepard"
+   },
+   {
+    "base": "Mareanie",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Toxapex"
+   },
+   {
+    "base": "Pawniard",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Kingambit"
+   }
+  ],
+  "Hassel": [
+   {
+    "base": "Archaludon",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Archaludon"
+   }
+  ],
+  "Hilbert": [
+   {
+    "base": "Snivy",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Serperior"
+   },
+   {
+    "base": "Tepig",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Emboar"
+   }
+  ],
+  "Hilda": [
+   {
+    "base": "Snivy",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Serperior"
+   },
+   {
+    "base": "Oshawott",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Samurott"
+   }
+  ],
+  "Hop": [
+   {
+    "base": "Heatmor",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Heatmor"
+   },
+   {
+    "base": "Phantump",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Trevenant"
+   },
+   {
+    "base": "Yamper",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Boltund"
+   },
+   {
+    "base": "Silicobra",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Sandaconda"
+   },
+   {
+    "base": "Toxel",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Toxtricity"
+   }
+  ],
+  "James": [
+   {
+    "base": "Growlithe",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Arcanine"
+   },
+   {
+    "base": "Aron",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Aggron"
+   },
+   {
+    "base": "Yamask",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Cofagrigus"
+   }
+  ],
+  "Jessie": [
+   {
+    "base": "Shellder",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Cloyster"
+   }
+  ],
+  "Jupiter": [
+   {
+    "base": "Nidoran♂",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Nidoking"
+   },
+   {
+    "base": "Gastly",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Gengar"
+   }
+  ],
+  "Lyra": [
+   {
+    "base": "Bulbasaur",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Venusaur"
+   },
+   {
+    "base": "Tauros",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Tauros"
+   },
+   {
+    "base": "Tangela",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Tangrowth"
+   },
+   {
+    "base": "Porygon",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Porygon-Z"
+   }
+  ],
+  "Malva": [
+   {
+    "base": "Scatterbug",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Vivillon"
+   }
+  ],
+  "May": [
+   {
+    "base": "Bulbasaur",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Venusaur"
+   },
+   {
+    "base": "Manaphy",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Manaphy"
+   }
+  ],
+  "Misty": [
+   {
+    "base": "Azurill",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Azumarill"
+   },
+   {
+    "base": "Luvdisc",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Luvdisc"
+   },
+   {
+    "base": "Corsola",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Cursola"
+   }
+  ],
+  "N": [
+   {
+    "base": "Lillipup",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Stoutland"
+   },
+   {
+    "base": "Minccino",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Cinccino"
+   }
+  ],
+  "Olivia": [
+   {
+    "base": "Stufful",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Bewear"
+   }
+  ],
+  "Plumeria": [
+   {
+    "base": "Fomantis",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Lurantis"
+   }
+  ],
+  "Raihan": [
+   {
+    "base": "Archaludon",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Archaludon"
+   }
+  ],
+  "Red": [
+   {
+    "base": "Pidgey",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Pidgeot"
+   },
+   {
+    "base": "Rattata",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Raticate"
+   },
+   {
+    "base": "Spearow",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Fearow"
+   },
+   {
+    "base": "Ekans",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Arbok"
+   },
+   {
+    "base": "Nidoran♀",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Nidoqueen"
+   },
+   {
+    "base": "Meowth",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Persian"
+   },
+   {
+    "base": "Psyduck",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Golduck"
+   },
+   {
+    "base": "Bellsprout",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Victreebel"
+   },
+   {
+    "base": "Tentacool",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Tentacruel"
+   },
+   {
+    "base": "Ponyta",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Rapidash"
+   },
+   {
+    "base": "Doduo",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Dodrio"
+   },
+   {
+    "base": "Gastly",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Gengar"
+   },
+   {
+    "base": "Tyrogue",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Hitmonlee"
+   },
+   {
+    "base": "Magikarp",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Gyarados"
+   },
+   {
+    "base": "Kabuto",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Kabutops"
+   },
+   {
+    "base": "Zapdos",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Zapdos"
+   },
+   {
+    "base": "Moltres",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Moltres"
+   },
+   {
+    "base": "Mewtwo",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Mewtwo"
+   },
+   {
+    "base": "Happiny",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Blissey"
+   }
+  ],
+  "Saturn": [
+   {
+    "base": "Carvanha",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Sharpedo"
+   },
+   {
+    "base": "Stunky",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Skuntank"
+   }
+  ],
+  "Victor": [
+   {
+    "base": "Scorbunny",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Cinderace"
+   },
+   {
+    "base": "Kubfu",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Urshifu"
+   },
+   {
+    "base": "Glastrier",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Glastrier"
+   },
+   {
+    "base": "Calyrex",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Calyrex"
+   }
+  ],
+  "Wally": [
+   {
+    "base": "Scatterbug",
+    "source": "ROSTERS.md (researched final-evolution roster)",
+    "species": "Vivillon"
+   }
+  ]
+ },
+ "generated_from": "ROSTERS.md",
+ "note": "Overlay merged into rosters_raw.json by map_species.py at map time. Sourced from ROSTERS.md, which the 2026-07-18 research passes updated without regenerating the game data."
+}

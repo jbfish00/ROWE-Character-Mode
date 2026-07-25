@@ -2,8 +2,10 @@
 -- CharacterMode_SweepPartyToPC() -- the exact call Cb2_ExitPSS makes when
 -- the player leaves the storage UI -- against real party/PC state:
 --   1. mode off: gift a Pikachu next to the Meowth starter (both legal)
---   2. become Red: Meowth is off-roster, Pikachu on -> SWEEP: Meowth to
---      the PC, Pikachu compacts to slot 0, count 2 -> 1
+--   2. become Falkner: Meowth is off-roster, Pikachu on (his Pichu) ->
+--      SWEEP: Meowth to the PC, Pikachu compacts to slot 0, count 2 -> 1.
+--      This step used Red until 2026-07-24, when the roster sync gave Red
+--      the Persian line and Meowth stopped being off-roster for him.
 --   3. become Lance (roster has NO Pichu family -- Falkner's does, which
 --      is what the first version of this test tripped over): the remaining
 --      Pikachu is off-roster and ALONE -> SWEEP: the keptOne guard must
@@ -27,8 +29,10 @@ local SPECIES_PIKACHU = 25
 local SPECIES_MEOWTH  = 52
 local SPECIES_DRATINI = 147
 
-local CHAR_RED   = 1
-local CHAR_LANCE = 4
+-- Character indices are 1-based positions in gCharacters (characters.txt
+-- order). New characters are only ever APPENDED, so these stay valid.
+local CHAR_LANCE   = 4
+local CHAR_FALKNER = 28
 
 local MAP_TRUCK_GROUP = 25
 local MAP_TRUCK_NUM   = 40
@@ -213,14 +217,14 @@ mbStep("gift Pikachu with mode off", REQ_GIVE_MON, SPECIES_PIKACHU, 10,
         H.assertEq("party is Meowth + Pikachu", partyCount(), 2)
     end)
 
--- 2. become Red; sweep must remove the off-roster Meowth only
-mbStep("become Red", REQ_SET_CHARACTER, CHAR_RED, 0)
+-- 2. become Falkner; sweep must remove the off-roster Meowth only
+mbStep("become Falkner", REQ_SET_CHARACTER, CHAR_FALKNER, 0)
 
-mbStep("sweep as Red (Meowth off-roster)", REQ_SWEEP_PARTY, 0, 0, function()
+mbStep("sweep as Falkner (Meowth off-roster)", REQ_SWEEP_PARTY, 0, 0, function()
     H.assertEq("sweep left exactly 1 mon", mbResult(), 1)
 end)
 
-mbStep("slot 0 after Red sweep", REQ_QUERY_PARTY_MON, 0, 0, function()
+mbStep("slot 0 after Falkner sweep", REQ_QUERY_PARTY_MON, 0, 0, function()
     H.assertEq("Pikachu compacted to slot 0 (Meowth swept to PC)",
                mbResult() % 65536, SPECIES_PIKACHU)
 end)
