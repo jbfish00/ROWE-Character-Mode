@@ -17,17 +17,18 @@ file is **state and next steps**. Verified 2026-07-26 against this working tree.
 ## 0. TL;DR
 
 **The most feature-complete game in the project, and no longer blocked.** The
-12-character-name change is landed, the whole suite is green, and a live
-out-of-bounds write in the Pokedex is fixed.
+12-character-name change is landed, a live out-of-bounds write in the Pokedex is
+fixed, the 1% legendary encounter rule is shipped, and the whole suite is green.
 
 | | |
 |---|---|
-| Branch | `character-mode`, HEAD `fa09f30a`, **working tree clean** |
+| Branch | `character-mode`, HEAD `7a11d933`, **working tree clean** |
 | Rosters | **AUDITED** — 236 table slots / **206 selectable** / 30 hidden, 3,376 rows, **every row sourced** |
 | Threshold | **ENFORCED** — the only game in the project where it is |
 | Sprites | **168 of 236** have a front pic (68 are `CHAR_ASSET_NONE`) |
 | Name length | **12/12 LANDED** (`71cebcbe`), verified by a new headless suite |
-| Readiness | **GREEN** — selftest 30/30 and **all 9 suite runs passing** |
+| Legendary rule | **SHIPPED** — 1% wild encounters, offered-until-caught, no roaming |
+| Readiness | **GREEN** — selftest 33/33 and **all 10 suite runs passing** |
 
 Every number above was re-derived from this tree, not taken from notes.
 
@@ -168,74 +169,71 @@ The five closed-binary ports are untouched; Part B of that plan specs a
 
 ---
 
-## 5. Encounter tables and the 1% legendary rule
+## 5. The 1% legendary rule — SHIPPED
 
 Spec: `../Character Hacks/game_plans/legendary_encounters.md`. **Design locked by
-the user 2026-07-26; surveyed in all six engines; implemented in none.** Of the
-six, **this is the one the survey said "do it" outright for.**
+the user 2026-07-26 and now implemented here** — the baseline 1% wild encounters,
+no roaming (the user's call). Radical Red shipped it the same day; four games left.
+
+### What was built
+
+The roll lives **inside `CharacterMode_RollWildOverrideSpecies`**
+(`src/character_mode.c`), ahead of the existing 10% roll. Both shipping call
+sites — `src/wild_encounter.c:408` and `:422` — already route through that one
+function, so **no call site changed**. Rates compose to ~1% legendary / ~9.9%
+roster / ~89% vanilla, and a character with no legendary is bit-for-bit
+unaffected.
+
+`CharacterMode_BuildLegendaryPool()` is public specifically so the pool can be
+asserted on **directly**; its `outRepeatable` out-param carries the §1.2
+exemption (a roster with no ordinary family keeps its legendaries repeatable, so
+Cogita-type characters can still catch something). "Offered until caught" is the
+Pokédex caught flag — zero new save state, which is what makes the design
+portable to the five closed binaries.
+
+⚠️ **This depended on the §6 Pokédex fix landing first.** The dex accessor takes a
+national dex number, and 26 species mapped to 0; without the guard the filter
+would have written out of bounds on the first lookup. Any port must check that
+before wiring the filter.
+
+**Level** is §1.4 as written: the area's level, via the existing
+`CharacterMode_PickEvolutionStageForLevel`. The out-param the old plan thought
+was needed is not — a Lv.3 Mewtwo on Route 101 is the intended behaviour, and a
+fixed canon level would be a different feature.
+
+### Testing it, and the trap it walked into
+
+`tools/mgba_scripts/legendary_encounter_e2e.lua` (19/19). The boot self-test's
+old assertion — *"wild override: never produced a legendary/mythical"* — is
+exactly the shape the spec warns about: once the dex filter can suppress
+legendaries, it passes both when suppression works **and when the feature is
+completely dead**. It is now a rarity bound, with the real proof in the positive
+direction: the pool is non-empty, every entry has a real dex number, the roll
+**fires** at ~1%, catching one removes exactly that one, and the 10% override
+survives.
+
+⚠️ **Sampling a 1% event here is expensive — measured at ~11.8 frames per trial**
+through the full override, because the 10% path rebuilds a 47-entry candidate
+list and every entry costs a `CharacterMode_FamilyBase` evolution-table walk.
+2000 trials does not finish inside any sane deadline. The test therefore samples
+the *legendary roll alone* (which early-outs on 99 of 100 calls) for statistical
+weight and runs only a small end-to-end sample for wiring. That per-encounter
+cost is **pre-existing**, not something this feature introduced, but it is real:
+roughly 0.2 s of GBA time on the 10% path. Worth optimising if wild encounters
+ever feel like they hitch.
+
+### Still open here
+
+**Per-character encounter tables** (spec §3) — the generated doc of what each
+character can actually meet, with rates and empty pools called out. Not started;
+it belongs beside `emit_roster_docs.py` and must be derived from emitted data,
+never from `rosters_mapped.json`.
 
 The rule: if a legendary is on the roster, a **1% chance** to meet one in any area,
 rolled *before* the existing 10% non-legendary override (independent, so a
 character with no legendary is unaffected). Each legendary is offered **until
 caught**, then dropped — via the **Pokédex caught flag**, costing zero new save
 state. Characters with no non-legendary families keep theirs repeatable.
-
-### What it costs here — almost nothing
-
-| | |
-|---|---|
-| Roll insertion | before `src/character_mode.c:338` (existing rate `WILD_OVERRIDE_CHANCE_PERCENT 10` at `:198`) |
-| Call sites | `src/wild_encounter.c:408` (land/water/rock) and `:422` (all rods) |
-| New data | **none** — `sLegendaryFamilyBases[98]` (`character_mode.c:205-226`) and `CharacterMode_IsLegendaryOrMythical()` (`:228-239`) already exist |
-| The mechanism | **invert the filter at `character_mode.c:343`** into a second candidate list |
-| Rosters | already sort legendaries to the tail (`emit_characters.py:168-179`) |
-| Once-each | `GetSetPokedexFlag(SpeciesToNationalPokedexNum(species), FLAG_GET_CAUGHT)`, `src/pokedex.c` |
-
-**93 of the 206 selectable characters have ≥1 legendary; max 12 on one roster.**
-
-⚠️ The legendary list is **hand-synced** between `character_mode.c:205-226` and
-`tools/character_mode/emit_characters.py:28-38` (98 entries each, verified in sync).
-Any change must touch both.
-
-Level: `CharacterMode_PickEvolutionStageForLevel()` (`:284-322`) handles the few
-legendaries with pre-evos correctly (Cosmog, Type: Null, Kubfu, Poipole, Phione),
-but the ~90 standalone ones return at the route's rolled level — **a Lv.3 Mewtwo on
-Route 101**. Raising it needs an out-param; the caller does
-`CreateWildMon(species, level)` at `wild_encounter.c:412`/`:429`.
-
-### Roaming — feasible here, at ZERO SaveBlock1 cost
-
-**This repo already has an arbitrary-species roamer API**: `CreateOnlineRoamer(u16
-species, u8 level)` at `src/roamer.c:63-83`, in live use by the companion feature
-(`src/pokemon.c`). Repeatability is already solved for roamers —
-`src/battle_main.c:5847-5858` sets `roamerFlag[VarGet(VAR_LAST_ROAMER_NUM)]` on
-`B_OUTCOME_CAUGHT` and clears the slot. The design reuses the existing
-`struct Roamer` at SB1 `0x31DC`, whose `u8 filler[0x8]` can absorb a persisted map
-position — **none of the 116 spare bytes are needed.**
-
-Concrete risks: `sRoamerLocation`/`sLocationHistory` are `EWRAM_DATA`
-(`roamer.c:14-15`) so position is lost on load, recovering only via the 1/16 branch
-at `:152`; the location table is Hoenn map group 0, routes 110-134 only (`:17-40`,
-`MAP_GRP` hardcoded at `:81`, `:104`, `:135`); **one slot only**;
-`CreateInitialRoamerMon` is stubbed to always `SPECIES_PHIONE` (`:85-91`); and
-`InitRoamer` is a live script special (`data/specials.inc:310`, called from
-`data/scripts/tv.inc:92`) that would overwrite a Character Mode roamer.
-`roamerFlag[]` indices collide with the companion system unless a reserved
-`VAR_LAST_ROAMER_NUM` value is claimed.
-
-### What it breaks
-
-**One hard failure:** `src/character_mode_selftest.c` —
-`Check("wild override: never produced a legendary/mythical", anyLegendary == FALSE)`.
-Its sibling survives (independent rolls give 0.99 × 10% = 9.9%).
-
-⚠️ **A 1% event is the perfect hiding place for a test that cannot fail.** Once the
-dex filter can suppress legendaries, *"no legendary appeared"* is satisfied both by
-correct suppression **and** by the feature never running. Assert the positive
-direction, on a save with a known-uncaught legendary. (This repo has now shipped
-two such tests — see §1 and §4. Watch for the shape.)
-
----
 
 ## 6. The Pokedex out-of-bounds write — FIXED (`b6b677a7`)
 
@@ -267,7 +265,8 @@ difference, not a defect.
 ## 7. Open work, in priority order
 
 1. **68 characters still have no portrait** — art acquisition, not tooling (§3).
-2. The legendary encounter feature (§5), if and when the user picks a starting game.
+2. **Per-character encounter tables** (§5, spec §3) — the one piece of the
+   legendary work not yet done.
 3. Trainer card shows only the Hoenn 8 badges; the Johto 8 need art and a second row.
 4. `FLAG_FULL_RANDOMIZED_MODE` and friends cannot be enabled without tilemap art
    (the mode NAMES are baked into the UI tilemap, not printed as text).
@@ -294,14 +293,14 @@ CM_SAV_OUT=~/Documents/rowe_fixture.sav timeout 300 "$MGBA" \
     --script tools/mgba_scripts/make_fixture_save.lua pokeemerald.gba
 ```
 
-The suite (9 runs). Logs are ~130 MB; `timeout` exit 124 is NORMAL — the harness
+The suite (10 runs). Logs are ~130 MB; `timeout` exit 124 is NORMAL — the harness
 never exits on its own and the RESULT line prints well before the timeout:
 
 ```bash
 MGBA="../Character Hacks/Seaglass-Character-Mode/tools/mgba_src/build/mgba-headless"
 export CM_SAV=~/Documents/rowe_fixture.sav
-for t in boot_smoke continue_smoke ot_roundtrip_e2e catch_gate_e2e \
-         pc_sweep_e2e johto_gym_e2e gigaton_reselect_e2e; do
+for t in boot_smoke continue_smoke ot_roundtrip_e2e legendary_encounter_e2e \
+         catch_gate_e2e pc_sweep_e2e johto_gym_e2e gigaton_reselect_e2e; do
     timeout 100 "$MGBA" --script tools/mgba_scripts/$t.lua pokeemerald.gba > /tmp/$t.log 2>&1
     echo "$t $(grep -aoE 'RESULT: [A-Z]+' /tmp/$t.log | tail -1)"
 done
