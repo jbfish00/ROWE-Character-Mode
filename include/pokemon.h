@@ -104,10 +104,14 @@ struct BoxPokemon
     u8 hasSpecies:1;
     u8 isEgg:1;
     u8 unused:5;
-    u8 otName[PLAYER_NAME_LENGTH];
+    u8 otName[OT_NAME_LENGTH];
     u8 markings;
     u16 checksum;
-    u16 unknown;
+    // The vestigial u16 that used to sit here was reclaimed to widen nickname
+    // from 10 to 12 while keeping this struct at exactly 32 bytes before the
+    // secure block. It backed only MON_DATA_ENCRYPT_SEPARATOR, which nothing
+    // ever read back. The enum constant survives as the is-this-field-encrypted
+    // threshold; only its storage is gone.
 
     union
     {
@@ -178,7 +182,7 @@ struct CompressedPokemon
 {
     /* 0x00 */ u32 personality;
     /* 0x04 */ u32 otId;
-    /* 0x08 */ u8 otName[PLAYER_NAME_LENGTH];
+    /* 0x08 */ u8 otName[OT_NAME_LENGTH];
     /* 0x10 */ u16 species:11;
     /* 0x10 */ u16 formId:5;
     /* 0x10 */ u16 heldItem:10;
@@ -254,7 +258,7 @@ struct BattlePokemon
     /*0x2F*/ u16 item;
     /*0x31*/ u8 nickname[POKEMON_NAME_LENGTH + 1];
     /*0x3C*/ u8 ppBonuses;
-    /*0x3D*/ u8 otName[PLAYER_NAME_LENGTH + 1];
+    /*0x3D*/ u8 otName[OT_NAME_LENGTH + 1];
     /*0x45*/ u32 experience;
     /*0x49*/ u32 personality;
     /*0x4D*/ u32 status1;

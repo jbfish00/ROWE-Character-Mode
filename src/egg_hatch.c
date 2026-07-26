@@ -354,7 +354,7 @@ static void AddHatchedMonToParty(u8 id)
 {
     u8 isEgg = 0x46; // ?
     u16 pokeNum;
-    u8 name[12];
+    u8 name[POKEMON_NAME_LENGTH + 1];
     u16 ball;
     u16 caughtLvl;
     u8 mapNameID;

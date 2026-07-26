@@ -2490,7 +2490,11 @@ static void LoadPartyBoxPalette(struct PartyMenuBox *menuBox, u8 palFlags)
 
 static void DisplayPartyPokemonBarDetail(u8 windowId, const u8 *str, u8 color, const u8 *align)
 {
-    AddTextPrinterParameterized3(windowId, 0, align[0], align[1], sFontColorTable[color], 0, str);
+    // align[2] is the field's pixel width. Only entries that would overrun it
+    // are narrowed -- a 12-character nickname does, "Lv100" never will.
+    u8 fontId = GetFontIdToFit(str, FONT_SMALL, 0, align[2]);
+
+    AddTextPrinterParameterized3(windowId, fontId, align[0], align[1], sFontColorTable[color], 0, str);
 }
 
 static void DisplayPartyPokemonNickname(struct Pokemon *mon, struct PartyMenuBox *menuBox, u8 c)

@@ -2839,7 +2839,9 @@ static u8* AddTextPrinterAndCreateWindowOnHealthbox(const u8 *str, u32 x, u32 y,
     color[1] = 1;
     color[2] = 3;
 
-	AddTextPrinterParameterized3(winId, 0, x, y, color, -1, str);
+    // sHealthboxWindowTemplate is 8 tiles = 64px wide. A 12-character nickname
+    // overruns it; level and HP text never does, so it keeps the normal font.
+	AddTextPrinterParameterized3(winId, GetFontIdToFit(str, FONT_SMALL, -1, 64 - x), x, y, color, -1, str);
 
     //AddTextPrinterParameterized3(winId, 7, x, y, 0, 0, color, -1, str);
 

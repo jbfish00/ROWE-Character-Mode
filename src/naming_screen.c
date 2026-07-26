@@ -2100,7 +2100,7 @@ static void Debug_NamingScreenNickname(void)
 static const struct NamingScreenTemplate sPlayerNamingScreenTemplate =
 {
     .copyExistingString = FALSE,
-    .maxChars = 7,
+    .maxChars = PLAYER_NAME_LENGTH,
     .iconFunction = 1,
     .addGenderIcon = FALSE,
     .initialPage = KBPAGE_LETTERS_UPPER,
@@ -2122,7 +2122,7 @@ static const struct NamingScreenTemplate sPCBoxNamingTemplate =
 static const struct NamingScreenTemplate sMonNamingScreenTemplate =
 {
     .copyExistingString = FALSE,
-    .maxChars = 10,
+    .maxChars = POKEMON_NAME_LENGTH,
     .iconFunction = 3,
     .addGenderIcon = TRUE,
     .initialPage = KBPAGE_LETTERS_UPPER,

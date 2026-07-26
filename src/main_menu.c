@@ -682,6 +682,14 @@ static void Task_MainMenuCheckSaveFile(u8 taskId)
                 if (IsMysteryGiftEnabled() == TRUE)
                     tMenuType += 2;
                 break;
+            case SAVE_STATUS_OLD_FORMAT:
+                // Written before names went to 12 characters. The data is intact
+                // but unreadable by this build, so say so plainly and offer only
+                // New Game -- Continue would load garbage.
+                CreateMainMenuErrorWindow(gText_SaveFileOldVersion);
+                tMenuType = HAS_NO_SAVED_GAME;
+                gTasks[taskId].func = Task_WaitForSaveFileErrorWindow;
+                break;
             case SAVE_STATUS_EMPTY:
             default:
                 tMenuType = HAS_NO_SAVED_GAME;

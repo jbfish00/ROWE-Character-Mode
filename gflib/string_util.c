@@ -28,10 +28,15 @@ static const s32 sPowersOfTen[] =
     1000000000,
 };
 
+// Names kept for continuity with the pokeemerald decomp, but the "10" and "7" in
+// StringCopy10 / StringGetEnd10 / StringCopy7 are now historical: the bounds are
+// POKEMON_NAME_LENGTH and PLAYER_NAME_LENGTH. Every destination was audited to be
+// at least LENGTH + 1 bytes. Do not hardcode these again -- nothing here is
+// checked by the compiler.
 u8 *StringCopy10(u8 *dest, const u8 *src)
 {
     u8 i;
-    u32 limit = 10;
+    u32 limit = POKEMON_NAME_LENGTH;
 
     for (i = 0; i < limit; i++)
     {
@@ -48,7 +53,7 @@ u8 *StringCopy10(u8 *dest, const u8 *src)
 u8 *StringGetEnd10(u8 *str)
 {
     u8 i;
-    u32 limit = 10;
+    u32 limit = POKEMON_NAME_LENGTH;
 
     for (i = 0; i < limit; i++)
         if (str[i] == EOS)
@@ -61,7 +66,7 @@ u8 *StringGetEnd10(u8 *str)
 u8 *StringCopy7(u8 *dest, const u8 *src)
 {
     s32 i;
-    s32 limit = 7;
+    s32 limit = PLAYER_NAME_LENGTH;
 
     for (i = 0; i < limit; i++)
     {

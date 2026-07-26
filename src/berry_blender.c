@@ -128,7 +128,7 @@ struct BlenderGameBlock
 
 struct TvBlenderStruct
 {
-    u8 name[11];
+    u8 name[PLAYER_NAME_LENGTH + 1];
     u8 pokeblockFlavor;
     u8 pokeblockColor;
     u8 pokeblockSheen;

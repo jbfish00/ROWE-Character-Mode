@@ -741,7 +741,7 @@ struct MauvilleOldManTrader
 {
     u8 id;
     u8 decorations[NUM_TRADER_ITEMS];
-    u8 playerNames[NUM_TRADER_ITEMS][11];
+    u8 playerNames[NUM_TRADER_ITEMS][PLAYER_NAME_LENGTH + 1];
     u8 alreadyTraded;
     u8 language[NUM_TRADER_ITEMS];
 };

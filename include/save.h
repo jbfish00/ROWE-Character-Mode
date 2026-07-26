@@ -32,7 +32,20 @@ struct SaveSectionOffsets
 // Emerald changes this definition to be the sectors per slot.
 #define NUM_SECTORS_PER_SLOT 16
 
-#define UNKNOWN_CHECK_VALUE 0x8012025
+// Per-sector signature. It lives in the sector FOOTER, at a fixed offset that is
+// independent of how the save blocks are laid out, which makes it the right place
+// to version the save format: it survives the very change it needs to detect.
+//
+// Bumped from 0x8012025 when POKEMON_NAME_LENGTH / PLAYER_NAME_LENGTH went to 12
+// and SECTOR_DATA_SIZE went to 4084. A save written before that has a different
+// SaveBlock1 layout and different sector chunking, so loading it would yield
+// garbage rather than a playable game.
+#define UNKNOWN_CHECK_VALUE 0x8012026
+
+// The pre-12-character-name signature. Recognised only so the main menu can say
+// "made by an older version" instead of "the save file is corrupted".
+#define LEGACY_CHECK_VALUE 0x8012025
+
 #define SPECIAL_SECTION_SENTINEL 0xB39D
 
 // SetDamagedSectorBits states
@@ -72,6 +85,8 @@ enum
 #define SAVE_STATUS_OK       1
 #define SAVE_STATUS_CORRUPT  2
 #define SAVE_STATUS_NO_FLASH 4
+// Flash holds a save, but one written before the 12-character-name format change.
+#define SAVE_STATUS_OLD_FORMAT 5
 #define SAVE_STATUS_ERROR    0xFF
 
 extern u16 gLastWrittenSector;

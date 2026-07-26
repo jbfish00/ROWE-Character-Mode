@@ -1288,6 +1288,30 @@ u32 (*GetFontWidthFunc(u8 glyphId))(u16, bool32)
     return NULL;
 }
 
+// Pick a font that fits str into widthPx, falling back to the narrow variant of
+// baseFontId when it does not. Added when POKEMON_NAME_LENGTH and
+// PLAYER_NAME_LENGTH went to 12: a 12-character name overruns several windows
+// that were laid out for 10, and narrowing the few names that are actually too
+// long is far less invasive than re-laying out those windows.
+//
+// Fonts without a narrow counterpart are returned unchanged, so this is safe to
+// apply to a shared printer -- text that already fits is never touched.
+u8 GetFontIdToFit(const u8 *str, u8 baseFontId, s16 letterSpacing, u32 widthPx)
+{
+    if (GetStringWidth(baseFontId, str, letterSpacing) <= (s32)widthPx)
+        return baseFontId;
+
+    switch (baseFontId)
+    {
+    case FONT_SMALL:
+        return FONT_SMALL_NARROW;
+    case FONT_NORMAL:
+        return FONT_NARROW;
+    default:
+        return baseFontId;
+    }
+}
+
 s32 GetStringWidth(u8 fontId, const u8 *str, s16 letterSpacing)
 {
     bool8 isJapanese;

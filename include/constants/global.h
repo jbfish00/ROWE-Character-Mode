@@ -35,7 +35,10 @@
 #define OBJECT_EVENTS_COUNT 16
 #define BERRY_TREES_COUNT 128
 #define MAIL_COUNT 16
-#define SECRET_BASES_COUNT 5
+// Reduced from 5 to make room for the 12-character player name in SaveBlock1.
+// Slot 0 is the player's own base; the rest only ever fill via GBA link-cable
+// record mixing. 4 is NOT enough -- it lands 48 bytes over budget.
+#define SECRET_BASES_COUNT 3
 #define TV_SHOWS_COUNT 25
 #define POKE_NEWS_COUNT 16
 #define PC_ITEMS_COUNT 50
@@ -85,8 +88,15 @@
 
 // string lengths
 #define ITEM_NAME_LENGTH 18
-#define POKEMON_NAME_LENGTH 10
-#define PLAYER_NAME_LENGTH 7
+#define POKEMON_NAME_LENGTH 12
+#define PLAYER_NAME_LENGTH 12
+// OT names stored inside a Pokemon are deliberately NOT widened with the player
+// name. Keeping this at 7 holds struct BoxPokemon at exactly 80 bytes, so
+// PokemonStorage does not grow at all -- widening it to 12 would push storage to
+// 37104, past its 9-sector budget. A player with a name longer than this has it
+// truncated in the OT field, so every OT comparison must compare only the first
+// OT_NAME_LENGTH characters. See NAME_LENGTH_PLAN.md in the workspace root.
+#define OT_NAME_LENGTH 7
 #define MAIL_WORDS_COUNT 9
 #define EASY_CHAT_BATTLE_WORDS_COUNT 6
 #define MOVE_NAME_LENGTH 16

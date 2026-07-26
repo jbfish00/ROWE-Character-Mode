@@ -90,7 +90,7 @@ struct MailGraphics
 struct MailRead
 {
     /*0x0000*/ u8 strbuf[8][64];
-    /*0x0200*/ u8 playerName[12];
+    /*0x0200*/ u8 playerName[PLAYER_NAME_LENGTH + 1];
     /*0x020C*/ MainCallback callback;
     /*0x0210*/ MainCallback callback2;
     /*0x0214*/ struct MailStruct *mail;

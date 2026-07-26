@@ -4304,10 +4304,15 @@ static void LoadCursorMonGfx(u16 species, u32 pid, u8 formId)
 
 static void PrintCursorMonInfo(void)
 {
+    // Nickname and species name are the only lines here that can hit 12
+    // characters, so narrow just those two when they overrun the panel.
+    u8 nickFont = GetFontIdToFit(sStorage->cursorMonNickText, FONT_NORMAL, 0,
+                                 GetWindowAttribute(0, WINDOW_WIDTH) * 8 - 6);
+
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
     if (sStorage->boxOption != OPTION_MOVE_ITEMS)
     {
-        AddTextPrinterParameterized(0, 1, sStorage->cursorMonNickText, 6, 0, TEXT_SPEED_FF, NULL);
+        AddTextPrinterParameterized(0, nickFont, sStorage->cursorMonNickText, 6, 0, TEXT_SPEED_FF, NULL);
         AddTextPrinterParameterized(0, 2, sStorage->cursorMonSpeciesName, 6, 15, TEXT_SPEED_FF, NULL);
         AddTextPrinterParameterized(0, 2, sStorage->cursorMonGenderLvlText, 10, 29, TEXT_SPEED_FF, NULL);
         AddTextPrinterParameterized(0, 0, sStorage->cursorMonItemName, 6, 43, TEXT_SPEED_FF, NULL);
@@ -4315,7 +4320,7 @@ static void PrintCursorMonInfo(void)
     else
     {
         AddTextPrinterParameterized(0, 0, sStorage->cursorMonItemName, 6, 0, TEXT_SPEED_FF, NULL);
-        AddTextPrinterParameterized(0, 1, sStorage->cursorMonNickText, 6, 13, TEXT_SPEED_FF, NULL);
+        AddTextPrinterParameterized(0, nickFont, sStorage->cursorMonNickText, 6, 13, TEXT_SPEED_FF, NULL);
         AddTextPrinterParameterized(0, 2, sStorage->cursorMonSpeciesName, 6, 28, TEXT_SPEED_FF, NULL);
         AddTextPrinterParameterized(0, 2, sStorage->cursorMonGenderLvlText, 10, 42, TEXT_SPEED_FF, NULL);
     }

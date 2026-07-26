@@ -1961,7 +1961,7 @@ static void DrawTradeMenuParty(u8 whichParty)
 
 static u8 GetMonNicknameWidth(u8 *str, u8 whichParty, u8 monIdx)
 {
-    u8 nickname[12];
+    u8 nickname[POKEMON_NAME_LENGTH + 1];
 
     if (whichParty == TRADE_PLAYER)
         GetMonData(&gPlayerParty[monIdx], MON_DATA_NICKNAME, nickname);
@@ -2040,7 +2040,7 @@ static void DrawTradeMenuPartyMonInfo(u8 whichParty, u8 monIdx, u8 x, u8 y, u8 w
     u8 level;
     u32 symbolTile;
     u8 gender;
-    u8 nickname[12];
+    u8 nickname[POKEMON_NAME_LENGTH + 1];
 
     CopyToBgTilemapBufferRect_ChangePalette(1, gTradeMenuMonBox_Tilemap, width, height, 6, 3, 0);
     CopyBgTilemapBufferToVram(1);

@@ -24,8 +24,12 @@ static u8 HandleWriteSector(u16 a1, const struct SaveSectionLocation *location);
 
 // Divide save blocks into individual chunks to be written to flash sectors
 
-// Each 4 KiB flash sector contains 3968 bytes of actual data followed by a 128 byte footer
-#define SECTOR_DATA_SIZE 4000
+// Each 4 KiB flash sector is struct SaveSection: data[0xFF4] followed by a 12 byte
+// footer (id, checksum, security, counter). 4084 is therefore the true maximum and
+// what we use -- the old 4000 discarded 84 usable bytes per sector, which is 336
+// bytes across SaveBlock1's four. The Hall of Fame writes two raw chunks of this
+// size into gDecompressionBuffer (0x4000 bytes), so 2 * 4084 still fits there.
+#define SECTOR_DATA_SIZE 4084
 
 // If a save block outgrows its sectors, SAVEBLOCK_CHUNK's min() silently writes a
 // TRUNCATED payload and checksums only the truncated bytes -- a perfectly valid save
@@ -489,6 +493,7 @@ static u8 GetSaveValidStatus(const struct SaveSectionLocation *location)
     u32 saveSlot2Counter = 0;
     u32 slotCheckField = 0;
     bool8 securityPassed = FALSE;
+    bool8 legacyFormatSeen = FALSE;
     u8 saveSlot1Status;
     u8 saveSlot2Status;
 
@@ -496,6 +501,8 @@ static u8 GetSaveValidStatus(const struct SaveSectionLocation *location)
     for (i = 0; i < SECTOR_SAVE_SLOT_LENGTH; i++)
     {
         DoReadFlashWholeSection(i, gFastSaveSection);
+        if (gFastSaveSection->security == LEGACY_CHECK_VALUE)
+            legacyFormatSeen = TRUE;
         if (gFastSaveSection->security == UNKNOWN_CHECK_VALUE)
         {
             securityPassed = TRUE;
@@ -527,6 +534,8 @@ static u8 GetSaveValidStatus(const struct SaveSectionLocation *location)
     for (i = 0; i < SECTOR_SAVE_SLOT_LENGTH; i++)
     {
         DoReadFlashWholeSection(i + SECTOR_SAVE_SLOT_LENGTH, gFastSaveSection);
+        if (gFastSaveSection->security == LEGACY_CHECK_VALUE)
+            legacyFormatSeen = TRUE;
         if (gFastSaveSection->security == UNKNOWN_CHECK_VALUE)
         {
             securityPassed = TRUE;
@@ -590,6 +599,13 @@ static u8 GetSaveValidStatus(const struct SaveSectionLocation *location)
     {
         gSaveCounter = 0;
         gLastWrittenSector = 0;
+        // Nothing carries the current signature. If something carries the
+        // previous one, the cartridge is not blank -- it holds a save from
+        // before the name-length change. Report that specifically so the player
+        // is told their file is from an older version rather than being shown
+        // an empty cartridge and silently offered New Game.
+        if (legacyFormatSeen)
+            return SAVE_STATUS_OLD_FORMAT;
         return SAVE_STATUS_EMPTY;
     }
 

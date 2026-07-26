@@ -174,7 +174,7 @@ enum {
     LG_STATE_SHUTDOWN = 23,
 };
 
-static EWRAM_DATA u8 sUnionRoomPlayerName[12] = {};
+static EWRAM_DATA u8 sUnionRoomPlayerName[PLAYER_NAME_LENGTH + 1] = {};
 EWRAM_DATA u8 gPlayerCurrActivity = 0;
 static EWRAM_DATA u8 sPlayerActivityGroupSize = 0;
 static EWRAM_DATA union WirelessLink_Main sWirelessLinkMain = {};
@@ -4096,7 +4096,7 @@ static void TradeBoardListMenuItemPrintFunc(u8 windowId, s32 itemId, u8 y)
     struct WirelessLink_Leader *data = sWirelessLinkMain.leader;
     struct GFtgtGname *rfu;
     s32 i, j;
-    u8 playerName[11];
+    u8 playerName[PLAYER_NAME_LENGTH + 1];
 
     if (itemId == -3 && y == sTradeBoardListMenuTemplate.upText_Y)
     {

@@ -5272,7 +5272,11 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
     {
         retVal = 0;
 
-        while (retVal < PLAYER_NAME_LENGTH)
+        // OT_NAME_LENGTH, not PLAYER_NAME_LENGTH: otName is only OT_NAME_LENGTH
+        // bytes. Reading PLAYER_NAME_LENGTH would run off the end of the field
+        // into markings/checksum, and overflow callers that size their buffer
+        // OT_NAME_LENGTH + 1 (BattlePokemon.otName is 8 bytes).
+        while (retVal < OT_NAME_LENGTH)
         {
             data[retVal] = boxMon->otName[retVal];
             retVal++;
@@ -5288,7 +5292,10 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
         retVal = boxMon->checksum;
         break;
     case MON_DATA_ENCRYPT_SEPARATOR:
-        retVal = boxMon->unknown;
+        // Storage reclaimed to widen nickname to POKEMON_NAME_LENGTH. This was
+        // only ever written, never read back; the constant lives on purely as
+        // the boundary between unencrypted and encrypted fields.
+        retVal = 0;
         break;
     case MON_DATA_SPECIES:
         retVal = IsBoxMonBadEgg(boxMon, field) ? SPECIES_EGG : substruct0->species;
@@ -5671,7 +5678,10 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
     case MON_DATA_OT_NAME:
     {
         s32 i;
-        for (i = 0; i < PLAYER_NAME_LENGTH; i++)
+        // Deliberate truncation: a player name longer than OT_NAME_LENGTH is cut
+        // here. Writing PLAYER_NAME_LENGTH bytes would overrun otName by 5 into
+        // markings, checksum and the head of the secure block.
+        for (i = 0; i < OT_NAME_LENGTH; i++)
             boxMon->otName[i] = data[i];
         break;
     }
@@ -5682,7 +5692,8 @@ void SetBoxMonData(struct BoxPokemon *boxMon, s32 field, const void *dataArg)
         SET16(boxMon->checksum);
         break;
     case MON_DATA_ENCRYPT_SEPARATOR:
-        SET16(boxMon->unknown);
+        // No backing storage -- see the getter. Writes are discarded; the only
+        // caller is a vestigial one in evolution_scene.c.
         break;
     case MON_DATA_SPECIES:
     {
@@ -8833,7 +8844,11 @@ bool8 IsOtherTrainer(u32 otId, u8 *otName)
     {
         int i;
 
-        for (i = 0; otName[i] != EOS; i++)
+        // Bounded by OT_NAME_LENGTH. A stored OT name that fills the field has
+        // no EOS terminator, so the original unbounded loop would read past the
+        // field and compare garbage -- making every Pokemon the player caught
+        // register as someone else's, and disobey.
+        for (i = 0; i < OT_NAME_LENGTH && otName[i] != EOS; i++)
             if (otName[i] != gSaveBlock2Ptr->playerName[i])
                 return TRUE;
         return FALSE;
