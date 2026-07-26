@@ -1851,6 +1851,44 @@ const u16 gSpeciesToNationalPokedexNum[NUM_SPECIES] = // Assigns all species to 
     [SPECIES_VANILLUXE_MEGA - 1] = NATIONAL_DEX_VANILLUXE,
     [SPECIES_WOOPER_PALDEA - 1] = NATIONAL_DEX_WOOPER,
 // ROWESPEC-PORT-END spec2nat
+// ROWEDEXFIX-START spec2nat (hand-written; not generated -- do not delete)
+// These 25 species shipped with NO entry here, so SpeciesToNationalPokedexNum
+// returned 0 for them and GetSetPokedexFlag(0, ...) indexed 8191 into a
+// DEX_FLAGS_NO-byte array -- an out-of-bounds WRITE into gPokemonStorage on
+// every evolution into one. The guard in GetSetPokedexFlag stops the
+// corruption; these entries are the actual fix.
+//
+// The convention is the one used by every other regional form above: a form
+// takes its BASE species' national dex number. Alolan Sandshrew/Sandslash were
+// a plain omission -- SPECIES_SANDSLASH_MEGA_ALOLA already maps to
+// NATIONAL_DEX_SANDSLASH. The seven Hisui-exclusive evolutions get their own
+// numbers (899-905), which are already defined in constants/species.h.
+    [SPECIES_SANDSHREW_ALOLA - 1] = NATIONAL_DEX_SANDSHREW,
+    [SPECIES_SANDSLASH_ALOLA - 1] = NATIONAL_DEX_SANDSLASH,
+    [SPECIES_GROWLITHE_HISUI - 1] = NATIONAL_DEX_GROWLITHE,
+    [SPECIES_ARCANINE_HISUI - 1] = NATIONAL_DEX_ARCANINE,
+    [SPECIES_VOLTORB_HISUI - 1] = NATIONAL_DEX_VOLTORB,
+    [SPECIES_ELECTRODE_HISUI - 1] = NATIONAL_DEX_ELECTRODE,
+    [SPECIES_TYPHLOSION_HISUI - 1] = NATIONAL_DEX_TYPHLOSION,
+    [SPECIES_QWILFISH_HISUI - 1] = NATIONAL_DEX_QWILFISH,
+    [SPECIES_SNEASEL_HISUI - 1] = NATIONAL_DEX_SNEASEL,
+    [SPECIES_SAMUROTT_HISUI - 1] = NATIONAL_DEX_SAMUROTT,
+    [SPECIES_LILLIGANT_HISUI - 1] = NATIONAL_DEX_LILLIGANT,
+    [SPECIES_ZORUA_HISUI - 1] = NATIONAL_DEX_ZORUA,
+    [SPECIES_ZOROARK_HISUI - 1] = NATIONAL_DEX_ZOROARK,
+    [SPECIES_BRAVIARY_HISUI - 1] = NATIONAL_DEX_BRAVIARY,
+    [SPECIES_SLIGGOO_HISUI - 1] = NATIONAL_DEX_SLIGGOO,
+    [SPECIES_GOODRA_HISUI - 1] = NATIONAL_DEX_GOODRA,
+    [SPECIES_AVALUGG_HISUI - 1] = NATIONAL_DEX_AVALUGG,
+    [SPECIES_DECIDUEYE_HISUI - 1] = NATIONAL_DEX_DECIDUEYE,
+    [SPECIES_WYRDEER - 1] = NATIONAL_DEX_WYRDEER,
+    [SPECIES_KLEAVOR - 1] = NATIONAL_DEX_KLEAVOR,
+    [SPECIES_URSALUNA - 1] = NATIONAL_DEX_URSALUNA,
+    [SPECIES_BASCULEGION - 1] = NATIONAL_DEX_BASCULEGION,
+    [SPECIES_SNEASLER - 1] = NATIONAL_DEX_SNEASLER,
+    [SPECIES_OVERQWIL - 1] = NATIONAL_DEX_OVERQWIL,
+    [SPECIES_ENAMORUS - 1] = NATIONAL_DEX_ENAMORUS,
+// ROWEDEXFIX-END spec2nat
 };
 
 const u16 gHoennToNationalOrder[HOENN_DEX_COUNT] = // Assigns Hoenn Dex Pokémon (Using National Dex Index)

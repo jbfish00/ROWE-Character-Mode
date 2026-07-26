@@ -4889,10 +4889,23 @@ s8 GetSetPokedexFlag(u16 nationalDexNo, u8 caseID)
     u32 index, bit, mask;
     s8 retVal = 0;
 
+    // Dex number 0 is not a dex number. It reaches here from any species with no
+    // gSpeciesToNationalPokedexNum entry (SPECIES_EGG, and historically the whole
+    // Hisui block plus Alolan Sandshrew/Sandslash), and the decrement below would
+    // wrap it to 0xFFFF -- index 8191 into a DEX_FLAGS_NO-byte array, landing well
+    // inside gPokemonStorage. FLAG_SET_CAUGHT then corrupts boxed Pokemon.
+    // Reached for real: evolution_scene.c sets the caught flag on every evolution.
+    if (nationalDexNo == 0)
+        return 0;
+
     nationalDexNo--;
     index = nationalDexNo / 8;
     bit = nationalDexNo % 8;
     mask = 1 << bit;
+
+    // Same class, upper end: a dex number past the flag array must not index it.
+    if (index >= DEX_FLAGS_NO)
+        return 0;
 
     switch (caseID)
     {
