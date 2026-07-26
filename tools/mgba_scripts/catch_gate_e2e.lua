@@ -11,8 +11,11 @@
 --   5. GIVE_MON Poochyena  (off-roster gift) -> routed to the PC
 --   6. GIVE_MON Pikachu (on-roster gift)  -> party if there is room
 --
--- Run:
---   CM_SAV=~/Documents/rowe_test_skills.sav timeout 300 <mgba-headless> \
+-- Run. CM_SAV must be a fixture in the CURRENT save format -- saves written
+-- before the 12-character-name change are refused by design and this test then
+-- fails in ways that look like the catch gate broke. Regenerate with
+-- tools/mgba_scripts/make_fixture_save.lua (see continue_smoke.lua's header).
+--   CM_SAV=~/Documents/rowe_fixture.sav timeout 300 <mgba-headless> \
 --     --script tools/mgba_scripts/catch_gate_e2e.lua pokeemerald.gba \
 --     > /tmp/catch_gate_e2e.log 2>&1
 --

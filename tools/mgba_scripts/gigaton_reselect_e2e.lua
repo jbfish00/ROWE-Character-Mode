@@ -18,8 +18,10 @@
 -- wild Magikarp Lv5 (knows only Splash -- zero threat) whose battle HP is
 -- refilled every frame so nothing can end the battle early.
 --
--- Run:
---   CM_SAV=~/Documents/rowe_test_skills.sav timeout 300 <mgba-headless> \
+-- Run. CM_SAV must be a fixture in the CURRENT save format -- saves written
+-- before the 12-character-name change are refused by design. Regenerate with
+-- tools/mgba_scripts/make_fixture_save.lua (see continue_smoke.lua's header).
+--   CM_SAV=~/Documents/rowe_fixture.sav timeout 300 <mgba-headless> \
 --     --script tools/mgba_scripts/gigaton_reselect_e2e.lua pokeemerald.gba \
 --     > /tmp/gigaton.log 2>&1
 
@@ -52,16 +54,28 @@ local STATUS_REJECTED = 2
 local MB       = H.anchors.gCharacterModeTestMailbox
 local MB_MAGIC = 0x434D5442
 
--- struct BattlePokemon: 0x5C bytes; moves +0x0C, hp +0x2A, maxHP +0x2E
--- (real aligned offsets -- the header's comment offsets are stale).
-local BMON_SIZE   = 0x5C
-local BMON_MOVES  = 0x0C
-local BMON_HP     = 0x2A
-local BMON_MAXHP  = 0x2E
+-- Struct offsets come from the compiler via H.off (the gTestStructOffsets
+-- beacon), NEVER from literals. The literals that used to live here --
+-- BattlePokemon 0x5C / hp 0x2A / maxHP 0x2E, BattleResults turn 0x13 /
+-- lastMove 0x22 -- were correct when probed and silently wrong afterwards:
+-- POKEMON_NAME_LENGTH 10 -> 12 grew playerMon1Name inside BattleResults and
+-- pushed turn to 0x15 and lastMove to 0x26. This test then read a turn counter
+-- that never moved, concluded the Gigaton Hammer gate was broken, and that was
+-- recorded as a release blocker while the ROM was behaving correctly.
+local BMON_SIZE   = H.off.battleMon_size
+local BMON_MOVES  = H.off.battleMon_moves
+local BMON_HP     = H.off.battleMon_hp
+local BMON_MAXHP  = H.off.battleMon_maxHP
 
--- struct BattleResults: battleTurnCounter +0x13, lastUsedMovePlayer +0x22
-local BRES_TURNS    = 0x13
-local BRES_LASTMOVE = 0x22
+local BRES_TURNS    = H.off.battleResults_turnCounter
+local BRES_LASTMOVE = H.off.battleResults_lastUsedMovePlayer
+
+if not (BMON_SIZE and BRES_TURNS and BRES_LASTMOVE) then
+    error("struct offsets missing -- re-run tools/mgba_scripts/gen_anchors.py")
+end
+H.log(string.format("offsets: bmon=%d hp=%d maxHP=%d moves=%d turn=%d lastMove=%d",
+                    BMON_SIZE, BMON_HP, BMON_MAXHP, BMON_MOVES,
+                    BRES_TURNS, BRES_LASTMOVE))
 
 local TORMENT_SCRIPT = H.anchors.BattleScript_SelectingTormentedMove
 
@@ -92,6 +106,15 @@ local function lastMove()   return H.rd16(H.anchors.gBattleResults + BRES_LASTMO
 local function actionCur()  return H.rd8(H.anchors.gActionSelectionCursor) end
 local function moveCur()    return H.rd8(H.anchors.gMoveSelectionCursor) end
 local function selScript()  return H.rd32(H.anchors.gSelectionBattleScripts) end
+
+-- The stored pointer is the selection script's CURRENT instruction, so it
+-- advances as the script runs (observed: the label, then label+3 one frame
+-- later). An exact-equality test therefore has a one-or-two frame window and
+-- loses the race whenever the poll misses it. Accept the whole script body.
+local function inTormentScript()
+    local s = selScript()
+    return s >= TORMENT_SCRIPT and s < TORMENT_SCRIPT + 0x20
+end
 
 local function refillEnemyHp()
     if inBattle() then
@@ -247,7 +270,7 @@ addStep("three-turn Gigaton Hammer selection contract",
         end
 
         -- phase transitions (checked every frame)
-        if phase == "t2a" and selScript() == TORMENT_SCRIPT then
+        if phase == "t2a" and inTormentScript() then
             H.assertTrue("turn 2: Gigaton re-pick rejected with " ..
                          "BattleScript_SelectingTormentedMove", true)
             sawReject = true

@@ -3,9 +3,20 @@
 -- loaded (party populated, SaveBlock1 pointer valid). Exercises the
 -- save-load path end to end -- the layer a boot smoke never touches.
 --
--- Needs a save with a party; pass its path via CM_SAV. The documented
--- known-good file is ~/Documents/rowe_test_skills.sav (28 signed sectors).
---   CM_SAV=~/Documents/rowe_test_skills.sav timeout 120 <mgba-headless> \
+-- Needs a save with a party, in the CURRENT save format, passed via CM_SAV.
+--
+-- DO NOT point this at ~/Documents/rowe_test_skills.sav or any other save from
+-- before the 12-character-name change. That change bumped the per-sector
+-- signature, so those files are refused BY DESIGN (SAVE_STATUS_OLD_FORMAT ->
+-- the main menu offers New Game only), and this test then A-mashes a "Continue"
+-- that is not there and fails looking exactly like a save-system bug. It is not
+-- one. Generate a current fixture instead:
+--
+--   head -c 131072 /dev/zero | tr '\0' '\377' > ~/Documents/rowe_fixture.sav
+--   CM_SAV_OUT=~/Documents/rowe_fixture.sav timeout 300 <mgba-headless> \
+--     --script tools/mgba_scripts/make_fixture_save.lua pokeemerald.gba
+--
+--   CM_SAV=~/Documents/rowe_fixture.sav timeout 120 <mgba-headless> \
 --     --script tools/mgba_scripts/continue_smoke.lua pokeemerald.gba \
 --     > /tmp/continue_smoke.log 2>&1
 --

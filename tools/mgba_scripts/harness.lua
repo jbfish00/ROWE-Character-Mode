@@ -52,6 +52,41 @@ function H.onFrame(fn)
     table.insert(frameHooks, fn)
 end
 
+-- ------------------------------------------------------- struct offsets
+--
+-- NEVER hardcode a struct offset in a test. `gTestStructOffsets`
+-- (src/character_mode_selftest.c) is a compiler-generated table of offsetof()
+-- values, so these track the build.
+--
+-- This exists because the hardcoded ones DID drift, silently:
+-- POKEMON_NAME_LENGTH 10 -> 12 grew playerMon1Name inside struct BattleResults,
+-- moving battleTurnCounter 0x13 -> 0x15 and lastUsedMovePlayer 0x22 -> 0x26.
+-- gigaton_reselect_e2e went on reading the old addresses, saw a turn counter
+-- frozen at 0 and a last-move frozen at 0, and reported a WORKING feature as
+-- broken -- which was then written up as a release-blocking red suite.
+-- Order must match the C array.
+
+H.off = {}
+
+do
+    local base = H.anchors.gTestStructOffsets
+    local names = {
+        "battleResults_turnCounter",
+        "battleResults_lastUsedMovePlayer",
+        "battleMon_size",
+        "battleMon_hp",
+        "battleMon_maxHP",
+        "battleMon_moves",
+        "battleMon_nickname",
+        "battleMon_otName",
+    }
+    if base then
+        for i, n in ipairs(names) do
+            H.off[n] = emu:read16(base + (i - 1) * 2)
+        end
+    end
+end
+
 -- ------------------------------------------------------------------- memory
 
 function H.rd8(a)  return emu:read8(a)  end

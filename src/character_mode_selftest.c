@@ -1,12 +1,17 @@
 #include "global.h"
+#include <stddef.h>  // offsetof, for the struct-layout beacon below
 #include "character_mode.h"
+#include "battle.h"
 #include "battle_setup.h"
 #include "event_data.h"
 #include "item.h"
 #include "mgba.h"
 #include "pokemon.h"
+#include "save.h"
 #include "script.h"
 #include "script_pokemon_util.h"
+#include "string_util.h"
+#include "text.h"  // EOS
 #include "constants/species.h"
 #include "constants/flags.h"
 #include "constants/items.h"
@@ -80,6 +85,30 @@ enum
     CM_REQ_SWEEP_PARTY,    // run CharacterMode_SweepPartyToPC() (the exact
                            // call Cb2_ExitPSS makes on leaving the storage
                            // UI); result = party count after the sweep
+    CM_REQ_SAVE,           // TrySavingData(SAVE_NORMAL); result = its return.
+                           // Lets a headless run mint a .sav fixture in the
+                           // CURRENT save format instead of shipping a stale
+                           // one -- see tools/mgba_scripts/make_fixture_save.lua
+    CM_REQ_QUERY_OT,       // argA: party slot. Everything the 12-character-name
+                           // change put at risk, in one word:
+                           //   bit0    IsOtherTrainer(otId, otName)  (want 0)
+                           //   bit1    MON_DATA_SANITY_IS_BAD_EGG    (want 0)
+                           //   bit2    OT name matches the player's  (want 1)
+                           //   b8-15   strlen of the OT name read back
+                           //   b16-23  strlen of the nickname read back
+                           //   b24-31  strlen of the player name
+    CM_REQ_SET_PLAYER_NAME,// argA: character to repeat, argB: how many (clamped
+                           // to PLAYER_NAME_LENGTH). The naming screen's A-mash
+                           // happens to stop at 6 characters, which is SHORTER
+                           // than OT_NAME_LENGTH -- so a drive that relies on it
+                           // never exercises OT truncation at all. This sets the
+                           // name directly so the truncating case is reachable.
+                           // result = strlen of the player name read back.
+    CM_REQ_SET_NICKNAME,   // argA: party slot, argB: character to repeat.
+                           // Fills the nickname with POKEMON_NAME_LENGTH copies
+                           // of argB -- a maximum-length name with no room for
+                           // a terminator, which is the case that overflows.
+                           // result = strlen of the nickname read back.
 };
 
 enum
@@ -261,6 +290,34 @@ void CharacterMode_RunBootSelftest(void)
     gCharacterModeSelftestResult.magic = CM_SELFTEST_MAGIC;
 }
 
+// Struct-layout beacon for the Lua harness.
+//
+// The mGBA scripts used to hardcode struct offsets recovered from a savestate
+// probe (`struct BattleResults: battleTurnCounter +0x13, lastUsedMovePlayer
+// +0x22`). Those went stale the moment POKEMON_NAME_LENGTH went 10 -> 12,
+// because BattleResults embeds playerMon1Name[POKEMON_NAME_LENGTH + 1] at 0x8 --
+// so battleTurnCounter moved to 0x15 and lastUsedMovePlayer to 0x26.
+//
+// The cost of that was not a broken game but a LYING TEST:
+// gigaton_reselect_e2e read a turn counter that never changed and a last-move
+// that was always 0, so it reported the Gigaton Hammer selection gate broken
+// while the ROM was performing it correctly -- and the handover notes recorded
+// that as a red suite blocking the release.
+//
+// Offsets now come from the compiler. A test that reads them here cannot drift.
+// Append only, and mirror any addition in tools/mgba_scripts/harness.lua.
+const u16 gTestStructOffsets[] =
+{
+    offsetof(struct BattleResults, battleTurnCounter),   // [0]
+    offsetof(struct BattleResults, lastUsedMovePlayer),  // [1]
+    sizeof(struct BattlePokemon),                        // [2]
+    offsetof(struct BattlePokemon, hp),                  // [3]
+    offsetof(struct BattlePokemon, maxHP),               // [4]
+    offsetof(struct BattlePokemon, moves),               // [5]
+    offsetof(struct BattlePokemon, nickname),            // [6]
+    offsetof(struct BattlePokemon, otName),              // [7]
+};
+
 void CharacterMode_PumpTestMailbox(void)
 {
     struct CharacterModeTestMailbox *mb = &gCharacterModeTestMailbox;
@@ -352,6 +409,72 @@ void CharacterMode_PumpTestMailbox(void)
     case CM_REQ_SWEEP_PARTY:
         CharacterMode_SweepPartyToPC();
         mb->result = CalculatePlayerPartyCount();
+        break;
+    case CM_REQ_SAVE:
+        mb->result = TrySavingData(SAVE_NORMAL);
+        break;
+    case CM_REQ_QUERY_OT:
+        if (mb->argA < PARTY_SIZE)
+        {
+            struct Pokemon *mon = &gPlayerParty[mb->argA];
+            u8 otName[OT_NAME_LENGTH + 1];
+            u8 nickname[POKEMON_NAME_LENGTH + 1];
+            u32 otId;
+            u8 i;
+            bool8 matches = TRUE;
+
+            // Both buffers are sized the way the game sizes them. If either
+            // accessor still writes PLAYER_NAME_LENGTH bytes, this smashes the
+            // stack -- which is exactly the defect worth catching.
+            GetMonData(mon, MON_DATA_OT_NAME, otName);
+            GetMonData(mon, MON_DATA_NICKNAME, nickname);
+            otId = GetMonData(mon, MON_DATA_OT_ID, NULL);
+
+            for (i = 0; i < OT_NAME_LENGTH; i++)
+            {
+                if (otName[i] == EOS)
+                    break;
+                if (otName[i] != gSaveBlock2Ptr->playerName[i])
+                    matches = FALSE;
+            }
+
+            mb->result = (IsOtherTrainer(otId, otName) ? 1 : 0)
+                       | (GetMonData(mon, MON_DATA_SANITY_IS_BAD_EGG, NULL) ? 2 : 0)
+                       | (matches ? 4 : 0)
+                       | ((u32)StringLength(otName) << 8)
+                       | ((u32)StringLength(nickname) << 16)
+                       | ((u32)StringLength(gSaveBlock2Ptr->playerName) << 24);
+        }
+        break;
+    case CM_REQ_SET_PLAYER_NAME:
+        {
+            u8 n = mb->argB;
+            u8 i;
+
+            if (n > PLAYER_NAME_LENGTH)
+                n = PLAYER_NAME_LENGTH;
+            for (i = 0; i < n; i++)
+                gSaveBlock2Ptr->playerName[i] = mb->argA;
+            // playerName is PLAYER_NAME_LENGTH + 1 bytes, so a full-length name
+            // still terminates inside the field.
+            gSaveBlock2Ptr->playerName[n] = EOS;
+            mb->result = StringLength(gSaveBlock2Ptr->playerName);
+        }
+        break;
+    case CM_REQ_SET_NICKNAME:
+        if (mb->argA < PARTY_SIZE)
+        {
+            u8 nickname[POKEMON_NAME_LENGTH + 1];
+            u8 i;
+
+            for (i = 0; i < POKEMON_NAME_LENGTH; i++)
+                nickname[i] = mb->argB;
+            nickname[POKEMON_NAME_LENGTH] = EOS;
+
+            SetMonData(&gPlayerParty[mb->argA], MON_DATA_NICKNAME, nickname);
+            GetMonData(&gPlayerParty[mb->argA], MON_DATA_NICKNAME, nickname);
+            mb->result = StringLength(nickname);
+        }
         break;
     case CM_REQ_SET_MON_MOVE:
         {

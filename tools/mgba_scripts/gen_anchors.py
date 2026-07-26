@@ -43,6 +43,9 @@ SYMBOLS = [
     "gSelectionBattleScripts",
     "BattleScript_SelectingTormentedMove",
     "gBattlerControllerFuncs",
+    # Struct-layout beacon (src/character_mode_selftest.c). Read it through
+    # H.off.* rather than hardcoding any struct offset in a test.
+    "gTestStructOffsets",
 ]
 
 # static (file-local) symbols never reach the linker map; resolve them from

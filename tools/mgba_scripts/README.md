@@ -31,6 +31,41 @@ frame-exact pad input, direct RAM read/write at linker-map addresses, and
   catch), the catch ALLOW (on-roster Pikachu → B_OUTCOME_CAUGHT → party), and
   the gift gate (off-roster → PC, on-roster → party) in one headless run
   (~10 s). Needs CM_SAV like continue_smoke.
+- **`intro_drive.lua`** — the new-game intro drive (erased flash → Birch speech
+  → naming screen → truck questions menu → Character Mode commit → the wall
+  clock → the field) plus the step state machine, extracted from
+  `starter_regression.lua` so new tests don't each grow their own copy.
+  `starter_regression.lua` deliberately keeps its own copy: it is the
+  regression gate for the intro itself, so the two can be diffed if a drive
+  breaks. Also carries the mailbox request-id table — **keep `D.REQ` in step
+  with the enum in `src/character_mode_selftest.c`**, the ids are positional.
+- **`make_fixture_save.lua`** — mints a `.sav` in the **current** save format by
+  driving a real new game and calling the game's own `TrySavingData`. Needed
+  because the 12-character-name change bumped the per-sector signature, so every
+  pre-change `.sav` (`rowe_test_skills.sav` and friends) is now refused by
+  design — `SAVE_STATUS_OLD_FORMAT`, main menu offers New Game only. A stale
+  fixture makes `continue_smoke`, `catch_gate_e2e` and `gigaton_reselect_e2e`
+  fail in ways that look like engine bugs and are not. Regenerate, don't
+  check a binary in:
+  ```bash
+  head -c 131072 /dev/zero | tr '\0' '\377' > ~/Documents/rowe_fixture.sav
+  CM_SAV_OUT=~/Documents/rowe_fixture.sav timeout 300 <mgba-headless> \
+      --script tools/mgba_scripts/make_fixture_save.lua pokeemerald.gba
+  ```
+  mGBA has no Lua "flush savedata" call; `loadSaveFile(path, false)` binds the
+  file and writes through, so the script waits after saving. The output grows
+  to 131088 bytes (mGBA's flash footer) — that is normal.
+- **`ot_roundtrip_e2e.lua`** — the regression gate for the 12-character-name
+  change. Note what it does **not** test: obedience. `IsMonDisobedient`
+  (battle_util.c) has its whole body commented out and returns 0, and
+  `IsTradedMon` is stubbed `FALSE` — the only two callers of `IsOtherTrainer` —
+  so nothing in ROWE can disobey and an "it obeyed" assertion could not fail.
+  It tests the real exposure instead: a `PLAYER_NAME_LENGTH` name truncating
+  into the 7-byte OT field without overrunning into markings/checksum (the mon
+  must not decode as a Bad Egg), full-length nicknames, and all of it surviving
+  a save. **It sets the player name explicitly** — the intro A-mash yields a
+  6-character name, shorter than `OT_NAME_LENGTH`, which never truncates and so
+  would prove nothing.
 - **`debug_r_input.lua` / `debug_r_bp.lua`** — one-off diagnostics kept as
   templates: RAM-probing `gMain.newKeys` for scripted input, and late-armed
   breakpoints (`MGBA_HEADLESS_DEBUGGER=1`). The bp script hardcodes function
