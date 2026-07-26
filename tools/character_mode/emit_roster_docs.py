@@ -292,7 +292,14 @@ def main():
             for f in got:
                 base_of.setdefault(f, base)
             finals |= got
-        ordered = sorted(finals, key=lambda s: (dex.get(s, 9999), names.get(s) or pretty(s)))
+        # The constant is the final tiebreak, and it is not decorative: a
+        # regional form shares both its dex number AND its species_names.h
+        # string with the base form ("Raichu" / "Raichu"), so without it the
+        # two rows sort equal and land in set-iteration order -- which varies
+        # per run with hash randomization, and made every regeneration produce
+        # a spurious ~190-line diff.
+        ordered = sorted(finals,
+                         key=lambda s: (dex.get(s, 9999), names.get(s) or pretty(s), s))
         char_sources = sources.get(menu_name, {})
         chars.append({
             "name": menu_name,
