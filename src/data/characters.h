@@ -5804,7 +5804,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 6,
         .starterCount = 3,
         .hasSignature = 1,
-        .selectable = 0,
+        .selectable = 1,
     },
     {
         .name = sName_Wulfric,
@@ -6079,7 +6079,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 7,
         .starterCount = 5,
         .hasSignature = 1,
-        .selectable = 0,
+        .selectable = 1,
     },
     {
         .name = sName_Leon,
@@ -6123,7 +6123,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 6,
         .hasSignature = 1,
-        .selectable = 0,
+        .selectable = 1,
     },
     {
         .name = sName_Bea,
@@ -6310,7 +6310,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 9,
         .starterCount = 7,
         .hasSignature = 1,
-        .selectable = 0,
+        .selectable = 1,
     },
     {
         .name = sName_Hassel,
@@ -6365,7 +6365,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 9,
         .starterCount = 6,
         .hasSignature = 1,
-        .selectable = 0,
+        .selectable = 1,
     },
     {
         .name = sName_Larry,
@@ -6651,7 +6651,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 3,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Argenta,
@@ -6662,7 +6662,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 4,
         .starterCount = 3,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Beni,
@@ -6673,7 +6673,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 4,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Brandon,
@@ -6695,7 +6695,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 1,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Charm,
@@ -6706,7 +6706,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 2,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Clover,
@@ -6717,7 +6717,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 1,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Coin,
@@ -6728,7 +6728,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 1,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Cyllene,
@@ -6739,7 +6739,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 1,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Dahlia,
@@ -6772,7 +6772,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 2,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Greta,
@@ -6827,7 +6827,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 3,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Lucy,
@@ -6849,7 +6849,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 3,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Melli,
@@ -6860,7 +6860,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 4,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Noland,
@@ -6882,7 +6882,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 1,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Palmer,
@@ -6904,7 +6904,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 1,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Rei,
@@ -6926,7 +6926,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 3,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Rye,
@@ -6937,7 +6937,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 1,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Sabi,
@@ -6948,7 +6948,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 3,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Sanqua,
@@ -6959,7 +6959,7 @@ const struct CharacterInfo gCharacters[] =
         .generation = 8,
         .starterCount = 2,
         .hasSignature = 0,
-        .selectable = 1,
+        .selectable = 0,
     },
     {
         .name = sName_Spenser,

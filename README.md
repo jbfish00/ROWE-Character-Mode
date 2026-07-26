@@ -4,7 +4,7 @@
 > that adds **Character Mode**, on the `character-mode` branch (the default here).
 > The `main` branch tracks upstream ROWE unchanged.
 
-**Character Mode** is an opt-in mode where you play as one of 219 iconic Pokémon
+**Character Mode** is an opt-in mode where you play as one of 206 iconic Pokémon
 characters (Gen 1–9) — protagonist, rival, gym leader, Elite Four, champion,
 villain, professor, or anime cast — and are restricted to catching and keeping only that
 character's canon roster (Bulbapedia-documented, expanded to full evolution
