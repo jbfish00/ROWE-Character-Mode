@@ -220,6 +220,7 @@ Lucy             ow=-                                  front=-                  
 Mai              ow=-                                  front=-                          back=-
 Melli            ow=-                                  front=-                          back=-
 Noland           ow=-                                  front=-                          back=-
+Palina           ow=-                                  front=-                          back=-
 Palmer           ow=-                                  front=-                          back=-
 Pesselle         ow=-                                  front=-                          back=-
 Rei              ow=-                                  front=-                          back=-
@@ -235,4 +236,4 @@ Tucker           ow=-                                  front=-                  
 Volo             ow=-                                  front=-                          back=-
 Zisu             ow=-                                  front=-                          back=-
 
-Skipped (empty roster): Cogita, Iscan, Palina
+Skipped (empty roster): Cogita, Iscan

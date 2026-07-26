@@ -100,6 +100,36 @@ def make_canonical(evo_base, form_base):
     return canonical
 
 
+REGION_WORDS = ("Hisuian", "Alolan", "Galarian", "Paldean",
+                "Hisui", "Alola", "Galar", "Paldea")
+
+
+def regional_fallback(name, n2c):
+    """Resolve "Hisuian Arcanine" when this ROM has no Hisuian form.
+
+    A regional variant is still that species, and the family rule the project
+    runs on says a family is canon if any member is. So a character documented
+    with Hisuian Arcanine should get the Growlithe line rather than nothing at
+    all -- which is what happened to Volo, whose only Fire-type vanished, and
+    to Palina, whose entire roster was two Hisuian forms and mapped to empty.
+
+    Tries the form-specific constant first (SPECIES_ARCANINE_HISUIAN), then
+    falls back to the plain species.
+    """
+    parts = name.split(" ", 1)
+    if len(parts) != 2 or parts[0] not in REGION_WORDS:
+        return None
+    region, base = parts[0], parts[1]
+    suffix = {"Hisuian": "HISUIAN", "Hisui": "HISUIAN", "Alolan": "ALOLAN",
+              "Alola": "ALOLAN", "Galarian": "GALARIAN", "Galar": "GALARIAN",
+              "Paldean": "PALDEAN", "Paldea": "PALDEAN"}[region]
+    ident = re.sub(r"[^A-Za-z0-9]", "", base).upper()
+    for candidate in ("SPECIES_%s_%s" % (ident, suffix), ):
+        if candidate in set(n2c.values()):
+            return candidate
+    return n2c.get(base)
+
+
 # Bulbapedia name -> in-game display name divergences (10-char cap, forms).
 NAME_FIXES = {
     "Nidoran♀": "Nidoran♀", "Nidoran♂": "Nidoran♂",
@@ -275,6 +305,8 @@ def main():
         for name in info["species"]:
             name = NAME_FIXES.get(name, name)
             const = n2c.get(name)
+            if const is None:
+                const = regional_fallback(name, n2c)
             if const is None:
                 unmatched.add(name)
                 continue

@@ -127,8 +127,8 @@
   ]
  },
  "Anabel": {
-  "category": "anime",
-  "gen": 8,
+  "category": "frontier",
+  "gen": 3,
   "page": "Anabel",
   "species": [
    "SPECIES_ABRA",
@@ -188,12 +188,13 @@
   "page": "Arezu",
   "species": [
    "SPECIES_BRONZOR",
-   "SPECIES_GLAMEOW"
+   "SPECIES_GLAMEOW",
+   "SPECIES_PETILIL"
   ]
  },
  "Argenta": {
-  "category": "anime",
-  "gen": 8,
+  "category": "frontier",
+  "gen": 4,
   "page": "Argenta",
   "species": [
    "SPECIES_CATERPIE",
@@ -513,8 +514,8 @@
   ]
  },
  "Brandon": {
-  "category": "anime",
-  "gen": 8,
+  "category": "frontier",
+  "gen": 3,
   "page": "Brandon",
   "species": [
    "SPECIES_ARTICUNO",
@@ -1118,8 +1119,8 @@
   ]
  },
  "Dahlia": {
-  "category": "anime",
-  "gen": 8,
+  "category": "frontier",
+  "gen": 4,
   "page": "Dahlia",
   "species": [
    "SPECIES_DUSKULL",
@@ -1131,8 +1132,8 @@
   ]
  },
  "Darach": {
-  "category": "anime",
-  "gen": 8,
+  "category": "frontier",
+  "gen": 4,
   "page": "Darach",
   "species": [
    "SPECIES_ENTEI",
@@ -1449,6 +1450,7 @@
   "gen": 8,
   "page": "Gaeric",
   "species": [
+   "SPECIES_BERGMITE",
    "SPECIES_SNORUNT"
   ]
  },
@@ -1758,8 +1760,8 @@
   ]
  },
  "Greta": {
-  "category": "anime",
-  "gen": 8,
+  "category": "frontier",
+  "gen": 3,
   "page": "Greta",
   "species": [
    "SPECIES_EEVEE",
@@ -2317,7 +2319,8 @@
    "SPECIES_GEODUDE",
    "SPECIES_HERACROSS",
    "SPECIES_MUNCHLAX",
-   "SPECIES_NOSEPASS"
+   "SPECIES_NOSEPASS",
+   "SPECIES_RUFFLET"
   ]
  },
  "Karen": {
@@ -2752,8 +2755,8 @@
   ]
  },
  "Lucy": {
-  "category": "anime",
-  "gen": 8,
+  "category": "frontier",
+  "gen": 3,
   "page": "Lucy",
   "species": [
    "SPECIES_ABRA",
@@ -3049,6 +3052,7 @@
   "species": [
    "SPECIES_SKORUPI",
    "SPECIES_STUNKY",
+   "SPECIES_VOLTORB",
    "SPECIES_ZUBAT"
   ]
  },
@@ -3312,8 +3316,8 @@
   ]
  },
  "Noland": {
-  "category": "anime",
-  "gen": 8,
+  "category": "frontier",
+  "gen": 3,
   "page": "Noland",
   "species": [
    "SPECIES_ARON",
@@ -3458,11 +3462,13 @@
   "category": "warden",
   "gen": 8,
   "page": "Palina",
-  "species": []
+  "species": [
+   "SPECIES_GROWLITHE"
+  ]
  },
  "Palmer": {
-  "category": "anime",
-  "gen": 8,
+  "category": "frontier",
+  "gen": 4,
   "page": "Palmer",
   "species": [
    "SPECIES_CRANIDOS",
@@ -3877,7 +3883,8 @@
   "species": [
    "SPECIES_ELEKID",
    "SPECIES_MAGBY",
-   "SPECIES_RHYHORN"
+   "SPECIES_RHYHORN",
+   "SPECIES_RUFFLET"
   ]
  },
  "Sabrina": {
@@ -4174,8 +4181,8 @@
   ]
  },
  "Spenser": {
-  "category": "anime",
-  "gen": 8,
+  "category": "frontier",
+  "gen": 3,
   "page": "Spenser",
   "species": [
    "SPECIES_AZURILL",
@@ -4262,8 +4269,8 @@
   ]
  },
  "Thorton": {
-  "category": "anime",
-  "gen": 8,
+  "category": "frontier",
+  "gen": 4,
   "page": "Thorton",
   "species": [
    "SPECIES_BRONZOR",
@@ -4275,7 +4282,7 @@
  },
  "Tobias": {
   "category": "anime",
-  "gen": 8,
+  "gen": 4,
   "page": "Tobias",
   "species": [
    "SPECIES_DARKRAI",
@@ -4309,8 +4316,8 @@
   ]
  },
  "Tucker": {
-  "category": "anime",
-  "gen": 8,
+  "category": "frontier",
+  "gen": 3,
   "page": "Tucker",
   "species": [
    "SPECIES_BAGON",
@@ -4425,6 +4432,7 @@
    "SPECIES_BUDEW",
    "SPECIES_GIBLE",
    "SPECIES_GIRATINA",
+   "SPECIES_GROWLITHE",
    "SPECIES_RIOLU",
    "SPECIES_SPIRITOMB",
    "SPECIES_TOGEPI"
@@ -4602,7 +4610,8 @@
    "SPECIES_MURKROW",
    "SPECIES_ONIX",
    "SPECIES_PONYTA",
-   "SPECIES_SHINX"
+   "SPECIES_SHINX",
+   "SPECIES_ZORUA"
   ]
  },
  "Zoey": {

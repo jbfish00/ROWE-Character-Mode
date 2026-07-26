@@ -240,41 +240,41 @@ Turo | Turo + Turo (anime) | professor | 9
 # APPEND ONLY -- a save stores the character index.
 Adaman | Adaman | rival | 8
 Akari | Akari (game) | protagonist | 8
-Anabel | Anabel | anime | 8
+Anabel | Anabel | frontier | 3
 Arezu | Arezu | warden | 8
-Argenta | Argenta | anime | 8
+Argenta | Argenta | frontier | 4
 Beni | Beni | villain | 8
-Brandon | Brandon | anime | 8
+Brandon | Brandon | frontier | 3
 Calaba | Calaba | warden | 8
 Charm | Charm (Hisui) | villain | 8
 Clover | Clover | villain | 8
 Cogita | Cogita | other | 8
 Coin | Coin (Hisui) | villain | 8
 Cyllene | Cyllene | galaxy | 8
-Dahlia | Dahlia | anime | 8
-Darach | Darach | anime | 8
+Dahlia | Dahlia | frontier | 4
+Darach | Darach | frontier | 4
 Gaeric | Gaeric | warden | 8
-Greta | Greta | anime | 8
+Greta | Greta | frontier | 3
 Ingo | Ingo | frontier | 5
 Irida | Irida | rival | 8
 Iscan | Iscan | warden | 8
 Kamado | Kamado | villain | 8
 Lian | Lian | warden | 8
-Lucy | Lucy | anime | 8
+Lucy | Lucy | frontier | 3
 Mai | Mai | warden | 8
 Melli | Melli | warden | 8
-Noland | Noland | anime | 8
+Noland | Noland | frontier | 3
 Palina | Palina | warden | 8
-Palmer | Palmer | anime | 8
+Palmer | Palmer | frontier | 4
 Pesselle | Pesselle | galaxy | 8
 Rei | Rei (game) | protagonist | 8
 Ress | Ress | galaxy | 8
 Rye | Rye | galaxy | 8
 Sabi | Sabi | warden | 8
 Sanqua | Sanqua | galaxy | 8
-Spenser | Spenser | anime | 8
-Thorton | Thorton | anime | 8
-Tobias | Tobias | anime | 8
-Tucker | Tucker | anime | 8
+Spenser | Spenser | frontier | 3
+Thorton | Thorton | frontier | 4
+Tobias | Tobias | anime | 4
+Tucker | Tucker | frontier | 3
 Volo | Volo | villain | 8
 Zisu | Zisu | galaxy | 8

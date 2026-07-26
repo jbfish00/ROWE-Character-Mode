@@ -4035,6 +4035,7 @@ static const u16 sRoster_Arezu[] =
 {
     SPECIES_BRONZOR,
     SPECIES_GLAMEOW,
+    SPECIES_PETILIL,
     SPECIES_NONE,
 };
 
@@ -4146,6 +4147,7 @@ static const u8 sName_Darach[] = _("Darach");
 
 static const u16 sRoster_Gaeric[] =
 {
+    SPECIES_BERGMITE,
     SPECIES_SNORUNT,
     SPECIES_NONE,
 };
@@ -4201,6 +4203,7 @@ static const u16 sRoster_Kamado[] =
     SPECIES_HERACROSS,
     SPECIES_MUNCHLAX,
     SPECIES_NOSEPASS,
+    SPECIES_RUFFLET,
     SPECIES_NONE,
 };
 
@@ -4248,6 +4251,7 @@ static const u16 sRoster_Melli[] =
 {
     SPECIES_SKORUPI,
     SPECIES_STUNKY,
+    SPECIES_VOLTORB,
     SPECIES_ZUBAT,
     SPECIES_NONE,
 };
@@ -4275,6 +4279,14 @@ static const u16 sRoster_Noland[] =
 };
 
 static const u8 sName_Noland[] = _("Noland");
+
+static const u16 sRoster_Palina[] =
+{
+    SPECIES_GROWLITHE,
+    SPECIES_NONE,
+};
+
+static const u8 sName_Palina[] = _("Palina");
 
 static const u16 sRoster_Palmer[] =
 {
@@ -4338,6 +4350,7 @@ static const u16 sRoster_Sabi[] =
     SPECIES_ELEKID,
     SPECIES_MAGBY,
     SPECIES_RHYHORN,
+    SPECIES_RUFFLET,
     SPECIES_NONE,
 };
 
@@ -4408,6 +4421,7 @@ static const u16 sRoster_Volo[] =
 {
     SPECIES_BUDEW,
     SPECIES_GIBLE,
+    SPECIES_GROWLITHE,
     SPECIES_RIOLU,
     SPECIES_SPIRITOMB,
     SPECIES_TOGEPI,
@@ -4427,6 +4441,7 @@ static const u16 sRoster_Zisu[] =
     SPECIES_ONIX,
     SPECIES_PONYTA,
     SPECIES_SHINX,
+    SPECIES_ZORUA,
     SPECIES_NONE,
 };
 
@@ -6640,7 +6655,7 @@ const struct CharacterInfo gCharacters[] =
         .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
-        .generation = 8,
+        .generation = 3,
         .starterCount = 8,
         .hasSignature = 0,
         .selectable = 1,
@@ -6652,7 +6667,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 8,
-        .starterCount = 2,
+        .starterCount = 3,
         .hasSignature = 0,
         .selectable = 1,
     },
@@ -6662,7 +6677,7 @@ const struct CharacterInfo gCharacters[] =
         .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
-        .generation = 8,
+        .generation = 4,
         .starterCount = 3,
         .hasSignature = 0,
         .selectable = 1,
@@ -6684,7 +6699,7 @@ const struct CharacterInfo gCharacters[] =
         .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
-        .generation = 8,
+        .generation = 3,
         .starterCount = 3,
         .hasSignature = 0,
         .selectable = 1,
@@ -6750,7 +6765,7 @@ const struct CharacterInfo gCharacters[] =
         .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
-        .generation = 8,
+        .generation = 4,
         .starterCount = 5,
         .hasSignature = 0,
         .selectable = 1,
@@ -6761,7 +6776,7 @@ const struct CharacterInfo gCharacters[] =
         .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
-        .generation = 8,
+        .generation = 4,
         .starterCount = 4,
         .hasSignature = 0,
         .selectable = 1,
@@ -6773,7 +6788,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 8,
-        .starterCount = 1,
+        .starterCount = 2,
         .hasSignature = 0,
         .selectable = 1,
     },
@@ -6783,7 +6798,7 @@ const struct CharacterInfo gCharacters[] =
         .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
-        .generation = 8,
+        .generation = 3,
         .starterCount = 7,
         .hasSignature = 0,
         .selectable = 1,
@@ -6817,7 +6832,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 8,
-        .starterCount = 5,
+        .starterCount = 6,
         .hasSignature = 0,
         .selectable = 1,
     },
@@ -6838,7 +6853,7 @@ const struct CharacterInfo gCharacters[] =
         .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
-        .generation = 8,
+        .generation = 3,
         .starterCount = 11,
         .hasSignature = 0,
         .selectable = 1,
@@ -6861,7 +6876,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 8,
-        .starterCount = 3,
+        .starterCount = 4,
         .hasSignature = 0,
         .selectable = 1,
     },
@@ -6871,8 +6886,19 @@ const struct CharacterInfo gCharacters[] =
         .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
-        .generation = 8,
+        .generation = 3,
         .starterCount = 14,
+        .hasSignature = 0,
+        .selectable = 1,
+    },
+    {
+        .name = sName_Palina,
+        .roster = sRoster_Palina,
+        .owGfxId = CHAR_ASSET_NONE,
+        .trainerFrontPic = CHAR_ASSET_NONE,
+        .backPic = CHAR_ASSET_NONE_U8,
+        .generation = 8,
+        .starterCount = 1,
         .hasSignature = 0,
         .selectable = 1,
     },
@@ -6882,7 +6908,7 @@ const struct CharacterInfo gCharacters[] =
         .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
-        .generation = 8,
+        .generation = 4,
         .starterCount = 4,
         .hasSignature = 0,
         .selectable = 1,
@@ -6938,7 +6964,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 8,
-        .starterCount = 3,
+        .starterCount = 4,
         .hasSignature = 0,
         .selectable = 1,
     },
@@ -6959,7 +6985,7 @@ const struct CharacterInfo gCharacters[] =
         .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
-        .generation = 8,
+        .generation = 3,
         .starterCount = 10,
         .hasSignature = 0,
         .selectable = 1,
@@ -6970,7 +6996,7 @@ const struct CharacterInfo gCharacters[] =
         .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
-        .generation = 8,
+        .generation = 4,
         .starterCount = 4,
         .hasSignature = 0,
         .selectable = 1,
@@ -6981,7 +7007,7 @@ const struct CharacterInfo gCharacters[] =
         .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
-        .generation = 8,
+        .generation = 4,
         .starterCount = 0,
         .hasSignature = 0,
         .selectable = 1,
@@ -6992,7 +7018,7 @@ const struct CharacterInfo gCharacters[] =
         .owGfxId = CHAR_ASSET_NONE,
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
-        .generation = 8,
+        .generation = 3,
         .starterCount = 5,
         .hasSignature = 0,
         .selectable = 1,
@@ -7004,7 +7030,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 8,
-        .starterCount = 5,
+        .starterCount = 6,
         .hasSignature = 0,
         .selectable = 1,
     },
@@ -7015,7 +7041,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 8,
-        .starterCount = 8,
+        .starterCount = 9,
         .hasSignature = 0,
         .selectable = 1,
     },

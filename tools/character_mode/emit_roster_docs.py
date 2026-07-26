@@ -26,7 +26,8 @@ TARGET = os.path.abspath(os.path.join(HERE, "..", ".."))
 CATEGORY_LABEL = {
     "protagonist": "Protagonist", "rival": "Rival", "gymleader": "Gym Leader",
     "elite4": "Elite Four", "champion": "Champion", "villain": "Villain",
-    "anime": "Anime", "professor": "Professor",
+    "anime": "Anime", "professor": "Professor", "frontier": "Frontier Brain",
+    "warden": "Warden", "galaxy": "Galaxy Team", "other": "Other",
 }
 
 SPRITE_URL = ("https://cdn.jsdelivr.net/gh/PokeAPI/sprites@master"
@@ -257,6 +258,11 @@ def main():
 
     def _base_name(species_name):
         const = _n2c.get(_fixes.get(species_name, species_name)) or _n2c.get(species_name)
+        if not const:
+            # "Hisuian Arcanine" is keyed that way by the audit, but the roster
+            # resolves it to the Growlithe line when the ROM has no Hisuian
+            # form -- so the source has to follow it there.
+            const = _ms.regional_fallback(species_name, _n2c)
         if not const:
             return None
         return names.get(_canon(const))
