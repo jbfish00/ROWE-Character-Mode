@@ -166,3 +166,19 @@ Three more donor sets staged alongside `rogue/`, converted by
   documented judgement call: the five aligned frames span 68px, so the window
   chosen keeps four frames pixel-complete and clips only the tip of a thrown
   Poké Ball leaving frame 4 — which is how FRLG back pics behave anyway.
+
+### `sprites/donors/ashgray/` — 19 trainer front pics (added 2026-07-26)
+- **Source**: **Pokemon Ash Gray v4.5.3**, a FireRed hack by **metapod23**.
+  The art was ripped from a ROM built locally from the project's own BPS patch
+  applied to a byte-matching `pret/pokefirered` build — no ROM was downloaded
+  and none is redistributed. Provenance and the rip method are recorded in
+  `sprites/donors/ashgray/README.md`; `manifest.json` carries each sprite's
+  index in that game's own front-pic table.
+- **Credit**: **metapod23**.
+- **Why it is here**: anime-arc characters that exist in no other donor set.
+  Of the 19, four fill Character Mode slots nothing else could — **Gary**,
+  **Ritchie**, **Tracey** and **Jessie & James** (a duo pic, which is how that
+  game draws them). The rest are anime-styled alternates of characters who
+  already have game art, and are deliberately NOT used: the importer skips any
+  character that already resolves to a TRAINER_PIC, so `brock_anime` and
+  friends sit unused rather than overriding the canonical portraits.
