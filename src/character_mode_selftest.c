@@ -6,6 +6,7 @@
 #include "event_data.h"
 #include "item.h"
 #include "mgba.h"
+#include "pokedex.h"  // GetSetPokedexFlag / FLAG_*_CAUGHT for the legendary pool
 #include "pokemon.h"
 #include "save.h"
 #include "script.h"
@@ -56,6 +57,10 @@ bool32 CanThrowLastUsedBall(void);
 
 #define CM_TESTMB_MAGIC 0x434D5442  // "CMTB"
 
+// APPEND ONLY. These ids are positional and the Lua side mirrors them by
+// number (tools/mgba_scripts/intro_drive.lua, D.REQ). Inserting in the
+// middle silently renumbers every later request, so a test keeps running
+// and starts asking for something else entirely.
 enum
 {
     CM_REQ_NONE = 0,
@@ -109,6 +114,39 @@ enum
                            // of argB -- a maximum-length name with no room for
                            // a terminator, which is the case that overflows.
                            // result = strlen of the nickname read back.
+    CM_REQ_LEGENDARY_POOL, // argA: level, argB: index into the pool.
+                           // result = count | (pool[argB] << 16), so one request
+                           // gives both the size and an entry. Proves the 1%
+                           // legendary feature POSITIVELY -- a 1% roll on its own
+                           // can never distinguish "correctly suppressed" from
+                           // "never ran".
+    CM_REQ_WILD_ROLL_STATS,// argA: level, argB: trials (capped at 4000). Runs the
+                           // REAL CharacterMode_RollWildOverrideSpecies, the same
+                           // function wild_encounter.c calls.
+                           // result = legendaryFires | (totalFires << 16)
+                           // This is the end-to-end positive assertion: it proves
+                           // the 1% path is reachable through the shipping entry
+                           // point, which no "a legendary never appeared" check
+                           // can ever establish.
+    CM_REQ_DEX_CAUGHT,     // argA: species, argB: 0 = query, 1 = set caught.
+                           // Takes a SPECIES and converts internally, because
+                           // passing a species id straight to GetSetPokedexFlag
+                           // (which wants a national dex number) is the exact
+                           // mistake this feature has to avoid.
+                           // result = natdex << 16 | caughtFlag
+    CM_REQ_LEGENDARY_ROLL_STATS, // argA: level, argB: trials (capped at 4000).
+                           // Loops CharacterMode_RollWildLegendarySpecies alone.
+                           // result = fires | (poolNonEmpty << 16)
+                           //
+                           // Exists because CM_REQ_WILD_ROLL_STATS is far too
+                           // slow to sample heavily: measured at ~11.8 frames
+                           // PER TRIAL, because the 10% path rebuilds a 47-entry
+                           // candidate list and every entry costs a
+                           // CharacterMode_FamilyBase evolution-table walk. The
+                           // legendary roll early-outs on 99 of 100 calls, so it
+                           // can be sampled thousands of times cheaply -- which
+                           // is what makes a NON-FLAKY positive assertion on a
+                           // 1% event possible at all.
 };
 
 enum
@@ -254,6 +292,7 @@ void CharacterMode_RunBootSelftest(void)
         // fire close to certainly (P(zero fires) = 0.9^200 ~= 1.6e-10) and
         // give the legendary exclusion many chances to fail if it's broken.
         u32 trial, fired = 0;
+        u32 legendaryCount = 0;
         bool8 anyLegendary = FALSE;
 
         for (trial = 0; trial < 200; trial++)
@@ -263,13 +302,71 @@ void CharacterMode_RunBootSelftest(void)
             {
                 fired++;
                 if (CharacterMode_IsLegendaryOrMythical(result))
+                {
                     anyLegendary = TRUE;
+                    legendaryCount++;
+                }
             }
         }
         Check("wild override: fired at least once in 200 rolls at 10% (Red active)",
               fired > 0);
-        Check("wild override: never produced a legendary/mythical",
-              anyLegendary == FALSE);
+        // NOTE: the old assertion here was "never produced a legendary", which
+        // became WRONG when the 1% legendary roll landed -- and, worse, would
+        // have stayed green either way. Legendaries are now expected from this
+        // path; what must hold is that they stay RARE. 200 rolls at 1% average
+        // 2, and P(>=12) is about 4e-6, so this catches the legendary roll
+        // leaking into the 10% path without flaking.
+        Check("wild override: legendaries stay rare (< 12 in 200 rolls at 1%)",
+              legendaryCount < 12);
+        (void)anyLegendary;
+    }
+
+    // The 1% legendary encounter feature. These assert the POSITIVE direction on
+    // purpose: a 1% event is the ideal hiding place for a test that cannot fail,
+    // because once the dex filter can suppress legendaries, "no legendary
+    // appeared" is satisfied both by correct suppression AND by the feature
+    // being completely dead. Everything below tests the pool directly, so it is
+    // deterministic rather than probabilistic.
+    {
+        u16 pool[16];
+        u8 count, i;
+        u16 firstDex;
+        bool8 wasCaught;
+
+        // Red's roster carries 6 legendaries (Articuno, Deoxys, Entei, Raikou,
+        // Regigigas, Suicune), so an uncaught dex must yield a non-empty pool.
+        count = CharacterMode_BuildLegendaryPool(30, pool, ARRAY_COUNT(pool), NULL);
+        Check("legendary pool: non-empty for a character with legendaries (Red)",
+              count > 0);
+
+        for (i = 0; i < count; i++)
+        {
+            if (!CharacterMode_IsLegendaryOrMythical(pool[i]))
+                break;
+        }
+        Check("legendary pool: every entry is actually a legendary/mythical",
+              i == count);
+
+        // Every entry must resolve to a real national dex number. A 0 here is
+        // the failure that silently filters the wrong Pokemon -- the accessor
+        // takes a NATIONAL DEX number, not a species id, and in this tree those
+        // differ.
+        for (i = 0; i < count; i++)
+        {
+            if (SpeciesToNationalPokedexNum(pool[i]) == 0)
+                break;
+        }
+        Check("legendary pool: every entry has a national dex number",
+              i == count);
+
+        // The "offered until caught" filter is NOT tested here on purpose: it
+        // requires setting a caught flag, and this self-test runs at every boot
+        // against the player's REAL save. Mutating the dex to prove a test point
+        // is not worth corrupting a playthrough. That proof lives in
+        // tools/mgba_scripts/legendary_encounter_e2e.lua, which runs against a
+        // throwaway generated fixture where mutation costs nothing.
+        (void)firstDex;
+        (void)wasCaught;
     }
 
     FlagClear(FLAG_CHARACTER_MODE);
@@ -444,6 +541,75 @@ void CharacterMode_PumpTestMailbox(void)
                        | ((u32)StringLength(otName) << 8)
                        | ((u32)StringLength(nickname) << 16)
                        | ((u32)StringLength(gSaveBlock2Ptr->playerName) << 24);
+        }
+        break;
+    case CM_REQ_LEGENDARY_POOL:
+        {
+            u16 pool[16];
+            bool8 repeatable = FALSE;
+            u8 count = CharacterMode_BuildLegendaryPool(mb->argA, pool,
+                                                        ARRAY_COUNT(pool),
+                                                        &repeatable);
+            u16 entry = (mb->argB < count) ? pool[mb->argB] : SPECIES_NONE;
+
+            // count in bits 0-7, the §1.2 repeatable exemption in bit 8, the
+            // requested entry in the high half.
+            mb->result = ((u32)entry << 16) | (repeatable ? 0x100 : 0) | count;
+        }
+        break;
+    case CM_REQ_WILD_ROLL_STATS:
+        {
+            u16 trials = mb->argB;
+            u16 t;
+            u16 legendaryFires = 0;
+            u16 totalFires = 0;
+
+            if (trials > 4000)
+                trials = 4000;
+
+            for (t = 0; t < trials; t++)
+            {
+                u16 got = CharacterMode_RollWildOverrideSpecies(mb->argA);
+
+                if (got == SPECIES_NONE)
+                    continue;
+                totalFires++;
+                if (CharacterMode_IsLegendaryOrMythical(got))
+                    legendaryFires++;
+            }
+            mb->result = ((u32)totalFires << 16) | legendaryFires;
+        }
+        break;
+    case CM_REQ_LEGENDARY_ROLL_STATS:
+        {
+            u16 trials = mb->argB;
+            u16 t;
+            u16 fires = 0;
+            u16 pool[16];
+            u8 poolCount;
+
+            if (trials > 4000)
+                trials = 4000;
+
+            for (t = 0; t < trials; t++)
+            {
+                if (CharacterMode_RollWildLegendarySpecies(mb->argA) != SPECIES_NONE)
+                    fires++;
+            }
+
+            poolCount = CharacterMode_BuildLegendaryPool(mb->argA, pool,
+                                                         ARRAY_COUNT(pool), NULL);
+            mb->result = ((u32)(poolCount > 0 ? 1 : 0) << 16) | fires;
+        }
+        break;
+    case CM_REQ_DEX_CAUGHT:
+        {
+            u16 natNum = SpeciesToNationalPokedexNum(mb->argA);
+
+            if (mb->argB == 1)
+                GetSetPokedexFlag(natNum, FLAG_SET_CAUGHT);
+            mb->result = ((u32)natNum << 16)
+                       | (GetSetPokedexFlag(natNum, FLAG_GET_CAUGHT) ? 1 : 0);
         }
         break;
     case CM_REQ_SET_PLAYER_NAME:

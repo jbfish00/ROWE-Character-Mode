@@ -50,6 +50,12 @@ u16 CharacterMode_GetRosterSize(const struct CharacterInfo *character);
 bool8 CharacterMode_IsLegendaryOrMythical(u16 species);
 u16 CharacterMode_PickEvolutionStageForLevel(u16 species, u8 level);
 u16 CharacterMode_RollWildOverrideSpecies(u8 level);
+// The 1% legendary encounter roll, and the pool it draws from. The pool builder
+// is public so a test can assert the POSITIVE direction deterministically --
+// a 1% event otherwise hides a test that cannot fail.
+u16 CharacterMode_RollWildLegendarySpecies(u8 level);
+u8 CharacterMode_BuildLegendaryPool(u8 level, u16 *out, u8 outCount,
+                                   bool8 *outRepeatable);
 void CharacterMode_RunBootSelftest(void);
 void CharacterMode_PumpTestMailbox(void);
 

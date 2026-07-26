@@ -1,6 +1,7 @@
 #include "global.h"
 #include "character_mode.h"
 #include "event_data.h"
+#include "pokedex.h"  // GetSetPokedexFlag -- the "offered until caught" filter
 #include "pokemon.h"
 #include "pokemon_storage_system.h"
 #include "level_scaling.h"
@@ -192,10 +193,18 @@ u8 IsPlayerInCharacterMode(void)
 // species out of a WildPokemonInfo table; see wild_encounter.c's
 // TryGenerateWildMon/GenerateFishingWildMon) a 10% chance to be replaced by
 // a random, level-appropriate member of the active character's roster.
-// Legendaries/mythicals/Ultra Beasts never come out of this roll -- they
-// stay route/story-only, exactly like the catch gate already keeps them.
+// Legendaries/mythicals/Ultra Beasts are excluded from THAT roll -- they come
+// from the separate 1% roll below instead, which is offered-until-caught.
 
 #define WILD_OVERRIDE_CHANCE_PERCENT 10
+
+// If a legendary is on the roster, a 1% chance to meet one in any area. Rolled
+// BEFORE the 10% override and independent of it, so the rates compose to ~1%
+// legendary / ~9.9% roster / ~89% the game's own table -- and a character with
+// no legendary is completely unaffected, same code path and same rates as
+// before. (Carving the 1% out of the existing 10% was rejected: it would change
+// the feel of a shipped feature.)
+#define WILD_LEGENDARY_CHANCE_PERCENT 1
 
 // Same set as tools/character_mode/emit_characters.py's LEGENDARY_BASES --
 // keep the two in sync by hand if either changes. That script uses this set
@@ -326,15 +335,118 @@ u16 CharacterMode_PickEvolutionStageForLevel(u16 species, u8 level)
 // SPECIES_NONE if the override doesn't apply (mode off) or didn't fire (90%
 // of the time, or an all-legendary roster with nothing eligible) -- callers
 // keep the table's species in that case.
+// Build the legendary pool for the active character at `level`, and return how
+// many entries were written. Exposed (not static) so the boot self-test can
+// assert on the pool DIRECTLY rather than inferring it from a 1% roll -- see the
+// warning in CharacterMode_RollWildLegendarySpecies.
+//
+// "Offered until caught" is filtered on the Pokedex CAUGHT flag, which costs
+// zero new save state -- the reason this design is implementable in the five
+// closed-binary ports too.
+//
+// Two consequences of using the dex, both accepted at design time: a legendary
+// caught BEFORE Character Mode was enabled is never offered, and one that is
+// caught then released or traded stays flagged and never returns.
+u8 CharacterMode_BuildLegendaryPool(u8 level, u16 *out, u8 outCount,
+                                    bool8 *outRepeatable)
+{
+    const struct CharacterInfo *character = GetActiveCharacter();
+    u8 count = 0;
+    bool8 hasOrdinary = FALSE;
+    u32 i;
+
+    if (outRepeatable != NULL)
+        *outRepeatable = FALSE;
+    if (character == NULL || out == NULL || outCount == 0)
+        return 0;
+
+    // A roster with no ordinary families keeps its legendaries REPEATABLE.
+    // Without this, Cogita -- whose roster is a single legendary family --
+    // catches it once and can then catch nothing at all for the rest of the run,
+    // while still being offered by the playability threshold, which exempts her
+    // precisely FOR having a legendary.
+    for (i = 0; character->roster[i] != SPECIES_NONE; i++)
+    {
+        if (!CharacterMode_IsLegendaryOrMythical(character->roster[i]))
+        {
+            hasOrdinary = TRUE;
+            break;
+        }
+    }
+
+    if (outRepeatable != NULL)
+        *outRepeatable = !hasOrdinary;
+
+    for (i = 0; character->roster[i] != SPECIES_NONE && count < outCount; i++)
+    {
+        u16 offered;
+
+        if (!CharacterMode_IsLegendaryOrMythical(character->roster[i]))
+            continue;
+
+        // Filter on the species actually OFFERED, not the family base: the few
+        // multi-stage legendary lines (Cosmog, Type: Null, Kubfu, Poipole,
+        // Phione) should keep offering Solgaleo until Solgaleo is caught.
+        offered = CharacterMode_PickEvolutionStageForLevel(character->roster[i], level);
+        if (offered == SPECIES_NONE)
+            continue;
+
+        // NB the accessor takes a NATIONAL DEX number, not a species id, and in
+        // this tree those differ. Passing a species id would silently filter the
+        // wrong Pokemon, which reads exactly like the feature not firing.
+        if (hasOrdinary
+         && GetSetPokedexFlag(SpeciesToNationalPokedexNum(offered), FLAG_GET_CAUGHT))
+            continue;
+
+        out[count++] = offered;
+    }
+
+    return count;
+}
+
+// The 1% roll. Returns SPECIES_NONE when it doesn't fire, when the character has
+// no legendary, or when every legendary on the roster is already caught.
+//
+// ⚠️ A 1% event is the perfect hiding place for a test that cannot fail. Once the
+// dex filter can suppress legendaries, "no legendary appeared" is satisfied both
+// by correct suppression AND by this function never running. Any test of this
+// must assert the POSITIVE direction, on a state with a known-uncaught legendary
+// -- CharacterMode_BuildLegendaryPool exists so that can be done deterministically.
+u16 CharacterMode_RollWildLegendarySpecies(u8 level)
+{
+    u16 candidates[16];
+    u8 count;
+
+    if (GetActiveCharacter() == NULL)
+        return SPECIES_NONE;
+    if (Random() % 100 >= WILD_LEGENDARY_CHANCE_PERCENT)
+        return SPECIES_NONE;
+
+    // Max legendaries on any one roster in this repo is 12; 16 is headroom.
+    count = CharacterMode_BuildLegendaryPool(level, candidates,
+                                            ARRAY_COUNT(candidates), NULL);
+    if (count == 0)
+        return SPECIES_NONE;
+
+    return candidates[Random() % count];
+}
+
 u16 CharacterMode_RollWildOverrideSpecies(u8 level)
 {
     const struct CharacterInfo *character = GetActiveCharacter();
     u16 candidates[64];
     u8 candidateCount = 0;
     u32 i;
+    u16 legendary;
 
     if (character == NULL)
         return SPECIES_NONE;
+
+    // Legendary roll first, and independent -- see WILD_LEGENDARY_CHANCE_PERCENT.
+    legendary = CharacterMode_RollWildLegendarySpecies(level);
+    if (legendary != SPECIES_NONE)
+        return legendary;
+
     if (Random() % 100 >= WILD_OVERRIDE_CHANCE_PERCENT)
         return SPECIES_NONE;
 

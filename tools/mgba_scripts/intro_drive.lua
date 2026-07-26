@@ -45,6 +45,8 @@ D.REQ = {
     QUERY_FLAG = 9, QUERY_VAR = 10, RUN_SCRIPT = 11, SET_MON_HP = 12,
     SET_BATTLE_STYLE = 13, SET_MON_MOVE = 14, SWEEP_PARTY = 15,
     SAVE = 16, QUERY_OT = 17, SET_PLAYER_NAME = 18, SET_NICKNAME = 19,
+    LEGENDARY_POOL = 20, WILD_ROLL_STATS = 21, DEX_CAUGHT = 22,
+    LEGENDARY_ROLL_STATS = 23,
 }
 
 D.STATUS_DONE     = 1
@@ -121,7 +123,13 @@ end
 
 -- A mailbox round trip as a step. Fails loudly on rejection or no answer --
 -- a silently-unanswered request must never read as a pass.
-function D.mbStep(name, req, a, b, onDone)
+-- `timeoutFrames` defaults to 2000. Raise it for a request that does real work
+-- in the pump: the pump runs the whole request inside one call, but the GBA's
+-- VBlank keeps firing regardless, so frames DO advance while it computes and a
+-- long request trips the deadline while still perfectly healthy. A 4000-trial
+-- wild-roll loop needs well over 2000 frames.
+function D.mbStep(name, req, a, b, onDone, timeoutFrames)
+    local limit = timeoutFrames or 2000
     D.addStep(name,
         function() D.mbRequest(req, a, b) end,
         function(f)
@@ -134,7 +142,7 @@ function D.mbStep(name, req, a, b, onDone)
                 if onDone then onDone() end
                 return true
             end
-            if f - stepStart > 2000 then
+            if f - stepStart > limit then
                 H.assertTrue(name .. " (mailbox answered)", false)
                 return true
             end
