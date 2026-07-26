@@ -1,0 +1,543 @@
+{{Character Infobox
+|color={{fire color}}
+|corecolor={{fire color light}}
+|bordercolor={{fire color dark}}
+|name=Kabu
+|jname=カブ
+|tmname=Kabu
+|text=fff
+|sloganline=The ever-burning man of fire!
+|image=Sword Shield Kabu.png
+|size=x320px
+|caption=Art from [[Pokémon Sword and Shield|Sword and Shield]] by [[take]]<ref>[[a:File:KabuDarknessAblaze163.jpg|Kabu (Darkness Ablaze 163)]]</ref>
+|age=Middle-Aged<ref>Kabu is paired up with [[Larry]] in the [[Middle-Aged Opposites]] story event from [[Pokémon Masters EX]].</ref>
+|gender=Male
+|eyes=Black
+|hair=Salt and pepper
+|hometown=[[Motostoke]] <small>(original hometown unknown)</small>
+|region=[[Galar]] <small>(originally [[Hoenn]])</small>
+}}
+{{Character Infobox/Game
+|color={{fire color light}}
+|gen={{gen|VIII}}, {{gen|IX}}
+|games={{pkmn|Sword and Shield|Sword, Shield}}<br>{{pkmn|Masters EX}}
+|counterpart=[[Kabu (Masters)]]
+|trainer=[[Gym Leader]]
+|enva=Unknown <small>({{pkmn|Masters EX}})</small>
+|jpva=Kazuhiko Inoue <small>({{pkmn|Masters EX}})</small>
+}}
+{{Character Infobox/Team
+|color={{fire color light}}
+|member=[[Galar League]]
+|rank=[[Gym Leader]]
+|domain=[[Motostoke Stadium]]
+|reward={{badge|Fire}}
+|specialty={{t|Fire}} types
+}}
+{{Character Infobox/Anime
+|color={{fire color light}}
+|series=''[[Pokémon Horizons: The Series]]''<br>''[[Pokémon: Twilight Wings]]''
+|debut=''[[HZ019|The Bittersweet Truth]]'' <small>([[Pokémon Horizons: The Series|Horizons]])</small><br>''[[TW05|Assistant]]'' <small>([[Pokémon: Twilight Wings|Twilight Wings]])</small>
+|enva=Clyde Kusatsu <small>([[Pokémon Horizons: The Series|Horizons]])</small><!-- <br>N/A <small>([[Pokémon: Twilight Wings|Twilight Wings]])</small>-->
+|jpva=[[Hiroki Tōchi]] <small>([[Pokémon Horizons: The Series|Horizons]])</small><br>N/A <small>([[Pokémon: Twilight Wings|Twilight Wings]])</small>
+}}
+{{Character Infobox/Manga
+|color={{fire color light}}
+|series=''[[Pokémon Adventures]]''
+|debut=''[[PASS03|Chomp!! Defeat Drednaw]]''
+}}
+|}
+
+'''Kabu''' (Japanese: '''カブ''' ''Kabu'') is the [[Gym Leader]] of [[Motostoke]]'s [[Gym]], known officially as [[Motostoke Stadium]]. He [[Type expert|specializes]] in {{type|Fire}} {{OBP|Pokémon|species}}. He gives the {{badge|Fire}} to Trainers who defeat him.
+
+==In the core series games==
+Kabu is designated the third [[Gym Leader]] [[Galar]] {{pkmn|Trainer}}s face in their [[Galar League|Gym Challenge]]. However, Kabu is also known to be the first real challenge in the Gym Challenge. Often, Trainers give up due to being unable to defeat him. Kabu, after being scouted as a [[Pokémon Trainer]], moved from [[Hoenn]] to [[Galar]].<ref>Kabu: ''I moved from Hoenn to Galar because I got scouted.''
+
+[[Middle-Aged Opposites]]</ref> He is the current Leader of the [[Motostoke Stadium|Motostoke Gym]]. He lost the Gym position at one point but regained back several years later in glorious fashion.<ref>https://swordshield.pokemon.com/en-us/people-galar-region/fire-gym-leader-kabu/</ref> He made several attempts to becoming {{pkmn|Champion}} but could never reach it. He attempted a no-holds-barred approach to winning his fights but was not satisfied with the results. He even dropped to the minor division of Galar League. However, after facing off against [[Leon]], he regained faith in his potential. He also developed a more unrelentingly positive outlook on life as a result, battling to win with every intention with his {{type|Fire}} Pokémon. He is shown doing athletic activities like jogging throughout the game.
+
+Kabu is first seen at Motostoke Stadium for the Gym Challenge's opening ceremony. The {{player}} and [[Hop]] first meet him in [[Galar Mine No. 2]], defeating a pair of {{tc|Team Yell Grunt}}s who were disturbing the local [[wild Pokémon]]. He explains to the two young Trainers that he sometimes visits the mine to train against the {{type|Water}} Pokémon that live there, before returning to his Gym. After being defeated, Kabu is joined by [[Milo]] and [[Nessa]] at [[Motostoke]]'s front gate as he recites a cheer for the player and Hop to wish them good luck for the rest of their Gym Challenge. Kabu later participates in the Champion Cup at [[Wyndon]], but is defeated by [[Piers]] in the first round. He also participates in the post-game [[Wyndon Stadium/Champion tournaments|Champion tournaments]] and the [[Galarian Star Tournament]].
+
+After Kabu's initial defeat, the player is awarded with the {{badge|Fire}}, {{TM|38|Will-O-Wisp}}, and the [[List of clothing in Pokémon Sword and Shield|Fire Uniform]].
+
+===League Cards===
+This is a transcript of the back of Kabu's [[League Card]]s in {{g|Sword and Shield}}.
+;Normal League Card
+:"Kabu is a [[Pokémon Trainer]] who was invited from the [[Hoenn]] region. There were a few times where he was very close to becoming {{pkmn|Champion}}, but victory always seemed to elude him at the last moment. Because of this, he adopted a no-holds-barred approach to {{pkmn|battle|battling}} for a time, but even that did not bring the results he wanted. He even dropped to the minor division at one point, but after a fantastic battle with [[Leon]], he regained faith in his own potential. His motto is to keep learning and training as long as he is alive."
+;Rare League Card
+:"Interview with Challenger Kabu<br>Q: How do you see your own battle style?<br>Kabu: "Just, straightforward, direct. I'm still young, so I try to keep things simple. Just burn as hot as I can, you know? Still, I've hit a bit of a losing streak, so I've tried incorporating {{m|Will-O-Wisp}} into my Pokémon's move set. That's one thing I want to tell everyone—experiment with every possibility of your Pokémon. [[Move]]s, [[Ability|Abilities]], [[item]]s... Try everything, and there's sure to be a path forward!"
+
+===Pokémon===
+Kabu keeps his Pokémon in [[Ultra Ball]]s.
+
+===={{g|Sword and Shield}}====
+=====Gym battle=====
+{{Party
+| background = {{fire color}}
+| border = {{fire color dark}}
+| headcolor = {{fire color light}}
+| sprite = VSKabu.png
+| size = 150px
+| prize = {{pdollar}}3,200
+| class = Gym Leader
+| name = Kabu
+| location = Motostoke Stadium
+| game = SwSh
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0038
+| pokemon = Ninetales
+| gender = female
+| level = 25
+| type1 = Fire
+| ability = Flash Fire
+| move1 = Will-O-Wisp | move1type = Fire | move1cat = Status
+| move2 = Fire Spin | move2type = Fire | move2cat = Special
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+| move4 = Ember | move4type = Fire | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0059
+| pokemon = Arcanine
+| gender = male
+| level = 25
+| type1 = Fire
+| ability = Intimidate
+| move1 = Will-O-Wisp | move1type = Fire | move1cat = Status
+| move2 = Flame Wheel | move2type = Fire | move2cat = Physical
+| move3 = Bite | move3type = Dark | move3cat = Physical
+| move4 = Agility | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0851
+| pokemon = Centiskorch
+| max = Gigantamax
+| gender = male
+| level = 27
+| type1 = Fire
+| type2 = Bug
+| ability = Flash Fire
+| move1 = Flame Wheel | move1type = Fire | move1cat = Physical | maxmove1 = G-Max Centiferno
+| move2 = Coil | move2type = Poison | move2cat = Status | maxmove2 = Max Guard
+| move3 = Bug Bite | move3type = Bug | move3cat = Physical | maxmove3 = Max Flutterby
+| move4 = Smokescreen | move4type = Normal | move4cat = Status | maxmove4 = Max Guard
+}}
+{{Party/end}}
+=====Max Raid Battle partner=====
+Kabu teams up with the player, [[Hop]], and [[Piers]] to face a [[Dynamax]] {{p|Torkoal}} in a [[Max Raid Battle]].
+
+{{Party
+| background = {{fire color}}
+| border = {{fire color dark}}
+| headcolor = {{fire color light}}
+| sprite = VSKabu.png
+| size = 150px
+| prize = none
+| class = Gym Leader
+| name = Kabu
+| location = Motostoke Stadium
+| game = SwSh
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0851
+| pokemon = Centiskorch
+| gender = male
+| level = 62
+| type1 = Fire
+| type2 = Bug
+| ability = Flash Fire
+| move1 = Fire Spin | move1type = Fire | move1cat = Special
+| move2 = Crunch | move2type = Dark | move2cat = Physical
+| move3 = X-Scissor | move3type = Bug | move3cat = Physical
+}}
+{{Party/end}}
+=====Champion tournament=====
+{{Party
+| background = {{fire color}}
+| border = {{fire color dark}}
+| headcolor = {{fire color light}}
+| sprite = VSKabu.png
+| size = 150px
+| prize = {{pdollar}}{{tt|9,920|Before Galarian Star Tournament}}/{{tt|11,840|After Galarian Star Tournament}}
+| class = Gym Leader
+| name = Kabu
+| location = Wyndon Stadium
+| game = SwSh
+| pokemon = 5
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0324
+| pokemon = Torkoal
+| gender = male
+| level = {{tt|60|Before Galarian Star Tournament}}/{{tt|72|After Galarian Star Tournament}}
+| type1 = Fire
+| ability = Drought
+| move1 = Heat Crash | move1type = Fire | move1cat = Physical
+| move2 = Stealth Rock | move2type = Rock | move2cat = Status
+| move3 = Body Press | move3type = Fighting | move3cat = Physical
+| move4 = Earthquake | move4type = Ground | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0038
+| pokemon = Ninetales
+| gender = female
+| level = {{tt|60|Before Galarian Star Tournament}}/{{tt|72|After Galarian Star Tournament}}
+| type1 = Fire
+| ability = Flash Fire
+| move1 = Extrasensory | move1type = Psychic | move1cat = Special
+| move2 = Fire Blast | move2type = Fire | move2cat = Special
+| move3 = Solar Beam | move3type = Grass | move3cat = Special
+| move4 = Quick Attack | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0059
+| pokemon = Arcanine
+| gender = male
+| level = {{tt|61|Before Galarian Star Tournament}}/{{tt|73|After Galarian Star Tournament}}
+| type1 = Fire
+| ability = Intimidate
+| move1 = Extreme Speed | move1type = Normal | move1cat = Physical
+| move2 = Flare Blitz | move2type = Fire | move2cat = Physical
+| move3 = Play Rough | move3type = Fairy | move3cat = Physical
+| move4 = Iron Head | move4type = Steel | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0758
+| pokemon = Salazzle
+| gender = female
+| level = {{tt|61|Before Galarian Star Tournament}}/{{tt|73|After Galarian Star Tournament}}
+| type1 = Poison
+| type2 = Fire
+| ability = Corrosion
+| move1 = Flamethrower | move1type = Fire | move1cat = Special
+| move2 = Dragon Pulse | move2type = Dragon | move2cat = Special
+| move3 = Sludge Wave | move3type = Poison | move3cat = Special
+| move4 = Foul Play | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0851
+| pokemon = Centiskorch
+| max = Gigantamax
+| gender = male
+| level = {{tt|62|Before Galarian Star Tournament}}/{{tt|74|After Galarian Star Tournament}}
+| type1 = Fire
+| type2 = Bug
+| ability = Flash Fire
+| move1 = Fire Lash | move1type = Fire | move1cat = Physical | maxmove1 = G-Max Centiferno
+| move2 = Lunge | move2type = Bug | move2cat = Physical | maxmove2 = Max Flutterby
+| move3 = Crunch | move3type = Dark | move3cat = Physical | maxmove3 = Max Darkness
+| move4 = Power Whip | move4type = Grass | move4cat = Physical | maxmove4 = Max Overgrowth
+}}
+{{Party/end}}
+=====Galarian Star Tournament=====
+{{Party
+| background = {{fire color}}
+| border = {{fire color dark}}
+| headcolor = {{fire color light}}
+| sprite = VSKabu.png
+| size = 150px
+| prize = {{pdollar}}11,840
+| class = Gym Leader
+| name = Kabu
+| location = Wyndon Stadium
+| game = SwSh
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0324
+| pokemon = Torkoal
+| gender = male
+| level = 72
+| type1 = Fire
+| ability = Drought
+| move1 = Heat Crash | move1type = Fire | move1cat = Physical
+| move2 = Stealth Rock | move2type = Rock | move2cat = Status
+| move3 = Body Press | move3type = Fighting | move3cat = Physical
+| move4 = Earthquake | move4type = Ground | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0059
+| pokemon = Arcanine
+| gender = male
+| level = 73
+| type1 = Fire
+| ability = Intimidate
+| move1 = Extreme Speed | move1type = Normal | move1cat = Physical
+| move2 = Flare Blitz | move2type = Fire | move2cat = Physical
+| move3 = Play Rough | move3type = Fairy | move3cat = Physical
+| move4 = Iron Head | move4type = Steel | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0851
+| pokemon = Centiskorch
+| max = Gigantamax
+| gender = male
+| level = 74
+| type1 = Fire
+| type2 = Bug
+| ability = Flash Fire
+| move1 = Fire Lash | move1type = Fire | move1cat = Physical | maxmove1 = G-Max Centiferno
+| move2 = Lunge | move2type = Bug | move2cat = Physical | maxmove2 = Max Flutterby
+| move3 = Crunch | move3type = Dark | move3cat = Physical | maxmove3 = Max Darkness
+| move4 = Power Whip | move4type = Grass | move4cat = Physical | maxmove4 = Max Overgrowth
+}}
+{{Party/end}}
+==In the spin-off games==
+===[[Pokémon Masters EX]]===
+{{main|Kabu (Masters)}}
+Kabu forms a [[sync pair]] with {{p|Centiskorch}}, {{p|Torkoal}}, {{p|Ninetales}}, and {{p|Camerupt}} in [[Pokémon Masters EX]]. His Centiskorch is capable of [[Gigantamax]]ing, while his Camerupt is capable of [[Dynamax]]ing. Kabu became a playable sync pair on June 16, 2024.
+
+{{PairDex/h|Fire}}
+{{PairDex|206|Kabu|trainerlink=Kabu (Masters)#Centiskorch|trainerimg=Kabu|0851|Centiskorch|gender=male|buddy=yes|dynamax=yes|form=[[Gigantamax]]|Fire|Rock|Support|exrole=Physical Strike|6|Poké Fair Sync Pair Scout}}
+{{PairDex|206|Kabu|trainerlink=Kabu (Masters)#Torkoal|trainerimg=Kabu|0324|Torkoal|gender=male|Fire|Ground|Support|4EX|Trainer Lodge Friendship Level 100}}
+{{PairDex|206|Kabu|trainerlink=Kabu (Masters)#Ninetales|trainerimg=Kabu|0038|Ninetales|gender=female|Fire|Water|Support|exrole=Field|6|Gym Scout}}
+{{PairDex|206|Kabu|trainerlink=Kabu (Masters)#Camerupt|trainerimg=Kabu Academy|sygna=[[Pasio Academy|Academy]]|0323|Camerupt|gender=male|dynamax=yes|buddy=yes|Ground|Water|Physical Strike|exrole=Field|6|Costume Sync Pair Scout}}
+|}
+
+==Gallery==
+===Artwork===
+{|style="margin:auto; text-align:center; border:3px solid #{{fire color dark}}; background:#{{fire color}}; font-size:80%; border-radius: 10px; color:#fff;"
+|-
+| style="{{roundy|20px}} border:2px solid #{{fire color dark}}; background:#{{fire color light}}; overflow:hidden;" | [[File:Kabu SwSh concept art.jpg|x250px]]
+|- 
+| Concept art from {{color2|fff|Pokémon Sword and Shield|Sword and Shield}}
+|}
+
+===Sprites===
+{| style="margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{fire color dark}}; background:#{{fire color}}; font-size:80%; color:#fff;"
+|style="{{roundy|20px}} border:2px solid #{{fire color dark}}; background:#{{fire color light}}"| [[File:GST Kabu icon.png|100px]]
+|-
+|Icon from the<br>{{color2|fff|Galarian Star Tournament}} menu
+|}
+
+===[[League Card]]s===
+{|style="margin:auto; text-align:center; border:3px solid #{{fire color dark}}; background:#{{fire color}}; font-size:80%; border-radius: 10px; color:#fff;"
+|-
+| style="{{roundy|20px}} border:2px solid #{{fire color dark}}; background:#{{fire color light}}; overflow:hidden;" | [[File:League Card Kabu.png|x250px]]
+| style="{{roundy|20px}} border:2px solid #{{fire color dark}}; background:#{{fire color light}}; overflow:hidden;" | [[File:League Card Kabu rare.png|x250px]]
+|-
+|Kabu's {{color2|fff|League Card}} in<br>{{color2|fff|Pokémon Sword and Shield|Sword and Shield}}
+|Kabu's rare {{color2|fff|League Card}} in<br>{{color2|fff|Pokémon Sword and Shield|Sword and Shield}}
+|}
+
+==Quotes==
+{{main|Kabu/Quotes}}
+
+==In animation==
+[[File:Kabu anime.png|thumb|250px|Kabu in {{aniseries|HZ}}]]
+===''Pokémon Horizons: The Series''===
+Kabu made his debut at the end of ''[[HZ019|The Bittersweet Truth]]'', where he was seen eating at the Motostoke [[Battle Café]]. In the [[HZ020|next episode]], he made his way to [[Motostoke Stadium]] where [[Liko]] and [[Roy]] joined him to ask about the [[Black Rayquaza]]. Wanting to assist the two young Trainers, he, Kabu had them undergo a {{pkmn|training}} session that helped them find new methods of using their Pokémon's most basic [[Move|attacks]] by using them to either light up or extinguish the flames of a group of {{p|Litwick}}.
+[[File:Kabu Rayquaza flashback.png|thumb|250px|left|Kabu seeing the [[Black Rayquaza]]]]
+After Roy had won the challenge, Kabu challenged the two to a [[Multi Battle]], with his {{tc|Gym Trainer}} apprentice {{OBP|Wakaba|HZ020}} as his partner. Kabu's {{p|Centiskorch}} easily overwhelmed both {{TP|Liko|Sprigatito}} and {{TP|Roy|Fuecoco}}, even when the latter learned {{m|Flamethrower}} mid-battle. Once Fuecoco had been defeated, Kabu left the battle against Liko to Wakaba. After Liko's unexpected surrender, Kabu told her that while being kind and compassionate is a good thing, being compassionate to this degree during a battle can be disrespectful toward both the opponent and the participating Pokémon, as both Wakaba and Sprigatito were disappointed in her not finishing the battle in earnest. When Liko and Roy later left, Kabu encouraged Liko to find her own path in life.
+
+In ''[[HZ023|Fiery Galarian Moltres]]'', Kabu went to the [[Galar Mine]] to investigate the reports of a collapse that happened there. Upon arriving there, he found Liko, Roy, and [[Friede]], who revealed that the chaos had been caused by a {{rf|Galarian}} {{TP|Lucius|Moltres}}. When they left, Kabu realized that Friede was trying to hide {{an|Terapagos|something}}, but simply smiled and let them go.
+
+Kabu appeared in a flashback to Liko and Roy's journey in ''[[HZ045|From So Far Away]]''.
+
+Kabu reappeared in a flashback in ''[[HZ085|The Pokémon Paradise of Laqua!]]''.
+
+====Character====
+Kabu was shown to be a very wise and mature person, highly respected in his hometown. He is shown doing athletic activities like jogging throughout the anime. He also gave Liko several pieces of advice on how to train her {{TP|Liko|Sprigatito}}.
+{{-}}
+
+====Pokémon====
+This listing is of Kabu's known {{OBP|Pokémon|species}} in {{aniseries|HZ}}:
+
+{{TrainerPoké
+|trainer=Kabu
+|pkmn=Centiskorch
+|type1=Fire
+|type2=Bug
+|img=Kabu Centiskorch.png
+|epnum=HZ020
+|epname=Kabu's Battle Training!
+|vajp=
+|vaen=
+|desc={{p|Centiskorch}} is Kabu's only known Pokémon. He used it in a [[Multi Battle]] against [[Liko]] and [[Roy]], teaming up with {{OBP|Wakaba|HZ020}}'s {{p|Rolycoly}}. Centiskorch ended up defeating [[Roy's Fuecoco]] before withdrawing from the battle.
+
+Centiskorch's known moves are {{m|Flame Wheel}}, {{m|Bug Bite}}, and {{m|Flamethrower}}, and its [[Ability]] is {{a|Flash Fire}}.}}
+
+====Artwork====
+{| style="margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{fire color dark}}; background:#{{fire color}}; font-size:80%; color:#fff;"
+|-
+| style="{{roundy|15px}} border: 2px solid #{{fire color dark}}; background: #{{fire color light}};"| [[File:Pokémon Horizons Promotional Poster 2.jpg|x200px]]
+| style="{{roundy|15px}} border: 2px solid #{{fire color dark}}; background: #{{fire color light}};"| [[File:Kabu HZ key artwork.png|x200px]]
+| style="{{roundy|5px}} border:2px solid #{{fire color dark}}; background:#{{fire color light}}; width:80px"| [[File:Kabu HZ expression sheet.png|x100px]]
+| style="{{roundy|5px}} border:2px solid #{{fire color dark}}; background:#{{fire color light}}; width:80px"| [[File:HZ September Calendar.png|x250px]]
+| style="{{roundy|5px}} border:2px solid #{{fire color dark}}; background:#{{fire color light}}; width:80px"| [[File:HZ eyecatch Kabu Centiskorch.png|x150px]]
+
+|- 
+| Official poster from<br>''{{color2|fff|Pokémon Horizons: The Series}}''
+| Key artwork of<br>Kabu and Centiskorch
+| Concept art from ''{{color2|fff|Pokémon Horizons: The Series}}''
+| September Calendar 
+| Eyecatch
+|}
+
+====Voice actors====
+{{vatable|color={{fire color}}|bordercolor={{fire color dark}}
+|ja=東地 宏樹 ''Hiroki Tōchi''
+|ar=فؤاد شمص ''Fouad Shamas''
+|en=Clyde Kusatsu
+|fi=Rauno Ahonen
+|fr_eu=Jean-Michel Vovk
+|he=דן שצברג ''Dan Shatzberg''
+|it=Federico Danti
+|pl=Michał Konarski
+|pt_br=Ricardo Schnetzer
+|es_eu=Jorge García Insúa
+|es_la=Dafnis Fernández}}
+
+===Pokémon: Twilight Wings===
+[[File:Kabu TW.png|thumb|250px|Kabu in [[Pokémon: Twilight Wings]]]]
+In ''[[TW05|Assistant]]'', Kabu was jogging at [[Wyndon Stadium]]. 
+
+In ''[[TW07|Sky]]'', he gave his thoughts about [[Leon]] in an interview while working out in a gym.
+
+In ''[[TW08|The Gathering of Stars]]'', he was seen jogging with his Centiskorch at [[Motostoke]] after receiving an invitation letter for the [[Galarian Star Tournament]]. He was later seen at [[Wyndon Stadium]], walking out onto the field for the tournament's opening ceremony.
+
+====Pokémon====
+{{anchor|Centiskorch 2}}{{TrainerPoké
+|width=75
+|trainer=Kabu
+|pkmn=Centiskorch 
+|type1=Fire
+|type2=Bug
+|img=851Centiskorch.png
+|img2_size=170px
+|cap=Kabu's Centiskorch
+|epnum=TW08
+|epname=The Gathering of Stars
+|desc={{p|Centiskorch}} is Kabu's only known Pokémon. It was seen jogging with its Trainer.
+
+None of Centiskorch's moves are known.}}
+
+===GOTCHA!===
+Kabu briefly appeared in [[GOTCHA!]].
+{{-}}
+
+==In the manga==
+[[File:Kabu Adventures.png|thumb|120px|Kabu in Pokémon Adventures]]
+===Pokémon Adventures===
+Kabu debuted in ''[[PASS03|Chomp!! Defeat Drednaw]]''. He, along with various other Gym Leaders, was first seen reacting to the news that [[Leon]] had endorsed two {{pkmn|Trainer}}s for the [[Galar League|Gym Challenge]]. 
+
+In [[PASS10|Blazing!! Bede's Feelings]], Kabu was revealed to have faced [[Marnie]] in a Gym battle, but lost. He later faced [[Bede]], {{Henry}}, {{Casey}}, and [[Hop]] in Gym battles, which he also lost. After Hop's victory, Kabu, [[Milo]], and [[Nessa]] personally congratulated him and Casey for completing the first three Galar Gyms.
+
+In ''[[PASS25|Rumble!! The Horrific Darkest Day]]'', the Galar Gym Leaders gathered at [[Rose Tower]] to find out if [[Rose]] intended on bringing harm to the region. While [[Oleana]] kept the Gym Leaders busy, Henry, Casey, Bede, Hop, and Marnie went up to meet Rose, only find he was elsewhere. On a video screen, Rose announced his intention to restart the [[Darkest Day]] and ensure the safety of Galar's future. Power Spot lights began appearing all over the region, causing Pokémon to start [[Dynamax]]ing at random. While some traveled to confront Rose at the [[Hammerlocke]] [[Energy Plant]], Kabu went back to Motostoke to help deal with the rampaging Dynamax Pokémon.
+
+In ''[[PASS29|GRRR!! The Irrepairable Gears]]'', [[Macro Cosmos]] employees were dispatched to deal with the Dynamax Pokémon, allowing Kabu's group to provide backup for the others against {{p|Eternatus}}. By the time they arrived, Kabu's group found Eternatus had fled, leaving those who battled it unconscious and covered in poison. The injured were taken to a hospital to recover.
+
+By ''[[PASS40|Rumble!! The Darkest Day Returns]]'', the others had fully recovered from Eternatus's poison and were discharged from the hospital. Kabu and the others then set off to help stop the Darkest Day, which had begun once again.
+{{-}}
+
+====Pokémon====
+{{anchor|Centiskorch 3}}{{TrainerPoké
+|width=75
+|trainer=Kabu
+|pkmn=Centiskorch
+|giga=yes
+|type1=Fire
+|type2=Bug
+|img=Kabu Centiskorch Adventures.png
+|img_size=100px
+|img2=Kabu Gigantamax Centiskorch Adventures.png
+|img2_size=150px
+|cap=Kabu's Centiskorch
+|cap2=Kabu's Centiskorch
+|epnum=PASS10
+|epname=Blazing!! Bede's Feelings
+|desc={{p|Centiskorch}} is Kabu's only known Pokémon. It was first seen being defeated by [[Marnie]]'s {{p|Morpeko}} in a Gym battle. It was later seen facing [[Casey Shield|Casey]]'s {{p|Arrokuda|Kilo}} in its [[Gigantamax]]ed form, but was defeated as well. It later fought [[Oleana]]'s {{p|Milotic}} at [[Rose Tower]].
+
+None of Centiskorch's moves are known.}}
+Kabu has at least two other Pokémon, as he participated in a three-on-three Gym battle against {{Henry}}.
+
+==In the TCG==
+This listing is of cards mentioning or featuring Kabu or his Pokémon in the [[Pokémon Trading Card Game]].
+
+{{cardlist/header|Kabu's Pokémon|Fire|char=yes}}
+{{cardlist/entry|cardname=[[Centiskorch V (Darkness Ablaze 33)|Centiskorch]]{{TCGV}}|type=Fire|expanded=yes|enset=Lost Origin|enrarity=TGV|ennum=TG14/TG30|jpset=VMAX Climax|jprarity=CSR|jpnum=218/184}}
+{{cardlist/entry|cardname=[[Centiskorch VMAX (Darkness Ablaze 34)|Centiskorch]]{{VMAX}}|type=Fire|expanded=yes|enset=Lost Origin|enrarity=TGV|ennum=TG15/TG30|jpset=VMAX Climax|jprarity=CSR|jpnum=219/184}}
+{{cardlist/div|Other related cards|Fire}}
+{{cardlist/entry|cardname={{TCG ID|Darkness Ablaze|Kabu|163}}|type=Supporter|expanded=yes|enset=Darkness Ablaze|enrarity=Uncommon|ennum=163/189|jpset=Explosive Walker|jprarity=U|jpnum=067/070|enset2=Darkness Ablaze|enrarity2=Rare Ultra|ennum2=186/189|jpset2=Explosive Walker|jprarity2=SR|jpnum2=077/070|enset3=Champion's Path|enrarity3=Uncommon|ennum3=055/073|enset4=Champion's Path|enrarity4=Rare Rainbow|ennum4=077/073|jpset4=Explosive Walker|jprarity4=HR|jpnum4=082/070|enset5=Lost Origin|enrarity5=TGU|ennum5=TG26/TG30|jpset5=VMAX Climax|jprarity5=SR|jpnum5=257/184}}
+{{cardlist/footer|Fire}}
+
+==Trivia==
+[[File:Company Icon Huo Guo Hot Pot.png|thumb|150px|Icon of Huo Guo Hot Pot, Kabu's sponsor]]
+* Kabu was designed by [[take]].<ref name=takeSWSHCharDesign>[https://twitter.com/_take_oekaki/status/1565902892774871040 Tweet about designing all of the Gym Leaders for Pokémon Sword & Shield]</ref>
+* Kabu's uniform number is "187", which can be read in Japanese as {{wp|Numeric substitution in Japanese|goroawase}} for 火花 ''hibana'', meaning "sparks".
+* Kabu's sponsor is Huo Guo Hot Pot, whose logo can be seen on his shorts.
+* Kabu is the only [[Gym Leader]] in [[Galar]] to:
+** Originally be from [[Hoenn|another region]].
+** Have their English name be the same as their Japanese name.
+* Kabu was the first Gym Leader introduced before [[Generation IX]] to appear in ''[[Pokémon Horizons: The Series]]''.
+
+==Names==
+{| class="roundtable" style="background:#{{fire color}}; border:3px solid #{{fire color dark}}"
+|-
+! style="background:#{{fire color light}}; color:#FFFFFF" | Language
+! style="background:#{{fire color light}}; color:#FFFFFF" | Name
+! style="background:#{{fire color light}}; color:#FFFFFF" | Origin
+|-
+| Japanese
+| カブ ''Kabu''
+| From 蕪 ''kabu'' ({{wp|turnip}}), 兜 ''{{wp|kabuto}}'' (a type of Japanese helmet, whose design is incorporated into Kabu's Gym logo), and 火 ''ka'' (fire)
+|-
+| English, German, French,<br>Italian, Indonesian,<br>Brazilian Portuguese
+| Kabu
+| From his Japanese name
+|-
+| European Spanish,<br>Latin American Spanish
+| Naboru
+| From ''nabo'' (turnip)
+|-
+| Korean 	
+| 순무 ''Sunmu''
+| From 순무 ''sunmu'' (turnip)
+|-
+| Chinese (Traditional)
+| 卡蕪 ''Kǎwú'' / ''Kāmòuh''
+| rowspan="2" | From the transcription of his Japanese name and 蕪菁 / 芜菁 ''wújīng / mòuhjīng'' (turnip)
+|-
+| Chinese (Simplified)
+| 卡芜 ''Kǎwú''
+|-
+| Thai 	
+| คาบุ ''Khabu''
+| Transcription of his Japanese name
+|}
+{{-}}
+
+==References==
+<references/>
+
+==Related articles==
+* [[a:Category:Kabu|Images on the Bulbagarden Archives]]
+{{Gym Leaders of Galar}}
+{{Project CharacterDex notice}}
+
+[[Category:Sword and Shield characters]]
+[[Category:Gym Leaders]]
+[[Category:Fire-type Trainers]]
+[[Category:Trainers who use Gigantamax]]
+[[Category:Multi Battle partners]]
+[[Category:Pokémon Adventures characters]]
+
+[[de:Kabu]]
+[[es:Naboru]]
+[[fr:Kabu]]
+[[it:Kabu]]
+[[ja:カブ]]
+[[zh:卡蕪]]

@@ -1,0 +1,1134 @@
+{{CharInfobox
+|color={{water color}}
+|corecolor={{water color light}}
+|bordercolor={{water color dark}}
+|name=Wallace
+|jname=ミクリ
+|tmname=Mikuri
+|slogan=yes
+|sloganline=Artist, and lover of water.
+|image=Omega Ruby Alpha Sapphire Wallace.png
+|size=230px
+|caption=Artwork from {{g|Omega Ruby and Alpha Sapphire}}<br>Illustrated by [[Megumi Mizutani]]<ref>[[a:File:WallaceSilverTempest166.jpg|Wallace (Silver Tempest 166)]]</ref>
+|gender=Male
+|colors=yes
+|eyes=Turquoise
+|hair=Turquoise
+|hometown=[[Sootopolis City]]
+|region=[[Hoenn]]
+|relatives=[[Lisia]] (niece){{sup/6|ORAS}}<br>Unnamed older sister
+|trainer=yes
+|trainerclass=[[Gym Leader]]{{sup/3|RS}}{{sup/6|ORAS}}<br>{{pkmn|Champion}}{{sup/3|E}}<br>[[Pokémon Trainer]]{{sup/5|B2W2}}<br>Sootopolitan{{sup/6|ORAS}}<br>{{pkmn|Coordinator}}
+|game=yes
+|generation={{Gen|III}}, {{Gen|V}}, {{gen|VI}}
+|games={{game3|Ruby and Sapphire|Ruby, Sapphire|s}}, {{v2|Emerald}}, {{B2W2|Black 2, White 2}}, {{pkmn|Omega Ruby and Alpha Sapphire|Omega Ruby, Alpha Sapphire}}<br>{{pkmn|Masters EX}} 
+|leader=yes
+|gym=Sootopolis Gym
+|champ=yes
+|league=Ever Grande City
+|specialist=yes
+|type={{t|Water}} types
+|badge=Badge#Rain Badge{{!}}Rain Badge
+|brain=no
+|anime=yes
+|epnum=DP075
+|epname=Our Cup Runneth Over!
+|enva=[[Sean Reyes]]
+|java=[[Toshiyuki Morikawa]]
+|gameanim=yes
+|envagame=Michael Christopher<ref name="Michael Christopher">[https://www.michael-christopher.com/voice-over Michael Christopher — Voice-Over]</ref> <small>({{pkmn|Masters EX}})</small>
+|javagame=Kōsuke Kuwano<ref name="Kōsuke Kuwano">[https://twitter.com/kosukekuwano/status/1255759058063089664 Kōsuke Kuwano on Twitter] (Japanese)</ref><small>({{pkmn|Masters EX}})</small>
+|pv=yes<!--cameo-->
+|pvnum=GOTCHA!
+|pvname=GOTCHA!
+}}
+'''Wallace''' (Japanese: '''ミクリ''' ''Mikuri'') is a highly accomplished {{pkmn|Trainer}} and {{pkmn|Coordinator}} who [[Type expert|specializes]] in {{type|Water}} {{OBP|Pokémon|species}}. In the original {{game|Ruby and Sapphire|s}}, as well as their [[remake]]s, {{pkmn|Omega Ruby and Alpha Sapphire}}, he is the [[Gym Leader]] of [[Sootopolis City]]'s [[Gym]], known officially as the [[Sootopolis Gym]], awarding the {{Badge|Rain}} to those who defeat him. In {{v2|Emerald}}, he becomes {{pkmn|Champion}} of the [[Hoenn League|Pokémon League]] and gives the Gym back to [[Juan]], his former instructor.
+
+Wallace also excels in [[Pokémon Contest]]s and, in Omega Ruby and Alpha Sapphire, can be encountered in [[Rank (Contest)|Master Rank]] [[Beautiful (condition)|Beauty Contests]]. He is apparently close to [[Steven Stone]], and assists him in the [[Cave of Origin]] quest in Ruby, Sapphire, Omega Ruby, and Alpha Sapphire. He is the only character in the {{pkmn|games}} to have the {{DL|Pokémon Trainer|Trainer class}} '''Sootopolitan''' (Japanese: '''ルネのたみ''' ''Citizen of {{tt|Rune|Sootopolis}}'') and the only character in the {{pkmn|animated series}} to be referred to as a '''Contest Master''' (Japanese: '''コンテストマスター''' ''Contest Master'').
+
+==In the core series games==
+[[File:Wallace ORAS.png|thumb|200px|Wallace challenging the player]]
+[[File:Wallace Sky Pillar ORAS.png|thumb|200px|Wallace challenging the player at Sky Pillar]]
+In {{game|Ruby and Sapphire|s|Pokémon Ruby, Sapphire}}, {{pkmn|Omega Ruby and Alpha Sapphire|Omega Ruby, and Alpha Sapphire}}, Wallace runs the [[Sootopolis Gym]]. He's first met in [[Sootopolis City]] during the weather crisis, where {{Steven}} introduces him to the {{player}}. Once the crisis has been resolved, Wallace can be challenged at his Gym. After being defeated, he gives out the {{badge|Rain}}, as well as {{TM|03|Water Pulse}}{{sup/3|RS}} or {{HM|05|Waterfall}}{{sup/6|ORAS}}.
+
+In {{game|Emerald}}, Wallace is first encountered at the [[Cave of Origin]], where he guides the player to the [[Sky Pillar]] to awaken {{p|Rayquaza}}. Once the player reaches Sky Pillar, Wallace will have opened its locked entrance, allowing the player to enter the tower. After Rayquaza has stopped the battle between {{p|Groudon}} and {{p|Kyogre}}, Wallace will give the player {{HM|07|Waterfall}} and let them enter the Sootopolis Gym, which is now led by his mentor, [[Juan]]. At the {{ho|Pokémon League}} in [[Ever Grande City]], Wallace is revealed to have replaced Steven as the {{pkmn|Champion}}, with Steven being available to battle as a regular [[Pokémon Trainer]] during the post-game at [[Meteor Falls]].
+
+In {{B2W2}}, Wallace participates in the [[Pokémon World Tournament]], joining Steven in representing Hoenn in the [[Champions Tournament]].
+
+In Pokémon Omega Ruby and Alpha Sapphire, Wallace occasionally enters [[Pokémon Contest]] Spectaculars. The player may compete against him in the [[Rank (Contest)|Master Rank]] of the [[Beautiful (condition)|Beauty category]] after entering the Pokémon League's [[Hall of Fame]]. During the [[Delta Episode]], Wallace is revealed to be a descendant of the ancient people of Sootopolis, making him one of the few people capable of opening the sealed entrance to the Sky Pillar. Before the player enters the tower to pursue [[Zinnia]], Wallace battles them with his Champion [[party|team]] from Emerald. At the end of the Delta Episode, Steven requests Wallace to take his place as Champion when he someday leaves it to travel the world, which Wallace accepts.
+
+==={{DL|PokéNav|Trainer's Eyes}}/{{DL|PokéNav|Match Call}}===
+'''Leader Wallace'''{{sup/3|RS}} / '''Champion Wallace'''{{sup/3|E}}
+:'''Strategy'''
+:Dignity and respect.{{sup/3|RSE}}
+:With dignity and respect.{{sup/6|ORAS}}
+:'''Trainer's Pokémon'''
+:I prefer Pokémon of grace.
+:'''Self-Introduction'''
+:Aquatic illusions best suit my distinctive elegance.{{sup/3|RS}}
+:I represent beauty as well as intelligence.{{sup/3|E}}
+:Aquatic illusions best suit my distinctive sense of elegance.{{sup/6|ORAS}}
+
+===Pokémon===
+===={{game|Ruby and Sapphire|s}}====
+Wallace has two [[Hyper Potion]]s.
+{{Party
+| background = {{water color}}
+| border = {{water color dark}}
+| headcolor = {{water color light}}
+| sprite = Spr RS Wallace.png
+| prize = {{PDollar}}4300
+| class = Leader
+| classlink = Gym Leader
+| name = Wallace
+| location = Sootopolis Gym
+| game = RS
+| pokemon = 5
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0370
+| pokemon = Luvdisc
+| gender = female
+| level = 40
+| type1 = Water
+| ability = Swift Swim
+| move1 = Flail | move1type = Normal
+| move2 = Attract | move2type = Normal
+| move3 = Sweet Kiss | move3type = Normal
+| move4 = Water Pulse | move4type = Water
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0364
+| pokemon = Sealeo
+| gender = male
+| level = 40
+| type1 = Ice
+| type2 = Water
+| ability = Thick Fat
+| move1 = Encore | move1type = Normal
+| move2 = Body Slam | move2type = Normal
+| move3 = Aurora Beam | move3type = Ice
+| move4 = Water Pulse | move4type = Water
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0119
+| pokemon = Seaking
+| gender = male
+| level = 42
+| type1 = Water
+| ability = Swift Swim
+| move1 = Horn Drill | move1type = Normal
+| move2 = Fury Attack | move2type = Normal
+| move3 = Rain Dance | move3type = Water
+| move4 = Water Pulse | move4type = Water
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0340
+| pokemon = Whiscash
+| gender = male
+| level = 42
+| type1 = Water
+| type2 = Ground
+| ability = Oblivious
+| move1 = Amnesia | move1type = Psychic
+| move2 = Rain Dance | move2type = Water
+| move3 = Earthquake | move3type = Ground
+| move4 = Water Pulse | move4type = Water
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0350
+| pokemon = Milotic
+| gender = male
+| level = 43
+| type1 = Water
+| ability = Marvel Scale
+| move1 = Recover | move1type = Normal
+| move2 = Twister | move2type = Dragon
+| move3 = Ice Beam | move3type = Ice
+| move4 = Water Pulse | move4type = Water
+}}
+{{Party/end}}
+===={{game|Emerald}}====
+Wallace has four [[Full Restore]]s.
+{{Party
+| background = {{water color}}
+| border = {{water color dark}}
+| headcolor = {{water color light}}
+| sprite = Spr E Wallace.png
+| prize = {{PDollar}}11600
+| class = Champion
+| classlink = Pokémon Champion
+| name = Wallace
+| location = Pokémon League (Hoenn)
+| locationname = Ever Grande City
+| game = E
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0321
+| pokemon = Wailord
+| gender = male
+| level = 57
+| type1 = Water
+| ability = Water Veil
+| move1 = Rain Dance | move1type = Water
+| move2 = Water Spout | move2type = Water
+| move3 = Double-Edge | move3type = Normal
+| move4 = Blizzard | move4type = Ice
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0073
+| pokemon = Tentacruel
+| gender = male
+| level = 55
+| type1 = Water
+| type2 = Poison
+| ability = Clear Body
+| move1 = Toxic | move1type = Poison
+| move2 = Hydro Pump | move2type = Water
+| move3 = Sludge Bomb | move3type = Poison
+| move4 = Ice Beam | move4type = Ice
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0272
+| pokemon = Ludicolo
+| gender = male
+| level = 56
+| type1 = Water
+| type2 = Grass
+| ability = Swift Swim
+| move1 = Giga Drain | move1type = Grass
+| move2 = Surf | move2type = Water
+| move3 = Leech Seed | move3type = Grass
+| move4 = Double Team | move4type = Normal
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0340
+| pokemon = Whiscash
+| gender = male
+| level = 56
+| type1 = Water
+| type2 = Ground
+| ability = Oblivious
+| move1 = Earthquake | move1type = Ground
+| move2 = Surf | move2type = Water
+| move3 = Amnesia | move3type = Psychic
+| move4 = Hyper Beam | move4type = Normal
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0130
+| pokemon = Gyarados
+| gender = male
+| level = 56
+| type1 = Water
+| type2 = Flying
+| ability = Intimidate
+| move1 = Dragon Dance | move1type = Dragon
+| move2 = Earthquake | move2type = Ground
+| move3 = Hyper Beam | move3type = Normal
+| move4 = Surf | move4type = Water
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0350
+| pokemon = Milotic
+| gender = male
+| level = 58
+| type1 = Water
+| ability = Marvel Scale
+| held = Sitrus Berry
+| move1 = Recover | move1type = Normal
+| move2 = Surf | move2type = Water
+| move3 = Ice Beam | move3type = Ice
+| move4 = Toxic | move4type = Poison
+}}
+{{Party/end}}
+===={{B2W2}}====
+Wallace uses three of these Pokémon in [[Pokémon battle|Single Battles]], four in [[Double Battle|Double]] and [[Rotation Battle]]s, and all six in [[Triple Battle]]s. He will always lead with his signature Pokémon, {{p|Milotic}}.
+
+{{Party
+| background = {{water color}}
+| border = {{water color dark}}
+| headcolor = {{water color light}}
+| sprite = Spr B2W2 Wallace.png
+| prize = 1{{color2|000|Battle Point|BP}}
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Wallace
+| location = Pokémon World Tournament
+| game = B2W2
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0350
+| pokemon = Milotic
+| gender = both
+| level = 50
+| type1 = Water
+| ability = Marvel Scale
+| held = Rocky Helmet
+| move1 = Scald | move1type = Water | move1cat = Special
+| move2 = Icy Wind | move2type = Ice | move2cat = Special
+| move3 = Rest | move3type = Psychic | move3cat = Status
+| move4 = Sleep Talk | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0319
+| pokemon = Sharpedo
+| gender = both
+| level = 50
+| type1 = Water
+| type2 = Dark
+| ability = Rough Skin
+| held = Focus Sash
+| move1 = Hydro Pump | move1type = Water | move1cat = Special
+| move2 = Crunch | move2type = Dark | move2cat = Physical
+| move3 = Zen Headbutt | move3type = Psychic | move3cat = Physical
+| move4 = Aqua Jet | move4type = Water | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0365
+| pokemon = Walrein
+| gender = both
+| level = 50
+| type1 = Ice
+| type2 = Water
+| ability = Thick Fat
+| ability2 = Ice Body
+| held = Leftovers
+| move1 = Surf | move1type = Water | move1cat = Special
+| move2 = Yawn | move2type = Normal | move2cat = Status
+| move3 = Blizzard | move3type = Ice | move3cat = Special
+| move4 = Sheer Cold | move4type = Ice | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0272
+| pokemon = Ludicolo
+| gender = both
+| level = 50
+| type1 = Water
+| type2 = Grass
+| ability = Swift Swim
+| ability2 = Rain Dish
+| held = Life Orb
+| move1 = Surf | move1type = Water | move1cat = Special
+| move2 = Focus Blast | move2type = Fighting | move2cat = Special
+| move3 = Giga Drain | move3type = Grass | move3cat = Special
+| move4 = Rain Dance | move4type = Water | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0260
+| pokemon = Swampert
+| gender = both
+| level = 50
+| type1 = Water
+| type2 = Ground
+| ability = Torrent
+| held = Rindo Berry
+| move1 = Muddy Water | move1type = Water | move1cat = Special
+| move2 = Earth Power | move2type = Ground | move2cat = Special
+| move3 = Ice Beam | move3type = Ice | move3cat = Special
+| move4 = Focus Blast | move4type = Fighting | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0121
+| pokemon = Starmie
+| gender = none
+| level = 50
+| type1 = Water
+| type2 = Psychic
+| ability = Illuminate
+| ability2 = Natural Cure
+| held = Expert Belt
+| move1 = Surf | move1type = Water | move1cat = Special
+| move2 = Psychic | move2type = Psychic | move2cat = Special
+| move3 = Thunderbolt | move3type = Electric | move3cat = Special
+| move4 = Signal Beam | move4type = Bug | move4cat = Special
+}}
+{{Party/end}}
+===={{g|Omega Ruby and Alpha Sapphire}}====
+=====Gym battle=====
+{{Party
+| background = {{water color}}
+| border = {{water color dark}}
+| headcolor = {{water color light}}
+| sprite = VSWallace.png
+| size = 150px
+| prize = {{PDollar}}5,520
+| class = Leader
+| classlink = Gym Leader
+| name = Wallace
+| location = Sootopolis Gym
+| game = ORAS
+| pokemon = 5
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0370
+| pokemon = Luvdisc
+| gender = female
+| level = 44
+| type1 = Water
+| ability = Swift Swim
+| move1 = Draining Kiss | move1type = Fairy | move1cat = Special
+| move2 = Attract | move2type = Normal | move2cat = Status
+| move3 = Sweet Kiss | move3type = Fairy | move3cat = Status
+| move4 = Water Pulse | move4type = Water | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0340
+| pokemon = Whiscash
+| gender = male
+| level = 44
+| type1 = Water
+| type2 = Ground
+| ability = Oblivious
+| move1 = Earthquake | move1type = Ground | move1cat = Physical
+| move2 = Zen Headbutt | move2type = Psychic | move2cat = Physical
+| move3 = Waterfall | move3type = Water | move3cat = Physical
+| move4 = Mud Sport | move4type = Ground | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0364
+| pokemon = Sealeo
+| gender = male
+| level = 44
+| type1 = Ice
+| type2 = Water
+| ability = Thick Fat
+| move1 = Encore | move1type = Normal | move1cat = Status
+| move2 = Waterfall | move2type = Water | move2cat = Physical
+| move3 = Aurora Beam | move3type = Ice | move3cat = Special
+| move4 = Body Slam | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0119
+| pokemon = Seaking
+| gender = female
+| level = 44
+| type1 = Water
+| ability = Swift Swim
+| move1 = Waterfall | move1type = Water | move1cat = Physical
+| move2 = Rain Dance | move2type = Water | move2cat = Status
+| move3 = Aqua Ring | move3type = Water | move3cat = Status
+| move4 = Horn Drill | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0350
+| pokemon = Milotic
+| gender = female
+| level = 46
+| type1 = Water
+| ability = Marvel Scale
+| move1 = Hydro Pump | move1type = Water | move1cat = Special
+| move2 = Recover | move2type = Normal | move2cat = Status
+| move3 = Ice Beam | move3type = Ice | move3cat = Special
+| move4 = Disarming Voice | move4type = Fairy | move4cat = Special
+}}
+{{Party/end}}
+=====[[Delta Episode]]=====
+{{Party
+| background = {{water color}}
+| border = {{water color dark}}
+| headcolor = {{water color light}}
+| sprite = VSWallace.png
+| size = 150px
+| prize = {{PDollar}}6,840
+| class = Sootopolitan
+| classlink = Wallace
+| name = Wallace
+| location = Hoenn Route 131
+| locationname = Route 131
+| game = ORAS
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0321
+| pokemon = Wailord
+| gender = male
+| level = 55
+| type1 = Water
+| ability = Oblivious
+| move1 = Water Spout | move1type = Water | move1cat = Special
+| move2 = Heavy Slam | move2type = Steel | move2cat = Physical
+| move3 = Earthquake | move3type = Ground | move3cat = Physical
+| move4 = Blizzard | move4type = Ice | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0073
+| pokemon = Tentacruel
+| gender = female
+| level = 55
+| type1 = Water
+| type2 = Poison
+| ability = Clear Body
+| move1 = Sludge Wave | move1type = Poison | move1cat = Special
+| move2 = Brine | move2type = Water | move2cat = Special
+| move3 = Rain Dance | move3type = Water | move3cat = Status
+| move4 = Dazzling Gleam | move4type = Fairy | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0272
+| pokemon = Ludicolo
+| gender = male
+| level = 55
+| type1 = Water
+| type2 = Grass
+| ability = Swift Swim
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Scald | move2type = Water | move2cat = Special
+| move3 = Energy Ball | move3type = Grass | move3cat = Special
+| move4 = Ice Beam | move4type = Ice | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0340
+| pokemon = Whiscash
+| gender = male
+| level = 55
+| type1 = Water
+| type2 = Ground
+| ability = Oblivious
+| move1 = Earthquake | move1type = Ground | move1cat = Physical
+| move2 = Muddy Water | move2type = Water | move2cat = Special
+| move3 = Rock Tomb | move3type = Rock | move3cat = Physical
+| move4 = Rain Dance | move4type = Water | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0130
+| pokemon = Gyarados
+| gender = male
+| level = 55
+| type1 = Water
+| type2 = Flying
+| ability = Intimidate
+| move1 = Waterfall | move1type = Water | move1cat = Physical
+| move2 = Crunch | move2type = Dark | move2cat = Physical
+| move3 = Ice Fang | move3type = Ice | move3cat = Physical
+| move4 = Stone Edge | move4type = Rock | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0350
+| pokemon = Milotic
+| gender = female
+| level = 57
+| type1 = Water
+| ability = Marvel Scale
+| move1 = Dragon Pulse | move1type = Dragon | move1cat = Special
+| move2 = Blizzard | move2type = Ice | move2cat = Special
+| move3 = Recover | move3type = Normal | move3cat = Status
+| move4 = Hydro Pump | move4type = Water | move4cat = Special
+}}
+{{Party/end}}
+=====Pokémon Contest Spectaculars=====
+{{Pokémon/Contest
+|gen=6
+|pokemon=Milotic
+|type1=Water
+|ndex=350
+|gender=
+|move1=Aqua Ring|move1cat=Beautiful|move1app=1|move1jam=0
+|move2=Aqua Tail|move2cat=Beautiful|move2app=4|move2jam=0
+|move3=Blizzard|move3cat=Beautiful|move3app=1|move3jam=3
+|move4=Round|move4cat=Beautiful|move4app=2|move4jam=0
+}}
+
+==In the spin-off games==
+===[[Pokémon Masters EX]]===
+{{main|Wallace (Masters)}}
+Wallace, as a [[Gym Leader]], forms a [[sync pair]] with {{p|Milotic}} and {{p|Blacephalon}} in [[Pokémon Masters EX]]. His Blacephalon is capable of [[Dynamax]]ing. Wallace became a playable sync pair on April 30, 2020.
+
+{{PairDex/h|Water}}
+{{PairDex|090|Wallace|trainerlink=Wallace (Masters)#Milotic|trainerimg=Wallace|0350 f|Milotic|gender=female|Water|Electric|Tech|6|Sync Pair Scout}}
+{{PairDex|090|Wallace|trainerlink=Wallace (Masters)#Blacephalon|trainerimg=Wallace New Year 2024|sygna=New Year's 2024|0806|Blacephalon|dynamax=yes|buddy=yes|Fire|Dark|Field|exrole=Special Strike|6|Seasonal Sync Pair Scout}}
+|}
+
+==Gallery==
+===Artwork===
+{{bad image|section|Concept art image doesn't need to be transparent}}
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{water color dark}}; background: #{{water color}}; font-size:80%;"
+|-
+| style="{{roundy|20px}} border: 2px solid #{{water color dark}}; background: #{{water color light}}; width:96px"| [[File:Ruby Sapphire Wallace.png|200px]]
+| style="{{roundy|20px}} border: 2px solid #{{water color dark}}; background: #{{water color light}}; width:96px"| [[File:Emerald Wallace.png|140px]]
+|-
+| Official artwork from<br>{{color2|000|Pokémon Ruby and Sapphire Versions|Ruby and Sapphire}}
+| Official artwork from {{color2|000|Pokémon Emerald Version|Emerald}}
+|-
+| style="{{roundy|20px}} border: 2px solid #{{water color dark}}; background: #{{water color light}}; width:96px"| [[File:ORAS Delta Episode.png|300px]]
+| style="{{roundy|20px}} border: 2px solid #{{water color dark}}; background: #{{water color light}}"| [[File:Wallace ORAS concept art.png|370px]]
+|-
+| Wallace in the artwork for the {{color2|000|Delta Episode}}
+| Conceptual artwork from<br>{{color2|000|Pokémon Omega Ruby and Alpha Sapphire|Omega Ruby and Alpha Sapphire}}
+|}
+
+===Sprites and models===
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{water color dark}}; background: #{{water color}}; font-size: 80%"
+|-
+| style="{{roundy|80px}} border: 2px solid #{{water color dark}}; background: #{{water color light}}; width:80px" | [[File:Spr RS Wallace.png]]
+| style="{{roundy|80px}} border: 2px solid #{{water color dark}}; background: #{{water color light}}; width:80px" | [[File:Spr E Wallace.png]]
+| style="{{roundy|80px}} border: 2px solid #{{water color dark}}; background: #{{water color light}}; width:80px" | [[File:Spr B2W2 Wallace.png]]
+| style="{{roundy|20px}} border: 2px solid #{{water color dark}}; background: #{{water color light}}; width:80px" | [[File:VSWallace.png|200px]]
+|-
+| Sprite from<br>{{color2|000|Pokémon Ruby and Sapphire Versions|Ruby and Sapphire}}
+| Sprite from<br>{{color2|000|Pokémon Emerald Version|Emerald}}
+| Sprite from<br>{{color2|000|Pokémon Black and White Versions 2|Black 2 and<br>White 2}}
+| VS portrait from<br>{{color2|000|Pokémon Omega Ruby and Alpha Sapphire|Omega Ruby and Alpha Sapphire}}
+|-
+| style="{{roundy|80px}} border: 2px solid #{{water color dark}}; background: #{{water color light}}; width:80px" | [[File:Wallace RS OD.png]]
+| style="{{roundy|80px}} border: 2px solid #{{water color dark}}; background: #{{water color light}}; width:80px" | [[File:Wallace III OD.png]]
+| style="{{roundy|80px}} border: 2px solid #{{water color dark}}; background: #{{water color light}}; width:80px" | [[File:Wallace OD.png]]
+| style="{{roundy|80px}} border: 2px solid #{{water color dark}}; background: #{{water color light}}; width:80px" | [[File:Wallace ORAS OD.png|100px]]
+|-
+| Overworld sprite from<br>{{color2|000|Pokémon Ruby and Sapphire Versions|Ruby and Sapphire}}
+| Overworld sprite from<br>{{color2|000|Pokémon Emerald Version|Emerald}}
+| Overworld sprite from<br>{{color2|000|Pokémon Black and White Versions 2|Black 2 and<br>White 2}}
+| Overworld model from<br>{{color2|000|Pokémon Omega Ruby and Alpha Sapphire|Omega Ruby and Alpha Sapphire}}
+|}
+
+==Quotes==
+{{main|Wallace/Quotes}}
+
+==In animation==
+[[File:Wallace anime.png|thumb|180px|Wallace in {{aniseries|DP}}]]
+===''Pokémon the Series''===
+===={{aniseries|DP}}====
+[[File:Wallace Contest Outfit.png|thumb|left|220px|Wallace's stage clothing]]
+Wallace debuted in ''[[DP075|Our Cup Runneth Over!]]'', being introduced as a {{pkmn|Contest}} Master, a former {{gy|Sootopolis}} [[Gym Leader]], and the current [[Hoenn League]] {{pkmn|Champion}}. He was first seen on the ''[[Sinnoh Now]]'' [[television]] program when {{si|Rhonda}} advertised the [[Wallace Cup]] taking place on the shores of [[Lake Valor]]. {{Ash}} and {{ashfr}} were looking for Wallace and found him relaxing near a lake with his {{p|Milotic}}. Even though Wallace had his day off from his busy schedule, he allowed the group to stay. Wallace had {{an|Dawn}} show off her Contest moves to him. She did so by having a practice [[Contest Battle]] with Ash. He praised the two for their match while {{an|Brock}} explained that {{AP|Buizel}} used to belong to Dawn and he was [[trade]]d to Ash in exchange for {{AP|Aipom}}. After watching Ash and Dawn's practice match against each other, he asked Ash to enter the Wallace Cup with his Buizel.
+
+{{TRT}} subsequently showed up in [[List of Team Rocket's disguises|disguise]]. Despite having more company, Wallace did a practice [[appeal]] with his Milotic for them to prove what relaxing and playing with Pokémon can do during his time off. When Milotic finished with {{m|Twister}}, Wallace left in a wave formed by the appeal. Wallace was later seen on TV, being interviewed by [[Marian]].
+
+In ''[[DP077|Staging a Heroes' Welcome!]]'', during the beginning of the Wallace Cup, Wallace made a speech on stage and held out the audience and participants the {{DL|Ribbon|Aqua Ribbon}}. He concluded the speech by having Milotic perform as part of his appearance. He then acted as a [[Contest Judge]] for the Performance Stage.
+
+In ''[[DP078|Pruning a Passel of Pals!]]'', Wallace welcomed back the participants as the Wallace Cup was resumed. He judged the battles of the Battle Stage, including the one with Ash and {{si|Kyle}}.
+
+Wallace continued acting as a judge for the Battle Stage in ''[[DP079|Strategy With a Smile!]]''. When {{an|May}} and Dawn were in the finals and were about to begin their battle, Wallace gave some encouraging words to the two. After Dawn was able to defeat May and win the Contest, Wallace awarded Dawn the Aqua Ribbon. Wallace then closed the Wallace Cup by having Milotic use {{m|Hydro Pump}} in the air.
+
+It was revealed in ''[[DP095|Battling the Generation Gap!]]'' that the outfit he wore in the Top Coordinator Carnival was designed by the renowned [[Pokémon Stylist]] [[Lila]]. The outfit is currently on display at Lila's fashion store in [[Celestic Town]], next to a signed photo of Wallace.
+
+In [[DPS01]], Wallace made a cameo in a fantasy when Dawn told [[Johanna]] that she was planning to travel to [[Hoenn]] since it is Wallace's home region, as well as the place where Pokémon Contests originated.
+
+===={{aniseries|BW}}====
+In ''[[BW093|Goodbye, Junior Cup - Hello Adventure!]]'', Wallace made another cameo in a fantasy, when Dawn revealed that she would soon leave [[Unova]] and head to [[Johto]] to compete in the Wallace Cup once again. When Dawn was taking the plane to [[Blackthorn City]], {{an|Cynthia}} told her to send Wallace her regards.
+
+===={{aniseries|XY}}====
+While Wallace does not appear in {{aniseries|XY}}, in ''[[XYS02|Mega Evolution Special II]]'', {{an|Steven Stone|Steven}} was mentioned to be Hoenn's current Champion, meaning that Wallace had lost the title sometime earlier.
+{{-}}
+
+===={{aniseries|JN}}====
+[[File:Wallace JN.png|thumb|250px|Wallace in {{aniseries|JN}}]]
+Wallace reappeared in ''[[JN105|Reuniting for the First Time!]]'', now sporting his {{pkmn|Omega Ruby and Alpha Sapphire}} outfit and having returned to serving as the {{ci|Sootopolis}} Gym Leader. During a Pokémon Contest Spectacular in [[Lilycove City]], where Wallace's niece [[Lisia]] was competing, he encountered Ash and [[Goh]] as they were going to watch [[Chloe]]'s performance, but Wallace, having heard of Ash's success in the [[World Coronation Series]], demanded to have a {{pkmn|battle}} with him, which he accepted. At first, Ash had trouble remembering who Wallace was, much to Wallace's irritation, but eventually he remembered him once Wallace mentioned the Wallace Cup. The battle between them ended in Ash's victory, for which Wallace rewarded him with a {{badge|Rain}} and his scarf, wanting to make sure that Ash wouldn't forget this encounter with him.
+
+====Character====
+[[File:Wallace press conference.png|thumb|left|220px|Wallace holding a press conference]]
+Like in the {{pkmn|games}}, Wallace was said to be the former [[Sootopolis City]] [[Gym Leader]] who eventually moved up to the position of [[Hoenn League]] {{pkmn|Champion}}. In ''[[XYS02|Mega Evolution Special II]]'', {{an|Steven Stone|Steven}} was confirmed to be the current Champion of the Hoenn League, meaning that Wallace had lost his title and returned to being a Gym Leader sometime before. Wallace is also an accomplished [[Pokémon Coordinator]], having won the [[Ribbon Cup]] and the title of [[Top Coordinator]] after winning the [[Hoenn Grand Festival]] with his {{p|Milotic}}. For his achievements in the [[Pokémon Contest]] world, he was labeled as a Contest Master and has been described as the pride and joy of every Coordinator.
+
+Wallace regularly travels to promote the competition bearing his name, the {{cat|Multiregional competitions|multiregional}} [[Wallace Cup]], and thus has a tight schedule. He often makes appearances in talk shows and other {{cat|Pokémon world media|media outlets}}, such as [[Magazines in the Pokémon world|magazines]] and [[radio]]. Nonetheless, he will reserve time to spend with his Pokémon, as he greatly values the [[Friendship|bond]] between {{pkmn|Trainer}}s and {{OBP|Pokémon|species}}.
+[[File:Lisia Wallace Journeys.png|thumb|250px|Wallace and Lisia]]
+Due to his accomplishments, Wallace attained celebrity status and amassed a strong fan following. His fans will wait for him outside hotels and wear caps similar to the one he wears. Despite this, Wallace is shown to be a humble and modest person who likes his privacy. However, he will still treat others kindly if they happen to encounter him when he is not working.
+
+In ''[[JN105|Reuniting for the First Time!]]'', he revealed a more narcissistic, flamboyant, and exaggerated side of himself. He took mild offense towards Ash not remembering him since their meeting from the Wallace Cup, while Ash did remember Steven. He then persistently insisted Ash to battle him, despite the fact both him and Goh had to go to watch Chloe's Contest Spectacular, a battle that took so long the Contest ended before they could go there. On top of that, Wallace went in a long, convoluted speech and showered Ash with rewards so that he would remember their battle.
+{{-}}
+
+====Pokémon====
+{{MissingInfo|2|java|enva|scope=section}}
+This listing is of Wallace's known {{OBP|Pokémon|species}} in {{aniseries|PTS}}:
+{{TrainerPoké
+|trainer=Wallace
+|pkmn=Milotic
+|type1=Water
+|img=Wallace Milotic.png
+|epnum=DP075
+|epname=Our Cup Runneth Over!
+|vajp=
+|vaen=
+|desc={{p|Milotic}} is Wallace's first known Pokémon. It first appeared with its Trainer at "Sinnoh Now", when Dawn was watching TV. Previously, Milotic had helped Wallace become a Contest Master with the help of its beauty and skill. It first debuted in ''[[DP075|Our Cup Runneth Over!]]'' when Wallace had a secret training session with it out on a lake. {{Ash}} and {{ashfr}} came across them and were impressed with its beauty and graceful moves. Milotic even gave {{AP|Pikachu}} and {{TP|Dawn|Piplup}} a ride around the lake on its back. Later, Wallace did a practice appeal with his Pokémon for the gang and the Team Rocket trio.
+
+Milotic helped Wallace make his sensational entrance to the [[Wallace Cup]]. It is clear that Wallace's fans also have a great love for Milotic as they went wild when it appeared. It even helped pass out the Ribbon to {{an|Dawn}} after she won the Wallace Cup.
+
+It appeared in a fantasy in ''[[BW093|Goodbye, Junior Cup - Hello Adventure!]]''.
+
+It appeared again in ''[[JN105|Reuniting for the First Time!]]'', where it was used in a battle against Ash and {{AP|Pikachu}}. Milotic is eventually defeated by Pikachu, securing Ash's victory in the battle.
+
+Milotic's known moves are {{m|Aqua Ring}}, {{m|Safeguard}}, {{m|Dragon Pulse}}, {{m|Twister}}, and {{m|Hydro Pump}}.}}
+
+{{TrainerPoké
+|trainer=Wallace
+|pkmn=Swampert
+|type1=Water
+|type2=Ground
+|img=Wallace Swampert.png
+|epnum=JN105
+|epname=Reuniting for the First Time!
+|vajp=
+|vaen=
+|desc={{p|Swampert}} is Wallace's second known Pokémon. It was used to battle against [[Ash's Dragonite]], although it wasn't made clear who won. 
+
+Swampert's only known move is {{m|Muddy Water}}.}}
+
+{{TrainerPoké
+|trainer=Wallace
+|pkmn=Walrein
+|type1=Ice
+|type2=Water
+|img=Wallace Walrein.png
+|epnum=JN105
+|epname=Reuniting for the First Time!
+|vajp=
+|vaen=
+|desc={{p|Walrein}} is Wallace's third known Pokémon. It was used to battle [[Ash's Dracovish]], but eventually, both Pokémon were recalled.
+
+None of Walrein's moves are known.}}
+
+====Achievements====
+=====Pokémon League=====
+Wallace has competed in the following [[Pokémon League Conference]]s:
+* [[Hoenn League]] - Champion (prior to ''[[DP075|Our Cup Runneth Over!]]'' until sometime before ''[[XYS02|Mega Evolution Special II]]'')
+
+=====Contests=====
+[[File:Wallace Ribbon Cup.png|thumb|220px|Wallace's [[Ribbon Cup]]]]
+======Ribbons obtained======
+This listing is of the [[Ribbon]]s Wallace has obtained:
+* At least five Ribbons (prior to ''[[DP075|Our Cup Runneth Over!]]'')
+
+======Grand Festival ranking======
+Wallace has competed in the following [[Grand Festival]] tournaments:
+* [[Hoenn Grand Festival]] - Winner (prior to ''[[DP075|Our Cup Runneth Over!]]'')
+
+=====Outfits=====
+<gallery>
+File:Wallace Top Coordinator Outfit.png|Wallace's Top Coordinator Outfit
+</gallery>
+
+====Voice actors====
+{{vatable|color={{water color}}|bordercolor={{water color light}}
+|ja=森川智之 ''[[Toshiyuki Morikawa]]''
+|en=[[Sean Reyes]]
+|ar=فادي الرفاعي ''Fadi Rifai'' ([[JN105]])
+|zh_yue=麥皓豐
+|zh_cmn=于正昇 ''Yú Zhèngshēng ''
+|fi=Aku Laitinen ([[DP075]]-[[DP079]])<br>Jari Salo ([[JN105]])
+|fr_eu=Pablo Hertsens ([[DP075]]-[[DP079]])<br>Marc Weiss ([[JN105]])
+|he=יובל בינדר ''Yuval Binder'' ([[JN105]])
+|pt_br=Élcio Sodré ([[DP075]]-[[DP079]])<br>Daniel Bartholomeu ([[JN105]])
+|pt_eu=Ivo Bastos ([[JN105]])
+|es_eu=Cholo Moratalla
+|es_la=José Luis Rivera
+|no=Trond Teigen
+|pl=Tomasz Błasiak
+|cs=Marek Libert}}
+
+===GOTCHA!===
+Wallace briefly appeared in [[GOTCHA!]].
+
+==In the manga==
+===Pokémon Adventures===
+{{spoilers}}
+[[File:Winona Wallace Adventures.png|thumb|220px|Wallace in Pokémon Adventures]]
+====History====
+=====Past=====
+He and Winona had a romantic relationship in the past. When Wallace beat the Pokémon League, he turned down the position of Champion to take over the Sootopolis Gym after his master, Juan. However, he also had the intention of staying close to Winona. Winona was opposed to this act, as she found the idea of a man much stronger than her constantly around to be smothering, which led to her breaking off their relationship.
+
+====={{MangaArc|Ruby & Sapphire}}=====
+Wallace first showed up when [[Flannery]] called all of the Gym Leaders to Fortree City to have a meeting about the mysterious organizations [[Team Magma]] and [[Team Aqua]]. Due to having business elsewhere, Wallace was forced to attend via video rather than be there in person. When the other Gym Leaders began taking sides on whether one team is evil and the other on the side of good, Wallace sided with Team Aqua due to him being a Water-type Trainer. After the discussion ended, Wallace talked to [[Winona]] about the death of [[Mt. Chimney]] causing the sea levels to rise. Wallace revealed that he was heading to [[Fallarbor Town]] to discuss the changes in climate with [[Professor Cozmo]]. In addition to his quest, Wallace also participated in a Pokémon Contest. He managed to win easily, which gained the attention of {{adv|Ruby}}, who challenged Wallace to show off his skills. Ruby was defeated, but he was so impressed by Wallace that he demanded that Wallace become his master and train him in the art of Pokémon Contests. Wallace initially refused but changed his mind after seeing how strong Ruby was and finding out that he was the son of a Gym Leader. Once Wallace had finished his mission in Fallarbor Town, he went to Fortree City to meet with the other Gym Leaders and took Ruby there with him.
+
+After some discussions occurred, Wallace saw Ruby suddenly running away. He follows after, only to find [[Slateport City]] flooded. Wallace helps the rescue the populace and eventually finds Ruby participating in a Pokémon Contest. Wallace enters the Contest as a mystery competitor and has it rigged so that Ruby would lose. Ruby is angered by this and takes his frustrations out on his {{p|Feebas}}, [[Feefee]]. Wallace reveals himself and berates Ruby for his horrible behavior. When Ruby realizes his mistake, he finds that Feefee had run away and that it was too late for him to apologize. Wallace continues to tell Ruby how horrible his behavior was, but the stress causes Ruby to pass out crying as he apologizes to his runaway Pokémon.
+[[File:Wallace appeal Adventures.png|thumb|left|220px|Wallace in an appeal with his Pokémon]]
+When {{p|Groudon}} and {{p|Kyogre}} are awakened, they begin causing {{a|Drought|droughts}} and {{a|Drizzle|downpours}} throughout Hoenn. Wallace decides to help battle against one of the Legendary Pokémon, but Winona informs him that the people behind the attacks are controlling Kyogre and Groudon at the [[Seafloor Cavern]]. After deciding to join in the fight, Ruby reveals that with Sapphire's {{p|Relicanth|Relly}}, he and Sapphire will be able to go to the Seafloor Cavern. After Ruby and Sapphire leave, Wallace heads off to help [[Brawly]] and [[Roxanne]] combat Groudon. Soon after arriving, all three are interrupted by the [[Magma Admin (Trainer class)#In the manga|Three Fires]] of Team Magma, [[Blaise]], [[Tabitha]], and [[Courtney]]. The three grab Wallace, Brawly, and Roxanne and take each of them to [[Lilycove City]] to prevent the Gym Leaders from stopping Groudon any further. Wallace is taken by Tabitha to the top of the [[Lilycove Department Store]].
+
+Wallace manages to nearly defeat Tabitha, but an earlier exposure to the Blue Orb caused Tabitha to temporarily go crazy. Tabitha starts attacking Wallace in an unpredictable frenzy, forcing Wallace to try and escape. At the last second, {{Steven}} arrives to save Wallace and take his place in fighting Tabitha. Steven reveals that he has a plan to stop Groudon and Kyogre and has gathered all of the Hoenn Elite Four to enact it. Steven gives up his title as Champion and hands Wallace the Champion's Cloak.
+
+With the other Gym Leaders too injured to continue battling, Wallace and Winona both head to Sootopolis City to help Ruby and Sapphire against Groudon and Kyogre. When he arrives, Wallace finds Ruby beaten and worried that they won't be able to win. Wallace snaps Ruby out of it by reminding him that he is fighting for the people he loves. Ruby thanks Wallace for helping bring back his confidence and goes to continue the battle alongside Sapphire. Together, Ruby and Sapphire force the Red and Blue Orbs out of [[Maxie]] and [[Archie]]'s bodies, but the explosion caused by the attack sends them to {{gdis|Mirage Island|III}}, where they are trained by [[Juan]]. In the meantime, Wallace, Steven, and the Elite Four use the Legendary Pokémon {{p|Regirock}}, {{p|Regice}}, and {{p|Registeel}} to contain the energy created by Groudon and Kyogre clashing with each other. After Ruby and Sapphire return, Groudon and Kyogre are defeated and return to their long slumber. However, the strain of controlling the three Legendary Pokémon put too much strain on Steven, and he eventually dies from exhaustion. Despite the loss of Groudon and Kyogre, Archie and Maxie come out of hiding to kill Ruby and retrieve the Red and Blue Orbs to reenact their plans. Wallace and Sapphire head inside the battleground to stop the villains.
+
+[[File:Tate Liza Juan Wallace ORAS Adventures.png|thumb|right|170px|Wallace in the thirteenth chapter]]
+Once they arrive, Wallace realizes that Steven gave him the Champion's Cloak because he knew he would die after his plan succeeded. Wallace puts on the cloak and proceeds to attack Archie and Maxie. He manages to easily defeat them, but they reveal they had captured Winona and held her hostage. Having no choice, Wallace is forced to lay down his Poké Balls and allow the villains to defeat him. After both Team Magma and Team Aqua are defeated, Wallace celebrated the victory with his allies and thanked Ruby and Sapphire for their assistance in the battle. With the help of Ruby's {{p|Celebi}}, those who died in the battle were revived.
+
+====={{MangaArc|Emerald}}=====
+Wallace appears at the wedding between [[Wanda]] and {{adv|Riley}} alongside Winona, Ruby, and Sapphire. He and Winona stay behind to attend the reception while Ruby and Sapphire go to their mission at the {{gdis|Battle Frontier|III}}.
+
+====={{MangaArc|Omega Ruby & Alpha Sapphire}}=====
+Wallace, along with the Hoenn Gym Leaders and Elite Four, is called to Sootopolis City to assist in stopping a [[Grand Meteor Delta|meteoroid]] threatening to destroy the planet.
+
+====Pokémon====
+=====On hand=====
+{{TrainerPoké
+|trainer=Wallace
+|pkmn=Luvdisc
+|nick=Elizabeth
+|gender=female
+|type1=Water
+|img=Wallace Elizabeth.png
+|epnum=PS222
+|epname=Short Shrift for Shiftry
+|desc={{p|Luvdisc|Elizabeth}} (Japanese: '''エリザベス''' ''Elizabeth'') is Wallace's first known Pokémon. She was first seen with Wallace after he won a Contest. When an argument between two spectators started, Elizabeth was used to calm them down and put out a fire created by one of the spectator's cigarettes. When [[Slateport City]] flooded, Elizabeth was used to help rescue some of the drowning people and Pokémon. During his battle against [[Tabitha]], Wallace used Elizabeth to weaken Tabitha Torkoal's Fire-type attacks.
+
+Elizabeth's known moves are {{m|Rain Dance}}, {{m|Water Pulse}}, {{m|Sweet Kiss}}, and {{m|Water Sport}}, and her Ability is {{a|Swift Swim}}.}}
+
+{{TrainerPoké
+|trainer=Wallace
+|pkmn=Seaking
+|nick=Charles
+|gender=male
+|type1=Water
+|img=Wallace Charles.png
+|epnum=PS223
+|epname=I More Than Like You, Luvdisc I
+|desc={{p|Seaking|Charles}} (Japanese: '''チャールズ''' ''Charles'') is Wallace's second known Pokémon. When [[Slateport City]] flooded, Charles was used to help rescue some of the drowning people and Pokémon. At the final battle, Charles was used to battle against [[Archie]] and [[Maxie]]. He managed to easily defeat their Pokémon, but Wallace was forced to give up after seeing [[Winona]] held hostage.
+
+Charles's only known move is {{m|Water Pulse}}{{tt|*|revealed on an official site only}}, and his Ability is {{a|Water Veil}}.}}
+
+{{TrainerPoké
+|trainer=Wallace
+|pkmn=Sealeo
+|nick=Richard
+|gender=male
+|type1=Ice
+|type2=Water
+|img=Wallace Richard.png
+|epnum=PS223
+|epname=I More Than Like You, Luvdisc I
+|desc={{p|Sealeo|Richard}} (Japanese: '''リチャード''' ''Richard'') is Wallace's third known Pokémon. He was first seen being used in a Contest alongside Wallace's other team members. When Wallace came to help [[Brawly]] and [[Roxanne]], he used Richard to attack {{p|Groudon}}.
+
+Richard's only known move is {{m|Ice Ball}}.}}
+
+{{TrainerPoké
+|trainer=Wallace
+|pkmn=Whiscash
+|nick=Phillip
+|gender=male
+|type1=Water
+|type2=Ground
+|img=Wallace Phillip.png
+|epnum=PS223
+|epname=I More Than Like You, Luvdisc I
+|desc={{p|Whiscash|Phillip}} (Japanese: '''フィリップ''' ''Phillip'') is Wallace's fourth known Pokémon. It was first seen being used in a Contest at Fallarbor Town. When [[Slateport City]] flooded, Phillip was used to help rescue some of the drowning people and Pokémon. During his battle against [[Tabitha]], Wallace used Phillip to defeat Tabitha's {{p|Torkoal}}. At the final battle, Charles was used to battle against [[Archie]] and [[Maxie]]. It managed to easily defeat their Pokémon, but Wallace was forced to give up after seeing [[Winona]] held hostage.
+
+Phillip's known moves are {{m|Water Pulse}}, {{m|Surf}}, {{m|Tickle}}, and {{m|Body Slam}}.}}
+
+{{TrainerPoké
+|trainer=Wallace
+|pkmn=Clamperl
+|type1=Water
+|img=Wallace Clamperl Adventures.png
+|epnum=PS251
+|epname=The Beginning of the End with Kyogre & Groudon XIII
+|desc={{p|Clamperl}} is Wallace's fifth known Pokémon. It was first seen in a flashback being used against a {{p|Meditite}} to help Wallace beat the Pokémon League and become Champion.
+
+None of Clamperl's moves are known, and its Ability is {{a|Shell Armor}}.}}
+
+=====Temporary=====
+{{TrainerPoké
+|main=Brandon's legendary giants
+|trainer=Wallace
+|pkmn=Registeel
+|type1=Steel
+|img=Brandon Registeel Adventures.png
+|epnum=PS254
+|epname=A Royal Rumble with Regirock, Regice and Registeel II
+|desc={{p|Registeel}} was awakened by Steven so that it could use its powers to help contain the energy created by {{p|Groudon}} and {{p|Kyogre}}'s battle. While {{adv|Ruby}} and {{adv|Sapphire}} trained on {{gdis|Mirage Island|III}}, Steven and Wallace both used Registeel while the Elite Four used {{p|Regice}} and {{p|Regirock}}. After Groudon and Kyogre were defeated, Steven died from exhaustion due to controlling three Legendary Pokémon at once. Registeel then left to part unknown and was later captured by [[Brandon]].}}
+
+{{TrainerPoké
+|main=yes
+|trainer=Steven
+|pkmn=Metagross
+|type1=Steel
+|type2=Psychic
+|img=Wallace Metagross Adventures.png
+|epnum=PS191
+|epname=Blowing Past Nosepass II
+|desc=Wallace borrowed {{Steven}}'s {{p|Metagross}} in order to control the aircar that {{adv|Sapphire}}, {{p|Plusle}}, and {{p|Minun}} were trapped in using its magnetism. With the help of the [[New Mauville]] generator modified by the [[Trick Master]], the three were able to free themselves from being trapped in the aircar.}}
+
+====Achievements====
+=====Pokémon League=====
+Wallace has competed in the following [[Pokémon League Conference]]s:
+* [[Hoenn League]] - Champion (prior to ''{{MangaArc|Ruby & Sapphire}}'')
+
+=====Contests=====
+======Hoenn Ribbons======
+This listing is of the [[Ribbon]]s Wallace has obtained in the [[Hoenn]] [[region]]:
+* [[Fallarbor Town]]  Super Rank [[Beautiful (condition)|Beauty]] Contest (''[[PS223|I More Than Like You, Luvdisc I]]'')
+
+==In the TCG==
+This listing is of cards mentioning or featuring Wallace or his Pokémon in the [[Pokémon Trading Card Game]].
+
+{{cardlist/header|Wallace's Pokémon|Water|char=yes}}
+{{cardlist/entry|cardname={{TCG ID|Silver Tempest|Milotic|40}}|type=Water|standard=yes|enset=Silver Tempest|enrarity=TGH|ennum=TG02/TG30|jpset=Incandescent Arcana|jprarity=CHR|jpnum=070/068}}
+{{cardlist/div|Other related cards|Water}}
+{{cardlist/entry|cardname={{TCG ID|XY Promo|Gym Badge|203}}|type=Item|expanded=yes|jpset=XY-P Promotional cards|jprarity=|jpnum=}}
+{{cardlist/entry|cardname={{TCG ID|Silver Tempest|Wallace|166}}|type=Supporter|standard=yes|enset=Silver Tempest|enrarity=Uncommon|ennum=166/195|jpset=Incandescent Arcana|jprarity=C|jpnum=066/068|enset2=Silver Tempest|enrarity2=Rare Ultra|ennum2=194/195|jpset2=Incandescent Arcana|jprarity2=SR|jpnum2=083/068|enset3=Silver Tempest|enrarity3=Rare Rainbow|ennum3=208/195|jpset3=Incandescent Arcana|jprarity3=HR|jpnum3=091/068}}
+{{cardlist/footer|Water}}
+
+==Trivia==
+* Wallace is the only:
+** {{pkmn|Champion}} to have made his {{pkmn|animated series}} debut outside of his home [[region]].
+** [[Gym Leader]] to hand out a [[HM|Hidden Machine]] as a prize for defeating him.
+** {{pkmn|Coordinator}} in the {{pkmn|games}} who does not [[nickname]] their Pokémon.
+** Current Champion to specialize in a type that is neither {{t|Dragon}} nor {{t|Steel}}, and the only Champion to exclusively use Pokémon of his type specialty.
+** [[Hoenn]] Gym Leader to not have appeared in their original design in {{aniseries|PTS}}, having only appeared in his {{game|Emerald||Emerald}} and {{pkmn|Omega Ruby and Alpha Sapphire}} designs.
+* Wallace's Pokémon in {{2v2|Ruby|Sapphire}} are the same Pokémon used by [[Juan]] against {{Ash}} in {{aniseries|RS}}.
+* A number of Wallace's lines before, during, and after the {{player}}'s {{pkmn|battle}} with him in Emerald are extremely similar to [[Steven Stone]]'s at the same time periods in Ruby and Sapphire. In particular, the line Wallace says upon defeat is the same as Steven's, only with references to elegance added.
+* In Omega Ruby and Alpha Sapphire, when he is battled in the [[Delta Episode]], he uses his Champion team from Emerald, with almost the same levels.
+** Additionally, after completing the Delta Episode, Steven mentions to Wallace that he will relinquish his position as Champion at some time to travel the world, and asks Wallace if he will become Champion in his place, [[List of cross-generational references|referencing]] their roles in Emerald.
+
+==Names==
+{| class="roundtable" style="background:#{{water color}}; border:3px solid #{{water color dark}}"
+|-
+! style="background:#{{water color light}}" | Language
+! style="background:#{{water color light}}" | Name
+! style="background:#{{water color light}}" | Origin
+|-
+| Japanese
+| ミクリ ''Mikuri''
+| From 実栗 ''mikuri'' ({{wp|Sparganium erectum|simplestem bur-reed}}) and possibly 美 ''mi'' (beauty), 海 ''umi'' (sea), and 水 ''mizu'' (water)
+|-
+| English, Latin American Spanish,<br>Indonesian, Brazilian Portuguese
+| Wallace
+| From ''water''
+|-
+| German
+| Wassili
+| From ''Wasser'' (water)
+|-
+| European Spanish
+| Plubio
+| From ''pluvioso'' (rainy)
+|-
+| French
+| Marc
+| From ''mare'' (puddle; pool) or ''mer'' (sea)
+|-
+| Italian
+| Adriano
+| From the prefix ''idro-'' ({{wp|hydro}}-, relating to "water") or ''Mare Adriatico'' ({{wp|Adriatic Sea}})
+|-
+| rowspan="2" | Korean
+| 윤진 ''Yunjin''
+| rowspan="2" |Possibly from 윤택 (潤澤) ''yuntaek'' (sleek)
+|-
+| 윤석 ''Yunseok''<ref group=n>[[Pokémon Adventures]]</ref>
+|-
+| Chinese (Traditional)
+| 米可利 ''Míkělì'' / ''Máihhóleih''
+| rowspan="2" | Transcription of his Japanese name
+|-
+| Chinese (Simplified)
+| 米可利 ''Míkělì''
+|-
+| Catalan
+| Pluvi
+| From the prefix ''pluvio-'' (relating to "rain")
+|-
+| Thai
+| มิคุริ ''Mikhuri''
+| Transcription of his Japanese name
+|-
+| Vietnamese
+| Mikuri
+| Transcription of his Japanese name
+|}
+{{-}}
+
+<div>
+<div style="display: inline-block;">
+''Sootopolitan''
+{{langtable|color={{water color light}}|bordercolor={{water color dark}}
+|zh_yue=琉璃之民 ''Làuhlèih jī Màhn''
+|zh_cmn=琉璃之民 ''Liúlí zhī Mín''
+|fr=Peuple Atalan
+|de=Xeneraner
+|it=Cenerideo
+|es_eu=Clan Arrecípolis
+|ko=루네민족 ''Rune Minjok''
+}}
+</div>
+<div style="display: inline-block;">
+''Contest Master''
+{{langtable|color={{water color light}}|bordercolor={{water color dark}}
+|ca=Mestre de Concursos
+|fi=Kisamestari ({{aniseries|JN|JN}})<br>Kilpailumestari ({{aniseries|DP|DP}})
+|fr=Maître des Concours
+|it=Maestro Gara
+|pt_br=Mestre de Torneios
+|es_la=Maestro de Concurso
+|es_eu=Maestro de Concursos
+}}
+</div>
+</div>
+{{-}}
+
+===Wallace's Pokémon===
+{{incomplete|section|needs=Italian and Spanish nicknames<!--(Elizabeth gets revealed in Vol. 18, Charles and Phillip in Vol. 19 and Richard in Vol. 20, so some names may be unknown at the moment)-->}}
+<div>
+<div style="display: inline-block;">
+''Elizabeth''
+{| class="roundtable" style="background:#{{water color}}; border:3px solid #{{water color dark}}"
+|-
+! style="background:#{{water color light}}" | Language
+! style="background:#{{water color light}}" | Name
+! style="background:#{{water color light}}" | Origin
+|-
+| Japanese
+| エリザベス ''Elizabeth''
+| Possibly from Queen {{wp|Elizabeth II}}
+|-
+| English, German, French,<br>Brazilian Portuguese, Vietnamese
+| Elizabeth
+| From her Japanese name
+|-
+| Korean
+| 엘리자베스 ''Elizabeth''
+| From her Japanese name
+|-
+| Chinese (Taiwan)
+| 愛莉薩貝絲 ''Àilìsàbèisī''
+| Transcription of her Japanese name
+|}
+</div>
+<div style="display: inline-block;">
+''Charles''
+{| class="roundtable" style="background:#{{water color}}; border:3px solid #{{water color dark}}"
+|-
+! style="background:#{{water color light}}" | Language
+! style="background:#{{water color light}}" | Name
+! style="background:#{{water color light}}" | Origin
+|-
+| Japanese
+| チャールズ ''Charles''
+| Possibly from {{wp|Charles, Prince of Wales}}
+|-
+| English, German, French,<br>Brazilian Portuguese, Vietnamese
+| Charles
+| From his Japanese name
+|-
+| Korean
+| 찰스 ''Charles''
+| From his Japanese name
+|-
+| Chinese (Taiwan)
+| 查爾斯 ''Chá'ěrsī''
+| Transcription of his Japanese name
+|}
+</div>
+<div style="display: inline-block;">
+''Richard''
+{| class="roundtable" style="background:#{{water color}}; border:3px solid #{{water color dark}}"
+|-
+! style="background:#{{ice color light}}" | Language
+! style="background:#{{ice color light}}" | Name
+! style="background:#{{ice color light}}" | Origin
+|-
+| Japanese
+| リチャード ''Richard''
+| Possibly from {{wp|Prince Richard, Duke of Gloucester}}
+|-
+| English, German,<br>Brazilian Portuguese,<br>Vietnamese
+| Richard
+| From his Japanese name
+|-
+| French
+| Françoise
+|
+|-
+| Korean
+| 리차드 ''Richard''
+| From his Japanese name
+|-
+| Chinese (Taiwan)
+| 理查 ''Lǐchá''
+| Transcription of his Japanese name
+|}
+</div>
+<div style="display: inline-block;">
+''Phillip''
+{| class="roundtable" style="background:#{{ground color}}; border:3px solid #{{ground color dark}}"
+|-
+! style="background:#{{water color light}}" | Language
+! style="background:#{{water color light}}" | Name
+! style="background:#{{water color light}}" | Origin
+|-
+| Japanese
+| フィリップ ''Phillip''
+| Possibly from {{wp|Prince Philip, Duke of Edinburgh}}
+|-
+| English, German, French,<br>Brazilian Portuguese
+| Phillip
+| From his Japanese name
+|-
+| French
+| Phillipe
+| From his Japanese name
+|-
+| Korean
+| 필립 ''Phillip''
+| From his Japanese name
+|-
+| Chinese (Taiwan)
+| 菲力普 ''Fēilìpǔ''
+| Transcription of his Japanese name
+|}
+</div>
+</div>
+{{-}}
+
+===Notes===
+{{reflist|group=n}}
+
+==References==
+<references/>
+
+==Related articles==
+* [[a:Category:Wallace|Images on the Bulbagarden Archives]]
+
+{{Champions|water}}
+{{Coordinators|water}}
+{{Gym Leaders of Hoenn}}
+{{Hoenn League}}
+{{TrainerNav|Water|hoenn=yes}}
+{{NPC|Water|hoenn=yes}}
+{{Project CharacterDex notice}}
+
+[[Category:Champions]]
+[[Category:Manga characters]]
+[[Category:Pokémon Adventures characters]]
+[[Category:Ruby and Sapphire characters]]
+[[Category:Emerald characters]]
+[[Category:Black 2 and White 2 characters]]
+[[Category:Omega Ruby and Alpha Sapphire characters]]
+[[Category:Gym Leaders]]
+[[Category:Water-type Trainers]]
+[[Category:Trainers with unique classes]]
+[[Category:Animation characters]]
+[[Category:Coordinators]]
+[[Category:Top Coordinators]]
+[[Category:Contest Judges]]
+
+[[de:Wassili]]
+[[es:Plubio]]
+[[fr:Marc (Hoenn)]]
+[[it:Adriano]]
+[[ja:ミクリ]]
+[[zh:米可利]]

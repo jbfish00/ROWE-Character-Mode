@@ -207,6 +207,29 @@ def load_additions():
         return json.load(f).get("additions", {})
 
 
+
+def load_removals():
+    """roster_removals.json: species the 2026-07-25 adversarial audit found do
+    not belong to that character.
+
+    The scraper's section filter matches narrative headings ("Pokemon Journeys:
+    The Series"), so rosters absorbed Pokemon merely mentioned in an episode --
+    Professor Oak's lab Pokemon landed on Tracey, Red's Clefairy on all three
+    Striaton brothers. Kept as an overlay so a re-scrape cannot undo it and each
+    removal keeps its citation.
+
+    THE FAMILY RULE (user, 2026-07-25): a full family is allowed whenever any
+    single member is canon, both directions. The file is generated with that
+    applied -- only species whose ENTIRE family was removed appear -- so plain
+    subtraction is correct.
+    """
+    path = os.path.join(HERE, "roster_removals.json")
+    if not os.path.isfile(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return json.load(f).get("removals", {})
+
+
 def main():
     with open(os.path.join(HERE, "rosters_raw.json"), encoding="utf-8") as f:
         raw = json.load(f)
@@ -227,6 +250,19 @@ def main():
     if additions:
         print("overlay: %d species added across %d characters"
               % (added, len(additions)))
+
+    removals = load_removals()
+    dropped = 0
+    for disp, rows in removals.items():
+        if disp not in raw:
+            continue
+        gone = {r["species"] if isinstance(r, dict) else r for r in rows}
+        have = set(raw[disp]["species"])
+        raw[disp]["species"] = sorted(have - gone)
+        dropped += len(have & gone)
+    if removals:
+        print("removals overlay: %d species dropped across %d characters"
+              % (dropped, len(removals)))
 
     n2c = name_to_const()
     evo_base = first_stage_map()

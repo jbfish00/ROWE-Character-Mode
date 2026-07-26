@@ -1,0 +1,498 @@
+{{search|woman who gives the player their first partner Pokémon in Unova|this character's father|Cedric Juniper}}
+
+{{Character Infobox
+|color={{Unova color}}
+|corecolor={{Unova color light}}
+|bordercolor={{Unova color dark}}
+|name=Professor Aurea Juniper
+|jname=アララギ博士
+|tmname=Dr. Araragi
+|image=Black White Juniper.png
+|size=140px
+|caption=Art by [[Ken Sugimori]]
+|gender=Female
+|hair=Light Brown
+|eyes=Green <small>(games)</small><br>Mint Green <small>({{aniseries|PTS}})</small>
+|hometown=[[Nuvema Town]]
+|region=[[Unova]]
+|relatives=[[Cedric Juniper]] (father)
+}}
+{{Character Infobox/Game
+|color={{unova color light}}
+|gen={{gen|V}}
+|games={{game3|Black and White|Black, White|s}}, {{B2W2|Black 2, White 2}}
+}}
+{{Character Infobox/Anime
+|color={{unova color light}}
+|series=''[[Pokémon the Series]]''
+|debut=''[[BW001|In The Shadow of Zekrom!]]''
+|enva=[[Khristine Hvam]]
+|jpva=[[Naomi Shindō]]
+}}
+{{Character Infobox/Manga
+|color={{unova color light}}
+|series=''[[Pokémon Adventures]]''<br>''[[Pocket Monsters BW: Good Partners]]''<br>''[[Pokémon Pocket Monsters]] series''
+|debut=''[[PS461|Fussing and Fighting]]'' <small>({{pkmn|Adventures}})</small><br>[[BWGP02]] <small>([[Pocket Monsters BW: Good Partners|BWGP]])</small><br>[[PMHGSS20]] <small>([[Pokémon Pocket Monsters|PPM]])</small>
+}}
+|}
+
+'''Professor Aurea Juniper''' (Japanese: '''アララギ博士''' ''Dr. Araragi'') is the resident [[Pokémon Professor]] of [[Nuvema Town]] in the [[Unova]] region. She specializes in the origins of {{OBP|Pokémon|species}}.
+
+==In the core series games==
+Professor Juniper debuted in {{game|Black and White|s}}, where, like the other professors, she will give the {{player}} a [[Pokédex]] in her lab; however, she leaves a present containing the [[first partner Pokémon]] at the player's house for the player, [[Bianca]], and [[Cheren]]. She also demonstrates to the player how to capture their first Pokémon, a level 2 {{p|Patrat}}, with her level 7 {{p|Minccino}}.
+
+Over the course of the game, if the player visits her in her lab, Professor Juniper will hand out a total of three [[TM]]s depending on the number of Unova Pokédex Pokémon the player has seen: {{TM|54|False Swipe}} after seeing 25 Pokémon, {{TM|17|Protect}} after seeing 60 Pokémon, and {{TM|10|Hidden Power}} after seeing 115 Pokémon.
+
+In {{B2W2}}, the player can call her over Xtransceiver to have the Pokédex evaluated, or to ask how a Pokémon in their party evolves.
+
+===Pokémon===
+====Pokémon Black and White====
+{{Party
+| background = {{unova color}}
+| border = {{unova color dark}}
+| headcolor = {{unova color light}}
+| sprite = BW Juniper Back.png
+| prize = none
+| name = Professor Juniper
+| location = Unova Route 1
+| locationname = Route 1
+| game = BW
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0572
+| pokemon = Minccino
+| gender = female
+| level = 7
+| type1 = Normal
+| ability = Cute Charm
+| move1 = Pound | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+}}
+{{Party/end}}
+=====Gives to new Trainers=====
+These Pokémon are shipped to the {{player}}'s house at the beginning of {{2v2|Black|White}}. After the player makes their selection, [[Bianca]] picks the Pokémon that is at a type disadvantage towards theirs while [[Cheren]] takes the remaining companion.
+{{Pokémon/Grid}}
+{{Pokémon
+|gen=5
+|ndex=0495
+|pokemon=Snivy
+|gender=both
+|type1=Grass
+|ability=Overgrow
+|level=5
+|move1=Tackle|move1type=Normal|move1cat=Physical
+|move2=Leer|move2type=Normal|move2cat=Status}}
+{{Pokémon
+|gen=5
+|ndex=0498
+|pokemon=Tepig
+|gender=both
+|type1=Fire
+|ability=Blaze
+|level=5
+|move1=Tackle|move1type=Normal|move1cat=Physical
+|move2=Tail Whip|move2type=Normal|move2cat=Status}}
+{{Pokémon
+|gen=5
+|ndex=0501
+|pokemon=Oshawott
+|gender=both
+|type1=Water
+|ability=Torrent
+|level=5
+|move1=Tackle|move1type=Normal|move1cat=Physical
+|move2=Tail Whip|move2type=Normal|move2cat=Status}}
+{{Pokémon/Grid/end}}
+
+=====Caught in tutorial=====
+{{Pokémon
+|gen=5
+|ndex=0504
+|pokemon=Patrat
+|gender=both
+|level=2
+|type1=Normal
+|ability=Run Away|ability2=Keen Eye
+|move1=Leer|move1type=Normal|move1cat=Status}}
+
+====Pokémon Black 2 and White 2====
+{| style="width: 96px"
+|-
+| {{InactivePoké|Professor Juniper|Cinccino|0573Cinccino.png|size=100px|Normal|link=no}}
+| {{InactivePoké|Professor Juniper|Watchog|0505Watchog.png|size=100px|Normal|link=no}}
+|}
+
+==Gallery==
+===Artwork===
+{| style="margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{unova color dark}}; background:#{{unova color}}; font-size:80%"
+|-
+| style="{{roundy|20px}} border:2px solid #{{unova color dark}}; background:#{{unova color light}}; width:80px" | [[File:Juniper BW.png|110px]]
+|-
+| Official artwork from<br>''{{color2|000|Pokémon the Series: Black & White}}''
+|}
+
+===Sprites===
+{| style="margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{unova color dark}}; background:#{{unova color}}; font-size:80%"
+|-
+|style="{{roundy|80px}} border:2px solid #{{unova color dark}}; background:#{{unova color light}}; width:80px" | [[File:Juniper BW Intro.png]]
+|style="{{roundy|80px}} border:2px solid #{{unova color dark}}; background:#{{unova color light}}; width:80px" | [[File:Juniper OD.png]]
+|style="{{roundy|20px}} border:2px solid #{{unova color dark}}; background:#{{unova color light}}; width:80px" | [[File:BW Juniper Back.png]]
+|style="{{roundy|20px}} border:2px solid #{{unova color dark}}; background:#{{unova color light}}; width:80px" | [[File:Juniper Xtransceiver.png]]
+|style="{{roundy|20px}} border:2px solid #{{unova color dark}}; background:#{{unova color light}}; width:80px" | [[File:Juniper Xtransceiver 2.png]]
+|-
+| {{color2|000|Game intro|Intro}} sprite from<br>{{color2|000|Generation V}}
+| Overworld sprite from <br>{{color2|000|Generation V}}
+| Back sprite from <br>{{color2|000|Pokémon Black and White Versions|Black and White}}
+| Xtransceiver sprite from <br>{{color2|000|Pokémon Black and White Versions|Black and White}}
+| Xtransceiver sprite from <br>{{color2|000|Pokémon Black and White Versions 2|Black 2 and White 2}}
+|}
+
+==Quotes==
+{{Main|Professor Juniper/Quotes}}
+
+==In animation==
+===''Pokémon the Series''===
+[[File:Juniper anime.png|thumb|220px|Professor Juniper in {{aniseries|BW}}]]
+In the {{pkmn|animated series}}, Professor Juniper debuted in ''[[BW001|In The Shadow of Zekrom!]]'' as an old friend of {{an|Professor Oak}}. She gave {{Ash}}, {{Delia}}, and Oak a ride in her SUV to her lab so she could study [[Ash's Pikachu]] who was ill. Later, she showed Ash the Unova [[first partner Pokémon]], then gave [[Trip]] his first {{OBP|Pokémon|species}}, {{TP|Trip|Snivy}}.
+
+Ash later returned to Professor Juniper's lab after finding out that Pikachu had lost his electricity from {{p|Zekrom}}. Later the storm arrived again but this time it gave Pikachu's electric powers back, and Ash departed from her lab the next day.
+
+In ''[[BW003|A Sandile Gusher of Change!]]'', Juniper sent Ash the Poké Ball belonging to the {{AP|Oshawott}} that was supposed to go to a new Trainer, but wandered away to go with Ash. In ''[[BW013|Minccino-Neat and Tidy!]]'' it was shown that she had sent {{an|Bianca}} to give Ash his Badge case. She then spoke to Ash via Bianca's [[Xtransceiver]].
+
+Ash sent his {{AP|Pidove}} to her in ''[[BW018|Sewaddle and Burgh in Pinwheel Forest!]]'', in order to make room for his newly captured {{AP|Sewaddle}}. He switched them in ''[[BW021|The Lost World of Gothitelle!]]''.
+
+In ''[[BW022|A Venipede Stampede!]]'', Professor Juniper and her lab assistants monitored {{p|Venipede}} swarm event in [[Castelia City]], and they quickly identified that the problem was linked with strong energy waves coming from the [[Desert Resort]]. She flew over to Castelia and met up with Ash and {{ashfr}} to investigate the unusual activity caused by [[Team Rocket]]. She was also set to appear in the [[Banned episodes|unaired]] and non-[[canon]]ical [[BW023 (unaired)|final]] [[BW024 (unaired)|episodes]] of Team Rocket's [[Meteonite]] mission; in May 2023, the scripts for these episodes surfaced,<ref>https://bulbagarden.net/threads/bw023-bw024-unaired-scripts-found.297127/</ref> revealing that Juniper was to be involved in investigating the history of the [[Relic Castle]] and would recover a small Meteonite stolen by Team Rocket from the [[Nacrene City]] museum so it could be returned to [[Lenora]].
+
+In ''[[BW036|Archeops In The Modern World!]]'', [[Fennel]] helped Juniper revive an {{p|Archen}} from a [[Plume Fossil]]. Archen later evolved into {{p|Archeops}} and left with a passing flock of Archeops. While the encounter was brief, Juniper was able to document the [[cry]] and behavioral data on the Archen evolutionary line.
+
+In ''[[BW062|Crisis at Chargestone Cave!]]'', the group encountered Professor Juniper while she and her team were conducting research on the electric stones of [[Chargestone Cave]]. Juniper also met up with Bianca for their planned [[trade]] in ''[[BW063|Evolution Exchange Excitement!]]''. Juniper traded her {{p|Karrablast}} for Bianca's {{p|Shelmet}}, making both of them evolve at [[Chargestone Cave]]. In order to help Bianca work with her new {{p|Escavalier}}, Professor Juniper suggested they have a [[Multi Battle|Tag Battle]] against Ash and Cilan, who used {{AP|Boldore}} and {{TP|Cilan|Crustle}}, respectively. Although Professor Juniper's {{p|Accelgor}} and Bianca's Escavalier learned to work together and eventually defeat Boldore, they were both defeated by Crustle's {{m|Rock Wrecker}}. Juniper was surprised to encounter her father [[Cedric Juniper|Cedric]], who revealed that he had located the [[Hero's Ruin]]. Ash's group left with Cedric in ''[[BW064|Explorers of the Hero's Ruin!]]'', while Professor Juniper remained behind to continue her Chargestone Cave research.
+
+In ''[[BW109|New Places... Familiar Faces!]]'', Juniper met up with Ash and his friends again when they returned to Nuvema Town after the [[Vertress Conference]]. She also presented a beginner Trainer, [[Nanette]], the three first partner Pokémon. After some thinking, Nanette chose {{p|Tepig}} as her first Pokémon. Juniper also received a call from her father, who revealed that the {{an|White Ruins}} had been discovered. While Juniper was unable to join her father, she suggested Ash's group visit the new [[Aspertia Gym]] en route to the White Ruins.
+
+In ''[[BW123|Farewell, Unova! Setting Sail for New Adventures!]]'', Juniper told Ash and {{ashfr}} about a cruise that would travel through the [[Decolore Islands]] to [[Kanto]], after they expressed their wishes to travel to Kanto together. She bought tickets for them to board the ship, but a disguised [[James]] bumped into her on purpose to switch the tickets around with fakes to lure Ash and his friends into another scheme of {{TRT}}'s. She wished the group all the best before returning to her lab. She also made plans to transfer Ash's Unova Pokémon from her lab to [[Professor Oak's laboratory]].
+
+Juniper made a cameo appearance in the ending credits of ''[[M16|Genesect and the Legend Awakened]]''.
+
+====Character====
+Professor Juniper is pleasant and mature. She willingly offers her assistance, even providing {{ashfr|Ash's group}} with ship tickets on two occasions, in ''[[BW109|New Places... Familiar Faces!]]'' and ''[[BW123|Farewell, Unova! Setting Sail for New Adventures!]]'', respectively. She has a particular interest in the origins of Pokémon. Juniper is often busy with multiple projects at any given time, all of which require extensive fieldwork and data analysis back at the lab.
+
+====Pokémon====
+This listing is of Professor Juniper's known Pokémon:
+
+=====On hand=====
+{{TrainerPoké
+|trainer=Professor Juniper
+|pkmn=Accelgor
+|stage1=Shelmet
+|img=Juniper Shelmet.png
+|cap=Professor Juniper's Shelmet
+|img2=Juniper Accelgor.png
+|cap2=Professor Juniper's Accelgor
+|type1=Bug
+|epnum=BW049
+|epname=Enter Elesa, Electrifying Gym Leader!
+|vajp=Kiyotaka Furushima
+|vajpnote=Shelmet
+|vajp2=Kensuke Satō
+|vajp2note=Accelgor
+|vaen=Eileen Stevens
+|vaennote=Shelmet
+|vaen2=Dan Green
+|vaen2note=Accelgor
+|desc=Professor Juniper obtained {{p|Accelgor}} as a {{p|Shelmet}} when {{an|Bianca}} traded it to her for her {{p|Karrablast}} in ''[[BW063|Evolution Exchange Excitement!]]'' to trigger the Evolution. It participated with Juniper's former Karrablast, now an {{p|Escavalier}}, in a [[Multi Battle|Tag Battle]] against {{AP|Boldore}} and {{TP|Cilan|Crustle}}, and unlike Escavalier with Bianca, obeyed Juniper with ease.
+
+After Escavalier began obeying Bianca during the battle upon being protected by {{m|Substitute}}, the two {{type|Bug}}s defeated Boldore with their combined {{m|Hyper Beam}} attacks but Accelgor was subsequently defeated in a single hit by a {{m|Shell Smash}}-boosted {{m|Rock Wrecker}} from Crustle, Escavalier soon following suit in the same manner.
+
+Accelgor's known moves are {{m|Acid}}, {{m|Energy Ball}}, {{m|Protect}}, {{m|Substitute}}, {{m|Quick Attack}}, {{m|Recover}}, and {{m|Hyper Beam}}.}}
+
+In ''[[BW069|Climbing the Tower of Success!]]'', Professor Juniper was shown with a {{p|Darumaka}} in a fantasy, but it's unknown if she actually owns one.
+
+=====Traded away=====
+{{TrainerPoké
+|trainer=Professor Juniper
+|pkmn=Karrablast
+|img=Juniper Karrablast.png
+|type1=Bug
+|epnum=BW063
+|epname=Evolution Exchange Excitement!
+|vajp=Chinami Nishimura
+|vaen=Alyson Leigh Rosenfeld
+|desc={{p|Karrablast}} was first mentioned in ''[[BW062|Crisis at Chargestone Cave!]]'' by {{an|Bianca}} when she announced her intention to trade her {{p|Shelmet}} for it so that both can evolve. Following a battle in ''[[BW063|Evolution Exchange Excitement!]]'' that showed off the Pokémon's abilities, the trade occurred.
+
+Karrablast's known moves were {{m|Peck}} and {{m|Take Down}} when it was in Professor Juniper's possession.}}
+
+=====Gives to new Trainers=====
+{| width="100%"
+|-
+| {{ActivePoké|Juniper|Snivy|Juniper Snivy.png|Grass|disp=Snivy|link=no}}
+| {{ActivePoké|Juniper|Tepig|Juniper Tepig.png|Fire|disp=Tepig|link=no}}
+| {{ActivePoké|Juniper|Oshawott|Juniper Oshawott.png|Water|disp=Oshawott|link=no}}
+|
+|}
+
+=====Gave away to Trainers=====
+{| width=100%
+|-
+| {{InactivePoké|Trip|Snivy|Trip Snivy.png|Grass|disp=Trip's Snivy}} ♂
+| {{InactivePoké|Ash|Oshawott|Ash Oshawott.png|Water|disp=Ash's Oshawott}} ♂
+| {{InactivePoké|Bianca|Pignite|Bianca Pignite.png|Fire|Fighting|disp=Bianca's Pignite}} ♂
+| {{InactivePoké|Nanette|Tepig|Nanette Tepig.png|Fire|disp=Nanette's Tepig|link=Nanette}}
+|}
+
+=====Formerly raised=====
+{{MissingInfo|2|java|enva|scope=section}}
+{{TrainerPoké
+|trainer=Professor Juniper
+|stage1=Plume Fossil
+|stage2=Archen
+|pkmn=Archeops
+|gender=female
+|type1=Rock
+|type2=Flying
+|img=Archen anime.png
+|img2=Archeops anime.png
+|epnum=BW036
+|epname=Archeops In The Modern World!
+|desc=Working with [[Fennel]] in order to utilize {{p|Musharna}}'s [[Dream Mist]] and using a [[Plume Fossil]] provided to her by [[Lenora]], Professor Juniper was able to revive an {{p|Archen}} in a lab between [[Castelia City]] and [[Nimbasa Town]]. Archen quickly proved to be a handful and refused to eat modern [[Pokémon food]]. She soon formed a bond with {{Ash}} and his {{AP|Tranquill}} as they attempted to teach Archen to fly.
+
+Some ancient seeds were attached to Archen when she was revived and were unknowingly planted in the lab. Cry after cry, the seeds grew and grew until the vines had made the lab completely inaccessible. The vines then began blossoming with fruit, and Archen quickly ran up and helped herself to her first meal since being revived. She then evolved into {{p|Archeops}} and in turn, gained the ability to fly. However, {{TRT}} attempted to capture Archeops and, in the process, destroyed the habitat she had created. Luckily, a flock of Archeops had heard her call and arrived to take her with them. After saying a farewell to her new friends, Archeops flew off to live with her own kind.
+
+Archeops's only known moves are {{m|Dragon Breath}} and {{m|Peck}}.}}
+
+=====Previously resided at her Lab=====
+{| width="100%"
+|-
+| {{InactivePoké|Ash|Unfezant|Ash Unfezant.png|normal|flying|fir=Pidove|mid=Tranquill}} ♀
+| {{InactivePoké|Ash|Leavanny|Ash Leavanny.png|bug|grass|fir=Sewaddle|mid=Swadloon}} ♂
+| {{InactivePoké|Ash|Palpitoad|Ash Palpitoad.png|water|ground}} ♂
+| {{InactivePoké|Ash|Boldore|Ash Boldore.png|rock|fir=Roggenrola}}
+|-
+| {{InactivePoké|Ash|Tepig|Ash Tepig.png|fire}} ♂
+| {{InactivePoké|Ash|Snivy|Ash Snivy.png|grass|grass}} ♀
+| {{InactivePoké|Ash|Oshawott|Ash Oshawott.png|water}} ♂
+| {{InactivePoké|Ash|Krookodile|Ash Krookodile.png|fir=Krokorok|ground|dark}} ♂
+|-
+| {{InactivePoké|Ash|Scraggy|Ash Scraggy.png|dark|fighting}} ♂
+|}
+
+====Voice actors====
+{{vatable|color={{unova color}}|bordercolor={{unova color light}}
+|ja=進藤尚美 ''[[Naomi Shindō]]''
+|en=[[Khristine Hvam]]
+|nl=Jannemien Cnossen
+|da=Jette Sophie Sievertsen
+|it=Laura Brambilla
+|fi=Katja Sirkiä (regular)<br>Marjut Heikkinen ([[BW050]] only)
+|es_la=Dulce Guerrero
+|es_eu=Adelaida López
+|pt_br=Márcia Regina
+|id=Dewi Arifiani (Indosiar dub)<br>Miftahul Jannah (YouTube dub)
+|th=ธันวา ภักดีอำนาจ ''Thanwa Pakdeeamnat''
+|pl=Klementyna Umer<br>Julia Kołakowska ([[BW050]])
+|vi=Quỳnh Giao ([[BW001]]-[[BW105]])<br>Cao Thụy Thanh Hồng ([[BW109]]-present)}}
+
+===GOTCHA!===
+Professor Juniper briefly appeared in [[GOTCHA!]].
+
+==In the manga==
+===Pokémon Adventures===
+[[File:Professor Juniper Adventures.png|thumb|220px|Professor Juniper in Pokémon Adventures]]
+====History====
+====={{MangaArc|Black & White}}=====
+Professor Juniper debuted in ''[[PS461|Fussing and Fighting]]'', where she prepared three [[first partner Pokémon]] to be given to three new Trainers. While on a call with [[Fennel]], the first partner Pokémon got into a fight into each other. The [[PS462|next day]], Juniper had three first partner Pokémon mailed alongside a set of three Pokédexes to the house of {{adv|Black}}, one of the new Trainers. Of the three, [[Bo|Tepig]] ended up in Black's hands, while {{adv|Cheren}} and {{adv|Bianca}} received {{TP|Cheren|Snivy}} and {{TP|Bianca|Oshawott}}, respectively. Due to Black's impatient nature, he accidentally dropped Cheren and Bianca's Pokédexes in a puddle of rainwater, damaging and rendering them unusable. While the Pokédexes undergo repairs, Juniper sent Cheren and Bianca off to find Black and inform him to keep his Pokédex safe.
+
+After Cheren and Bianca successfully met up with Black, they gave Professor Juniper his [[Xtransceiver]] number so that she may be in contact with him. In ''[[PS480|At Liberty on Liberty Garden]]'', she contacted Black to have him and {{adv|White}} travel to [[Liberty Garden]] in order to get data on the [[Mythical Pokémon]] {{p|Victini}}. After Black succeeded in this mission, Professor Juniper's father, [[Cedric Juniper]], arrived to assist in repairing the Pokédexes.
+
+By ''[[PS501|A Lost Melody]]'', Professor Juniper and her father successfully repaired the Pokédexes. She had Cedric sent to [[Castelia City]] in order to deliver Bianca her fixed Pokédex. To Juniper's shock, Bianca revealed that she decided to become her assistant and instead handed the Pokédex over to White.
+
+In ''[[PS510|A Wretched Reunion]]'', Juniper traveled to {{rt|6|Unova}} alongside Fennel. There, they witnessed Black, White, and Cedric in battle with {{adv|N}}, the king of [[Team Plasma]]. During the battle, Cedric revealed that a year ago, N barged into his lab and liberated a second set of first partner Pokémon meant to be given out to another set of Trainers. N chastised Professor Juniper for her treatment of the first partner Pokémon given to Black and his friends and claimed that she only thinks of them as objects meant to be researched. When Black tried to stop N, his [[Musha]] chose to run away instead of eating his dreams as usual. The shock of losing one of his most trusted Pokémon caused Black to faint from shock.
+
+In ''[[PS511|Dream a Little Dream]]'', Professor Juniper, Fennel, Amanita, and White looked after Black at the {{un|Pokémon League}} gates while they watch the tournament.
+
+====={{MangaArc|Black 2 & White 2}}=====
+In ''[[PS541|Pink Slip]]'', Professor Juniper hides in Fennel's home alongside Fennel, Amanita, {{adv|Bianca}}, and Cedric Juniper to escape the [[Plasma Frigate]] freezing Unova's cities. There, Fennel reveals that after researching the Dream Mist for two years, she managed to discover another dimension known as the [[Pokémon Dream World]]. She hypothesizes that this may have been where Black went to after being sealed into the [[Light Stone]]. To confirm this, Fennel has White sent to the [[Entralink]], where the real world and Dream World are most connected. The operation proves to be a success as White manages to find and obtain the Light Stone.
+
+====Pokémon====
+{{TrainerPoké
+|trainer=Juniper
+|gender=female
+|pkmn=Minccino
+|type1=Normal
+|img=Juniper Minccino Adventures.png
+|epnum=PS461
+|epname=Fussing and Fighting
+|desc={{p|Minccino}} is Professor Juniper's only known Pokémon. Minccino is usually seen cleaning messes with or for the Professor.
+
+None of Minccino's moves are known, and her Ability is {{a|Technician}}.}}
+
+=====Gave away to Trainers=====
+{{TrainerPoké
+|main=Bo
+|gender=male
+|trainer=Black
+|pkmn=Tepig
+|type1=Fire
+|img=Tep.png
+|epnum=PS461
+|epname=Fussing and Fighting
+|desc={{p|Tepig}} was first seen in Professor Juniper's lab alongside the other first partner Pokémon. After stealing some of Professor Juniper's dinner, it got into a fight with {{p|Snivy}} after accidentally spilling Berry juice on it. The fight eventually escalated to the point where {{p|Oshawott}} angrily attacked the two, creating a mess of the Professor's lab. Later, he was chosen by {{adv|Black}} to join his team and was later nicknamed Tep (Japanese: '''ポカ''' ''Poka'').}}
+
+{{TrainerPoké
+|main=yes
+|gender=male
+|trainer=Cheren
+|pkmn=Snivy
+|type1=Grass
+|img=Cheren Snivy Adventures.png
+|epnum=PS461
+|epname=Fussing and Fighting
+|desc={{p|Snivy}} was first seen in Professor Juniper's lab where it got into a fight with the Professor's {{p|Tepig}} after it got Berry juice sprayed over it before being violently stopped by her {{p|Oshawott}}. Later, he was delivered to Black's house, only to get into another fight with Tepig. Bianca picked up Snivy and gave it to Cheren, stating that Snivy resembled him.}}
+
+{{TrainerPoké
+|trainer=Bianca
+|gender=male
+|main=yes
+|pkmn=Oshawott
+|type1=Water
+|img=Bianca Oshawott Adventures.png
+|epnum=PS461
+|epname=Fussing and Fighting
+|desc={{p|Oshawott}} was first seen in Professor Juniper's lab where it tried to stop a fight between {{p|Tepig}} and {{p|Snivy}}, only to be hit by the latter and making it join the fight as well, leaving the lab in a complete mess. Later, it was delivered to {{adv|Black}} along with Tepig and Snivy and once again stopped his partners from a fight. Afterwards, Bianca took Oshawott for herself.}}
+
+===Pocket Monsters BW: Good Partners===
+[[File:Professor Juniper BWGP.png|thumb|150px|Professor Juniper in Pocket Monsters BW Good Partners]]
+Professor Juniper appeared in [[BWGP02]]. [[Takurō]] and [[Mashiro]] had arrived in [[Accumula Town]] and saw her. She evaluated [[Takurō]]'s [[Pokédex]] and commented on how it was filling up quite a bit. She then told him to keep it up. Professor Juniper then told the two about a {{p|Purrloin}} that was causing trouble. Later, when Takurō had his {{p|Pidove}} flap up a gust of wind, Professor Juniper went with Mashiro to a cliff where Takurō was but discovered that Takurō had already rescued himself and Purrloin.
+
+===Pokémon Pocket Monsters===
+[[File:Professor Juniper PMBW.png|thumb|left|150px|Professor Juniper in Pocket Monsters BW]]
+Professor Juniper first appeared in [[PMHGSS20]] as a cameo.
+
+She makes her full appearance in [[PMBW01]]. She was the first character in Unova that {{PPM|Red}} met. Professor Juniper can get upset if someone mentions her age being very old but calms down if she is complimented. In that same chapter, she met with Black, [[Bianca]] and [[Cheren]] to give them their first Pokémon.
+
+====Pokémon====
+=====Gives to new Trainers=====
+{| style="width:96px"
+|-
+| {{InactivePoké|Professor Juniper|Snivy|495Snivy.png|grass|size=100px|link=no}}
+| {{InactivePoké|Professor Juniper|Tepig|498Tepig.png|fire|size=100px|link=no}}
+| {{InactivePoké|Professor Juniper|Oshawott|501Oshawott.png|water|size=100px|link=no}}
+|}
+{{-}}
+
+==In the TCG==
+This listing is of cards mentioning or featuring Professor Juniper in the [[Pokémon Trading Card Game]].
+{{cardlist/header|Related cards|Supporter|char=yes}}
+{{cardlist/entry|cardname={{TCG ID|Black & White|Professor Juniper|101}}|type=Supporter|expanded=Yes|enset=Black & White|enrarity=Uncommon|ennum=101/114|jpsetlink=Black & White|jpset=Black Collection|jprarity=U|jpnum=053/053|jpset2=BW-P Promotional cards|jpnum2=012/BW-P|enset3=Dark Explorers|enrarity3=Uncommon|ennum3=98/108|jpset3=Reshiram-EX Battle Strength Deck|jpnum3=015/018|jpset4=Zekrom-EX Battle Strength Deck|jpnum4=015/018|jpset5=Hydreigon Half Deck|jpnum5=013/015|jpset6=Garchomp Half Deck|jpnum6=013/015|jpset7=Master Deck Build Box EX|jpnum7=040/046|jpset8=Black Kyurem-EX Battle Strength Deck|jpnum8=015/018|jpset9=White Kyurem-EX Battle Strength Deck|jpnum9=015/018|enset10=Plasma Freeze|enrarity10=SuperRare Holo|ennum10=116/116|jpset10=Thunder Knuckle|jprarity10=SR|jpnum10=055/051|enset11=Plasma Blast|enrarity11=Uncommon|ennum11=84/101|jpset11=Blastoise + Kyurem-EX Combo Deck|jpnum11=014/018}}
+{{cardlist/entry|cardname={{TCG ID|Shining Fates|Professor's Research|60}} <small>'''Professor Juniper'''</small>|type=Supporter|standard=Yes|enset=Shining Fates|enrarity=Uncommon|ennum=060/072|jpset=Venusaur VMAX Starter Set|jpsetlink=Venusaur & Blastoise VMAX Starter Sets|jpnum=016/021|jpset2=Charizard VMAX Starter Set|jpsetlink2=Charizard & Grimmsnarl VMAX Starter Sets|jpnum2=018/021|enset3=SWSH Black Star Promos|ennum3=SWSH152|jpset3=VMAX Climax|jprarity3=SR|jpnum3=266/184}}
+{{cardlist/footer|Supporter}}
+
+==Trivia==
+* According to an NPC, Professor Juniper and [[Cedric Juniper|her father]] were formerly {{tc|Backpacker}}s.
+* Aurea's first name is only revealed in the English version. In Japanese, both she and Cedric are known simply as "Dr. Araragi", although Cedric gets his own first name in all languages except Japanese and Chinese.
+* Professor Juniper is the first:
+** Female [[Pokémon Professor]].
+** Woman to make an [[New game#Introduction to the Pokémon world|introduction]] for a [[core series]] game.
+* In the original Japanese version of the {{pkmn|animated series}}, Professor Juniper often says the phrase "'''あらら''' ''Arara''" (meaning "oh my"), which is a reference to her name.
+* Professor Juniper is the only regional [[core series]] Pokémon Professor introduced as of [[Generation VIII]] who did not appear in ''[[Pokémon Journeys: The Series]]''.
+
+==Names==
+{| class="roundtable" style="background:#{{unova color}}; border:3px solid #{{unova color dark}}"
+|-
+! style="background:#{{unova color light}}" | Language
+! style="background:#{{unova color light}}" | Name
+! style="background:#{{unova color light}}" | Origin
+|-
+| Japanese
+| アララギ博士 ''Araragi-hakase''
+| From 蘭 ''araragi'' ({{wp|Taxus cuspidata|Japanese yew}}), a species of {{wp|Conifer|coniferous}} trees belonging to the {{wp|Taxaceae|yew family}}
+|-
+| English
+| Professor Aurea Juniper
+| From ''{{wp|juniper}}'' (coniferous trees belonging to the {{wp|Cupressaceae|cypress family}}) and the {{wp|Juniperus chinensis|Chinese juniper}} cultivar 'Aurea'
+|-
+| German
+| Professor Esche
+| From ''Esche'' ({{wp|Fraxinus|ash}})
+|-
+| European Spanish
+| Profesora Encina
+| From ''encina'' ({{wp|Quercus ilex|holm oak}})
+|-
+| Latin American Spanish
+| Profesora Juniper
+| From her English name
+|-
+| rowspan="2" | French
+| Professeure Keteleeria<ref group=n>2019 onwards</ref>
+| rowspan="2" | From the genus ''{{wp|Keteleeria}}'' (coniferous trees belonging to the {{wp|Pinaceae|pine family}})
+|-
+| Professeur Keteleeria<ref group=n>Prior to 2019</ref>
+|-
+| Italian
+| Professoressa Aralia
+| From the genus ''{{wp|Aralia}}'' (spikenard) and similar to her Japanese name
+|-
+| Korean
+| 주박사 ''Ju-baksa''
+| From 주목 (朱木) ''jumok'' (Japanese yew) and the surname 주 (朱) ''{{wp|Ju (Korean surname)|Ju}}''
+|-
+| Chinese (Traditional)
+| 紅豆杉博士 ''Hóngdòushān-bóshì'' / ''Hùhngdáuchaam-boksih''
+| rowspan="2" | From 紅豆杉 / 红豆杉 ''hóngdòushān / hùhngdáuchaam'' (yew)
+|-
+| Chinese (Simplified)
+| 红豆杉博士 ''Hóngdòushān-bóshì''
+|-
+| Finnish
+| Prof. Juniper
+| From her English name
+|-
+| Polish
+| Profesor Juniper
+| From her English name
+|-
+| Russian
+| Профессор Джунипер ''Professor Dzhuniper''
+| Transcription of her English name
+|-
+| Thai
+| ดร. อารารากิ ''Dr. Araragi''
+| Transcription of her Japanese name
+|-
+| Vietnamese
+| Giáo sư Araragi
+| Transcription of her Japanese name
+|}
+{{-}}
+
+===Notes===
+{{reflist|group=n}}
+
+==References==
+<references />
+
+==Related articles==
+* [[a:Category:Professor Juniper|Images on the Bulbagarden Archives]]
+
+{{Pokémon professor|Unova}}
+{{Capture tutor}}
+{{NPC|Unova|unova=yes}}
+{{Animecharacters|Unova}}
+{{Pocket Monsters Characters}}
+{{Project CharacterDex notice}}
+
+[[Category:Animation characters]]
+[[Category:Professors]]
+[[Category:Black and White characters]]
+[[Category:Black 2 and White 2 characters]]
+[[Category:Pokémon Adventures characters]]
+[[Category:Pocket Monsters BW characters]]
+
+[[de:Professor Esche]]
+[[es:Profesora Encina]]
+[[fr:Professeure Keteleeria]]
+[[it:Professoressa Aralia]]
+[[ja:アララギ博士]]
+[[zh:紅豆杉博士]]

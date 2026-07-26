@@ -1,0 +1,287 @@
+{{CharInfobox
+|color={{castle color}}
+|corecolor={{castle color light}}
+|bordercolor={{castle color dark}}
+|name=Darach
+|jname=コクラン
+|tmname=Kokuran
+|image=Platinum Darach.png
+|size=180px
+|caption=Artwork from {{game|Platinum}}
+|gender=Male
+|hometown=Unknown
+|region=[[Sinnoh]]{{sup/4|Pt}}<br>[[Johto]]{{sup/4|HGSS}}
+|relatives=Unknown
+|trainer=yes
+|trainerclass=[[Frontier Brain|Castle Valet<br><small>(Frontier Brain)</small>]]
+|game=yes
+|generation={{gen|IV}}
+|games={{v2|Platinum}}, {{game3|HeartGold and SoulSilver|HeartGold, SoulSilver|s}}<br>{{pkmn|Masters EX}}
+|leader=no
+|elite=no
+|brain=Pt
+|facility=[[Battle Castle]]
+|print=Castle Print
+|anime=no
+|epnum=
+|epname=
+|enva=
+|java=
+|gameanim=yes
+|envagame=Brian Timothy Anderson<ref name="Brian Timothy Anderson">[https://twitter.com/BrianTAnderson/status/1294388431338930177 Brian Timothy Anderson on Twitter]</ref> <small>({{pkmn|Masters EX}})</small>
+|javagame=Yūichirō Umehara<ref name="Yūichirō Umehara">[https://twitter.com/pokemas_game/status/1452516523268997126 Pokémon Masters EX Twitter]</ref> <small>({{pkmn|Masters EX}})</small>
+}}
+
+'''Darach''' (Japanese: '''コクラン''' ''Kokuran'') is the [[Frontier Brain]] in charge of serving the {{Gdis|Battle Frontier|IV}}'s [[Battle Castle]]. Darach is the only character in the games to have the {{DL|Pokémon Trainer|Trainer class}} '''Castle Valet''' (Japanese: '''キャッスルバトラー''' ''Castle Butler'').
+
+==In the core series games==
+He is one of the [[Frontier Brain]]s of the [[Battle Castle]] in the [[Sinnoh]] and [[Johto]] regions. Darach is the host and caretaker of the Battle Castle, managing CP awarded to or spent by Trainers under the orders of [[Caitlin|Lady Caitlin]]. As Caitlin's butler, not only does he manage the Battle Castle but he also battles for her in her place and acts as the Frontier Brain of the facility. Darach will challenge the {{player}} on their 21st consecutive battle and award a Silver Print if defeated. He will battle the player again if the player reaches the 49th battle, this time handing out the Gold Print if defeated.
+
+While Darach does not appear in [[Generation V]], he is referenced by Caitlin in {{B2W2}}. She reveals that Darach travels all the way to [[Unova]] to clean her villa in [[Undella Town]] before returning home.
+
+===Pokémon===
+Darach has these Pokémon when he is challenged for a print. Each Pokémon Darach uses in his print challenge teams has two variations that have different moves but are otherwise the same.
+
+====Silver Print challenge====
+{{Party
+| background = {{castle color}}
+| border = {{castle color dark}}
+| headcolor = {{castle color light}}
+| sprite = Spr Pt Darach Caitlin.png
+| prize = 20{{color2|000|Battle Point|BP}}
+| class = Castle Valet
+| classlink = Darach
+| name = Darach
+| location = Battle Castle
+| game = PtHGSS
+| pokemon = 3
+| table = yes
+}}
+{{Lop/facility/head|{{castle color light}}|{{castle color}}|{{castle color}}|sortable=no}}
+{{lop/facility/rowhead|Team 1}}
+{{lop/facility|game=3|229|Houndoom|Focus Sash|Fire Fang|Fire|Crunch|Dark|Roar|Normal|Counter|Fighting|Jolly||252||||252}}
+{{lop/facility|game=3|395|Empoleon|Razor Claw|Waterfall|Water|Metal Claw|Steel|Brick Break|Fighting|Knock Off|Dark|Adamant||252|||252|}}
+{{lop/facility|game=3|398|Staraptor|King's Rock|Return|Normal|Aerial Ace|Flying|Double Team|Normal|Roost|Flying|Jolly||252||||252}}
+{{lop/facility/rowhead|Team 2}}
+{{lop/facility|game=3|229|Houndoom|Focus Sash|Fire Fang|Fire|Thunder Fang|Electric|Reversal|Fighting|Endure|Normal|Jolly||252||||252}}
+{{lop/facility|game=3|395|Empoleon|Razor Claw|Drill Peck|Flying|Aqua Jet|Water|Shadow Claw|Ghost|Rock Slide|Rock|Adamant||252|||252|}}
+{{lop/facility|game=3|398|Staraptor|King's Rock|Endeavor|Normal|Aerial Ace|Flying|Endure|Normal|Quick Attack|Normal|Jolly||252||||252}}
+{{lop/facility/foot|{{castle color light}}}}
+{{Party/end}}
+====Gold Print challenge====
+{{Party
+| background = {{castle color}}
+| border = {{castle color dark}}
+| headcolor = {{castle color light}}
+| sprite = Spr Pt Darach Caitlin.png
+| prize = 20{{color2|000|Battle Point|BP}}
+| class = Castle Valet
+| classlink = Darach
+| name = Darach
+| location = Battle Castle
+| game = PtHGSS
+| pokemon = 3
+| table = yes
+}}
+{{Lop/facility/head|{{castle color light}}|{{castle color}}|{{castle color}}|sortable=no}}
+{{lop/facility/rowhead|Team 1}}
+{{lop/facility|game=3|244|Entei|Shuca Berry|Fire Blast|Fire|SolarBeam|Grass|Hyper Beam|Normal|Sunny Day|Fire|Modest||||252||252}}
+{{lop/facility|game=3|395|Empoleon|Quick Claw|Surf|Water|Earthquake|Ground|Blizzard|Ice|Signal Beam|Bug|Brave||252||252||}}
+{{lop/facility|game=3|475|Gallade|Scope Lens|Psycho Cut|Psychic|Stone Edge|Rock|Aerial Ace|Flying|X-Scissor|Bug|Adamant||252|||252|}}
+{{lop/facility/rowhead|Team 2}}
+{{lop/facility|game=3|244|Entei|Shuca Berry|Overheat|Fire|Extrasensory|Psychic|Shadow Ball|Ghost|Calm Mind|Psychic|Modest||||252||252}}
+{{lop/facility|game=3|395|Empoleon|Quick Claw|Hydro Cannon|Water|Flash Cannon|Steel|Drill Peck|Flying|Earthquake|Ground|Brave||252||252||}}
+{{lop/facility|game=3|475|Gallade|Scope Lens|Psycho Cut|Psychic|Close Combat|Fighting|Leaf Blade|Grass|Night Slash|Dark|Adamant||252|||252|}}
+{{lop/facility/foot|{{castle color light}}}}
+{{Party/end}}
+
+==In the spin-off games==
+===[[Pokémon Masters EX]]===
+{{main|Darach (Masters)}}
+Darach forms a [[sync pair]] with {{p|Staraptor}} in [[Pokémon Masters EX]]. Darach became a playable sync pair on October 25, 2021.
+
+{{PairDex/h|Castle}}
+{{PairDex|143|Darach|trainerlink=Darach (Masters)#Staraptor|trainerimg=Darach|0398|Staraptor|gender=male|Flying|Electric|Tech|6|Sync Pair Scout}}
+|}
+
+==Gallery==
+:''For images of Darach in [[Pokémon Masters EX]], see: [[Darach (Masters)#Gallery|Darach (Masters)]]''
+===Artwork===
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{castle color dark}}; background: #{{castle color}}; font-size:80%;"
+|-
+|style="{{roundy|15px}} border: 2px solid #{{castle color dark}}; background: #{{castle color light}}; width:80px"| [[File:Sinnoh Battle Frontier Brain artwork.png|400px]]
+|-
+| {{color2|000|Battle Frontier (Generation IV)|Battle Frontier}} promotional<br>artwork for {{color2|000|Pokémon Platinum Version|Platinum}}
+|}
+
+===Game assets===
+{| style="font-size:80%; margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{castle color dark}}; background:#{{castle color}}; color:#000"
+| colspan="3" style="{{roundy|20px}} border:2px solid #{{castle color dark}}; background:#{{castle color dark}}; font-size:125%; color:white" |'''{{color2|fff|Generation IV}}'''
+|-
+| style="{{roundy|20px}} border:2px solid #{{castle color dark}}; background:#{{castle color light}}; width:80px; height:80px; overflow:hidden" |[[File:Spr Pt Darach Caitlin.png]]
+| style="{{roundy|20px}} border:2px solid #{{castle color dark}}; background:#{{castle color light}}; width:80px; overflow:hidden" |[[File:VSDarach.png]]
+| style="{{roundy|20px}} border:2px solid #{{castle color dark}}; background:#{{castle color light}}; width:80px; overflow:hidden" |[[File:Darach OD.png]]
+|-
+|'''{{GameIcon|Pt}}{{GameIcon|HG}}{{GameIcon|SS}}''' <br> Sprite
+|'''{{GameIcon|Pt}}{{GameIcon|HG}}{{GameIcon|SS}}''' <br> Sprite
+|'''{{GameIcon|Pt}}{{GameIcon|HG}}{{GameIcon|SS}}''' <br> Sprite <br> (Overworld)
+|-
+|}
+
+==Quotes==
+{{main|Darach/Quotes}}
+
+==In the manga==
+===Pokémon Adventures===
+[[File:Darach Adventures.png|thumb|250px|Darach in [[Pokémon Adventures]]]]
+===={{MangaArc|Platinum}}====
+Darach appeared alongside Lady [[Caitlin]] in this chapter. Darach first appeared when {{adv|Platinum}} started her challenge of the [[Battle Castle]] and was in charge of giving her Castle Points while Caitlin watched the battles. Once Platinum manages to win enough battles to face the Frontier Brain, {{adv|Looker}} is shocked to find out that Darach is in fact, the Battle Castle Frontier Brain instead of Caitlin; Darach and Platinum then begin their battle.
+
+In battle, Darach seems to have a different personality, this is shown when he drops his calm demeanor and starts laughing manically while confidently stating that he will win the battle. Despite the power his Pokémon possessed, Darach is eventually defeated once Platinum learns to manage money properly to find out his weaknesses.
+
+====Pokémon====
+{{TrainerPoké
+|trainer=Darach
+|pkmn=Gallade
+|gender=male
+|type1=Psychic
+|type2=Fighting
+|img=Darach Gallade Adventures.png
+|epnum=PS418
+|epname=Deprogramming Porygon-Z
+|desc={{p|Gallade}} first appeared outside of the [[Battle Castle]], acting like Caitlin's bodyguard. During Platinum's battle with Darach, he was the first Pokémon used in their battle. He managed to defeat [[Platinum's Rapidash]] and Lopunny, but was defeated when Lopunny's {{a|Cute Charm}} prevented him from dodging a {{m|Dizzy Punch}}, allowing Empoleon to take advantage of his confused status and defeat him.
+
+Gallade's known moves are {{m|Psycho Cut}}, {{m|Feint}}, and {{m|Night Slash}}, and his Ability is {{a|Steadfast}}.}}
+
+{{TrainerPoké
+|trainer=Darach
+|pkmn=Houndoom
+|type1=Dark
+|type2=Fire
+|img=Darach Houndoom Adventures.png
+|epnum=PS420
+|epname=Getting the Drop on Gallade II
+|desc={{p|Houndoom}} was the second Pokémon that Darach used in his battle against Platinum. It briefly fought Platinum's Lopunny and was defeated by her Empoleon.
+
+Houndoom's only known move is {{m|Fire Fang}}.}}
+
+{{TrainerPoké
+|trainer=Darach
+|pkmn=Staraptor
+|type1=Normal
+|type2=Flying
+|img=Darach Staraptor Adventures.png
+|epnum=PS420
+|epname=Getting the Drop on Gallade II
+|desc={{p|Staraptor}} was the third Pokémon that Darach used in his battle against Platinum. It used confusing moves and kept healing itself in its battle against Platinum's Empoleon, but was defeated when she froze it with {{m|Blizzard}}.
+
+Staraptor's known moves are {{m|Double Team}} and {{m|Roost}}.}}
+
+==In the TCG==
+This listing is of cards mentioning or featuring Darach or his Pokémon in the [[Pokémon Trading Card Game]].
+
+{{cardlist/header|Darach's Pokémon|Colorless|char=yes}}
+{{cardlist/entry|cardname=[[Staraptor FB (Supreme Victors 11)|Staraptor]] {{SP|FB}}|type=Colorless|enset=Supreme Victors|enrarity=Rare Holo|ennum=11/147|jpsetlink=Supreme Victors|jpset=Beat of the Frontier|jprarity=Rare Holo|jpnum=080/100}}
+{{cardlist/entry|cardname=[[Empoleon FB (Supreme Victors 27)|Empoleon]] {{SP|FB}}|type=Water|enset=Supreme Victors|enrarity=Rare|ennum=27/147|jpsetlink=Supreme Victors|jpset=Beat of the Frontier|jprarity=Rare|jpnum=035/100}}
+{{cardlist/entry|cardname=[[Staraptor FB LV.X (Supreme Victors 147)|Staraptor]] {{SP|FB}} [[Staraptor FB LV.X (Supreme Victors 147)|LV.X]]|type=Colorless|enset=Supreme Victors|enrarity=Rare Holo LV.X|ennum=147/147|jpsetlink=Supreme Victors|jpset=Beat of the Frontier|jprarity=Rare Holo LV.X|jpnum=081/100}}
+{{cardlist/footer|Colorless}}
+
+==Trivia==
+* Caitlin appears in Darach's VS and in-battle sprites, despite the fact that she does not {{pkmn|battle}} alongside him.
+** Darach's VS sprite is the only VS sprite in the [[Generation IV]] and {{gen|V}} games to feature more than one character.
+** Darach's in-battle sprite has the most frames of any animated sprite in [[Generation IV]], with five as opposed to the usual three.
+* Darach is the only Generation IV [[Frontier Brain]] with a signature Pokémon: his {{p|Empoleon}}.
+* An [[non-player character|NPC]] in the [[Battle Castle]] says "Mr. Darach... His feelings for Lady Caitlin are all bottled up... Oh, how I pine for him...", which implies that Darach has feelings for Caitlin, but refuses to show these emotions to her.
+
+==Names==
+{| class="roundtable" style="background:#{{castle color}}; border:3px solid #{{castle color dark}}"
+|-
+! style="background:#{{castle color light}}" | Language
+! style="background:#{{castle color light}}" | Name
+! style="background:#{{castle color light}}" | Origin
+|-
+| Japanese
+| コクラン ''Kokuran''
+| From 黒蘭 ''kokuran'' ({{wp|Liparis nervosa|pantropical widelip orchid}})
+|-
+| English, Brazilian Portuguese
+| Darach
+| From ''darach'' ({{wp|Scottish Gaelic|Gaelic}} for "{{wp|oak}}")
+|-
+| German
+| Perenus
+| From ''Perenne'' ({{wp|perennial plant}})
+|-
+| European Spanish
+| Kokuran
+| Transcription of his Japanese name
+|-
+| French
+| Parsley
+| From ''{{wp|parsley}}''
+|-
+| Italian
+| Paride
+| From ''liparide'' ({{wp|Liparis (plant)|widelip orchid}})
+|-
+| Korean
+| 코크런 ''Cochrane''
+| From a transcription of his Japanese name modified to resemble the name ''{{wp|Cochrane (surname)|Cochrane}}''
+|-
+| Chinese (Traditional)
+| 石蘭 ''Shílán'' / ''Sehklàahn''
+| rowspan="2" | From 虎頭石蘭 ''hǔtóushí lán'' (''Liparis nakaharai'')
+|-
+| Chinese (mainland China)
+| 石兰 ''Shílán''<ref group=n>[[Pokémon Adventures]]</ref>
+|-
+| Vietnamese
+| Kokuran
+| Same as his Japanese name
+|}
+
+{{Flexfooter}}
+{{-}}
+
+''Castle Valet''
+{{langtable|color={{castle color light}}|bordercolor={{castle color}}
+|ja=キャッスルバトラー {{tt|''Kyassuru Batorā''|Castle Butler}}
+|zh_yue=城堡管家 ''{{tt|Sìhngbóu Gúngā|Castle Butler}}'' {{tt|*|Games}}<br>城堡對戰者 ''{{tt|Sìhngbóu Deuijinjé|Castle Battler}}'' {{tt|*|Adventures}}
+|zh_cmn=城堡管家 ''{{tt|Chéngbǎo Guǎnjiā|Castle Butler}}'' {{tt|*|Games, Adventures (Jilin Publishing)}}<br>城堡對戰者 ''{{tt|Chéngbǎo Duìzhànzhě|Castle Battler}}'' {{tt|*|Adventures (Ching Win [PS419])}}<br>城堡對戰士 ''{{tt|Chéngbǎo Duìzhànshì|Castle Battler}}'' {{tt|*|Adventures (Ching Win [Volume 39 Character Introduction])}}
+|fr=Chambellan
+|de=Kammerdiener
+|it=Maggiordomo
+|ko=캐슬버틀러 {{tt|''Kaeseul Beoteulleo''|Castle Butler}}
+|pt_br=Mordomo do Castelo
+|es=Mayordomo
+|vi=Quản gia Lâu đài
+}}
+
+===Notes===
+{{reflist|group=n}}
+
+==References==
+<references/>
+
+==Related articles==
+* [[a:Category:Darach|Images on the Bulbagarden Archives]]
+{{-}}
+{{Generation IV Frontier Brains}}
+{{TrainerNav|castle|johto=yes|sinnoh=yes}}
+{{Project CharacterDex notice}}
+
+[[Category:Frontier Brains]]
+[[Category:Game characters]]
+[[Category:Platinum characters]]
+[[Category:HeartGold and SoulSilver characters]]
+[[Category:Manga characters]]
+[[Category:Pokémon Adventures characters]]
+[[Category:Trainers with unique classes]]
+[[Category:Trainers with Legendary Pokémon]]
+
+[[de:Perenus]]
+[[es:Kokuran]]
+[[fr:Parsley]]
+[[it:Paride]]
+[[ja:コクラン]]
+[[zh:石蘭]]

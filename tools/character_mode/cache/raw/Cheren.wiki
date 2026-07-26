@@ -1,0 +1,3271 @@
+{{Character Infobox
+|color={{#switch: {{#expr: {{#time: U}} mod 2}}|0={{black color}}|1={{normal color}}}}
+|corecolor={{#switch: {{#expr: {{#time: U}} mod 2}}|0={{black color light}}|1={{normal color light}}}}
+|bordercolor={{#switch: {{#expr: {{#time: U}} mod 2}}|0={{black color dark}}|1={{normal color dark}}}}
+|text={{#switch: {{#expr: {{#time: U}} mod 2}}|0=fff|1=000}}
+|name=Cheren
+|jname=チェレン
+|tmname=Cheren
+|slogan=yes
+|sloganline=The one who seeks the right path.
+|image=Black 2 White 2 Cheren.png
+|size=129px
+|caption=Art from {{2v2|Black|White|2}} by [[Yusuke Ohmura]]<ref>[[a:File:CherenCareBrilliantStars134.jpg|Cheren's Care (Brilliant Stars 134)]]</ref>
+|age=14-15<ref>[http://raim2005.blog18.fc2.com/blog-entry-980.html 【BW/BW2】ファンミーティング情報のまとめ blue skY]</ref><ref>[https://pk-mn.com/n/b2w2-fan-meeting-n-nenrei/ 「ポケモン ブラック２ ホワイト２」のファンミーティングで、「N」や「チェレン」の年齢、怒ったNのイラストなどの設定資料が公開 - ポケモンメモ]</ref>
+|gender=Male
+|colors=yes
+|eyes=Blue
+|hair=Black
+|hometown=[[Nuvema Town]]
+|region=[[Unova]]
+|relatives=Unnamed parents
+}}
+{{Character Infobox/Game
+|color={{#switch: {{#expr: {{#time: U}} mod 2}}|0={{black color light}}|1={{normal color light}}}}
+|trainer=[[Pokémon Trainer]]<br>[[Gym Leader]]{{sup/5|B2W2}}
+|gen={{gen|V}}, {{gen|VII}}, {{gen|VIII}}, {{gen|IX}}
+|games={{game3|Black and White|Black, White|s}}, {{B2W2|Black 2, White 2}}<br>{{pkmn|Masters EX}}
+|counterpart=[[Cheren (Masters)]]
+|enva=[[Jason Griffith]] <small>({{pkmn|Black Version 2 and Pokémon White Version 2 Animated Trailer|B2W2AT}})</small><br>Landon McDonald<ref name="Landon McDonald">[https://www.facebook.com/landonmcdonaldvoice/posts/1209139692603818/ Landon McDonald on Facebook]</ref> <small>({{pkmn|Masters EX}})</small>
+|jpva=Ryōhei Kimura <small>({{pkmn|Black Version 2 and Pokémon White Version 2 Animated Trailer|B2W2AT}})</small><br>Atsushi Abe<ref name="Atsushi Abe">[https://www.oricon.co.jp/news/2138750/full/ Oricon News (Japanese)]</ref> <small>({{pkmn|Masters EX}})</small>
+}}
+{{Character Infobox/Team
+|color={{#switch: {{#expr: {{#time: U}} mod 2}}|0={{black color light}}|1={{normal color light}}}}
+|member=[[Unova League]]{{sup/5|B2W2}}
+|rank=[[Gym Leader]]
+|domain=[[Aspertia Gym]]
+|reward={{badge|Basic}}
+|specialty={{t|Normal}} types
+}}
+{{Character Infobox/Anime
+|color={{#switch: {{#expr: {{#time: U}} mod 2}}|0={{black color light}}|1={{normal color light}}}}
+|series=''[[Pokémon the Series]]''<br>''[[Pokémon Evolutions]]''
+|debut=''[[BW111|There's a New Gym Leader in Town!]]'' <small>([[Pokémon animated series|Animated series]])</small><br>''[[PE04|The Plan]]'' <small>({{pkmn|Evolutions}})</small>
+|enva=[[Todd Haberkorn]] <small>([[Pokémon animated series|Animated series]])</small>
+|jpva=[[Takuya Eguchi]] <small>([[Pokémon animated series|Animated series]])</small>
+}}
+{{Character Infobox/Manga
+|color={{#switch: {{#expr: {{#time: U}} mod 2}}|0={{black color light}}|1={{normal color light}}}}
+|series=''[[Pokémon Adventures]]''<br>''[[Be the Best! Pokémon B+W]]''<br>''[[Pocket Monsters B2 W2 ~ A New Legend ~]]''<br>''[[Pocket Monsters BW]]''
+|counterpart=[[Cheren (Adventures)]]
+|debut=''[[PS462|Choices]]'' <small>({{pkmn|Adventures}})</small><br>''[[PBW1|Advance Toward the Path of the Strongest!]]'' <small>([[Be the Best! Pokémon B+W|PB+W]])</small><br>[[ANL1]] <small>([[Pocket Monsters B2 W2 ~ A New Legend ~|ANL]])</small><br>[[PMBW01]] <small>([[Pocket Monsters BW|PMBW]])</small>
+}}
+|}
+
+'''Cheren''' (Japanese: '''チェレン''' ''Cheren'') is a [[rival]] character in {{game|Black and White|s}}, and the [[Gym Leader]] of [[Aspertia City]]'s [[Gym]], known officially as the [[Aspertia Gym]], in [[Pokémon Black and White Versions 2|Pokémon Black 2 and White 2]]. As a Gym Leader, he [[Type expert|specializes]] in {{type|Normal}} {{OBP|Pokémon|species}}. He gives the {{Badge|Basic}} to Trainers who defeat him.
+
+==In the core series games==
+===Role===
+===={{game|Black and White|s}}====
+Cheren is a childhood friend of the {{player}} who also lives in the starting town of [[Nuvema Town]]. As he holds a greater degree of knowledge about Pokémon than his friends and tends to offer the player advice during the course of their journey, his comments are often witty and intellectual. He also misunderstands [[Bianca]]'s humor often, to her dismay. While [[Professor Juniper]] describes him as being very honest, she also remarks that he can be 'a little difficult'; his impatience in particular is often seen throughout the earlier stages of his journey. He is also described as being quite judgmental by [[Alder]].
+
+In keeping with the theme of truth and ideals often seen in Black and White, Cheren represents those who pursue ideals—more precisely, as [[N]] pointed out in [[Chargestone Cave]], the ideal of strength. His goal is to become the {{pkmn|Champion}} and he always strives to become stronger. However, when Alder asked him for the first time why he strives to become stronger, he was quite unsure of his reasons. He then starts to ponder to himself how to do so—something that Alder said he used to do with his partner Pokémon as well—and what exactly it means to be strong. Alder also remarked that Cheren is a lot like [[Marshal]].
+
+Like the player and Bianca, Cheren receives a [[first partner Pokémon]] as a gift from [[Professor Juniper]] at the start of the game. He always chooses the first partner Pokémon with a [[type]] advantage over the player's first partner Pokémon. The player will encounter and battle him several times throughout the game. After the main storyline, Cheren can be found on {{rt|5|Unova}}. After talking to him there, he moves to {{OBP|Victory Road|Black and White}}, where he can be battled once a day.
+
+===={{B2W2}}====
+In {{2v2|Black|White|2}}, Cheren is the new {{type|Normal}} [[Gym Leader]] in [[Aspertia City]], the player's hometown. He gives away the {{Badge|Basic}}, replacing [[Lenora]]. Trainers who defeat Cheren will receive the Basic Badge, along with {{TM|83|Work Up}}. Outside of battle, Cheren works as a teacher at the Aspertia Trainer School, with one of his pupils being {{tc|Lass}} Serena in the [[Aspertia Gym]], according to her.
+
+Cheren appears numerous times throughout the game, such as in {{ci|Driftveil}} and [[Opelucid City]], as well as {{rt|21|Unova}}. He gives the player and [[Hugh]] advice and guidance on the current situation, such as the freezing of Opelucid City, where [[Drayden]] learns of Cheren's ascension to the position of Aspertia Gym Leader.
+
+After the player enters the [[Hall of Fame]], Cheren can be found at [[Pinwheel Forest]], investigating the activities of [[Team Plasma]]. He will accompany the player as a [[Multi Battle]] partner. After encountering [[Gorm]], Cheren will thank the player with an [[Upgrade|Up-Grade]] and then return to the [[Aspertia Gym]].
+
+He can be called on the [[Xtransceiver]] to give the player advice on types and {{Abilities}}. He can also be fought in the [[Pokémon World Tournament]].
+
+===Pokémon===
+===={{game|Black and White|s}}====
+=====First battle=====
+Winning this battle is not mandatory. The player will not [[black out]] and the story will progress either way.
+
+{{Party
+| caption = {{PlayerChoice|0495|Snivy}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}500
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Nuvema Town
+| game = BW
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0498
+| pokemon = Tepig
+| gender = male
+| level = 5
+| type1 = Fire
+| ability = Blaze
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+| move2 = Tail Whip | move2type = Normal | move2cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0498|Tepig}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}500
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Nuvema Town
+| game = BW
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0501
+| pokemon = Oshawott
+| gender = male
+| level = 5
+| type1 = Water
+| ability = Torrent
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+| move2 = Tail Whip | move2type = Normal | move2cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0501|Oshawott}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}500
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Nuvema Town
+| game = BW
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0495
+| pokemon = Snivy
+| gender = male
+| level = 5
+| type1 = Grass
+| ability = Overgrow
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+| move2 = Leer | move2type = Normal | move2cat = Status
+}}
+{{Party/end}}
+=====Second battle=====
+{{Party
+| caption = {{PlayerChoice|0495|Snivy}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}800
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Striaton City
+| game = BW
+| pokemon = 2
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0498
+| pokemon = Tepig
+| gender = male
+| level = 8
+| type1 = Fire
+| ability = Blaze
+| held = Oran Berry
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+| move2 = Tail Whip | move2type = Normal | move2cat = Status
+| move3 = Ember | move3type = Fire | move3cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0509
+| pokemon = Purrloin
+| gender = male
+| level = 8
+| type1 = Dark
+| ability = Unburden
+| move1 = Scratch | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+| move3 = Assist | move3type = Normal | move3cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0498|Tepig}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}800
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Striaton City
+| game = BW
+| pokemon = 2
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0501
+| pokemon = Oshawott
+| gender = male
+| level = 8
+| type1 = Water
+| ability = Torrent
+| held = Oran Berry
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+| move2 = Tail Whip | move2type = Normal | move2cat = Status
+| move3 = Water Gun | move3type = Water | move3cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0509
+| pokemon = Purrloin
+| gender = male
+| level = 8
+| type1 = Dark
+| ability = Unburden
+| move1 = Scratch | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+| move3 = Assist | move3type = Normal | move3cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0501|Oshawott}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}800
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Striaton City
+| game = BW
+| pokemon = 2
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0495
+| pokemon = Snivy
+| gender = male
+| level = 8
+| type1 = Grass
+| ability = Overgrow
+| held = Oran Berry
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+| move2 = Leer | move2type = Normal | move2cat = Status
+| move3 = Vine Whip | move3type = Grass | move3cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0509
+| pokemon = Purrloin
+| gender = male
+| level = 8
+| type1 = Dark
+| ability = Unburden
+| move1 = Scratch | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+| move3 = Assist | move3type = Normal | move3cat = Status
+}}
+{{Party/end}}
+=====Third battle=====
+{{Party
+| caption = {{PlayerChoice|0495|Snivy}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}1200
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 3
+| locationname = Route 3
+| game = BW
+| pokemon = 2
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0498
+| pokemon = Tepig
+| gender = male
+| level = 14
+| type1 = Fire
+| ability = Blaze
+| held = Oran Berry
+| move1 = Odor Sleuth | move1type = Normal | move1cat = Status
+| move2 = Tail Whip | move2type = Normal | move2cat = Status
+| move3 = Ember | move3type = Fire | move3cat = Special
+| move4 = Defense Curl | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0509
+| pokemon = Purrloin
+| gender = male
+| level = 12
+| type1 = Dark
+| ability = Unburden
+| move1 = Fury Swipes | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+| move3 = Assist | move3type = Normal | move3cat = Status
+| move4 = Sand-Attack | move4type = Ground | move4cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0498|Tepig}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}1200
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 3
+| locationname = Route 3
+| game = BW
+| pokemon = 2
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0501
+| pokemon = Oshawott
+| gender = male
+| level = 14
+| type1 = Water
+| ability = Torrent
+| held = Oran Berry
+| move1 = Focus Energy | move1type = Normal | move1cat = Status
+| move2 = Tail Whip | move2type = Normal | move2cat = Status
+| move3 = Water Gun | move3type = Water | move3cat = Special
+| move4 = Water Sport | move4type = Water | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0509
+| pokemon = Purrloin
+| gender = male
+| level = 12
+| type1 = Dark
+| ability = Unburden
+| move1 = Fury Swipes | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+| move3 = Assist | move3type = Normal | move3cat = Status
+| move4 = Sand-Attack | move4type = Ground | move4cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0501|Oshawott}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}1200
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 3
+| locationname = Route 3
+| game = BW
+| pokemon = 2
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0495
+| pokemon = Snivy
+| gender = male
+| level = 14
+| type1 = Grass
+| ability = Overgrow
+| held = Oran Berry
+| move1 = Growth | move1type = Normal | move1cat = Status
+| move2 = Leer | move2type = Normal | move2cat = Status
+| move3 = Vine Whip | move3type = Grass | move3cat = Physical
+| move4 = Wrap | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0509
+| pokemon = Purrloin
+| gender = male
+| level = 12
+| type1 = Dark
+| ability = Unburden
+| move1 = Fury Swipes | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+| move3 = Assist | move3type = Normal | move3cat = Status
+| move4 = Sand-Attack | move4type = Ground | move4cat = Status
+}}
+{{Party/end}}
+=====First [[Multi Battle]] partner=====
+Cheren will join the player in a battle against two {{tc|Team Plasma Grunt}}s.
+
+{{Party
+| caption = {{PlayerChoice|0495|Snivy}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = BW Cheren Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Wellspring Cave
+| game = BW
+| pokemon = 2
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0498
+| pokemon = Tepig
+| gender = male
+| level = 14
+| type1 = Fire
+| ability = Blaze
+| held = Oran Berry
+| move1 = Ember | move1type = Fire | move1cat = Special
+| move2 = Defense Curl | move2type = Normal | move2cat = Status
+| move3 = Odor Sleuth | move3type = Normal | move3cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0509
+| pokemon = Purrloin
+| gender = male
+| level = 12
+| type1 = Dark
+| ability = Unburden
+| move1 = Scratch | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+| move3 = Assist | move3type = Normal | move3cat = Status
+| move4 = Sand-Attack | move4type = Ground | move4cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0498|Tepig}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = BW Cheren Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Wellspring Cave
+| game = BW
+| pokemon = 2
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0501
+| pokemon = Oshawott
+| gender = male
+| level = 14
+| type1 = Water
+| ability = Torrent
+| held = Oran Berry
+| move1 = Water Gun | move1type = Water | move1cat = Special
+| move2 = Tail Whip | move2type = Normal | move2cat = Status
+| move3 = Water Sport | move3type = Water | move3cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0509
+| pokemon = Purrloin
+| gender = male
+| level = 12
+| type1 = Dark
+| ability = Unburden
+| move1 = Scratch | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+| move3 = Assist | move3type = Normal | move3cat = Status
+| move4 = Sand-Attack | move4type = Ground | move4cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0501|Oshawott}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = BW Cheren Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Wellspring Cave
+| game = BW
+| pokemon = 2
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0495
+| pokemon = Snivy
+| gender = male
+| level = 14
+| type1 = Grass
+| ability = Overgrow
+| held = Oran Berry
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+| move2 = Leer | move2type = Normal | move2cat = Status
+| move3 = Vine Whip | move3type = Grass | move3cat = Physical
+| move4 = Growth | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0509
+| pokemon = Purrloin
+| gender = male
+| level = 12
+| type1 = Dark
+| ability = Unburden
+| move1 = Scratch | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+| move3 = Assist | move3type = Normal | move3cat = Status
+| move4 = Sand-Attack | move4type = Ground | move4cat = Status
+}}
+{{Party/end}}
+=====Fourth battle=====
+{{Party
+| caption = {{PlayerChoice|0495|Snivy}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}2200
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 4
+| locationname = Route 4
+| game = BW
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0519
+| pokemon = Pidove
+| gender = male
+| level = 20
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Leer | move2type = Normal | move2cat = Status
+| move3 = Air Cutter | move3type = Flying | move3cat = Special
+| move4 = Roost | move4type = Flying | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0511
+| pokemon = Pansage
+| gender = male
+| level = 20
+| type1 = Grass
+| ability = Gluttony
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Vine Whip | move2type = Grass | move2cat = Physical
+| move3 = Leech Seed | move3type = Grass | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 20
+| type1 = Dark
+| ability = Unburden
+| move1 = Pursuit | move1type = Dark | move1cat = Physical
+| move2 = Torment | move2type = Dark | move2cat = Status
+| move3 = Sand-Attack | move3type = Ground | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0499
+| pokemon = Pignite
+| gender = male
+| level = 22
+| type1 = Fire
+| type2 = Fighting
+| ability = Blaze
+| held = Sitrus Berry
+| move1 = Flame Charge | move1type = Fire | move1cat = Physical
+| move2 = Defense Curl | move2type = Normal | move2cat = Status
+| move3 = Arm Thrust | move3type = Fighting | move3cat = Physical
+| move4 = Smog | move4type = Poison | move4cat = Special
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0498|Tepig}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}2200
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 4
+| locationname = Route 4
+| game = BW
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0519
+| pokemon = Pidove
+| gender = male
+| level = 20
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Leer | move2type = Normal | move2cat = Status
+| move3 = Air Cutter | move3type = Flying | move3cat = Special
+| move4 = Roost | move4type = Flying | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0513
+| pokemon = Pansear
+| gender = male
+| level = 20
+| type1 = Fire
+| ability = Gluttony
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Incinerate | move2type = Fire | move2cat = Special
+| move3 = Yawn | move3type = Normal | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 20
+| type1 = Dark
+| ability = Unburden
+| move1 = Pursuit | move1type = Dark | move1cat = Physical
+| move2 = Torment | move2type = Dark | move2cat = Status
+| move3 = Sand-Attack | move3type = Ground | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0502
+| pokemon = Dewott
+| gender = male
+| level = 22
+| type1 = Water
+| ability = Torrent
+| held = Sitrus Berry
+| move1 = Razor Shell | move1type = Water | move1cat = Physical
+| move2 = Focus Energy | move2type = Normal | move2cat = Status
+| move3 = Water Sport | move3type = Water | move3cat = Status
+| move4 = Fury Cutter | move4type = Bug | move4cat = Physical
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0501|Oshawott}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}2200
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 4
+| locationname = Route 4
+| game = BW
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0519
+| pokemon = Pidove
+| gender = male
+| level = 20
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Leer | move2type = Normal | move2cat = Status
+| move3 = Air Cutter | move3type = Flying | move3cat = Special
+| move4 = Roost | move4type = Flying | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0515
+| pokemon = Panpour
+| gender = male
+| level = 20
+| type1 = Water
+| ability = Gluttony
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Water Gun | move2type = Water | move2cat = Special
+| move3 = Water Sport | move3type = Water | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 20
+| type1 = Dark
+| ability = Unburden
+| move1 = Pursuit | move1type = Dark | move1cat = Physical
+| move2 = Torment | move2type = Dark | move2cat = Status
+| move3 = Sand-Attack | move3type = Ground | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0496
+| pokemon = Servine
+| gender = male
+| level = 22
+| type1 = Grass
+| ability = Overgrow
+| held = Sitrus Berry
+| move1 = Leaf Tornado | move1type = Grass | move1cat = Special
+| move2 = Wrap | move2type = Normal | move2cat = Physical
+| move3 = Leech Seed | move3type = Grass | move3cat = Status
+| move4 = Growth | move4type = Normal | move4cat = Status
+}}
+{{Party/end}}
+=====Fifth battle=====
+{{Party
+| caption = {{PlayerChoice|0495|Snivy}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}2600
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 5
+| locationname = Route 5
+| game = BW
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 24
+| type1 = Dark
+| ability = Unburden
+| move1 = Pursuit | move1type = Dark | move1cat = Physical
+| move2 = Torment | move2type = Dark | move2cat = Status
+| move3 = Fake Out | move3type = Normal | move3cat = Physical
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0511
+| pokemon = Pansage
+| gender = male
+| level = 24
+| type1 = Grass
+| ability = Gluttony
+| held = Miracle Seed
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Seed Bomb | move2type = Grass | move2cat = Physical
+| move3 = Leech Seed | move3type = Grass | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0520
+| pokemon = Tranquill
+| gender = male
+| level = 24
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Detect | move2type = Fighting | move2cat = Status
+| move3 = Air Cutter | move3type = Flying | move3cat = Special
+| move4 = Roost | move4type = Flying | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0499
+| pokemon = Pignite
+| gender = male
+| level = 26
+| type1 = Fire
+| type2 = Fighting
+| ability = Blaze
+| held = Sitrus Berry
+| move1 = Flame Charge | move1type = Fire | move1cat = Physical
+| move2 = Rollout | move2type = Rock | move2cat = Physical
+| move3 = Arm Thrust | move3type = Fighting | move3cat = Physical
+| move4 = Smog | move4type = Poison | move4cat = Special
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0498|Tepig}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}2600
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 5
+| locationname = Route 5
+| game = BW
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 24
+| type1 = Dark
+| ability = Unburden
+| move1 = Pursuit | move1type = Dark | move1cat = Physical
+| move2 = Torment | move2type = Dark | move2cat = Status
+| move3 = Fake Out | move3type = Normal | move3cat = Physical
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0513
+| pokemon = Pansear
+| gender = male
+| level = 24
+| type1 = Fire
+| ability = Gluttony
+| held = Charcoal
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Flame Burst | move2type = Fire | move2cat = Special
+| move3 = Yawn | move3type = Normal | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0520
+| pokemon = Tranquill
+| gender = male
+| level = 24
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Detect | move2type = Fighting | move2cat = Status
+| move3 = Air Cutter | move3type = Flying | move3cat = Special
+| move4 = Roost | move4type = Flying | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0502
+| pokemon = Dewott
+| gender = male
+| level = 26
+| type1 = Water
+| ability = Torrent
+| held = Sitrus Berry
+| move1 = Water Pulse | move1type = Water | move1cat = Special
+| move2 = Fury Cutter | move2type = Bug | move2cat = Physical
+| move3 = Razor Shell | move3type = Water | move3cat = Physical
+| move4 = Focus Energy | move4type = Normal | move4cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0501|Oshawott}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}2600
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 5
+| locationname = Route 5
+| game = BW
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 24
+| type1 = Dark
+| ability = Unburden
+| move1 = Pursuit | move1type = Dark | move1cat = Physical
+| move2 = Torment | move2type = Dark | move2cat = Status
+| move3 = Fake Out | move3type = Normal | move3cat = Physical
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0515
+| pokemon = Panpour
+| gender = male
+| level = 24
+| type1 = Water
+| ability = Gluttony
+| held = Mystic Water
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Scald | move2type = Water | move2cat = Special
+| move3 = Water Sport | move3type = Water | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0520
+| pokemon = Tranquill
+| gender = male
+| level = 24
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Detect | move2type = Fighting | move2cat = Status
+| move3 = Air Cutter | move3type = Flying | move3cat = Special
+| move4 = Roost | move4type = Flying | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0496
+| pokemon = Servine
+| gender = male
+| level = 26
+| type1 = Grass
+| ability = Overgrow
+| held = Sitrus Berry
+| move1 = Mega Drain | move1type = Grass | move1cat = Special
+| move2 = Leech Seed | move2type = Grass | move2cat = Status
+| move3 = Leaf Tornado | move3type = Grass | move3cat = Special
+| move4 = Growth | move4type = Normal | move4cat = Status
+}}
+{{Party/end}}
+=====Second Multi Battle partner=====
+Cheren will join the player in a battle against {{tc|Preschooler}}s Sarah and Billy.
+
+{{Party
+| caption = {{PlayerChoice|0495|Snivy}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = BW Cheren Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 5
+| locationname = Route 5
+| game = BW
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 24
+| type1 = Dark
+| ability = Unburden
+| move1 = Pursuit | move1type = Dark | move1cat = Physical
+| move2 = Torment | move2type = Dark | move2cat = Status
+| move3 = Fake Out | move3type = Normal | move3cat = Physical
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0511
+| pokemon = Pansage
+| gender = male
+| level = 24
+| type1 = Grass
+| ability = Gluttony
+| held = Miracle Seed
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Seed Bomb | move2type = Grass | move2cat = Physical
+| move3 = Leech Seed | move3type = Grass | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0520
+| pokemon = Tranquill
+| gender = male
+| level = 24
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Detect | move2type = Fighting | move2cat = Status
+| move3 = Air Cutter | move3type = Flying | move3cat = Special
+| move4 = Roost | move4type = Flying | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0499
+| pokemon = Pignite
+| gender = male
+| level = 26
+| type1 = Fire
+| type2 = Fighting
+| ability = Blaze
+| held = Sitrus Berry
+| move1 = Flame Charge | move1type = Fire | move1cat = Physical
+| move2 = Rollout | move2type = Rock | move2cat = Physical
+| move3 = Arm Thrust | move3type = Fighting | move3cat = Physical
+| move4 = Smog | move4type = Poison | move4cat = Special
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0498|Tepig}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = BW Cheren Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 5
+| locationname = Route 5
+| game = BW
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 24
+| type1 = Dark
+| ability = Unburden
+| move1 = Pursuit | move1type = Dark | move1cat = Physical
+| move2 = Torment | move2type = Dark | move2cat = Status
+| move3 = Fake Out | move3type = Normal | move3cat = Physical
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0513
+| pokemon = Pansear
+| gender = male
+| level = 24
+| type1 = Fire
+| ability = Gluttony
+| held = Charcoal
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Flame Burst | move2type = Fire | move2cat = Special
+| move3 = Yawn | move3type = Normal | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0520
+| pokemon = Tranquill
+| gender = male
+| level = 24
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Detect | move2type = Fighting | move2cat = Status
+| move3 = Air Cutter | move3type = Flying | move3cat = Special
+| move4 = Roost | move4type = Flying | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0502
+| pokemon = Dewott
+| gender = male
+| level = 26
+| type1 = Water
+| ability = Torrent
+| held = Sitrus Berry
+| move1 = Water Pulse | move1type = Water | move1cat = Special
+| move2 = Fury Cutter | move2type = Bug | move2cat = Physical
+| move3 = Razor Shell | move3type = Water | move3cat = Physical
+| move4 = Focus Energy | move4type = Normal | move4cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0501|Oshawott}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = BW Cheren Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 5
+| locationname = Route 5
+| game = BW
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 24
+| type1 = Dark
+| ability = Unburden
+| move1 = Pursuit | move1type = Dark | move1cat = Physical
+| move2 = Torment | move2type = Dark | move2cat = Status
+| move3 = Fake Out | move3type = Normal | move3cat = Physical
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0515
+| pokemon = Panpour
+| gender = male
+| level = 24
+| type1 = Water
+| ability = Gluttony
+| held = Mystic Water
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Scald | move2type = Water | move2cat = Special
+| move3 = Water Sport | move3type = Water | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0520
+| pokemon = Tranquill
+| gender = male
+| level = 24
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Detect | move2type = Fighting | move2cat = Status
+| move3 = Air Cutter | move3type = Flying | move3cat = Special
+| move4 = Roost | move4type = Flying | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0496
+| pokemon = Servine
+| gender = male
+| level = 26
+| type1 = Grass
+| ability = Overgrow
+| held = Sitrus Berry
+| move1 = Mega Drain | move1type = Grass | move1cat = Special
+| move2 = Leech Seed | move2type = Grass | move2cat = Status
+| move3 = Leaf Tornado | move3type = Grass | move3cat = Special
+| move4 = Growth | move4type = Normal | move4cat = Status
+}}
+{{Party/end}}
+=====Sixth battle=====
+{{Party
+| caption = {{PlayerChoice|0495|Snivy}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}3500
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Twist Mountain
+| game = BW
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0521
+| pokemon = Unfezant
+| form = -Male
+| gender = male
+| level = 33
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| held = Scope Lens
+| move1 = Roost | move1type = Flying | move1cat = Status
+| move2 = Detect | move2type = Fighting | move2cat = Status
+| move3 = Air Slash | move3type = Flying | move3cat = Special
+| move4 = Taunt | move4type = Dark | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0512
+| pokemon = Simisage
+| gender = male
+| level = 33
+| type1 = Grass
+| ability = Gluttony
+| held = Miracle Seed
+| move1 = Lick | move1type = Ghost | move1cat = Physical
+| move2 = Seed Bomb | move2type = Grass | move2cat = Physical
+| move3 = Leer | move3type = Normal | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 33
+| type1 = Dark
+| ability = Limber
+| held = Sitrus Berry
+| move1 = Assurance | move1type = Dark | move1cat = Physical
+| move2 = Torment | move2type = Dark | move2cat = Status
+| move3 = Fake Out | move3type = Normal | move3cat = Physical
+| move4 = Hone Claws | move4type = Dark | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0499
+| pokemon = Pignite
+| gender = male
+| level = 35
+| type1 = Fire
+| type2 = Fighting
+| ability = Blaze
+| held = Leftovers
+| move1 = Heat Crash | move1type = Fire | move1cat = Physical
+| move2 = Rollout | move2type = Rock | move2cat = Physical
+| move3 = Take Down | move3type = Normal | move3cat = Physical
+| move4 = Smog | move4type = Poison | move4cat = Special
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0498|Tepig}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}3500
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Twist Mountain
+| game = BW
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0521
+| pokemon = Unfezant
+| form = -Male
+| gender = male
+| level = 33
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| held = Scope Lens
+| move1 = Roost | move1type = Flying | move1cat = Status
+| move2 = Detect | move2type = Fighting | move2cat = Status
+| move3 = Air Slash | move3type = Flying | move3cat = Special
+| move4 = Taunt | move4type = Dark | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0514
+| pokemon = Simisear
+| gender = male
+| level = 33
+| type1 = Fire
+| ability = Gluttony
+| held = Charcoal
+| move1 = Lick | move1type = Ghost | move1cat = Physical
+| move2 = Flame Burst | move2type = Fire | move2cat = Special
+| move3 = Leer | move3type = Normal | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 33
+| type1 = Dark
+| ability = Limber
+| held = Sitrus Berry
+| move1 = Assurance | move1type = Dark | move1cat = Physical
+| move2 = Torment | move2type = Dark | move2cat = Status
+| move3 = Fake Out | move3type = Normal | move3cat = Physical
+| move4 = Hone Claws | move4type = Dark | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0502
+| pokemon = Dewott
+| gender = male
+| level = 35
+| type1 = Water
+| ability = Torrent
+| held = Leftovers
+| move1 = Fury Cutter | move1type = Bug | move1cat = Physical
+| move2 = Revenge | move2type = Fighting | move2cat = Physical
+| move3 = Aqua Jet | move3type = Water | move3cat = Physical
+| move4 = Water Pulse | move4type = Water | move4cat = Special
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0501|Oshawott}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}3500
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Twist Mountain
+| game = BW
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0521
+| pokemon = Unfezant
+| form = -Male
+| gender = male
+| level = 33
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| held = Scope Lens
+| move1 = Roost | move1type = Flying | move1cat = Status
+| move2 = Detect | move2type = Fighting | move2cat = Status
+| move3 = Air Slash | move3type = Flying | move3cat = Special
+| move4 = Taunt | move4type = Dark | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0516
+| pokemon = Simipour
+| gender = male
+| level = 33
+| type1 = Water
+| ability = Gluttony
+| held = Mystic Water
+| move1 = Lick | move1type = Ghost | move1cat = Physical
+| move2 = Scald | move2type = Water | move2cat = Special
+| move3 = Leer | move3type = Normal | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 33
+| type1 = Dark
+| ability = Limber
+| held = Sitrus Berry
+| move1 = Assurance | move1type = Dark | move1cat = Physical
+| move2 = Torment | move2type = Dark | move2cat = Status
+| move3 = Fake Out | move3type = Normal | move3cat = Physical
+| move4 = Hone Claws | move4type = Dark | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0496
+| pokemon = Servine
+| gender = male
+| level = 35
+| type1 = Grass
+| ability = Overgrow
+| held = Leftovers
+| move1 = Mega Drain | move1type = Grass | move1cat = Special
+| move2 = Leaf Blade | move2type = Grass | move2cat = Physical
+| move3 = Leech Seed | move3type = Grass | move3cat = Status
+| move4 = Slam | move4type = Normal | move4cat = Physical
+}}
+{{Party/end}}
+=====Seventh battle=====
+{{Party
+| caption = {{PlayerChoice|0495|Snivy}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}4500
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 10
+| locationname = Route 10
+| game = BW
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0521
+| pokemon = Unfezant
+| form = -Male
+| gender = male
+| level = 43
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| held = Scope Lens
+| move1 = Razor Wind | move1type = Normal | move1cat = Special
+| move2 = Detect | move2type = Fighting | move2cat = Status
+| move3 = Air Slash | move3type = Flying | move3cat = Special
+| move4 = Taunt | move4type = Dark | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0512
+| pokemon = Simisage
+| gender = male
+| level = 43
+| type1 = Grass
+| ability = Gluttony
+| held = Miracle Seed
+| move1 = Lick | move1type = Ghost | move1cat = Physical
+| move2 = Seed Bomb | move2type = Grass | move2cat = Physical
+| move3 = Leer | move3type = Normal | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 43
+| type1 = Dark
+| ability = Unburden
+| held = Sitrus Berry
+| move1 = Assurance | move1type = Dark | move1cat = Physical
+| move2 = Night Slash | move2type = Dark | move2cat = Physical
+| move3 = Slash | move3type = Normal | move3cat = Physical
+| move4 = Taunt | move4type = Dark | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0500
+| pokemon = Emboar
+| gender = male
+| level = 45
+| type1 = Fire
+| type2 = Fighting
+| ability = Blaze
+| held = Leftovers
+| move1 = Heat Crash | move1type = Fire | move1cat = Physical
+| move2 = Assurance | move2type = Dark | move2cat = Physical
+| move3 = Take Down | move3type = Normal | move3cat = Physical
+| move4 = Flamethrower | move4type = Fire | move4cat = Special
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0498|Tepig}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}4500
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 10
+| locationname = Route 10
+| game = BW
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0521
+| pokemon = Unfezant
+| form = -Male
+| gender = male
+| level = 43
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| held = Scope Lens
+| move1 = Razor Wind | move1type = Normal | move1cat = Special
+| move2 = Detect | move2type = Fighting | move2cat = Status
+| move3 = Air Slash | move3type = Flying | move3cat = Special
+| move4 = Taunt | move4type = Dark | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0514
+| pokemon = Simisear
+| gender = male
+| level = 43
+| type1 = Fire
+| ability = Gluttony
+| held = Charcoal
+| move1 = Lick | move1type = Ghost | move1cat = Physical
+| move2 = Flame Burst | move2type = Fire | move2cat = Special
+| move3 = Leer | move3type = Normal | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 43
+| type1 = Dark
+| ability = Unburden
+| held = Sitrus Berry
+| move1 = Assurance | move1type = Dark | move1cat = Physical
+| move2 = Night Slash | move2type = Dark | move2cat = Physical
+| move3 = Slash | move3type = Normal | move3cat = Physical
+| move4 = Taunt | move4type = Dark | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0503
+| pokemon = Samurott
+| gender = male
+| level = 45
+| type1 = Water
+| ability = Torrent
+| held = Leftovers
+| move1 = Aqua Tail | move1type = Water | move1cat = Physical
+| move2 = Slash | move2type = Normal | move2cat = Physical
+| move3 = Aqua Jet | move3type = Water | move3cat = Physical
+| move4 = Encore | move4type = Normal | move4cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0501|Oshawott}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}4500
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 10
+| locationname = Route 10
+| game = BW
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0521
+| pokemon = Unfezant
+| form = -Male
+| gender = male
+| level = 43
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| held = Scope Lens
+| move1 = Razor Wind | move1type = Normal | move1cat = Special
+| move2 = Detect | move2type = Fighting | move2cat = Status
+| move3 = Air Slash | move3type = Flying | move3cat = Special
+| move4 = Taunt | move4type = Dark | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0516
+| pokemon = Simipour
+| gender = male
+| level = 43
+| type1 = Water
+| ability = Gluttony
+| held = Mystic Water
+| move1 = Lick | move1type = Ghost | move1cat = Physical
+| move2 = Scald | move2type = Water | move2cat = Special
+| move3 = Leer | move3type = Normal | move3cat = Status
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 43
+| type1 = Dark
+| ability = Unburden
+| held = Sitrus Berry
+| move1 = Assurance | move1type = Dark | move1cat = Physical
+| move2 = Night Slash | move2type = Dark | move2cat = Physical
+| move3 = Slash | move3type = Normal | move3cat = Physical
+| move4 = Taunt | move4type = Dark | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0497
+| pokemon = Serperior
+| gender = male
+| level = 45
+| type1 = Grass
+| ability = Overgrow
+| held = Leftovers
+| move1 = Giga Drain | move1type = Grass | move1cat = Special
+| move2 = Leaf Blade | move2type = Grass | move2cat = Physical
+| move3 = Coil | move3type = Poison | move3cat = Status
+| move4 = Slam | move4type = Normal | move4cat = Physical
+}}
+{{Party/end}}
+=====Post-game [[rematch]]es=====
+{{Party
+| caption = {{PlayerChoice|0495|Snivy}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}6700
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Victory Road (Black and White)
+| locationname = Victory Road
+| game = BW
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 65
+| type1 = Dark
+| ability = Unburden
+| held = Sitrus Berry
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Aerial Ace | move2type = Flying | move2cat = Physical
+| move3 = Shadow Claw | move3type = Ghost | move3cat = Physical
+| move4 = Night Slash | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0512
+| pokemon = Simisage
+| gender = male
+| level = 65
+| type1 = Grass
+| ability = Gluttony
+| held = Miracle Seed
+| move1 = Energy Ball | move1type = Grass | move1cat = Special
+| move2 = Rock Slide | move2type = Rock | move2cat = Physical
+| move3 = Brick Break | move3type = Fighting | move3cat = Physical
+| move4 = Payback | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0521
+| pokemon = Unfezant
+| form = -Male
+| gender = male
+| level = 65
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| held = Scope Lens
+| move1 = U-turn | move1type = Bug | move1cat = Physical
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+| move3 = Air Slash | move3type = Flying | move3cat = Special
+| move4 = Facade | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0526
+| pokemon = Gigalith
+| gender = male
+| level = 65
+| type1 = Rock
+| ability = Sturdy
+| held = Leftovers
+| move1 = Giga Impact | move1type = Normal | move1cat = Physical
+| move2 = Stone Edge | move2type = Rock | move2cat = Physical
+| move3 = Earthquake | move3type = Ground | move3cat = Physical
+| move4 = Stealth Rock | move4type = Rock | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0612
+| pokemon = Haxorus
+| gender = male
+| level = 65
+| type1 = Dragon
+| ability = Rivalry
+| held = Dragon Gem
+| move1 = Outrage | move1type = Dragon | move1cat = Physical
+| move2 = X-Scissor | move2type = Bug | move2cat = Physical
+| move3 = Rock Slide | move3type = Rock | move3cat = Physical
+| move4 = Surf | move4type = Water | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0500
+| pokemon = Emboar
+| gender = male
+| level = 67
+| type1 = Fire
+| type2 = Fighting
+| ability = Blaze
+| held = Focus Sash
+| move1 = Flare Blitz | move1type = Fire | move1cat = Physical
+| move2 = Head Smash | move2type = Rock | move2cat = Physical
+| move3 = Brick Break | move3type = Fighting | move3cat = Physical
+| move4 = Wild Charge | move4type = Electric | move4cat = Physical
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0498|Tepig}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}6700
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Victory Road (Black and White)
+| locationname = Victory Road
+| game = BW
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 65
+| type1 = Dark
+| ability = Unburden
+| held = Sitrus Berry
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Aerial Ace | move2type = Flying | move2cat = Physical
+| move3 = Shadow Claw | move3type = Ghost | move3cat = Physical
+| move4 = Night Slash | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0514
+| pokemon = Simisear
+| gender = male
+| level = 65
+| type1 = Fire
+| ability = Gluttony
+| held = Charcoal
+| move1 = Flamethrower | move1type = Fire | move1cat = Special
+| move2 = Rock Slide | move2type = Rock | move2cat = Physical
+| move3 = Brick Break | move3type = Fighting | move3cat = Physical
+| move4 = Payback | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0521
+| pokemon = Unfezant
+| form = -Male
+| gender = male
+| level = 65
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| held = Scope Lens
+| move1 = U-turn | move1type = Bug | move1cat = Physical
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+| move3 = Air Slash | move3type = Flying | move3cat = Special
+| move4 = Facade | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0526
+| pokemon = Gigalith
+| gender = male
+| level = 65
+| type1 = Rock
+| ability = Sturdy
+| held = Leftovers
+| move1 = Giga Impact | move1type = Normal | move1cat = Physical
+| move2 = Stone Edge | move2type = Rock | move2cat = Physical
+| move3 = Earthquake | move3type = Ground | move3cat = Physical
+| move4 = Stealth Rock | move4type = Rock | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0612
+| pokemon = Haxorus
+| gender = male
+| level = 65
+| type1 = Dragon
+| ability = Rivalry
+| held = Dragon Gem
+| move1 = Outrage | move1type = Dragon | move1cat = Physical
+| move2 = X-Scissor | move2type = Bug | move2cat = Physical
+| move3 = Rock Slide | move3type = Rock | move3cat = Physical
+| move4 = Surf | move4type = Water | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0503
+| pokemon = Samurott
+| gender = male
+| level = 67
+| type1 = Water
+| ability = Torrent
+| held = Focus Sash
+| move1 = Hydro Pump | move1type = Water | move1cat = Special
+| move2 = Blizzard | move2type = Ice | move2cat = Special
+| move3 = X-Scissor | move3type = Bug | move3cat = Physical
+| move4 = Aqua Jet | move4type = Water | move4cat = Physical
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0501|Oshawott}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr BW Cheren.png
+| prize = {{Pdollar}}6700
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Victory Road (Black and White)
+| locationname = Victory Road
+| game = BW
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = 65
+| type1 = Dark
+| ability = Unburden
+| held = Sitrus Berry
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Aerial Ace | move2type = Flying | move2cat = Physical
+| move3 = Shadow Claw | move3type = Ghost | move3cat = Physical
+| move4 = Night Slash | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0516
+| pokemon = Simipour
+| gender = male
+| level = 65
+| type1 = Water
+| ability = Gluttony
+| held = Mystic Water
+| move1 = Surf | move1type = Water | move1cat = Special
+| move2 = Rock Slide | move2type = Rock | move2cat = Physical
+| move3 = Brick Break | move3type = Fighting | move3cat = Physical
+| move4 = Payback | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0521
+| pokemon = Unfezant
+| form = -Male
+| gender = male
+| level = 65
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| held = Scope Lens
+| move1 = U-turn | move1type = Bug | move1cat = Physical
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+| move3 = Air Slash | move3type = Flying | move3cat = Special
+| move4 = Facade | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0526
+| pokemon = Gigalith
+| gender = male
+| level = 65
+| type1 = Rock
+| ability = Sturdy
+| held = Leftovers
+| move1 = Giga Impact | move1type = Normal | move1cat = Physical
+| move2 = Stone Edge | move2type = Rock | move2cat = Physical
+| move3 = Earthquake | move3type = Ground | move3cat = Physical
+| move4 = Stealth Rock | move4type = Rock | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0612
+| pokemon = Haxorus
+| gender = male
+| level = 65
+| type1 = Dragon
+| ability = Rivalry
+| held = Dragon Gem
+| move1 = Outrage | move1type = Dragon | move1cat = Physical
+| move2 = X-Scissor | move2type = Bug | move2cat = Physical
+| move3 = Rock Slide | move3type = Rock | move3cat = Physical
+| move4 = Surf | move4type = Water | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0497
+| pokemon = Serperior
+| gender = male
+| level = 67
+| type1 = Grass
+| ability = Overgrow
+| held = Focus Sash
+| move1 = Coil | move1type = Poison | move1cat = Status
+| move2 = Dragon Tail | move2type = Dragon | move2cat = Physical
+| move3 = Leaf Blade | move3type = Grass | move3cat = Physical
+| move4 = Leaf Storm | move4type = Grass | move4cat = Special
+}}
+{{Party/end}}
+===={{B2W2}}====
+=====Gym battle=====
+======Easy Mode/Normal Mode======
+{{Party
+| background = {{normal color}}
+| border = {{normal color dark}}
+| headcolor = {{normal color light}}
+| sprite = Spr B2W2 Cheren.png
+| prize = {{tt|{{PDollar}}1440|Easy Mode}}/{{tt|{{PDollar}}1560|Normal Mode}}
+| class = Leader
+| classlink = Gym Leader
+| name = Cheren
+| location = Aspertia Gym
+| game = B2W2
+| pokemon = 2
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0504
+| pokemon = Patrat
+| gender = male
+| level = {{tt|10|Easy Mode}}/{{tt|11|Normal Mode}}
+| type1 = Normal
+| ability = Keen Eye
+| move1 = Work Up | move1type = Normal | move1cat = Status
+| move2 = Tackle | move2type = Normal | move2cat = Physical
+| move3 = Bite | move3type = Dark | move3cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0506
+| pokemon = Lillipup
+| gender = male
+| level = {{tt|12|Easy Mode}}/{{tt|13|Normal Mode}}
+| type1 = Normal
+| ability = Vital Spirit
+| move1 = Work Up | move1type = Normal | move1cat = Status
+| move2 = Tackle | move2type = Normal | move2cat = Physical
+| move3 = Bite | move3type = Dark | move3cat = Physical
+}}
+{{Party/end}}
+======Challenge Mode======
+{{Party
+| background = {{normal color}}
+| border = {{normal color dark}}
+| headcolor = {{normal color light}}
+| sprite = Spr B2W2 Cheren.png
+| prize = {{PDollar}}1680
+| class = Leader
+| classlink = Gym Leader
+| name = Cheren
+| location = Aspertia Gym
+| game = B2W2
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0504
+| pokemon = Patrat
+| gender = male
+| level = 12
+| type1 = Normal
+| ability = Keen Eye
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+| move2 = Work Up | move2type = Normal | move2cat = Status
+| move3 = Bite | move3type = Dark | move3cat = Physical
+| move4 = Detect | move4type = Fighting | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0519
+| pokemon = Pidove
+| gender = male
+| level = 12
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Work Up | move2type = Normal | move2cat = Status
+| move3 = Leer | move3type = Normal | move3cat = Status
+| move4 = Growl | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0506
+| pokemon = Lillipup
+| gender = male
+| level = 14
+| type1 = Normal
+| ability = Vital Spirit
+| held = Oran Berry
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+| move2 = Work Up | move2type = Normal | move2cat = Status
+| move3 = Bite | move3type = Dark | move3cat = Physical
+| move4 = Helping Hand | move4type = Normal | move4cat = Status
+}}
+{{Party/end}}
+=====Second battle=====
+{{Party
+| background = {{normal color}}
+| border = {{normal color dark}}
+| headcolor = {{normal color light}}
+| sprite = Spr B2W2 Cheren.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Pokémon World Tournament
+| game = B2W2
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0508
+| pokemon = Stoutland
+| gender = both
+| level = 25
+| type1 = Normal
+| ability = Intimidate
+| ability2 = Sand Rush
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+| move2 = Work Up | move2type = Normal | move2cat = Status
+| move3 = Bite | move3type = Dark | move3cat = Physical
+| move4 = Odor Sleuth | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0573
+| pokemon = Cinccino
+| gender = both
+| level = 25
+| type1 = Normal
+| ability = Technician
+| move1 = Work Up | move1type = Normal | move1cat = Status
+| move2 = Sing | move2type = Normal | move2cat = Status
+| move3 = Wake-Up Slap | move3type = Fighting | move3cat = Physical
+| move4 = Bullet Seed | move4type = Grass | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0505
+| pokemon = Watchog
+| gender = both
+| level = 25
+| type1 = Normal
+| ability = Illuminate
+| ability2 = Keen Eye
+| move1 = Work Up | move1type = Normal | move1cat = Status
+| move2 = Confuse Ray | move2type = Ghost | move2cat = Status
+| move3 = Hypnosis | move3type = Psychic | move3cat = Status
+| move4 = Bite | move4type = Dark | move4cat = Physical
+}}
+{{Party/end}}
+=====First Multi Battle partner=====
+Cheren will join the player in a battle against two Team Plasma Grunts.
+
+{{Party
+| background = {{normal color}}
+| border = {{normal color dark}}
+| headcolor = {{normal color light}}
+| sprite = B2W2 Cheren Back.png
+| prize = none
+| class = Leader
+| classlink = Gym Leader
+| name = Cheren
+| location = Plasma Frigate
+| game = B2W2
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0508
+| pokemon = Stoutland
+| gender = male
+| level = 33
+| type1 = Normal
+| ability = Intimidate
+| move1 = Thunder Fang | move1type = Electric | move1cat = Physical
+| move2 = Strength | move2type = Normal | move2cat = Physical
+| move3 = Crunch | move3type = Dark | move3cat = Physical
+| move4 = Odor Sleuth | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0505
+| pokemon = Watchog
+| gender = male
+| level = 31
+| type1 = Normal
+| ability = Keen Eye
+| move1 = Hyper Fang | move1type = Normal | move1cat = Physical
+| move2 = Crunch | move2type = Dark | move2cat = Physical
+| move3 = Low Kick | move3type = Fighting | move3cat = Physical
+| move4 = Hypnosis | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0573
+| pokemon = Cinccino
+| gender = female
+| level = 31
+| type1 = Normal
+| ability = Technician
+| move1 = Wake-Up Slap | move1type = Fighting | move1cat = Physical
+| move2 = Tail Slap | move2type = Normal | move2cat = Physical
+| move3 = Rock Blast | move3type = Rock | move3cat = Physical
+| move4 = Bullet Seed | move4type = Grass | move4cat = Physical
+}}
+{{Party/end}}
+=====Second Multi Battle partner=====
+Cheren will join the player in a series of battles while traversing through [[Pinwheel Forest]].
+
+{{Party
+| background = {{normal color}}
+| border = {{normal color dark}}
+| headcolor = {{normal color light}}
+| sprite = B2W2 Cheren Back.png
+| prize = none
+| class = Leader
+| classlink = Gym Leader
+| name = Cheren
+| location = Pinwheel Forest
+| game = B2W2
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0508
+| pokemon = Stoutland
+| gender = male
+| level = 67
+| type1 = Normal
+| ability = Intimidate
+| move1 = Wild Charge | move1type = Electric | move1cat = Physical
+| move2 = Strength | move2type = Normal | move2cat = Physical
+| move3 = Superpower | move3type = Fighting | move3cat = Physical
+| move4 = Crunch | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0505
+| pokemon = Watchog
+| gender = male
+| level = 65
+| type1 = Normal
+| ability = Keen Eye
+| move1 = ThunderPunch | move1type = Electric | move1cat = Physical
+| move2 = Fire Punch | move2type = Fire | move2cat = Physical
+| move3 = Ice Punch | move3type = Ice | move3cat = Physical
+| move4 = Hypnosis | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0573
+| pokemon = Cinccino
+| gender = female
+| level = 65
+| type1 = Normal
+| ability = Technician
+| move1 = Aqua Tail | move1type = Water | move1cat = Physical
+| move2 = Tail Slap | move2type = Normal | move2cat = Physical
+| move3 = Rock Blast | move3type = Rock | move3cat = Physical
+| move4 = Bullet Seed | move4type = Grass | move4cat = Physical
+}}
+{{Party/end}}
+=====[[Pokémon World Tournament]]=====
+Cheren uses three of these Pokémon in [[Pokémon battle|Single Battles]], four in [[Double Battle|Double]] and [[Rotation Battle]]s, and all six in [[Triple Battle]]s. He will always lead with his signature Pokémon, {{p|Stoutland}}.
+
+======[[Driftveil Tournament|Driftveil]]/[[Mix Tournament]]======
+{{Party
+| background = {{normal color}}
+| border = {{normal color dark}}
+| headcolor = {{normal color light}}
+| sprite = Spr B2W2 Cheren.png
+| prize = 1{{color2|000|Battle Point|BP}}
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Pokémon World Tournament
+| game = B2W2
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0508
+| pokemon = Stoutland
+| gender = both
+| level = {{tt|25|Driftveil Tournament}}/{{tt|50|Mix Tournament}}
+| type1 = Normal
+| ability = Intimidate
+| ability2 = Sand Rush
+| move1 = Ice Fang | move1type = Ice | move1cat = Physical
+| move2 = Fire Fang | move2type = Fire | move2cat = Physical
+| move3 = Thunder Fang | move3type = Electric | move3cat = Physical
+| move4 = Work Up | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0335
+| pokemon = Zangoose
+| gender = both
+| level = {{tt|25|Driftveil Tournament}}/{{tt|50|Mix Tournament}}
+| type1 = Normal
+| ability = Immunity
+| move1 = Taunt | move1type = Dark | move1cat = Status
+| move2 = Slash | move2type = Normal | move2cat = Physical
+| move3 = Aerial Ace | move3type = Flying | move3cat = Physical
+| move4 = Work Up | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0573
+| pokemon = Cinccino
+| gender = both
+| level = {{tt|25|Driftveil Tournament}}/{{tt|50|Mix Tournament}}
+| type1 = Normal
+| ability = Cute Charm
+| ability2 = Technician
+| move1 = Tail Slap | move1type = Normal | move1cat = Physical
+| move2 = Thunder Wave | move2type = Electric | move2cat = Status
+| move3 = Light Screen | move3type = Psychic | move3cat = Status
+| move4 = Echoed Voice | move4type = Normal | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0505
+| pokemon = Watchog
+| gender = both
+| level = {{tt|25|Driftveil Tournament}}/{{tt|50|Mix Tournament}}
+| type1 = Normal
+| ability = Illuminate
+| ability2 = Keen Eye
+| move1 = Retaliate | move1type = Normal | move1cat = Physical
+| move2 = Attract | move2type = Normal | move2cat = Status
+| move3 = Low Kick | move3type = Fighting | move3cat = Physical
+| move4 = Super Fang | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0573
+| pokemon = Cinccino
+| gender = both
+| level = {{tt|25|Driftveil Tournament}}/{{tt|50|Mix Tournament}}
+| type1 = Normal
+| ability = Cute Charm
+| ability2 = Technician
+| move1 = Work Up | move1type = Normal | move1cat = Status
+| move2 = Rock Blast | move2type = Rock | move2cat = Physical
+| move3 = Tail Slap | move3type = Normal | move3cat = Physical
+| move4 = Encore | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0505
+| pokemon = Watchog
+| gender = both
+| level = {{tt|25|Driftveil Tournament}}/{{tt|50|Mix Tournament}}
+| type1 = Normal
+| ability = Illuminate
+| ability2 = Keen Eye
+| move1 = Work Up | move1type = Normal | move1cat = Status
+| move2 = Hypnosis | move2type = Psychic | move2cat = Status
+| move3 = Bite | move3type = Dark | move3cat = Physical
+| move4 = Rock Smash | move4type = Fighting | move4cat = Physical
+}}
+{{Party/end}}
+======[[Unova Leaders Tournament]]======
+{{Party
+| background = {{normal color}}
+| border = {{normal color dark}}
+| headcolor = {{normal color light}}
+| sprite = Spr B2W2 Cheren.png
+| prize = 1{{color2|000|Battle Point|BP}}
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Pokémon World Tournament
+| game = B2W2
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0508
+| pokemon = Stoutland
+| gender = both
+| level = 50
+| type1 = Normal
+| ability = Intimidate
+| ability2 = Sand Rush
+| held = Salac Berry
+| move1 = Take Down | move1type = Normal | move1cat = Physical
+| move2 = Crunch | move2type = Dark | move2cat = Physical
+| move3 = Wild Charge | move3type = Electric | move3cat = Physical
+| move4 = Reversal | move4type = Fighting | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0335
+| pokemon = Zangoose
+| gender = both
+| level = 50
+| type1 = Normal
+| ability = Immunity
+| held = Chople Berry
+| move1 = Crush Claw | move1type = Normal | move1cat = Physical
+| move2 = Close Combat | move2type = Fighting | move2cat = Physical
+| move3 = X-Scissor | move3type = Bug | move3cat = Physical
+| move4 = Swords Dance | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0573
+| pokemon = Cinccino
+| gender = both
+| level = 50
+| type1 = Normal
+| ability = Cute Charm
+| ability2 = Technician
+| held = Rawst Berry
+| move1 = Tail Slap | move1type = Normal | move1cat = Physical
+| move2 = Rock Blast | move2type = Rock | move2cat = Physical
+| move3 = Bullet Seed | move3type = Grass | move3cat = Physical
+| move4 = U-turn | move4type = Bug | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0428
+| pokemon = Lopunny
+| gender = both
+| level = 50
+| type1 = Normal
+| ability = Cute Charm
+| ability2 = Klutz
+| held = Liechi Berry
+| move1 = Dizzy Punch | move1type = Normal | move1cat = Physical
+| move2 = Jump Kick | move2type = Fighting | move2cat = Physical
+| move3 = Ice Punch | move3type = Ice | move3cat = Physical
+| move4 = Charm | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0351
+| pokemon = Castform
+| gender = both
+| level = 50
+| type1 = Normal
+| ability = Forecast
+| held = Petaya Berry
+| move1 = Weather Ball | move1type = Normal | move1cat = Special
+| move2 = Hydro Pump | move2type = Water | move2cat = Special
+| move3 = Fire Blast | move3type = Fire | move3cat = Special
+| move4 = Blizzard | move4type = Ice | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0626
+| pokemon = Bouffalant
+| gender = both
+| level = 50
+| type1 = Normal
+| ability = Reckless
+| ability2 = Sap Sipper
+| held = Normal Gem
+| move1 = Head Charge | move1type = Normal | move1cat = Physical
+| move2 = Megahorn | move2type = Bug | move2cat = Physical
+| move3 = Wild Charge | move3type = Electric | move3cat = Physical
+| move4 = Earthquake | move4type = Ground | move4cat = Physical
+}}
+{{Party/end}}
+======[[Type Expert Tournament|Type Expert]]/[[World Leaders Tournament|World Leaders]]/[[Mix Master Tournament]]======
+{{Party
+| background = {{normal color}}
+| border = {{normal color dark}}
+| headcolor = {{normal color light}}
+| sprite = Spr B2W2 Cheren.png
+| prize = 1{{color2|000|Battle Point|BP}}
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Pokémon World Tournament
+| game = B2W2
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0508
+| pokemon = Stoutland
+| gender = both
+| level = 50
+| type1 = Normal
+| ability = Intimidate
+| ability2 = Sand Rush
+| held = Focus Sash
+| move1 = Return | move1type = Normal | move1cat = Physical
+| move2 = Crunch | move2type = Dark | move2cat = Physical
+| move3 = Ice Fang | move3type = Ice | move3cat = Physical
+| move4 = Reversal | move4type = Fighting | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0474
+| pokemon = Porygon-Z
+| gender = none
+| level = 50
+| type1 = Normal
+| ability = Adaptability
+| ability2 = Download
+| held = Chople Berry
+| move1 = Shadow Ball | move1type = Ghost | move1cat = Special
+| move2 = Psychic | move2type = Psychic | move2cat = Special
+| move3 = Signal Beam | move3type = Bug | move3cat = Special
+| move4 = Thunder | move4type = Electric | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0573
+| pokemon = Cinccino
+| gender = both
+| level = 50
+| type1 = Normal
+| ability = Cute Charm
+| ability2 = Technician
+| held = King's Rock
+| move1 = Tail Slap | move1type = Normal | move1cat = Physical
+| move2 = Rock Blast | move2type = Rock | move2cat = Physical
+| move3 = Bullet Seed | move3type = Grass | move3cat = Physical
+| move4 = Aqua Tail | move4type = Water | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0463
+| pokemon = Lickilicky
+| gender = both
+| level = 50
+| type1 = Normal
+| ability = Own Tempo
+| ability2 = Oblivious
+| held = Expert Belt
+| move1 = Hammer Arm | move1type = Fighting | move1cat = Physical
+| move2 = Power Whip | move2type = Grass | move2cat = Physical
+| move3 = Thunder | move3type = Electric | move3cat = Special
+| move4 = Ice Punch | move4type = Ice | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0351
+| pokemon = Castform
+| gender = both
+| level = 50
+| type1 = Normal
+| ability = Forecast
+| held = Lum Berry
+| move1 = Weather Ball | move1type = Normal | move1cat = Special
+| move2 = Ice Beam | move2type = Ice | move2cat = Special
+| move3 = Rain Dance | move3type = Water | move3cat = Status
+| move4 = Thunder | move4type = Electric | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0626
+| pokemon = Bouffalant
+| gender = both
+| level = 50
+| type1 = Normal
+| ability = Reckless
+| ability2 = Sap Sipper
+| held = Leftovers
+| move1 = Head Charge | move1type = Normal | move1cat = Physical
+| move2 = Megahorn | move2type = Bug | move2cat = Physical
+| move3 = Wild Charge | move3type = Electric | move3cat = Physical
+| move4 = Revenge | move4type = Fighting | move4cat = Physical
+}}
+{{Party/end}}
+=====[[Memory Link]] (one time only)=====
+The team Cheren uses in this battle is dependent on the [[first partner Pokémon]] the player chose in {{game|Black and White|s}}.
+{{Party
+| caption = {{PlayerChoice|0495|Snivy}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr B2W2 Cheren.png
+| prize = {{PDollar}}{{tt|8040|7800 in Easy Mode, 8280 in Challenge Mode}}
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 5
+| locationname = Route 5
+| game = B2W2
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = {{tt|65|63 in Easy Mode, 67 in Challenge Mode}}
+| type1 = Dark
+| ability = Unburden
+| held = Sitrus Berry
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Aerial Ace | move2type = Flying | move2cat = Physical
+| move3 = Shadow Claw | move3type = Ghost | move3cat = Physical
+| move4 = Night Slash | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0512
+| pokemon = Simisage
+| gender = male
+| level = {{tt|65|63 in Easy Mode, 67 in Challenge Mode}}
+| type1 = Grass
+| ability = Gluttony
+| held = Miracle Seed
+| move1 = Energy Ball | move1type = Grass | move1cat = Special
+| move2 = Rock Slide | move2type = Rock | move2cat = Physical
+| move3 = Brick Break | move3type = Fighting | move3cat = Physical
+| move4 = Payback | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0521
+| pokemon = Unfezant
+| form = -Male
+| gender = male
+| level = {{tt|65|63 in Easy Mode, 67 in Challenge Mode}}
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| held = Scope Lens
+| move1 = U-turn | move1type = Bug | move1cat = Physical
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+| move3 = Air Slash | move3type = Flying | move3cat = Special
+| move4 = Facade | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0526
+| pokemon = Gigalith
+| gender = male
+| level = {{tt|65|63 in Easy Mode, 67 in Challenge Mode}}
+| type1 = Rock
+| ability = Sturdy
+| held = Leftovers
+| move1 = Giga Impact | move1type = Normal | move1cat = Physical
+| move2 = Stone Edge | move2type = Rock | move2cat = Physical
+| move3 = Earthquake | move3type = Ground | move3cat = Physical
+| move4 = Stealth Rock | move4type = Rock | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0612
+| pokemon = Haxorus
+| gender = male
+| level = {{tt|65|63 in Easy Mode, 67 in Challenge Mode}}
+| type1 = Dragon
+| ability = Rivalry
+| held = Dragon Gem
+| move1 = Outrage | move1type = Dragon | move1cat = Physical
+| move2 = X-Scissor | move2type = Bug | move2cat = Physical
+| move3 = Rock Slide | move3type = Rock | move3cat = Physical
+| move4 = Surf | move4type = Water | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0500
+| pokemon = Emboar
+| gender = male
+| level = {{tt|67|65 in Easy Mode, 69 in Challenge Mode}}
+| type1 = Fire
+| type2 = Fighting
+| ability = Blaze
+| held = Focus Sash
+| move1 = Flare Blitz | move1type = Fire | move1cat = Physical
+| move2 = Head Smash | move2type = Rock | move2cat = Physical
+| move3 = Brick Break | move3type = Fighting | move3cat = Physical
+| move4 = Wild Charge | move4type = Electric | move4cat = Physical
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0498|Tepig}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr B2W2 Cheren.png
+| prize = {{PDollar}}{{tt|8040|7800 in Easy Mode, 8280 in Challenge Mode}}
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 5
+| locationname = Route 5
+| game = B2W2
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = {{tt|65|63 in Easy Mode, 67 in Challenge Mode}}
+| type1 = Dark
+| ability = Unburden
+| held = Sitrus Berry
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Aerial Ace | move2type = Flying | move2cat = Physical
+| move3 = Shadow Claw | move3type = Ghost | move3cat = Physical
+| move4 = Night Slash | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0514
+| pokemon = Simisear
+| gender = male
+| level = {{tt|65|63 in Easy Mode, 67 in Challenge Mode}}
+| type1 = Fire
+| ability = Gluttony
+| held = Charcoal
+| move1 = Flamethrower | move1type = Fire | move1cat = Special
+| move2 = Rock Slide | move2type = Rock | move2cat = Physical
+| move3 = Brick Break | move3type = Fighting | move3cat = Physical
+| move4 = Payback | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0521
+| pokemon = Unfezant
+| form = -Male
+| gender = male
+| level = {{tt|65|63 in Easy Mode, 67 in Challenge Mode}}
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| held = Scope Lens
+| move1 = U-turn | move1type = Bug | move1cat = Physical
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+| move3 = Air Slash | move3type = Flying | move3cat = Special
+| move4 = Facade | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0526
+| pokemon = Gigalith
+| gender = male
+| level = {{tt|65|63 in Easy Mode, 67 in Challenge Mode}}
+| type1 = Rock
+| ability = Sturdy
+| held = Leftovers
+| move1 = Giga Impact | move1type = Normal | move1cat = Physical
+| move2 = Stone Edge | move2type = Rock | move2cat = Physical
+| move3 = Earthquake | move3type = Ground | move3cat = Physical
+| move4 = Stealth Rock | move4type = Rock | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0612
+| pokemon = Haxorus
+| gender = male
+| level = {{tt|65|63 in Easy Mode, 67 in Challenge Mode}}
+| type1 = Dragon
+| ability = Rivalry
+| held = Dragon Gem
+| move1 = Outrage | move1type = Dragon | move1cat = Physical
+| move2 = X-Scissor | move2type = Bug | move2cat = Physical
+| move3 = Rock Slide | move3type = Rock | move3cat = Physical
+| move4 = Surf | move4type = Water | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0503
+| pokemon = Samurott
+| gender = male
+| level = {{tt|67|65 in Easy Mode, 69 in Challenge Mode}}
+| type1 = Water
+| ability = Torrent
+| held = Focus Sash
+| move1 = Hydro Pump | move1type = Water | move1cat = Special
+| move2 = Blizzard | move2type = Ice | move2cat = Special
+| move3 = X-Scissor | move3type = Bug | move3cat = Physical
+| move4 = Aqua Jet | move4type = Water | move4cat = Physical
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0501|Oshawott}}
+| background = {{black color}}
+| border = {{black color dark}}
+| headcolor = {{black color light}}
+| sprite = Spr B2W2 Cheren.png
+| prize = {{PDollar}}{{tt|8040|7800 in Easy Mode, 8280 in Challenge Mode}}
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Cheren
+| location = Unova Route 5
+| locationname = Route 5
+| game = B2W2
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0510
+| pokemon = Liepard
+| gender = male
+| level = {{tt|65|63 in Easy Mode, 67 in Challenge Mode}}
+| type1 = Dark
+| ability = Unburden
+| held = Sitrus Berry
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Aerial Ace | move2type = Flying | move2cat = Physical
+| move3 = Shadow Claw | move3type = Ghost | move3cat = Physical
+| move4 = Night Slash | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0516
+| pokemon = Simipour
+| gender = male
+| level = {{tt|65|63 in Easy Mode, 67 in Challenge Mode}}
+| type1 = Water
+| ability = Gluttony
+| held = Mystic Water
+| move1 = Surf | move1type = Water | move1cat = Special
+| move2 = Rock Slide | move2type = Rock | move2cat = Physical
+| move3 = Brick Break | move3type = Fighting | move3cat = Physical
+| move4 = Payback | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0521
+| pokemon = Unfezant
+| form = -Male
+| gender = male
+| level = {{tt|65|63 in Easy Mode, 67 in Challenge Mode}}
+| type1 = Normal
+| type2 = Flying
+| ability = Super Luck
+| held = Scope Lens
+| move1 = U-turn | move1type = Bug | move1cat = Physical
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+| move3 = Air Slash | move3type = Flying | move3cat = Special
+| move4 = Facade | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0526
+| pokemon = Gigalith
+| gender = male
+| level = {{tt|65|63 in Easy Mode, 67 in Challenge Mode}}
+| type1 = Rock
+| ability = Sturdy
+| held = Leftovers
+| move1 = Giga Impact | move1type = Normal | move1cat = Physical
+| move2 = Stone Edge | move2type = Rock | move2cat = Physical
+| move3 = Earthquake | move3type = Ground | move3cat = Physical
+| move4 = Stealth Rock | move4type = Rock | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0612
+| pokemon = Haxorus
+| gender = male
+| level = {{tt|65|63 in Easy Mode, 67 in Challenge Mode}}
+| type1 = Dragon
+| ability = Rivalry
+| held = Dragon Gem
+| move1 = Outrage | move1type = Dragon | move1cat = Physical
+| move2 = X-Scissor | move2type = Bug | move2cat = Physical
+| move3 = Rock Slide | move3type = Rock | move3cat = Physical
+| move4 = Surf | move4type = Water | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0497
+| pokemon = Serperior
+| gender = male
+| level = {{tt|67|65 in Easy Mode, 69 in Challenge Mode}}
+| type1 = Grass
+| ability = Overgrow
+| held = Focus Sash
+| move1 = Coil | move1type = Poison | move1cat = Status
+| move2 = Dragon Tail | move2type = Dragon | move2cat = Physical
+| move3 = Leaf Blade | move3type = Grass | move3cat = Physical
+| move4 = Leaf Storm | move4type = Grass | move4cat = Special
+}}
+{{Party/end}}
+===National Gymquirer===
+:Jingle: ''"Woo hoo! All right! It's 'The National Gymquirer'!"''
+:Page: ''"That's right! We collect the hottest gossip about Gym Leaders seen around town! Here is today's letter. From someone going by the name 3rdGradeGoodyGoody! Thank yooou! 'Recently, I saw Cheren making his thumb and middle finger into a circle like glasses. He said he gave up his glasses so he can focus on Pokémon battles, but maybe Cheren actually misses them' Hm... Maybe a circle is just a circle! 'The National Gymquirer'! We eagerly await your letters!"''
+
+==In the spin-off games==
+===[[Pokémon Masters EX]]===
+{{main|Cheren (Masters)}}
+Cheren, in his {{B2W2}} design, forms a [[sync pair]] with {{p|Stoutland}}, {{p|Purrloin}}, {{Form|Forces of Nature|Incarnate Forme}} {{p|Tornadus}}, and {{p|Liepard}} in [[Pokémon Masters EX]]. Cheren joins the {{player}} after completing the eighteenth chapter of the [[PML arc]].
+
+{{PairDex/h|Normal}}
+{{PairDex|064|Cheren|trainerlink=Cheren (Masters)#Stoutland|trainerimg=Cheren|0508|Stoutland|gender=male|Normal|Fighting|Support|6|Story<br>''Chapter 18''}}
+{{PairDex|064|Cheren|trainerlink=Cheren (Masters)#Purrloin|trainerimg=Cheren|0509|Purrloin|gender=male|Dark|Fighting|Tech|4EX|Trainer Lodge Friendship Level 100}}
+{{PairDex|064|Cheren|trainerlink=Cheren (Masters)#Tornadus|trainerimg=Cheren Champion|sygna={{pkmn|Champion}}|0641|Tornadus|gender=male|master=yes|buddy=yes|form={{Form|Forces of Nature|Incarnate Forme}}|Flying|Rock|Tech|exrole=Special Strike|6|Master Fair Sync Pair Scout}}
+{{PairDex|064|Cheren|trainerlink=Cheren (Masters)#Liepard|trainerimg=Cheren|0510|Liepard|gender=male|Dark|Bug|Sprint|6|Training Ticket Exchange}}
+|}
+
+==Gallery==
+===Artwork===
+{| style="margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{black color dark}}; background:#{{black color}}; font-size:80%"
+| style="{{roundy|20px}} border:2px solid #{{black color dark}}; background:#{{black color light}}; width:96px; height:96px" | [[File:Black White Cheren.png|100px]]
+| style="{{roundy|20px}} border:2px solid #{{black color dark}}; background:#{{black color light}}; width:96px; height:96px" | [[File:Ghetsis and Team Plasma.jpg|150px]]
+|- style="color:#FFF"
+| Official artwork from<br>{{color2|FFF|Pokémon Black and White Versions|Black and White}} by {{color2|FFF|Yusuke Ohmura}}<ref>[[a:File:CherenEmergingPowers91.jpg|Cheren (Emerging Powers 91)]]</ref>
+| Promotional artwork by <br> {{color2|FFF|Yusuke Ohmura}}{{fact}}
+|}
+
+===Sprites===
+{| style="margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{normal color dark}}; background:#{{normal color}}; font-size:80%"
+| style="{{roundy|80px}} border:2px solid #{{black color dark}}; background:#{{black color light}}; width:80px" | [[File:Spr BW Cheren.png]]
+| style="{{roundy|80px}} border:2px solid #{{black color dark}}; background:#{{black color light}}; width:80px" | [[File:Cheren BW OD.png]]
+| style="{{roundy|20px}} border:2px solid #{{black color dark}}; background:#{{black color light}}; width:80px" | [[File:BW Cheren Back.png]]
+| style="{{roundy|20px}} border:2px solid #{{black color dark}}; background:#{{black color light}}; width:80px; padding:5px" | [[File:VSCheren.png]]
+| style="{{roundy|20px}} border:2px solid #{{black color dark}}; background:#{{black color light}}; width:80px; padding:5px" | [[File:Cheren Xtransceiver.png]]
+|-
+| Sprite from<br>{{color2|000|Pokémon Black and White Versions|Black and White}}
+| Overworld sprite from<br>{{color2|000|Pokémon Black and White Versions|Black and White}}
+| Back sprite from<br>{{color2|000|Pokémon Black and White Versions|Black and White}}
+| VS sprite from<br>{{color2|000|Pokémon Black and White Versions|Black and White}}
+| {{color2|000|Xtransceiver}} sprite from<br>{{color2|000|Pokémon Black and White Versions|Black and White}}
+|-
+| style="{{roundy|80px}} border:2px solid #{{normal color dark}}; background:#{{normal color light}}; width:80px" | [[File:Spr B2W2 Cheren.png]]
+| style="{{roundy|80px}} border:2px solid #{{normal color dark}}; background:#{{normal color light}}; width:80px" | [[File:Cheren OD.png]]
+| style="{{roundy|20px}} border:2px solid #{{normal color dark}}; background:#{{normal color light}}; width:80px" | [[File:B2W2 Cheren Back.png]]
+| style="{{roundy|20px}} border:2px solid #{{normal color dark}}; background:#{{normal color light}}; width:80px; padding:5px" | [[File:VSCheren 2.png]]
+| style="{{roundy|20px}} border:2px solid #{{normal color dark}}; background:#{{normal color light}}; width:80px; padding:5px" | [[File:Cheren Xtransceiver 2.png]]
+|-
+| Sprite from<br>{{color2|000|Pokémon Black and White Versions 2|Black 2 and White 2}}
+| Overworld sprite from<br>{{color2|000|Pokémon Black and White Versions 2|Black 2 and White 2}}
+| Back sprite from<br>{{color2|000|Pokémon Black and White Versions 2|Black 2 and White 2}}
+| VS sprite from<br>{{color2|000|Pokémon Black and White Versions 2|Black 2 and White 2}}
+| {{color2|000|Xtransceiver}} sprite from<br>{{color2|000|Pokémon Black and White Versions 2|Black 2 and White 2}}
+|}
+
+==Quotes==
+{{main|Cheren/Quotes}}
+
+==In animation==
+===''Pokémon the Series''===
+[[File:Cheren anime.png|thumb|250px|Cheren in {{aniseries|BW}}]]
+===={{aniseries|BW}}====
+Cheren was mentioned by [[Professor Juniper]] in ''[[BW109|New Places... Familiar Faces!]]'', where she explained that he was a new [[Gym Leader]] located at [[Aspertia City]]. Cheren physically appeared in ''[[BW111|There's a New Gym Leader in Town!]]''. {{Ash}} and {{ashfr}} met him at the [[Aspertia Gym]], where they learned that he was also a teacher at the [[Pokémon academy|Trainers' School]], which was located at the [[Gym]]. When {{AP|Pikachu}} and {{TP|Iris|Axew}} accidentally caused loud noises on the School's PA, making all the School's Pokémon run wildly around, Ash, Iris, and Cilan helped Cheren to gather them.
+
+Finally, only a {{p|Shinx}} was left. When it was too scared to come closer, Cheren went to it, and, ignoring its {{t|Electric}} shocks, managed to calm it down. Afterwards, Cheren agreed to have an unofficial {{pkmn|battle}} with Ash. Ash used his {{AP|Oshawott}}, while Cheren used his {{p|Herdier}}. Cheren eventually won the battle, with Herdier taking Oshawott out with a [[super effective]] {{m|Thunder Fang}}.
+
+====Pokémon movies====
+Cheren made a cameo appearance in the ending credits of ''[[M16|Genesect and the Legend Awakened]]''.
+
+====Character====
+Cheren is personable and calm, though he has a tendency to overthink.
+
+====Pokémon====
+{{MissingInfo|2|enva|java}}
+This listing is of Cheren's known {{OBP|Pokémon|species}} in {{aniseries|PTS}}:
+=====On hand=====
+{{TrainerPoké
+|trainer=Cheren
+|pkmn=Herdier
+|type1=Normal
+|img=Cheren Herdier.png
+|epnum=BW111
+|epname=There's a New Gym Leader in Town!
+|desc={{p|Herdier}} is Cheren's only known Pokémon. It was used to battle [[Ash's Oshawott]] and won.
+
+Herdier's known moves are {{m|Take Down}} and {{m|Thunder Fang}}.}}
+
+=====At Aspertia Gym=====
+{{TrainerPoké
+|trainer=Cheren
+|pkmn=Sunflora (multiple)
+|type1=Grass
+|img=Aspertia Gym Sunflora.png
+|cap=Cheren's Sunflora
+|epnum=BW111
+|epname=There's a New Gym Leader in Town!
+|desc=Cheren takes care of multiple {{p|Sunflora}} that live in the [[Aspertia Gym]]. When {{AP|Pikachu}} and {{TP|Iris|Axew}} accidentally caused loud noises on the school's PA, all of the school's Pokémon ran wildly around, including the Sunflora. However, Ash helped Cheren gather them.
+
+None of their moves are known.}}
+
+{{TrainerPoké
+|trainer=Cheren
+|pkmn=Ducklett (multiple)
+|type1=Water
+|type2=Flying
+|img=Aspertia Gym Ducklett.png
+|cap=Cheren's Ducklett
+|epnum=BW111
+|epname=There's a New Gym Leader in Town!
+|vaen=Erica Schroeder
+|desc=Cheren takes care of multiple {{p|Ducklett}} that live in the Aspertia Gym. When Pikachu and Axew accidentally caused loud noises on the school's PA, all of the school's Pokémon ran wildly around, including the Ducklett. However, Cilan helped Cheren gather them.
+
+Their only known move is {{m|Water Gun}}.}}
+
+{{TrainerPoké
+|trainer=Cheren
+|pkmn=Minccino (multiple)
+|type1=Normal
+|img=Aspertia Gym Minccino.png
+|img_size=205px
+|cap=Cheren's Minccino
+|epnum=BW111
+|epname=There's a New Gym Leader in Town!
+<!--|vajp=-->
+|vaen=Michele Knotz
+|desc=Cheren takes care of multiple {{p|Minccino}} that live in the Aspertia Gym. When Pikachu and Axew accidentally caused loud noises on the school's PA, all of the school's Pokémon ran wildly around, including the Minccino. However, Iris helped Cheren gather them.
+
+None of their moves are known.}}
+
+{{TrainerPoké
+|trainer=Cheren
+|pkmn=Shinx (×2)
+|gender=male
+|type1=Electric
+|img=Aspertia Gym Shinx.png
+|cap=Cheren's Shinx
+|epnum=BW111
+|epname=There's a New Gym Leader in Town!
+|vaen=Emily Jenness
+|desc=Cheren takes care of two {{p|Shinx}} that live in the Aspertia Gym. When Pikachu and Axew accidentally caused loud noises on the school's PA, all of the school's Pokémon ran wildly around, including the Shinx. However, Ash, Iris, and Cilan helped Cheren to gather them.
+
+One of the Shinx's only known move is {{m|Discharge}}.}}
+
+====Voice actors====
+{{vatable|color={{normal color}}|bordercolor={{normal color light}}
+|ja=江口拓也 ''[[Takuya Eguchi]]''
+|en=[[Todd Haberkorn]]
+|fi=Juha Haukka
+|pl=Daniel Misiewicz
+|pt_br=Márcio Marconato
+|es_la=Arturo Castañeda
+|es_eu=Rodri Martín}}
+
+===Pokémon Black 2 and White 2 Animated Trailer===
+[[File:Cheren Animated Trailer.png|thumb|250px|Cheren in the animated trailer]]
+Cheren appeared in the [[Pokémon Black Version 2 and Pokémon White Version 2 Animated Trailer]]. He first had a Gym battle against {{ga|Rosa}}, using his {{p|Stoutland}} against her {{p|Serperior}}. He had a little difficulty after Stoutland was hit by Serperior's {{m|Slam}}. However, he managed to have Stoutland overcome {{m|Frenzy Plant}} using {{m|Hyper Beam}}. Rosa then commented that she was just getting started in the battle, and Cheren agreed with her. Later on, he was seen with {{ga|Nate}} and [[Hugh]] on the [[Plasma Frigate]]. As {{tc|Team Plasma Grunt}}s surrounded the three of them, Cheren commented on how bothersome they were and prepared to battle them.
+
+====Pokémon====
+{{TrainerPoké
+|width=68
+|trainer=Cheren
+|pkmn=Stoutland
+|type1=Normal
+|img=Cheren Stoutland Animated Trailer.png
+|epnum=Pokémon Black Version 2 and Pokémon White Version 2 Animated Trailer
+|epname=Pokémon Black Version 2 and Pokémon White Version 2 Animated Trailer
+|desc={{p|Stoutland}} is Cheren's only known Pokémon. It was first seen battling {{ga|Rosa}}'s {{p|Serperior}} in a Gym battle. Later, it was used to battle several {{tc|Team Plasma Grunt}}s on the [[Plasma Frigate]], alongside {{ga|Nate}}'s {{p|Arcanine}} and [[Hugh]]'s {{p|Samurott}}.
+
+Stoutland's known moves are {{m|Protect}}, {{m|Bite}}, and {{m|Hyper Beam}}.}}
+
+====Voice actors====
+{{vatable|color={{normal color}}|bordercolor={{normal color light}}
+|ja=木村良平 ''Ryōhei Kimura''
+|ko=Shin Yong-Woo
+|en=[[Jason Griffith]]
+|es_eu=Carlos Larios}}
+
+===GOTCHA!===
+Cheren briefly appeared in [[GOTCHA!]].
+
+===Pokémon Evolutions===
+Cheren briefly appeared in ''[[PE04|The Plan]]'', where in [[Accumula Town]], {{ga|Hilda}} joined him in watching [[Team Plasma]]'s speech about the liberation of Pokémon.
+
+==In the manga==
+===Pokémon Adventures===
+{{main|Cheren (Adventures)}}
+Cheren appears as a supporting character in [[Pokémon Adventures]].
+
+===Be the Best! Pokémon B+W===
+[[File:Cheren PBW.png|thumb|150px|Cheren in Be the Best! Pokémon B+W]]
+Cheren is friends with both [[Monta]] and Bianca. He is very knowledgeable about Pokémon, which Monta dislikes. Anywhere Monta slips up he won't hesitate to tell him the right way.
+
+He first appears with Bianca when Monta is attempting to capture a {{pkmn2|wild}} {{p|Patrat}} and {{p|Watchog}}. Monta is just about to capture the Watchog which Cheren tells him that it is not the right way. He explains to Monta to remember that when two Pokémon come out at the same time, one should knock out the one they don't want before they can get the one that they do want. Cheren suddenly decides for all of them to take their Pokémon journey together, which a man on his bike overhears. He starts insulting them making him and Monta angry.
+
+He uses Tepig in a Double Battle with Monta's {{p|Snivy}} against a Biker King's {{p|Braviary}}, it looks like they were about to lose, but they uses a combination attack which Cheren thinks of, fainting Braviary. Cheren battles Monta in ''[[PBW2|The Key to Triple Battles]]'' using his Tepig, {{p|Pansage}} and {{p|Basculin}} against Monta's {{p|Snivy}}, {{p|Panpour}}, and {{p|Roggenrola}}. He starts off with a lecture about [[Triple Battle]]s. With his great knowledge of triple battles he gives Monta a hard time, but is eventually defeated. He has traveled with Monta and Bianca from time to time.
+
+Cheren battles Monta in ''[[PBW8|The Birth of the Best Pokémon Trainer!]]'' in a Single and Triple Battle. Even though the Single Battle was easier for Monta, Cheren gave him a hard time in the Triple Battle.
+
+====Pokémon====
+=====On hand=====
+{{TrainerPoké
+|trainer=Cheren
+|pkmn=Emboar
+|stage2=Pignite
+|stage1=Tepig
+|type1=Fire
+|type2=Fighting
+|img=Cheren Tepig PBW.png
+|img_size=150px
+|cap=Cheren's Tepig
+|img2=Cheren Emboar PBW.png
+|img2_size=150px
+|epnum=PBW1
+|epname=Advance Toward the Path of the Strongest!
+|desc=Cheren's {{p|Tepig}} is well trained and has a type advantage over [[Monta's Snivy]]. It was first used in a [[Double Battle]] with Snivy against the Biker King's {{p|Braviary}}. After Snivy tries a {{m|Vine Whip}} which hardly does any damage, he goes in for a fire attack which hardly does any damage too. Tepig is then sent flying with {{m|Peck}}. It goes in with a Fire Pledge with {{m|Grass Pledge}} creating the combination needed to defeat Braviary.
+
+It battles Monta in ''[[PBW2|The Key to Triple Battles]]'' with {{p|Pansage}} and {{p|Basculin}} against Monta's {{p|Snivy}}, {{p|Panpour}} and {{p|Roggenrola}}. It starts off with an Ember on Snivy, before taking a hit for Basculin by switching places with it, not hurting it much. But seconds later, Panpour uses {{m|Surf}} fainting it.
+
+Tepig reappeared as an {{p|Emboar}} where it fought with Monta's {{p|Reshiram}}, {{p|Victini}} and {{p|Zekrom}} in the Single and Triple Battle.
+
+Emboar's known moves are {{m|Fire Pledge}}, {{m|Ember}}, {{m|Flare Blitz}}, {{m|Rock Slide}}, and {{m|Blast Burn}}.}}
+
+{{TrainerPoké
+|trainer=Cheren
+|pkmn=Pansage
+|type1=Grass
+|img=Cheren Pansage PBW.png
+|epnum=PBW2
+|epname=The Key to Triple Battles
+|desc=Cheren's {{p|Pansage}} was first seen in a battle against [[Monta]]'s {{p|Snivy}}, {{p|Panpour}} and {{p|Roggenrola}} with {{p|Tepig}} and {{p|Basculin}}. It gets hurt a tiny bit by Panpour's {{m|Surf}}, but along with Basculin is defeated by a powerful {{m|Rock Slide}} by Roggenrola.
+
+None of Pansage's moves are known.}}
+
+{{TrainerPoké
+|trainer=Cheren
+|pkmn=Basculin
+|type1=Water
+|img=Cheren Basculin PBW.png
+|epnum=PBW2
+|epname=The Key to Triple Battles
+|desc=Cheren's Red-Striped {{p|Basculin}} was first seen in a battle against [[Monta]]'s {{p|Snivy}}, {{p|Panpour}}, and {{p|Roggenrola}} with {{p|Tepig}} and {{p|Pansage}}. It is about to get hit by Snivy's {{m|Vine Whip}} but switches places with Tepig. It then gets hit by Panpour's {{m|Surf}} which does not do much damage. But along with Pansage is defeated by a powerful {{m|Rock Slide}} from Roggenrola, fainting it.
+
+None of Basculin's moves are known.}}
+
+{{TrainerPoké
+|trainer=Cheren
+|pkmn=Bisharp
+|type1=Dark
+|type2=Steel
+|img=Cheren Bisharp PBW.png
+|epnum=PBW8
+|epname=The Birth of the Best Pokémon Trainer!
+|desc=Cheren sent out {{p|Bisharp}} during the Single Battle against Monta where it got defeated by his {{p|Reshiram}}'s {{m|Fusion Flare}}.
+
+None of Bisharp's moves are known.}}
+
+{{TrainerPoké
+|trainer=Cheren
+|pkmn=Beartic
+|type1=Ice
+|img=Cheren Beartic PBW.png
+|epnum=PBW8
+|epname=The Birth of the Best Pokémon Trainer!
+|desc=Cheren sent out {{p|Beartic}} during the Single Battle against Monta where it got defeated by his {{p|Victini}}'s {{m|V-create}}.
+
+None of Beartic's moves are known.}}
+
+=====Borrowed=====
+{{TrainerPoké
+|main=yes
+|trainer=Monta
+|pkmn=Serperior
+|type1=Grass
+|img=Cheren and Serperior PBW.png
+|epnum=PBW8<!--This applies to where Cheren first used it.-->
+|epname=The Birth of the Best Pokémon Trainer!
+|desc=Cheren borrowed {{p|Serperior}} during his Triple Battle against Monta.}}
+
+{{TrainerPoké
+|trainer=Bianca
+|pkmn=Samurott
+|type1=Water
+|img=Bianca Samurott PBW.png
+|epnum=PBW8<!--This applies to where Cheren first used it.-->
+|epname=The Birth of the Best Pokémon Trainer!
+|main=Bianca's Oshawott
+|desc=Cheren borrowed {{p|Samurott}} during his Triple Battle against Monta.}}
+
+===Pocket Monsters B2 W2 ~ A New Legend ~===
+Cheren was going after [[Arata]] when he was trying to protect a {{p|Keldeo}} in a forest located in [[Aspertia City]]. Due to Arata's cowardly personality, he sent out his {{p|Samurott}} to reveal where he was hiding. After Arata explained what he was doing with Keldeo, two Team Plasma Grunts arrived with their ambition on catching Keldeo. When Cheren got knocked out from the grunts's {{p|Eelektross}}, he was saved by his friend, [[Hiro]], who disbanded the team not too long ago. As Hiro arrived, Cheren wondered why he didn't keep in touch.
+
+====Pokémon====
+{{anchor|Samurott 2}}{{TrainerPoké
+|trainer=Cheren
+|pkmn=Samurott
+|type1=Water
+|img=<!--Cheren Samurott ANL.png-->
+|epnum=ANL1
+|epname=
+|desc=Cheren sent out {{p|Samurott}} to cut down a tree that Arata was hiding in. Later, when two Team Plasma grunts arrived with their ambition to catch {{p|Keldeo}}, Cheren had Samurott battle their {{p|Eelektross}}. Despite being quicker than its foe, Samurott was rendered useless when it jumped in the way of Eelektross from harming Arata and Keldeo.
+
+None of Samurott's moves are known.}}
+
+===Pocket Monsters BW: Meetings with the Legends===
+Cheren appeared as a supporting character and a friend of {{OBP|Touya|MWL}} in [[Pocket Monsters BW: Meetings with the Legends]]. He was first seen going up to Touya after Touya had a discussion with [[N]] about their dreams. Cheren, Touya, and [[Bianca]] discussed about the speech [[Team Plasma]] delivered. When two Team Plasma grunts took a little girl's {{p|Minccino}}, Cheren decided to go after Ghetsis and the rest of Team Plasma to see what they're going to do next.
+
+He headed to [[Icirrus City]] where he gave Touya and Bianca a call on the [[Xtransceiver]] to come over to the [[Icirrus Gym|Gym]]. He explained to the two that Team Plasma were about to make [[Brycen]] release his Pokémon. While Team Plasma began their assault in [[Dragonspiral Tower]], Cheren, Bianca, and Brycen stayed behind to take the grunts on.
+
+====Pokémon====
+{{TrainerPoké
+|trainer=Cheren
+|pkmn=Servine
+|stage1=Snivy
+|type1=Grass
+|img=<!--Cheren Servine MWL.png-->
+|epnum=Pocket Monsters BW: Meetings with the Legends
+|epname=
+|main=Cheren's Snivy
+|desc=Cheren obtained {{p|Snivy}} as his first partner Pokémon. It was revealed to have evolved into {{p|Servine}} when Cheren sent it out to battle Team Plasma.}}
+
+===Pocket Monsters BW===
+Cheren appears in [[PMBW01]], where he, along with Black and Bianca, go to Professor Juniper's lab to get their first Pokémon.
+
+==In the TCG==
+This listing is of cards mentioning or featuring Cheren or his Pokémon in the [[Pokémon Trading Card Game]].
+
+{{card list/header|Cheren's Trainer cards|Colorless|nocat=yes}}
+{{card list/card|cardname={{TCG ID|Emerging Powers|Cheren|91}}|type=Supporter|newmark=I|rows=20}}
+{{card list/release|type=Supporter|enset=Emerging Powers|enrarity=Uncommon|ennum=91/98|jpsetlink=Black & White|jpset=White Collection|jprarity=U|jpnum=053/053}}
+{{card list/release|type=Supporter|jpset=BW-P Promotional cards|jpsymbol=SetSymbolPromo|jpnum=013/BW-P}}
+{{card list/release|type=Supporter|jpsetlink=Battle Strength Decks|jpset=Virizion Strength Deck|jpsymbol=SetSymbolVirizion Battle Strength Deck|jpnum=012/014}}
+{{card list/release|type=Supporter|jpsetlink=Battle Strength Decks|jpset=Terrakion Strength Deck|jpsymbol=SetSymbolTerrakion Battle Strength Deck|jpnum=012/014}}
+{{card list/release|type=Supporter|jpsetlink=Battle Strength Decks|jpset=Cobalion Strength Deck|jpsymbol=SetSymbolCobalion Battle Strength Deck|jpnum=012/014}}
+{{card list/release|type=Supporter|jpset=Battle Theme Deck: Victini|jpsymbol=SetSymbolBattle Theme Deck Victini|jpnum=020/021}}
+{{card list/release|type=Supporter|enset=Dark Explorers|enrarity=Uncommon|ennum=91/108|jpset=Reshiram-EX Battle Strength Deck|jpnum=017/018}}
+{{card list/release|type=Supporter|jpset=Zekrom-EX Battle Strength Deck|jpnum=017/018}}
+{{card list/release|type=Supporter|jpset=Battle Gift Set: Thundurus vs Tornadus|jpsymbol=SetSymbolBattle Gift Set|jpnum=019/020}}
+{{card list/release|type=Supporter|jpset=Hydreigon Half Deck|jpnum=014/015}}
+{{card list/release|type=Supporter|jpset=Garchomp Half Deck|jpnum=014/015}}
+{{card list/release|type=Supporter|enset=Boundaries Crossed|enrarity=Rare Ultra|ennum=148/149|jpset=Freeze Bolt|jprarity=SR|jpnum=063/059}}
+{{card list/release|type=Supporter|jpset=Master Deck Build Box EX|jpnum=042/046}}
+{{card list/release|type=Supporter|jpset=Black Kyurem-EX Battle Strength Deck|jpnum=016/018}}
+{{card list/release|type=Supporter|jpset=White Kyurem-EX Battle Strength Deck|jpnum=016/018}}
+{{card list/release|type=Supporter|jpset=Blastoise + Kyurem-EX Combo Deck|jpsymbol=SetSymbolBlastoise Kyurem-EX Combo Deck|jpnum=015/018}}
+{{card list/release|type=Supporter|jpsetlink=Mewtwo vs Genesect Deck Kit|jpset=Mewtwo Half Deck|jpsymbol=SetSymbolMewtwo vs Genesect Deck Kit|jpnum=014/016}}
+{{card list/release|type=Supporter|jpsetlink=Mewtwo vs Genesect Deck Kit|jpset=Genesect Half Deck|jpsymbol=SetSymbolMewtwo vs Genesect Deck Kit|jpnum=014/016}}
+{{card list/release|type=Supporter|ensetlink=Black Bolt & White Flare|enset=White Flare|enrarity=Uncommon|ennum=081/086|jpsetlink=Black Bolt/White Flare|jpset=White Flare|jpsymbol=SetSymbolWhiteFlare|jprarity=U|jpnum=084/086}}
+{{card list/release|type=Supporter|enset=Ascended Heroes|enrarity=Ultra Rare|ennum=258/217|jpset=SV-P Promotional cards|jpsymbol=SetSymbol SMPromo|jpnum=279/SV-P}}
+
+{{card list/card|cardname={{TCG ID|Brilliant Stars|Cheren's Care|134}}|type=Supporter|newmark=F|rows=5}}
+{{card list/release|type=Supporter|enset=Brilliant Stars|enrarity=Uncommon|ennum=134/172|jpset=Star Birth|jprarity=U|jpnum=094/100}}
+{{card list/release|type=Supporter|enset=Brilliant Stars|enrarity=Rare Ultra|ennum=168/172|jpset=Star Birth|jprarity=SR|jpnum=115/100}}
+{{card list/release|type=Supporter|enset=Brilliant Stars|enrarity=Rare Rainbow|ennum=177/172|jpset=Star Birth|jprarity=HR|jpnum=123/100}}
+{{card list/release|type=Supporter|jpset=VSTAR Universe|jpnum=156/172}}
+{{card list/release|type=Supporter|enset=Crown Zenith|enrarity=GGU|ennum=GG58/GG70|jpset=VSTAR Universe|jprarity=SAR|jpnum=241/172}}
+{{cardlist/footer|Colorless}}
+
+
+{{card list/header|Other related cards|Colorless|nocat=yes}}
+{{card list/card|cardname={{TCG ID|Cosmic Eclipse|Stoutland|176}}|type=Colorless|newmark=C|rows=1}}
+{{card list/release|type=Colorless|enset=Cosmic Eclipse|enrarity=Rare Secret|ennum=248/236|jpset=Dream League|jprarity=CHR|jpnum=061/049}}
+
+{{card list/card|cardname={{TCG ID|Chilling Reign|Castform|121}}|type=Colorless|newmark=E|rows=1}}
+{{card list/release|type=Colorless|enset=Lost Origin|enrarity=TGH|ennum=TG11/TG30|jpset=VMAX Climax|jprarity=CHR|jpnum=211/184}}
+{{cardlist/footer|Colorless}}
+
+==Trivia==
+* Cheren's Japanese Leader title is {{tt|真理を　求める　者|The Person who Seeks Truth}}.
+* Cheren, [[Bianca]], and [[N]] are the only {{pkmn|Trainer}}s in {{2v2|Black|White}} with animated battle sprites.
+* Cheren is the only {{type|Normal}} Gym Leader in {{aniseries|PTS}} that {{Ash}} did not have a [[rematch]] with after losing a {{pkmn|battle}}. This is because he had already gotten the badge.
+* In Black and White, if the player manages to beat Bianca in their first battle without taking any damage, Cheren will comment on how the player somehow won without taking any damage. However, this dialog is impossible to trigger without cheating, because Bianca is programmed to always use {{m|Tackle}} on the first turn.
+
+==Names==
+{| class="roundtable" style="background:#{{#switch: {{#expr: {{#time: U}} mod 2}}|0={{black color}}|1={{normal color}}}}; border:3px solid #{{#switch: {{#expr: {{#time: U}} mod 2}}|0={{black color dark}}|1={{normal color dark}}}}"
+|-
+! style="background:#{{#switch: {{#expr: {{#time: U}} mod 2}}|0={{black color light}}; color:#FFFFFF|1={{normal color light}}}}" | Language
+! style="background:#{{#switch: {{#expr: {{#time: U}} mod 2}}|0={{black color light}}; color:#FFFFFF|1={{normal color light}}}}" | Name
+! style="background:#{{#switch: {{#expr: {{#time: U}} mod 2}}|0={{black color light}}; color:#FFFFFF|1={{normal color light}}}}" | Origin
+|-
+| Japanese
+| チェレン ''Cheren''
+| From черен ''čéren'' ({{wp|Bulgarian language|Bulgarian}} for "black")
+|-
+| English, German, European Spanish,<br>Latin American Spanish, Indonesian,<br>Brazilian Portuguese, Vietnamese
+| Cheren
+| From his Japanese name
+|-
+| French
+| Tcheren
+| From his Japanese name
+|-
+| Italian
+| Komor
+| From ''komor'' ({{wp|Hungarian language|Hungarian}} for "gloomy", "somber", and "tenebrous")
+|-
+| Korean
+| 체렌 ''Cheren''
+| Transcription of his Japanese name 
+|-
+| Chinese (Traditional)
+| 黑連 ''Hēilián'' / ''Hāklìhn''
+| From 黑 ''hēi / hāk'' (black) and the partial transcription of his Japanese name
+|-
+| Chinese (Taiwan)
+| 謙煉 ''Qiānliàn''<ref group=n>[[Be the Best! Pokémon B+W]]</ref>
+| From the transcription of his Japanese name and possibly 煉 ''liàn'' (to refine; to temper; to cultivate)
+|-
+| Chinese (mainland China)
+| 黑连 ''Hēilián''<ref group=n>[[Pokémon Adventures]]</ref>
+| From 黑 ''hēi'' (black) and the partial transcription of his Japanese name
+|-
+| Russian
+| Черен ''Cheren''
+| From черен ''čéren'' (Bulgarian for "black")
+|-
+| Thai
+| เชเลน ''Cheren''
+| Transcription of his Japanese name
+|}
+{{-}}
+
+===Notes===
+{{reflist|group=n}}
+
+==References==
+{{reflist}}
+
+==Related articles==
+* [[Cheren (Adventures)]]
+* [[a:Category:Cheren|Images on the Bulbagarden Archives]]
+
+{{Rival characters|black}}
+{{NPC|normal|unova=yes}}
+{{Gym Leaders of Unova}}
+{{Be the Best! Pokémon B+W characters}}
+{{Pocket Monsters Characters}}
+{{Project CharacterDex notice}}
+
+[[Category:Characters with confirmed ages]]
+[[Category:Rival characters]]
+[[Category:Friend characters]]
+[[Category:Black and White characters]]
+[[Category:Be the Best! Pokémon B+W characters]]
+[[Category:Black 2 and White 2 characters]]
+[[Category:Multi Battle partners]]
+[[Category:Gym Leaders]]
+[[Category:Manga characters]]
+[[Category:Normal-type Trainers]]
+[[Category:Animation characters]]
+[[Category:Teachers]]
+[[Category:Pocket Monsters BW characters]]
+[[Category:Pokémon Evolutions characters]]
+
+[[de:Cheren]]
+[[es:Cheren]]
+[[fr:Tcheren]]
+[[it:Komor]]
+[[ja:チェレン]]
+[[zh:黑連]]

@@ -1,0 +1,859 @@
+{{Character Infobox
+|color={{dragon color}}
+|corecolor={{dragon color light}}
+|bordercolor={{dragon color dark}}
+|name=Raihan
+|jname=キバナ
+|tmname=Kibana
+|text=fff
+|sloganline=The tamer of dragons!
+|image=Sword Shield Raihan.png
+|size=x320px
+|caption=Art from Sword and Shield by [[take]]<ref>[[a:File:RaihanEvolvingSkies152.jpg|Raihan (Evolving Skies 152)]]</ref>
+|gender=Male
+|height=6'3" (195 cm)<ref name=PSW>[[Pokémon Scale World]]</ref>
+|eyes=Teal
+|hair=Black
+|hometown=[[Hammerlocke]]
+|region=[[Galar]]
+}}
+{{Character Infobox/Game
+|color={{dragon color light}}
+|gen={{gen|VIII}}, {{gen|IX}}
+|games={{pkmn|Sword and Shield|Sword, Shield}}<br>{{pkmn|Masters EX}}, {{pkmn|UNITE}}
+|trainer=[[Gym Leader]]
+|counterpart=[[Raihan (Masters)]]
+|enva=Mike Dent<ref name="Mike Dent">[https://twitter.com/Mach_Dent/status/1386688399323639814 Mike Dent on Twitter]</ref> <small>({{pkmn|Masters EX}})</small>
+|jpva=Kousuke Toriumi<ref name="Kosuke Toriumi">[https://twitter.com/Pokemon_cojp/status/1386560840522928131 Pokémon Masters Official Japanese profile on Twitter]</ref> <small>({{pkmn|Masters EX}})</small>
+}}
+{{Character Infobox/Team
+|color={{dragon color light}}
+|member=[[Galar League]]
+|rank=[[Gym Leader]]
+|domain=[[Hammerlocke Stadium]]
+|reward={{badge|Dragon}}
+|specialty={{t|Dragon}} types
+}}
+{{Character Infobox/Anime
+|color={{dragon color light}}
+|series=''[[Pokémon the Series]]''<br>''[[Pokémon: Twilight Wings]]''
+|debut=''[[JN027|Toughing It Out!]]'' <small>([[Pokémon animated series|Animated series]])</small><br>''[[TW04|Early-Evening Waves]]'' <small>([[Pokémon: Twilight Wings|Twilight Wings]])</small>
+|enva=[[Danny Kramer]] <small>([[Pokémon animated series|Animated series]])</small><br>Nazeeh Tarsha <small>([[Pokémon: Twilight Wings|Twilight Wings]])</small>
+|jpva=[[Tatsuhisa Suzuki]] <small>([[JN027]]-[[JN045]]; [[Pokémon animated series|Animated series]])</small><br>[[Yoshitsugu Matsuoka]] <small>([[JN082]]-present; [[Pokémon animated series|animated series]])</small><br>Kousuke Toriumi <small>([[Pokémon: Twilight Wings|Twilight Wings]])</small>
+}}
+{{Character Infobox/Manga
+|color={{dragon color light}}
+|series=''[[Pokémon Adventures]]''<br>''{{ma|Pokémon Journeys}}''
+|debut=''[[PASS11|Gulp!! Gulp Pokémon]]'' <small>({{pkmn|Adventures}})</small><br>''[[JNM10|Toughing It Out!]]'' <small>([[Pokémon Journeys (manga)|Journeys]])</small>
+}}
+|}
+
+'''Raihan''' (Japanese: '''キバナ''' ''Kibana'') is the [[Gym Leader]] of [[Hammerlocke]]'s [[Gym]], known officially as [[Hammerlocke Stadium]]. He [[Type expert|specializes]] in {{type|Dragon}} {{OBP|Pokémon|species}}. He gives the {{badge|Dragon}} to Trainers who defeat him. He's also well-known for utilizing [[weather]] tactics in his battles.
+
+==In the core series games==
+Raihan is the eighth and final Gym Leader of the [[Galar League]], and he is recognized as the strongest Gym Leader in [[Galar]]. He is also a friend and [[rival]] of {{pkmn|Champion}} [[Leon]], and despite having a losing streak of 0 to 10 against him, he is the only person who has come close to beating him, having managed to [[fainting|knock out]] more of Leon's Pokémon than anyone else. In [[Pokémon Masters EX]], it is revealed that he took part in the Gym Challenge the same year as Leon, [[Nessa]], and [[Sonia]]. It is rumored that he is strong enough to become a Champion if he moved to another [[region]], but has refused to do so out of desire of wanting to defeat Leon. He is often seen taking {{wp|selfie}}s on his [[Rotom Phone]], a habit he initially picked up to remind him of the pain of defeat, but one which eventually spread to other parts of his lifestyle. Outside of training his Pokémon, his hobbies include fashion and cultivating his social media presence.<ref>[https://web.archive.org/web/20211129043340/https://swordshield.pokemon.com/en-us/people-galar-region/dragon-type-gym-leader-raihan/ Sword and Shield official website]</ref>
+
+While Raihan specializes in the {{t|Dragon}} type, he will often use Pokémon of other types to set up [[weather]] conditions such as {{weather|sandstorm}} and [[harsh sunlight]]. Uniquely amongst Galar's Gyms, Raihan's Gym also heavily focuses on [[Double Battle]]s.
+
+In [[Pokémon Sword and Shield]], Raihan first appears during the game's opening cut-scene, having an {{wp|exhibition game|exhibition match}} with Leon. The player first meets Raihan in Hammerlocke to get his permission to visit the local vault, which contains tapestries about Galar's history. Once the player has earned seven [[Badge|Gym Badges]], they challenge and defeat Raihan. Immediately afterwards, Raihan is also challenged and beaten by [[Hop]]. The player rematches Raihan in the Champion Cup in [[Wyndon]] and beats him once again. When [[Rose]] starts the [[Darkest Day]], Raihan organizes the evacuation of Hammerlocke to keep people safe from the event.
+
+After Raihan's initial defeat, the player is awarded with the {{badge|Dragon}}, {{TM|99|Breaking Swipe}}, and the [[List of clothing in Pokémon Sword and Shield|Dragon Uniform]].
+
+During the post-game, Raihan helps the player, Hop, and [[Piers]] in defeating a group of [[Dynamax]] Pokémon let loose at the [[Hammerlocke Stadium]] by [[Sordward]] and [[Shielbert]]. During this encounter, Raihan admits that Piers managed to give him a tough challenge in the Champion Cup, despite his refusal to use Dynamax, and suggests that they should have a battle where neither of them uses it.
+
+===League Cards===
+This is a transcript of the back of Raihan's [[League Card]]s in [[Pokémon Sword and Shield]].
+;Normal League Card
+:"Raihan is commonly regarded as the most skilled [[Gym Leader]] in the [[Galar]] region. He has striven for victory in every environment, and as a result, he has adopted a battle style where he utilizes [[weather]] effects to their fullest. It is rumored that he could easily become another region's {{pkmn|Champion}} should he choose to move, but it seems that to Raihan, defeating [[Leon]] is much more important. His uploaded selfies are quite popular. Occasionally he'll post a photo that only shows a sandstorm."
+;Rare League Card
+:"Raihan started taking selfies so as to never forget the pain of his defeats, but more recently he has been taking photos showing off his training routine, his fashion choices, and the like, causing some fans to leave harsh comments whenever he loses to Leon. It's true that Raihan is on a ten-nil losing streak against Leon, but no other [[Pokémon Trainer]] has managed to KO as many of Leon's Pokémon as Raihan has. Raihan no doubt looks forward to taking a selfie after finally defeating Leon."
+
+===Pokémon===
+Raihan keeps his Pokémon in [[Ultra Ball]]s.
+
+===={{g|Sword and Shield}}====
+In all battles, Raihan will [[Gigantamax]] his {{p|Duraludon}} at the first opportunity.
+
+=====Gym battle=====
+This battle is a [[Double Battle]].
+
+{{Party
+| background = {{dragon color}}
+| border = {{dragon color dark}}
+| headcolor = {{dragon color light}}
+| sprite = VSRaihan.png
+| size = 150px
+| prize = {{pdollar}}7,680
+| class = Gym Leader
+| name = Raihan
+| location = Hammerlocke Stadium
+| game = SwSh
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0526
+| pokemon = Gigalith
+| gender = male
+| level = 46
+| type1 = Rock
+| ability = Sand Stream
+| move1 = Stealth Rock | move1type = Rock | move1cat = Status
+| move2 = Sand Tomb | move2type = Ground | move2cat = Physical
+| move3 = Rock Blast | move3type = Rock | move3cat = Physical
+| move4 = Body Press | move4type = Fighting | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0330
+| pokemon = Flygon
+| gender = male
+| level = 47
+| type1 = Ground
+| type2 = Dragon
+| ability = Levitate
+| move1 = Thunder Punch | move1type = Electric | move1cat = Physical
+| move2 = Breaking Swipe | move2type = Dragon | move2cat = Physical
+| move3 = Crunch | move3type = Dark | move3cat = Physical
+| move4 = Steel Wing | move4type = Steel | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0844
+| pokemon = Sandaconda
+| gender = male
+| level = 46
+| type1 = Ground
+| ability = Sand Spit
+| move1 = Protect | move1type = Normal | move1cat = Status
+| move2 = Glare | move2type = Normal | move2cat = Status
+| move3 = Fire Fang | move3type = Fire | move3cat = Physical
+| move4 = Earth Power | move4type = Ground | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0884
+| pokemon = Duraludon
+| max = Gigantamax
+| gender = male
+| level = 48
+| type1 = Steel
+| type2 = Dragon
+| ability = Heavy Metal
+| move1 = Breaking Swipe | move1type = Dragon | move1cat = Physical | maxmove1 = G-Max Depletion
+| move2 = Body Press | move2type = Fighting | move2cat = Physical | maxmove2 = Max Knuckle
+| move3 = Stone Edge | move3type = Rock | move3cat = Physical | maxmove3 = Max Rockfall
+| move4 = Iron Head | move4type = Steel | move4cat = Physical | maxmove4 = Max Steelspike
+}}
+{{Party/end}}
+=====Second battle=====
+{{Party
+| background = {{dragon color}}
+| border = {{dragon color dark}}
+| headcolor = {{dragon color light}}
+| sprite = VSRaihan.png
+| size = 150px
+| prize = {{pdollar}}8,800
+| class = Gym Leader
+| name = Raihan
+| location = Wyndon Stadium
+| game = SwSh
+| pokemon = 5
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0324
+| pokemon = Torkoal
+| gender = male
+| level = 53
+| type1 = Fire
+| ability = Drought
+| move1 = Lava Plume | move1type = Fire | move1cat = Special
+| move2 = Body Press | move2type = Fighting | move2cat = Physical
+| move3 = Solar Beam | move3type = Grass | move3cat = Special
+| move4 = Yawn | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0706
+| pokemon = Goodra
+| gender = female
+| level = 54
+| type1 = Dragon
+| ability = Sap Sipper
+| move1 = Rain Dance | move1type = Water | move1cat = Status
+| move2 = Surf | move2type = Water | move2cat = Special
+| move3 = Thunder | move3type = Electric | move3cat = Special
+| move4 = Muddy Water | move4type = Water | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0776
+| pokemon = Turtonator
+| gender = male
+| level = 54
+| type1 = Fire
+| type2 = Dragon
+| ability = Shell Armor
+| move1 = Sunny Day | move1type = Fire | move1cat = Status
+| move2 = Dragon Pulse | move2type = Dragon | move2cat = Special
+| move3 = Shell Trap | move3type = Fire | move3cat = Special
+| move4 = Fire Blast | move4type = Fire | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0330
+| pokemon = Flygon
+| gender = male
+| level = 54
+| type1 = Ground
+| type2 = Dragon
+| ability = Levitate
+| move1 = Sandstorm | move1type = Rock | move1cat = Status
+| move2 = Dragon Claw | move2type = Dragon | move2cat = Physical
+| move3 = Earthquake | move3type = Ground | move3cat = Physical
+| move4 = Crunch | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0884
+| pokemon = Duraludon
+| max = Gigantamax
+| gender = male
+| level = 55
+| type1 = Steel
+| type2 = Dragon
+| ability = Light Metal
+| move1 = Dragon Claw | move1type = Dragon | move1cat = Physical | maxmove1 = G-Max Depletion
+| move2 = Body Press | move2type = Fighting | move2cat = Physical | maxmove2 = Max Knuckle
+| move3 = Stone Edge | move3type = Rock | move3cat = Physical | maxmove3 = Max Rockfall
+| move4 = Iron Head | move4type = Steel | move4cat = Physical | maxmove4 = Max Steelspike
+}}
+{{Party/end}}
+=====Champion tournaments=====
+{{Party
+| background = {{dragon color}}
+| border = {{dragon color dark}}
+| headcolor = {{dragon color light}}
+| sprite = VSRaihan.png
+| size = 150px
+| prize = {{pdollar}}{{tt|9,920|Before Galarian Star Tournament}}/{{tt|12,160|After Galarian Star Tournament}}
+| class = Gym Leader
+| name = Raihan
+| location = Wyndon Stadium
+| game = SwSh
+| pokemon = 5
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0324
+| pokemon = Torkoal
+| gender = male
+| level = {{tt|60|Before Galarian Star Tournament}}/{{tt|74|After Galarian Star Tournament}}
+| type1 = Fire
+| ability = Drought
+| move1 = Lava Plume | move1type = Fire | move1cat = Special
+| move2 = Body Press | move2type = Fighting | move2cat = Physical
+| move3 = Solar Beam | move3type = Grass | move3cat = Special
+| move4 = Gyro Ball | move4type = Steel | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0706
+| pokemon = Goodra
+| gender = female
+| level = {{tt|60|Before Galarian Star Tournament}}/{{tt|74|After Galarian Star Tournament}}
+| type1 = Dragon
+| ability = Sap Sipper
+| move1 = Life Dew | move1type = Water | move1cat = Status
+| move2 = Thunder | move2type = Electric | move2cat = Special
+| move3 = Hydro Pump | move3type = Water | move3cat = Special
+| move4 = Sludge Bomb | move4type = Poison | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0776
+| pokemon = Turtonator
+| gender = male
+| level = {{tt|61|Before Galarian Star Tournament}}/{{tt|75|After Galarian Star Tournament}}
+| type1 = Fire
+| type2 = Dragon
+| ability = Shell Armor
+| move1 = Sunny Day | move1type = Fire | move1cat = Status
+| move2 = Dragon Pulse | move2type = Dragon | move2cat = Special
+| move3 = Fire Blast | move3type = Fire | move3cat = Special
+| move4 = Shell Trap | move4type = Fire | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0330
+| pokemon = Flygon
+| gender = male
+| level = {{tt|61|Before Galarian Star Tournament}}/{{tt|75|After Galarian Star Tournament}}
+| type1 = Ground
+| type2 = Dragon
+| ability = Levitate
+| move1 = Sandstorm | move1type = Rock | move1cat = Status
+| move2 = Dragon Claw | move2type = Dragon | move2cat = Physical
+| move3 = Earthquake | move3type = Ground | move3cat = Physical
+| move4 = Crunch | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0884
+| pokemon = Duraludon
+| max = Gigantamax
+| gender = male
+| level = {{tt|62|Before Galarian Star Tournament}}/{{tt|76|After Galarian Star Tournament}}
+| type1 = Steel
+| type2 = Dragon
+| ability = Light Metal
+| move1 = Dragon Claw | move1type = Dragon | move1cat = Physical | maxmove1 = G-Max Depletion
+| move2 = Iron Head | move2type = Steel | move2cat = Physical | maxmove2 = Max Steelspike
+| move3 = Stone Edge | move3type = Rock | move3cat = Physical | maxmove3 = Max Rockfall
+| move4 = Body Press | move4type = Fighting | move4cat = Physical | maxmove4 = Max Knuckle
+}}
+{{Party/end}}
+=====Galarian Star Tournament=====
+{{Party
+| background = {{dragon color}}
+| border = {{dragon color dark}}
+| headcolor = {{dragon color light}}
+| sprite = VSRaihan.png
+| size = 150px
+| prize = {{pdollar}}12,160
+| class = Gym Leader
+| name = Raihan
+| location = Wyndon Stadium
+| game = SwSh
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0330
+| pokemon = Flygon
+| gender = male
+| level = 75
+| type1 = Ground
+| type2 = Dragon
+| ability = Levitate
+| move1 = Sandstorm | move1type = Rock | move1cat = Status
+| move2 = Dragon Claw | move2type = Dragon | move2cat = Physical
+| move3 = Earthquake | move3type = Ground | move3cat = Physical
+| move4 = Crunch | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0706
+| pokemon = Goodra
+| gender = female
+| level = 74
+| type1 = Dragon
+| ability = Sap Sipper
+| move1 = Life Dew | move1type = Water | move1cat = Status
+| move2 = Thunder | move2type = Electric | move2cat = Special
+| move3 = Hydro Pump | move3type = Water | move3cat = Special
+| move4 = Sludge Bomb | move4type = Poison | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0884
+| pokemon = Duraludon
+| max = Gigantamax
+| gender = male
+| level = 76
+| type1 = Steel
+| type2 = Dragon
+| ability = Light Metal
+| move1 = Dragon Claw | move1type = Dragon | move1cat = Physical | maxmove1 = G-Max Depletion
+| move2 = Iron Head | move2type = Steel | move2cat = Physical | maxmove2 = Max Steelspike
+| move3 = Stone Edge | move3type = Rock | move3cat = Physical | maxmove3 = Max Rockfall
+| move4 = Body Press | move4type = Fighting | move4cat = Physical | maxmove4 = Max Knuckle
+}}
+{{Party/end}}
+==In the spin-off games==
+===[[Pokémon Masters EX]]===
+{{main|Raihan (Masters)}}
+Raihan forms a [[sync pair]] with {{p|Duraludon}}, {{p|Flygon}}, {{p|Gigalith}}, and {{p|Sandaconda}} in [[Pokémon Masters EX]]. His Flygon and Sandaconda are capable of [[Dynamax]]ing. Raihan became a playable sync pair on April 28, 2021.
+
+Raihan has also made notable appearances in the game's main stories, [[Legendary Adventures]] and the [[villain arc]].
+
+{{PairDex/h|Dragon}}
+{{PairDex|123|Raihan|trainerlink=Raihan (Masters)#Duraludon|trainerimg=Raihan|0884|Duraludon|gender=male|Steel|Fighting|Special Strike|exrole=Tech|6|Poké Fair Sync Pair Scout}}
+{{PairDex|123|Raihan|trainerlink=Raihan (Masters)#Flygon|trainerimg=Raihan Anniversary 2022|sygna=Anniversary 2022|0330|Flygon|gender=male|dynamax=yes|Dragon|Fairy|Tech|exrole=Support|6|Poké Fair Sync Pair Scout}}
+{{PairDex|123|Raihan|trainerlink=Raihan (Masters)#Gigalith|trainerimg=Raihan|0526|Gigalith|gender=male|Rock|Water|Support|4EX|Trainer Lodge Friendship Level 100}}
+{{PairDex|123|Raihan|trainerlink=Raihan (Masters)#Sandaconda|trainerimg=Raihan New Year 2025|sygna=New Year's 2025|0844|Sandaconda|gender=male|dynamax=yes|buddy=yes|Ground|Water|Support|exrole=Sprint|6|Seasonal Sync Pair Scout}}
+|}
+
+===[[Pokémon UNITE]]===
+Raihan and his {{p|Duraludon}} appear in [[Pokémon UNITE]] as an enemy Trainer to fight during the Legacy Trainer Showdown event between September 9, 2022 and October 6, 2022. It took place on [[Theia Sky Ruins]]. The other members of his team are [[Cynthia]], [[Korrina]], [[Leon]], and {{ga|Green}}. The event later returned between April 21, 2023 and May 21, 2023.
+
+Raihan and his Duraludon also appear as an enemy Trainer in the recurring {{DL|Theia Sky Ruins|Solo Challenge}} event. It also takes place on Theia Sky Ruins. This event has Casual, Intermediate, Expert, and Extreme difficulties. The composition of the opposing team varies depending on the event and the difficulty. The full team consists of himself, Cynthia, Korrina, Leon, and Green. In Cynthia themed events, Raihan and the other non-Cynthia members do not appear in the Casual difficulty, being replaced by {{tc|Ace Trainer}}s. On the Intermediate difficulty, only Leon and Green are replaced by Ace Trainers. In Leon themed events, Raihan and the other non-Leon members do not appear in the Casual difficulty, being replaced by Ace Trainers. On the Intermediate difficulty, only Cynthia and Green are replaced by Ace Trainers. In this mode, Raihan and his Duraludon never use [[Holowear]].
+
+Unlike other Trainers in this game, Raihan and the non-Ace Trainer members of his team are represented with two-dimensional artwork instead of three-dimensional models. In the pre-battle splash screen, Raihan has a custom Unite Snapshot depicting him and his Duraludon with two dimensional artwork. (The normal display of the Unite License/Holowear is not used.)
+
+Raihan was included as part of the {{DL|List of events in Pokémon UNITE|Dragon Carnival}} event, though he did not make an in-person appearance. His art happens to be included in the menus. The event missions menu, normally called Full-Burst Battle! Dragon Dustup Challenge, is identified as the Raihan Dragon Challenge or Raihan's Dragon Challenge in the menus for the event's Dragon Challenge Coins and in certain out of game sources.<ref>Hurry, Hurry! Step Right Up for Pokémon UNITE's Dragon Carnival, Pokémon UNITE News on the Nintendo Switch News app, 5/15/2024</ref><ref>[https://www.pokemon.com/us/pokemon-news/play-a-new-type-of-quick-battle-and-more-during-pokemon-unites-dragon-carnival-event Play a New Type of Quick Battle and More During Pokémon UNITE’s Dragon Carnival Event]</ref> It rewarded a Trainer Outfit that allows players to use Raihan's attire, as well as a Unite Snapshot background featuring Raihan. (Note that this background is not a modified version of the one Raihan himself uses in Legacy Trainer Showdown and Solo Challenge, instead being Raihan on a red background.)
+
+==Gallery==
+===Artwork===
+{|style="margin:auto; text-align:center; border:3px solid #{{dragon color dark}}; background:#{{dragon color}}; font-size:80%; border-radius: 10px; color:#fff;"
+|-
+| style="{{roundy|20px}} border:2px solid #{{dragon color dark}}; background:#{{dragon color light}}; overflow:hidden;" | [[File:Raihan SwSh concept art.jpg|x250px]]
+|-
+|Concept art from {{color2|fff|Pokémon Sword and Shield|Sword and Shield}}
+|}
+
+===Sprites===
+{| style="margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{dragon color dark}}; background:#{{dragon color}}; font-size:80%; color:#fff;"
+|style="{{roundy|20px}} border:2px solid #{{dragon color dark}}; background:#{{dragon color light}}"| [[File:GST Raihan icon.png|100px]]
+|-
+|Icon from the<br>{{color2|fff|Galarian Star Tournament}} menu
+|}
+
+===[[League Card]]s===
+{|style="margin:auto; text-align:center; border:3px solid #{{dragon color dark}}; background:#{{dragon color}}; font-size:80%; border-radius: 10px; color:#fff;"
+|-
+| style="{{roundy|20px}} border:2px solid #{{dragon color dark}}; background:#{{dragon color light}}; overflow:hidden;" | [[File:League Card Raihan.png|x250px]]
+| style="{{roundy|20px}} border:2px solid #{{dragon color dark}}; background:#{{dragon color light}}; overflow:hidden;" | [[File:League Card Raihan rare.png|x250px]]
+|-
+|Raihan's {{color2|fff|League Card}} in<br>{{color2|fff|Pokémon Sword and Shield|Sword and Shield}}
+|Raihan's rare {{color2|fff|League Card}} in<br>{{color2|fff|Pokémon Sword and Shield|Sword and Shield}}
+|}
+
+==Quotes==
+{{main|Raihan/Quotes}}
+
+==In animation==
+===''Pokémon the Series''===
+====''[[Pokémon Journeys: The Series]]''====
+[[File:Raihan anime.png|thumb|250px|Raihan in {{aniseries|JN}}]]
+Prior to his introduction to the series, Raihan entered the current [[World Coronation Series]] competition just to challenge {{an|Leon}}. During the current season, Raihan was skilled enough to grow rapidly in his rank, soon entering the Master Class.
+
+Raihan debuted in ''[[JN027|Toughing It Out!]]'', where he had a {{pkmn|battle}} against Leon during the [[World Coronation Series]] in [[Wyndon]]. His {{p|Duraludon}} battled [[Leon's Charizard]], only to be defeated after a tough battle between the two Trainers. After Leon's victory, Raihan reiterated his goal to defeat him.
+
+Raihan reappeared in a flashback in ''[[JN042|Sword and Shield, Slumbering Weald!]]''.
+
+In ''[[JN044|Sword and Shield: "From Here to Eternatus!"]]'', Raihan helped [[Sonia]] against a group of {{tc|Macro Cosmos's|Macro Cosmos employees}} who had accosted her outside the [[Energy Plant]] and [[Hammerlocke Stadium]]. In [[JN045|the following episode]], he easily defeated them and then left Sonia so he could take care of rampaging [[Dynamax]] Pokémon in the area. After [[Goh]] caught {{TP|Goh|Eternatus}} and the [[Darkest Day]] ended, he and Duraludon were seen looking on as the {{p|Kommo-o}} they were battling reverted back to its normal state.
+
+Raihan made a cameo appearance at the end of ''[[JN077|Ultra Exciting from the Shocking Start!]]'' while watching {{Ash}}'s World Coronation Series match against [[Volkner]].
+
+In ''[[JN082|The Sweet Taste of Battle!]]'', Raihan met Ash and Goh when they all visited [[Ballonlea]] for [[Opal]]'s [[All-Alcremie Decoration Challenge]]. He was reluctant to participate, but did so anyway as Opal refused to let him just walk away. However, Raihan's cake ultimately lost to Ash's. He then stayed to watch the battle between Ash and Opal. After the battle, Raihan participated in eating the cakes decorated during the contest, finding Ash's cake very tasty.
+
+Raihan appeared in a fantasy in ''[[JN099|Battling Turned Up to Eleven!]]'', along with other Masters Eight Trainers.
+
+In ''[[JN107|Big Brother to the Rescue!]]'', Ash got notified that his next match would be up against Raihan. In ''[[JN108|Catching the Aura of Fate!]]'', Raihan noted his surprise that Ash had climbed through the ranks so quickly and began training for the match, declaring his intention to be the one to defeat Leon. 
+
+Ash and Raihan battled at the Hammerlocke Stadium in ''[[JN109|Aim For The Eight!]]''. Utilizing his [[weather]] strategies, Raihan quickly started to overwhelm Ash. However, Raihan was ultimately defeated, causing his and Ash's ranks to swap places and Ash rising to the Master Class. Raihan took a commemorative photo with Ash and told him to not lose until he'd get a chance to defeat him and Leon.
+
+In ''[[JN129|A Flood of Torrential Gains!]]'', Raihan watched Ash's match against Leon.
+
+[[File:Leon and Raihan anime.png|thumb|250px|Raihan and Leon]]
+====Character====
+Like his game counterpart, Raihan has a strong rivalry with Leon, and it is the real reason he entered the World Coronation Series. As expected of a {{DL|World Coronation Series|Masters Eight}} member, Raihan is an exceptional {{pkmn|Trainer}}, being able to enter the Master Class shortly after the current season of the competition begins and is strong enough to knock out several Pokémon from [[Rose]]'s associates with a single move.
+
+Raihan is also very flirtatious, as seen when he defended [[Sonia]] from Rose's associates, during which he called her a "beautiful woman". After fending off Rose's crew, Raihan remarked that he would have asked Sonia out on a date if the circumstances weren't critical and also referred to her as a "lovely lady". This attitude of Raihan over time proved to be a disguise for his real feelings, so Raihan after being defeated by Leon started taking {{wp|Selfie|selfies}} to portray his true emotions.
+
+====Pokémon====
+This listing is of Raihan's known {{OBP|Pokémon|species}} in {{aniseries|PTS}}:
+=====On hand=====
+{{TrainerPoké
+|trainer=Raihan
+|pkmn=Duraludon
+|giga=yes
+|type1=Steel
+|type2=Dragon
+|img=Raihan Duraludon.png
+|cap=Raihan's Duraludon
+|img2=Raihan Gigantamax Duraludon.png
+|cap2=Raihan's Gigantamax Duraludon
+|epnum=JN027
+|epname=Toughing It Out!
+|vajp=Yūichi Nakamura
+|vaen=Billy Kametz
+|vaennote=[[JN027]]-[[JN045]]
+|desc={{p|Duraludon}} is Raihan's first known Pokémon, as well as his ace. It is capable of [[Gigantamax]]ing. Raihan used it in his battle against {{an|Leon}}, where it went up against {{TP|Leon|Charizard}}, only to be defeated.
+
+In ''[[JN045|Sword and Shield... The Legends Awaken!]]'', Raihan used Duraludon to defeat the Pokémon of [[Oleana's subordinate]] and other [[Macro Cosmos]] {{tc|Macro Cosmos's|employees}}. Later, after the Darkest Day ended, Duraludon was seen battling a Dynamaxed {{p|Kommo-o}}.
+
+In ''[[JN109|Aim For The Eight!]]'', Duraludon was the final Pokémon used in Raihan's World Coronation Series match against {{Ash}}, where it went up against {{AP|Lucario}}. Despite its powerful [[Max Move]]s, Duraludon was defeated by Lucario's giant {{m|Aura Sphere}}.
+
+Duraludon's known moves are {{m|Metal Claw}}, {{m|Iron Defense}}, {{m|Stone Edge}}, {{m|Steel Beam}}, and {{m|Breaking Swipe}}.<br>
+As a Gigantamax Duraludon, it can use {{m|Max Rockfall}}, {{m|Max Steelspike}}, and {{m|G-Max Depletion}}.}}
+
+{{TrainerPoké
+|trainer=Raihan
+|pkmn=Flygon
+|type1=Ground
+|type2=Dragon
+|img=Raihan Flygon.png
+|epnum=JN109
+|epname=Aim For The Eight!
+|vajp=
+|vaen=
+|desc={{p|Flygon}} is Raihan's second known Pokémon. It was the first Pokémon that Raihan used in his [[World Coronation Series]] match against {{Ash}}, where it went up against his {{AP|Dragonite}} and won, before losing to [[Gigantamax]] {{AP|Gengar}}.
+
+Flygon's known moves are {{m|Dragon Claw}}, {{m|Steel Wing}}, {{m|Sandstorm}}, and {{m|Crunch}}.}}
+
+{{TrainerPoké
+|trainer=Raihan
+|pkmn=Goodra
+|type1=Dragon
+|img=Raihan Goodra.png
+|epnum=JN109
+|epname=Aim For The Eight!
+|vajp=
+|vaen=
+|desc={{p|Goodra}} is Raihan's third known Pokémon. It was the second Pokémon that Raihan used in his [[World Coronation Series]] match against {{Ash}}, where it went up against his [[Gigantamax]] {{AP|Gengar}}. The confrontation between the two Pokémon eventually led to a double knockout.
+
+Goodra's known moves are {{m|Rain Dance}}, {{m|Thunder}}, {{m|Surf}}, and {{m|Hydro Pump}}.}}
+
+=====Temporary=====
+{{TrainerPoké
+|trainer=Raihan
+|pkmn=Alcremie 
+|gender=female
+|type1=Fairy
+|img=Raihan Alcremie.png
+|epnum=JN082
+|epname=The Sweet Taste of Battle!
+|vajp=
+|vaen=Ryan Bartley
+|desc=Raihan borrowed an {{p|Alcremie}} from [[Opal]] to take part in the [[All-Alcremie Decoration Challenge]].
+
+None of Alcremie's moves are known.}}
+
+=====Traveling with=====
+{| width="100%"
+|-
+| {{ActivePoké|||nick=Rotom Phone|Raihan Rotom Phone.png|electric|ghost|link=Rotom Phone}}
+|
+|
+|}
+
+====Achievements====
+[[File:Raihan Profile WCS.png|250px|thumb|Raihan's profile in the World Coronation Series]]
+=====World Coronation Series=====
+Raihan has competed in the [[World Coronation Series]]. His rank and class are as follows:
+* Rank 7{{tt|*|Dropped in rank after losing to Leon}} (Master Class; prior to ''[[JN027|Toughing It Out!]]'')
+* Rank unknown (Master Class; prior to ''[[JN100|Meeting Up with the Monarch!]]'')
+* Rank 8 (Master Class; prior to ''[[JN107|Big Brother to the Rescue!]]'')
+* Rank 9 (Ultra Class; ''[[JN109|Aim For The Eight!]]'')
+
+=====Pokémon competitions=====
+* [[All-Alcremie Decoration Challenge]] - Participant (''[[JN082|The Sweet Taste of Battle!]]'')
+
+====Voice actors====
+{{vatable|color={{dragon color}}|bordercolor={{dragon color dark}}
+|ja=鈴木達央 ''[[Tatsuhisa Suzuki]]'' ([[JN027]]-[[JN045]])<br>松岡禎丞 ''[[Yoshitsugu Matsuoka]]'' ([[JN082]]-present)
+|en=[[Danny Kramer]]
+|cs=Vojtěch Hájek
+|fi=Oskari Tamminen
+|fr_eu=Marc Weiss
+|id=Hardianto
+|pl=Jakub Molęda
+|pt_br=Renan Freitas ([[JN027]]-[[JN045]])<br>Gabriel Farias ([[JN082]]-present)
+|es_la=Abraham Vega
+|es_eu=Alejandro Méndez}}
+
+====Artwork====
+{| style="margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{dragon color dark}}; background:#{{dragon color}}; font-size:80%; color:#fff;"
+| style="{{roundy|20px}} border:2px solid #{{dragon color dark}}; background:#{{dragon color light}}; width:80px"| [[File:Raihan anime JN.png|x300px]]
+| style="{{roundy|5px}} border: 2px solid #{{dragon color dark}}; background: {{dragon color light}}| [[File:Raihan Duralodon Artwork.png|x240px]]
+| style="{{roundy|5px}} border: 2px solid #{{dragon color dark}}; background: {{dragon color light}}| [[File:Leon Raihan Artwork 1.png|x240px]]
+|-
+| Official artwork from<br>''{{color2|fff|Pokémon Journeys: The Series}}''
+| Official artwork for<br> ''{{color2|fff|Pokémon Journeys: The Series}}''
+| Official artwork for <br>''{{color2|fff|Pokémon Journeys: The Series}}''
+|-
+| style="{{roundy|5px}} border: 2px solid #{{dragon color dark}}; background: {{dragon color light}}| [[File:Leon Raihan Artwork 2.png|x240px]]
+| style="{{roundy|5px}} border: 2px solid #{{dragon color dark}}; background: {{dragon color light}}| [[File:Ash Leon Goh Raihan Artwork.png|x240px]]
+| style="{{roundy|20px}} border:2px solid #{{dragon color dark}}; background:#{{dragon color light}}; width:80px"| [[File:Raihan anime JN 2.png|x240px]]
+|-
+| Official artwork from<br>''{{color2|fff|Pokémon Journeys: The Series}}''
+| Official artwork for<br> ''{{color2|fff|Pokémon Journeys: The Series}}''
+| Official artwork for <br>''{{color2|fff|Pokémon Journeys: The Series}}''
+|}
+
+===Pokémon: Twilight Wings===
+[[File:Raihan TW.png|thumb|250px|Raihan in [[Pokémon: Twilight Wings]]]] 
+In ''[[TW04|Early-Evening Waves]]'', Raihan was briefly seen on a magazine cover. In ''[[TW07|Sky]]'', he had a battle against [[Leon]] at [[Wyndon Stadium]].
+
+In ''[[TW08|The Gathering of Stars]]'', Raihan was seen at [[Hammerlocke Stadium]] with his Flygon, receiving an invitation letter for the [[Galarian Star Tournament]] from Leon. He was later seen at [[Wyndon Stadium]], walking out onto the field for the tournament's opening ceremony.
+
+====Pokémon====
+This listing is of Raihan's known Pokémon in [[Pokémon: Twilight Wings]]:
+=====On hand=====
+{{anchor|Goodra 2}}{{TrainerPoké
+|trainer=Raihan
+|width=68
+|pkmn=Goodra 
+|type1=Dragon
+|img=Raihan Goodra TW.png
+|epnum=TW07
+|epname=Sky
+|vajp=
+|vaen=List of English voice actors{{!}}Allegra Clark
+|desc={{p|Goodra}} was the first Pokémon used by Raihan during his battle against [[Leon]]. It went up against Leon's {{p|Aegislash}}, but it was unable to defeat it.
+
+Goodra's known moves are {{m|Surf}} and {{m|Thunder}}.}}
+
+{{anchor|Flygon 2}}{{TrainerPoké
+|trainer=Raihan
+|pkmn=Flygon 
+|type1=Ground
+|type2=Dragon
+|img=Raihan Flygon TW.png
+|epnum=TW07
+|epname=Sky
+|vajp=
+|vaen=
+|desc={{p|Flygon}} was used during the battle between Leon and Raihan. It defeated Leon's Aegislash and then went up against his {{p|Dragapult}}. It reappeared in ''[[TW08|The Gathering of Stars]]''.
+
+Flygon's known moves are {{m|Stone Edge}} and {{m|Draco Meteor}}.}}
+
+{{anchor|Duraludon 2}}{{TrainerPoké
+|trainer=Raihan
+|pkmn=Duraludon
+|giga=yes
+|type1=Steel
+|type2=Dragon
+|img=Raihan Gigantamax Duraludon TW.png
+|cap=Raihan's Gigantamax Duraludon
+|epnum=TW07
+|epname=Sky
+|vajp=
+|vaen=
+|desc={{p|Duraludon}} was the last Pokémon used by Raihan during the battle. It went up against Leon's Gigantamax {{TP|Leon|Charizard}}.
+
+None of Duraludon's moves are known{{tt|*|Duraludon is implied to know a status move due to the use of Max Guard}}.<br>
+As a Gigantamax Duraludon, it can use {{m|Max Guard}}.}}
+
+=====Traveling with=====
+{| width="100%"
+|-
+| {{ActivePoké|||nick=Rotom Phone|Raihan Rotom Phone TW.png|electric|ghost|link=Rotom Phone}}
+|
+|
+|}
+====Achievements====
+=====Pokémon competitions=====
+* [[Galarian Star Tournament]] - Participant (''[[TW08|The Gathering of Stars]]'')
+
+===GOTCHA!===
+Raihan briefly appeared in [[GOTCHA!]].
+
+==In the manga==
+===Pokémon Adventures===
+[[File:Raihan Adventures.png|thumb|200px|Raihan in [[Pokémon Adventures]]]]
+Raihan debuted in ''[[PASS11|Gulp!! Gulp Pokémon]]''. He was first seen at the gates of [[Hammerlocke]], speculating on which {{pkmn|Trainer}}s would be able to earn the right to face him in the [[Galar League|Gym Challenge]]. Later, in front of the Hammerlocke gate, Raihan met [[Henry Sword]], who had come to see the vault. After a short {{pkmn|battle}} that ended in Raihan's victory, Raihan took Henry to the vault, only for them to find [[Sonia]] under attack by a wild {{p|Oranguru}}. By teaming up, Raihan and Henry managed to calm Oranguru down.
+
+In ''[[PASS17|Stealth!! Infiltrate the Energy Plant]]'', when large rumbling came from the Hammerlocke [[Energy Plant]], Raihan had [[Leon]] and Sonia move citizens to safety while he went inside to investigate. There, he encountered [[Rose]] and [[Oleana]], who admitted they were experimenting with [[Wishing Star]]s to find a new source of electricity and prevent an energy crisis a thousand years away. Raihan agreed to keep what he learned secret, but questioned Rose's real intentions, noting that the Wishing Stars Rose had looked like an offering to {{p|Eternatus|something}}.
+
+In ''[[PASS22|Grrr!! Noble Kidnappers]]'', Raihan traveled to [[Spikemuth]], where he met with [[Piers]] to discuss Rose's decision to disqualify [[Bede]] from the Gym Challenge. A loud sound coming from [[Route 9 Tunnel]] interrupted their conversation, and when Raihan and Piers went to investigate, they encountered a crashed [[Flying Taxi]] and Leon, who rescued the driver and the passenger, Sonia. While Raihan and Leon took the victims to a hospital in Hammerlocke, Piers was entrusted with a device Sonia meant for [[Casey Shield]]. 
+
+In ''[[PASS25|Rumble!! The Horrific Darkest Day]]'', the Gym Leaders gathered at [[Rose Tower]] to find out if Rose intended on bringing harm to Galar. Raihan met with Leon, Sonia, and [[Nessa]] in Hammerlocke. They planned to join the others in [[Wyndon]], only for Rose to unleash {{p|Eternatus}} and restart the [[Darkest Day]]. Power Spot lights began appearing all over the region, causing Pokémon to start [[Dynamax]]ing at random. Raihan's group and Henry's group later reunited at the Energy Plant, where they found Rose ecstatic that his plan was a success. 
+
+In ''[[PASS27|Shock!! Chairman Rose's Plan]]'', Rose explained he meant no harm to Galar and sent [[Sordward]] and [[Shielbert]] to defeat Eternatus and prevent the Darkest Day from spiraling out of control. Despite their claims of being descendants of the heroes that once stopped the Darkest Day, Sordward and Shielbert were unable to win, forcing Rose to take their place. Oleana explained that Rose's actions were for the benefit of Galar and requested that everyone help stop Eternatus. The group agreed and made their way to the summit, where they found Rose had already been defeated. Raihan, Leon, Piers, [[Hop]], [[Marnie]], Nessa, and [[Melony]] managed to take Eternatus down, only for it to get back up and unleash its Eternamax form. 
+
+In ''[[PASS29|GRRR!! The Irrepairable Gears]]'', Eternatus quickly overwhelmed Raihan and the others, only for {{p|Zacian}} and {{p|Zamazenta}} to appear and assist in the battle against the Gigantic Pokémon. They attempted to wield the [[Rusted Sword]] and [[Rusted Shield|Shield]], but the items and Henry were snatched out of the air by Eternatus. Zacian and Zamazenta struck Eternatus at the same time, creating a massive blast of light. By the time the light cleared, Henry, Zacian, Zamazenta, Eternatus had vanished. Raihan and everyone injured during the battle were taken to a hospital to recover from the effects of Eternatus's poison.
+
+In ''[[PASS35|Bom Bom!! Kubfu and Intense Training]]'', after taking special medicine, Raihan and the others began to recover from the effects of the poison.
+
+====Pokémon====
+=====On hand=====
+{{anchor|Duraludon 3}}{{TrainerPoké
+|trainer=Raihan
+|width=74
+|pkmn=Duraludon
+|giga=yes
+|type1=Steel
+|type2=Dragon
+|img=Raihan Duraludon Adventures.png
+|cap=Raihan's Duraludon
+|img2=Raihan Gigantamax Duraludon Adventures.png
+|cap2=Raihan's Gigantamax Duraludon
+|img_size=100px
+|img2_size=100px
+|epnum=PASS11
+|epname=Gulp!! Gulp Pokémon
+|desc={{p|Duraludon}} is Raihan's first known Pokémon. It was first seen with its Trainer as he wondered about the Trainers participating in the Gym Challenge. Later, he used it to battle [[Dynamax]] Pokémon that were rampaging due to the [[Darkest Day]].
+
+None of Duraludon's moves are known.{{tt|*|Duraludon is implied to know a Dragon-type attack due to the use of G-Max Depletion}}<br>
+As a Gigantamax Duraludon, it can use {{m|G-Max Depletion}}.{{tt|*|mentioned only}}}}
+
+{{TrainerPoké
+|trainer=Raihan
+|pkmn=Sandaconda
+|type1=Ground
+|img=Raihan Sandaconda Adventures.png
+|img_size=170px
+|epnum=PASS12
+|epname=Thump!! The Gazing Sage
+|desc={{p|Sandaconda}} is Raihan's second known Pokémon. It was first used in Raihan's battle against [[Henry Sword|Henry]], where it emerged victorious.
+
+Sandaconda's known moves are {{m|Sandstorm}}, {{m|Skull Bash}}, and {{m|Slam}}.}}
+
+{{anchor|Goodra 3}}{{TrainerPoké
+|trainer=Raihan
+|pkmn=Goodra
+|type1=Dragon
+|img=Raihan Goodra Adventures.png
+|img_size=170px
+|epnum=PASS17
+|epname=Stealth!! Infiltrate the Energy Plant
+|desc={{p|Goodra}} is Raihan's third known Pokémon. It was first used to help Raihan sneak into the [[Energy Plant]].
+
+None of Goodra's moves are known.}}
+
+{{anchor|Flygon 3}}{{TrainerPoké
+|trainer=Raihan
+|pkmn=Flygon 
+|type1=Ground
+|type2=Dragon
+|img=Raihan Flygon Adventures.png
+|img_size=170px
+|epnum=PASS17
+|epname=Stealth!! Infiltrate the Energy Plant
+|desc={{p|Flygon}} is Raihan's fourth known Pokémon. It was first used to help Raihan sneak into the [[Energy Plant]]. It was later used to battle {{p|Eternatus}} on the Tower Summit.
+
+Flygon's only known move is {{m|Dragon Rush}}.}}
+
+=====Borrowed=====
+{{TrainerPoké
+|width=77
+|main=yes
+|trainer=Leon
+|pkmn=Charizard
+|type1=Fire
+|type2=Flying
+|img=Leon Charizard Adventures.png
+|epnum=PASS02
+|epname=Crackle!! Practice Battle
+|desc={{p|Charizard}} is one of [[Leon]]'s Pokémon. Raihan borrowed it to transport an injured {{tc|Cabbie}} to a hospital in [[Hammerlocke]].}}
+
+=====Traveling with=====
+{| width="50%"
+|-
+| {{ActivePoké|||nick=Rotom Phone|479Rotom-Phone.png|electric|ghost|size=50px|link=Rotom Phone}}
+|
+|
+|}
+
+===Pokémon Journeys===
+[[File:Raihan JNM.png|thumb|200px|Raihan in {{ma|Pokémon Journeys}}]]
+Raihan appeared in ''[[JNM10|Toughing It Out!]]'', where Raihan battled {{an|Leon}} for the title of Monarch in the [[World Coronation Series]]. Just like in {{aniseries|JN}}, he was defeated after an intense battle.
+
+====Pokémon====
+This listing is of Raihan's known Pokémon in the Pokémon Journeys: The Series manga:
+{{anchor|Duraludon 4}}{{TrainerPoké
+|trainer=Raihan
+|width=68
+|pkmn=Duraludon
+|giga=yes
+|type1=Steel
+|type2=Dragon
+|img=Raihan Duraludon JNM.png
+|img2=Raihan Gigantamax Duraludon JNM.png
+|cap2=Raihan's Gigantamax Duraludon
+|epnum=JNM10
+|epname=Toughing It Out!
+|desc={{p|Duraludon}} is Raihan's only known Pokémon, as well as his ace. It is capable of [[Gigantamax]]ing. Raihan used it in his battle against {{an|Leon}}, where it went up against {{TP|Leon|Charizard}}, only to be defeated.
+
+Duraludon's known moves are {{m|Metal Claw}}, {{m|Stone Edge}}, and {{m|Steel Beam}}.<br>
+As a Gigantamax Duraludon, it can use {{m|Max Rockfall}} and {{m|Max Steelspike}}.}}
+
+==In the TCG==
+This listing is of cards mentioning or featuring Raihan in the [[Pokémon Trading Card Game]].
+
+{{cardlist/header|Raihan's Pokémon|Dragon|char=yes}}
+{{cardlist/entry|cardname=[[Duraludon V (Evolving Skies 122)|Duraludon]]{{TCGV}}|type=Dragon|expanded=yes|enset=Evolving Skies|enrarity=Rare Ultra|ennum=198/203|jpset=Skyscraping Perfection|jprarity=SR|jpnum=076/067}}
+{{cardlist/entry|cardname=[[Duraludon VMAX (Evolving Skies 123)|Duraludon]]{{VMAX}}|type=Dragon|expanded=yes|enset=Silver Tempest|enrarity=TGV|ennum=TG21/TG30|jpset=VMAX Climax|jprarity=CSR|jpnum=253/184}}
+{{cardlist/div|Other related cards|Dragon}}
+{{cardlist/entry|cardname={{TCG ID|Evolving Skies|Raihan|152}}|type=Supporter|expanded=yes|enset=Evolving Skies|enrarity=Uncommon|ennum=152/203|jpset=Skyscraping Perfection|jprarity=U|jpnum=063/067|enset2=Evolving Skies|enrarity2=Rare Ultra|ennum2=202/203|jpset2=Skyscraping Perfection|jprarity2=SR|jpnum2=077/067|enset3=Evolving Skies|enrarity3=Rare Rainbow|ennum3=224/203|jpset3=Skyscraping Perfection|jprarity3=HR|jpnum3=084/067|jpset4=VMAX Climax|jpnum4=150/184|jpset5=S-P Promotional cards|jpnum5=264/S-P|enset6=Silver Tempest|enrarity6=TGU|ennum6=TG27/TG30|jpset6=VMAX Climax|jprarity6=SR|jpnum6=259/184|jpset7=VSTAR Universe|jpnum7=151/172|enset8=Crown Zenith|enrarity8=Rare Holo|ennum8=140/159|jpset8=S-P Promotional cards|jpnum8=228/S-P|enset9=Crown Zenith|enrarity9=GGU|ennum9=GG65/GG70|jpset9=VSTAR Universe|jprarity9=SAR|jpnum9=237/172}}
+{{cardlist/footer|Dragon}}
+{{-}}
+
+==Trivia==
+[[File:Raihan Gigantamax error.png|thumb|250px|Raihan's Rotom Phone incorrectly showing Hammerlocke Stadium]]
+<!--Do not add anything about Raihan's Rotom Phone being Shiny. Rotom Phones are shown to come in a variety of colors and there is no evidence that they can even be Shiny.-->
+* Raihan was designed by [[take]].<ref name=takeSWSHCharDesign>[https://twitter.com/_take_oekaki/status/1565902892774871040 Tweet about designing all of the Gym Leaders for Pokémon Sword & Shield]</ref>
+* Raihan's uniform number is "241", which can be read in Japanese as {{wp|Numeric substitution in Japanese|goroawase}} for 強い ''tsuyoi'', meaning "powerful".
+* Raihan and his {{tc|Gym Trainer}}s' uniforms resemble [[Lance]]'s outfit from {{game|HeartGold and SoulSilver|s}}.
+** ''[[JN012|Flash of the Titans!]]'' references this by having {{an|Lance}} reveal that his outfit was based on said uniforms.
+* Raihan is the first [[Gym Leader]] since [[Tate and Liza]] to be battled in a [[Double Battle]] for a [[Gym]] [[Badge]], being followed by [[Ryme]].
+* When Raihan's [[Rotom Phone]] takes a picture of him during his [[Gigantamax]] animation, the photo's background will be of Hammerlocke Stadium even if the battle is elsewhere, such as [[Wyndon Stadium]].
+* Raihan's name change in the German, Spanish, French, and Portuguese localizations of Pokémon material caused a naming conflict with [[Roy]], one of the protagonists of {{aniseries|HZ}}. As a result, the latter has his name changed for the {{pkmn|animated series}}'s localizations in those languages.
+{{-}}
+
+==Names==
+{| class="roundtable" style="background:#{{dragon color}}; border:3px solid #{{dragon color dark}}"
+|-
+! style="background:#{{dragon color light}}; color:#FFFFFF" | Language
+! style="background:#{{dragon color light}}; color:#FFFFFF" | Name
+! style="background:#{{dragon color light}}; color:#FFFFFF" | Origin
+|-
+| Japanese
+| キバナ ''Kibana''
+| From 黄花藤 ''kibanafuji'' ({{wp|Laburnum anagyroides|common laburnum}}) and possibly 牙 ''kiba'' (fang)
+|-
+| English, Indonesian
+| Raihan
+| From ريحان ''rayḥān'' (Arabic for "{{wp|basil}}", a plant sometimes referred to as the "royal herb") and possibly ''golden rain'' and ''golden chain'' (names for the common laburnum)
+|-
+| German, European Spanish,<br>Latin American Spanish,<br>French, Brazilian Portuguese
+| Roy
+| From ''Laburnum anagyroides'' (scientific name of the common laburnum) and possibly ''roy'' (Middle French for "king")
+|-
+| Italian
+| Laburno
+| From ''laburno'' (laburnum)
+|-
+| Korean
+| 금랑 ''Geumrang''
+| From 금사슬나무 ''geumsaseunnamu'' and 노랑꽃등 ''norangkkotdeung'' (names for the common laburnum)
+|-
+| Chinese (Traditional)
+| 奇巴納 ''Qíbānà'' / ''Kèihbānaahp''
+| rowspan="2" | Transcription of his Japanese name
+|-
+| Chinese (Simplified)
+| 奇巴纳 ''Qíbānà''
+|-
+| Catalan
+| Roy<ref group=n>Pokémon animated series (Catalan dub of [[JN044]])</ref><br>Raihan<ref group=n>Pokémon animated series (Catalan dub of [[JN027]]. This episode was later redubbed to say Roy.)</ref>
+| Same as his Spanish name<br>Same as his English name
+|-
+| Thai
+| คิบานะ ''Khibana
+| Transcription of his Japanese name
+|}
+{{-}}
+
+===Notes===
+{{reflist|group=n}}
+
+==References==
+<references/>
+
+==Related articles==
+* [[a:Category:Raihan|Images on the Bulbagarden Archives]]
+{{Gym Leaders of Galar}}<br>
+{{worldcoronation|dragon}}
+{{Animecharacters|dragon}}
+{{UNITE NPCs|Dragon}}
+{{Project CharacterDex notice}}
+
+[[Category:Sword and Shield characters]]
+[[Category:Gym Leaders]]
+[[Category:Dragon-type Trainers]]
+[[Category:Trainers who use Gigantamax]]
+[[Category:Multi Battle partners]]
+[[Category:Animation characters]]
+[[Category:Pokémon Adventures characters]]
+
+[[de:Roy]]
+[[es:Roy]]
+[[fr:Roy]]
+[[it:Laburno]]
+[[ja:キバナ]]
+[[zh:奇巴納]]

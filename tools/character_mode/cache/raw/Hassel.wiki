@@ -1,0 +1,649 @@
+{{Character Infobox
+|color={{dragon color}}
+|corecolor={{dragon color light}}
+|bordercolor={{dragon color dark}}
+|name=Hassel
+|jname=ハッサク
+|tmname=Hassaku
+|text=fff
+|image=Scarlet Violet Hassel.png
+|caption=Art from [[Pokémon Scarlet and Violet|Scarlet and Violet]]
+|size=150px
+|hometown=Unknown
+|region=[[Paldea]] (originally from an unnamed faraway [[region]])
+|relatives=Unnamed father
+|gender=Male
+|hair=Blond
+|eyes=Yellow
+}}
+{{Character Infobox/Game
+|color={{dragon color light}}
+|gen={{gen|IX}}
+|games={{pkmn|Scarlet and Violet|Scarlet, Violet}}<br>{{pkmn|Masters EX}}
+|trainer=[[Elite Four]], {{tc|Instructor}}
+}}
+{{Character Infobox/Team
+|color={{dragon color light}}
+|member=[[Paldea League]]
+|rank=Elite Four
+|specialty={{t|Dragon}} types
+}}
+{{Character Infobox/Anime
+|color={{dragon color light}}
+|series=''[[Pokémon Horizons: The Series]]''<br>''[[Pokémon: Paldean Winds]]''
+|debut=''[[HZ046|Welcome to Naranja Academy!]]'' <small>([[Pokémon Horizons: The Series|Horizons]])</small><br>''[[PPW01|Breathe Out]]'' <small>([[Pokémon: Paldean Winds|PW]])</small>
+|enva=[[Ross Marquand]] <small>([[Pokémon Horizons: The Series|Horizons]])
+|jpva=[[Ryōtarō Okiayu]] <small>([[Pokémon Horizons: The Series|Horizons]])
+}}
+|}
+
+'''Hassel''' (Japanese: '''ハッサク''' ''Hassaku'') is a character in [[Pokémon Scarlet and Violet]]. He serves as the art teacher at [[Naranja Academy]]{{sup/9|S}}/[[Uva Academy]]{{sup/9|V}} and a member of the [[Elite Four]] of the [[Paldea]] [[region]]. He [[Type expert|specializes]] in {{type|Dragon}} {{OBP|Pokémon|species}}.
+
+==Appearance==
+Hassel is a male human with fair skin, blonde hair,  faded gold eyes, and an average build. His attire features a white dress shirt with a red tie, a vest in satin black and red, a cadmium green coat where the rear sort of acts like a mini-cape, gray pants, and polished satin black dress shoes with red diamond shaped markings.
+
+==In the core series games==
+Hassel is a descendant of a long line of Dragon-type Trainers in an unnamed faraway region. He ran away from home as a youth to pursue a dream of "making music", before becoming a member of the Elite Four in the Paldea region as well as an art instructor at the academy. Hassel is shown to be friendly, but very emotional, as he bursts into tears of joy when defeated by the player. He is an old friend of Gym Leader [[Brassius]] of [[Artazon]].
+
+During his bond story, a {{tc|Dragon Tamer}} arrives at the academy to get Hassel back home, claiming his father, the head of the family, is feeling ill, and Hassel should be taking his place as the head of the family. Through interactions with the {{player}}, Hassel gains the confidence to confront the Dragon Tamer, realizing her words about his father's deteriorating health were lies in another attempt to get him to come home and swearing to stay at the academy to teach.
+
+In [[The Indigo Disk]], Hassel can be invited to [[Blueberry Academy]] as a special coach. A conversation between him and [[Drayton]] reveals that Hassel knows his grandfather, [[Drayden]].
+
+===Pokémon===
+Hassel will {{Tera}}stallize his {{p|Baxcalibur}} at the first opportunity.
+
+====Champion Assessment====
+{{Party
+| background = {{dragon color}}
+| border = {{dragon color dark}}
+| headcolor = {{dragon color light}}
+| sprite = VSHassel.png
+| size = x100px
+| prize = {{PDollar}}12,932
+| name = Hassel
+| class2 = of the Elite Four
+| classlink2 = Elite Four
+| location = Pokémon League (Paldea)
+| locationname = Pokémon League
+| game = SV
+| pokemon = 5
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0715
+| pokemon = Noivern
+| gender = female
+| level = 60
+| type1 = Flying
+| type2 = Dragon
+| ability = Infiltrator
+| move1 = Air Slash | move1type = Flying | move1cat = Special
+| move2 = Dragon Pulse | move2type = Dragon | move2cat = Special
+| move3 = Super Fang | move3type = Normal | move3cat = Physical
+| move4 = Hyper Voice | move4type = Normal | move4cat = Special
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0612
+| pokemon = Haxorus
+| gender = male
+| level = 60
+| type1 = Dragon
+| ability = Mold Breaker
+| move1 = Dragon Claw | move1type = Dragon | move1cat = Physical
+| move2 = Crunch | move2type = Dark | move2cat = Physical
+| move3 = Iron Head | move3type = Steel | move3cat = Physical
+| move4 = Rock Tomb | move4type = Rock | move4cat = Physical
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0691
+| pokemon = Dragalge
+| gender = male
+| level = 60
+| type1 = Poison
+| type2 = Dragon
+| ability = Poison Point
+| move1 = Sludge Bomb | move1type = Poison | move1cat = Special
+| move2 = Dragon Pulse | move2type = Dragon | move2cat = Special
+| move3 = Hydro Pump | move3type = Water | move3cat = Special
+| move4 = Thunderbolt | move4type = Electric | move4cat = Special
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0841
+| pokemon = Flapple
+| gender = female
+| level = 60
+| type1 = Grass
+| type2 = Dragon
+| ability = Ripen
+| move1 = Dragon Rush | move1type = Dragon | move1cat = Physical
+| move2 = Seed Bomb | move2type = Grass | move2cat = Physical
+| move3 = Aerial Ace | move3type = Flying | move3cat = Physical
+| move4 = Leech Seed | move4type = Grass | move4cat = Status
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0998
+| pokemon = Baxcalibur
+| gender = male
+| level = 61
+| type1 = Dragon
+| type2 = Ice
+| tera = Dragon
+| icon = tera
+| ability = Thermal Exchange
+| move1 = Icicle Crash | move1type = Ice | move1cat = Physical
+| move2 = Brick Break | move2type = Fighting | move2cat = Physical
+| move3 = Glaive Rush | move3type = Dragon | move3cat = Physical
+}}
+{{Party/end}}
+====[[Academy Ace Tournament]] (before catching {{p|Terapagos}})====
+{{Party
+| background = {{dragon color}}
+| border = {{dragon color dark}}
+| headcolor = {{dragon color light}}
+| sprite = VSHassel 2.png
+| size = x100px
+| prize = {{PDollar}}14,416
+| name = {{color2|000|Hassel}}
+| class2 = the Instructor
+| classlink2 = Instructor (Trainer class)
+| location = Mesagoza
+| game = SV
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0715
+| pokemon = Noivern
+| gender = female
+| level = 67
+| type1 = Flying
+| type2 = Dragon
+| ability = Infiltrator
+| move1 = Air Slash | move1type = Flying | move1cat = Special
+| move2 = Dragon Pulse | move2type = Dragon | move2cat = Special
+| move3 = Super Fang | move3type = Normal | move3cat = Physical
+| move4 = Boomburst | move4type = Normal | move4cat = Special
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0612
+| pokemon = Haxorus
+| gender = male
+| level = 67
+| type1 = Dragon
+| ability = Mold Breaker
+| move1 = Dragon Claw | move1type = Dragon | move1cat = Physical
+| move2 = Crunch | move2type = Dark | move2cat = Physical
+| move3 = Iron Head | move3type = Steel | move3cat = Physical
+| move4 = Rock Tomb | move4type = Rock | move4cat = Physical
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0691
+| pokemon = Dragalge
+| gender = male
+| level = 67
+| type1 = Poison
+| type2 = Dragon
+| ability = Poison Point
+| move1 = Sludge Bomb | move1type = Poison | move1cat = Special
+| move2 = Dragon Pulse | move2type = Dragon | move2cat = Special
+| move3 = Hydro Pump | move3type = Water | move3cat = Special
+| move4 = Thunderbolt | move4type = Electric | move4cat = Special
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0841
+| pokemon = Flapple
+| gender = female
+| level = 67
+| type1 = Grass
+| type2 = Dragon
+| ability = Ripen
+| move1 = Dragon Rush | move1type = Dragon | move1cat = Physical
+| move2 = Seed Bomb | move2type = Grass | move2cat = Physical
+| move3 = Aerial Ace | move3type = Flying | move3cat = Physical
+| move4 = Leech Seed | move4type = Grass | move4cat = Status
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0149
+| pokemon = Dragonite
+| gender = male
+| level = 67
+| type1 = Dragon
+| type2 = Flying
+| ability = Inner Focus
+| move1 = Extreme Speed | move1type = Normal | move1cat = Physical
+| move2 = Dragon Rush | move2type = Dragon | move2cat = Physical
+| move3 = Fire Punch | move3type = Fire | move3cat = Physical
+| move4 = Stone Edge | move4type = Rock | move4cat = Physical
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0998
+| pokemon = Baxcalibur
+| gender = male
+| level = 68
+| type1 = Dragon
+| type2 = Ice
+| tera = Dragon
+| icon = tera
+| ability = Thermal Exchange
+| move1 = Icicle Crash | move1type = Ice | move1cat = Physical
+| move2 = Brick Break | move2type = Fighting | move2cat = Physical
+| move3 = Glaive Rush | move3type = Dragon | move3cat = Physical
+| move4 = Ice Shard | move4type = Ice | move4cat = Physical
+}}
+{{Party/end}}
+====[[League Club Room]]/Academy Ace Tournament (after catching Terapagos)====
+{{Party
+| background = {{dragon color}}
+| border = {{dragon color dark}}
+| headcolor = {{dragon color light}}
+| sprite = VSHassel 2.png
+| size = x100px
+| prize = {{PDollar}}19,920
+| name = Hassel
+| class2 = the Instructor
+| classlink2 = Instructor (Trainer class)
+| location = Mesagoza
+| location2 = Blueberry Academy
+| game = SV
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0884
+| pokemon = Duraludon
+| gender = female
+| level = 82
+| type1 = Steel
+| type2 = Dragon
+| ability = Stalwart
+| move1 = Stealth Rock | move1type = Rock | move1cat = Status
+| move2 = Body Press | move2type = Fighting | move2cat = Physical
+| move3 = Thunderbolt | move3type = Electric | move3cat = Special
+| move4 = Draco Meteor | move4type = Dragon | move4cat = Special
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0715
+| pokemon = Noivern
+| gender = female
+| level = 82
+| type1 = Flying
+| type2 = Dragon
+| ability = Infiltrator
+| move1 = Air Slash | move1type = Flying | move1cat = Special
+| move2 = Dragon Pulse | move2type = Dragon | move2cat = Special
+| move3 = Super Fang | move3type = Normal | move3cat = Physical
+| move4 = Boomburst | move4type = Normal | move4cat = Special
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0612
+| pokemon = Haxorus
+| gender = male
+| level = 82
+| type1 = Dragon
+| ability = Mold Breaker
+| move1 = Breaking Swipe | move1type = Dragon | move1cat = Physical
+| move2 = Crunch | move2type = Dark | move2cat = Physical
+| move3 = Iron Head | move3type = Steel | move3cat = Physical
+| move4 = Rock Tomb | move4type = Rock | move4cat = Physical
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0691
+| pokemon = Dragalge
+| gender = male
+| level = 82
+| type1 = Poison
+| type2 = Dragon
+| ability = Poison Point
+| move1 = Sludge Bomb | move1type = Poison | move1cat = Special
+| move2 = Dragon Pulse | move2type = Dragon | move2cat = Special
+| move3 = Hydro Pump | move3type = Water | move3cat = Special
+| move4 = Thunderbolt | move4type = Electric | move4cat = Special
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0149
+| pokemon = Dragonite
+| gender = male
+| level = 82
+| type1 = Dragon
+| type2 = Flying
+| ability = Inner Focus
+| move1 = Extreme Speed | move1type = Normal | move1cat = Physical
+| move2 = Dragon Rush | move2type = Dragon | move2cat = Physical
+| move3 = Earthquake | move3type = Ground | move3cat = Physical
+| move4 = Stone Edge | move4type = Rock | move4cat = Physical
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0998
+| pokemon = Baxcalibur
+| gender = male
+| level = 83
+| type1 = Dragon
+| type2 = Ice
+| tera = Dragon
+| icon = tera
+| ability = Thermal Exchange
+| move1 = Iron Head | move1type = Steel | move1cat = Physical
+| move2 = Earthquake | move2type = Ground | move2cat = Physical
+| move3 = Glaive Rush | move3type = Dragon | move3cat = Physical
+| move4 = Ice Shard | move4type = Ice | move4cat = Physical
+}}
+{{Party/end}}
+====Traded to the player====
+Upon the third unique interaction with Hassel in the League Club Room, he will trade an Arctibax to the player in exchange for almost any Pokémon excluding {{Shiny}}, {{pkmn2|Legendary}}, or [[Mythical Pokémon]].
+
+{{SVievent
+|ndex=0997
+|ball=Poké
+|pokemon=Arctibax
+|gender=m
+|level=45
+|teratype=Dragon
+|type=Dragon|type2=Ice
+|ot=Hassel
+|id=316242
+|ability=Thermal Exchange
+|nature=Relaxed
+|met=a Link Trade
+|ribbon=Partner
+|hpiv=24
+|atkiv=22
+|defiv=21
+|spaiv=30
+|spdiv=31
+|speiv=30
+|move1=Dragon Rush|move1type=Dragon|move1cat=Physical
+|move2=Ice Fang|move2type=Ice|move2cat=Physical
+|move3=Crunch|move3type=Dark|move3cat=Physical
+|move4=Focus Energy|move4type=Normal|move4cat=Status
+|method=[[In-game trade]] (League Club Room)
+|gift=yes
+|trade=yes
+|scale=128}}
+
+==In the spin-off games==
+===[[Pokémon Masters EX]]===
+{{main|Hassel (Masters)}}
+Hassel forms a [[sync pair]] with {{p|Baxcalibur}} in [[Pokémon Masters EX]]. Hassel became a playable sync pair on January 16, 2026.
+
+{{PairDex/h|Dragon}}
+{{PairDex|244|Hassel|trainerlink=Hassel (Masters)#Baxcalibur|trainerimg=Hassel|0998|Baxcalibur|buddy=yes|gender=male|Dragon|Fighting|Field|exrole=Physical Strike|6|EX Fair Sync Pair Scout}}
+|}
+
+==Gallery==
+===Sprites and models===
+{| style="margin:auto; text-align:center; {{roundy|15px}} border: 2px solid #{{dragon color dark}}; background: #{{dragon color}}; font-size:80%; color:#fff;"
+|-
+| style="{{roundy|15px}} border: 2px solid #{{dragon color dark}}; background: #{{dragon color light}};" | [[File:VSHassel.png|x100px]]
+| style="{{roundy|15px}} border: 2px solid #{{dragon color dark}}; background: #{{dragon color light}};" | [[File:VSHassel 2.png|x100px]]
+| style="{{roundy|15px}} border: 2px solid #{{dragon color dark}}; background: #{{dragon color light}};" | [[File:LCR Hassel icon.png|100px]]
+|-
+| Elite Four VS model from<br>{{color2|fff|Pokémon Scarlet and Violet|Scarlet and Violet}}
+| Instructor VS model from<br>{{color2|fff|Pokémon Scarlet and Violet|Scarlet and Violet}}
+| {{color2|fff|League Club Room#Special Coaches|Special Coach}} profile image from<br>{{color2|fff|Pokémon Scarlet and Violet|Scarlet and Violet}}
+|}
+
+===Artwork===
+{|style="margin:auto; text-align:center; border:3px solid #{{dragon color dark}}; background:#{{dragon color}}; font-size:80%; border-radius: 10px; color:#fff;"
+|-
+| style="{{roundy|20px}} border:2px solid #{{dragon color dark}}; background:#{{dragon color light}}; overflow:hidden;" | [[File:Hassel_concept_art.jpg|x200px]]
+|-
+| Concept art from {{color2|fff|Pokémon Scarlet and Violet|Scarlet and Violet}}
+|}
+
+===Animation===
+{| style="margin:auto; text-align:center; {{roundy|10px}} border:2px solid #{{dragon color dark}}; background:#{{dragon color}}; font-size:80%; color:#fff;"
+|-
+| style="{{roundy|5px}} border:2px solid #{{dragon color dark}}; background:#{{dragon color light}}; width:80px"| [[File:Hassel HZ.png|x250px]]
+| style="{{roundy|5px}} border:2px solid #{{dragon color dark}}; background:#{{dragon color light}}; width:80px"| [[File:Hassel Anime Expression Sheet.png|x200px]]
+|-
+| ''{{color2|fff|Pokémon Horizons: The Series}}''<br>artwork
+| ''{{color2|fff|Pokémon Horizons: The Series}}''<br>concept art
+|-
+| style="{{roundy|5px}} border:2px solid #{{dragon color dark}}; background: #{{dragon color light}}; width:80px"| [[File:Horizons Hassel concept art.png|x250px]]
+|- style="color:#fff;"
+| ''{{color2|fff|Pokémon Horizons: The Series}}''<br>concept art
+|}
+
+====Eyecatch====
+{| style="margin:auto; text-align:center; {{roundy|5px}} border:2px solid #{{dragon color dark}}; background:#{{dragon color}}; font-size:80%"
+|style="{{roundy|5px}} border: 2px solid #{{dragon color dark}}; background: #{{dragon color light}}; width:auto"| [[File:HZ eyecatch Hassel Baxcalibur.png|x150px]]
+|-
+|}
+
+==Quotes==
+{{main|Hassel/Quotes}}
+
+==In animation==
+[[File:Hassel anime.png|thumb|250px|Hassel in {{aniseries|HZ}}]]
+===''Pokémon Horizons: The Series''===
+Hassel made his first appearance alongside [[Rika]] in ''[[HZ046|Welcome to Naranja Academy!]]'' when welcoming [[Liko]], [[Roy]], and [[Dot]] to [[Naranja Academy]]. Later, Hassel appeared with the other members of the [[Elite Four]] watching Liko's battle against [[Ann]].
+
+In ''[[HZ048|Sparkle! The Glow of Fire and Art!]]'', Hassel and {{an|Nemona}} helped with some details of the annual [[Artazon Art Festival]], during the event, he discovered that Liko is [[Alex]]'s daughter. After taking Liko, Roy and Dot to meet with [[Brassius]], Hassel evaluated the works of art constructed by his students and then watched Roy's {{Tera}}stal battle against Brassius.
+
+In ''[[HZ055|Showdown! The Paldea Elite Four]]'', Hassel took part in a [[Multi Battle|Tag Battle]] against Roy and Brassius during the [[Elite Four Tag Battle]], eventually winning the battle with his Baxcalibur and Flapple. Hassel then cried tears of joy upon seeing Roy's motivation to get stronger.
+
+In ''[[HZ067|Shine on, Terastallization! Liko vs. Roy!]]'', Hassel and Brassius watched Roy's battle against Liko, Hassel praised Roy for his improved battling skills and was crying tears of joy when he won the match.
+
+Hassel appeared again in ''[[HZ079|Over the Top!]]'', when the [[Rising Volt Tacklers]] appeared at the {{pal|Pokémon League}} asking for permission to go to [[Area Zero]], Hassel appeared along with the other members of the Elite Four. Later, Hassel served as a [[judge]] for the battle between Liko, Roy and Dot against [[Geeta]] and after the battle ended, he began to cry in emotion.
+
+Hassel appeared in a fantasy in ''[[HZ096|Crash! Team Dragon Rampage!]]'', while Liko, Roy, and Dot were talking about {{type|Dragon}} Trainers.
+
+Hassel was mentioned in ''[[HZ116|Terarium Training!]]'', where [[Cyrano]] revealed that Hassel is a great friend of [[Drayden]].
+
+In ''[[HZ127|The Training Royale!]]'', Hassel battled against [[Ult]], using his Baxcalibur to battle against Ult's {{p|Dragonite}}. After a tough battle, Hassel emerged victorious. Earlier on, Hassel seemed to be familiar with Ult's Dragonite, suggesting that he knew Ult's father, [[Sault]].
+
+====Character====
+In the past, Hassel mentored Brassius during his times of insecurity with art. Hassel has a gentle personality, but also has a tendency to get overly emotional and cry with tears of joy upon admiring another person's character and progress. He is also very proud and caring of his students as a teacher and encourages them whenever they make any form of progress.
+
+====Pokémon====
+{{TrainerPoké
+|trainer=Hassel
+|pkmn=Gible
+|gender=male
+|type1=Dragon
+|type2=Ground
+|img=Hassel Gible.png
+|epnum=HZ048
+|epname=Sparkle! The Glow of Fire and Art!
+|vajp=
+|vaen=
+|desc={{p|Gible}} is Hassel's first known Pokémon. It was seen with him at the [[Artazon Art Festival]].
+
+None of Gible's moves are known.}}
+
+{{TrainerPoké
+|trainer=Hassel
+|pkmn=Baxcalibur
+|type1=Dragon
+|type2=Ice
+|img=Hassel Baxcalibur.png
+|epnum=HZ055
+|epname=Showdown! The Paldea Elite Four
+|vajp=List of Japanese voice actors{{!}}Yuki Onodera
+|vaen=Bill Rogers
+|desc={{p|Baxcalibur}} is Hassel's second known Pokémon and his main battling partner. It was used alongside Flapple against [[Roy's Fuecoco]] and [[Brassius]]'s {{p|Dolliv}}, eventually winning the battle.
+
+In ''[[HZ127|The Training Royale!]]'', Baxcalibur was used to battle against [[Ult]], where it battled against Ult's {{p|Dragonite}} and won.
+
+Baxcalibur's known moves are {{m|Ice Shard}}, {{m|Glaive Rush}}, {{m|Blizzard}}, and {{m|Protect}}, and its [[Ability]] is {{a|Thermal Exchange}}.}}
+
+{{TrainerPoké
+|trainer=Hassel
+|pkmn=Flapple
+|type1=Grass
+|type2=Dragon
+|img=Hassel Flapple.png
+|epnum=HZ055
+|epname=Showdown! The Paldea Elite Four
+|vajp=
+|vaen=
+|desc={{p|Flapple}} is Hassel's third known Pokémon. It was used to battle against [[Roy]] and [[Brassius]] alongside Baxcalibur, being on the winning side when its partner defeated both of their opponents.
+
+Flapple's known moves are {{m|Acid Spray}}, {{m|Grav Apple}}, {{m|Twister}}, and {{m|Protect}}.}}
+
+====Voice actors====
+{{vatable|color={{dragon color}}|bordercolor={{dragon color dark}}
+|ja=置鮎 龍太郎 ''[[Ryōtarō Okiayu]]''
+|en=[[Ross Marquand]]
+|ar=سام غصن ''Sam Ghosen''
+|zh_yue=陳力航 ''Chan Lih Harng''
+|nl=Joey Schalker
+|fi=Markus Niemi
+|he=ערן מור ''Eran Mor''
+|no=Modou Bah
+|pt_br=Alexandre Maguolo
+|es_la=Jorge Roig Jr.
+|es_eu=Víctor Martínez
+|tr=Murat Sarı
+}}
+
+===Pokémon: Paldean Winds===
+[[File:Hassel Paldean Winds.png|250px|thumb|Hassel in [[Pokémon: Paldean Winds]]]]
+Hassel briefly appeared in ''[[PPW01|Breathe Out]]''. He was seen clapping alongside other teachers at [[Ohara]]'s performance.
+
+In ''[[PPW04|Breathe Together]]'', Hassel was seen teaching a class during the [[Naranja Academy]] presentation video. In the video, he appears speaking while his students were painting {{p|Gible}}.
+
+====Pokémon====
+======Used in his studies======
+{|
+| {{ActivePoké|Hassel|Gible|0443Gible.png|Dragon|Ground|size=100px|link=no||disp=Professor Gible}}
+|
+|
+|}
+<!--
+====Voice actors====
+{{vatable|color={{dragon color light}}|bordercolor={{dragon color}}
+|ja=喜多村英梨 ''Ryōtarō Okiayu''
+-->
+
+==In the manga==
+[[File:Hassel Adventures.png|thumb|170px|Hassel in [[Pokémon Adventures]]]]
+===Pokémon Adventures===
+Hassel debuted in ''[[PASV02|Discover! The Quaking Earth Titan!!]]''. He and several other teachers were called to an emergency meeting by [[Clavell]] to discuss {{Violet}}, a new student that caused trouble during the Treasure Hunt's opening ceremony. Clavell informed the others of Violet's backstory and explained his behavior.
+
+In ''[[PASV10|Evolve! The Second Fire Evolution!!]]'', in order to help {{Scarlet}} on her quest to obtain the [[treasures of ruin]], [[Brassius]] revealed that Hassel once asked him if he knew about the Ruinous Pokémon. Although he knew nothing about the subject, Brassius's information did help Scarlet figure out the treasures of ruin referred to a group of Pokémon.
+
+In [[PASV21]], Hassel, along with [[Poppy]], [[Rika]], and [[Geeta]], appeared outside the [[Treasure Eatery]] to greet [[Larry]]. Geeta explained that everyone came to investigate a report the {{pal|Pokémon League}} received claiming that Larry attacked some Trainers unprovoked, though noted it was likely false. Larry clarified the Trainers he fought were [[Team Star]] members harassing an [[Uva Academy]] student, which he noted was worse than their usual acts of misbehavior. When Geeta mentioned a fake student hired by [[Raifort]] to look for the treasures of ruin, Rika remembered seeing her with Scarlet previously and concluded that the latter was the fake student in question.
+
+In [[PASV23]], {{adv|Nemona}} was called by Geeta to have a meeting with the Pokémon League members at the [[Medali Gym]]. Once she arrived, Hassel and the others began questioning Nemona on what she knew about Scarlet. After finishing their discussion and Nemona left, Geeta decided to have the [[Gym Leader]]s determine if Scarlet was trustworthy by monitoring her.
+{{-}}
+
+====Pokémon====
+{{TrainerPoké
+|trainer=Hassel 
+|pkmn=Dragalge
+|type1=Poison
+|type2=Dragon
+|img=Hassel Dragalge Adventures.png
+|epnum=PASV21
+|desc={{p|Dragalge}} is Hassel's only known Pokémon. It was first used to greet [[Larry]] outside the [[Treasure Eatery]].
+
+None of Dragalge's moves are known.}}
+
+==In the TCG==
+[[File:HasselTwilightMasquerade205.jpg|200px|thumb|Ultra rare print of Hassel]]
+{{main|Hassel (Twilight Masquerade 151)}}
+'''Hassel''' was introduced as a {{TCG|Supporter card}} in the [[Pokémon Trading Card Game]] during the English Scarlet & Violet Series (the Japanese Scarlet & Violet Era). It was first released in the Japanese {{TCG|Transformation Mask}} expansion and the English {{TCG|Twilight Masquerade}} expansion, with artwork by [[GOSSAN]]. An {{TCG|ultra rare}} version with artwork by the same illustrator was released in the same sets. This card can only be used if any of the player's Pokémon were Knocked Out during their opponent's last turn. It lets the player look at the top 8 cards of their deck and choose up to 3 of them to put into their hand. The other cards are then shuffled back into the deck.
+{{-}}
+
+==Trivia==
+* The back vent on Hassel's coat could be in reference to the capes worn by {{tc|Dragon Tamer}}s, whom Hassel has a history with, being a Dragon-type Trainer himself.
+** It might also be a nod to [[Clair]] and her design in [[Generation II]] due to how her cape resembles part of a suit.
+* Prior to the release of [[The Indigo Disk]], Hassel was the only Paldean Elite Four member that could be rebattled indefinitely.
+* Hassel is left-handed, as shown when he throws his {{i|Poké Ball}}s and in his official concept art painting a portrait of an {{p|Applin}}.
+* Hassel is also the only Trainer to use a Pokémon that is still capable of evolving in their [[League Club Room]] team, as {{p|Duraludon}} can evolve into {{p|Archaludon}}, while {{p|Ursaring}}, which is used by [[Katy]], cannot evolve into {{p|Ursaluna}} in {{g|Scarlet and Violet}}.
+
+==Names==
+{| class="roundtable" style="background:#{{dragon color}}; border:3px solid #{{dragon color dark}}"
+|-
+! style="background:#{{dragon color light}}; color:#FFFFFF" | Language
+! style="background:#{{dragon color light}}; color:#FFFFFF" | Name
+! style="background:#{{dragon color light}}; color:#FFFFFF" | Origin
+|-
+| Japanese
+| ハッサク ''Hassaku''
+| From 八朔 ''hassaku'' ({{wp|Hassaku|hassaku orange}})
+|-
+| English
+| Hassel
+| Similar to his Japanese name
+|-
+| German
+| Sinius
+| From ''Apfelsine'' (dialectal name for orange)
+|-
+| European Spanish,<br>Latin American Spanish
+| Hesperio
+| From ''hesperidio'' ({{wp|hesperidium}}, leathery rind of citrus fruits)
+|-
+| French
+| Hassa
+| Similar to his Japanese name
+|-
+| Italian
+| Oranzio
+| From ''orange''
+|-
+| Korean
+| 팔자크 ''Paljakeu''
+| From 팔삭 (八朔) ''palsak'' (hassaku orange) and a partial transcription of Japanese name
+|-
+| Chinese (Traditional)
+| 八朔 ''Bāshuò'' / ''Baatsok''
+| rowspan="2" | From 八朔 ''bāshuò'' / ''baatsok'' (hassaku orange)
+|-
+| Chinese (Simplified)
+| 八朔 ''Bāshuò''
+|-
+| Indonesia
+| Haskev
+| Similar to his Japanese name
+|-
+| Brazilian Portuguese
+| Oranzo
+| From ''orange''
+|-
+| Thai
+| ฮัซซาคุ ''Hassaku''
+| Transcription of his Japanese name
+|}
+{{-}}
+
+==References==
+<references/>
+
+==Related articles==
+* [[a:Category:Hassel|Images on the Bulbagarden Archives]]
+
+{{Paldea League}}
+{{Project CharacterDex notice}}
+
+[[Category:Game characters]]
+[[Category:Scarlet and Violet characters]]
+[[Category:Pokémon: Paldean Winds characters]]
+[[Category:Elite Four Trainers]]
+[[Category:Dragon-type Trainers]]
+[[Category:Trainers who use Terastallization]]
+[[Category:Teachers]]
+[[Category:Pokémon Adventures characters]]
+
+[[de:Sinius]]
+[[es:Hesperio]]
+[[fr:Hassa]]
+[[it:Oranzio]]
+[[ja:ハッサク]]
+[[zh:八朔]]

@@ -1,0 +1,2295 @@
+{{Character Infobox
+|color={{X color}}
+|corecolor={{X color light}}
+|bordercolor={{X color dark}}
+|name=Calem
+|jname=カルム
+|tmname=Calme
+|jtranslit=Karumu
+|text=fff
+|image=XY Calem.png
+|size=150px
+|caption=Official artwork from {{g|X and Y}}
+|gender=Male
+|eyes=Gray{{tt|*|NPC and center PC default}}, Blue{{tt|*|Left default}}, Brown{{tt|*|Right PC default}}
+|hair=Black{{tt|*|NPC, center, and right PC defaults}}, Blond{{tt|*|Left PC default}}
+|hometown=[[Vaniville Town]] (original hometown unknown if chosen by the player)
+|region=[[Kalos]] (original region unknown if chosen by the player)
+|relatives={{kal|Grace}}, mentioned father (as player)<br/>Unnamed mother, mentioned father (as rival)
+}}
+{{Character Infobox/Game
+|color={{X color light}}
+|gen={{gen|VI}}, {{gen|VII}}, {{gen|VIII}}, {{gen|IX}}
+|games={{pkmn|X and Y|X, Y}}<br>{{pkmn|Masters EX}}
+|trainer=[[Pokémon Trainer]], [[player character]]
+|counterpart=[[Calem (Masters)]]
+|enva=Zach Aguilar<ref name="Zach Aguilar">[https://twitter.com/airzach/status/1192519655979503616 Zach Aguilar on Twitter]</ref> <small>({{pkmn|Masters EX}})</small>
+|jpva=[[Kenshō Ono]]<ref>Nintendo DREAM (vol. 329)</ref> <small>({{pkmn|Masters EX}})</small>
+}}
+{{Character Infobox/Anime
+|color={{X color light}}
+|series=''[[Pokémon Generations]]''<br>''[[Pokémon Evolutions]]''
+|debut=''[[PG18|The Redemption]]'' <small>({{pkmn|Generations}})</small><br>''[[PE03|The Visionary]]'' <small>({{pkmn|Evolutions}})</small>
+|enva=N/A
+|jpva=N/A
+}}
+{{Character Infobox/Manga
+|color={{X color light}}
+|series=''[[Pokémon Adventures]]''<br>''[[Let's Play the Pokémon Card Game XY!]]''
+|counterpart=[[X (Adventures)]], [[Manabu Kadoo]]
+|debut=''[[PS549|An X-cuse to Come Out and Play]]'' <small>({{pkmn|Adventures}})</small><br>[[CXY00]] <small>([[Let's Play the Pokémon Card Game XY!|PCGXY]])</small>
+}}
+|}
+
+'''Calem''' (Japanese: '''カルム''' ''Calme''<ref>[https://bandai-a.akamaihd.net/bc/images/shop_top_candytoy/calme1dgasdv.jpg "Calme & Brigarron & Mahoxy"] [https://www.bandai.co.jp/candy/pokemonscaleworld/ Pokémon Scale World] figurine catalog image</ref>) is the male [[player character]] in {{g|X and Y}}. He serves as the [[rival]] in the same games if the player chooses to play as the {{ga|Serena|female character}}. As a rival, he is one of the player's neighbors and close [[friend]]s. His female counterpart is {{ga|Serena}}.
+
+If playing as Calem, the player character may earn the title of {{tc|Grand Duke}} by defeating most of the Trainers in the [[Battle Chateau]]. This is the only time the Trainer class "Grand Duke" appears in the games.
+
+==In the core series games==
+[[File:Calem Serena Intro XY.png|thumb|left|250px|Calem and Serena in the opening of Pokémon X and Y]]
+===As the protagonist===
+Calem is a boy living in [[Vaniville Town]] with his [[friend]]s {{ga|Serena}}, [[Tierno]], [[Trevor]], and [[Shauna]]. He recently moved into Vaniville Town. His {{kal|Grace|mom}} owns a {{p|Rhyhorn}} and {{p|Fletchling}}, the latter of which wakes Calem up at the start of the game.
+
+===As a non-playable character===
+[[File:Shauna Calem Vaniville Town XY.png|thumb|250px|Calem and [[Shauna]] in Vaniville Town]]
+Calem is a young boy who lives in Vaniville Town when the protagonist moves into town. Calem is the main [[rival]] of the character, choosing the [[first partner Pokémon]] which is super effective against the player's. He is also the character who teaches the player and Shauna how to catch a Pokémon, catching a Bunnelby with the use of his Fletchling. Soon after, he can be seen in Santalune Forest with the other friends.
+
+Calem is the child of two prominent Pokémon battlers, and is seen as one of the two best battlers of the group of friends, alongside the protagonist.
+
+At [[Glittering Cave]], Calem helps the player defeat [[Team Flare]] to save the fossil assistant, and is given the fossil not chosen afterward. He then battles with the player against [[Tierno]] and [[Trevor]] at {{rt|7|Kalos}}. At the [[Tower of Mastery]] in [[Shalour City]], Calem battles the player for the chance to get the [[Mega Ring]].
+
+The next time Calem battles the player is in front of the [[Coumarine Gym]].
+[[File:Calem Victory Road XY.png|thumb|left|250px|Calem challenging the player at {{kal|Victory Road}}]]
+When the group of friends meets up and decides to go to the haunted area in {{rt|14|Kalos}}, Calem is the only one of the friends to not go to the house, claiming that he has to train. He then helps the player defeat Team Flare at the [[Poké Ball Factory]].
+
+The next time Calem battles the player is in front of the [[Anistar Gym]]. After the player defeats the gym, he will ask for a rematch, but cancels his challenge after [[Lysandre]] announces his plan of eradicating all life forms not a part of Team Flare. He then helps the player defeat Team Flare get to the legendary Pokémon and defeat Team Flare for good.
+
+After the player enters the [[Hall of Fame]] and battles at the [[Battle Maison]], Calem can be battled in [[Kiloude City]], at which point he has obtained a Mega Ring of his own. When defeated for the first time here, he will give the player an [[Absolite]] and tell the player to meet [[Professor Sycamore]] in [[Anistar City]]. He can be battled at Kiloude City once per day.
+{{-}}
+
+===Pokémon===
+====As the protagonist====
+As the player character, Calem can have up to all 721 Pokémon available in the Kalos games. As an NPC, he uses a selection of Pokémon through out the story to battle the player, including usage of [[Mega Evolution]].
+Calem is required to pick between {{p|Chespin}}, {{p|Fennekin}} or {{p|Froakie}} as his first partner Pokémon. As the player, he will choose the Pokémon first, as NPC, Calem will pick the first partner Pokémon with the type advantage over the player.
+
+As the player, he is also required to catch either {{p|Xerneas}}{{sup/6|X}} or {{p|Yveltal}}{{sup/6|Y}}.
+
+=====Required in story=====
+;First partner Pokémon
+[[Tierno]] will offer Calem one of these three Pokémon at the start of the game under [[Professor Sycamore]], both as a player character and NPC.
+{{Pokémon/Grid}}
+{{Pokémon
+|gen=6
+|ndex=0650
+|pokemon=Chespin
+|type1=Grass
+|ability=Overgrow
+|level=5
+|gender=both
+|move1=Tackle|move1type=Normal|move1cat=Physical
+|move2=Leer|move2type=Normal|move2cat=Status
+|move3=Vine Whip|move3type=Grass|move3cat=Physical}}
+{{Pokémon
+|gen=6
+|ndex=0653
+|pokemon=Fennekin
+|type1=Fire
+|ability=Blaze
+|level=5
+|gender=both
+|move1=Scratch|move1type=Normal|move1cat=Physical
+|move2=Tail Whip|move2type=Normal|move2cat=Status
+|move3=Ember|move3type=Fire|move3cat=Special}}
+{{Pokémon
+|gen=6
+|ndex=0656
+|pokemon=Froakie
+|type1=Water
+|ability=Torrent
+|level=5
+|gender=both
+|move1=Pound|move1type=Normal|move1cat=Physical
+|move2=Growl|move2type=Normal|move2cat=Status
+|move3=Bubble|move3type=Water|move3cat=Special}}
+{{Pokémon/Grid/end}}
+
+;Legendary Pokémon
+As the player, he is required to catch either {{p|Xerneas}}{{sup/6|X}} or {{p|Yveltal}}{{sup/6|Y}} in the [[Team Flare Secret HQ]] after it awakens to be used for the [[ultimate weapon]]. The player will then be asked if they would like to use the [[Legendary Pokémon]] to fight against Lysandre.
+
+{{Pokémon/Grid}}
+{{Pokémon
+|gen=6
+|caption='''{{g|X}}'''
+|ndex=0716
+|pokemon=Xerneas
+|type1=Fairy
+|ability=Fairy Aura
+|level=50
+|move1=Gravity|move1type=Psychic|move1cat=Status
+|move2=Geomancy|move2type=Fairy|move2cat=Status
+|move3=Moonblast|move3type=Fairy|move3cat=Special
+|move4=Megahorn|move4type=Bug|move4cat=Physical}}
+{{Pokémon
+|gen=6
+|caption='''{{g|Y}}'''
+|ndex=0717
+|pokemon=Yveltal
+|type1=Dark
+|type2=Flying
+|ability=Dark Aura
+|level=50
+|move1=Snarl|move1type=Dark|move1cat=Special
+|move2=Oblivion Wing|move2type=Flying|move2cat=Special
+|move3=Disable|move3type=Normal|move3cat=Status
+|move4=Dark Pulse|move4type=Dark|move4cat=Special}}
+{{Pokémon/Grid/end}}
+
+===As a non-playable character===
+====Catching tutorial====
+Calem has another Pokémon besides his {{p|Fletchling}}, likely his first partner Pokémon, as he has two party slots filled during the tutorial.
+{{Party
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = none
+| class = Pokémon Trainer
+| name = Calem
+| location = Kalos Route 2
+| locationname = Route 2
+| game = XY
+| pokemon = 2
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0661
+| pokemon = Fletchling
+| gender = male
+| level = 5
+| type1 = Normal
+| type2 = Flying
+| ability = Gale Wings
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+}}
+{{Party/end}}
+=====Caught in tutorial=====
+{{Pokémon
+|gen=6
+|ndex=659
+|pokemon=Bunnelby
+|gender=both
+|level=2
+|type1=Normal
+|ability=Pickup
+|ability2=Cheek Pouch
+|move1=Tackle|move1type=Normal|move1cat=Physical
+|move2=Agility|move2type=Psychic|move2cat=Status
+|move3=Leer|move3type=Normal|move3cat=Status}}
+
+====First Multi Battle partner====
+Calem teams up with the player against [[Trevor]] and [[Tierno]].
+
+{{Party
+| caption = {{PlayerChoice|0650|Chespin}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = none
+| class = Pokémon Trainer
+| name = Calem
+| location = Kalos Route 7
+| locationname = Route 7
+| game = XY
+| pokemon = 2
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0661
+| pokemon = Fletchling
+| gender = male
+| level = 15
+| type1 = Normal
+| type2 = Flying
+| ability = Gale Wings
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+| move3 = Peck | move3type = Flying | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0654
+| pokemon = Braixen
+| gender = male
+| level = 16
+| type1 = Fire
+| ability = Blaze
+| move1 = Ember | move1type = Fire | move1cat = Special
+| move2 = Scratch | move2type = Normal | move2cat = Physical
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0653|Fennekin}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = none
+| class = Pokémon Trainer
+| name = Calem
+| location = Kalos Route 7
+| locationname = Route 7
+| game = XY
+| pokemon = 2
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0661
+| pokemon = Fletchling
+| gender = male
+| level = 15
+| type1 = Normal
+| type2 = Flying
+| ability = Gale Wings
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+| move3 = Peck | move3type = Flying | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0657
+| pokemon = Frogadier
+| gender = male
+| level = 16
+| type1 = Water
+| ability = Torrent
+| move1 = Bubble | move1type = Water | move1cat = Special
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+}}
+{{Party/end}}
+{{Party
+|caption = {{PlayerChoice|0656|Froakie}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = none
+| class = Pokémon Trainer
+| name = Calem
+| location = Kalos Route 7
+| locationname = Route 7
+| game = XY
+| pokemon = 2
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0661
+| pokemon = Fletchling
+| gender = male
+| level = 15
+| type1 = Normal
+| type2 = Flying
+| ability = Gale Wings
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+| move3 = Peck | move3type = Flying | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0651
+| pokemon = Quilladin
+| gender = male
+| level = 16
+| type1 = Grass
+| ability = Overgrow
+| move1 = Vine Whip | move1type = Grass | move1cat = Physical
+| move2 = Bite | move2type = Dark | move2cat = Physical
+}}
+{{Party/end}}
+====Second Multi Battle partner====
+Calem teams up with the player against a pair of {{tc|Team Flare Grunt}}s.
+
+{{Party
+| caption = {{PlayerChoice|0650|Chespin}}
+| background = {{x color}}
+| border = {{x color dark}}
+| headcolor = {{x color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = none
+| class = Pokémon Trainer
+| name = Calem
+| location = Glittering Cave
+| game = XY
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0677
+| pokemon = Espurr
+| gender = male
+| level = 18
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Covet | move1type = Normal | move1cat = Physical
+| move2 = Confusion | move2type = Psychic | move2cat = Special
+| move3 = Light Screen | move3type = Psychic | move3cat = Status
+| move4 = Psybeam | move4type = Psychic | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 18
+| type1 = Dark
+| ability = Super Luck
+| move1 = Leer | move1type = Normal | move1cat = Status
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+| move3 = Pursuit | move3type = Dark | move3cat = Physical
+| move4 = Taunt | move4type = Dark | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0654
+| pokemon = Braixen
+| gender = male
+| level = 20
+| type1 = Fire
+| ability = Blaze
+| move1 = Ember | move1type = Fire | move1cat = Special
+| move2 = Howl | move2type = Normal | move2cat = Status
+| move3 = Flame Charge | move3type = Fire | move3cat = Physical
+| move4 = Psybeam | move4type = Psychic | move4cat = Special
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0653|Fennekin}}
+| background = {{x color}}
+| border = {{x color dark}}
+| headcolor = {{x color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = none
+| class = Pokémon Trainer
+| name = Calem
+| location = Glittering Cave
+| game = XY
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0677
+| pokemon = Espurr
+| gender = male
+| level = 18
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Covet | move1type = Normal | move1cat = Physical
+| move2 = Confusion | move2type = Psychic | move2cat = Special
+| move3 = Light Screen | move3type = Psychic | move3cat = Status
+| move4 = Psybeam | move4type = Psychic | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 18
+| type1 = Dark
+| ability = Super Luck
+| move1 = Leer | move1type = Normal | move1cat = Status
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+| move3 = Pursuit | move3type = Dark | move3cat = Physical
+| move4 = Taunt | move4type = Dark | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0657
+| pokemon = Frogadier
+| gender = male
+| level = 20
+| type1 = Water
+| ability = Torrent
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Lick | move2type = Ghost | move2cat = Physical
+| move3 = Water Pulse | move3type = Water | move3cat = Special
+| move4 = Smokescreen | move4type = Normal | move4cat = Status
+}}
+{{Party/end}}
+{{Party
+|caption = {{PlayerChoice|0656|Froakie}}
+| background = {{x color}}
+| border = {{x color dark}}
+| headcolor = {{x color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = none
+| class = Pokémon Trainer
+| name = Calem
+| location = Glittering Cave
+| game = XY
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0677
+| pokemon = Espurr
+| gender = male
+| level = 18
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Covet | move1type = Normal | move1cat = Physical
+| move2 = Confusion | move2type = Psychic | move2cat = Special
+| move3 = Light Screen | move3type = Psychic | move3cat = Status
+| move4 = Psybeam | move4type = Psychic | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 18
+| type1 = Dark
+| ability = Super Luck
+| move1 = Leer | move1type = Normal | move1cat = Status
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+| move3 = Pursuit | move3type = Dark | move3cat = Physical
+| move4 = Taunt | move4type = Dark | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0651
+| pokemon = Quilladin
+| gender = male
+| level = 20
+| type1 = Grass
+| ability = Overgrow
+| move1 = Rollout | move1type = Rock | move1cat = Physical
+| move2 = Bite | move2type = Dark | move2cat = Physical
+| move3 = Leech Seed | move3type = Grass | move3cat = Status
+| move4 = Pin Missile | move4type = Bug | move4cat = Physical
+}}
+{{Party/end}}
+====First battle====
+{{Party
+| caption = {{PlayerChoice|0650|Chespin}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = {{pdollar}}3,000
+| class = Pokémon Trainer
+| name = Calem
+| location = Tower of Mastery
+| game = XY
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 28
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Light Screen | move2type = Psychic | move2cat = Status
+| move3 = Psybeam | move3type = Psychic | move3cat = Special
+| move4 = Disarming Voice | move4type = Fairy | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 28
+| type1 = Dark
+| ability = Super Luck
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Slash | move2type = Normal | move2cat = Physical
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0654
+| pokemon = Braixen
+| gender = male
+| level = 30
+| type1 = Fire
+| ability = Blaze
+| move1 = Psybeam | move1type = Psychic | move1cat = Special
+| move2 = Fire Spin | move2type = Fire | move2cat = Special
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0653|Fennekin}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = {{pdollar}}3,000
+| class = Pokémon Trainer
+| name = Calem
+| location = Tower of Mastery
+| game = XY
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 28
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Light Screen | move2type = Psychic | move2cat = Status
+| move3 = Psybeam | move3type = Psychic | move3cat = Special
+| move4 = Disarming Voice | move4type = Fairy | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 28
+| type1 = Dark
+| ability = Super Luck
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Slash | move2type = Normal | move2cat = Physical
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0657
+| pokemon = Frogadier
+| gender = male
+| level = 30
+| type1 = Water
+| ability = Torrent
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Water Pulse | move2type = Water | move2cat = Special
+}}
+{{Party/end}}
+{{Party
+|caption = {{PlayerChoice|0656|Froakie}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = {{pdollar}}3,000
+| class = Pokémon Trainer
+| name = Calem
+| location = Tower of Mastery
+| game = XY
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 28
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Light Screen | move2type = Psychic | move2cat = Status
+| move3 = Psybeam | move3type = Psychic | move3cat = Special
+| move4 = Disarming Voice | move4type = Fairy | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 28
+| type1 = Dark
+| ability = Super Luck
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Slash | move2type = Normal | move2cat = Physical
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0651
+| pokemon = Quilladin
+| gender = male
+| level = 30
+| type1 = Grass
+| ability = Overgrow
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Needle Arm | move2type = Grass | move2cat = Physical
+}}
+{{Party/end}}
+====Second battle====
+{{Party
+| caption = {{PlayerChoice|0650|Chespin}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = {{pdollar}}3,300
+| class = Pokémon Trainer
+| name = Calem
+| location = Coumarine City
+| game = XY
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 31
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Psybeam | move1type = Psychic | move1cat = Special
+| move2 = Fake Out | move2type = Normal | move2cat = Physical
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Light Screen | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 31
+| type1 = Dark
+| ability = Super Luck
+| move1 = Slash | move1type = Normal | move1cat = Physical
+| move2 = Bite | move2type = Dark | move2cat = Physical
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0654
+| pokemon = Braixen
+| gender = male
+| level = 33
+| type1 = Fire
+| ability = Blaze
+| move1 = Psybeam | move1type = Psychic | move1cat = Special
+| move2 = Fire Spin | move2type = Fire | move2cat = Special
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0653|Fennekin}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = {{pdollar}}3,300
+| class = Pokémon Trainer
+| name = Calem
+| location = Coumarine City
+| game = XY
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 31
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Psybeam | move1type = Psychic | move1cat = Special
+| move2 = Fake Out | move2type = Normal | move2cat = Physical
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Light Screen | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 31
+| type1 = Dark
+| ability = Super Luck
+| move1 = Slash | move1type = Normal | move1cat = Physical
+| move2 = Bite | move2type = Dark | move2cat = Physical
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0657
+| pokemon = Frogadier
+| gender = male
+| level = 33
+| type1 = Water
+| ability = Torrent
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Water Pulse | move2type = Water | move2cat = Special
+}}
+{{Party/end}}
+{{Party
+|caption = {{PlayerChoice|0656|Froakie}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = {{pdollar}}3,300
+| class = Pokémon Trainer
+| name = Calem
+| location = Coumarine City
+| game = XY
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 31
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Psybeam | move1type = Psychic | move1cat = Special
+| move2 = Fake Out | move2type = Normal | move2cat = Physical
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Light Screen | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 31
+| type1 = Dark
+| ability = Super Luck
+| move1 = Slash | move1type = Normal | move1cat = Physical
+| move2 = Bite | move2type = Dark | move2cat = Physical
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0651
+| pokemon = Quilladin
+| gender = male
+| level = 33
+| type1 = Grass
+| ability = Overgrow
+| move1 = Needle Arm | move1type = Grass | move1cat = Physical
+| move2 = Bite | move2type = Dark | move2cat = Physical
+}}
+{{Party/end}}
+====Third battle====
+{{Party
+| caption = {{PlayerChoice|0650|Chespin}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = {{pdollar}}3,700
+| class = Pokémon Trainer
+| name = Calem
+| location = Kalos Route 14
+| locationname = Route 14
+| game = XY
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 35
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Light Screen | move2type = Psychic | move2cat = Status
+| move3 = Psychic | move3type = Psychic | move3cat = Special
+| move4 = Disarming Voice | move4type = Fairy | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 35
+| type1 = Dark
+| ability = Super Luck
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Slash | move2type = Normal | move2cat = Physical
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+| move4 = Swords Dance | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0655
+| pokemon = Delphox
+| gender = male
+| level = 37
+| type1 = Fire
+| type2 = Psychic
+| ability = Blaze
+| move1 = Psybeam | move1type = Psychic | move1cat = Special
+| move2 = Mystical Fire | move2type = Fire | move2cat = Special
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0653|Fennekin}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = {{pdollar}}3,700
+| class = Pokémon Trainer
+| name = Calem
+| location = Kalos Route 14
+| locationname = Route 14
+| game = XY
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 35
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Light Screen | move2type = Psychic | move2cat = Status
+| move3 = Psychic | move3type = Psychic | move3cat = Special
+| move4 = Disarming Voice | move4type = Fairy | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 35
+| type1 = Dark
+| ability = Super Luck
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Slash | move2type = Normal | move2cat = Physical
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+| move4 = Swords Dance | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0658
+| pokemon = Greninja
+| gender = male
+| level = 37
+| type1 = Water
+| type2 = Dark
+| ability = Torrent
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Water Shuriken | move2type = Water | move2cat = Physical
+}}
+{{Party/end}}
+{{Party
+|caption = {{PlayerChoice|0656|Froakie}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = {{pdollar}}3,700
+| class = Pokémon Trainer
+| name = Calem
+| location = Kalos Route 14
+| locationname = Route 14
+| game = XY
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 35
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Light Screen | move2type = Psychic | move2cat = Status
+| move3 = Psychic | move3type = Psychic | move3cat = Special
+| move4 = Disarming Voice | move4type = Fairy | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 35
+| type1 = Dark
+| ability = Super Luck
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Slash | move2type = Normal | move2cat = Physical
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+| move4 = Swords Dance | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0652
+| pokemon = Chesnaught
+| gender = male
+| level = 37
+| type1 = Grass
+| type2 = Fighting
+| ability = Overgrow
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Seed Bomb | move2type = Grass | move2cat = Physical
+}}
+{{Party/end}}
+====Third Multi Battle partner====
+Calem teams up with the player against [[Celosia]] and [[Bryony]].
+
+{{Party
+| caption = {{PlayerChoice|0650|Chespin}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = none
+| class = Pokémon Trainer
+| name = Calem
+| location = Poké Ball Factory
+| game = XY
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 37
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Fake Out | move2type = Normal | move2cat = Physical
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Light Screen | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 39
+| type1 = Dark
+| ability = Super Luck
+| move1 = Slash | move1type = Normal | move1cat = Physical
+| move2 = Swords Dance | move2type = Normal | move2cat = Status
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+| move4 = Bite | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0655
+| pokemon = Delphox
+| gender = male
+| level = 39
+| type1 = Fire
+| type2 = Psychic
+| ability = Blaze
+| move1 = Mystical Fire | move1type = Fire | move1cat = Special
+| move2 = Psybeam | move2type = Psychic | move2cat = Special
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0653|Fennekin}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = none
+| class = Pokémon Trainer
+| name = Calem
+| location = Poké Ball Factory
+| game = XY
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 37
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Fake Out | move2type = Normal | move2cat = Physical
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Light Screen | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 39
+| type1 = Dark
+| ability = Super Luck
+| move1 = Slash | move1type = Normal | move1cat = Physical
+| move2 = Swords Dance | move2type = Normal | move2cat = Status
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+| move4 = Bite | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0658
+| pokemon = Greninja
+| gender = male
+| level = 39
+| type1 = Water
+| type2 = Dark
+| ability = Torrent
+| move1 = Water Shuriken | move1type = Water | move1cat = Physical
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+}}
+{{Party/end}}
+{{Party
+|caption = {{PlayerChoice|0656|Froakie}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = none
+| class = Pokémon Trainer
+| name = Calem
+| location = Poké Ball Factory
+| game = XY
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 37
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Fake Out | move2type = Normal | move2cat = Physical
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Light Screen | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 39
+| type1 = Dark
+| ability = Super Luck
+| move1 = Slash | move1type = Normal | move1cat = Physical
+| move2 = Swords Dance | move2type = Normal | move2cat = Status
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+| move4 = Bite | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0652
+| pokemon = Chesnaught
+| gender = male
+| level = 39
+| type1 = Grass
+| type2 = Fighting
+| ability = Overgrow
+| move1 = Seed Bomb | move1type = Grass | move1cat = Physical
+| move2 = Bite | move2type = Dark | move2cat = Physical
+}}
+{{Party/end}}
+====Fourth battle====
+{{Party
+| caption = {{PlayerChoice|0650|Chespin}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = {{pdollar}}4,600
+| class = Pokémon Trainer
+| name = Calem
+| location = Anistar City
+| game = XY
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 44
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Psychic | move2type = Psychic | move2cat = Special
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Shadow Ball | move4type = Ghost | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 44
+| type1 = Dark
+| ability = Super Luck
+| move1 = Swords Dance | move1type = Normal | move1cat = Status
+| move2 = Slash | move2type = Normal | move2cat = Physical
+| move3 = Night Slash | move3type = Dark | move3cat = Physical
+| move4 = Quick Attack | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0135
+| pokemon = Jolteon
+| gender = male
+| level = 44
+| type1 = Electric
+| ability = Volt Absorb
+| move1 = Discharge | move1type = Electric | move1cat = Special
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+| move3 = Double Kick | move3type = Fighting | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0655
+| pokemon = Delphox
+| gender = male
+| level = 46
+| type1 = Fire
+| type2 = Psychic
+| ability = Blaze
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Flamethrower | move2type = Fire | move2cat = Special
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0653|Fennekin}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = {{pdollar}}4,600
+| class = Pokémon Trainer
+| name = Calem
+| location = Anistar City
+| game = XY
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 44
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Psychic | move2type = Psychic | move2cat = Special
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Shadow Ball | move4type = Ghost | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 44
+| type1 = Dark
+| ability = Super Luck
+| move1 = Swords Dance | move1type = Normal | move1cat = Status
+| move2 = Slash | move2type = Normal | move2cat = Physical
+| move3 = Night Slash | move3type = Dark | move3cat = Physical
+| move4 = Quick Attack | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0136
+| pokemon = Flareon
+| gender = male
+| level = 44
+| type1 = Fire
+| ability = Flash Fire
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Lava Plume | move2type = Fire | move2cat = Special
+| move3 = Bite | move3type = Dark | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0658
+| pokemon = Greninja
+| gender = male
+| level = 46
+| type1 = Water
+| type2 = Dark
+| ability = Torrent
+| move1 = Water Shuriken | move1type = Water | move1cat = Physical
+| move2 = Dark Pulse | move2type = Dark | move2cat = Special
+}}
+{{Party/end}}
+{{Party
+|caption = {{PlayerChoice|0656|Froakie}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = {{pdollar}}4,600
+| class = Pokémon Trainer
+| name = Calem
+| location = Anistar City
+| game = XY
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 44
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Psychic | move2type = Psychic | move2cat = Special
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Shadow Ball | move4type = Ghost | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 44
+| type1 = Dark
+| ability = Super Luck
+| move1 = Swords Dance | move1type = Normal | move1cat = Status
+| move2 = Slash | move2type = Normal | move2cat = Physical
+| move3 = Night Slash | move3type = Dark | move3cat = Physical
+| move4 = Quick Attack | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0134
+| pokemon = Vaporeon
+| gender = male
+| level = 44
+| type1 = Water
+| ability = Water Absorb
+| move1 = Aurora Beam | move1type = Ice | move1cat = Special
+| move2 = Muddy Water | move2type = Water | move2cat = Special
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0652
+| pokemon = Chesnaught
+| gender = male
+| level = 46
+| type1 = Grass
+| type2 = Fighting
+| ability = Overgrow
+| move1 = Seed Bomb | move1type = Grass | move1cat = Physical
+| move2 = Brick Break | move2type = Fighting | move2cat = Physical
+}}
+{{Party/end}}
+====Fourth Multi Battle partner====
+Calem teams up with the player against a series of {{tc|Team Flare Admin}}s and Grunts.
+
+{{Party
+| caption = {{PlayerChoice|0650|Chespin}}
+| background = {{x color}}
+| border = {{x color dark}}
+| headcolor = {{x color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = none
+| class = Pokémon Trainer
+| name = Calem
+| location = Team Flare Secret HQ
+| game = XY
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 45
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Fake Out | move2type = Normal | move2cat = Physical
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Shadow Ball | move4type = Ghost | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0655
+| pokemon = Delphox
+| gender = male
+| level = 49
+| type1 = Fire
+| type2 = Psychic
+| ability = Blaze
+| move1 = Flamethrower | move1type = Fire | move1cat = Special
+| move2 = Psychic | move2type = Psychic | move2cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0135
+| pokemon = Jolteon
+| gender = male
+| level = 46
+| type1 = Electric
+| ability = Volt Absorb
+| move1 = Discharge | move1type = Electric | move1cat = Special
+| move2 = Double Kick | move2type = Fighting | move2cat = Physical
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 46
+| type1 = Dark
+| ability = Super Luck
+| move1 = Slash | move1type = Normal | move1cat = Physical
+| move2 = Swords Dance | move2type = Normal | move2cat = Status
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+| move4 = Night Slash | move4type = Dark | move4cat = Physical
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0653|Fennekin}}
+| background = {{x color}}
+| border = {{x color dark}}
+| headcolor = {{x color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = none
+| class = Pokémon Trainer
+| name = Calem
+| location = Team Flare Secret HQ
+| game = XY
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 45
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Fake Out | move2type = Normal | move2cat = Physical
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Shadow Ball | move4type = Ghost | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0658
+| pokemon = Greninja
+| gender = male
+| level = 49
+| type1 = Water
+| type2 = Dark
+| ability = Torrent
+| move1 = Water Shuriken | move1type = Water | move1cat = Physical
+| move2 = Dark Pulse | move2type = Dark | move2cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0136
+| pokemon = Flareon
+| gender = male
+| level = 46
+| type1 = Fire
+| ability = Flash Fire
+| move1 = Quick Attack | move1type = Normal | move1cat = Physical
+| move2 = Bite | move2type = Dark | move2cat = Physical
+| move3 = Lava Plume | move3type = Fire | move3cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 46
+| type1 = Dark
+| ability = Super Luck
+| move1 = Slash | move1type = Normal | move1cat = Physical
+| move2 = Swords Dance | move2type = Normal | move2cat = Status
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+| move4 = Night Slash | move4type = Dark | move4cat = Physical
+}}
+{{Party/end}}
+{{Party
+|caption = {{PlayerChoice|0656|Froakie}}
+| background = {{x color}}
+| border = {{x color dark}}
+| headcolor = {{x color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = none
+| class = Pokémon Trainer
+| name = Calem
+| location = Team Flare Secret HQ
+| game = XY
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 45
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Fake Out | move2type = Normal | move2cat = Physical
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Shadow Ball | move4type = Ghost | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0652
+| pokemon = Chesnaught
+| gender = male
+| level = 49
+| type1 = Grass
+| type2 = Fighting
+| ability = Overgrow
+| move1 = Brick Break | move1type = Fighting | move1cat = Physical
+| move2 = Seed Bomb | move2type = Grass | move2cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0134
+| pokemon = Vaporeon
+| gender = male
+| level = 46
+| type1 = Water
+| ability = Water Absorb
+| move1 = Muddy Water | move1type = Water | move1cat = Special
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+| move3 = Aurora Beam | move3type = Ice | move3cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 46
+| type1 = Dark
+| ability = Super Luck
+| move1 = Slash | move1type = Normal | move1cat = Physical
+| move2 = Swords Dance | move2type = Normal | move2cat = Status
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+| move4 = Night Slash | move4type = Dark | move4cat = Physical
+}}
+{{Party/end}}
+====Fifth battle====
+{{Party
+| caption = {{PlayerChoice|0650|Chespin}}
+| background = {{x color}}
+| border = {{x color dark}}
+| headcolor = {{x color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = {{pdollar}}6,100
+| class = Pokémon Trainer
+| name = Calem
+| location = Victory Road (Kalos)
+| locationname = Victory Road
+| game = XY
+| pokemon = 5
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 57
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Fake Out | move2type = Normal | move2cat = Physical
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Shadow Ball | move4type = Ghost | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0135
+| pokemon = Jolteon
+| gender = male
+| level = 57
+| type1 = Electric
+| ability = Volt Absorb
+| move1 = Discharge | move1type = Electric | move1cat = Special
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+| move3 = Double Kick | move3type = Fighting | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0334
+| pokemon = Altaria
+| gender = female
+| level = 58
+| type1 = Dragon
+| type2 = Flying
+| ability = Natural Cure
+| move1 = Dragon Pulse | move1type = Dragon | move1cat = Special
+| move2 = Dazzling Gleam | move2type = Fairy | move2cat = Special
+| move3 = Confide | move3type = Normal | move3cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 59
+| type1 = Dark
+| ability = Super Luck
+| move1 = Night Slash | move1type = Dark | move1cat = Physical
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+| move3 = Swords Dance | move3type = Normal | move3cat = Status
+| move4 = Slash | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0655
+| pokemon = Delphox
+| gender = male
+| level = 61
+| type1 = Fire
+| type2 = Psychic
+| ability = Blaze
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Shadow Ball | move2type = Ghost | move2cat = Special
+| move3 = Flamethrower | move3type = Fire | move3cat = Special
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0653|Fennekin}}
+| background = {{x color}}
+| border = {{x color dark}}
+| headcolor = {{x color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = {{pdollar}}6,100
+| class = Pokémon Trainer
+| name = Calem
+| location = Victory Road (Kalos)
+| locationname = Victory Road
+| game = XY
+| pokemon = 5
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 57
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Fake Out | move2type = Normal | move2cat = Physical
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Shadow Ball | move4type = Ghost | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0136
+| pokemon = Flareon
+| gender = male
+| level = 57
+| type1 = Fire
+| ability = Flash Fire
+| move1 = Bite | move1type = Dark | move1cat = Physical
+| move2 = Lava Plume | move2type = Fire | move2cat = Special
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0334
+| pokemon = Altaria
+| gender = female
+| level = 58
+| type1 = Dragon
+| type2 = Flying
+| ability = Natural Cure
+| move1 = Dragon Pulse | move1type = Dragon | move1cat = Special
+| move2 = Dazzling Gleam | move2type = Fairy | move2cat = Special
+| move3 = Confide | move3type = Normal | move3cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 59
+| type1 = Dark
+| ability = Super Luck
+| move1 = Night Slash | move1type = Dark | move1cat = Physical
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+| move3 = Swords Dance | move3type = Normal | move3cat = Status
+| move4 = Slash | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0658
+| pokemon = Greninja
+| gender = male
+| level = 61
+| type1 = Water
+| type2 = Dark
+| ability = Torrent
+| move1 = Dark Pulse | move1type = Dark | move1cat = Special
+| move2 = Ice Beam | move2type = Ice | move2cat = Special
+| move3 = Water Shuriken | move3type = Water | move3cat = Physical
+}}
+{{Party/end}}
+{{Party
+|caption = {{PlayerChoice|0656|Froakie}}
+| background = {{x color}}
+| border = {{x color dark}}
+| headcolor = {{x color light}}
+| sprite = VSCalem.png
+| size = 150px
+| prize = {{pdollar}}6,100
+| class = Pokémon Trainer
+| name = Calem
+| location = Victory Road (Kalos)
+| locationname = Victory Road
+| game = XY
+| pokemon = 5
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 57
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Fake Out | move2type = Normal | move2cat = Physical
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Shadow Ball | move4type = Ghost | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0134
+| pokemon = Vaporeon
+| gender = male
+| level = 57
+| type1 = Water
+| ability = Water Absorb
+| move1 = Muddy Water | move1type = Water | move1cat = Special
+| move2 = Aurora Beam | move2type = Ice | move2cat = Special
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0334
+| pokemon = Altaria
+| gender = female
+| level = 58
+| type1 = Dragon
+| type2 = Flying
+| ability = Natural Cure
+| move1 = Dragon Pulse | move1type = Dragon | move1cat = Special
+| move2 = Dazzling Gleam | move2type = Fairy | move2cat = Special
+| move3 = Confide | move3type = Normal | move3cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 59
+| type1 = Dark
+| ability = Super Luck
+| move1 = Night Slash | move1type = Dark | move1cat = Physical
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+| move3 = Swords Dance | move3type = Normal | move3cat = Status
+| move4 = Slash | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0652
+| pokemon = Chesnaught
+| gender = male
+| level = 61
+| type1 = Grass
+| type2 = Fighting
+| ability = Overgrow
+| move1 = Brick Break | move1type = Fighting | move1cat = Physical
+| move2 = Seed Bomb | move2type = Grass | move2cat = Physical
+| move3 = Body Slam | move3type = Normal | move3cat = Physical
+}}
+{{Party/end}}
+====[[Rematch]]es====
+{{Party
+| caption = {{PlayerChoice|0650|Chespin}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem 2.png
+| size = 150px
+| prize = {{pdollar}}7,000
+| class = Pokémon Trainer
+| name = Calem
+| location = Kiloude City
+| game = XY
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 66
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Psychic | move2type = Psychic | move2cat = Special
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Shadow Ball | move4type = Ghost | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0036
+| pokemon = Clefable
+| gender = female
+| level = 68
+| type1 = Fairy
+| ability = Magic Guard
+| move1 = Moonblast | move1type = Fairy | move1cat = Special
+| move2 = Focus Blast | move2type = Fighting | move2cat = Special
+| move3 = Meteor Mash | move3type = Steel | move3cat = Physical
+| move4 = Sing | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0135
+| pokemon = Jolteon
+| gender = male
+| level = 66
+| type1 = Electric
+| ability = Volt Absorb
+| move1 = Thunder | move1type = Electric | move1cat = Special
+| move2 = Double Kick | move2type = Fighting | move2cat = Physical
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| icon = mega
+| gender = male
+| level = 68
+| type1 = Dark
+| ability = Super Luck
+| held = Absolite
+| move1 = Night Slash | move1type = Dark | move1cat = Physical
+| move2 = Swords Dance | move2type = Normal | move2cat = Status
+| move3 = Slash | move3type = Normal | move3cat = Physical
+| move4 = Quick Attack | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0334
+| pokemon = Altaria
+| gender = female
+| level = 67
+| type1 = Dragon
+| type2 = Flying
+| ability = Natural Cure
+| move1 = Dragon Pulse | move1type = Dragon | move1cat = Special
+| move2 = Dazzling Gleam | move2type = Fairy | move2cat = Special
+| move3 = Confide | move3type = Normal | move3cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0655
+| pokemon = Delphox
+| gender = male
+| level = 70
+| type1 = Fire
+| type2 = Psychic
+| ability = Blaze
+| move1 = Fire Blast | move1type = Fire | move1cat = Special
+| move2 = Psychic | move2type = Psychic | move2cat = Special
+| move3 = Shadow Ball | move3type = Ghost | move3cat = Special
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0653|Fennekin}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem 2.png
+| size = 150px
+| prize = {{pdollar}}7,000
+| class = Pokémon Trainer
+| name = Calem
+| location = Kiloude City
+| game = XY
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 66
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Psychic | move2type = Psychic | move2cat = Special
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Shadow Ball | move4type = Ghost | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0036
+| pokemon = Clefable
+| gender = female
+| level = 68
+| type1 = Fairy
+| ability = Magic Guard
+| move1 = Moonblast | move1type = Fairy | move1cat = Special
+| move2 = Focus Blast | move2type = Fighting | move2cat = Special
+| move3 = Meteor Mash | move3type = Steel | move3cat = Physical
+| move4 = Sing | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0136
+| pokemon = Flareon
+| gender = male
+| level = 66
+| type1 = Fire
+| ability = Flash Fire
+| move1 = Fire Blast | move1type = Fire | move1cat = Special
+| move2 = Quick Attack | move2type = Normal | move2cat = Physical
+| move3 = Bite | move3type = Dark | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| icon = mega
+| gender = male
+| level = 68
+| type1 = Dark
+| ability = Super Luck
+| held = Absolite
+| move1 = Night Slash | move1type = Dark | move1cat = Physical
+| move2 = Swords Dance | move2type = Normal | move2cat = Status
+| move3 = Slash | move3type = Normal | move3cat = Physical
+| move4 = Quick Attack | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0334
+| pokemon = Altaria
+| gender = female
+| level = 67
+| type1 = Dragon
+| type2 = Flying
+| ability = Natural Cure
+| move1 = Dragon Pulse | move1type = Dragon | move1cat = Special
+| move2 = Dazzling Gleam | move2type = Fairy | move2cat = Special
+| move3 = Confide | move3type = Normal | move3cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0658
+| pokemon = Greninja
+| gender = male
+| level = 70
+| type1 = Water
+| type2 = Dark
+| ability = Torrent
+| move1 = Hydro Pump | move1type = Water | move1cat = Special
+| move2 = Dark Pulse | move2type = Dark | move2cat = Special
+| move3 = Ice Beam | move3type = Ice | move3cat = Special
+}}
+{{Party/end}}
+{{Party
+|caption = {{PlayerChoice|0656|Froakie}}
+| background = {{X color}}
+| border = {{X color dark}}
+| headcolor = {{X color light}}
+| sprite = VSCalem 2.png
+| size = 150px
+| prize = {{pdollar}}7,000
+| class = Pokémon Trainer
+| name = Calem
+| location = Kiloude City
+| game = XY
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0678
+| pokemon = Meowstic
+| form = -Male
+| gender = male
+| level = 66
+| type1 = Psychic
+| ability = Keen Eye
+| move1 = Fake Out | move1type = Normal | move1cat = Physical
+| move2 = Psychic | move2type = Psychic | move2cat = Special
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+| move4 = Shadow Ball | move4type = Ghost | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0036
+| pokemon = Clefable
+| gender = female
+| level = 68
+| type1 = Fairy
+| ability = Magic Guard
+| move1 = Moonblast | move1type = Fairy | move1cat = Special
+| move2 = Focus Blast | move2type = Fighting | move2cat = Special
+| move3 = Meteor Mash | move3type = Steel | move3cat = Physical
+| move4 = Sing | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0134
+| pokemon = Vaporeon
+| gender = male
+| level = 66
+| type1 = Water
+| ability = Water Absorb
+| move1 = Hydro Pump | move1type = Water | move1cat = Special
+| move2 = Aurora Beam | move2type = Ice | move2cat = Special
+| move3 = Quick Attack | move3type = Normal | move3cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0359
+| pokemon = Absol
+| icon = mega
+| gender = male
+| level = 68
+| type1 = Dark
+| ability = Super Luck
+| held = Absolite
+| move1 = Night Slash | move1type = Dark | move1cat = Physical
+| move2 = Swords Dance | move2type = Normal | move2cat = Status
+| move3 = Slash | move3type = Normal | move3cat = Physical
+| move4 = Quick Attack | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0334
+| pokemon = Altaria
+| gender = female
+| level = 67
+| type1 = Dragon
+| type2 = Flying
+| ability = Natural Cure
+| move1 = Dragon Pulse | move1type = Dragon | move1cat = Special
+| move2 = Dazzling Gleam | move2type = Fairy | move2cat = Special
+| move3 = Confide | move3type = Normal | move3cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0652
+| pokemon = Chesnaught
+| gender = male
+| level = 70
+| type1 = Grass
+| type2 = Fighting
+| ability = Overgrow
+| move1 = Wood Hammer | move1type = Grass | move1cat = Physical
+| move2 = Brick Break | move2type = Fighting | move2cat = Physical
+| move3 = Body Slam | move3type = Normal | move3cat = Physical
+}}
+{{Party/end}}
+
+==In the spin-off games==
+===[[Super Smash Bros. series]]===
+[[File:SSBU Pokemon Trainer palette Calem.png|200px|thumb|The male Pokémon Trainer's Calem-based alternate palette in Super Smash Bros. Ultimate]]
+[[File:Pokémon Trainer XY 3DS trophy SSB4.png|200px|thumb|left|The Pokémon Trainer (Pokémon X & Y) from Super Smash Bros. for Nintendo 3DS]]
+====[[Super Smash Bros. for Nintendo 3DS/Wii U]]====
+Calem appears alongside Serena as a trophy in the 3DS version. In North American copies of the game, this trophy is labeled as ''Pokémon Trainer (Pokémon X & Y)'', in Europe, this trophy is called ''Trainers (Pokémon X and Y)''. Calem's Red Outdoors Cap and Wide-Frame Sunglasses are also part of one of Pikachu's alternative costumes.
+
+=====Trophy information=====
+'''NA:''' ''We suppose it's possible you've missed out up till now, so let us explain: in Pokémon, you set out from your hometown on a Pokémon journey, catching Pokémon and fighting battles with them. In Pokémon X and Pokémon Y, you reach the next town and find yourself embroiled in a tale of... No, wait–no spoilers!''
+
+'''PAL:''' ''If you've been living under a rock for some years now, let us explain. In Pokémon, you start from your home town on your own Pokémon journey, catching Pokémon and fighting battles with them. In Pokémon X and Pokémon Y, you reach the next town and find yourself embroiled in a tale of... Well, we won't spoil it for you.''
+
+====[[Super Smash Bros. Ultimate]]====
+While Calem himself does not appear directly, a palette swap color scheme based on Calem's design, with a darker-skinned appearance, appears for the male {{OBP|Pokémon Trainer|Super Smash Bros.}}, who is an incarnation of {{ga|Red}}. Pikachu keeps the outfit based on Calem from 3DS and Wii U.
+
+===[[Pokémon Masters EX]]===
+{{main|Calem (Masters)}}
+Calem, who is based on the [[rival]], forms a [[sync pair]] with {{p|Espurr}} and its evolved form {{p|Meowstic}}, along with {{Shiny}} {{p|Greninja}}, {{p|Fennekin}}, and {{p|Sylveon}} in [[Pokémon Masters EX]]. Calem joins the {{player}} after completing the twentieth chapter of the [[PML arc]].
+
+Calem has also made notable appearances in the game's main stories: the PML arc, [[Legendary Adventures]], and the [[villain arc]].
+
+{{PairDex/h|X}}
+{{PairDex|071|Calem|trainerlink=Calem (Masters)#Espurr → Meowstic|trainerimg=Calem|0678|Espurr → Meowstic|gender=male|pokemonlink=Espurr (Pokémon)|form=[[List of Pokémon with gender differences|Male]]|Psychic|Ghost|Tech|6|Story<br>''Chapter 20''}}
+{{PairDex|071|Calem|trainerlink=Calem (Masters)#Greninja (Sync Move: Dark ↔ Water)|trainerimg=Calem Champion|sygna={{pkmn|Champion}}|0658 s|Greninja|shiny=yes|master=yes|buddy=yes|gender=male|Dark|Bug|Support|exrole=Tech|6|Master Fair Sync Pair Scout}}
+{{PairDex|071|Calem|trainerlink=Calem (Masters)#Fennekin|trainerimg=Calem|0653|Fennekin|gender=male|Fire|Ground|Special Strike|4EX|Trainer Lodge Friendship Level 100}}
+{{PairDex|071|Calem|trainerlink=Calem (Masters)#Sylveon|trainerimg=Calem|0700|Sylveon|gender=male|Fairy|Poison|Tech|exrole=Support|6|Variety Sync Pair Scout}}
+|}
+
+==Quotes==
+{{main|Calem (game)/Quotes}}
+
+==Counterparts==
+===In animation===
+====Pokémon Generations====
+[[File:Calem PG.png|thumb|250px|Calem in [[Pokémon Generations]]]]
+Calem appeared in ''[[PG18|The Redemption]]'', where he was seen at the parade in [[Lumiose City]] after he had become the {{pkmn|Champion}} of [[Kalos]]. During the parade, he was challenged by [[AZ]], whom he battled and defeated.
+
+Much like the other [[player character]]s depicted in [[Pokémon Generations]], Calem doesn't have any lines of dialogue.
+
+=====Pokémon=====
+{{TrainerPoké
+|width=68%
+|trainer=Calem
+|pkmn=Chesnaught
+|type1=Grass
+|type2=Fighting
+|img=Calem Chesnaught PG.png
+|epnum=PG18
+|epname=The Redemption
+|desc={{p|Chesnaught}} was first seen next to Calem during the parade. It was later used during Calem's {{pkmn|battle}} with [[AZ]], where it was seen defeating his {{p|Golurk}}, winning the battle for Calem.
+
+None of Chesnaught's moves are known.}}
+
+{{TrainerPoké
+|trainer=Calem
+|pkmn=Charizard
+|type1=Fire
+|type2=Flying
+|img=Calem Charizard Professor Sycamore PG.png
+|epnum=PG18
+|epname=The Redemption
+|desc={{p|Charizard}} was seen next to Calem during the parade.
+
+None of Charizard's moves are known.}}
+
+====GOTCHA!====
+Calem briefly appeared in [[GOTCHA!]].
+
+====Pokémon Evolutions====
+[[File:Calem Evolutions.png|thumb|250px|Calem in [[Pokémon Evolutions]]]]
+Calem appeared in ''[[PE03|The Visionary]]'', where he defeated [[Lysandre]] at the [[Team Flare Secret HQ]]. When Lysandre started firing the [[ultimate weapon]], Calem escaped the blast with {{ga|Serena}} and [[Shauna]]. Afterwards, they witnessed how the ultimate weapon sunk back into the ground.
+
+=====Pokémon=====
+{{TrainerPoké
+|width=68%
+|trainer=Calem
+|pkmn=Xerneas
+|type1=Fairy
+|img=Calem Xerneas Evolutions.png
+|epnum=PE03
+|epname=The Visionary
+|desc={{p|Xerneas}} is Calem's only known Pokémon. He used it during his battle against [[Lysandre]], easily defeating his {{me|Gyarados}}.
+
+Xerneas's only known move is {{m|Moonblast}}.}}
+
+===In the manga===
+[[File:X Adventures.png|thumb|150px|Calem's Pokémon Adventures counterpart, X]]
+====Pokémon Adventures====
+{{main|X (Adventures)}}
+Calem's counterpart in [[Pokémon Adventures]] is X. When he was young, he won a Kalos Junior Tournament. However, the pressure of being a celebrity at a young age had its effect on him and he became a shut-in. He posseses a [[Mega Ring]] gifted to him by [[Gurkinn]], which enables him to wield [[Mega Evolution]] and makes him a major target for [[Team Flare]].
+
+====Let's Play the Pokémon Card Game XY!====
+{{main|Manabu Kadoo}}
+{{-}}
+
+==Gallery==
+:For images on Calem in [[Pokémon Masters EX]], see: [[Calem (Masters)#Gallery|Calem (Masters)]]
+===Artwork===
+====Standard====
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{x color dark}}; background: #{{x color}}"
+|-
+|style="{{roundy|15px}} border: 2px solid #{{x color dark}}; background: #{{x color light}}"| [[File:XY Calem.png|150px]]
+|style="{{roundy|15px}} border: 2px solid #{{x color dark}}; background: #{{x color light}}"| [[File:Pokémon-Amie artwork.png|300px]]
+|- style="font-size: 80%; color:#FFF"
+| Artwork from {{color2|FFF|Pokémon X and Y|X and Y}}
+| Calem, {{color2|FFF|Serena (game)|Serena}}, and their<br>Pokémon in {{color2|FFF|Pokémon-Amie}}
+|-
+|style="{{roundy|15px}} border: 2px solid #{{x color dark}}; background: #{{x color light}}"| [[File:XY Riding Gogoat.png|300px]]
+|style="{{roundy|15px}} border: 2px solid #{{x color dark}}; background: #{{x color light}}; overflow: hidden;"| [[File:Xerneas Encounter.png|300px]]
+|- style="font-size: 80%; color:#FFF"
+| Calem riding the {{color2|FFF|Lumiose City#Gogoat Shuttle|Gogoat Shuttle}}
+| Encountering {{color2|FFF|Xerneas (Pokémon)|Xerneas}}
+|}
+
+====Concept Art====
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{x color dark}}; background: #{{x color}}"
+|-
+| style="{{roundy|15px}} border: 2px solid #{{x color dark}}; background: #{{x color light}}; overflow: hidden;"| [[File:Calem and Serena concept art.png|320px]]
+|- style="font-size: 80%; color:#FFF"
+| Concept art of Calem and {{color2|FFF|Serena (game)|Serena}}
+|}
+
+====Merchandise====
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{x color dark}}; background: #{{x color}}"
+|-
+|style="{{roundy|15px}} border: 2px solid #{{x color dark}}; background: #{{x color light}}; overflow: hidden;"| [[File:Calem (clear file).png|250px]]
+|style="{{roundy|15px}} border: 2px solid #{{x color dark}}; background: #{{x color light}}; overflow: hidden;"| [[File:Kotobukiya ArtFX J Figure Calem Froakie.jpg|250px]]
+|- style="font-size: 80%; color:#FFF"
+| Calem and {{color2|FFF|Froakie (Pokémon)|Froakie}} clear file artwork
+| Calem and {{color2|FFF|Froakie (Pokémon)|Froakie}} concept artwork<br>for {{color2|FFF|Kotobukiya figurines|Kotobukiya ArtFx J figurines}}
+|}
+
+===Game assets===
+====Sprites and models====
+{|style="font-size:80%; margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{X color dark}}; background:#{{X color}}; color:white"
+| colspan="8" style="{{roundy|20px}} border:2px solid #{{X color dark}}; background:#{{X color dark}}; font-size:125%; color:black" | '''{{color2|fff|Generation VI}}'''
+|-
+|colspan=2 style="{{roundy|80px}} border:2px solid #{{x color dark}}; background:#{{x color light}}; width:80px" | [[File:VSCalem.png|200px]]
+|colspan=2 style="{{roundy|80px}} border:2px solid #{{x color dark}}; background:#{{x color light}}; width:80px" | [[File:VSCalem 2.png|200px]]
+|-
+| colspan=2 | '''{{GameIcon|X}}{{GameIcon|y}}''' <br> VS <br> (Rival)
+| colspan=2 | '''{{GameIcon|X}}{{GameIcon|y}}''' <br> VS <br> (Rival, {{color2|FFF|Mega Ring}})
+|-
+| style="{{roundy|10px}} border:2px solid #{{x color dark}}; background:#{{x color light}}; overflow: hidden;" | [[File:Calem Icon XY-1.png|100px]]
+| style="{{roundy|10px}} border:2px solid #{{x color dark}}; background:#{{x color light}}; overflow: hidden;" | [[File:Calem Icon XY-2.png|100px]]
+| style="{{roundy|10px}} border:2px solid #{{x color dark}}; background:#{{x color light}}; overflow: hidden;" | [[File:Calem Icon XY-3.png|100px]]
+|-
+| colspan=3 | '''{{GameIcon|X}}{{GameIcon|y}}''' <br> Character Selection
+|-
+|style="{{roundy|80px}} border:2px solid #{{x color dark}}; background:#{{x color light}}; width:80px" | [[File:XY Calem Icon.png]]
+|style="{{roundy|80px}} border:2px solid #{{x color dark}}; background:#{{x color light}}; width:80px" | [[File:Calem XY OD.png|100px]]
+|style="{{roundy|80px}} border:2px solid #{{x color dark}}; background:#{{x color light}}; width:80px" | [[File:Calem pajamas XY OD.png|100px]]
+|style="{{roundy|80px}} border:2px solid #{{x color dark}}; background:#{{x color light}}; width:80px" | [[File:Calem 2 XY OD.png|100px]]
+|- 
+| '''{{GameIcon|X}}{{GameIcon|y}}{{color2|fff|Pokémon Global Link|&nbsp;PGL&nbsp;}}''' <br> {{color2|FFF|Player Search System|PSS}} icon <br> (Center default)
+| '''{{GameIcon|X}}{{GameIcon|y}}''' <br> Overworld model
+| '''{{GameIcon|X}}{{GameIcon|y}}''' <br> Overworld model <br> (Pajamas)
+| '''{{GameIcon|X}}{{GameIcon|y}}''' <br> Overworld model <br> (Rival)
+|}
+
+====Spin-off media====
+{| style="margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{x color dark}}; background:#{{x color}}; font-size: 80%; color:#FFF"
+|-
+| style="{{roundy|15px}} border:2px solid #{{x color dark}}; background:#{{x color light}}; width:80px" | [[File:Pokémon Trainer XY 3DS trophy SSB4.png|200px]]
+| style="{{roundy|25px}} border:2px solid #{{x color dark}}; background:#{{x color light}}; width:80px" | [[File:SSBU Pokemon Trainer palette Calem.png|200px]]
+|- 
+| Trophy model from <br>{{color2|FFF|Super Smash Bros. for Nintendo 3DS/Wii U}}
+| {{color2|FFF|Pokémon Trainer (Super Smash Bros.)|Pokémon Trainer}}'s 7th alternate skin from<br>{{color2|FFF|Super Smash Bros. Ultimate}}
+|}
+{{-}}
+
+==Trivia==
+[[File:Lumiose Museum Mega Lucario Statue Base ZA.png|thumb|220px|Calem in the ''Base of the Mega Lucario Statue'']]
+* In {{g|Legends: Z-A}}, Calem makes a cameo in the "Base of the Mega Lucario Statue" painting seen at the [[Lumiose Museum]], using the chibi proportions from the original {{g|X and Y}}.
+
+==Names==
+This character is named '''Calem''' (Japanese: '''カルム''' ''Calme'') when he appears as a [[non-player character]] in the [[Generation VI]] games. This name is also used for merchandise and in [[Pokémon Masters EX]]. His Japanese name was spelled as '''Calme''' on the packaging of [[Kotobukiya figurines|Kotobukiya ArtFX J Figure]].
+
+Pre-release media for {{g|X and Y}} referred to Calem as '''Xavier''' (Japanese: '''エックス''' ''X'').
+
+{| class="roundtable" style="background:#{{X color}}; border:3px solid #{{X color dark}}"
+|-
+! style="background:#{{X color light}}; color:#FFFFFF" | Language
+! style="background:#{{X color light}}; color:#FFFFFF" | Name
+! style="background:#{{X color light}}; color:#FFFFFF" | Origin
+|-
+| Japanese
+| カルム ''Calme''
+| From ''calme'' (French for "calm")
+|-
+| English, Italian,<br>Brazilian Portuguese
+| Calem
+| From an anagram of ''calme'' (French for "calm")
+|-
+| German, French
+| Kalem
+| Similar to his Japanese and English name
+|-
+| European Spanish,<br>Latin American Spanish
+| Kalm
+| From his Japanese name
+|-
+| Korean
+| 칼름 ''Calme''
+| Transcription of his Japanese name
+|-
+| Chinese (Traditional)
+| 卡魯穆 ''Kǎlǔmù'' / ''Kālóuhmuhk''
+| From the transcription of his Japanese name and contains 穆 ''mù / muhk'' (solemn and calm)
+|}
+{{-}}
+
+==References==
+<references />
+
+==Related articles==
+{{capture tutor}}
+{{Player characters|x}}
+{{Rival characters|x}}
+{{Champions|x}}
+{{NPC|X|kalos=yes}}
+{{Project CharacterDex notice}}
+
+[[Category:Rival characters]]
+[[Category:Friend characters]]
+[[Category:Game characters]]
+[[Category:Playable characters]]
+[[Category:Male characters]]
+[[Category:X and Y characters]]
+[[Category:Pokémon Generations characters]]
+[[Category:Multi Battle partners]]
+[[Category:Trainers who use Mega Evolution]]
+[[Category:Trainers with Legendary Pokémon]]<!--XY's box Legendary, required to be caught by the storyline-->
+[[Category:Pokémon Evolutions characters]]
+
+[[de:Kalem]]
+[[es:Kalm]]
+[[fr:Kalem]]
+[[it:Calem (gioco)]]
+[[ja:カルム]]
+[[zh:卡魯穆]]

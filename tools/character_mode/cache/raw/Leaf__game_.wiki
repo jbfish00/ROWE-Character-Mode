@@ -1,0 +1,431 @@
+{{samename|item in {{g|Pokopia}}|Leaf (item)}}
+{{samename|character from [[Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]]|Green (game)}}
+{{redirect|Leaf|other uses|Leaf (disambiguation)}}
+----
+{{Character Infobox
+|color={{leafgreen color}}
+|corecolor={{leafgreen color light}}
+|bordercolor={{leafgreen color dark}}
+|name=Leaf
+|jname=リーフ
+|tmname=Leaf
+|image=FireRed LeafGreen Leaf.png
+|size=180px
+|caption=Artwork from {{game|FireRed and LeafGreen|s}}
+|gender=Female
+|height=4'7" (1.40 m)<ref>[[Pokémon Scale World]]</ref>
+|hometown=[[Pallet Town]]
+|region=[[Kanto]]
+|relatives={{ka|Mom}}, mentioned father
+|eyes=Brown
+|hair=Brown
+}}
+{{Character Infobox/Game
+|color={{leafgreen color light}}
+|trainer=[[Pokémon Trainer]], [[player character]]
+|gen={{gen|III}}, {{gen|VIII}}, {{gen|IX}}
+|games={{game|FireRed and LeafGreen|s|FireRed, LeafGreen}}<br>{{pkmn|Colosseum}}, {{pkmn|XD: Gale of Darkness}}, {{pkmn|Masters EX}}
+|counterpart=[[Leaf (Masters)]]
+|enva=Michelle Marie<ref name="Michelle Marie">[https://twitter.com/michellemarievo/status/1219320118678671360 Michelle Marie on Twitter]</ref> <small>({{pkmn|Masters EX}})</small>
+|jpva=Yuka Ōtsubo<ref name="Yuka Ōtsubo">[https://twitter.com/00tsubo_yuka/status/1299951630419279873 Yuka Ōtsubo on Twitter]</ref> <small>({{pkmn|Masters EX}})</small>
+}}
+{{Character Infobox/Manga
+|color={{leafgreen color light}}
+|series=''[[Pokémon Adventures]]''<br>''[[Pokémon Ruby-Sapphire]]''
+|counterpart={{adv|Green}}, {{OBP|Blue|Ruby-Sapphire}}
+|debut=''[[PS015|Wartortle Wars]]'' <small>({{pkmn|Adventures}})</small><br>''[[PMRS24|We're a Family!!]]'' <small>({{pkmn|Ruby-Sapphire}})</small>
+}}
+|}
+
+'''Leaf''' (Japanese: '''リーフ''' ''Leaf'') is the female [[player character]] in {{game|FireRed and LeafGreen|s}}. Her male counterpart is {{ga|Red}}. As such, she—alongside Red—is known throughout the [[Pokémon world]] as the {{pkmn|Champion}} from [[Pallet Town]], as well as a living legend for her defeat of [[Team Rocket]] in [[Kanto]] during her quest.
+
+==In the core series games==
+{{spoilers}}
+Leaf's adventure begins after [[Professor Oak]] calls her to his lab and gives her a [[First partner Pokémon|choice of Pokémon]]. {{ga|Blue}} challenges Leaf to a [[Pokémon battle]] as soon as they get their Pokémon. Later, Professor Oak calls the two back, gives each of them a [[Pokédex]], and sends them on a journey to fulfill their dream of capturing every kind of Pokémon.
+
+Leaf travels all over Kanto, filling in the Pokédex and defeating the [[Gym Leader]]s. Her [[rival]] Blue constantly stays one step ahead, and shows up quite a few times to impede her progress. When Leaf eventually reaches the [[Elite Four]], she finds that Blue has beaten her to a milestone yet again and has become the [[Indigo League]] {{pkmn|Champion}}. Leaf defeats Blue in the final battle, and becomes the Champion herself. Her adventure continues even after that, with Leaf discovering new places, such as the [[Sevii Islands]].
+
+Leaf's main conflict in the games, aside from Blue, is [[Team Rocket]], an infamous group of Pokémon thieves. Leaf clashes with Team Rocket many times in her quest. She defeats a group of grunts at [[Mt. Moon]] who are attempting to steal rare Pokémon [[Fossil]]s, and defeats another group ahead at a bridge in [[Cerulean City]]. Leaf protects the [[Pokémon Tower]] and [[Mr. Fuji]] in [[Lavender Town]] and destroys their hold on the [[Celadon Game Corner|Game Corner]]. After she foils their plot to take over [[Silph Co.]], Leaf encounters [[Giovanni]], the leader of Team Rocket, as the final Gym Leader in [[Viridian City]]. Upon defeating him, Leaf stops the group's world domination plots once and for all, though a few remaining grunts, many who appeared and were defeated by Leaf on [[Five Island]] in [[Generation III]], would band together in [[Johto]] to [[Generation II|try to revive the group]].
+
+==In the side series games==
+===Pokémon Colosseum and XD: Gale of Darkness===
+Leaf makes an appearance in both [[Pokémon Colosseum]] and [[Pokémon XD: Gale of Darkness]]. While she does not appear in the games' Story Mode, she is playable in the Battle Mode when a FireRed or LeafGreen cartridge is used, with a female player character chosen. She can take on Mt. Battle's 100-battle challenge, as well as compete in Colosseum battles.
+
+===Pokémon Battle Revolution===
+Leaf made a brief appearance in the debut trailer of [[Pokémon Battle Revolution]], having a [[Double Battle]] against {{ga|Red}}, using a {{p|Groudon}} and a {{p|Pikachu}}. Despite this, she didn't appear in the final cut of the game.
+
+==In the spin-off games==
+[[File:Female Trainer SSBU.png|thumb|200px|Leaf, as the female Pokémon Trainer, in [[Super Smash Bros. Ultimate]]]]
+===[[Super Smash Bros. series]]===
+====Pokémon Trainer====
+{{main|Pokémon Trainer (Super Smash Bros.)}}
+Leaf appears as a playable character in [[Super Smash Bros. Ultimate]], as the female variant of "Pokémon Trainer" (of which Red is the default). She shares his team of {{p|Squirtle}}, {{p|Ivysaur}}, and {{p|Charizard}}.
+
+====Other references====
+From [[Super Smash Bros. Brawl]] onward, Leaf's hat appears as an alternate outfit worn by {{p|Jigglypuff}}, in parallel to {{p|Pikachu}} wearing {{ga|Red}}'s hat.
+
+===[[Pokémon GO]]===
+{{main|Style (GO)}}
+For [[Pokémon Day]] 2018, Leaf's outfit from {{game|FireRed and LeafGreen|s}} was released as free style options in [[Pokémon GO]].
+
+[[File:LeafMythicalIsland82.png|thumb|200px|Super Rare print of {{TCG ID|Mythical Island|Leaf|68}}]]
+
+===[[Pokémon Masters EX]]===
+{{main|Leaf (Masters)}}
+Leaf forms a [[sync pair]] with {{p|Eevee}}, {{p|Venusaur}}, {{p|Moltres}}, {{p|Clefable}}, and {{p|Blastoise}} in [[Pokémon Masters EX]]. Her Venusaur is capable of [[Mega Evolution|Mega Evolving]], while her Blastoise is capable of [[Dynamax]]ing. Leaf became a playable sync pair on January 22, 2020. 
+
+Leaf has also made notable appearances in one of the game's main stories, the [[PML arc]]. Unlike in the original game, both Leaf and {{mas|Red}} coexist in the same game, with her picking the remaining [[first partner Pokémon]] that wasn't picked by Red and {{mas|Blue}}.
+
+{{PairDex/h|Leafgreen}}
+{{PairDex|076|Leaf|trainerlink=Leaf (Masters)#Eevee|trainerimg=Leaf|0133|Eevee|gender=male|Normal|Fighting|Support|6|Sync Pair Scout}}
+{{PairDex|076|Leaf|trainerlink=Leaf (Masters)#Venusaur|trainerimg=Leaf Sygna|sygna=[[Sygna suit|Sygna Suit]]|0003M|Venusaur|mega=Venusaurite|form=[[Mega Evolution|Mega Venusaur]]|gender=female|Grass|Psychic|Tech|exrole=Support|6|Ticket Scout (after Victory Road)<br>Poké Fair Sync Pair Scout}}
+{{PairDex|076|Leaf|trainerlink=Leaf (Masters)#Moltres|trainerimg=Leaf Champion|sygna={{pkmn|Champion}}|0146|Moltres|master=yes|buddy=yes|Fire|Water|Tech|exrole=Support|6|Master Fair Sync Pair Scout}}
+{{PairDex|076|Leaf|trainerlink=Leaf (Masters)#Clefable|trainerimg=Leaf|0036|Clefable|gender=female|Fairy|Steel|Support|4EX|Trainer Lodge Friendship Level 100}}
+{{PairDex|076|Leaf|trainerlink=Leaf (Masters)#Blastoise|trainerimg=Leaf|0009|Blastoise|gender=female|buddy=yes|dynamax=yes|Water|Grass|Field|exrole=Special Strike|6|Mix Sync Pair Scout}}
+|}
+
+===[[Pokémon Trading Card Game Pocket]]===
+{{main|Leaf (Mythical Island 68)}}
+Leaf makes an appearance as a {{TCG|Supporter}} card in [[Pokémon Trading Card Game Pocket]]'s second expansion, {{TCGP|Mythical Island}}. Playing this card reduces the Retreat Cost of the player's Active Pokémon by 2 for the duration of the turn.
+
+{{TCGPocketCardList/Header|Cards featuring Leaf|Supporter|nocat=yes}}
+{{TCGPocketCardList/Card|cardname={{TCG ID|Mythical Island|Leaf|68}}|type=Supporter|rows=2}}
+{{TCGPocketCardList/Release|type=Supporter|set=Mythical Island|rarity=Diamond|rarity count=2|num=068/068}}
+{{TCGPocketCardList/Release|type=Supporter|set=Mythical Island|rarity=Star|rarity count=2|num=082/068}}
+{{TCGPocketCardList/Footer|type=Supporter}}
+
+==Quotes==
+{{main|Leaf (game)/Quotes}}
+
+==Counterparts==
+[[File:Green Adventures.png|thumb|230px|Green, Leaf's counterpart in Pokémon Adventures]]
+[[File:Blue PMRS.png|thumb|left|150px|Blue, Leaf's counterpart in Pokémon Ruby-Sapphire]]
+===In the manga===
+====Pokémon Adventures====
+{{main|Green (Adventures)}}
+{{adv|Green}} from [[Pokémon Adventures]] serves as Leaf's counterpart, taking on Leaf's appearance from the {{MangaArc|FireRed & LeafGreen}} onwards. She starts out as a mischievous thief and con artist, but later reforms her ways.
+
+====Pokémon Ruby-Sapphire====
+{{main|Blue (Ruby-Sapphire)}}
+Leaf also has a counterpart in [[Pokémon Ruby-Sapphire]], who is named {{OBP|Blue|Ruby-Sapphire}}.
+{{-}}
+
+==Gallery==
+:For images on {{ga|Green}}, see: [[Green (game)#Gallery|Green (game)]]
+:For images on {{mas|Leaf}} in {{g|Masters EX}}, see: [[Leaf (Masters)#Gallery|Leaf (Masters)]]
+===Artwork===
+====Standard====
+{| style="margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color}}; font-size:80%"
+|-
+| style="{{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color light}}" | [[File:FireRed LeafGreen Leaf.png|x300px]]
+| style="{{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color light}}; overflow: hidden;" | [[File:HM Fly artwork.png|x300px]]
+|-
+| Artwork from {{color2|000|Pokémon FireRed and LeafGreen Versions|FireRed and LeafGreen}}
+| Artwork depicting the usage of {{mcolor|Fly|000}},<br>featuring Leaf with a {{pcolor|Pidgey|000}}
+|}
+
+====Merchandise====
+{| style="margin:auto; text-align:center; {{roundy|10px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color}}; font-size:80%"
+|-
+| style="{{roundy|10px}}; border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color light}}" | [[File:Kotobukiya ArtFX J Figure Leaf Squirtle.png|x250px]]
+|-
+| Leaf and {{pcolor|Squirtle|000}} concept artwork by<br>{{color2|000|Hitoshi Ariga}} for {{color2|000|Kotobukiya figurines|Kotobukiya}} ArtFx J figurines
+|}
+
+====Other====
+{| style="margin:auto; text-align:center; {{roundy|10px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color}}; font-size:80%"
+|-
+| style="{{roundy|10px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color light}}; overflow: hidden;" | [[File:New Years postcard.jpg|x250px]]
+|-
+| {{color2|000|Ken Sugimori}} artwork from a<br>2005 New Year's postcard
+|}
+
+===Game assets===
+====In the [[core series]]====
+{| style="font-size:80%; margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color}}; color:#000"
+| colspan="8" style="{{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color dark}}; font-size:125%; color:white" |'''{{color2|fff|Generation III}}'''
+|-
+| style="{{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color light}}; width:80px; height:80px; overflow:hidden;" |[[File:Spr FRLG Leaf.png|64px]]
+| style="{{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color light}}; width:80px; overflow:hidden;" |[[File:FRLG Leaf Intro.png|80px]]
+| style="{{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color light}}; width:80px; overflow:hidden;" |[[File:Leaf FRLG Credits.png|64px]]
+| style="{{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color light}}; width:80px; overflow:hidden;" |[[File:FRLG Leaf Back.png|64px]]
+| style="{{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color light}}; width:80px; overflow:hidden;" |[[File:E Leaf Back.png|64px]]
+| style="{{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color light}}; width:80px; overflow:hidden;" |[[File:Leaf FRLG OD.png|32px]]
+| style="{{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color light}}; width:80px; overflow:hidden;" |[[File:Leaf E OD.png|32px]]
+|-
+|'''{{GameIcon|FR}}{{GameIcon|LG}}{{GameIcon|E}}''' <br> Sprite
+|'''{{GameIcon|FR}}{{GameIcon|LG}}''' <br> Sprite <br> ({{color2|000|Gender#In_the_core_series_games_2|Gender select}})
+|'''{{GameIcon|FR}}{{GameIcon|LG}}''' <br> Sprite <br> ({{color2|000|Game_credits#Pokémon_FireRed_and_LeafGreen|Credits}})
+|'''{{GameIcon|FR}}{{GameIcon|LG}}''' <br> Sprite <br> (Back)
+|'''{{GameIcon|E}}''' <br> Sprite <br> (Back)
+|'''{{GameIcon|FR}}{{GameIcon|LG}}''' <br> Sprite <br> (Overworld)
+|'''{{GameIcon|E}}''' <br> Sprite <br> (Overworld)
+|}
+
+====In [[Spin-off Pokémon games|other games]]====
+{| style="font-size:80%; margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color}}; color:#000"
+| colspan="5" style="{{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color dark}}; font-size:125%; color:white" |'''{{color2|fff|Generation III}}'''
+|-
+| style="{{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color light}}; overflow:hidden;" |[[File:Colo Leaf.png|200px]]
+| style="{{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color light}}; overflow:hidden;" |[[File:Colo Leaf 2.png|200px]]
+| style="{{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color light}}; overflow:hidden;" |[[File:XD Leaf.png|200px]]
+| style="{{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color light}}; overflow:hidden;" |[[File:XD Leaf 2.png|200px]]
+| style="{{roundy|20px}} border:2px solid #{{leafgreen color dark}}; background:#{{leafgreen color light}}; width:80px; overflow:hidden;" |[[File:Leaf Ra OD.png|16px]]
+|-
+|'''{{GameIcon|Colo}}''' <br> Model <br> (VS)
+|'''{{GameIcon|Colo}}''' <br> Model <br> (VS)
+|'''{{GameIcon|XD}}''' <br> Model <br> (VS)
+|'''{{GameIcon|XD}}''' <br> Model <br> (VS)
+|'''''{{color2|000|Pokémon Ranger (video game)|Ranger}}''''' <br> Sprite <br> (Unused)
+|-
+|}
+
+==Trivia==
+[[File:RGB guidebook.jpg|thumb|200px|Cover of the Pocket Monsters Red, Green, and Blue guidebook]]
+* An artwork of an [[List of unused Pokémon and character designs#Female character|unnamed female character]] drawn by [[Ken Sugimori]] was released in {{game|Red and Green|s}}'s official strategy guide, released in April 1996.<ref>[https://www.amazon.co.jp/dp/4091025366 ポケットモンスター―任天堂公式ガイドブック] - Amazon.co.jp (Japanese)</ref> This artwork also appears on the cover of a revised version of the guidebook that includes the Japanese [[Pokémon Blue Version (Japanese)|Pokémon Blue]] as well.<ref>[https://www.amazon.co.jp/dp/4091025684 ポケットモンスター 赤・緑・青全対応] - Amazon.co.jp (Japanese)</ref>
+** According to Sugimori, she was not originally planned as a player character. He wanted to portray a trio of {{pkmn|Trainer}}s facing off against each other, hence designed the female character for the cover.<ref>[https://twitter.com/super_32x/status/269844962118610945 Twitter - Sugimori on the origins of the unknown female character] (Japanese)</ref>
+** The female character was later adapted for the [[Pokémon Craft DX]] manga booklets drawn by [[Emiko Yoshino]], as well as {{adv|Green}} in [[Pokémon Adventures]] (released 11 months after the original artwork), Leaf in {{game|FireRed and LeafGreen|s}} (8 years after the original artwork), and {{ga|Green}} in [[Pokémon: Let's Go, Pikachu! and Let's Go, Eevee!]] (22 years after the original artwork).
+** Sugimori noted that he took the unnamed female character into consideration when he was designing the female protagonist for {{2v2|FireRed|LeafGreen}}. He also mentioned that the FireRed and LeafGreen female protagonist did not have a name at the time of his writing, in November 2012.<ref>[https://twitter.com/super_32x/status/269847118754217986 Twitter - Sugimori on designing the FRLG female protagonist] (Japanese)</ref>
+* Leaf's hat somewhat resembles a [[Premier Ball]].
+* Leaf's FireRed and LeafGreen sprite shows her with blue eyes, although every other sprite and the official artwork shows her with brown eyes.
+* The majority of her Japanese default names are shared with {{ga|Dawn}} and {{ga|Lyra}}. She also shares all of {{ga|Kris}}'s alternate Japanese names.
+* Though she is neither playable nor an opponent in the handheld [[Generation IV]] games, Leaf made a brief cameo battling against {{ga|Red}} in an early trailer for [[Pokémon Battle Revolution]] on the Wii.
+* Leaf is the only non-rival female player character to have a [[Blue (Ruby-Sapphire)|counterpart]] who appeared in [[Pokémon Pocket Monsters]].
+* The French version for [[Green's Exploration (Unbroken Bonds 175)|Green's Exploration]] mistakenly refers to the character as Leaf instead of Green. This inconsistency does not exist in the French version of Let's Go, Pikachu! and Let's Go, Eevee!
+
+;Pokémon Craft DX gallery
+<gallery>
+File:Pokémon Craft DX cover.png|Cover page
+File:Pokémon Craft DX 1.png|Pages 2–3
+File:Pokémon Craft DX 2.png|Pages 4–5
+File:Pokémon Craft DX 3.png|Pages 6–7
+File:Pokémon Craft DX 4.png|Pages 18–19
+</gallery>
+
+==Names==
+'''Leaf''' (Japanese: '''リーフ''' ''Leaf'') is the most commonly used name for this character, including in placeholder data in [[Pokémon FireRed and LeafGreen Versions|Pokémon FireRed, LeafGreen]], and [[Pokémon Emerald Version|Emerald]], in the {{Spin-off games|spin-off game}} {{g|Masters EX}} after she debuted in 2020, in the E3 2004 trailer for FireRed and LeafGreen,<ref>[https://youtu.be/VnweBRQd9ao E3 trailer of ''Pokémon FireRed and LeafGreen Versions'']</ref> and in {{pkmn|merchandise}}. However, she is never directly named in the [[core series]] games during regular gameplay.
+* In Pokémon LeafGreen, "Leaf" is one of several possible [[#Optional names|names]] (in both English and Japanese) suggested for the player character (regardless of gender) if the player leaves their name blank when starting a [[new game]]. 
+* Game screenshots in the official game manuals use the names '''Fire'''{{sup/3|FR}} and '''Leaf'''{{sup/3|LG}}.
+* The name Leaf is officially used in both English and Japanese for her Kotobukiya ARTFX J figurine<ref>[https://www.kotobukiya.co.jp/product/product-0000003255/ "ARTFX J Leaf with Squirtle" on Kotobukiya] (Japanese)</ref><ref>[http://en.kotobukiya.co.jp/product/product-0000003255/ "Pokémon LEAF with ZENIGAME ARTFX STATUE" on Kotobukiya] (English)</ref> and the Bandai Pokémon Scale World collection,<ref>[https://www.bandai.co.jp/candy/products/2019/1000136258.html "Pokémon Scale World - Kanto: Leaf & Clefairy & Gengar" on Bandai] (Japanese)</ref> both of which released in 2019. 
+
+In [[Super Smash Bros. Ultimate]], the female version of the '''{{OBP|Pokémon Trainer|Super Smash Bros.}}''' is based on Leaf.
+
+In {{LGPE}}, a similar character named '''{{ga|Green}}''' (Japanese: '''ブルー''' ''Blue'') appears, although Leaf and Green have not been identified as the same character in official materials. If Leaf and Green are different characters in the games, then Leaf remains unnamed in all [[core series]] games and their manuals. This name has also been long used for {{adv|Green}} from the [[Pokémon Adventures]] manga before the introduction of Let's Go, Pikachu! and Let's Go, Eevee!. 
+
+The name "Leaf" has been used consistently by fans, even before it saw mainstream official use in {{pkmn|merchandise}} and Pokémon Masters EX. Leaf is also sometimes referred to as '''フグリ''' (''Fuguri'') in the Japanese fandom, being derived from the katakana rendering of "LeafGreen" (リー'''フグリ'''ーン ''rī'''fugurī'''n'').
+
+In the Spanish version of FireRed, LeafGreen, and Emerald, her placeholder name has the syllables reversed: she is known as "Jaho" instead of "Hoja".
+
+{| class="roundtable" style="background:#{{LeafGreen color}}; border:3px solid #{{LeafGreen color dark}}"
+|-
+! style="background:#{{LeafGreen color light}}" | Language
+! style="background:#{{LeafGreen color light}}" | Name
+! style="background:#{{LeafGreen color light}}" | Origin
+|-
+| Japanese
+| リーフ ''Leaf''
+| From ''{{game3|FireRed and LeafGreen|Pokémon LeafGreen|s}}''
+|-
+| English, German, Latin American Spanish,<br>French, Italian, Brazilian Portuguese
+| Leaf
+| From ''Pokémon LeafGreen''
+|-
+| European Spanish
+| Hoja
+| From the ''hoja'' (leaf) in ''Pokémon Edición Verde Hoja '' (Pokémon LeafGreen Version)
+|-
+| Korean
+| 리프 ''Leaf''
+| Transcription of her Japanese name
+|-
+| Chinese (Traditional)
+| 葉子 ''Yèzǐ'' / ''Yihpjí''
+| rowspan="2" | From 葉子 ''yèzi / yihpjí'' (leaf)
+|}
+{{-}}
+
+===Optional names===
+When starting a new game of {{game|FireRed and LeafGreen|s}}, if the player leaves the name writing screen without any written name, or with a name composed entirely of empty spaces, [[Professor Oak]] says "Right... So your name is <optional name>.", suggesting one of the 19 available names; there are 21 names in total, but there are two exclusive to FireRed and two exclusive to LeafGreen. The player may answer "Yes" to accept the suggested name, or "No" to return to the name writing screen.
+
+{| class="roundtable" style="background:#{{LeafGreen color}}; border:3px solid #{{LeafGreen color dark}}"
+|-
+! style="background:#{{LeafGreen color light}}" | Japanese
+! style="background:#{{LeafGreen color light}}" | English
+! style="background:#{{LeafGreen color light}}" | German
+! style="background:#{{LeafGreen color light}}" | European Spanish
+! style="background:#{{LeafGreen color light}}" | French
+! style="background:#{{LeafGreen color light}}" | Italian
+|-
+|<ab>グリーン ''Green''{{sup/3|LG}}
+リーフ ''Leaf''{{sup/3|LG}}
+レッド ''Red''{{sup/3|FR}}
+ファイア ''Fire''{{sup/3|FR}}
+キヨミ ''Kiyomi''
+サトコ ''Satoko''
+チホ ''Chiho''
+キョウコ ''Kyōko''
+マキコ ''Makiko''
+ミキコ ''Mikiko''
+ミチコ ''Michiko''
+ジュンコ ''Junko''
+アヤコ ''Ayako''
+リエ ''Rie''
+セツコ ''Setsuko''
+ユキコ ''Yukiko''
+マミナ ''Mamina''
+ノリエ ''Norie''
+ヒサエ ''Hisae''
+モモコ ''Momoko''
+ミスズ ''Misuzu''</ab>
+|<ab>GREEN{{sup/3|LG}}
+LEAF{{sup/3|LG}}
+RED{{sup/3|FR}}
+FIRE{{sup/3|FR}}
+OMI
+JODI
+AMANDA
+HILLARY
+MAKEY
+MICHI
+PAULA
+JUNE
+CASSIE
+REY
+SEDA
+KIKO
+MINA
+NORIE
+SAI
+MOMO
+SUZI</ab>
+|<ab>GRÜN{{sup/3|LG}}
+BLATT{{sup/3|LG}}
+ROT{{sup/3|FR}}
+FEUER{{sup/3|FR}}
+MANDY
+ANDREA
+SINA
+MARTINA
+TANJA
+ELENA
+BIRGIT
+DIANA
+KATRIN
+SUSI
+UTE
+DANIELA
+SILKE
+SIMONE
+JAMIE
+PIA
+EVA</ab>
+|<ab>VERTE{{sup/3|LG}}
+JAHO{{sup/3|LG}}
+JORO{{sup/3|FR}}
+GUEFO{{sup/3|FR}}
+MENA
+CIRA
+MARÍA
+MINA
+NENA
+LUNA
+BRUNA
+CLAUDIA
+CASILDA
+RITA
+SELENA
+MATILDE
+NURIA
+MARINA
+SALIA
+MIRTA
+SUSA</ab>
+|<ab>GREEN{{sup/3|LG}}
+LEAF{{sup/3|LG}}
+RED{{sup/3|FR}}
+FIRE{{sup/3|FR}}
+JOANNA
+LUCIE
+EDITH
+PAULINE
+EMMA
+AUDREY
+MARION
+SAYAKA
+INGRID
+LINDA
+FLO
+YUKI
+CARMEN
+NOLWEEN
+NADIA
+HELENE
+CARO</ab>
+|<ab>VERDE{{sup/3|LG}}
+GREEN{{sup/3|LG}}
+ROSSO{{sup/3|FR}}
+RED{{sup/3|FR}}
+CINZIA
+LUISA
+AMANDA
+ROSSANA
+RITA
+LORENZA
+PAOLA
+GAIA
+OLGA
+WILMA
+IVANA
+MONIA
+LETIZIA
+LILIANA
+ILARIA
+ISOTTA
+VIVIANA</ab>
+|}
+
+===Placeholder names===
+====Pokémon FireRed, LeafGeen, and Emerald====
+{| class="roundtable" style="background:#{{LeafGreen color}}; border:3px solid #{{LeafGreen color dark}}"
+|-
+! style="background:#{{LeafGreen color light}}" | Language
+! style="background:#{{LeafGreen color light}}" | Name
+! style="background:#{{LeafGreen color light}}" | Origin
+|-
+| Japanese
+| リーフ ''Leaf''
+| From ''{{game3|FireRed and LeafGreen|Pokémon LeafGreen|s}}''
+|-
+| English, French, Italian
+| Leaf
+| From ''Pokémon LeafGreen''
+|-
+| German
+| Blatt
+| From ''Pokémon Blattgrüne Edition'' (Pokémon LeafGreen)
+|-
+| European Spanish
+| Jaho
+| From ''hoja'' (leaf) with the syllables reversed
+|}
+{{-}}
+
+==References==
+<references/>
+
+==Related articles==
+* [[Green (game)]]
+
+{{Player characters|leafgreen}}
+{{Project CharacterDex notice}}
+
+[[Category:FireRed and LeafGreen characters]]
+[[Category:Champions]]
+[[Category:Super Smash Bros. spirits]]
+
+[[de:Leaf]]
+[[es:Hoja (personaje)]]
+[[fr:Leaf]]
+[[it:Leaf (gioco)]]
+[[ja:リーフ]]
+[[zh:葉子]]

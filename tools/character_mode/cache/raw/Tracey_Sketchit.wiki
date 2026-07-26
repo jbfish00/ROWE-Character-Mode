@@ -1,0 +1,370 @@
+{{redirect|Tracey|the book author|Tracey West}}
+----
+{{Character Infobox
+|color={{orange color}}
+|bordercolor={{orange color dark}}
+|corecolor={{orange color light}}
+|name=Tracey Sketchit
+|jname=ケンジ
+|tmname=Kenji
+|image=TraceyEP.png
+|size=150px
+|caption=Tracey Sketchit
+|gender=Male
+|eyes=Brown
+|hair=Black{{tt|*|Hand colored episodes}}, Olive Green{{tt|*|Digitally colored episodes}}
+|hometown=Unknown; currently <br>resides in [[Pallet Town]]
+|region=Unknown; currently <br>resides in [[Kanto]]
+}}
+{{Character Infobox/Anime
+|color={{orange color light}}
+|series=''[[Pokémon the Series]]''
+|debut=''[[EP084|The Lost Lapras]]''
+|enva=[[Ted Lewis]] <small>([[EP084]]-[[AG133]], [[JN147]])</small><br>[[Craig Blair]] <small>([[AG192]])</small>
+|jpva=[[Tomokazu Seki]]
+}}
+{{Character Infobox/Game
+|color={{orange color light}}
+|gen={{gen|I}}
+|games={{pkmn|Puzzle League}}
+|trainer=[[Pokémon Watcher|Watcher]]
+}}
+|}
+
+'''Tracey Sketchit''' (Japanese: '''ケンジ''' ''Kenji'') is a [[Pokémon Watcher]] and a former {{ashfr|traveling companion}} of {{Ash}} who currently works at [[Professor Oak's Laboratory]] as an [[Professor's assistant|assistant]] to {{an|Professor Oak}}. He made his debut appearance in ''[[EP084|The Lost Lapras]]''.
+
+==In animation==
+===History===
+====''Pokémon the Series''====
+=====Pre-series=====
+Tracey grew up in an unknown town but enjoyed observing and watching Pokémon. Tracey also came to idolize {{an|Professor Oak}} and saw him as his hero, hoping to meet him one day. Eventually, Tracey became a [[Pokémon Watcher]].
+
+=====[[Original series]]=====
+[[File:Tracey debut.png|thumb|left|220px|Tracey in his debut appearance]]
+======As Ash's traveling companion======
+Tracey first appeared in ''[[EP084|The Lost Lapras]]'' when he came upon {{Ash}} getting ready to {{pkmn|battle}} three other {{pkmn|Trainer}}s. He was impressed by the condition of [[Ash's Pikachu]] and decided to take notes. He got to know Ash and {{an|Misty}} better after he helped them save an injured {{AP|Lapras}}. After hearing that Ash and Misty knew Professor Oak, Tracey decided to start traveling with the group, thinking he would get to see Professor Oak in person by doing so.
+
+Tracey displayed some of his Pokémon watching skills in ''[[EP088|In the Pink]]'', where he took some time to observe a [[Pinkan Berry|pink]] {{p|Rhyhorn}}. He was able to watch it and sketch it without it noticing him at all until Ash approached it.
+
+In ''[[EP097|Tracey Gets Bugged]]'', he expressed that his favorite type of Pokémon was {{type|Bug}} Pokémon, much to Misty's dislike. During their time on [[Murcott Island]], the group came upon an {{pkmn|aging|elderly}} and injured {{TP|Tracey|Scyther}}. Tracey ended up building a strong bond with Scyther and was able to defeat the [[Team Rocket trio]]. In the end, Tracey decided to add Scyther to his team.
+
+Tracey's sole major role in a {{pkmn|movie}} was in ''[[M02|The Power of One]]'', where he traveled to [[Shamouti Island]] with Ash and Misty during their journey through the [[Orange Islands]]. There, he aided Ash in his quest as the Chosen One.
+[[File:Tracey catches a Pokémon.png|thumb|220px|Tracey after catching a Pokémon]]
+While on their way to [[Pummelo Stadium]], Tracey got to meet one of his idols, [[Quincy T. Quackenpoker|Dr. Quackenpoker]], a Pokémon Watcher who specialized in researching {{p|Magikarp}}. Tracey picked up a few pointers from the older watcher and got to count how many Magikarp evolved into {{p|Gyarados}}.
+
+======As Professor Oak's assistant======
+Tracey finally got to meet Professor Oak in person in ''[[EP115|A Tent Situation]]''. He was incredibly nervous when he turned over his drawings to him, knowing that a watcher's dream was to have their drawings reviewed by Professor Oak. By the [[EP116|next episode]], he decides to stay in [[Pallet Town]] and become Professor Oak's assistant. Later, he single-handedly saves Ash's Pikachu from being stolen by Team Rocket using Scyther and {{TP|Tracey|Marill}}, the latter of whom also defeats the trio and [[Blasting off|blasts them off]].
+
+In ''[[M03|Spell of the Unown: Entei]]'', he asked Professor Oak what the {{OBP|Unown|M03}} were.
+[[File:Tracey and Daisy.png|220px|left|thumb|Tracey and Daisy]]
+During the events of ''[[EP225|Bulbasaur... the Ambassador!]]'', Tracey and Professor Oak borrowed [[Ash's Bulbasaur]] to solve a crisis at the Laboratory. As the day progressed, Tracey tried to help by sending {{TP|Tracey|Venonat}}, {{TP|Tracey|Marill}}, and {{TP|Tracey|Scyther}} to solve some problems. Later, Tracey helped Bulbasaur and the local Pokémon set up a fountain so the Pokémon could live in harmony.
+
+In ''[[M04|Celebi: The Voice of the Forest]]'', Tracey first appeared in a scene that was removed from the dub, during Ash's first video conversation with Professor Oak. Later, during the end credits, he discovered [[Sam]]'s old sketchbook in Oak's lab and views the drawing he made of {{OBP|Celebi|M04}} and Pikachu.
+
+In ''[[EP266|A Claim to Flame!]]'', Tracey watched the opening of the [[Silver Conference]] with Professor Oak in the laboratory. During the exhibition, the Professor noted the absence of Ash who was currently being kidnapped by {{TRT}}.
+
+Tracey reappeared in ''[[EP273|Gotta Catch Ya Later!]]'', when Ash decided to meet with {{Gary}}. Tracey and Professor Oak welcomed him to the Lab and talked about Gary's whereabouts. At night, Tracey was present when Ash told everyone about his decision to travel to [[Hoenn]], and supported that decision and told him a little about [[Professor Birch]] and assured Ash that he would take very good care of all his Pokémon.
+
+=====[[Pokémon Chronicles]]=====
+In ''[[HS04|Showdown at the Oak Corral]]'', Tracey helped to protect the laboratory from [[Butch]] and [[Cassidy]].
+
+In ''[[HS08|Oaknapped!]]'', Tracey was assisted by [[Ritchie]] to help locate Professor Oak after he was kidnapped by Butch and Cassidy.
+
+====={{aniseries|RS}}=====
+[[File:Marill Azurill.png|thumb|220px|left|Tracey in {{aniseries|RS}}]]
+Tracey is seen watching Ash's battle against {{ho|Katie}} at the [[Ever Grande Conference]] in ''[[AG128|Shocks and Bonds]]''.
+
+Prior to ''[[AG132|The Scheme Team]]'', [[Tracey's Marill]] produced an {{pkmn|Egg}}. Tracey gave the Egg to Misty, which later hatched into an {{TP|Misty|Azurill}}. In ''[[AG133|The Right Place and The Right Mime]]'', he got to meet {{an|May}} and [[Max]] and later tagged teamed with {{an|Misty}} using the parent and child Pokémon to fire a double {{m|Water Gun}} attack at Team Rocket.
+
+In ''[[AG187|The Unbeatable Lightness of Seeing!]]'', Professor Oak handed Ash a poster made by Tracey and {{cat|Ash's Pokémon}} wishing him good luck in his battle with {{an|Brandon}}.
+
+In ''[[AG192|Home is Where the Start Is!]]'', Tracey greeted Ash after his victory in the {{gdis|Battle Frontier|III}} and soon after watched Ash and {{AP|Pikachu}} battling Gary and his newly caught {{TP|Gary|Electivire}}. The next day, Tracey was present at the farewell as Ash was leaving for the [[Sinnoh]] region.
+
+====={{aniseries|DP}}=====
+Tracey made a brief cameo in ''[[DP001|Following A Maiden's Voyage!]]''. Tracey was present at Professor Oak's side while Ash called to let him know he had arrived in Sinnoh.
+
+====={{aniseries|BW}}=====
+[[File:Professor Oak and Tracey.png|thumb|250px|Tracey in {{aniseries|BW}}]]
+Tracey was mentioned by Professor Oak in ''[[BW047|Crisis from the Underground Up!]]'' when Ash called the lab from [[Nimbasa City]]. During the call, Professor Oak said that Tracey had a suggestion for Ash during his next Gym challenge. However, the connection is cut before Ash can speak to him.
+
+He had a longer cameo in ''[[BW116|The Fires of a Red-Hot Reunion!]]'', where he appeared with Professor Oak in a video presentation showing [[Kanto]]'s [[first partner Pokémon]] during the [[Kanto Fair]].
+
+Tracey was mentioned by Professor Oak and Ash, and he also appeared in a fantasy, in ''[[BW142|The Dream Continues!]]''. Professor Oak revealed that Tracey was at the [[Cerulean Gym]] with {{an|Misty}} at that time.
+
+====={{aniseries|JN}}=====
+[[File:Tracey JN.png|thumb|250px|left|Tracey in {{aniseries|JN}}]]
+In ''[[JN068|Advice to Goh!]]'', Professor Oak mentioned that Tracey had helped him look for [[Ash's Infernape]], which had been missing for some time.
+
+From ''[[JN118|Battling as Hard as Stone!]]'' to ''[[JN132|Partners in Time!]]'', Tracey watched Ash's [[Masters Eight Tournament]] matches against {{an|Steven Stone|Steven}}, {{an|Cynthia}}, and {{an|Leon}} alongside Professor Oak, Delia, and Ash's Pokémon.
+
+In ''[[JN147|The Rainbow and the Pokémon Master!]]'', Tracey greeted Ash during his visit back to Pallet Town. During the meeting, Tracey talked to Ash and asked him to take charge of the Lab for a few days. Days later when Tracey returned, Ash discovered that Tracey's {{TP|Tracey|Venonat}} had evolved.
+
+====''[[M20|I Choose You!]]''====
+Tracey made a cameo appearance in the ending credits of ''[[M20|I Choose You!]]'', alongside all of Ash's traveling companions at the time.
+{{-}}
+
+===Character===
+[[File:Seaking drawing.png|thumb|220px|Tracey's drawing of a Seaking]]
+[[File:Tracey watching.png|thumb|left|220px|Tracey inspecting a {{p|Spearow}}]]
+In general, Tracey is a gentle person, and has a hard time saying no to anyone, especially to girls. In ''[[HS11|A Date With Delcatty]]'', he took care of Misty's chores and helped {{an|Daisy}} with various tasks around the [[Cerulean Gym]]. Tracey does various chores around the lab, such as feeding the Pokémon and cleaning. He has befriended many of the Pokémon that reside at the lab, in particular [[Ash's Bulbasaur]]. He helps take care of the {{cat|Ash's Pokémon|Pokémon}} that Ash leaves at the lab and sometimes has them help him with chores.
+
+Tracey is a lot like {{an|Brock}} in many aspects. He has a broad knowledge about Pokémon and this has helped him and his friends in their {{pkmn|journey}} many times along the way. Also, similarly to Brock, he seems to have a soft spot for pretty girls, but to a much less extreme degree. He seems to have some standards as he tends to be more drawn towards women who exhibit strength and courage rather than just any pretty girl he sees. Also, he is more self-conscious and doesn't go overboard about them as Brock does, expressing his interest by simply drawing them.
+
+There have been rare incidents where Tracey was seen losing his temper. In ''[[EP084|The Lost Lapras]]'', Misty comments that she doesn't know how famous Professor Oak is and Tracey barks back at her, saying that Professor Oak is the most respected researcher on the entire {{pkmn|world|planet}}. Another time this happened was in ''[[HS14|Journey to the Starting Line!]]'', when a boy named {{OBP|Gilbert|HS14}} said that he wouldn't want to have the annoyance of raising a Pokémon himself. Angered, Tracey yelled at him saying that training Pokémon was the most important part of being a [[Pokémon Trainer]]. He also lost his temper in ''[[EP115|A Tent Situation]]'', desperate to go see Professor Oak, where he yelled at Ash, Misty, and Brock for babbling, and again in ''[[HS04|Showdown at the Oak Corral]]'', when the [[Magikarp salesman]] tried to sell him a Magikarp.
+[[File:Ash and friends OS 2.png|thumb|left|220px|Tracey, Ash, and Misty]]
+Tracey's Pokémon watching usually involves him observing a Pokémon and sketching it. He uses special binoculars that allow him to take measurements of a Pokémon that is far away. Tracey also has unnaturally good eyesight, as seen in ''[[EP092|The Joy of Pokémon]]'', where he was able to tell that the person paddling past them at a high speed was [[Nurse Joy]]. He was also able to tell that her arms were wider than other Nurse Joys after seeing her for only a split second.
+
+Tracey has some tricks of the trade when it comes to Pokémon watching. To avoid being detected by the Pokémon he is observing, he always makes sure that he approaches it from downwind to avoid his scent being picked up by his subject. He also changes his breathing rhythm to match the Pokémon's so that he will not be heard.
+
+He also has the unique ability to know what [[move]] a Pokémon is going to use just by the way it moves about. This was seen when he knew [[James]]'s {{TP|James|Victreebel}} was going to use {{m|Razor Leaf}} while battling with his Scyther in ''[[EP097|Tracey Gets Bugged]]''.
+
+Like Tracey admires Professor Oak, [[Max]] seems to have an admiration for him. He complimented Tracey on his artwork and told him how lucky he was to be working with Professor Oak, and even wished that he could draw Pokémon one day.
+{{-}}
+
+===Pokémon===
+[[File:Tracey Party.png|thumb|250px|Tracey's [[party]] in {{aniseries|OS}}]]
+Tracey does not appear to {{pkmn|training|train}} his {{OBP|Pokémon|species}} for {{cat|Pokémon competitions|competitions}}, however, they are still important in his fieldwork. At times when he has trouble in finding a certain Pokémon, he calls on the help of {{cat|Tracey's Pokémon|his own Pokémon}}. His Venomoth has radar-like eyes that can track a Pokémon from the farthest of distances and even locate hidden Pokémon. In times where a Pokémon can't be seen, he uses his Marill who has excellent hearing and is able to detect faint sounds. His Scyther is his only Pokémon used solely for battling.
+
+This listing is of Tracey's known {{OBP|Pokémon|species}} in {{aniseries|PTS}}:
+
+====On hand====
+{| width="100%"
+|-
+| {{ActivePoké|Tracey|Venomoth|Tracey Venomoth.png|bug|poison|fir=Venonat}}
+| {{ActivePoké|Tracey|Marill|Tracey Marill.png|water|size=190px}}
+| {{ActivePoké|Tracey|Scyther|Tracey Scyther.png|bug|flying|size=190px}}
+|}
+
+====Given away====
+{| width="100%"
+|-
+| {{InactivePoké|Misty|Azurill|Misty Azurill.png|???|disp=Egg}}
+|
+|
+|
+|}
+
+====Status unknown====
+{{TrainerPoké
+|trainer=Tracey
+|pkmn=Dodrio
+|type1=Normal
+|type2=Flying
+|img=Tracey Dodrio.png
+|epnum=EP084
+|epname=The Lost Lapras
+|desc=Tracey was seen riding a {{p|Dodrio}} in a flashback while Pokémon watching. However, it is unknown whether Dodrio belonged to him or if it was simply borrowed.
+
+None of Dodrio's moves are known.}}
+
+====Temporary====
+{{TrainerPoké
+|main=yes
+|trainer=Ash
+|pkmn=Bulbasaur
+|type1=Grass
+|type2=Poison
+|img=Ash Bulbasaur.png
+|epnum=EP010
+|epname=Bulbasaur and the Hidden Village
+|vajp=Megumi Hayashibara
+|vaen=Tara Jayne
+|vaennote=<small>[[EP010]]-[[AG133]]</small>
+|vaen2=Michele Knotz
+|vaen2note=<small>[[AG189]]-present</small>
+|desc=In ''[[HS04|Showdown at the Oak Corral]]'', Tracey commanded Bulbasaur to use {{m|Vine Whip}} to remove the sheet covering [[Butch]] and [[Cassidy]]'s helicopter.}}
+
+===Main outfit===
+[[File:Tracey Sketchit.png|thumb|150px|Tracey's main outfit]]
+Tracey has only had one main outfit throughout the entire series. It consists of a loose green {{wp|T-shirt}}, reddish-brown shorts, blue and yellow sneakers, an orange backpack, and his most notable accessory, a salmon-colored headband that he uses to keep his hair out of his face.
+Tracey is the only main character from the original series whose outfit was not changed at the start of any of the newer series.
+
+===Other outfits===
+====Costumes====
+* In ''[[HS16|Luvdisc is a Many Splendored Thing!]]'', {{an|Daisy}} fantasized Tracey playing the prince in her water ballet alongside Misty. This outfit consisted of a blue shirt with long sleeves and gold trimming, teal pants, a red cape, and a silver crown. This would be the second time he is seen without his headband.
+<!--====Formal attire====
+====Other clothing====-->
+
+====Outdoor gear====
+=====Swimwear=====
+* His first swimsuit was a pair of navy-blue swim trunks with two red lines on either side, as seen in ''[[EP092|The Joy of Pokémon]]''.
+* The second was seen in ''[[EP108|Pokémon Double Trouble]]''. It is still a pair of navy blue swim trunks but with a sunflower print. He also removed his headband while in this outfit.
+* The third was seen in ''[[HS05|The Blue Badge of Courage]]''. It is another pair of blue swim trunks but with an orange stripe painted on the legs.
+
+====Gallery====
+<gallery perrow="5" widths="200">
+File:Tracey trunks EP092.png|Tracey's first swimsuit
+File:Tracey Sunflowered Trunks.png|Tracey in flower-patterned trunks
+File:Tracey Trunks HS05.png|Tracey's trunks in ''[[HS05|The Blue Badge of Courage]]''
+File:Tracey Prince.png|Tracey's prince outfit
+</gallery>
+
+===Voice actors===
+{{vatable
+| color = {{orange color light}}
+| bordercolor = {{orange color}}
+| ja = 関智一 ''[[Tomokazu Seki]]''
+| en = [[Ted Lewis]] ([[EP084]]-[[AG133]], [[JN147]], [[M02]]-[[M03]], [[Pokémon Chronicles]])<br>[[Craig Blair]] ([[AG192]])
+| ar = أيمن السالك ''Ayman Al-Salek'' ([[EP084]]-[[EP105]])<br>طارق كعكاتي ''Tariq Kaakati'' ([[EP106]]-[[EP116]])<br>جمانة الزنجي ''Joumana Zonji'' ([[JN147]])
+| zh_cmn = 符爽 ''Fú Shuǎng''
+| cs = Jan Škvor
+| de = Dirk Meyer
+| pl = Wojciech Majchrzak ([[EP084]]-[[EP116]], [[JN147]])<br>Jacek Kopczyński ([[M02]])<br>Józef Mika ([[M03]])<br>Arkadiusz Detmer ([[EP225]])<br>Aleksander Gawek ([[EP266]]-[[EP267]], [[EP273]])
+| pt_br = Rogério Vieira ([[Original series]], [[EP225]] redub, [[JN147]])<br>Tatá Guarnieri ([[EP225]])<br>Marcos Souza ([[M03]])<br>Vágner Fagundes ([[AG133]], [[Pokémon Chronicles]])<br>Dado Monteiro ([[AG192]])
+| es_eu = Ricardo Escobar
+| es_la = Alfredo Leal ([[EP084]]-[[EP273]], [[JN147]])<br>Ricardo Bautista ([[HS04]], [[AG133]])<br>Gerardo García ([[HS05]]-[[HS16]])<br>Christian Strempler ([[AG192]])
+| fi = Juha Paananen ([[M02]]-[[M03]], [[PK04]])<br>Karolina Blom ([[EP273]])<br>Joonas Suominen ([[AG133]])<br>Aku Laitinen ([[AG192]])
+| el = Λουκάς Φραγκούλης ''Loukas Frangoulis''
+| nl = Martin Van den Ham ([[EP084]]-[[EP116]])<br>Rolf Koster ([[EP225]]-[[JN147]])
+| is = Ólafur Egilsson ([[M03]])
+| id = Dicky Rahman<br>Dadan Sundana
+| it = Patrizio Prata ([[EP084]]-[[AG133]])<br>Massimo Di Benedetto ([[AG192]])
+| he = דור סרוגו ''Dor Srogo''
+| hi = नचिकेत दिघे ''{{wp|Nachiket Dighe}}'' (Cartoon Network dub)<br>अंशुल चन्द्र ''Anshul Chandra'' (Hungama dub)
+| da = Timm Mehrens ([[EP084]]-[[EP105]])<br>Mikkel Christiansen ([[EP273]]-[[JN147]])
+| fr_ca = Joël Legendre
+| fr_eu = Bruno Mullenaerts ([[EP084]]-[[AG133]])<br>Grégory Praet ([[AG192]]-[[JN147]])
+| hu = Tamás Markovics
+| ko = 이영주 ''Lee Yeong-Ju''
+| no = Erik Skøld<br>Eirik Espolin Johnson
+| pt_eu = Peter Michael<br>Pedro Carneiro<br>Luís Barros<br>Tiago Araújo ([[JN147]])
+| sv = Johan Hedenberg<br>Niclas Wahlgren ([[M02]])
+| fil = Ely Martin
+| th = นิรันดร์ บุญยรัตพันธุ์ (น้าต๋อย) ''Nirun Boonyarattaphan (Na Toy)''
+| ru = Дмитрий Завацкий ''Dmitrii Zavatskii'' ([[EP084]]-[[EP105]])<br>Игорь Письменный ''Igor Pismenny'' ([[M02]]-[[M03]])<br>Прохор Чеховской ''Prokhor Chekhovskoy'' ([[AG133]])<br>Дмитрий Филимонов ''Dmitry Filimonov'' ([[AG192]])<br> Unknown actor ([[JN118]]-[[JN147]])
+| ta = பரணிதரன்''{{wp|Bharanidharan}}'' (Hungama dub)
+| ca = Aleix Estadella (VHS dub)
+}}
+
+===Artwork===
+{| style="margin:auto; text-align:center; {{roundy|15px}} border: 2px solid #{{orange color dark}}; background: #{{orange color}}; font-size: 80%"
+|-
+| style="{{roundy|15px}} border: 2px solid #{{orange color dark}}; background: #{{orange color light}}; width:96px" | [[File:Tracey Sketchit M20.png|160px]]
+| style="{{roundy|15px}} border: 2px solid #{{orange color dark}}; background: #{{orange color light}}; width:96px" | [[File:JN132 AS.png|260px]]
+|-
+| Official artwork from ''[[M20|I Choose You!]]''
+| Artwork from "After the story" <ref>https://twitter.com/anipoke_PR/status/1591672205040943105</ref>
+|}
+
+==In the spin-off games==
+===Pokémon Puzzle League===
+{{incomplete|section|Missing quotes}}
+In [[Pokémon Puzzle League]], Tracey appears as the host of the Mimic Mansion, and one of the characters available in the 2P Stadium mode.
+
+====Pokémon====
+{| style="float:left; width: 96px"
+|-
+| {{ActivePoké|Tracey|Marill|183Marill.png|water|size=100px}}
+| {{ActivePoké|Tracey|Venonat|048Venonat.png|bug|poison|size=100px}}
+| {{ActivePoké|Tracey|Scyther|123Scyther.png|bug|flying|size=100px}}
+|}
+{{left clear}}
+
+==In the manga==
+[[File:Tracey M02 manga.png|thumb|100px|Tracey in {{ma|Mirage Pokémon Lugia's Explosive Birth}}]]
+
+===Movie adaptations===
+Tracey appears in {{ma|Mirage Pokémon Lugia's Explosive Birth}}, where he fulfilled the same role as he did in the [[M02|movie of the same name]].
+{{-}}
+
+==Trivia==
+[[File:Tracey Sketchit High Touch.png|thumb|200px|Tracey as seen in [[High Touch!]]]]
+[[File:Tracey lookalike EP146.png|thumb|200px|Tracey's lookalike (right)]]
+[[File:Tracey lookalike EP169.png|thumb|200px|Tracey's other lookalike (left)]]
+* A Pokémon Trainer with a [[Animated series character recycling|striking resemblance]] by the name of [[Tad]] appeared in ''[[EP105|Charizard Chills]]''.
+* Another Pokémon Trainer with a striking resemblance appeared in ''[[EP146|Tricks of the Trade]]''.
+** Also, a Pokémon breeder with a striking resemblance appeared in ''[[EP169|Beauty and the Breeder]]''.
+* Tracey has spent the least amount of episodes traveling with Ash out of all his {{ashfr|traveling companions}}, accompanying him for only 33 episodes, which comprised the entire Orange Islands arc ([[EP084]]-[[EP116]]).
+** Despite this, Tracey has appeared in more Japanese opening sequences after his retirement from the main cast than any of Ash's other friends with a total of 11. He is featured in 12 overall, which places him just behind Brock, who is featured in 14.
+* Tracey is Ash's only traveling companion with an officially revealed last name.
+* Tracey is the first protagonist to be completely original to the [[Pokémon animated series]] and not be based on any character from the games.
+* Tracey is the only main character:
+** Whose Pokémon has produced an Egg.
+** With multiple Pokémon to have none of their genders confirmed.
+** With no known hometown or region of origin.
+* In the original Japanese version, Tracey's sketchbook has a {{i|Poké Ball}} symbol on the bottom right-hand corner and some writing in the top left-hand corner. This is painted out in the dub for unclear reasons.
+* Tracey is the only male main character who has no known relatives.
+* In the {{pmin|Sweden|Swedish}} dub, Tracey speaks in a {{wp|Stockholm dialects|Stockholm accent}} and adds "{{tt|seru|''you see'', typical Stockhom thing to say}}" at the end of a lot of sentences in his first few episodes. This fades out over time.
+* In the {{pmin|Netherlands|Dutch}} dub, Tracey is given the last name West, likely after [[Tracey West|the book author]], rather than Sketchit.
+* Tracey is the only main character from the [[original series]]:
+** To not own a Pokémon introduced after [[Generation II]].
+** To never have a full [[party]] of six Pokémon on hand at any point.
+** To not own a Pokémon kept in a [[Poké Ball]] variant.
+* Tracey is the last main character from the original series to have one of his Pokémon evolve under his ownership.
+* Tracey is the only protagonist from the original series who has not been shown using [[Mega Evolution]].
+* Counting only the episodes of {{aniseries|PTS}}, Tracey has the fewest onscreen {{pkmn|battle}}s (however long or brief) of any main character, battling a total of only four times (once in ''[[EP090|Stage Fight!]]'', twice in ''[[EP097|Tracey Gets Bugged]]'', and once in ''[[EP116|The Rivalry Revival]]'').
+** Additionally, all of his Trainer battles in both the main series and side story episodes have been against members of [[Team Rocket]].
+*** Although he ''was'' once challenged to a battle by [[Gulzar|someone outside of Team Rocket]], Ash ended up being challenged instead for trying to defend him.
+* Tracey has the longest gap between physical appearances out of any of Ash's friends during ''Pokémon the Series'', with a gap of 736 episodes between ''[[DP001|Following A Maiden's Voyage!]]'' and ''[[JN118|Battling as Hard as Stone!]]''.
+* Tracey is the only one of Ash's friends who was shown watching all of his [[Masters Eight Tournament]] battles onscreen.
+* Tracey is the last of Ash's friends to reunite with him in ''[[Pokémon Journeys: The Series]]''.
+** Tracey is also the only one of Ash's friends to not meet any of Ash's other friends during ''Pokémon Journeys: The Series''.
+* Tracey is the only main character, as well as the fourth character overall, to regain his original English voice actor following [[Pokémon USA recasting controversy|the voice actor switch]], after {{an|Giovanni}}, [[Raoul Contesta]], and [[Nurse Joy]].
+
+===Interview with Hidaka about Tracey's creation===
+There had been some debate between members of the fanbase in regards to why Tracey was created, as well as why he replaced Brock, and vice versa. In an [http://www.pokebeach.com/news/0708/second-pokemon-interview-with-masamitsu-hidaka-many-interesting-points interview] with former Pokémon animation director and storyboard artist [[Masamitsu Hidaka]], he stated his own reason why Tracey was created and why he replaced Brock. He (or rather, his translator) revealed that the true reason they replaced Brock is because, once they realized ''Pokémon'' was going to go global, there was a chance that Americans, if not anyone else outside of Japan, would view Brock as a racist stereotype because of his eyes (even though there wasn't an actual complaint yet). So they created a "tall, white, Anglo-looking character to replace him, just to be on the safe side". They later replaced him with Brock again once they realized that no one really cared as to what Brock looks like, and actually enjoyed his character.
+
+However, this was only stated by Hidaka and not by any other staff member.
+
+==Names==
+{| class="roundtable" style="background:#{{orange color}}; border:3px solid #{{orange color dark}}"
+|-
+! style="background:#{{orange color light}}" | Language
+! style="background:#{{orange color light}}" | Name
+! style="background:#{{orange color light}}" | Origin
+|-
+| Japanese
+| ケンジ ''Kenji''
+| Possibly from ''[[Ken Sugimori]]'' or 見 ''ken'' (view)
+|-
+| English, German, Italian, European Spanish,<br>Latin American Spanish, Brazilian Portuguese,<br>Catalan, Swedish
+| Tracey Sketchit
+| From ''trace'' with the surname being a play on ''sketch it''
+|-
+| French
+| Jacky Léon
+|
+|-
+| Korean
+| 관철 ''Gwancheol''
+| From 관찰 (觀察) ''gwanchal'' (observation)
+|-
+| Chinese (Taiwan and mainland China)
+| 小建 ''Xiǎo Jiàn''
+| rowspan="2" | Possibly from 杉森'''建''' ''Ken Sugimori'' and the {{wp|diminutive}} prefix 小 ''xiǎo / síu''
+|-
+| Chinese (Hong Kong)
+| 小建 ''Síu Gin''
+|-
+| Russian
+| Трейси Скечит ''Treysi Skechit''
+| Transcription of his English name
+|-
+| Thai
+| เคนจิ ''Khenchi''
+| Transcription of his Japanese name
+|}
+{{-}}
+
+==References==
+{{reflist}}
+
+==Related articles==
+* {{cat|Episodes focusing on Tracey}}
+* [[a:Category:Tracey Sketchit|Images on the Bulbagarden Archives]]
+
+{{Tracey's Pokémon}}
+{{Animecharacters|orange}}
+{{Project Anime notice|no}}
+
+[[Category:Animation characters]]
+[[Category:Ash's friends]]
+[[Category:Pokémon Watchers]]
+[[Category:Laboratory assistants]]
+
+[[de:Tracey Sketchit]]
+[[es:Tracey Sketchit]]
+[[fr:Jacky Léon]]
+[[it:Tracey Sketchit]]
+[[ja:ケンジ]]
+[[zh:小建]]

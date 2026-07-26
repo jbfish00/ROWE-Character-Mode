@@ -1,0 +1,278 @@
+{{CharInfobox
+|color={{white color light}}
+|corecolor={{morning color light}}
+|bordercolor={{white color dark}}
+|name=Lusamine
+|jname=ルザミーネ
+|tmname=Lusamine
+|image=Lusamine SM.png
+|caption=Art from ''[[Pokémon the Series: Sun & Moon]]''
+|size=125px
+|gender=Female
+|age=no
+|colors=yes
+|eyes=Green
+|hair=Blonde
+|hometown=[[Aether Paradise]]
+|region=[[Alola]]
+|relatives=[[Mohn]] (husband)<br>{{an|Lillie}} (daughter)<br>{{an|Gladion}} (son)<br>unnamed father
+|trainer=no
+|trainerclass=Aether President
+|game=counterpart
+|counterpart=[[Lusamine]]
+|team=yes
+|teamname=[[Aether Foundation]]
+|teamrank=President
+|anime=yes
+|epnum=SM044
+|epname=A Dream Encounter!
+|java=[[Sayaka Kinoshita]]
+|enva=[[Bobbi Hartley]]
+}}
+
+'''Lusamine''' (Japanese: '''ルザミーネ''' ''Lusamine'') is a recurring character in {{aniseries|PTS}}. She is {{an|Lillie}}'s and {{an|Gladion}}'s mother and the president of the [[Aether Foundation]].
+
+==History==
+===Pre-series===
+[[File:SM116 photo.png|thumb|250px|left|A younger Lusamine with Mohn, Wicke, and Faba]]
+Since her childhood, Lusamine had been fascinated by the {{an|Ultra Beasts}} from her father's stories, dreaming of meeting one someday. Lusamine would eventually found the Aether Foundation alongside her husband [[Mohn]], and their colleagues {{an|Faba}} and [[Wicke]].
+
+It was revealed in ''[[SM116|The Secret Princess!]]'' that Lusamine witnessed [[Mohn]] being sucked into an [[Ultra Wormhole]] during one of his experiments. She has since presumed that he passed away. As a result, she never spoke of her grief and kept much of Mohn's past a secret from her two children, Lillie and Gladion, who were both young at the time of his disappearance. As time went on, Lusamine began investing more and more time in her job at [[Aether Paradise]], spending less time at home with her children as a result.
+
+===''[[Pokémon the Series: Sun & Moon]]''===
+Lusamine first appeared in a photograph with Lillie and Gladion seen in ''[[SM008|Lillie's Egg-xhilarating Challenge!]]'' and ''[[SM027|A Glaring Rivalry!]]''.
+
+She physically debuted in ''[[SM044|A Dream Encounter!]]'', where she was investigating the [[Altar of the Sunne]] alongside {{an|Professor Burnet}}, Wicke, and Faba for traces of Ultra Aura, but were unable to find anything. The four later followed a second reading to [[Melemele Island]], tracing its source to [[Ash's Solgaleo|Nebby]], a {{p|Cosmog}} that had been discovered by {{Ash}}; she also enthusiastically reunited with Lillie, who was frustrated with her mother's babying attitude. Lusamine initially suggested leaving Nebby with the Aether Foundation when Ash talked about his dream of {{p|Solgaleo}} and {{p|Lunala}} the night before. However, she eventually agreed to entrust the Pokémon to Ash after hearing about his achievements in [[Alola]].
+
+In ''[[SM046|Deceiving Appearances!]]'', Lusamine invited Lillie and {{ashcl|her classmates}} to [[Aether Paradise]] for a tour of the facility, primarily hoping to learn all about Lillie's experience at the [[Pokémon School]]. Because of her busy schedule, however, she was unable to fulfill her promise to lead the tour. She later rushed to check on Lillie when she heard her daughter was involved in chasing down an escaped {{p|Ditto}} before quickly returning to her work.
+
+In ''[[SM048|Night of a Thousand Poses!]]'', Lusamine arranged for Lillie's butler [[Hobbes]] to record her daughter's daily life on video for her, which upset Lillie. When Lusamine casually interrupted their conversation to take a business call, Lillie snapped at her mother for her apparent lack of concern for her family. Professor Burnet later assured Lillie that Lusamine truly cared for her children, as she kept numerous pictures of them in her office.
+
+In ''[[SM049|Mission: Total Recall!]]'', Lusamine was confronted by Gladion over the whereabouts of his {{p|Type: Null}}, {{TP|Gladion|Silvally}}, after it had been stolen by Faba. Lusamine, completely unaware about the entire situation, helped Gladion search for Type: Null in Faba's research room. As they searched, Gladion chastised his mother for failing to notice the childhood trauma Lillie suffered from an Ultra Beast, which Lusamine had ironically ignored in favor of studying the very same creatures. After finding Type: Null's [[Poké Ball]], Lusamine and Gladion headed outside, where they found Faba attacking Lillie and Ash. In order to save Lillie, Type: Null {{p|Silvally|evolved}} and defeated Faba's Pokémon. With her daughter freed, Lusamine hugged Lillie and tearfully apologized for her ignorance, allowing them to reconcile. Afterward, she was overjoyed when Lillie's experience finally allowed her to overcome her fear.
+
+[[File:SM053.png|thumb|250px|Lusamine fused with Nihilego]]
+In ''[[SM050|Faba's Revenge!]]'', Lusamine issued a search for Faba after he had gone missing after his attack on Lillie. She, Lillie, Gladion, and Ash eventually found him as he kidnapped Nebby and forced it to summon a {{DL|Ultra Beasts (anime)|Nihilego}} from an [[Ultra Wormhole]] to fulfill Lusamine's lifelong dream. Although she was enamored by the Ultra Beast at first, Lusamine quickly ignored it when she realized that her children were in danger. The group tried to fight off Nihilego, but it proved to be too powerful and easily defeated their Pokémon. When Gladion tried to protect his family from the Ultra Beast, Lusamine pushed him out of the way and was captured by it instead. Nihilego then proceeded to carry Lusamine into the Ultra Wormhole.
+
+In ''[[SM053|Rescuing the Unwilling!]]'', Ash, his classmates, and Gladion traveled to [[Ultra Deep Sea]] to rescue Lusamine with the help of Nebby, now evolved into a {{p|Solgaleo}}. Lusamine, having {{pkmn|fusion|fused with Nihilego}} and been reduced to a childlike state, claimed the Ultra Beasts as her own possessions and fled in order to prevent the group from taking them away. As the group chased Lusamine down, more and more of their members were forced to stay behind in order to fight off Lusamine's Pokémon. Lillie successfully returned Lusamine to her senses in [[SM054|the following episode]], and she was freed from Nihilego's grasp with the power of Ash and {{AP|Pikachu}}'s newly created {{m|10,000,000 Volt Thunderbolt}}.
+
+Lusamine attended the wedding of {{an|Professor Kukui}} and Professor Burnet in ''[[SM055|The Professors' New Adventure!]]'', alongside Wicke and a demoted Faba. During the post-nuptials, Lusamine asked Ash, Lillie, and their classmates to join the [[Ultra Guardians]], a task force dedicated to dealing with any upcoming Ultra Beast incidents, which they accepted. Starting in ''[[SM061|A Mission of Ultra Urgency!]]'', she, Wicke, and Professor Burnet would brief Ash and his classmates whenever they embark on a mission as Ultra Guardians. She also accompanies them when the caught Ultra Beast gets released back into [[Ultra Space]].
+
+In ''[[SM067|Love at First Twirl!]]'', she, Wicke, and Professor Burnet contacted Ash and his classmates about the new Pokémon they had just encountered. They confirmed it was an Ultra Beast and chose to name it {{p|Poipole}}. Since the location of the Ultra Wormhole it had appeared from was unknown, Lusamine instructed Ash to catch {{AP|Poipole}} and take care of it until it could be returned to its home world. She reappeared in ''[[SM084|The Shape of Love to Come!]]'', where she, Wicke, and Faba were informed by Ash about new information regarding Poipole. There, Ash revealed that the drawings Poipole makes are an expression of its feelings.
+
+In ''[[SM087|Filling the Light with Darkness!]]'', mysterious dark clouds appeared over Alola, leaving all of the adults tired and without motivation. After doing some research, Lusamine, Wicke, Faba, and Professor Burnet found out that the cause of the incident was a small Ultra Wormhole that was slowly draining Alola's Ultra Aura. The Ultra Guardians were sent to the Altar of the Sunne, where Lusamine revealed that they would be joined by Gladion as a new member. Under Faba's instruction, the Ultra Guardians with [[Z-Ring]]s combined their [[Z-Power]] to fuel a device that could disperse the clouds so the hidden Ultra Wormhole's exact location could be determined. Afterwards, Lusamine took the Ultra Guardians into the ruins of the altar, where she showed them a mural depicting the {{p|Necrozma|Blinding One}}. Before any attempt to translate the mural could be done, the group was forced to return outside, where they found the wormhole increasing in size. At that moment, they witnessed a {{an|Lunala}} emerging from the wormhole with a {{an|Necrozma}} chasing after it.
+
+In [[SM088|the following episode]], the Ultra Guardians followed the two [[Legendary Pokémon]] to Melemele Island, prompting Lusamine and the others follow suit. She was later seen arriving at the island, after Necrozma had fused with Nebby and had left. She and the others then oversaw Lunala recover in the Ultra Guardians base. When the Ultra Guardians decided to go after Necrozma, Lusamine was initially against the plan, but eventually allowed the group to leave. After the Ultra Guardians and Lunala left for Ultra Space, Lusamine stayed behind at the base with Burnet and Wicke to gather information and give orders. When Burnet managed to translate the mural from the Altar of the Sunne, Lusamine learned the true identity of UB Black and how to restore it back to its former self. After contacting the Ultra Guardians again and sharing their findings with them in [[SM090|the next episode]], Lusamine joined the rest of Alola in sharing their Z-Power with Necrozma so it could return to its {{DL|List of Pokémon with form differences|Necrozma|true form}}. After Necrozma returned to its Ultra form, Lusamine watched as the Ultra Guardians, Nebby, and Lunala returned to Alola, alongside Burnet, Wicke, Faba, and Kukui.
+
+In ''[[SM095|Sparking Confusion!]]'', Lusamine noticed an unusual magnetic energy at [[Wela Volcano Park]], which was interfering with the [[Aether Foundation]]'s ability to detect Ultra Aura. The Ultra Guardians flew over to the area, only to discover the havoc that was being wreaked by a group of {{rf|Alolan}} {{p|Graveler}}, {{p|Geodude}}, and {{p|Golem}}. They then discovered that their feeding rituals were disrupted by [[Rock hunters|a group of rock hunters]]. With some help from {{p|Metang}}, the group calmed down.
+
+In ''[[SM096|Don't Ignore the Small Stufful!]]'', Lusamine joined Wicke and Lillie and her classmates in the search for a missing {{an|Stufful}} from Aether Paradise's Conservation Area. Team Rocket was revealed to be behind the chaos, but Lusamine was glad to see Stufful reunited with its mother {{an|Bewear}}.
+
+Having received news from Gladion, who visited {{DL|Guardian deities (anime)|Tapu Fini}} in ''[[SM108|Memories in the Mist!]]'', that [[Mohn]] may still be alive, she began to search for his whereabouts in ''[[SM116|The Secret Princess!]]''. The search led Lusamine to begin dealing with her years of grief since her husband's disappearance as she realized her children were interested in their father. She escorted her children to Mohn's secret study, hidden behind a trap bookshelf in the family's [[Melemele Island]] mansion. As Lillie and Gladion located several items belonging to Mohn, including his [[Z-Ring]], a rusted {{DL|Mohn|Magearna}}, and a journal, Lusamine told them some of Mohn's past.
+
+During the [[Manalo Conference]], Lusamine spectated the battles alongside Professor Burnet, Wicke, and later Faba. She felt incredibly proud of her two children during their battle in ''[[SM131|The Battlefield of Truth and Love!]]'', cheering them both on and wishing Mohn could have seen the two. During the finals match in ''[[SM138|Final Rivals!]]'', she was shocked to see Gladion sending out {{p|Zoroark}}, immediately recognizing it as Mohn's. [[SM139|Later]], despite Gladion's defeat, she was touched by the magnificent battle her son had delivered.
+
+In ''[[SM146|Thank You, Alola! The Journey Continues!]]'', following Magearna's awakening and the revelation of its capability to find Mohn, Lusamine, Lillie, and Gladion decided to leave Alola to find Mohn. After saying goodbye to their friends, the family embarked on their journey.
+
+===''[[Pokémon Journeys: The Series]]''===
+In ''[[JN111|The Homecoming Crown!]]'', Lusamine and her children arrived at the [[Crown Tundra]] in the [[Galar]] region to find Mohn. After camping out during a blizzard for the night, they reunited with Mohn at a cabin. However, they found out that Mohn had amnesia and failed to remember them. They also discovered that a {{Shiny}} {{p|Nihilego}}, [[nickname]]d "Lillie", had been living with Mohn, with him believing that the Ultra Beast was his daughter. While Lusamine talked with Mohn, Lillie and Gladion decided to look around the cabin for clues, which led them to finding their father's old clothes and a mirror in a room. Through the aid of Ash, [[Goh]], and [[Chloe]], Lillie and Gladion were able to snap Mohn out of his amnesia by making him see his reflection in the mirror, and the reunited family embraced each other. Seeing that Nihilego was leaving, Lillie stopped the Parasite Pokémon before it disappeared, as she and her family were grateful for everything it did for Mohn and invited it to come back to Alola with them, which it happily accepted. Lusamine joined her family to capture Nihilego in a [[Beast Ball]] before joining in on a group photo of the reunited family.
+
+In ''[[JN112|Helping the Hometown Hero!]]'', Lusamine's family, Ash, Goh, and Chloe arrived in Alola, attending a party to celebrate their return. During the party, Lusamine reunited with the other Aether Foundation members. The next day, Lusamine watched Gladion participate in a [[Battle Royal]] match with Ash, Kiawe, and Professor Kukui.
+
+==Character==
+[[File:Gladion Lillie Family JN.png|250px|thumb|Lusamine's family]]
+In sharp contrast to her portrayal in the games, Lusamine is a genuine Pokémon preservationist and a loving mother to both Lillie and Gladion in {{aniseries|PTS}}. She has a particular affection for Lillie, often playfully teasing her and treating her like a baby, which greatly embarrasses her daughter. Because she is easily distracted with her work, Lusamine tends to make decisions without considering Lillie's feelings, causing a strain in their relationship. For instance, she once [[Evolution|evolved]] her {{p|Clefairy}} into {{p|Clefable}} against Lillie's wishes, disregarding her daughter's argument that its unevolved form was cuter. Lusamine became deeply ashamed of herself after realizing just how much she had been neglecting her children, especially her failure to notice the trauma that caused Lillie's fear of Pokémon four years earlier, believing she had failed as a mother. Once made aware of the danger her children are in, she proves herself to be fiercely protective of them, evidenced by her decision to sacrifice herself to Nihilego for their safety and expressing no fear as she was taken away, only relief that her children were safe. After Lillie rescued her from Nihilego, Lusamine started to treat Lillie more like an adult, improving their relationship dramatically.
+
+Lusamine's strong obsession with Ultra Beasts has also appeared to override her sense of reason, causing her to momentarily marvel at the Nihilego summoned by Faba in spite of the danger it posed to her and her family. While temporarily fused with Nihilego, Lusamine's obsession was amplified to the point where she regressed to the mindset of a spoiled child. In this state, she referred to the Ultra Beasts as her belongings, and reacted violently to those she assumed were trying to take them away from her. However, she was able to regain herself through her strong force of will upon hearing Lillie call out to her. Following her rescue, Lusamine takes a far more constructive approach to interacting with Ultra Beasts, organizing the Ultra Guardians to help return lost Ultra Beasts to their habitats.
+
+==Pokémon==
+This listing is of Lusamine's known {{OBP|Pokémon|species}} in {{aniseries|PTS}}:
+{{missingInfo|2|java|enva}}
+===On hand===
+{{TrainerPoké
+|trainer=Lusamine
+|pkmn=Lilligant
+|gender=female
+|type1=Grass
+|img=Lusamine Lilligant.png
+|epnum=SM053
+|epname=Rescuing the Unwilling!
+|vaen=Michele Knotz
+|desc={{p|Lilligant}} is one of Lusamine's Pokémon. She has owned her since {{an|Gladion}} and {{an|Lillie}} were young. She first made cameo appearances in a photograph in ''[[SM008|Lillie's Egg-xhilarating Challenge!]]'' and ''[[SM027|A Glaring Rivalry!]]'', alongside Lusamine, Lusamine's {{p|Lillipup}} and {{p|Cleffa}} and a young Lillie and Gladion.
+
+She first made her physical appearance while under Nihilego's control in ''[[SM053|Rescuing the Unwilling!]]'', where Lusamine sent her out to battle against {{an|Lana}}, {{an|Mallow}}, {{an|Sophocles}}, their Pokémon, and {{Ash}}'s {{AP|Rowlet}} and {{AP|Litten}}. She was defeated by Litten's {{m|Fire Fang}} in ''[[SM054|10,000,000 Reasons to Fight]]'', but Nihilego made her get back up and continue battling. Lilligant was freed from Nihilego's influence upon the Ultra Beast's defeat.
+
+Lilligant's known moves are {{m|Petal Dance}}, {{m|Teeter Dance}}, {{m|Sweet Scent}}, and {{m|Solar Beam}}.}}
+
+{{TrainerPoké
+|trainer=Lusamine
+|pkmn=Salazzle
+|gender=female
+|type1=Poison
+|type2=Fire
+|img=Lusamine Salazzle.png
+|epnum=SM053
+|epname=Rescuing the Unwilling!
+|vaen=Haven Paschall
+|desc={{p|Salazzle}} is one of Lusamine's Pokémon. She first appeared under Nihilego's control in ''[[SM053|Rescuing the Unwilling!]]'', where Lusamine sent her out to battle against {{an|Kiawe}}, his {{TP|Kiawe|Turtonator}}, and his {{TP|Kiawe|Marowak}}. She was eventually defeated by a combination of Turtonator's {{m|Inferno Overdrive}} and Marowak's {{m|Bonemerang}}. In ''[[SM054|10,000,000 Reasons to Fight]]'', however, Nihilego made her get back up and continue battling until the Ultra Beast was defeated, freeing her from its control.
+
+None of Salazzle's moves are known.<!--Salazzle's only known move is {{m|Sludge Wave}}.--><!--Do NOT assume the moves. Only add them if they have been EXPLICITLY said.-->}}
+
+{{TrainerPoké
+|trainer=Lusamine
+|pkmn=Milotic
+|type1=Water
+|img=Lusamine Milotic.png
+|epnum=SM053
+|epname=Rescuing the Unwilling!
+|desc={{p|Milotic}} is one of Lusamine's Pokémon. It first appeared while under Nihilego's control in ''[[SM053|Rescuing the Unwilling!]]'', where Lusamine sent it out to battle against {{an|Lana}}, {{an|Mallow}}, {{an|Sophocles}}, their Pokémon, and {{Ash}}'s {{AP|Rowlet}} and {{AP|Litten}}. It was defeated by a combination of {{TP|Sophocles|Togedemaru}}'s {{m|Zing Zap}} and {{TP|Sophocles|Charjabug}}'s {{m|Discharge}} in ''[[SM054|10,000,000 Reasons to Fight]]'', but Nihilego made it get back up and continue battling. Milotic was freed from Nihilego's influence upon the Ultra Beast's defeat.
+
+Milotic's known moves are {{m|Hydro Pump}} and {{m|Aqua Tail}}.}}
+
+{{TrainerPoké
+|trainer=Lusamine
+|pkmn=Mismagius
+|type1=Ghost
+|img=Lusamine Mismagius.png
+|epnum=SM053
+|epname=Rescuing the Unwilling!
+|vaen=Sarah Natochenny
+|desc={{p|Mismagius}} is one of Lusamine's Pokémon. It first appeared while under Nihilego's control in ''[[SM053|Rescuing the Unwilling!]]'', where Lusamine sent it out to battle against {{an|Lana}}, {{an|Mallow}}, {{an|Sophocles}}, their Pokémon, and {{Ash}}'s {{AP|Rowlet}} and {{AP|Litten}}. It was defeated by {{TP|Lana|Popplio}}'s {{m|Hydro Vortex}} in ''[[SM054|10,000,000 Reasons to Fight]]'', but Nihilego made it get back up and continue battling. Mismagius was freed from Nihilego's influence upon the Ultra Beast's defeat.
+
+Mismagius's only known move is {{m|Thunderbolt}}.}}
+
+{{TrainerPoké
+|trainer=Lusamine
+|pkmn=Absol
+|type1=Dark
+|img=Lusamine Absol.png
+|epnum=SM053
+|epname=Rescuing the Unwilling!
+|vaen=Bill Rogers
+|desc={{p|Absol}} is one of Lusamine's Pokémon. It has history with {{an|Gladion}}, and used to be a sparring partner for his {{p|Umbreon}}. It first appeared while under Lusamine's control in ''[[SM053|Rescuing the Unwilling!]]'', where Lusamine sent it out to battle against Gladion, his {{p|Silvally}}, {{p|Lycanroc}}, and Umbreon. It was defeated by Lycanroc's {{m|Continental Crush}} in ''[[SM054|10,000,000 Reasons to Fight]]'', but Nihilego made it get back up and continue battling. Absol was freed from Nihilego's influence upon the Ultra Beast's defeat, recognizing and happily reuniting with Umbreon.
+
+Absol's known moves are {{m|Psycho Cut}}, {{m|Ice Beam}}, and {{m|Mean Look}}.}}
+
+===At the Ultra Guardians base===
+{{TrainerPoké
+|trainer=Lusamine
+|pkmn=Clefable
+|type1=Fairy
+|stage1=Cleffa
+|stage2=Clefairy
+|gender=female
+|main=yes
+|img=Lusamine Clefable.png
+|epnum=SM044
+|epname=A Dream Encounter!
+|vajp=Megumi Hayashibara
+|vaen=Kate Bristol
+|vaennote=<small>[[SM050]]-[[SM078]]</small>
+|vaen2=Sarah Natochenny
+|vaen2note=<small>[[SM085]]-present</small>
+|desc={{p|Clefable}} is Lusamine's first known Pokémon. She has owned her since she was a {{p|Cleffa}}, played with {{an|Gladion}} and {{an|Lillie}} when they were still young, and was a favorite playmate of Lillie. At some point, she evolved into {{p|Clefairy}}, and then Lusamine evolved her into Clefable with a [[Moon Stone]] against Lillie's wishes, as revealed in a fantasy in ''[[SM044|A Dream Encounter!]]''.
+
+Clefable's first physical appearance was in ''[[SM050|Faba's Revenge!]]'', when Lusamine sent her out to battle a {{DL|Ultra Beasts (anime)|Nihilego}}. In ''[[SM053|Rescuing the Unwilling!]]'', she was used to battle Lillie, [[Snowy]], and [[Ash's Lycanroc]] while she and Lusamine were under Nihilego's control. She was stopped when Lillie helped Clefable remember the bond they shared, allowing her to break free from Nihilego's influence.
+
+Starting in ''[[SM061|A Mission of Ultra Urgency!]]'', Clefable began to reside at the [[Ultra Guardians]] base below the [[Pokémon School]].}}
+
+===At Aether Paradise===
+{{TrainerPoké
+|trainer=Lusamine
+|pkmn=Herdier
+|type1=Normal
+|stage1=Lillipup
+|img=Lillie family photo.png
+|img2=Lusamine Herdier.png
+|epnum=SM046
+|epname=Deceiving Appearances!
+|vaen=Marc Thompson
+|desc={{p|Herdier}} is Lusamine's second known Pokémon. She has owned it since it was a {{p|Lillipup}} and played with {{an|Gladion}} and {{an|Lillie}} when they were still young. It first made cameo appearances as a Lillipup in a photograph in ''[[SM008|Lillie's Egg-xhilarating Challenge!]]'' and ''[[SM027|A Glaring Rivalry!]]'', alongside Lusamine, Lusamine's {{p|Cleffa}} and {{p|Lilligant}} and a young Lillie and Gladion. At some point, it evolved into Herdier. Herdier's first physical appearance was in ''[[SM046|Deceiving Appearances!]]'', where it was revealed that Lusamine keeps Herdier as company in her office in her [[Aether Paradise]] mansion. It appeared in a flashback in ''[[SM049|Mission: Total Recall!]]''.
+
+None of Herdier's moves are known.}}
+
+===Ride Pokémon===
+{{TrainerPoké
+|trainer=Lusamine
+|pkmn=Lapras
+|type1=Water
+|type2=Ice
+|img=Lusamine Lapras.png
+|epnum=SM049
+|epname=Mission: Total Recall!
+|desc=This [[Poké Ride|Ride]] {{p|Lapras}} was first seen in a flashback in ''[[SM049|Mission: Total Recall!]]'', where Lusamine rode it with her children on vacation.
+
+None of Lapras's moves are known.}}
+
+===Befriended===
+{{TrainerPoké
+|trainer=Gladion
+|pkmn=Nihilego
+|type1=Rock
+|type2=Poison
+|img=Gladion Nihilego.png
+|cap=Lillie
+|nick=Lillie
+|shiny=yes
+|epnum=JN111
+|epname=The Homecoming Crown!
+|vajp=
+|vaen=
+|main=Ultra Beasts (anime)
+|main_section=Lillie
+|desc={{p|Nihilego}}, nicknamed '''Lillie''' (リーリエ ''Lilie''), is Gladion's fifth known Pokémon.
+
+Gladion caught it after it was revealed that it helped save [[Mohn]] when he was transported through an [[Ultra Wormhole]].}}
+
+==Voice actors==
+{{vatable|color={{morning color light}}|bordercolor={{white color dark}}
+|cs=Anna Suchánková
+|da=Mia Lerdam
+|ja=木下紗華 ''[[Sayaka Kinoshita]]''
+|en=[[Bobbi Hartley]]
+|fi=Pihla Pohjolainen
+|fr_eu=Helena Coppejans
+|de=Andrea Wick
+|it=Laura Brambilla
+|pl=Julia Łukowiak
+|es_la=Marisol Romero
+|es_eu=Olga Velasco
+|pt_br=Erika Menezes
+}}
+
+==Gallery==
+===Artwork===
+====Standard====
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{white color dark}}; background: #{{white color light}}; font-size:80%;"
+|- 
+| style="{{roundy|5px}} border: 2px solid #{{white color dark}}}; background: #{{morning color light}}}" | [[File:Lusamine SM.png|150px]]
+|-
+| Artwork from ''{{color2|000|Pokémon the Series: Sun and Moon}}''
+|}
+====Miscellaneous====
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{white color dark}}; background: #{{white color light}}; font-size:80%;"
+|- 
+| style="{{roundy|5px}} border: 2px solid #{{white color dark}}}; background: #{{morning color light}}}" | [[File:JN111 AS.png|300px]]
+|-
+| Artwork from "After the story"<ref>https://twitter.com/anipoke_PR/status/1528254329312129024</ref>
+|}
+
+==Names==
+{{main|Lusamine#Names|Lusamine → Names}}
+
+==References==
+<references/>
+
+==Related articles==
+* [[Lusamine]]
+
+{{Aether Foundation}}
+{{animecharacters|white|morning}}
+{{Project Anime notice|no}}
+
+[[Category:Animation characters]]
+[[Category:Mothers]]
+
+[[es:Lusamine/Samina]]
+[[fr:Elsa-Mina (dessin animé)]]
+[[it:Samina (anime)]]
+[[zh:露莎米奈（动画）]]

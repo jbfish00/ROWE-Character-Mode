@@ -1,0 +1,289 @@
+{{CharInfobox
+|color={{arcade color}}
+|corecolor={{arcade color light}}
+|bordercolor={{arcade color dark}}
+|name=Dahlia
+|jname=ダリア
+|tmname=Dahlia
+|jtranslit=Daria
+|image=Platinum Dahlia.png
+|size=300px
+|caption=Artwork from {{game|Platinum}}
+|gender=Female
+|hometown=Unknown
+|region=[[Sinnoh]]{{sup/4|Pt}}<br>[[Johto]]{{sup/4|HGSS}}
+|relatives=Unknown
+|trainer=yes
+|trainerclass=[[Frontier Brain|Arcade Star<br><small>(Frontier Brain)</small>]]
+|game=yes
+|generation={{gen|IV}}
+|games={{v2|Platinum}}, {{game3|HeartGold and SoulSilver|HeartGold, SoulSilver|s}}<br>{{pkmn|Masters EX}}
+|leader=no
+|brain=Pt
+|facility=[[Battle Arcade]]
+|print=Arcade Print
+|anime=no
+|epnum=
+|epname=
+|enva=
+|java=
+|gameanim=yes
+|envagame=Heather Gonzalez<ref>[https://www.instagram.com/p/C77VWCHyncx/ Heather Gonzalez on Instagram]</ref> <small>({{pkmn|Masters EX}})</small>
+|javagame=Ayaka Fukuhara <small>({{pkmn|Masters EX}})</small>
+}}
+
+'''Dahlia''' (Japanese: '''ダリア''' ''Dahlia'') is the [[Frontier Brain]] in charge of running the {{Gdis|Battle Frontier|IV}}'s [[Battle Arcade]]. She is the only character in the games to have the {{DL|Pokémon Trainer|Trainer class}} '''Arcade Star''' (Japanese: '''ルーレットゴーデス''' ''Roulette Goddess'').
+
+==In the core series games==
+She is the [[Frontier Brain]] of the Battle Arcade in the [[Sinnoh]] and [[Johto]] regions. [[Fantina]] is a fan of Dahlia's dancing style. An [[Non-player character|NPC]] inside of the Battle Arcade notes that Dahlia has a peculiar fashion sense. Dahlia will challenge the {{player}} on the 21st consecutive battle and award them the Battle Arcade's Silver Print if defeated. She returns when the player reaches the 49th battle, this time awarding the Gold Print when beaten.
+
+===Pokémon===
+====Silver Print challenge====
+{{Party
+| background = {{arcade color}}
+| border = {{arcade color dark}}
+| headcolor = {{arcade color light}}
+| sprite = Spr Pt Dahlia.png
+| prize = 20{{color2|000|Battle Point|BP}}
+| class = Arcade Star
+| classlink = Dahlia
+| name = Dahlia
+| location = Battle Arcade
+| game = PtHGSS
+| pokemon = 3
+| table = yes
+}}
+{{Lop/facility/head|{{arcade color light}}|{{arcade color}}|{{arcade color}}|sortable=no}}
+{{lop/facility|game=3|477|Dusknoir||Shadow Punch|Ghost|Fling|Dark|Will-O-Wisp|Fire|Trick Room|Psychic|Brave||252|252|||}}
+{{lop/facility|game=3|308|Medicham||Zen Headbutt|Psychic|Reversal|Fighting|Endure|Normal|Fake Out|Normal|Jolly||252||||252}}
+{{lop/facility|game=3|272|Ludicolo||Waterfall|Water|Razor Leaf|Grass|Drain Punch|Fighting|Swords Dance|Normal|Adamant||252|||252|}}
+{{lop/facility/foot|{{arcade color light}}}}
+{{Party/end}}
+====Gold Print challenge====
+{{Party
+| background = {{arcade color}}
+| border = {{arcade color dark}}
+| headcolor = {{arcade color light}}
+| sprite = Spr Pt Dahlia.png
+| prize = 20{{color2|000|Battle Point|BP}}
+| class = Arcade Star
+| classlink = Dahlia
+| name = Dahlia
+| location = Battle Arcade
+| game = PtHGSS
+| pokemon = 3
+| table = yes
+}}
+{{Lop/facility/head|{{arcade color light}}|{{arcade color}}|{{arcade color}}|sortable=no}}
+{{lop/facility|game=3|145|Zapdos||Thunderbolt|Electric|Air Cutter|Flying|Heat Wave|Fire|Signal Beam|Bug|Modest||||252||252}}
+{{lop/facility|game=3|257|Blaziken||Flare Blitz|Fire|Superpower|Fighting|ThunderPunch|Electric|Night Slash|Dark|Adamant||252||||252}}
+{{lop/facility|game=3|468|Togekiss||Hyper Beam|Normal|Air Slash|Flying|Aura Sphere|Fighting|Psychic|Psychic|Modest||||252||252}}
+{{lop/facility/foot|{{arcade color light}}}}
+{{Party/end}}
+==In the spin-off games==
+===[[Pokémon Masters EX]]===
+{{main|Dahlia (Masters)}}
+Dahlia forms a [[sync pair]] with {{p|Ludicolo}} in [[Pokémon Masters EX]]. Her Ludicolo is capable of [[Dynamax]]ing. Dahlia became a playable sync pair on March 22, 2024.
+
+{{PairDex/h|Arcade}}
+{{PairDex|198|Dahlia|trainerlink=Dahlia (Masters)#Ludicolo|trainerimg=Dahlia|0272 f|Ludicolo|gender=female|dynamax=yes|Water|Bug|Tech|exrole=Special Strike|6|Poké Fair Sync Pair Scout}}
+|}
+
+==Gallery==
+:''For images of Dahlia in [[Pokémon Masters EX]], see: [[Dahlia (Masters)#Gallery|Dahlia (Masters)]]''
+===Artwork===
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{arcade color dark}}; background: #{{arcade color}}; font-size:80%;"
+|-
+|style="{{roundy|15px}} border: 2px solid #{{arcade color dark}}; background: #{{arcade color light}}; width:80px"| [[File:Sinnoh Battle Frontier Brain artwork.png|400px]]
+|-
+| {{color2|000|Battle Frontier (Generation IV)|Battle Frontier}} promotional<br>artwork for {{color2|000|Pokémon Platinum Version|Platinum}}
+|}
+
+===Game assets===
+{| style="font-size:80%; margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{arcade color dark}}; background:#{{arcade color}}; color:#000"
+| colspan="3" style="{{roundy|20px}} border:2px solid #{{arcade color dark}}; background:#{{arcade color dark}}; font-size:125%; color:white" |'''{{color2|fff|Generation IV}}'''
+|-
+| style="{{roundy|20px}} border:2px solid #{{arcade color dark}}; background:#{{arcade color light}}; width:80px; height:80px; overflow:hidden" |[[File:Spr Pt Dahlia.png]]
+| style="{{roundy|20px}} border:2px solid #{{arcade color dark}}; background:#{{arcade color light}}; width:80px; overflow:hidden" |[[File:VSDahlia.png]]
+| style="{{roundy|20px}} border:2px solid #{{arcade color dark}}; background:#{{arcade color light}}; width:80px; overflow:hidden" |[[File:Dahlia OD.png]]
+|-
+|'''{{GameIcon|Pt}}{{GameIcon|HG}}{{GameIcon|SS}}''' <br> Sprite
+|'''{{GameIcon|Pt}}{{GameIcon|HG}}{{GameIcon|SS}}''' <br> Sprite <br> (VS)
+|'''{{GameIcon|Pt}}{{GameIcon|HG}}{{GameIcon|SS}}''' <br> Sprite <br> (Overworld)
+|-
+|}
+
+==Quotes==
+{{main|Dahlia/Quotes}}
+
+==In the manga==
+===Pokémon Adventures===
+[[File:Darach Dahlia Caitlin Adventures.png|thumb|230px|Dahlia in [[Pokémon Adventures]]]]
+Dahlia first appeared along with her fellow Frontier Brains, [[Palmer]], [[Thorton]], and [[Argenta]] in a meeting; afterward they went back to their respective facilities. Dahlia later appeared at her facility, the [[Battle Arcade]], when {{adv|Platinum}} racked up enough wins to allow her to challenge the Frontier Brain soon. After Platinum won enough times, she became eligible to fight Dahlia. Due to an unexpected earthquake, Platinum was unable to stop the roulette in time and Dahlia did so instead, causing it to land on the Pokémon swap button.
+
+Due to it landing on said button, Dahlia and Platinum switched their teams and began battling. At first, Dahlia has the upper hand because of Platinum's refusal of harming her own Pokémon, but once she gained the resolve to do so, she managed to defeat the Arcade Star. Later, Dahlia helped Platinum with her research of the [[Distortion World]], and despite her {{wp|Que Sera, Sera (Whatever Will Be, Will Be)|"Que Sera, Sera"}} attitude, she threw a tantrum offscreen due to her loss to Platinum being her first one.
+
+====Pokémon====
+=====On hand=====
+{{TrainerPoké
+|trainer=Dahlia
+|pkmn=Ludicolo
+|type1=Water
+|type2=Grass
+|img=Dahlia Ludicolo Adventures.png
+|epnum=PS422
+|epname=Interrupting Ivysaur
+|desc=Dahlia's {{p|Ludicolo}} was used to battle Platinum at the [[Battle Arcade]]. However, due to the rules of the Pokémon swap button, it was sent to battle on Platinum's side. It managed to deal heavy damage to Platinum's Rapidash. After that, it was returned to Dahlia.
+
+Ludicolo's only known move is {{m|Waterfall}}.}}
+
+{{TrainerPoké
+|trainer=Dahlia
+|pkmn=Medicham
+|type1=Fighting
+|type2=Psychic
+|img=Dahlia Medicham Adventures.png
+|epnum=PS422
+|epname=Interrupting Ivysaur
+|desc=Dahlia's {{p|Medicham}} was used to battle Platinum at the [[Battle Arcade]]. However, due to the rules of the Pokémon swap button, it was sent to battle on Platinum's side. Medicham was used to defeat Platinum's Rapidash, causing Dahlia to lose the match. After that, it was returned to Dahlia.
+
+None of Medicham's moves are known and its Ability is {{a|Pure Power}}.}}
+
+{{TrainerPoké
+|trainer=Dahlia
+|pkmn=Togekiss
+|type1=Normal
+|type2=Flying
+|img=Dahlia Togekiss Adventures.png
+|epnum=PS422
+|epname=Interrupting Ivysaur
+|desc=Dahlia's {{p|Togekiss}} was used to battle Platinum at the [[Battle Arcade]]. However, due to the rules of the Pokémon swap button, it was sent to battle on Platinum's side. In the battle, it was defeated by a single {{m|Focus Blast}} from {{p|Lopunny}}. After that, it was returned to Dahlia.
+
+Togekiss's known moves are {{m|Air Slash}}{{tt|*|Mentioned only}}, {{m|Aura Sphere}}{{tt|*|Mentioned only}}, {{m|Psychic}}{{tt|*|Mentioned only}}, and {{m|Hyper Beam}}{{tt|*|Mentioned only}}.}}
+
+=====Temporary=====
+{{TrainerPoké
+|main=yes
+|trainer=Platinum
+|pkmn=Empoleon
+|gender=female
+|type1=Water
+|type2=Steel
+|img=Dahlia Empoleon Adventures.png
+|epnum=PS338
+|epname=Stagestruck Starly
+|desc={{p|Empoleon}} was one of the Pokémon used in the {{gdis|Battle Frontier|IV}}. She is Platinum's [[first partner Pokémon]]. Prior to the battle, she was given to Dahlia. After the battle, Empoleon was returned to Platinum.}}
+
+{{TrainerPoké
+|main=yes
+|trainer=Platinum
+|pkmn=Rapidash
+|gender=male
+|type1=Fire
+|img=Dahlia Rapidash Adventures.png
+|epnum=PS338
+|epname=Stagestruck Starly
+|desc={{p|Rapidash}} was one of the Pokémon used in the {{gdis|Battle Frontier|IV}}. He is Platinum's very first Pokémon. Prior to the battle, he was given to Dahlia. After the battle, Rapidash was returned to Platinum.}}
+
+{{TrainerPoké
+|main=yes
+|trainer=Platinum
+|pkmn=Lopunny
+|gender=female
+|type1=Normal
+|img=Dahlia Lopunny Adventures.png
+|epnum=PS388
+|epname=To and Fro with Froslass
+|desc={{p|Lopunny}} was one of the Pokémon used in the {{gdis|Battle Frontier|IV}}. Prior to the battle, she was given to Dahlia. After the battle, Lopunny was returned to Platinum.}}
+
+==In the TCG==
+This listing is of cards mentioning or featuring Dahlia or her Pokémon in the [[Pokémon Trading Card Game]].
+
+{{cardlist/header|Dahlia's Pokémon|Fire|char=yes}}
+{{cardlist/entry|cardname=[[Blaziken FB (Supreme Victors 2)|Blaziken]] {{SP|FB}}|type=Fire|enset=Supreme Victors|enrarity=Rare Holo|ennum=2/147|jpsetlink=Supreme Victors|jpset=Beat of the Frontier|jprarity=Rare Holo|jpnum=019/100}}
+{{cardlist/entry|cardname=[[Dusknoir FB (Supreme Victors 26)|Dusknoir]] {{SP|FB}}|type=Psychic|enset=Supreme Victors|enrarity=Rare|ennum=26/147|jpsetlink=Supreme Victors|jpset=Beat of the Frontier|jprarity=Rare|jpnum=051/100}}
+{{cardlist/entry|cardname=[[Blaziken FB LV.X (Supreme Victors 142)|Blaziken]] {{SP|FB}} [[Blaziken FB LV.X (Supreme Victors 142)|LV.X]]|type=Fire|enset=Supreme Victors|enrarity=Rare Holo LV.X|ennum=142/147|jpsetlink=Supreme Victors|jpset=Beat of the Frontier|jprarity=Rare Holo LV.X|jpnum=020/100}}
+{{cardlist/footer|Fire}}
+
+==Trivia==
+* In the English version of the games, Dahlia shares the same catchphrase, "No need to worry," with {{an|Dawn}} in the {{pkmn|animated series}}.
+** In the Japanese version, her catchphrase is "{{wp|Que Sera, Sera (Whatever Will Be, Will Be)|Que Sera, Sera}}", a [[List of references to popular culture in Pokémon|reference]] to the popular song with the same name.
+
+==Names==
+{| class="roundtable" style="background:#{{arcade color}}; border:3px solid #{{arcade color dark}}"
+|-
+! style="background:#{{arcade color light}}" | Language
+! style="background:#{{arcade color light}}" | Name
+! style="background:#{{arcade color light}}" | Origin
+|-
+| Japanese
+| ダリア ''Dahlia''
+| From the genus ''{{wp|Dahlia}}''
+|-
+| English, German, French,<br>Brazilian Portuguese, Vietnamese
+| Dahlia
+| Same as her Japanese name
+|-
+| European Spanish
+| Delila
+| From ''dalia'' (dahlia)
+|-
+| Italian
+| Dalia
+| From ''dalia'' (dahlia)
+|-
+| Korean
+| 달리아 ''Dahlia''
+| From ''Dahlia''
+|-
+| Chinese (Traditional)
+| 大麗 ''Dàlì'' / ''Daaihlaih''
+| rowspan="2" |From 大麗花 / 大丽花 ''dàlìhuā / daaihlaihfā'' (dahlia)
+|-
+| Chinese (mainland China)
+| 大丽 ''Dàlì''<ref group=n>[[Pokémon Adventures]]</ref>
+|}
+{{-}}
+
+''Arcade Star''
+{{langtable|color={{arcade color light}}|bordercolor={{arcade color}}
+|ja=ルーレットゴーデス {{tt|''Rūretto Gōdesu''|Roulette Goddess}}
+|zh_yue=輪盤女神 ''{{tt|Lèuhnpùhn Néuihsàhn|Roulette Goddess}}''
+|zh_cmn=輪盤女神 / 轮盘女神 ''{{tt|Lúnpán Nǚshén|Roulette Goddess}}''
+|fr=Diva Arcade
+|de=Arkaden-Star
+|it=Diva Arena
+|ko=룰렛여신 {{tt|''Rullet Yeosin''|Roulette Goddess}}
+|pt_br=Deusa da Roleta
+|es=Astro Ruleta
+|vi=Nữ thần Vòng xoay
+}}
+
+===Notes===
+{{reflist|group=n}}
+
+==References==
+<references />
+
+==Related articles==
+* [[a:Category:Dahlia|Images on the Bulbagarden Archives]]
+{{-}}
+{{Generation IV Frontier Brains}}
+{{TrainerNav|arcade|johto=yes|sinnoh=yes}}
+{{Project CharacterDex notice}}
+
+[[Category:Frontier Brains]]
+[[Category:Game characters]]
+[[Category:Platinum characters]]
+[[Category:HeartGold and SoulSilver characters]]
+[[Category:Manga characters]]
+[[Category:Pokémon Adventures characters]]
+[[Category:Trainers with unique classes]]
+[[Category:Trainers with Legendary Pokémon]]
+
+[[de:Dahlia]]
+[[es:Delila]]
+[[fr:Dahlia]]
+[[it:Dalia]]
+[[ja:ダリア]]
+[[zh:大麗]]

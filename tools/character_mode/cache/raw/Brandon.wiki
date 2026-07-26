@@ -1,0 +1,286 @@
+{{samename|[[Club Member]] of the [[Lightning Club]] in the {{vg|Pokémon Trading Card Game}}|Brandon (TCG GB)}}
+{{samename|male [[player character]] of the [[Hoenn]] games|Brendan (game)}}
+{{CharInfobox
+|color={{frontier color}}
+|corecolor={{frontier color light}}
+|bordercolor={{frontier color dark}}
+|name=Brandon
+|jname=ジンダイ
+|tmname=Jindai
+|image=Emerald Brandon.png |
+|size=210px
+|caption=Artwork from {{game|Emerald}}<br>Illustrated by [[Ken Sugimori]]<ref>[[a:File:BrandonSilverTempest151.jpg|Brandon (Silver Tempest 151)]]</ref>
+|gender=Male
+|colors=yes
+|eyes=Black
+|hair=Brown
+|hometown=Unknown
+|region=[[Hoenn]] <small>(games)</small><br>[[Kanto]] <small>({{aniseries|PTS}})</small>
+|relatives=Unknown
+|trainer=yes
+trainerclass=[[Frontier Brain|Pyramid King<br><small>(Frontier Brain)</small>]]
+|game=yes
+|generation={{gen|III}}
+|games={{v2|Emerald}}<br>{{pkmn|Masters EX}} <small>(2023 onwards, NPC)</small>
+|leader=no
+|brain=yes
+|facility=[[Battle Pyramid]]
+|symbol=Brave Symbol
+|anime=yes
+|epnum=AG178
+|epname=Battling the Enemy Within
+|java=[[Masayuki Omoro]]
+|enva=[[Craig Blair]]
+}}
+'''Brandon''' (Japanese: '''ジンダイ''' ''Jindai'') is the [[Frontier Brain]] and chief of the {{Gdis|Battle Frontier|III}}'s [[Battle Pyramid]]. He is the only character in the games to have the {{DL|Pokémon Trainer|Trainer class}} '''Pyramid King''' (Japanese: '''ピラミッドキング''' ''Pyramid King'').
+
+==In the core series games==
+Any Trainer arriving at the top of the [[Battle Pyramid]] just after Brandon must battle against him for the status of the Pyramid's conqueror.
+
+Brandon appreciates the grand life of the explorer. He recalls the passion, danger, and desperation of his death-defying and life-affirming adventures. When defeated in battle, he'll praise the grandeur of the match and hand over the Brave Symbol.
+
+In [[Pokémon Omega Ruby and Alpha Sapphire]], Brandon is revealed to have worked with [[TV Mauville]] to produce various television programs detailing the search for the [[Mythical Pokémon]] {{p|Volcanion}} in the [[Kalos]], [[Sinnoh]], and [[Johto]] regions.
+
+===Pokémon===
+====Silver Symbol challenge====
+{{Party
+| background = {{frontier color}}
+| border = {{frontier color dark}}
+| headcolor = {{frontier color light}}
+| sprite = Spr E Brandon.png
+| prize = 16{{color2|000|Battle Point|BP}}
+| class = Pyramid King
+| classlink = Brandon
+| name = Brandon
+| location = Battle Pyramid
+| game = E
+| pokemon = 3
+| table = yes
+}}
+{{lop/facility/head|{{frontier color light}}|{{frontier color}}|{{frontier color}}|sortable=no}}
+{{lop/facility|game=3|377|Regirock|Quick Claw|Explosion|Normal|Superpower|Fighting|Earthquake|Ground|AncientPower|Rock|Adamant|152|152||106|100}}
+{{lop/facility|game=3|379|Registeel|Leftovers|Earthquake|Ground|Metal Claw|Steel|Toxic|Poison|Iron Defense|Steel|Adamant|152|152||6|200}}
+{{lop/facility|game=3|378|Regice|Chesto Berry|Ice Beam|Ice|Amnesia|Psychic|Thunder|Electric|Rest|Psychic|Modest|106||152|100|152}}
+{{lop/facility/foot|{{frontier color light}}}}
+{{Party/end}}
+
+====Gold Symbol challenge====
+{{Party
+| background = {{frontier color}}
+| border = {{frontier color dark}}
+| headcolor = {{frontier color light}}
+| sprite = Spr E Brandon.png
+| prize = 19{{color2|000|Battle Point|BP}}
+| class = Pyramid King
+| classlink = Brandon
+| name = Brandon
+| location = Battle Pyramid
+| game = E
+| pokemon = 3
+| table = yes
+}}
+{{lop/facility/head|{{frontier color light}}|{{frontier color}}|{{frontier color}}|sortable=no}}
+{{lop/facility|game=3|144|Articuno|Scope Lens|Blizzard|Ice|Water Pulse|Water|Aerial Ace|Flying|Reflect|Psychic|Mild|6||252|||252}}
+{{lop/facility|game=3|145|Zapdos|Lum Berry|Thunder|Electric|Detect|Fighting|Drill Peck|Flying|Light Screen|Psychic|Mild|6||252|||252}}
+{{lop/facility|game=3|146|Moltres|BrightPowder|Fire Blast|Fire|Hyper Beam|Normal|Aerial Ace|Flying|Safeguard|Normal|Mild|6||252|||252}}
+{{lop/facility/foot|{{frontier color light}}}}
+{{Party/end}}
+
+==In the spin-off games==
+===[[Pokémon Masters EX]]===
+<!--{{main|Brandon (Masters)}}-->
+Brandon appears as an [[Non-player character|NPC]] in [[Pokémon Masters EX]]. He debuted in the [[Arceus arc]]. Like in the [[core series]], he uses the three original {{TP|Brandon|legendary giants}}.
+
+==Gallery==
+===Game assets===
+{| style="font-size:80%; margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{factory color dark}}; background:#{{factory color}}; color:#000"
+| colspan="3" style="{{roundy|20px}} border:2px solid #{{factory color dark}}; background:#{{factory color dark}}; font-size:125%; color:white" |'''{{color2|fff|Generation III}}
+|-
+| style="{{roundy|20px}} border:2px solid #{{factory color dark}}; background:#{{factory color light}}; width:80px; overflow:hidden" |[[File:Spr E Brandon.png]]
+| style="{{roundy|20px}} border:2px solid #{{factory color dark}}; background:#{{factory color light}}; width:80px; overflow:hidden" |[[File:Brandon OD.png]]
+|-
+|'''{{GameIcon|E}}'''<br>Sprite
+|'''{{GameIcon|E}}'''<br>Sprite<br>(Overworld)
+|-
+|}
+
+==Quotes==
+{{main|Brandon/Quotes}}
+
+==In animation==
+[[File:Brandon anime AG.png|250px|thumb|Brandon in ''[[Pokémon the Series: Ruby and Sapphire]]'']]
+===''Pokémon the Series''===
+{{main|Brandon (anime)}}
+Brandon is the strongest of all the [[Kanto]] [[Frontier Brain]]s, and a major recurring character during the final phase of {{aniseries|RS}}. In {{aniseries|DP}}, he returned to {{pkmn|battle}} [[Paul]] and help thwart [[J]]'s plan to capture {{p|Regigigas}} in [[Snowpoint City]].
+{{-}}
+
+==In the manga==
+===Pokémon Adventures===
+[[File:Brandon Adventures.png|thumb|225px|Brandon in [[Pokémon Adventures]]]]
+====History====
+====={{MangaArc|Emerald}}=====
+Brandon is one of the seven {{pkmn|Trainer}}s hired by [[Scott]] to be a Frontier Brain at the {{gdis|Battle Frontier|III}}. Brandon is first seen capturing the Legendary Pokémon {{p|Regirock}}, {{p|Registeel}}, and {{p|Regice}} to be used at the [[Battle Pyramid]]. Later, he is seen watching the Battle Frontier's opening ceremony. The ceremony is interrupted by {{adv|Emerald}}, who announces that he wishes to conquer the Battle Frontier. The press mistakenly reports the incident as allowing an ordinary Trainer to take part in the Battle Frontier before it officially opens a week later. The Frontier Brains decide to use this assumption as free publicity and allow Emerald to challenge the Battle Frontier under the condition that he completes it before it officially opens.
+
+Brandon is the third Frontier Brain Emerald challenges in his quest. After traversing multiple sets of floors, Emerald eventually manages to reach Brandon. Despite having three Legendary Pokémon, Brandon is defeated by [[Emerald's Sceptile]]. Upon his defeat, Brandon awards Emerald the Brave Symbol. After Emerald thanks Brandon for the Symbol and heads down the stairs of the Battle Pyramid, he is interrupted by the other Frontier Brains. They reveal that someone attacked Noland earlier and stole multiple rental Pokémon and they believe the culprit is Emerald.
+
+Emerald reveals that he did not attack Noland and is actually after the Mythical Pokémon {{adv|Jirachi}}. The Frontier Brains find Emerald's explanation suspicious, but decide to follow him into [[Artisan Cave]], where Jirachi is currently located at. Upon arriving, everyone is attacked by a horde of wild {{p|Smeargle}} while Emerald continues inside to find Jirachi. After the Frontier Brains get past the Smeargle, they meet up with Emerald, who has managed to find Jirachi. Emerald attempts to capture Jirachi but is attacked by [[Guile Hideout]], the actual culprit who attacked Noland. When Jirachi runs off, Emerald attempts to pursue it, only to be attacked by the rental Pokémon Guile had stolen. Brandon, Lucy, Spenser, and Tucker all try to attack Guile to avenge Noland but are easily defeated. Eventually, Jirachi escapes, forcing Guile to leave to continue his pursuit of it. Injured from the battle, everyone decides to return to the Battle Frontier. When they meet up with Scott again, he reveals that he was aware of Guile and Emerald's true mission the entire time. Scott states that he withheld the information from the Frontier Brains to help them get stronger as they still would have lost even if they had known of Guile beforehand.
+
+After Emerald defeats Greta, Noland appears to everyone, revealing that he snuck out of the hospital because he couldn't stand lying in bed doing nothing. He asks Scott for the Jirachi Report so that he could translate it to find out where Jirachi will appear next. That night, Brandon comes in to assist Noland in deciphering the rest of the Jirachi Report. Together, they realize that Jirachi has a third eye, which must be looked at for Jirachi to grant someone's wish.
+
+The next day, Brandon assists the other Frontier Brains in ushering people to the [[Battle Dome]]. During the tournament, Guile appears and manages to capture Jirachi. Guile uses the rental Pokémon to attack innocent bystanders and heads to the {{gdis|Battle Tower|III}} to make his wish. Once he arrives at the Battle Tower, Guile uses Jirachi to wish for a gigantic {{p|Kyogre}} made of seawater to flood the entire Battle Frontier. Brandon and the other Frontier Brains work together to get civilians to safety and fight off Guile's rental Pokémon while Emerald and the other Pokédex holders fight Guile. Eventually Emerald and the Pokédex holders manage to defeat Guile and destroy the gigantic Kyogre monster. The day after, an injured Brandon and the other Frontier Brains congratulate Emerald for the hard work he put into saving everyone.
+
+====={{MangaArc|HeartGold & SoulSilver}}=====
+It is revealed that Brandon lent his Pokémon to [[Palmer]], allowing the latter to awaken [[Reg|Regigigas]] in hopes to use it to protect Sinnoh in times of crisis. Palmer later released Regigigas back into the wild due to it being hard to control and its power not being needed yet.
+
+====={{MangaArc|Omega Ruby & Alpha Sapphire}}=====
+Brandon and the other Hoenn Frontier Brains battle and defeat the Admins of Neo [[Team Magma]] and Neo [[Team Aqua]], who had interfered in the launch of a rocket that was made to stop the [[Grand Meteor Delta|meteoroid]] threatening to destroy the world. Later, Brandon and the other Hoenn Frontier Brains are called to [[Sootopolis City]] to assist in stopping the meteoroid.
+
+====Pokémon====
+{{TrainerPoké
+|trainer=Brandon
+|pkmn=Regirock
+|type1=Rock
+|img=Brandon Regirock Adventures.png
+|epnum=PS254
+|epname=A Royal Rumble with Regirock, Regice and Registeel II
+|main=Brandon's legendary giants
+|main_section=Pokémon Adventures
+|desc={{p|Regirock}} was originally sealed inside the [[Desert Ruins]] before being awakened by [[Steven Stone]] and the Hoenn [[Elite Four]] to be used to help stop the battle between {{p|Groudon}} and {{p|Kyogre}}. The three Pokémon eventually lashed out at their controllers and fled to another location where they were found by Brandon and caught for use in the [[Battle Pyramid]]. During Emerald's run of the Battle Pyramid, Regirock was sent out to battle the boy first. Regirock fought Emerald's Sceptile and heavily damaged it with {{m|Explosion}}, causing itself to faint in the process. In the {{MangaArc|Omega Ruby & Alpha Sapphire}}, it was seen helping Brandon fight the Admins of Neo Team Magma and Neo Team Aqua.}}
+
+{{TrainerPoké
+|trainer=Brandon
+|pkmn=Registeel
+|type1=Steel
+|img=Brandon Registeel Adventures.png
+|epnum=PS254
+|epname=A Royal Rumble with Regirock, Regice and Registeel II
+|main=Brandon's legendary giants
+|main_section=Pokémon Adventures
+|desc={{p|Registeel}} was originally sealed inside the [[Ancient Tomb]] before being awakened by Steven Stone and the Hoenn Elite Four to be used to help stop the battle between Groudon and Kyogre. The three Pokémon eventually lashed out at their controllers and fled to another location where they were found by Brandon and caught for use in the [[Battle Pyramid]]. During Emerald's run of the Battle Pyramid, Registeel was sent out to battle the boy second. Registeel battled against Emerald's [[Monlee|Hitmonchan]] but was quickly defeated by a series of high-speed punches. Hitmonchan fainted soon after due to Registeel secretly {{status|poison}}ing it with {{m|Toxic}}.}}
+
+{{TrainerPoké
+|trainer=Brandon
+|pkmn=Regice
+|type1=Ice
+|img=Brandon Regice Adventures.png
+|epnum=PS254
+|epname=A Royal Rumble with Regirock, Regice and Registeel II
+|main=Brandon's legendary giants
+|main_section=Pokémon Adventures
+|desc={{p|Regice}} was originally sealed inside the [[Island Cave]] before being awakened by Steven Stone and the Hoenn Elite Four to be used to help stop the battle between Groudon and Kyogre. The three Pokémon eventually lashed out at their controllers and fled to another location where they were found by Brandon and caught for use in the [[Battle Pyramid]]. During Emerald's run of the Battle Pyramid, Regice was sent out to battle the boy last. Regice fought Emerald's [[Bonee|Cubone]] and easily managed to win, but was defeated by an {{m|Iron Tail}} from Sceptile, which Emerald had used a [[Revive]] on during the battle. Later, it was used to battle Guile Hideout at the Artisan Cave but was easily defeated. In the {{MangaArc|Omega Ruby & Alpha Sapphire}}, it was seen helping Brandon fight the Admins of Neo Team Magma and Neo Team Aqua.}}
+
+==In the TCG==
+[[File:BrandonSilverTempest188.jpg|200px|thumb|Full Art print of Brandon]]
+{{main|Brandon (Silver Tempest 151)}}
+'''Brandon''' was introduced as a {{TCG|Supporter card}} in the [[Pokémon Trading Card Game]] during the English Sword & Shield Series (the Japanese Sword & Shield Era). It was first released in the Japanese {{TCG|Paradigm Trigger}} expansion and the English {{TCG|Silver Tempest}} expansion, with artwork by [[Ken Sugimori]]. It was also released as a {{TCG|Full Art card}} and {{TCG|Secret card}} in the same Japanese and English expansions, with artwork by [[Hideki Ishikawa]]. It allows the player to draw a card for each Benched Pokémon in play, but only when it is the last card in the player's hand.
+{{-}}
+
+==Trivia==
+* Brandon's {{p|Regirock}} and {{p|Registeel}} both have {{stat|Special Attack}} {{EV}}s, despite not knowing any [[special move]]s.
+* Both of the teams that he uses in {{game|Emerald}} are made up of the members of [[Legendary trio]]s found in the [[Generation III]] [[Core series|paired versions]]. Coincidentally, both trios can also be found in {{v2|Platinum}}, but not in {{2v2|Diamond|Pearl}}.
+* All the Pokémon Brandon uses in Emerald are used by [[Dana]] during the Super [[Triple Battle]] in {{pkmn|X and Y|Pokémon X, Y}}, {{pkmn|Omega Ruby and Alpha Sapphire|Omega Ruby, and Alpha Sapphire}}.
+* Brandon is the only [[Non-player character|NPC]] whose all known [[party|teams]] consist entirely of [[Legendary Pokémon]].
+* The {{pkmn|animated series}} is the only [[canon]] where Brandon has been seen using non-Legendary Pokémon.
+
+==Names==
+{| class="roundtable" style="background:#{{frontier color}}; border:3px solid #{{frontier color dark}}"
+|-
+! style="background:#{{frontier color light}}" | Language
+! style="background:#{{frontier color light}}" | Name
+! style="background:#{{frontier color light}}" | Origin
+|-
+| Japanese
+| ジンダイ ''Jindai''
+| From 神代 ''jindai'' ({{wp|Cereus fernambucensis|beach mandacaru}}, a species of cactus) and 神代 ''jindai'' ({{wp|Age of the Gods|age of the gods}}; ancient time)
+|-
+| English, Latin American Spanish,<br>Indonesian, Brazilian Portuguese
+| Brandon
+| From ''brave''
+|-
+| German
+| Brian
+| From ''Bravour'' (bravery)
+|-
+| European Spanish
+| Valente
+| From ''valentía'' (courage)
+|-
+| French
+| Bayar
+| From ''bravoure'' (bravery) and ''{{wp|Pierre Terrail, seigneur de Bayard|Chevalier de Bayard}}'' (French knight known for his bravery)
+|-
+| rowspan="2" | Italian
+| Baldo
+| From ''baldo'' (bold) and ''baldanza'' (boldness)
+|-
+| Mariano<ref group=n>[[Pokémon animated series]] (''[[Pokémon the Series: Diamond and Pearl|Diamond and Pearl]]'' series)</ref>
+| 
+|-
+| Korean
+| 기선 ''Giseon''
+| From 기둥선인장 ''gidong-seon'injang'' ({{wp|cereus}}, common name for large {{wp|ceroid cactus|columnar cactus}})
+|-
+| Chinese (Traditional)
+| 神代 ''Shéndài'' / ''Sàhndoih''
+| rowspan="2" | From 神代 ''shéndài / sàhndoih'' (beach mandacaru)
+|-
+| Chinese (Simplified)
+| 神代 ''Shéndài''
+|-
+| Thai
+| จินได ''Chindai''
+| Transcription of his Japanese name
+|-
+| Vietnamese
+| Jindai
+| Transcription of his Japanese name
+|}
+{{-}}
+
+''Pyramid King''
+{{langtable|color={{frontier color light}}|bordercolor={{frontier color}}
+|ja=ピラミッドキング ''{{tt|Piramiddo Kingu|Pyramid King}}''
+|zh_yue=金字塔法老 ''{{tt|Gāmjihtaap Faatlóuh|Pyramid Pharaoh}}''
+|zh_cmn=金字塔法老 ''{{tt|Jīnzìtǎ Fǎlǎo|Pyramid Pharaoh}}''
+|fi=Pyramidikuningas
+|fr=Roi Pyramide
+|de=Pyrakönig
+|it=Re Piramide
+|ko=피라미드킹 ''{{tt|Piramideu King|Pyramid King}}''
+|pl=Król Piramidy
+|es_eu=Rey Pirámide
+|es_la=Rey de la Pirámide
+|vi=Nhà vua của Kim tự tháp
+}}
+
+===Notes===
+{{reflist|group=n}}
+
+==References==
+<references />
+
+==Related articles==
+* [[a:Category:Brandon|Images on the Bulbagarden Archives]]
+{{-}}
+{{Brandon's Pokémon}}<br>
+{{Hoenn Frontier Brains}}
+{{TrainerNav|Frontier|hoenn=yes}}
+{{Masterscharacters|frontier}}
+{{Project CharacterDex notice}}
+
+[[Category:Frontier Brains]]
+[[Category:Animation characters]]
+[[Category:Game characters]]
+[[Category:Emerald characters]]
+[[Category:Manga characters]]
+[[Category:Pokémon Adventures characters]]
+[[Category:Masters EX characters]]
+[[Category:Trainers with unique classes]]
+[[Category:Trainers with Legendary Pokémon]]
+
+[[de:Brian]]
+[[es:Valente]]
+[[fr:Bayar]]
+[[it:Baldo]]
+[[ja:ジンダイ]]
+[[zh:神代]]

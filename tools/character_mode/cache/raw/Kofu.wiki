@@ -1,0 +1,548 @@
+{{Character Infobox
+|color={{water color}}
+|corecolor={{water color light}}
+|bordercolor={{water color dark}}
+|name=Kofu
+|jname=ハイダイ
+|tmname=Haidai
+|sloganline=The Surging Chef
+|image=Scarlet Violet Kofu.png
+|caption=Art from [[Pokémon Scarlet and Violet|Scarlet and Violet]]
+|size=200px
+|hometown=[[Cascarrafa]]
+|region=[[Paldea]]
+|gender=Male
+|hair=Blue and white
+|eyes=Black
+}}
+{{Character Infobox/Game
+|color={{water color light}}
+|gen={{gen|IX}}
+|games={{pkmn|Scarlet and Violet|Scarlet, Violet}}
+|trainer=[[Gym Leader]]
+}}
+{{Character Infobox/Team
+|color={{water color light}}
+|member=[[Paldea League]]
+|rank=Gym Leader
+|domain=[[Cascarrafa Gym]]
+|reward={{badge|PaldeaWater|Water Badge}}
+|specialty={{t|Water}} types
+}}
+{{Character Infobox/Anime
+|color={{water color light}}
+|series=''[[Pokémon Horizons: The Series]]''
+|debut=''[[HZ055|Showdown! The Paldea Elite Four]]''
+|enva=[[Jamieson Price]]
+|jpva=[[Yasuhiro Mamiya]]
+}}
+|}
+'''Kofu''' (Japanese: '''ハイダイ''' ''Haidai'') is a [[Gym Leader]] of [[Cascarrafa]]'s [[Gym]], known officially as the [[Cascarrafa Gym]]. He [[Type expert|specializes]] in {{type|Water}} {{OBP|Pokémon|species}}. He hands out the {{badge|PaldeaWater|Water Badge}} to {{pkmn|Trainer}}s who defeat him.
+
+==In the core series games==
+Kofu works as a chef, as well as a Gym Leader. Though he specializes in seafood cuisine, one of his students, [[Katy]], reveals that he also knows how to bake. Kofu takes great pride in his cooking, using only the best of ingredients for his dishes. He is the head chef of his own restaurant, named the [[Kofu Lounge]], in Cascarrafa. He has a warm, hearty, and jovial personality.<ref>[https://scarletviolet.pokemon.com/en-us/characters/kofu/ Kofu — Pokémon Scarlet and Pokémon Violet | Official Website]</ref> Whenever he is surprised, he usually exclaims, "Vaultin' {{p|Veluza}}!" He has an apprentice named Hugo, who is also a {{tc|Gym Trainer}}. It is noted that his usual Gym Test is particularly challenging because he wants to help trainers grow, but it is not known what this test entails.
+
+Kofu is first seen running out of his Gym when the {{player}} first approaches it. His Gym staffer reveals that he's heading to an auction at [[Porto Marinada]], but he forgot his [[Kofu's Wallet|wallet]] due to being in a hurry, which she gives to the player to deliver to him. Once the player catches up with Kofu at Porto Marinada and returns his wallet to him, he tasks them on the spot with buying him some rare {{wp|wakame}} seaweed from [[Hoenn]] at the auction as a completely impromptu Gym Test, giving them {{pdollar}}50,000 to do so. After the player has bought the seaweed, they're allowed to keep whatever extra money they have left, while Kofu returns to Cascarrafa, where he can be properly challenged.
+
+In addition to the Gym Badge, Kofu gives out {{TM|022|Chilling Water}} after defeating him.
+
+In [[The Indigo Disk]], Kofu can be invited to act as a special coach at [[Blueberry Academy]].
+
+===Challenging the Cascarrafa Gym===
+Cascarrafa's Gym Leader: Kofu
+
+(AKA the Surging Chef)
+
+"This Water-type user is a good fit for those with battle experience. He is the chef and owner of the Kofu Lounge, and his zeal for helping trainers grow has led him to craft a taxing Gym Test."
+
+===Pokémon===
+Kofu will {{Tera}}stallize his {{p|Crabominable}} at the first opportunity.
+
+====Gym battle====
+{{Party
+| background = {{water color}}
+| border = {{water color dark}}
+| headcolor = {{water color light}}
+| sprite = VSKofu.png
+| size = x75px
+| prize = {{PDollar}}5,400
+| class = Gym Leader
+| name = Kofu
+| location = Cascarrafa Gym
+| game = SV
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0976
+| pokemon = Veluza
+| gender = male
+| level = 29
+| type1 = Water
+| type2 = Psychic
+| ability = Mold Breaker
+| move1 = Slash | move1type = Normal | move1cat = Physical
+| move2 = Pluck | move2type = Flying | move2cat = Physical
+| move3 = Aqua Cutter | move3type = Water | move3cat = Physical
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0961
+| pokemon = Wugtrio
+| gender = male
+| level = 29
+| type1 = Water
+| ability = Gooey
+| move1 = Mud-Slap | move1type = Ground | move1cat = Special
+| move2 = Water Pulse | move2type = Water | move2cat = Special
+| move3 = Headbutt | move3type = Normal | move3cat = Physical
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0740
+| pokemon = Crabominable
+| gender = male
+| level = 30
+| type1 = Fighting
+| type2 = Ice
+| tera = Water
+| icon = tera
+| ability = Iron Fist
+| move1 = Crabhammer | move1type = Water | move1cat = Physical
+| move2 = Rock Smash | move2type = Fighting | move2cat = Physical
+| move3 = Slam | move3type = Normal | move3cat = Physical
+}}
+{{Party/end}}
+====[[Rematch]]====
+{{Party
+| background = {{water color}}
+| border = {{water color dark}}
+| headcolor = {{water color light}}
+| sprite = VSKofu.png
+| size = x75px
+| prize = {{PDollar}}11,880
+| class = Gym Leader
+| name = Kofu
+| location = Cascarrafa Gym
+| game = SV
+| pokemon = 5
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0976
+| pokemon = Veluza
+| gender = male
+| level = 65
+| type1 = Water
+| type2 = Psychic
+| ability = Mold Breaker
+| move1 = Aqua Jet | move1type = Water | move1cat = Physical
+| move2 = Aqua Cutter | move2type = Water | move2cat = Physical
+| move3 = Psycho Cut | move3type = Psychic | move3cat = Physical
+| move4 = Night Slash | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0279
+| pokemon = Pelipper
+| gender = female
+| level = 65
+| type1 = Water
+| type2 = Flying
+| ability = Drizzle
+| move1 = Hurricane | move1type = Flying | move1cat = Special
+| move2 = Surf | move2type = Water | move2cat = Special
+| move3 = Blizzard | move3type = Ice | move3cat = Special
+| move4 = Quick Attack | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0961
+| pokemon = Wugtrio
+| gender = male
+| level = 65
+| type1 = Water
+| ability = Gooey
+| move1 = Triple Dive | move1type = Water | move1cat = Physical
+| move2 = Throat Chop | move2type = Dark | move2cat = Physical
+| move3 = Sucker Punch | move3type = Dark | move3cat = Physical
+| move4 = Stomping Tantrum | move4type = Ground | move4cat = Physical
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0693
+| pokemon = Clawitzer
+| gender = male
+| level = 65
+| type1 = Water
+| ability = Mega Launcher
+| move1 = Water Pulse | move1type = Water | move1cat = Special
+| move2 = Dark Pulse | move2type = Dark | move2cat = Special
+| move3 = Dragon Pulse | move3type = Dragon | move3cat = Special
+| move4 = Aura Sphere | move4type = Fighting | move4cat = Special
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0740
+| pokemon = Crabominable
+| gender = male
+| level = 66
+| type1 = Fighting
+| type2 = Ice
+| tera = Water
+| icon = tera
+| ability = Iron Fist
+| move1 = Crabhammer | move1type = Water | move1cat = Physical
+| move2 = Ice Hammer | move2type = Ice | move2cat = Physical
+| move3 = Zen Headbutt | move3type = Psychic | move3cat = Physical
+| move4 = Close Combat | move4type = Fighting | move4cat = Physical
+}}
+{{Party/end}}
+====[[League Club Room]]====
+{{Party
+| background = {{water color}}
+| border = {{water color dark}}
+| headcolor = {{water color light}}
+| sprite = VSKofu.png
+| size = x75px
+| prize = {{PDollar}}17,820
+| class = Gym Leader
+| name = {{color2|000|Kofu}}
+| location = Blueberry Academy
+| game = SV
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0279
+| pokemon = Pelipper
+| gender = female
+| level = 80
+| type1 = Water
+| type2 = Flying
+| ability = Drizzle
+| move1 = Hurricane | move1type = Flying | move1cat = Special
+| move2 = Blizzard | move2type = Ice | move2cat = Special
+| move3 = Surf | move3type = Water | move3cat = Special
+| move4 = Quick Attack | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0976
+| pokemon = Veluza
+| gender = male
+| level = 80
+| type1 = Water
+| type2 = Psychic
+| ability = Mold Breaker
+| move1 = Aqua Jet | move1type = Water | move1cat = Physical
+| move2 = Liquidation | move2type = Water | move2cat = Physical
+| move3 = Psycho Cut | move3type = Psychic | move3cat = Physical
+| move4 = Night Slash | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0160
+| pokemon = Feraligatr
+| gender = male
+| level = 80
+| type1 = Water
+| ability = Sheer Force
+| move1 = Liquidation | move1type = Water | move1cat = Physical
+| move2 = Crunch | move2type = Dark | move2cat = Physical
+| move3 = Ice Punch | move3type = Ice | move3cat = Physical
+| move4 = Earthquake | move4type = Ground | move4cat = Physical
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0961
+| pokemon = Wugtrio
+| gender = male
+| level = 80
+| type1 = Water
+| ability = Gooey
+| move1 = Triple Dive | move1type = Water | move1cat = Physical
+| move2 = Throat Chop | move2type = Dark | move2cat = Physical
+| move3 = Sucker Punch | move3type = Dark | move3cat = Physical
+| move4 = Stomping Tantrum | move4type = Ground | move4cat = Physical
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0693
+| pokemon = Clawitzer
+| gender = male
+| level = 80
+| type1 = Water
+| ability = Mega Launcher
+| move1 = Water Pulse | move1type = Water | move1cat = Special
+| move2 = Dark Pulse | move2type = Dark | move2cat = Special
+| move3 = Blizzard | move3type = Ice | move3cat = Special
+| move4 = Aura Sphere | move4type = Fighting | move4cat = Special
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0740
+| pokemon = Crabominable
+| gender = male
+| level = 81
+| type1 = Fighting
+| type2 = Ice
+| tera = Water
+| icon = tera
+| ability = Iron Fist
+| move1 = Crabhammer | move1type = Water | move1cat = Physical
+| move2 = Ice Hammer | move2type = Ice | move2cat = Physical
+| move3 = Zen Headbutt | move3type = Psychic | move3cat = Physical
+| move4 = Close Combat | move4type = Fighting | move4cat = Physical
+}}
+{{Party/end}}
+====Traded to the player====
+Upon the third unique interaction with Kofu in the League Club Room, he will trade a Veluza to the player in exchange for almost any Pokémon excluding {{Shiny}}, {{pkmn2|Legendary}}, or [[Mythical Pokémon]].
+{{SVievent
+|ndex=0976
+|ball=Poké
+|pokemon=Veluza
+|gender=f
+|level=20
+|teratype=Water
+|type=Water|type2=Psychic
+|ot=Kofu
+|id=373015
+|ability=Sharpness
+|nature=Sassy
+|met=a Link Trade
+|ribbon=Partner
+|hpiv=31
+|atkiv=28
+|defiv=14
+|spaiv=14
+|spdiv=18
+|speiv=26
+|move1=Pluck|move1type=Flying|move1cat=Physical
+|move2=Water Pulse|move2type=Water|move2cat=Special
+|move3=Focus Energy|move3type=Normal|move3cat=Status
+|move4=Slash|move4type=Normal|move4cat=Physical
+|method=[[In-game trade]] (League Club Room)
+|gift=yes
+|trade=yes
+|scale=128}}
+
+==Gallery==
+===Sprites and models===
+{| style="margin:auto; text-align:center; {{roundy|15px}} border: 2px solid #{{water color dark}}; background: #{{water color}}; font-size:80%""
+|-
+| style="{{roundy|15px}} border: 2px solid #{{water color dark}}; background: #{{water color light}};" | [[File:VSKofu.png|x100px]]
+| style="{{roundy|15px}} border: 2px solid #{{water color dark}}; background: #{{water color light}};" |  [[File:LCR Kofu icon.png|100px]]
+|- style="color:#000"
+| VS model from<br>{{color2|000|Pokémon Scarlet and Violet|Scarlet and Violet}}
+| {{color2|000|League Club Room#Special Coaches|Special Coach}} profile image from<br>{{color2|000|Pokémon Scarlet and Violet|Scarlet and Violet}}
+|-
+| colspan="4" style="{{roundy|20px}} border:2px solid #{{water color dark}}; background:#{{water color light}}; overflow:hidden" |[[File:Kofu gym badge.png|x150px]]
+|-
+| colspan="4" |'''{{GameIcon|Sc}}{{GameIcon|Vi}}''' <br> Badge photo
+|-
+|}
+
+===Artwork===
+{|style="margin:auto; text-align:center; border:3px solid #{{water color dark}}; background:#{{water color}}; font-size:80%; border-radius: 10px"
+|-
+| style="{{roundy|20px}} border:2px solid #{{water color dark}}; background:#{{water color light}}; overflow:hidden;" | [[File:Kofu_concept_art.jpg|x200px]]
+|- style="color:#000"
+| Concept art from {{color2|000|Pokémon Scarlet and Violet|Scarlet and Violet}}
+|}
+
+==Quotes==
+{{main|Kofu/Quotes}}
+
+==In animation==
+[[File:Kofu anime.png|thumb|250px|Kofu in {{aniseries|HZ}}]]
+===''Pokémon Horizons: The Series''===
+Kofu first appeared in silhouette alongside the other [[Gym Leader]]s of [[Paldea]] in ''[[HZ046|Welcome to Naranja Academy!]]'' during [[Clavell]]'s explanation of how [[Tera Training]] works.
+
+Kofu appeared in ''[[HZ055|Showdown! The Paldea Elite Four]]'', where he was partnered with [[Coral]] as part of the [[Elite Four Tag Battle]], where they went up against [[Larry]]. The battle ended when Coral had her {{p|Glalie}} used {{m|Self-Destruct}}, knocking out all of the Pokémon and resulting in her and Kofu's loss.
+
+====Character====
+Kofu has a cheerful personality, being able to take a loss with a happy laugh.
+
+====Pokémon====
+{{TrainerPoké
+|trainer=Kofu
+|pkmn=Wugtrio
+|type1=Water
+|img=Kofu Wugtrio.png
+|epnum=HZ055
+|epname=Showdown! The Paldea Elite Four
+|vajp=
+|vaen=
+|desc={{p|Wugtrio}} is Kofu's only known Pokémon. Kofu used it in his battle against [[Larry]], only to be defeated when [[Coral]] had her {{p|Glalie}} use {{m|Self-Destruct}}.
+
+None of Wugtrio's moves are known.}}
+
+====Voice actors====
+{{vatable|color={{water color}}|bordercolor={{water color dark}}
+|ja=間宮 康弘 ''[[Yasuhiro Mamiya]]''
+|en=Jamieson Price
+|fi=Markus Niemi
+|he=ערן מור ''Eran Mor''
+|it=Pietro Ubaldi
+|pl=Jakub Wieczorek
+|es_eu=Antonio Esquivias
+}}
+
+===Pokémon: Paldean Winds===
+[[File:Kofu Paldean Winds.png|thumb|250px|Kofu in [[Pokémon: Paldean Winds]]]]
+Kofu appeared in ''[[PPW04|Breathe Together]]'', in which he is introduced by [[Iono]] as one of [[Paldea]]'s [[Gym Leader]]s during her video collaboration with [[Naranja Academy]].
+
+====Pokémon====
+{|
+| {{ActivePoké|Kofu|Crabominable|0740Crabominable.png|Fighting|Ice|size=100px|link=no}}
+|
+|
+|}
+{{-}}
+
+===Biri-Biri===
+[[File:Biri-Biri Gym Leaders.png|250px|thumb|Kofu in [[Biri-Biri]]]]
+Kofu briefly appeared as a silhouette alongside the rest of [[Paldea]] [[Gym Leader]]s in the music video for [[Biri-Biri]].
+{{-}}
+
+===POKÉTOON===
+[[File:Kofu PT.png|thumb|250px|Kofu in [[POKÉTOON]]]]
+Kofu appeared in [[PT16]]. He was seen battling against {{OBP|Yūto|POKÉTOON}} when his opponent's {{p|Charcadet}} invaded the match and attacked his {{p|Crabominable}}. Afterwards, he didn't think much of the situation and laughed it off, impressed by Charcadet's liveliness.
+{{-}}
+====Pokémon====
+{{TrainerPoké
+|trainer=Kofu
+|pkmn=Crabominable
+|type1=Fighting
+|type2=Ice
+|img=Kofu Crabominable PT.png
+|epnum=PT16
+|epname=
+|vajp=
+|desc={{p|Crabominable}} is Kofu's only known Pokémon. Kofu used it in his battle against {{OBP|Yūto|POKÉTOON}}, where it faced his {{p|Breloom}}.
+
+Crabominable's only known move is {{m|Crabhammer}}.}}
+====Voice actors====
+{{vatable|color={{water color}}|bordercolor={{water color dark}}
+|ja=浦山 迅 ''Jin Urayama''
+}}
+
+==In literature==
+===Let's Play the Pokémon Card Game!===
+{{incomplete|section|more details of role}}
+{{missing image|section}}
+'''Kotarou Haida''' (Japanese: '''{{ruby|灰|はい}}{{ruby|田|だ}}{{ruby|小|こ}}{{ruby|太|た}}{{ruby|郎|ろう}}''' ''Haida Kotarou''), a [[cross-canon counterpart]] of Kofu, appeared in the Scarlet & Violet arc of [[Let's Play the Pokémon Card Game! Scarlet & Violet Arc|Let's Play the Pokémon Card Game!]].
+
+===Pokémon Adventures===
+[[File:Kofu Adventures.png|220px|thumb|Kofu in Pokémon Adventures]]
+Kofu debuted in [[PASV25]]. At [[Asado Desert]], he and [[Saguaro]] found {{Violet}} and [[Arven]] in the middle of a battle with the dual Quaking Earth {{pkmn2|Titan}}s, {{p|Great Tusk}} and {{p|Iron Treads}}. Saguaro explained that while on a trip to the [[Kofu Lounge]], he saw Kofu leave to go help find a missing [[Medali Gym|Treasure Eatery]] employee. They found and brought the employee to safety, but had to return to the area to find a left-behind [[Rotom Phone]]. Once Great Tusk was taken out, Kofu and Saguaro lent their aid by keeping Iron Treads in place long enough for Violet and Arven to defeat it as well. The four then enjoyed sandwiches made from the [[Sour Herba Mystica]] that the two Titans were guarding.
+
+Later,<!--In [[PASV32]],--> Kofu was revealed to have been asked by [[Tulip]] to help search for stakes tied to shrines keeping the [[treasures of ruin]] sealed. Katy reported to Tulip that even though Kofu had searched near [[Cascarrafa]], he wasn't able to find a single stake.
+{{-}}
+====Pokémon====
+{{TrainerPoké
+|trainer=Kofu
+|pkmn=Pelipper
+|type1=Water
+|type2=Flying
+|img=Kofu Pelipper Adventures.png
+|epnum=PASV25
+|epname= 
+|desc={{p|Pelipper}} is Kofu's first known Pokémon. Kofu lent it to {{Violet}} so he could fly to a nearby watchtower [[Arven]] was hiding on top of. When {{p|Great Tusk}} found and attacked Arven, Violet had Pelipper strike with a {{m|Hydro Pump}}. This weakened Great Tusk enough for Violet and Arven to defeat it with their Pokémon.
+
+Pelipper's only known move is {{m|Hydro Pump}}.}}
+
+{{anchor|Wugtrio 2}}{{TrainerPoké
+|trainer=Kofu
+|pkmn=Wugtrio
+|type1=Water
+|img=Kofu Wugtrio Adventures.png
+|epnum=PASV25
+|epname=
+|desc={{p|Wugtrio}} is Kofu's second known Pokémon. It was first used alongside [[Saguaro]]'s {{p|Hatterene}} to assist {{Violet}} and [[Arven]] battle the {{pkmn2|Titan}} {{p|Iron Treads}}. It used its multiple heads to keep Iron Treads from moving, giving Violet and Arven the opportunity to defeat it with a combined attack from their Pokémon.
+
+None of Wugtrio's moves are known.}}
+
+==In the TCG==
+[[File:KofuStellarCrown165.jpg|200px|thumb|Ultra rare print of Kofu]]
+{{main|Kofu (Stellar Crown 138)}}
+'''Kofu''' is introduced as a {{TCG|Supporter card}} in the [[Pokémon Trading Card Game]] during the English Scarlet & Violet Series (the Japanese Scarlet & Violet Era). It was first released in the Japanese {{TCG|Stellar Miracle}} expansion and the English {{TCG|Stellar Crown}} expansion, with artwork by [[Hideki Ishikawa]]. An {{TCG|ultra rare}} version with artwork by the same illustrator was released in the same sets. It lets the player put 2 cards from their hand on the bottom of their deck in any order, then draw 4 cards from the top of the deck. If the player has fewer than 2 other cards in their hand (excluding the Kofu card), the card cannot be played. The Kofu card also interacts with {{TCG ID|Stellar Crown|Crabominable|42}} and {{TCG ID|Stellar Crown|Veluza|45}} from the same expansion, referencing the Pokémon that Kofu uses in the games.
+{{-}}
+
+==Trivia==
+* Kofu's Japanese Gym Leader title is {{tt|激流料理人|Torrent Chef}}.
+* In the Japanese version of {{g|Scarlet and Violet}}, Kofu says 「ウオーッ！」 whenever he is surprised. While this interjection can be transliterated directly as "Woah!", it also contains a pun on 魚 ''uo'' (fish).
+
+==Names==
+{| class="roundtable" style="background:#{{water color}}; border:3px solid #{{water color dark}}"
+|-
+! style="background:#{{water color light}}" | Language
+! style="background:#{{water color light}}" | Name
+! style="background:#{{water color light}}" | Origin
+|-
+| Japanese
+| ハイダイ ''Haidai''
+| From 海帶 / 海带 ''hǎidài'' (Chinese for "{{wp|Saccharina japonica|sweet kelp}}", a type of kelp commonly cultivated for consumption)
+|-
+| English
+| Kofu
+| From ''{{wp|kombu}}'' (edible kelp that is commonly derived from sweet kelp and {{wp|Saccharina latissima|sugar kelp}}) and ''fuco'' (Spanish for "{{wp|Fucus|wrack}}")
+|-
+| German, French
+| Kombu
+| From ''kombu''
+|-
+| European Spanish,<br>Latin American Spanish
+| Fuco
+| From ''fuco'' (wrack)
+|-
+| Italian
+| Algaro
+| From ''{{wp|algae|alga}}'', referring to sweet kelp being a species of brown algae
+|-
+| Korean
+| 곤포 ''Konpo''
+| From 곤포 (昆布) ''konpo'' (kombu)
+|-
+| Chinese (Traditional)
+| 海岱 ''Hǎidài'' / ''Hóidoih''
+| rowspan="2" | From 海帶 / 海带 ''hǎidài / hóidaai'' (kelp)
+|-
+| Chinese (Simplified)
+| 海岱 ''Hǎidài''
+|-
+| Indonesian
+| Algo
+| From ''algo'' ({{wp|Esperanto}} for "alga")
+|-
+| Brazilian Portuguese
+| Álgaro
+| From ''alga''
+|-
+| Thai
+| ไห่ไต้ ''Haitai''
+| Transcription of his Japanese name
+|}
+{{-}}
+
+==References==
+<references/>
+
+==Related articles==
+* [[a:Category:Kofu|Images on the Bulbagarden Archives]]
+{{Gym Leaders of Paldea}}
+{{Project CharacterDex notice}}
+
+[[Category:Game characters]]
+[[Category:Scarlet and Violet characters]]
+[[Category:Gym Leaders]]
+[[Category:Water-type Trainers]]
+[[Category:Trainers who use Terastallization]]
+
+[[de:Kombu]]
+[[es:Fuco]]
+[[fr:Kombu]]
+[[it:Algaro]]
+[[ja:ハイダイ]]
+[[zh:海岱]]

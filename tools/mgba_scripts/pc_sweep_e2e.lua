@@ -2,10 +2,14 @@
 -- CharacterMode_SweepPartyToPC() -- the exact call Cb2_ExitPSS makes when
 -- the player leaves the storage UI -- against real party/PC state:
 --   1. mode off: gift a Pikachu next to the Meowth starter (both legal)
---   2. become Falkner: Meowth is off-roster, Pikachu on (his Pichu) ->
---      SWEEP: Meowth to the PC, Pikachu compacts to slot 0, count 2 -> 1.
---      This step used Red until 2026-07-24, when the roster sync gave Red
---      the Persian line and Meowth stopped being off-roster for him.
+--   2. become Lt. Surge: Meowth is off-roster, Pikachu on -> SWEEP: Meowth
+--      to the PC, Pikachu compacts to slot 0, count 2 -> 1.
+--      This step has moved twice as the rosters changed: Red until
+--      2026-07-24 (the roster sync gave him the Persian line, so Meowth
+--      stopped being off-roster), then Falkner until 2026-07-25 (the
+--      adversarial audit removed his Pichu, so the gifted Pikachu stopped
+--      being ON-roster). Re-check the control characters BY FAMILY BASE
+--      after any roster change -- this fixture has caught every one.
 --   3. become Lance (roster has NO Pichu family -- Falkner's does, which
 --      is what the first version of this test tripped over): the remaining
 --      Pikachu is off-roster and ALONE -> SWEEP: the keptOne guard must
@@ -31,8 +35,8 @@ local SPECIES_DRATINI = 147
 
 -- Character indices are 1-based positions in gCharacters (characters.txt
 -- order). New characters are only ever APPENDED, so these stay valid.
-local CHAR_LANCE   = 4
-local CHAR_FALKNER = 28
+local CHAR_LANCE    = 4
+local CHAR_LT_SURGE = 11
 
 local MAP_TRUCK_GROUP = 25
 local MAP_TRUCK_NUM   = 40
@@ -218,13 +222,13 @@ mbStep("gift Pikachu with mode off", REQ_GIVE_MON, SPECIES_PIKACHU, 10,
     end)
 
 -- 2. become Falkner; sweep must remove the off-roster Meowth only
-mbStep("become Falkner", REQ_SET_CHARACTER, CHAR_FALKNER, 0)
+mbStep("become Lt. Surge", REQ_SET_CHARACTER, CHAR_LT_SURGE, 0)
 
-mbStep("sweep as Falkner (Meowth off-roster)", REQ_SWEEP_PARTY, 0, 0, function()
+mbStep("sweep as Lt. Surge (Meowth off-roster)", REQ_SWEEP_PARTY, 0, 0, function()
     H.assertEq("sweep left exactly 1 mon", mbResult(), 1)
 end)
 
-mbStep("slot 0 after Falkner sweep", REQ_QUERY_PARTY_MON, 0, 0, function()
+mbStep("slot 0 after Lt. Surge sweep", REQ_QUERY_PARTY_MON, 0, 0, function()
     H.assertEq("Pikachu compacted to slot 0 (Meowth swept to PC)",
                mbResult() % 65536, SPECIES_PIKACHU)
 end)

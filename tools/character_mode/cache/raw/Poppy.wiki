@@ -1,0 +1,541 @@
+{{Character Infobox
+|color={{steel color}}
+|corecolor={{steel color light}}
+|bordercolor={{steel color dark}}
+|name=Poppy
+|jname=ポピー
+|tmname=Poppy
+|jtranslit=Popī
+|slogan=no
+|sloganline=
+|image=Scarlet Violet Poppy.png
+|caption=Art from [[Pokémon Scarlet and Violet|Scarlet and Violet]]
+|size=150px
+|hometown=Unknown
+|region=[[Paldea]]
+|gender=Female
+|age=9<ref>'''Poppy''': ''"I’m nine years old—that’s old enough to go to Naranja{{sup/9|S}}/Uva{{sup/9|V}} Academy if I wanted to!"'' ({{g|Scarlet and Violet}}: [[The Indigo Disk]])</ref>
+|hair=Black
+|eyes=Black
+}}
+{{Character Infobox/Game
+|color={{steel color light}}
+|gen={{gen|IX}}
+|games={{pkmn|Scarlet and Violet|Scarlet, Violet}}<br>{{pkmn|Masters EX}}
+|trainer=[[Elite Four]]
+|counterpart=[[Poppy (Masters)]]
+|enva=Abby Espiritu<ref>https://resumes.actorsaccess.com/abbyespiritu</ref> <small>({{pkmn|Masters EX}})</small>
+|jpva=Maria Naganawa <small>({{pkmn|Masters EX}})</small>
+}}
+{{Character Infobox/Team
+|color={{steel color light}}
+|member=[[Paldea League]]
+|rank=Elite Four
+|specialty={{t|Steel}} types
+}}
+{{Character Infobox/Anime
+|color={{steel color light}}
+|series=''[[Pokémon Horizons: The Series]]''<br>''[[Pokémon: Paldean Winds]]''
+|debut=''[[HZ046|Welcome to Naranja Academy!]]'' <small>([[Pokémon Horizons: The Series|Horizons]])</small><br>''[[PPW04|Breathe Together]]'' <small>([[Pokémon: Paldean Winds|PW]])</small>
+|enva=Debi Derryberry <small>([[Pokémon Horizons: The Series|Horizons]])</small>
+|jpva=Miria Takagishi <small>([[Pokémon Horizons: The Series|Horizons]])</small>
+}}
+|}
+
+'''Poppy''' (Japanese: '''ポピー''' ''Poppy'') is a member of the [[Elite Four]] of the [[Paldea]] region. She [[Type expert|specializes]] in {{type|Steel}} {{OBP|Pokémon|species}}.
+
+==Appearance==
+Poppy is a young girl with fair skin, onyx black eyes, black hair, and an average build. Although she is 9 years old, she is unusually short for her age. Her attire is mostly in a grayish-blue color, involving the visor on her head, her trenchcoat, and dress shoes. She also wears black gloves on both hands and faded cream white tights on her legs. Additionally, she carries a key-shaped purse that she wears around her neck like a necklace. In [[Pokémon Masters EX]], an alternate palette of her default appearance shows her visor, trenchcoat, and dress shows being bright azalea pink. Her key-shaped purse is purple, while the gloves and tights are pink.
+
+==In the core series games==
+Poppy is first introduced to the {{player}} by [[Rika]] after they have won seven [[Badge|Gym Badges]]. Although she is far younger than the rest of the Elite Four, as well as Paldea's [[Gym Leader]]s, Poppy is considered one of the strongest [[Pokémon Trainer]]s in the [[region]]. She is normally sweet and good-natured, but becomes competitive during {{pkmn|battle}}s. Because of her age, she refers to her Pokémon with childlike nicknames, referring to Copperajah as '''Rajah''' (Japanese: '''ダイオウちゃん''' ''Daiou-chan'') and Tinkaton as '''Tinkie''' (Japanese: '''デカヌちゃん''' ''Dekanu-chan''). After the player becomes a {{pkmn|Champion}}, Poppy watches their battle against [[Nemona]] in [[Mesagoza]]. Additionally, Poppy looks up to [[Rika]] as a mentor, despite Rika claiming Poppy is a better Trainer than she is, and [[Larry]], whom she speaks highly of.
+
+===The Indigo Disk===
+Poppy can be invited to [[Unova]]'s [[Blueberry Academy]] as a special coach. There, she decides to start attending classes at [[Naranja Academy]]{{sup/9|S}}/[[Uva Academy]]{{sup/9|V}} in the following school year. When talking with [[Geeta]] in the [[League Club Room]], Poppy reveals that she's trying to draw a picture of her superior, which is a nod to Geeta's concept art.<ref>[https://web.archive.org/web/20231217021830/https://twitter.com/Lewchube/status/1736207644665221229 Poppy's dialogue in the new Pokemon DLC references Geeta's concept art - Twitter]</ref> When interacting with Larry, Poppy asks if she is his best friend, but Larry, unable to answer, changes the subject, annoying Poppy. When conversing with Rika, Poppy is annoyed that the students mistake her for a lost kid, prompting her friend to reply with a remark on how adorable she is, which quickly cheers her up.
+
+===Pokémon===
+Poppy will {{Tera}}stallize her {{p|Tinkaton}} at the first opportunity.
+
+====Champion Assessment====
+{{Party
+| background = {{steel color}}
+| border = {{steel color dark}}
+| headcolor = {{steel color light}}
+| sprite = VSPoppy.png
+| size = x100px
+| prize = {{PDollar}}12,508
+| name = Poppy
+| class2 = of the Elite Four
+| classlink2 = Elite Four
+| location = Pokémon League (Paldea)
+| locationname = Pokémon League
+| game = SV
+| pokemon = 5
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0879
+| pokemon = Copperajah
+| gender = female
+| level = 58
+| type1 = Steel
+| ability = Sheer Force
+| move1 = High&nbsp;Horsepower | move1type = Ground | move1cat = Physical
+| move2 = Play Rough | move2type = Fairy | move2cat = Physical
+| move3 = Heavy Slam | move3type = Steel | move3cat = Physical
+| move4 = Stealth Rock | move4type = Rock | move4cat = Status
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0462
+| pokemon = Magnezone
+| gender = none
+| level = 58
+| type1 = Electric
+| type2 = Steel
+| ability = Sturdy
+| move1 = Discharge | move1type = Electric | move1cat = Special
+| move2 = Flash Cannon | move2type = Steel | move2cat = Special
+| move3 = Light Screen | move3type = Psychic | move3cat = Status
+| move4 = Tri Attack | move4type = Normal | move4cat = Special
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0437
+| pokemon = Bronzong
+| gender = none
+| level = 58
+| type1 = Steel
+| type2 = Psychic
+| ability = Levitate
+| move1 = Iron Head | move1type = Steel | move1cat = Physical
+| move2 = Zen Headbutt | move2type = Psychic | move2cat = Physical
+| move3 = Rock Blast | move3type = Rock | move3cat = Physical
+| move4 = Earthquake | move4type = Ground | move4cat = Physical
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0823
+| pokemon = Corviknight
+| gender = male
+| level = 58
+| type1 = Flying
+| type2 = Steel
+| ability = Pressure
+| move1 = Brave Bird | move1type = Flying | move1cat = Physical
+| move2 = Iron Head | move2type = Steel | move2cat = Physical
+| move3 = Body Press | move3type = Fighting | move3cat = Physical
+| move4 = Iron Defense | move4type = Steel | move4cat = Status
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0959
+| pokemon = Tinkaton
+| gender = female
+| level = 59
+| type1 = Fairy
+| type2 = Steel
+| tera = Steel
+| icon = tera
+| ability = Mold Breaker
+| move1 = Play Rough | move1type = Fairy | move1cat = Physical
+| move2 = Gigaton&nbsp;Hammer | move2type = Steel | move2cat = Physical
+| move3 = Brick Break | move3type = Fighting | move3cat = Physical
+| move4 = Stone Edge | move4type = Rock | move4cat = Physical
+}}
+{{Party/end}}
+====[[League Club Room]]====
+{{Party
+| background = {{steel color}}
+| border = {{steel color dark}}
+| headcolor = {{steel color light}}
+| sprite = VSPoppy.png
+| size = x100px
+| prize = {{PDollar}}19,920
+| name = Poppy
+| class2 = of the Elite Four
+| classlink2 = Elite Four
+| location = Blueberry Academy
+| game = SV
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0879
+| pokemon = Copperajah
+| gender = female
+| level = 82
+| type1 = Steel
+| ability = Sheer Force
+| move1 = High&nbsp;Horsepower | move1type = Ground | move1cat = Physical
+| move2 = Play Rough | move2type = Fairy | move2cat = Physical
+| move3 = Heavy Slam | move3type = Steel | move3cat = Physical
+| move4 = Stealth Rock | move4type = Rock | move4cat = Status
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0411
+| pokemon = Bastiodon
+| gender = female
+| level = 82
+| type1 = Rock
+| type2 = Steel
+| ability = Sturdy
+| move1 = Iron Defense | move1type = Steel | move1cat = Status
+| move2 = Body Press | move2type = Fighting | move2cat = Physical
+| move3 = Metal Burst | move3type = Steel | move3cat = Physical
+| move4 = Reflect | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0437
+| pokemon = Bronzong
+| gender = 
+| level = 82
+| type1 = Steel
+| type2 = Psychic
+| ability = Levitate
+| move1 = Iron Head | move1type = Steel | move1cat = Physical
+| move2 = Zen Headbutt | move2type = Psychic | move2cat = Physical
+| move3 = Ice Spinner | move3type = Ice | move3cat = Physical
+| move4 = Earthquake | move4type = Ground | move4cat = Physical
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0462
+| pokemon = Magnezone
+| gender = 
+| level = 82
+| type1 = Electric
+| type2 = Steel
+| ability = Sturdy
+| move1 = Discharge | move1type = Electric | move1cat = Special
+| move2 = Flash Cannon | move2type = Steel | move2cat = Special
+| move3 = Light Screen | move3type = Psychic | move3cat = Status
+| move4 = Tri Attack | move4type = Normal | move4cat = Special
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0823
+| pokemon = Corviknight
+| gender = male
+| level = 82
+| type1 = Flying
+| type2 = Steel
+| ability = Pressure
+| move1 = Dual Wingbeat | move1type = Flying | move1cat = Physical
+| move2 = Iron Head | move2type = Steel | move2cat = Physical
+| move3 = Body Press | move3type = Fighting | move3cat = Physical
+| move4 = Iron Defense | move4type = Steel | move4cat = Status
+}}
+{{Pokémon
+| gen = 9
+| ndex = 0959
+| pokemon = Tinkaton
+| gender = female
+| level = 83
+| type1 = Fairy
+| type2 = Steel
+| tera = Steel
+| icon = tera
+| ability = Mold Breaker
+| move1 = Play Rough | move1type = Fairy | move1cat = Physical
+| move2 = Gigaton&nbsp;Hammer | move2type = Steel | move2cat = Physical
+| move3 = Brick Break | move3type = Fighting | move3cat = Physical
+| move4 = Stone Edge | move4type = Rock | move4cat = Physical
+}}
+{{Party/end}}
+====Traded to the player====
+Upon the third unique interaction with Poppy in the League Club Room, she will trade a Tinkatuff to the player in exchange for almost any Pokémon excluding {{Shiny}}, {{pkmn2|Legendary}}, or [[Mythical Pokémon]].
+
+{{SVievent
+|ndex=0958
+|ball=Poké
+|pokemon=Tinkatuff
+|gender=f
+|level=25
+|teratype=Fairy
+|type=Fairy|type2=Steel
+|ot=Poppy
+|id=949475
+|ability=Mold Breaker
+|nature=Careful
+|met=a Link Trade
+|ribbon=Partner
+|hpiv=12
+|atkiv=29
+|defiv=29
+|spaiv=28
+|spdiv=22
+|speiv=26
+|move1=Rock Smash|move1type=Fighting|move1cat=Physical
+|move2=Draining Kiss|move2type=Fairy|move2cat=Special
+|move3=Sweet Kiss|move3type=Fairy|move3cat=Status
+|move4=Brutal Swing|move4type=Dark|move4cat=Physical
+|method=[[In-game trade]] (League Club Room)
+|gift=yes
+|trade=yes
+|scale=128}}
+
+==In the spin-off games==
+===[[Pokémon Masters EX]]===
+{{main|Poppy (Masters)}}
+Poppy forms a [[sync pair]] with {{p|Tinkaton}}, {{Shiny}} {{TP|Jasmine|Steelix}}, and {{p|Iron Treads}} in [[Pokémon Masters EX]]. Her Steelix is capable of [[Mega Evolution|Mega Evolving]]. Poppy became a playable sync pair on May 16, 2024.
+
+{{PairDex/h|Steel}}
+{{PairDex|204|Poppy|trainerlink=Poppy (Masters)#Tinkaton|trainerimg=Poppy|0959|Tinkaton|gender=female|buddy=yes|Steel|Fire|Physical Strike|exrole=Sprint|6|Poké Fair Sync Pair Scout}}
+{{PairDex|204|Poppy|trainerlink=Poppy (Masters)#Steelix|trainerimg=Poppy New Year 2025|sygna=New Year's 2025|0208M s|pokemonlink=Jasmine's Steelix|Steelix|mega=Steelixite|form=[[Mega Evolution|Mega Steelix]]|gender=female|shiny=yes|buddy=yes|Steel|Fire|Field|exrole=Support|6|Seasonal Sync Pair Scout}}
+{{PairDex|204|Poppy|trainerlink=Poppy (Masters)#Iron Treads|trainerimg=Poppy|0990|Iron Treads|buddy=yes|Steel|Fire|Field|exrole=Support|6|Variety Sync Pair Scout}}
+|}
+
+==Gallery==
+===Core series===
+====Sprites and models====
+{| style="margin:auto; text-align:center; {{roundy|15px}} border: 2px solid #{{steel color dark}}; background: #{{steel color}}; font-size:80%""
+|-
+| style="{{roundy|15px}} border: 2px solid #{{steel color dark}}; background: #{{steel color light}};" | [[File:VSPoppy.png|x100px]]
+| style="{{roundy|15px}} border: 2px solid #{{steel color dark}}; background: #{{steel color light}};" | [[File:LCR Poppy icon.png|100px]]
+|- style="color:#000"
+| VS model from<br>{{color2|000|Pokémon Scarlet and Violet|Scarlet and Violet}}
+| {{color2|000|League Club Room#Special Coaches|Special Coach}} profile image from<br>{{color2|000|Pokémon Scarlet and Violet|Scarlet and Violet}}
+|}
+
+====Artwork====
+{| style="margin:auto; text-align:center; {{roundy|15px}} border: 2px solid #{{steel color dark}}; background: #{{steel color}}; font-size:80%"
+|-
+| style="{{roundy|15px}} border: 2px solid #{{steel color dark}}; background: #{{steel color light}}; overflow:hidden" | [[File:Poppy concept art.jpg|x200px]]
+|- style="color:#000"
+| Concept art from <br>{{color2|000|Pokémon Scarlet and Violet|Scarlet and Violet}}
+|}
+
+===Merchandise===
+{| style="margin:auto; text-align:center; {{roundy|15px}} border: 2px solid #{{steel color dark}}; background: #{{steel color}}; font-size:80%"
+|-
+| style="{{roundy|15px}} border: 2px solid #{{steel color dark}}; background: #{{steel color light}}; overflow:hidden" | [[File:Poppy Sleeves.jpg|x250px]]
+|-
+| Sleeves by<br>{{color2|000|kirisAki}}<ref>[https://twitter.com/kirisAki_29/status/1684768114259718145 きりさき (@kirisAki_29) on Twitter] ([https://web.archive.org/web/0/https://twitter.com/kirisAki_29/status/1684768114259718145 archived copy])</ref>
+|}
+
+==Quotes==
+{{main|Poppy/Quotes}}
+
+==In animation==
+[[File:Poppy anime.png|thumb|250px|Poppy in {{aniseries|HZ}}]]
+===''Pokémon Horizons: The Series''===
+Poppy debuted in ''[[HZ046|Welcome to Naranja Academy!]]'', watching the battle between [[Liko]] and [[Ann]] at [[Naranja Academy]].
+
+In ''[[HZ055|Showdown! The Paldea Elite Four]]'', Poppy faced [[Dot]] and {{an|Iono}} in the [[Elite Four Tag Battle]]. Using her {{p|Copperajah}} and {{p|Tinkaton}}, nicknamed Rajah and Tinkie, she went up against [[Dot's Quaxly]] and Iono's {{p|Bellibolt}}, only to lose by default when Rajah was defeated by Bellibolt. After the battle, Poppy encouraged Dot not to look down on herself despite Iono doing most of the work to win the battle, and for Dot to have more self confidence in herself as a Trainer.
+
+In ''[[HZ067|Shine on, Terastallization! Liko vs. Roy!]]'', Poppy met up with Dot after the school tournament and encouraged her on her future progress as a Trainer.
+
+Poppy appeared again in ''[[HZ079|Over the Top!]]'', when the [[Rising Volt Tacklers]] appeared at the {{pal|Pokémon League}} asking for permission to go to [[Area Zero]], Poppy appeared along with the other members of the Elite Four. Later, she watched Liko, [[Roy]], and Dot's battle against [[Geeta]] along with the others present.
+
+====Character====
+Poppy has a bright and cheerful personality, being very friendly and sociable to people she meets. She is also humble in defeat, and is kind and encouraging towards opponents such as when she encouraged Dot to have more self confidence as a Trainer. Despite being a young child, Poppy's skills as a Steel-type Trainer earned her title as one of Paldea's Elite Four. In battle, Poppy's personality slightly changes as she becomes more excited and ruthless, not holding back against opponents. She also likes to use weather conditions to her advantage.
+
+====Pokémon====
+{{TrainerPoké
+|trainer=Poppy
+|pkmn=Tinkaton
+|nick=Tinkie
+|type1=Fairy
+|type2=Steel
+|img=Poppy Tinkie.png
+|gender=female
+|epnum=HZ055
+|epname=Showdown! The Paldea Elite Four
+|vajp=
+|vaen=Sarah Natochenny
+|desc={{p|Tinkaton|Tinkie}} (Japanese: '''デカヌちゃん''' ''Dekanu-chan'') is Poppy's first known Pokémon. She was used alongside {{p|Copperajah|Rajah}} in her battle against [[Dot]] and {{an|Iono}}, where she battled against [[Dot's Quaxly]] and Iono's {{p|Bellibolt}}.
+
+Tinkie's known moves are {{m|Gigaton Hammer}}, {{m|Brick Break}}, and {{m|Rock Smash}}.}}
+
+{{TrainerPoké
+|trainer=Poppy
+|pkmn=Copperajah
+|nick=Rajah
+|type1=Steel
+|img=Poppy Rajah.png
+|epnum=HZ055
+|epname=Showdown! The Paldea Elite Four
+|vajp=Taku Yashiro
+|vaen=
+|desc={{p|Copperajah|Rajah}} (Japanese: '''ダイオウちゃん''' ''Daiou-chan'') is Poppy's second known Pokémon. It was used alongside {{p|Tinkaton|Tinkie}} in her battle against [[Dot]] and {{an|Iono}}, where it battled against [[Dot's Quaxly]] and Iono's {{p|Bellibolt}}, only to be defeated by the latter.
+
+Rajah's known moves are {{m|Sandstorm}} and {{m|Rock Slide}}.}}
+
+====Voice actors====
+{{vatable|color={{steel color}}|bordercolor={{steel color dark}}
+|ja=高岸美里亜 ''Miria Takagishi''
+|en=Debi Derryberry
+|nl=Lizemijn Libgott
+|he=טליה ברקאי ''Talya Barkai'' ([[HZ067]], [[HZ069]])
+|es_la=Angélica Villa
+|es_eu=Cristina Yuste
+}}
+
+[[File:Rika Poppy Geeta Paldean Winds.png|thumb|250px|Poppy in [[Pokémon: Paldean Winds]]]]
+
+===Pokémon: Paldean Winds===
+Poppy briefly appeared in ''[[PPW04|Breathe Together]]'', alongside [[Geeta]] and [[Rika]], during [[Ohara]], [[Aliquis]], and [[Hohma]]'s video presenting [[Naranja Academy]].
+{{-}}
+
+===Artwork===
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{steel color dark}}; background: #{{steel color}}; font-size:80%;"
+|-
+|style="{{roundy|20px}} border: 2px solid #{{steel color dark}}; background: #{{steel color light}};"| [[File:Poppy HZ.png|100px]]
+|style="{{roundy|20px}} border: 2px solid #{{steel color dark}}; background: #{{steel color light}};"| [[File:Poppy Anime Expression Sheet.png|250px]]
+|- 
+|Official artwork from<br> ''{{color2|000|Pokémon Horizons: The Series}}'' 
+|Concept art from<br> ''{{color2|000|Pokémon Horizons: The Series}}'' 
+|-
+| style="{{roundy|20px}} border:2px solid #{{steel color dark}}; background: #{{steel color light}}; overflow:hidden; width:80px"| [[File:Horizons Poppy concept art.png|x250px]]
+|-
+| ''{{color2|000|Pokémon Horizons: The Series}}''<br>concept art
+|}
+
+====Eyecatch====
+{| style="margin:auto; text-align:center; {{roundy|5px}} border:2px solid #{{steel color dark}}; background:#{{steel color}}; font-size:80%"
+|style="{{roundy|5px}} border: 2px solid #{{steel color dark}}; background: #{{steel color light}}; width:auto"| [[File:HZ eyecatch Poppy Tinkie.png|x150px]]
+|-
+|}
+
+==In the manga==
+[[File:Poppy Adventures.png|thumb|170px|Poppy in Pokémon Adventures]]
+===Pokémon Adventures===
+Poppy debuted in [[PASV21]]. She was first seen outside the [[Treasure Eatery]], where she, [[Rika]], [[Hassel]], and [[Geeta]] greeted [[Larry]]. Geeta explained that everyone came to investigate a report the {{pal|Pokémon League}} received claiming that Larry attacked some Trainers unprovoked, though noted it was likely a false report. Larry clarified the Trainers he fought were members of [[Team Star]] that had been harassing a student from [[Uva Academy]], which he noted was unusually worse than their usual acts of misbehavior. Geeta expressed worry that a number of problems recently started appearing, including a false student that managed to sneak their way into the academy. After a brief discussion on what they each knew about the false student, it was determined the false student was actually a girl named [[Scarlet Koito]].
+
+In [[PASV23]], {{adv|Nemona}} was called by Geeta to have a meeting with the Pokémon League members at the [[Medali Gym]]. Once she arrived, Poppy and the others began questioning Nemona on what she knew about Scarlet. After finishing their discussion and Nemona left, Geeta decided to have the [[Gym Leader]]s determine if Scarlet was trustworthy by monitoring her.
+{{-}}
+
+====Pokémon====
+{{TrainerPoké
+|trainer=Poppy
+|pkmn=Tinkaton
+|gender=female
+|type1=Fairy
+|type2=Steel
+|img=Poppy Tinkaton Adventures.png
+|epnum=PASV21
+|desc={{p|Tinkaton}} is Poppy's first known Pokémon. She was first used to greet [[Larry]] by attacking him with her hammer.
+
+None of Tinkaton's moves are known.}}
+
+{{TrainerPoké
+|trainer=Poppy
+|pkmn=Copperajah
+|type1=Steel
+|img=Poppy Copperajah Adventures.png
+|epnum=PASV21
+|desc={{p|Copperajah}} is Poppy's second known Pokémon. It was first seen alongside its Trainer when she, the other [[Elite Four]] members, and [[Geeta]] went to greet [[Larry]] at the [[Treasure Eatery]].
+
+None of Copperajah's moves are known.}}
+
+==In the TCG==
+[[File:PoppyObsidianFlames227.jpg|200px|thumb|Special illustration rare Poppy]]
+{{main|Poppy (Obsidian Flames 193)}}
+'''Poppy''' was introduced as a {{TCG|Supporter card}} in the [[Pokémon Trading Card Game]] during the English Scarlet & Violet Series (the Japanese Scarlet & Violet Era). It was first released in the Japanese {{TCG|Ruler of the Black Flame}} expansion and the English {{TCG|Obsidian Flames}} expansion, with artwork by [[yuu]]. An {{TCG|ultra rare}} version with artwork by the same illustrator and a {{TCG|special illustration rare}} version of the card with artwork by [[Ryota Murayama]] were released in the same sets. It allows players to move up to 2 {{TCG|Energy cards|Energy}} from one of their Pokémon and attach them to another of their Pokémon.
+{{-}}
+
+==Trivia==
+* Poppy is the youngest known Elite Four member in any [[region]].
+
+==Names==
+{| class="roundtable" style="background:#{{steel color}}; border:3px solid #{{steel color dark}}"
+|-
+! style="background:#{{steel color light}}" | Language
+! style="background:#{{steel color light}}" | Name
+! style="background:#{{steel color light}}" | Origin
+|-
+| Japanese
+| ポピー ''Poppy''
+| From ''{{wp|poppy}}''
+|-
+| English, German, Indonesian,<br>Brazilian Portuguese
+| Poppy
+| From her Japanese name
+|-
+| European Spanish
+| Pola
+| rowspan="2" | From ''amapola'' (poppy)
+|-
+| Latin American Spanish
+| Poly
+|-
+| French
+| Popi
+| From her Japanese name
+|-
+| Italian
+| Verina
+| From ''papavero'' (poppy)
+|-
+| Korean
+| 뽀삐 ''Ppoppi''
+| Transcription of her Japanese name
+|-
+| Chinese (Traditional)
+| 波琵 ''Bōpí'' / ''Bōpèih''
+| rowspan="2" | Transcription of her Japanese name
+|-
+| Chinese (Simplified)
+| 波琵 ''Bōpí''
+|-
+| Thai
+| ป๊อปปี้ ''Poppi''
+| Transcription of her Japanese name
+|}
+{{-}}
+
+<div style="display:inline-block">
+''Rajah''
+{{langtable|color={{steel color light}}|bordercolor={{steel color dark}}
+|ja=ダイオウちゃん ''Daiou-chan''
+|zh_cmn=小大王 ''Xiǎo Dàwáng''
+|zh_yue=小大王 ''Síu Daaihwòhng''
+|fr=Pachy
+|de=Patini
+|it=Rajah
+|ko=대왕끼리동 ''Daewangkkiridong''
+|es_eu=Copperín
+|es_la=Coppe
+}}
+</div>
+<div style="display:inline-block">
+''Tinkie''
+{{langtable|color={{steel color light}}|bordercolor={{steel color dark}}
+|ja=デカヌちゃん ''Dekanu-chan''
+|zh_cmn=小匠匠 ''Xiǎo Jiàngjiàng'' {{tt|*|Traditional}}<br>小巨锻匠 ''Xiǎo Jùduànjiàng'' {{tt|*|Simplified}}
+|zh_yue=小匠匠 ''Síu Jeuhngjeuhng''
+|fr=Forgelina
+|de=Granforgita
+|it=Tinkaton
+|ko=두드리짱 ''Dudeurijjang''
+|es_eu=Tinkatilla
+|es_la=Tinkie
+}}
+</div>
+
+==References==
+<references/>
+
+==Related articles==
+* [[a:Category:Poppy|Images on the Bulbagarden Archives]]
+
+{{Paldea League}}
+{{Project CharacterDex notice}}
+
+[[Category:Game characters]]
+[[Category:Scarlet and Violet characters]]
+[[Category:Pokémon: Paldean Winds characters]]
+[[Category:Elite Four Trainers]]
+[[Category:Steel-type Trainers]]
+[[Category:Trainers who use Terastallization]]
+[[Category:Characters with confirmed ages]]
+
+[[de:Poppy]]
+[[es:Pola]]
+[[fr:Popi]]
+[[it:Verina]]
+[[ja:ポピー]]
+[[zh:波琵]]

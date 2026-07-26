@@ -1,0 +1,874 @@
+{{Character Infobox
+|color={{fairy color}}
+|corecolor={{psychic color}}
+|bordercolor={{fairy color dark}}
+|name=Bede
+|jname=ビート
+|tmname=Beet
+|jtranslit=Bīto
+|image=Sword Shield Bede.png
+|size=160px
+|caption=Art from [[Pokémon Sword and Shield|Sword and Shield]]
+|gender=Male
+|eyes=Purple
+|hair=Platinum blond
+|hometown=Unknown
+|region=[[Galar]]
+|relatives=Mentioned parents
+}}
+{{Character Infobox/Game
+|color={{psychic color}}
+|gen={{gen|VIII}}, {{gen|IX}}
+|games={{pkmn|Sword and Shield|Sword, Shield}}<br>{{pkmn|Masters EX}}
+|counterpart=[[Bede (Masters)]]
+|trainer=[[Pokémon Trainer]], [[Gym Leader]]
+|enva=Beau Bridgland<ref>[https://twitter.com/BeauVO/status/1537416757651988480 Beau Bridgland on Twitter]</ref> <small>({{pkmn|Masters EX}})</small>
+|jpva=Takuma Nagatsuka <small>({{pkmn|Masters EX}})</small>
+}}
+{{Character Infobox/Team
+|color={{psychic color}}
+|member=[[Galar League]]
+|rank=[[Gym Leader]]
+|domain=[[Ballonlea Stadium]]
+|reward={{badge|GalarFairy|Fairy Badge}}
+|specialty={{t|Psychic}} types <small>(as a Pokémon Trainer)</small> <br>{{t|Fairy}} types <small>(as a Gym Leader)</small>
+}}
+{{Character Infobox/Anime
+|color={{psychic color}}
+|series=''[[Pokémon: Twilight Wings]]'',<br>''[[Pokémon Evolutions]]''
+|debut=''[[TW07|Sky]]'' <small>([[Pokémon: Twilight Wings|Twilight Wings]])</small><br>''[[PE01|The Champion]]'' <small>({{pkmn|Evolutions}})</small>
+|enva=Brandon Winckler <small>([[Pokémon: Twilight Wings|Twilight Wings]])
+|jpva=Takuma Nagatsuka <small>([[Pokémon: Twilight Wings|Twilight Wings]])
+}}
+{{Character Infobox/Manga
+|color={{psychic color}}
+|series=''[[Pokémon Adventures]]''
+|debut=''[[PASS06|Watch Out!! Strong Rivals]]''
+}}
+|}
+
+'''Bede''' (Japanese: '''ビート''' ''Beet''<ref>[https://bandai-a.akamaihd.net/bc/images/shop_top_candytoy/20211020_pokemonscaleworld_beet_mibrim_tebrim_brimuon_01.jpg "Beet & Mibrim & Tebrim & Brimuon"] [https://www.bandai.co.jp/candy/pokemonscaleworld/ Pokémon Scale World] figurine catalog image</ref>) is one of the [[rival]] characters in [[Pokémon Sword and Shield]], the others being [[Hop]] and [[Marnie]]. He initially [[Type expert|specializes]] in {{type|Psychic}} {{OBP|Pokémon|species}}, but is eventually scouted by [[Opal]] to succeed her as a {{type|Fairy}} [[Gym Leader]], and thus changes his specialty type accordingly. As the Gym Leader of [[Ballonlea Stadium]], he gives the {{badge|GalarFairy|Fairy Badge}} to Trainers who defeat him.
+
+==In the core series games==
+Bede is one of the {{player}}'s [[rival]]s. He is an arrogant, rude young man who had been personally sponsored by [[Rose]], who gave Bede his first Pokémon, later revealed to be his {{p|Hatterene}}, upon visiting his orphanage when he was a child. The player and [[Hop]] first meet him when signing up for the Gym Challenge, though his name is not revealed at the time. He is immediately dismissive of Hop and the player character, believing that his connection to the chairman gives him privilege. While he is competing in the Gym Challenge to become {{pkmn|Champion}}, he has been gathering [[Wishing Star]]s in large quantities to help the Chairman realize his ambition. However, in his zealous pursuit of Wishing Stars, Bede brings harm to a historic landmark in [[Stow-on-Side]], and Rose disqualifies him from the Gym Challenge in disappointment.
+
+After the player returns from [[Ballonlea]] to [[Hammerlocke]] with the [[Badge#Fairy Badge Galar|Fairy Badge]], Opal notices the sulking Bede and is struck with inspiration, asking him to become her successor. Bede reluctantly agrees, believing he will become stronger in the process. Bede eventually returns as a [[Gym Leader]], interrupting the finals of the [[Galar League|Champion Cup]] and demanding to battle the player, staking his career on his victory. After losing, Bede, who had begun to regret accepting Opal's offer, reveals he was planning on using the result of the battle as an excuse to get away from his mentor. However, after hearing the crowd cheer him on despite his loss, he feels obligated to continue training, figuring he will be able to completely surpass Opal soon.
+
+After the player becomes {{pkmn|Champion}}, the player, Hop, and former Gym Leader [[Piers]] head to [[Ballonlea Stadium]] while trying to stop [[Sordward]] and [[Shielbert]], but in the lobby, Bede confidently declares that he has taken care of most of the [[Dynamax]] Pokémon running rampant in his Stadium already. The player's group attempts to leave, but Bede refuses to let them go until he has a battle with the new Champion. After some assurance from Opal, the group decides to indulge Bede. During the battle, Bede acknowledges the player's strength, and after being defeated, accepts them as Champion. A more humble Trainer now, Bede swears he'll overcome his weakness and, in his words, "reach the pinnacle of what Fairy types can do."
+
+===League Cards===
+This is a transcript of the back of Bede's [[League Card]]s in [[Pokémon Sword and Shield]].
+;Normal League Card
+:"Bede spent some time living in an orphanage after his family ran into some trouble when he was young. He always had difficulty getting along with others and would constantly get into fights. That is until one day [[Rose]] visited the facility. Rose gave Bede a Pokémon, which changed Bede's life forever. He showed talent as a {{pkmn|Trainer}} and threw himself into [[Pokémon battle]]s, becoming stronger by the day. He has joined the [[Galar League|Gym Challenge]] with an endorsement from the chairman himself, and Bede plans to prove that the chairman's faith was not misplaced."
+;Rare League Card
+:"He was appointed by the former [[Gym Leader]] [[Opal]] to become the new [[Gym Leader]] of [[Ballonlea Stadium]]. The general consensus is that Opal's harsh training has in fact mellowed him out. Though he himself has never confirmed nor denied this, it should be noted that he no longer refuses to give autographs. Additionally, it seems his skills as a Pokémon Trainer have also increased rather dramatically. Recently, his intrusion during the Finals of the Champion Cup has gained popularity, and fans wish to see that kind of performance again. Bede himself is not sure how to react."
+
+===Pokémon===
+Bede keeps his Pokémon in [[Great Ball]]s.
+===={{g|Sword and Shield}}====
+=====First battle=====
+{{Party
+| background = {{psychic color}}
+| border = {{psychic color dark}}
+| headcolor = {{psychic color light}}
+| sprite = VSBede.png
+| size = 150px
+| prize = {{PDollar}}1,920
+| class = Pokémon Trainer
+| name = Bede
+| location = Galar Mine
+| game = SwSh
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0577
+| pokemon = Solosis
+| gender = male
+| level = 13
+| type1 = Psychic
+| ability = Magic Guard
+| move1 = Endeavor | move1type = Normal | move1cat = Physical
+| move2 = Confusion | move2type = Psychic | move2cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0574
+| pokemon = Gothita
+| gender = female
+| level = 15
+| type1 = Psychic
+| ability = Competitive
+| move1 = Psybeam | move1type = Psychic | move1cat = Special
+| move2 = Tickle | move2type = Normal | move2cat = Status
+| move3 = Pound | move3type = Normal | move3cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0856
+| pokemon = Hatenna
+| gender = female
+| level = 16
+| type1 = Psychic
+| ability = Anticipation
+| move1 = Confusion | move1type = Psychic | move1cat = Special
+| move2 = Round | move2type = Normal | move2cat = Special
+| move3 = Disarming Voice | move3type = Fairy | move3cat = Special
+}}
+{{Party/end}}
+=====Second battle=====
+{{Party
+| background = {{psychic color}}
+| border = {{psychic color dark}}
+| headcolor = {{psychic color light}}
+| sprite = VSBede.png
+| size = 150px
+| prize = {{PDollar}}2,760
+| class = Pokémon Trainer
+| name = Bede
+| location = Galar Mine No. 2
+| game = SwSh
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0577
+| pokemon = Solosis
+| gender = male
+| level = 21
+| type1 = Psychic
+| ability = Magic Guard
+| move1 = Psyshock | move1type = Psychic | move1cat = Special
+| move2 = Psybeam | move2type = Psychic | move2cat = Special
+| move3 = Endeavor | move3type = Normal | move3cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0574
+| pokemon = Gothita
+| gender = female
+| level = 22
+| type1 = Psychic
+| ability = Competitive
+| move1 = Psyshock | move1type = Psychic | move1cat = Special
+| move2 = Rock Tomb | move2type = Rock | move2cat = Physical
+| move3 = Psybeam | move3type = Psychic | move3cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0077
+| pokemon = Ponyta
+| form = -Galar
+| gender = male
+| level = 22
+| type1 = Psychic
+| ability = Pastel Veil
+| move1 = Confusion | move1type = Psychic | move1cat = Special
+| move2 = Fairy Wind | move2type = Fairy | move2cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0856
+| pokemon = Hatenna
+| gender = female
+| level = 23
+| type1 = Psychic
+| ability = Anticipation
+| move1 = Psybeam | move1type = Psychic | move1cat = Special
+| move2 = Disarming Voice | move2type = Fairy | move2cat = Special
+}}
+{{Party/end}}
+=====Third battle=====
+{{Party
+| background = {{psychic color}}
+| border = {{psychic color dark}}
+| headcolor = {{psychic color light}}
+| sprite = VSBede.png
+| size = 150px
+| prize = {{PDollar}}4,200
+| class = Pokémon Trainer
+| name = Bede
+| location = Stow-on-Side
+| game = SwSh
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0578
+| pokemon = Duosion
+| gender = male
+| level = 32
+| type1 = Psychic
+| ability = Magic Guard
+| move1 = Light Screen | move1type = Psychic | move1cat = Status
+| move2 = Reflect | move2type = Psychic | move2cat = Status
+| move3 = Psyshock | move3type = Psychic | move3cat = Special
+| move4 = Psybeam | move4type = Psychic | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0575
+| pokemon = Gothorita
+| gender = female
+| level = 32
+| type1 = Psychic
+| ability = Competitive
+| move1 = Fake Tears | move1type = Dark | move1cat = Status
+| move2 = Psybeam | move2type = Psychic | move2cat = Special
+| move3 = Rock Tomb | move3type = Rock | move3cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0077
+| pokemon = Ponyta
+| form = -Galar
+| gender = male
+| level = 33
+| type1 = Psychic
+| ability = Pastel Veil
+| move1 = Fairy Wind | move1type = Fairy | move1cat = Special
+| move2 = Psybeam | move2type = Psychic | move2cat = Special
+| move3 = Agility | move3type = Psychic | move3cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0857
+| pokemon = Hattrem
+| gender = female
+| level = 35
+| type1 = Psychic
+| ability = Anticipation
+| move1 = Dazzling Gleam | move1type = Fairy | move1cat = Special
+| move2 = Psybeam | move2type = Psychic | move2cat = Special
+}}
+{{Party/end}}
+=====Fourth battle=====
+Bede will [[Gigantamax]] his {{p|Hatterene}} at the first opportunity.
+
+{{Party
+| background = {{fairy color}}
+| border = {{fairy color dark}}
+| headcolor = {{fairy color light}}
+| sprite = VSBede 2.png
+| size = 150px
+| prize = {{PDollar}}8,480
+| class = Gym Leader
+| name = Bede
+| location = Wyndon Stadium
+| game = SwSh
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0303
+| pokemon = Mawile
+| gender = female
+| level = 51
+| type1 = Steel
+| type2 = Fairy
+| ability = Intimidate
+| move1 = Play Rough | move1type = Fairy | move1cat = Physical
+| move2 = Iron Head | move2type = Steel | move2cat = Physical
+| move3 = Crunch | move3type = Dark | move3cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0282
+| pokemon = Gardevoir
+| gender = female
+| level = 51
+| type1 = Psychic
+| type2 = Fairy
+| ability = Synchronize
+| move1 = Dazzling Gleam | move1type = Fairy | move1cat = Special
+| move2 = Psychic | move2type = Psychic | move2cat = Special
+| move3 = Calm Mind | move3type = Psychic | move3cat = Status
+| move4 = Wish | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0078
+| pokemon = Rapidash
+| form = -Galar
+| gender = male
+| level = 52
+| type1 = Psychic
+| type2 = Fairy
+| ability = Pastel Veil
+| move1 = Psycho Cut | move1type = Psychic | move1cat = Physical
+| move2 = Take Down | move2type = Normal | move2cat = Physical
+| move3 = Dazzling Gleam | move3type = Fairy | move3cat = Special
+| move4 = Quick Attack | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0858
+| pokemon = Hatterene
+| max = Gigantamax
+| gender = female
+| level = 53
+| type1 = Psychic
+| type2 = Fairy
+| ability = Anticipation
+| move1 = Psychic | move1type = Psychic | move1cat = Special | maxmove1 = Max Mindstorm
+| move2 = Dazzling Gleam | move2type = Fairy | move2cat = Special | maxmove2 = G-Max Smite
+| move3 = Calm Mind | move3type = Psychic | move3cat = Status | maxmove3 = Max Guard
+| move4 = Mystical Fire | move4type = Fire | move4cat = Special | maxmove4 = Max Flare
+}}
+{{Party/end}}
+=====Fifth battle=====
+{{Party
+| background = {{fairy color}}
+| border = {{fairy color dark}}
+| headcolor = {{fairy color light}}
+| sprite = VSBede 2.png
+| size = 150px
+| prize = {{PDollar}}10,080
+| class = Gym Leader
+| name = Bede
+| location = Ballonlea Stadium
+| game = SwSh
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0303
+| pokemon = Mawile
+| gender = female
+| level = 61
+| type1 = Steel
+| type2 = Fairy
+| ability = Intimidate
+| move1 = Play Rough | move1type = Fairy | move1cat = Physical
+| move2 = Fake Tears | move2type = Dark | move2cat = Status
+| move3 = Iron Head | move3type = Steel | move3cat = Physical
+| move4 = Crunch | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0282
+| pokemon = Gardevoir
+| gender = female
+| level = 61
+| type1 = Psychic
+| type2 = Fairy
+| ability = Synchronize
+| move1 = Dazzling Gleam | move1type = Fairy | move1cat = Special
+| move2 = Psychic | move2type = Psychic | move2cat = Special
+| move3 = Future Sight | move3type = Psychic | move3cat = Special
+| move4 = Magical Leaf | move4type = Grass | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0078
+| pokemon = Rapidash
+| form = -Galar
+| gender = male
+| level = 62
+| type1 = Psychic
+| type2 = Fairy
+| ability = Pastel Veil
+| move1 = Smart Strike | move1type = Steel | move1cat = Physical
+| move2 = Psycho Cut | move2type = Psychic | move2cat = Physical
+| move3 = Dazzling Gleam | move3type = Fairy | move3cat = Special
+| move4 = Stomp | move4type = Normal | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0858
+| pokemon = Hatterene
+| gender = female
+| level = 63
+| type1 = Psychic
+| type2 = Fairy
+| ability = Anticipation
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Calm Mind | move2type = Psychic | move2cat = Status
+| move3 = Dazzling Gleam | move3type = Fairy | move3cat = Special
+| move4 = Mystical Fire | move4type = Fire | move4cat = Special
+}}
+{{Party/end}}
+=====Champion tournaments=====
+Bede will [[Gigantamax]] his {{p|Hatterene}} at the first opportunity.
+
+{{Party
+| background = {{fairy color}}
+| border = {{fairy color dark}}
+| headcolor = {{fairy color light}}
+| sprite = VSBede 2.png
+| size = 150px
+| prize = {{PDollar}}{{tt|10,080|Before Galarian Star Tournament}}/{{tt|11,840|After Galarian Star Tournament}}
+| class = Gym Leader
+| name = Bede
+| location = Wyndon Stadium
+| game = SwSh
+| pokemon = 5
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0303
+| pokemon = Mawile
+| gender = female
+| level = {{tt|61|Before Galarian Star Tournament}}/{{tt|72|After Galarian Star Tournament}}
+| type1 = Steel
+| type2 = Fairy
+| ability = Intimidate
+| move1 = Iron Head | move1type = Steel | move1cat = Physical
+| move2 = Fake Tears | move2type = Dark | move2cat = Status
+| move3 = Crunch | move3type = Dark | move3cat = Physical
+| move4 = Play Rough | move4type = Fairy | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0282
+| pokemon = Gardevoir
+| gender = female
+| level = {{tt|61|Before Galarian Star Tournament}}/{{tt|72|After Galarian Star Tournament}}
+| type1 = Psychic
+| type2 = Fairy
+| ability = Synchronize
+| move1 = Shadow Ball | move1type = Ghost | move1cat = Special
+| move2 = Energy Ball | move2type = Grass | move2cat = Special
+| move3 = Psychic | move3type = Psychic | move3cat = Special
+| move4 = Dazzling Gleam | move4type = Fairy | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0078
+| pokemon = Rapidash
+| form = -Galar
+| gender = male
+| level = {{tt|62|Before Galarian Star Tournament}}/{{tt|73|After Galarian Star Tournament}}
+| type1 = Psychic
+| type2 = Fairy
+| ability = Pastel Veil
+| move1 = Zen Headbutt | move1type = Psychic | move1cat = Physical
+| move2 = Smart Strike | move2type = Steel | move2cat = Physical
+| move3 = Dazzling Gleam | move3type = Fairy | move3cat = Special
+| move4 = Drill Run | move4type = Ground | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0700
+| pokemon = Sylveon
+| gender = female
+| level = {{tt|62|Before Galarian Star Tournament}}/{{tt|73|After Galarian Star Tournament}}
+| type1 = Fairy
+| ability = Cute Charm
+| move1 = Moonblast | move1type = Fairy | move1cat = Special
+| move2 = Light Screen | move2type = Psychic | move2cat = Status
+| move3 = Shadow Ball | move3type = Ghost | move3cat = Special
+| move4 = Psyshock | move4type = Psychic | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0858
+| pokemon = Hatterene
+| max = Gigantamax
+| gender = female
+| level = {{tt|63|Before Galarian Star Tournament}}/{{tt|74|After Galarian Star Tournament}}
+| type1 = Psychic
+| type2 = Fairy
+| ability = Anticipation
+| move1 = Psychic | move1type = Psychic | move1cat = Special | maxmove1 = Max Mindstorm
+| move2 = Dazzling Gleam | move2type = Fairy | move2cat = Special | maxmove2 = G-Max Smite
+| move3 = Dark Pulse | move3type = Dark | move3cat = Special | maxmove3 = Max Darkness
+| move4 = Mystical Fire | move4type = Fire | move4cat = Special | maxmove4 = Max Flare
+}}
+{{Party/end}}
+=====Galarian Star Tournament=====
+{{Party
+| background = {{fairy color}}
+| border = {{fairy color dark}}
+| headcolor = {{fairy color light}}
+| sprite = VSBede 2.png
+| size = 150px
+| prize = {{PDollar}}11,840
+| class = Gym Leader
+| name = Bede
+| location = Wyndon Stadium
+| game = SwSh
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0303
+| pokemon = Mawile
+| gender = female
+| level = 72
+| type1 = Steel
+| type2 = Fairy
+| ability = Intimidate
+| move1 = Iron Head | move1type = Steel | move1cat = Physical
+| move2 = Fake Tears | move2type = Dark | move2cat = Status
+| move3 = Crunch | move3type = Dark | move3cat = Physical
+| move4 = Play Rough | move4type = Fairy | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0078
+| pokemon = Rapidash
+| form = -Galar
+| gender = male
+| level = 73
+| type1 = Psychic
+| type2 = Fairy
+| ability = Pastel Veil
+| move1 = Zen Headbutt | move1type = Psychic | move1cat = Physical
+| move2 = Smart Strike | move2type = Steel | move2cat = Physical
+| move3 = Dazzling Gleam | move3type = Fairy | move3cat = Special
+| move4 = Drill Run | move4type = Ground | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0858
+| pokemon = Hatterene
+| max = Gigantamax
+| gender = female
+| level = 74
+| type1 = Psychic
+| type2 = Fairy
+| ability = Anticipation
+| move1 = Psychic | move1type = Psychic | move1cat = Special | maxmove1 = Max Mindstorm
+| move2 = Dazzling Gleam | move2type = Fairy | move2cat = Special | maxmove2 = G-Max Smite
+| move3 = Dark Pulse | move3type = Dark | move3cat = Special | maxmove3 = Max Darkness
+| move4 = Mystical Fire | move4type = Fire | move4cat = Special | maxmove4 = Max Flare
+}}
+{{Party/end}}
+=====Borrowed=====
+{{TrainerPoké
+|trainer=Rose
+|pkmn=Copperajah
+|type1=Steel
+|img=Bede Copperajah.png
+|epnum=Pokémon Sword and Shield
+|desc=Bede used this Copperajah he borrowed from [[Rose]] to destroy the mural in [[Stow-on-Side]] in pursuit of [[Wishing Star]]s. It was confiscated after the Chairman disavowed him. It is unknown if this Copperajah is the same Copperajah the Chairman uses in battle.
+
+None of Copperajah's moves are known.}}
+
+==In the spin-off games==
+===[[Pokémon Masters EX]]===
+{{main|Bede (Masters)}}
+Bede forms a [[sync pair]] with {{p|Hatterene}}, {{rf|Galarian}} {{p|Articuno}}, {{p|Inteleon}}, {{p|Iron Valiant}}, {{p|Mawile}}, and Galarian {{p|Rapidash}} in [[Pokémon Masters EX]]. His Hatterene is capable of [[Gigantamax]]ing, while his Inteleon and Rapidash are capable of [[Dynamax]]ing. Bede became a playable sync pair on June 16, 2022.
+
+{{PairDex/h|Fairy|Psychic}}
+{{PairDex|149|Bede|trainerlink=Bede (Masters)#Hatterene|trainerimg=Bede|0858|Hatterene|form=[[Gigantamax]]|dynamax=yes|gender=female|Fairy|Poison|Tech|exrole=Field|6|Poké Fair Sync Pair Scout}}
+{{PairDex|149|Bede|trainerlink=Bede (Masters)#Articuno (Galarian Form)|trainerimg=Bede Champion|sygna={{pkmn|Champion}}|0144G|Articuno|master=yes|buddy=yes|form=[[Galarian form|Galarian Form]]|Psychic|Ghost|Support|exrole=Sprint|6|Master Fair Sync Pair Scout}}
+{{PairDex|149|Bede|trainerlink=Bede (Masters)#Inteleon|trainerimg=Bede|0818|Inteleon|dynamax=yes|gender=male|buddy=yes|Water|Grass|Field|exrole=Tech|6|Variety Sync Pair Scout}}
+{{PairDex|149|Bede|trainerlink=Bede (Masters)#Iron Valiant|trainerimg=Bede Sygna|sygna=[[Sygna suit|Sygna Suit]]|1006|Iron Valiant|buddy=yes|Fighting|Poison|Sprint|exrole=Special Strike|6|Poké Fair Sync Pair Scout}}
+{{PairDex|149|Bede|trainerlink=Bede (Masters)#Mawile|trainerimg=Bede|0303|Mawile|gender=female|Fairy|Fire|Field|6|Training Ticket Exchange}}	
+{{PairDex|149|Bede|trainerlink=Bede (Masters)#Rapidash (Galarian Form)|trainerimg=Bede Alt|sygna=Alt.|0078G|Rapidash|dynamax=yes|buddy=yes|form=[[Galarian form|Galarian Form]]|gender=male|Fairy|Steel|Support|exrole=Sprint|6|EX Fair Sync Pair Scout}}
+|}
+
+===[[Pokémon Pokopia]]===
+Bede is mentioned alongside [[Opal]] in the [[Human Records|Human Record]] "Gym Leader Monthly (June Issue)", which can be found on [[Dream Island]]s.
+
+==Gallery==
+===Artwork===
+{|style="margin:auto; text-align:center; border:3px solid #{{psychic color dark}}; background:#{{fairy color}}; font-size:80%; border-radius: 10px"
+|-
+| style="{{roundy|20px}} border:2px solid #{{psychic color dark}}; background:#{{psychic color light}}; overflow:hidden;" | [[File:Bede SwSh concept art.jpg|x250px]]
+|-
+|Concept art from {{color2|000|Pokémon Sword and Shield|Sword and Shield}}
+|}
+
+===Sprites===
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{psychic color dark}}; background: #{{fairy color}}; font-size:80%"
+|style="{{roundy|20px}} border: 2px solid #{{fairy color dark}}; background: #{{fairy color light}}"| [[File:GST Bede icon.png|100px]]
+|-
+|Icon from the<br>{{color2|000|Galarian Star Tournament}} menu
+|}
+
+===[[League Card]]s===
+{|style="margin:auto; text-align:center; border:3px solid #{{psychic color dark}}; background:#{{fairy color}}; font-size:80%; border-radius: 10px"
+|-
+| style="{{roundy|20px}} border:2px solid #{{psychic color dark}}; background:#{{psychic color light}}; overflow:hidden;" | [[File:League Card Bede.png|x250px]]
+| style="{{roundy|20px}} border:2px solid #{{fairy color dark}}; background:#{{fairy color light}}; overflow:hidden;" | [[File:League Card Bede rare.png|x250px]]
+| style="{{roundy|20px}} border:2px solid #{{fairy color dark}}; background:#{{fairy color light}}; overflow:hidden;" | [[File:League Card Opal rare.png|x250px]]
+|-
+|Bede's {{color2|000|League Card}} in<br>{{color2|000|Pokémon Sword and Shield|Sword and Shield}}
+|Bede's rare {{color2|000|League Card}} in<br>{{color2|000|Pokémon Sword and Shield|Sword and Shield}}
+|Bede in {{color2|000|Opal}}'s rare {{color2|000|League Card}} in<br>{{color2|000|Pokémon Sword and Shield|Sword and Shield}}
+|}
+
+==Quotes==
+{{main|Bede/Quotes}}
+
+==In animation==
+[[File:Bede TW.png|thumb|250px|Bede in [[Pokémon: Twilight Wings]]]]
+===Pokémon: Twilight Wings===
+Bede appeared in ''[[TW07|Sky]]'', where he watched the battle between [[Raihan]] and [[Leon]] together with his {{p|Hatenna}} in the stadium.
+
+Bede reappeared in ''[[TW08|The Gathering of Stars]]'' as a Gym Leader. While performing with his Pokémon, Bede was invited to the [[Galarian Star Tournament]] by [[Opal]]. He later appeared at [[Wyndon Stadium]], walking out onto the field for the tournament's opening ceremony.
+
+====Pokémon====
+This is listing of Bede's Pokémon in Pokémon Twilight Wings:
+{{TrainerPoké
+|trainer=Bede
+|width=68
+|pkmn=Hatterene
+|stage1=Hatenna
+|stage2=Hattrem
+|type1=Psychic
+|type2=Fairy
+|img=Bede Hatenna TW.png
+|img2=Opal and Hatterene TW.png
+|gender=female
+|epnum=TW07
+|epname=Sky
+|vajp=
+|desc={{p|Hatterene}} first appeared as a {{p|Hatenna}} while watching the battle between [[Raihan]] and [[Leon]]. She reappeared in her fully evolved form in ''[[TW08|The Gathering of Stars]]'', where she was delivering some tea to [[Opal]].
+
+None of Hatterene's moves are known.}}
+
+{{TrainerPoké
+|trainer=Bede
+|pkmn=Gardevoir
+|type1=Psychic
+|type2=fairy
+|img=Bede Rapidash Gardevoir TW.png
+|epnum=TW08
+|epname=The Gathering of Stars
+|vajp=
+|desc={{p|Gardevoir}} was seen at Bede's side during a presentation to [[Opal]].
+
+None of Gardevoir's moves are known.}}
+
+{{TrainerPoké
+|trainer=Bede
+|pkmn=Rapidash
+|type1=Psychic
+|type2=fairy
+|img=Bede Rapidash Gardevoir TW.png
+|epnum=TW08
+|epname=The Gathering of Stars
+|vajp=
+|desc={{p|Rapidash}} was seen at Bede's side during a presentation to [[Opal]].
+
+None of Rapidash's moves are known.}}
+
+===Pokémon Evolutions===
+[[File:Bede Marnie Evolutions.png|thumb|250px|Bede in [[Pokémon Evolutions]]]]
+Bede appeared in ''[[PE01|The Champion]]'' as a spectator for [[Leon]] and {{ga|Victor}}'s Championship Match.
+
+===GOTCHA!===
+Bede briefly appeared in [[GOTCHA!]].
+{{-}}
+
+==In the manga==
+[[File:Bede Adventures.png|thumb|220px|Bede in [[Pokémon Adventures]]]]
+===Pokémon Adventures===
+Bede debuted in ''[[PASS06|Watch Out!! Strong Rivals]]''. He was first seen in front of the [[Galar Mine]], unable to enter due to a large boulder blocking the entrance. {{Casey}}, [[Hop]], and [[Marnie]] combined their Pokémon's attacks to move the boulder. After the others went inside, {{Henry}} pointed out that Bede was protecting the boulder and speculated his goal was to obtain [[Wishing Star]]s found inside the mine. Later, everyone gathered at [[Turffield Stadium]], where they each fought a Gym battle against [[Milo]] and won.
+
+In ''[[PASS10|Blazing!! Bede's Feelings]]'', Bede learned that [[Rose]] had dinner with Henry in [[Hulbury]], infuriating him. Wanting to have Henry retire from the Gym Challenge, Bede challenged him to a {{pkmn|battle}} but lost. Despite this, Bede revealed the reason he was collecting Wishing Stars was to help Rose.
+
+In ''[[PASS14|Teary!! The Voice of the Master]]'', Bede watched Henry's Gym battle against [[Allister]] in [[Stow-on-Side]], but felt the former's performance was lacking and quickly left. Afterward, he used Rose's {{p|Copperajah}} to try and destroy the Stow-on-Side mural, but was found by Casey, [[Marvin]], [[Professor Magnolia]], and Allister. Bede was then caught by several {{tc|League Staff}} at the request of Rose, who reprimanded Bede for damaging an important piece of Galar's history. As punishment for his actions, Bede was disqualified from the Gym Challenge.
+
+In ''[[PASS16|Rising!! Opal of Ballonlea]]'', in [[Hammerlocke]], Bede finished his forced withdrawal from the Gym Challenge. He was given a letter from [[Ballonlea]] Gym Leader, [[Opal]], but crushed it in his hands without reading it. He was then alerted to a loud rumbling and wondered if it came from the Hammerlocke [[Energy Plant]]. At the plant, Bede met [[Sonia]] and witnessed [[Leon]] trying to enter the building only to be turned away by the {{tc|League Staff}}. Worried for Rose's safety, Bede attempted to break in, but was warned by [[Raihan]] that his behavior would potentially lower Rose's opinion of him even further should everything be fine. 
+
+In ''[[PASS20|Cracking!! Brilliant Tap-Dancing]]'', Bede accepted Opal's invitation and visited her at the [[Ballonlea Stadium]]. Opal, having taken a liking to Bede's personality, accepted him as a successor for her title of Gym Leader. He subsequently started undertaking the training necessary to be ready for this position at the Gym.
+
+[[File:Bede Gym Leader Adventures.png|thumb|left|200px|Bede after training with Opal]]
+In ''[[PASS25|Rumble!! The Horrific Darkest Day]]'', the Galar Gym Leaders agreed to gather at [[Rose Tower]] to find out whether or not Rose intended on bringing harm to the region. Bede and Opal arrived first, but were stopped by Oleana. While Oleana kept the Gym Leaders busy, Bede, Henry, Casey, Hop, and Marnie headed up the elevator to meet with Rose, only to learn he wasn't in the building. Appearing on a video screen, Rose revealed that he would be restarting the [[Darkest Day]] in order to ensure Galar has a future. Power Spot lights then began appearing all over Galar, causing Pokémon to begin [[Dynamax]]ing at random. While some went back to their hometowns to help deal with the rampaging Dynamax Pokémon, Bede traveled with the others to the Hammerlocke Energy Plant, where they were joined by Leon's group. Upon entering the building, everyone found Rose ecstatic that his plan was a success. 
+
+In ''[[PASS27|Shock!! Chairman Rose's Plan]]'', Rose explained he meant no harm to Galar and sent [[Sordward]] and [[Shielbert]] to defeat Eternatus and prevent the Darkest Day from spiraling out of control. Despite their claims of being descendants of the heroes that once stopped the Darkest Day, Sordward and Shielbert were unable to win, forcing Rose to take their place. Oleana explained that Rose's actions were for the benefit of Galar and requested that everyone help stop Eternatus. The group agreed and made their way to the summit, only to find Rose had already been defeated. Bede kept Rose safe while the others faced Eternatus. They managed to take Eternatus down, but it got back up, changed into its Eternamax form, and quickly overwhelmed them. {{p|Zacian}} and {{p|Zamazenta}} arrived to save everyone, but when they tried using the [[Rusted Sword]] and [[Rusted Shield|Shield]], Eternatus grabbed them as well as Henry. 
+
+In ''[[PASS30|Oh My!! The Disappearance of Henry]]'', Zacian and Zamazenta struck Eternatus with a double {{m|Giga Impact}}, causing a massive explosion of energy and light. Once the light cleared, Henry, Zacian, Zamazenta, and Eternatus had all vanished. Casey and [[Marvin]] reviewed footage of the incident and discovered something {{m|teleport}}ing Henry away just as Zacian, Zamazenta, and Eternatus clashed. By tracking samples of Eternatus's poison on Henry's body and the material of the rusted artifacts, Casey found matching signals on both the [[Isle of Armor]] and the [[Crown Tundra]]. With no idea where Henry ended up, Oleana sent Bede, Casey, Marvin, Hop, and Marnie to both locations.
+
+In ''[[PASS32|Boom!! Reunion in a New Land]]'', while riding a train to the Crown Tundra, Bede, Marnie, and Hop encountered [[Peonia]], a girl trying to escape from her overbearing father, [[Peony]]. They agreed to help, but upon noticing Peony's resemblance to Rose, Bede's dedication to the chairman led him to exposing Peonia. Later, at the station, Marnie challenged Peony to a battle, stating that if she won, Peonia would be allowed to go free. After Marnie won and Peonia left, Bede and the others agreed to take her place as part of the Peony Exploration Team. The four traveled to [[Freezington]], where their home base was located.
+
+In ''[[PASS36|Rrmbll!! Serious Tower Battle]]'', Bede, Marnie, and Hop arrived at [[Dyna Tree Hill]], where they found a {{rf|Galarian}} {{p|Articuno}}, {{p|Zapdos}}, and {{p|Moltres}}. Detecting traces of the rusted items in the area, Bede and the others split up to determine which of the Legendary bird Pokémon knew where it was located. Hop and Marnie went after Moltres and Zapdos respectively, leaving Bede with Articuno. In ''[[PASS37|Crackle!! Retrieve the Sword & Shield]]'', after an encounter with Moltres, Henry was taken to the Crown Tundra, where he reunited with Bede. Henry was introduced to Peony, only for the man to immediately take a disliking towards the boy. When Peonia returned to participate in the adven-tour, a delighted Peony also agreed to let Henry join as well. That night, Peonia found her father floating in midair. Bede explained that it was the work of {{p|Calyrex}}, the King of Bountiful Harvests, in order for it to communicate with humans. The three agreed to help restore Calyrex to its former glory in exchange for it locating the [[Rusted Sword]].
+
+In ''[[PASS39|Clip-Clop!! The King's Horse]]'', Bede's group tried reuniting Calyrex with its former loyal steed, {{p|Spectrier}}. With the [[Black Mane Hair]] collected from Spectrier and the [[Radiant Petal]] Calyrex made, Henry forged the [[Reins of Unity]]. The group lured Spectrier to the [[Crown Shrine]], but they were interrupted by a Gigantamaxed {{p|Corviknight}} and {{p|Butterfree}}. Realizing the Darkest Day had restarted, Bede, Henry, Peony, and Peonia fought off the rampaging giants. With the reins, Calyrex reforged its bond with Spectrier and changed into its {{form|Calyrex|Shadow Rider}} form, allowing it to find and retrieve the Rusted Sword.
+
+In ''[[PASS41|Shing!! Final Form]]'', Bede and Henry returned to the Galar mainland, where they reunited with Casey, Hop, and Marvin. There, they witnessed Zacian and Zamazenta use the rusted tools to become their {{form|Zacian and Zamazenta|Crowned Sword and Shield}} forms. They traveled to Hammerlocke to confront Eternatus again, only to find a trio of nobles demanding that Sordward and Shielbert have their status as nobles reinstated and blocking the entrance to the city with their [[Gigantamax]]ed Pokémon. By Gigantamaxing their own Pokémon, Henry, Casey, and Hop defeated the nobles, allowing Bede to use his Gigantamax {{p|Hatterene}} to determine where Eternatus was hiding. With Eternatus exposed, Zacian and Zamazenta combined their strength and finally took down the {{pkmn|category|Gigantic Pokémon}}, ending the Darkest Day.
+
+In ''[[PASS43|Fwoom!! Goodbye, Galar]]'', Bede paid Rose a visit in jail. Rose apologized for his earlier mistreatment of Bede during the Gym Challenge and explained he was only trying to keep the boy from being an accomplice to his crimes.
+
+====Pokémon====
+=====On hand=====
+{{anchor|Hatterene 2}}{{TrainerPoké
+|width=83
+|trainer=Bede
+|gender=female
+|pkmn=Hatterene
+|giga=yes
+|stage1=Hatenna
+|stage2=Hattrem
+|type1=Psychic
+|type2=Fairy|img=Bede {{#switch: {{#expr: {{#time: U}} mod 2}}|0=Hatenna|1=Hattrem}} Adventures.png
+|cap=Bede's {{#switch: {{#expr: {{#time: U}} mod 2}}|0=Hatenna|1=Hattrem}}
+|img_size=120px
+|img2=Bede {{#switch: {{#expr: {{#time: U}} mod 2}}|0=Hatterene|1=Gigantamax Hatterene}} Adventures.png
+|cap2=Bede's {{#switch: {{#expr: {{#time: U}} mod 2}}|0=Hatterene|1=Gigantamax Hatterene}}
+|img2_size=120px
+|epnum=PASS06
+|epname=Watch Out!! Strong Rivals
+|desc={{p|Hatterene}} is Bede's first known Pokémon. She was first used as a {{p|Hatenna}} to shatter a large boulder blocking the [[Galar Mine]], allowing Bede to collect three [[Wishing Star]]s. She evolved into a {{p|Hattrem}} sometime during Bede's training with [[Opal]] and later into Hatterene while protecting [[Rose]] from {{p|Eternatus}}. She is capable of [[Gigantamax]]ing.
+
+Hatterene's known moves are {{m|Confusion}} and {{m|Dazzling Gleam}}.<br>
+As a Gigantamax Hatterene, it can use {{m|G-Max Smite}}.}}
+
+{{anchor|Rapidash 2}}{{TrainerPoké
+|trainer=Bede
+|pkmn=Rapidash
+|stage1=Ponyta
+|type1=Psychic
+|type2=Fairy
+|img=Bede Ponyta Adventures.png
+|img_size=170px
+|img2=Bede Rapidash Adventures.png
+|img2_size=150px
+|epnum=PASS10
+|epname=Blazing!! Bede's Feelings
+|desc=A {{rf|Galarian}} {{p|Rapidash}} is Bede's second known Pokémon. It was first used as a {{p|Ponyta}} to attack [[Henry Sword|Henry]], but was defeated by his {{p|Gurdurr|Steeler}}. It evolved into a Rapidash sometime during Bede's training with [[Opal]].
+
+Rapidash's known moves are {{m|Fairy Wind}} and {{m|Agility}}.}}
+
+=====Borrowed=====
+{{anchor|Copperajah 2}}{{TrainerPoké
+|width=83
+|trainer=Rose
+|pkmn=Copperajah
+|type1=Steel
+|img=Bede Rose Copperajah Adventures.png
+|epnum=PASS14
+|epname=Teary!! The Voice of the Master
+|desc={{p|Copperajah}} originally belonged to [[Rose]]. Bede borrowed it in an attempt to destroy the [[Stow-on-Side]] mural in his pursuit for [[Wishing Star]]s. Rose took it back after Bede was found out.
+
+None of Copperajah's moves are known.}}
+
+=====Given away=====
+{{TrainerPoké
+|width=75
+|trainer=Bede
+|pkmn=Legendary giants
+|type1=???
+|img=Galar Rivals Legendary titans Adventures.png
+|epnum=PASS36
+|epname=Rrmbll!! Serious Tower Battle
+|desc=Bede, [[Marnie]], and [[Hop]] caught {{p|Regirock}}, {{p|Regice}}, and {{p|Registeel}} in the Crown Tundra while searching for the [[Rusted Sword]] and [[Rusted Shield]]. It was never specified who caught each giant, but they entrusted the three Pokémon to [[Peony]] so they could continue searching for the legendary gear.
+
+None of their moves are known.}}
+
+=====Traveling with=====
+{| width="100%"
+|-
+| {{ActivePoké|||nick=Rotom Phone|Hop Bede Marnie Rotom Phone Adventures.png|electric|ghost|link=Rotom Phone}}
+|
+|
+|}
+
+====Achievements====
+=====Badges obtained=====
+* {{Badge|Grass}} (''[[PASS07|Blinding!! The End of the Battle]]'')
+* {{Badge|Water}} (prior to ''[[PASS10|Blazing!! Bede's Feelings]]'')
+* {{Badge|Fire}} (prior to ''[[PASS11|Gulp!! Gulp Pokémon]]'')
+
+==In the TCG==
+The following is a list of cards mentioning or featuring Bede or his Pokémon in the [[Pokémon Trading Card Game]].
+
+{{cardlist/header|Bede's Pokémon|Psychic|char=yes}}
+{{cardlist/entry|cardname=[[Mawile V (Silver Tempest 70)|Mawile]]{{TCGV}}|type=Psychic|standard=yes|enset=Silver Tempest|enrarity=TGV|ennum=TG17/TG30|jpset=Incandescent Arcana|jprarity=CSR|jpnum=085/068}}
+{{cardlist/div|Other related cards|Psychic}}
+{{cardlist/entry|cardname={{TCG ID|Sword & Shield|Bede|157}}|type=Supporter|expanded=yes|enset=Sword & Shield|enrarity=Uncommon|ennum=157/202|jpset=Sword|jprarity=U|jpnum=060/060|enset2=Sword & Shield|enrarity2=Rare Ultra|ennum2=199/202|jpset2=Sword|jprarity2=SR|jpnum2=068/060|enset3=Sword & Shield|enrarity3=Rare Rainbow|ennum3=207/202|jpset3=Sword|jprarity3=HR|jpnum3=072/060|jpset4=S-P Promotional cards|jpnum4=027/S-P|jpset5=S-P Promotional cards|jpnum5=056/S-P|enset6=Champion's Path|enrarity6=Uncommon|ennum6=050/073|enset7=Crown Zenith|enrarity7=Rare Holo|ennum7=124/159|jpset7=S-P Promotional cards|jpnum7=138/S-P}}
+{{cardlist/entry|cardname={{TCG ID|Brilliant Stars|Friends in Galar|140}}|type=Supporter|expanded=yes|enset=Brilliant Stars|enrarity=Uncommon|ennum=140/172|jpset=VMAX Climax|jpnum=149/184|enset2=Silver Tempest|enrarity2=TGU|ennum2=TG23/TG30|jpset2=VMAX Climax|jprarity2=SR|jpnum2=258/184}}
+{{cardlist/footer|Psychic}}
+
+==Trivia==
+[[File:RoseTower.png|thumb|150px|Logo of [[Rose Tower]]]]
+* Bede's uniform number is "908", which can be read in Japanese as {{wp|Numeric substitution in Japanese|goroawase}} for クレバー ''kurebā'', meaning "clever".
+* According to his concept art, Bede is left-handed.
+* The logo of [[Rose Tower]] can be seen on the back of Bede's jacket. The same logo is printed on the uniforms of certain [[Macro Cosmos's (Trainer_class)|Macro Cosmos employees]].
+* Bede is currently the only {{pkmn|Trainer}} to permanently change his type specialization during a game, going from {{type|Psychic}} to {{type|Fairy}}, though his party still has three Psychic types. 
+** He is also the second Trainer known to have changed his type specialization overall, following [[Jasmine]], who used to train {{type|Rock}} before becoming the {{type|Steel}} expert she currently is.
+* Bede is the only Trainer with multiple [[League Card]]s to have his signature change between the two.
+* Bede is the only rival from the release version of [[Pokémon Sword and Shield]] not to appear in ''[[Pokémon Journeys: The Series]]''.
+* Bede getting recruited by [[Opal]] might be a reference to concept of changelings. In folklore, fairies were known to kidnap children and replace them with deformed fae children of their own. Opal is the [[Fairy (type)|Fairy-type]] gym leader and Bede's original type, [[Psychic (type)|Psychic]], is replaced by the [[Fairy (type)|Fairy-type]]. 
+
+==Names==
+{| class="roundtable" style="background:#{{fairy color}}; border:3px solid #{{fairy color dark}}"
+|-
+! style="background:#{{psychic color}}; color:#FFFFFF" | Language
+! style="background:#{{psychic color}}; color:#FFFFFF" | Name
+! style="background:#{{psychic color}}; color:#FFFFFF" | Origin
+|-
+| Japanese
+| ビート ''Beet''
+| From ビート ''{{wp|Beta vulgaris|beet}}''
+|-
+| English, Indonesian
+| Bede
+| From ''bede'' (Danish for "beet") and similar to his Japanese name
+|-
+| German
+| Betys
+| From ''Beta vulgaris'' (scientific name of the beet)
+|-
+| European Spanish,<br>Latin American Spanish
+| Berto
+| From ''beterraga'' (beet)
+|-
+| French
+| Travis
+| From ''betterave'' (beet)
+|-
+| Italian
+| Beet
+| From his Japanese name
+|-
+| Korean
+| 비트 ''Beet''
+| From ''beet''
+|-
+| Chinese (Traditional)
+| 彼特 ''Bǐtè'' / ''Béidahk''
+| rowspan="2" | Transcription of his Japanese name
+|-
+| Chinese (Simplified)
+| 彼特 ''Bǐtè''
+|-
+| Brazilian Portuguese
+| Beda
+| From ''beterraba'' (beet)
+|-
+| Russian
+| Бид ''Bid''
+| Transcription of his English name
+|-
+| Thai
+| บีต ''Bit''
+| Transcription of his Japanese name
+|}
+{{-}}
+
+==References==
+<references/>
+
+==Related articles==
+* [[a:Category:Bede|Images on the Bulbagarden Archives]]
+{{-}}
+{{Rival characters|fairy}}
+{{NPC|fairy|galar=yes}}<br>
+{{Gym Leaders of Galar}}
+{{Project CharacterDex notice}}
+
+[[Category:Rival characters]]
+[[Category:Friend characters]]
+[[Category:Sword and Shield characters]]
+[[Category:Psychic-type Trainers]]
+[[Category:Fairy-type Trainers]]
+[[Category:Trainers who use Gigantamax]]
+[[Category:Trainers with Legendary Pokémon]]
+[[Category:Gym Leaders]]
+[[Category:Multi Battle partners]]
+[[Category:Pokémon Adventures characters]]
+[[Category:Pokémon: Twilight Wings characters]]
+[[Category:Pokémon Evolutions characters]]
+
+[[de:Betys]]
+[[es:Berto]]
+[[fr:Travis]]
+[[it:Beet]]
+[[ja:ビート]]
+[[zh:彼特]]

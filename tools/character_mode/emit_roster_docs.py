@@ -58,6 +58,62 @@ def species_display_names():
     return names
 
 
+def load_unselectable():
+    """Characters present in the table but not offerable in this game.
+
+    They keep their slot so save files (which store the character INDEX) stay
+    valid, but a player cannot pick them -- so they must not appear in the
+    documentation either. The docs describe what is AVAILABLE."""
+    path = os.path.join(HERE, "character_drops.json")
+    if not os.path.isfile(path):
+        return set()
+    with open(path, encoding="utf-8") as f:
+        return set(json.load(f).get("unselectable", []))
+
+
+def load_sources():
+    """{character: {species display name: {source, owned_form}}} from the
+    2026-07-25 roster audit. Absent file = an empty Source column."""
+    path = os.path.join(HERE, "roster_sources.json")
+    if not os.path.isfile(path):
+        return {}
+    with open(path, encoding="utf-8") as f:
+        return json.load(f).get("sources", {})
+
+
+REGION_PREFIX = {"_ALOLAN": "Alolan", "_ALOLA": "Alolan", "_GALARIAN": "Galarian",
+                 "_GALAR": "Galarian", "_HISUIAN": "Hisuian", "_HISUI": "Hisuian",
+                 "_PALDEAN": "Paldean", "_PALDEA": "Paldean"}
+
+
+def regional_form(const):
+    """Region a SPECIES_ constant marks, or None. Regional forms get their own
+    doc row (user, 2026-07-25); megas and cosmetic forms stay folded in."""
+    for suffix, prefix in REGION_PREFIX.items():
+        if const.endswith(suffix):
+            return prefix
+    return None
+
+
+PLACEHOLDER_FORMS = {"normal", "base", "none", "-", ""}
+
+
+def source_cell(char_sources, base_const, names, shown_const):
+    """"as Bulbasaur — Anime (Indigo League)", or just the source when the
+    character owned the final stage itself. Sources are keyed by the Bulbapedia
+    display name of the family BASE, which is what the audit recorded."""
+    base_name = names.get(base_const) or (pretty(base_const) if base_const else None)
+    info = (char_sources.get(base_name) if base_name else None) or {}
+    src = info.get("source")
+    if not src:
+        return "—"
+    owned = (info.get("owned_form") or "").strip()
+    shown = names.get(shown_const) or pretty(shown_const)
+    if owned and owned.lower() not in PLACEHOLDER_FORMS and owned != shown:
+        return "as %s — %s" % (owned, src)
+    return src
+
+
 def pretty(const):
     """Readable name for a species that species_names.h has no string for
     (Ursaluna, Wyrdeer, Basculegion, Overqwil: they exist as constants and are
@@ -160,6 +216,8 @@ def main():
     for key, info in mapped.items():
         by_menu_name.setdefault(re.sub(r"\s*\(anime\)$", "", key), (key, info))
 
+    sources = load_sources()
+
     def finals_of(base):
         """Leaves of the family rooted at base, walking evolutions AND form
         siblings (see form_tables), collapsed to base forms for display."""
@@ -171,7 +229,9 @@ def main():
             seen.add(cur)
             children = kids.get(cur, [])
             if not children:
-                out.add(collapse.get(cur, cur))
+                # a regional form keeps its own row; other forms fold into the
+                # base form they share a table with
+                out.add(cur if regional_form(cur) else collapse.get(cur, cur))
             stack.extend(children)
             stack.extend(siblings.get(cur, ()))
         # A cosmetic form that cannot evolve (the cap Pikachus) is a leaf of
@@ -180,18 +240,60 @@ def main():
         # Runerigus survive this: they are their own species, not forms.
         return {s for s in out if not kids.get(s)}
 
+    unselectable = load_unselectable()
+
+    # The audit recorded a source against the species the character OWNED
+    # ("Pikachu"); the roster stores that family's BASE ("Pichu"), which is what
+    # the docs resolve finals from. Re-key every source onto its family base or
+    # the lookup misses for every character whose owned stage is not the base --
+    # which was 60% of all rows.
+    import importlib.util as _il
+    _spec = _il.spec_from_file_location("map_species", os.path.join(HERE, "map_species.py"))
+    _ms = _il.module_from_spec(_spec)
+    _spec.loader.exec_module(_ms)
+    _n2c = _ms.name_to_const()
+    _canon = _ms.make_canonical(_ms.first_stage_map(), _ms.base_form_map())
+    _fixes = getattr(_ms, "NAME_FIXES", {})
+
+    def _base_name(species_name):
+        const = _n2c.get(_fixes.get(species_name, species_name)) or _n2c.get(species_name)
+        if not const:
+            return None
+        return names.get(_canon(const))
+
+    rekeyed = {}
+    for char, entries in sources.items():
+        out = {}
+        for species_name, info in entries.items():
+            out.setdefault(species_name, info)
+            base = _base_name(species_name)
+            if base:
+                out.setdefault(base, info)
+        rekeyed[char] = out
+    sources = rekeyed
+
     chars = []
     for menu_name, gen, _cid in emitted_characters():
+        if menu_name in unselectable:
+            continue          # in the table, but the menu will not offer it
         key, info = by_menu_name[menu_name]
-        finals = set()
+        finals, base_of = set(), {}
         for base in info["species"]:
-            finals |= finals_of(base)
+            got = finals_of(base)
+            for f in got:
+                base_of.setdefault(f, base)
+            finals |= got
         ordered = sorted(finals, key=lambda s: (dex.get(s, 9999), names.get(s) or pretty(s)))
+        char_sources = sources.get(menu_name, {})
         chars.append({
             "name": menu_name,
             "gen": gen,
             "label": CATEGORY_LABEL.get(info["category"], info["category"].title()),
-            "finals": [(names.get(s) or pretty(s), dex.get(s, 0)) for s in ordered],
+            "finals": [(("%s %s" % (regional_form(s), names.get(s) or pretty(s)))
+                        if regional_form(s) else (names.get(s) or pretty(s)),
+                        dex.get(s, 0),
+                        source_cell(char_sources, base_of.get(s), names, s))
+                       for s in ordered],
         })
 
     by_gen = defaultdict(list)
@@ -202,13 +304,28 @@ def main():
     gens = sorted(by_gen)
 
     # ---- ROSTERS.md --------------------------------------------------------
+    sourced = sum(1 for c in chars for _n, _d, src in c["finals"] if src and src != "—")
+    total_rows = sum(len(c["finals"]) for c in chars)
+    coverage_note = (
+        "Under each Pokémon is the source of that character's appearance — the game, "
+        "the anime series or era, the movie, or the manga. **%d of %d entries (%.0f%%) "
+        "are attributed**; the remainder joined the roster through an earlier research "
+        "pass and their source has not been established yet."
+        % (sourced, total_rows, 100.0 * sourced / max(total_rows, 1)))
+
     out = ["# Character Mode — Final-Evolution Rosters (Pokémon ROWE)", "",
            "Every playable character and the **final evolutions** their complete roster "
            "resolves to, in **National Pokédex order**. Rosters were researched from "
            "Bulbapedia (union of all games, remakes, rematches, and anime) and "
            "cross-checked where possible. Regional/cosmetic forms show as their base "
            "species. Off-roster Pokémon are routed to your PC.", "",
-           "**%d characters.** Sprite version: `ROSTERS_SPRITES.md`." % len(chars), "",
+           "**%d playable characters.** Sprite version: `ROSTERS_SPRITES.md`."
+           % len(chars), "",
+           ("%d further characters remain in the data but are not offered in this "
+            "game: fewer than six fully-evolved members of their roster exist in "
+            "its Pokédex. They keep their slot so existing saves stay valid."
+            % len(unselectable)) if unselectable else "", "",
+           coverage_note, "",
            "GENERATED by `tools/character_mode/emit_roster_docs.py` from the same data "
            "the ROM enforces (`rosters_mapped.json` + `src/data/characters.h`) — "
            "do not hand-edit, regenerate.", "",
@@ -221,7 +338,11 @@ def main():
         for c in by_gen[g]:
             out.append("### %s — %s" % (c["name"], c["label"]))
             out.append("**Final evolutions (%d):**" % len(c["finals"]))
-            out.append(", ".join(n for n, _ in c["finals"]))
+            out.append("")
+            out.append("| Pokémon | Source |")
+            out.append("|---|---|")
+            for name, _dex, src in c["finals"]:
+                out.append("| %s | %s |" % (name, src))
             out.append("")
     with open(os.path.join(TARGET, "ROSTERS.md"), "w", encoding="utf-8") as f:
         f.write("\n".join(out).rstrip() + "\n")
@@ -229,10 +350,17 @@ def main():
     # ---- ROSTERS_SPRITES.md + sprites/gen_N.md -----------------------------
     idx = ["# Character Mode — Roster Sprites (Pokémon ROWE)", "",
            "Each character's **final-evolution** roster, in **National Pokédex order**, "
-           "with sprites and names. Split by generation to keep pages fast. "
-           "Regional/cosmetic forms show as base species. Sprites via "
-           "[PokéAPI](https://github.com/PokeAPI/sprites). Text: `ROSTERS.md`.", "",
-           "**%d characters.**" % len(chars), "",
+           "with sprites. Split by generation to keep pages fast. Under every sprite "
+           "is the Pokémon's name and, in italics, **where that character's appearance "
+           "comes from** — the game, the anime series or era, the movie, or the manga. "
+           "Regional forms are listed separately (Alolan Persian is its own entry); "
+           "mega and cosmetic forms stay folded into the base. Sprites via "
+           "[PokéAPI](https://github.com/PokeAPI/sprites). Text version: `ROSTERS.md`.",
+           "", "**%d playable characters.**" % len(chars), "",
+           coverage_note, "",
+           ("%d further characters remain in the data but are not offered in this game "
+            "and are therefore not listed here." % len(unselectable))
+           if unselectable else "", "",
            "GENERATED by `tools/character_mode/emit_roster_docs.py` — do not hand-edit.",
            "", "## Generations", ""]
     for g in gens:
@@ -250,9 +378,10 @@ def main():
             page.append("### %s — %s" % (c["name"], c["label"]))
             page.append("<table>")
             row = []
-            for name, num in c["finals"]:
-                cell = ('<td align="center" width="80"><img width="56" src="%s">'
-                        "<br><sub>%s</sub></td>" % (SPRITE_URL % num, name))
+            for name, num, src in c["finals"]:
+                note = ("<br><sub><i>%s</i></sub>" % src) if src and src != "—" else ""
+                cell = ('<td align="center" width="100"><img width="56" src="%s">'
+                        "<br><sub>%s</sub>%s</td>" % (SPRITE_URL % num, name, note))
                 row.append(cell)
                 if len(row) == SPRITES_PER_ROW:
                     page.append("<tr>" + "".join(row) + "</tr>")

@@ -1,0 +1,824 @@
+{{Character Infobox
+|color={{psychic color}}
+|bordercolor={{psychic color dark}}
+|corecolor={{psychic color light}}
+|name=Caitlin
+|jname=カトレア
+|age=Around 14{{sup/4|Pt}}{{sup/4|HGSS}}<ref>Nintendo Dream May 2011</ref>
+|tmname=Cattleya
+|jtranslit=Katorea
+|image=Black White Caitlin.png
+|size=300px
+|caption=Artwork from {{game|Black and White|s}}<br>Illustrated by [[Yusuke Ohmura]]<ref>[[a:File:CynthiaCaitlinCosmicEclipse189.jpg|Cynthia & Caitlin (Cosmic Eclipse 189)]]</ref>
+|gender=Female
+|eyes=Blue
+|hair=Light brown <small>([[Generation IV]])</small><br>Blonde <small>([[Generation V]])</small>
+|hometown=[[Undella Town]] <small>(original hometown unknown)</small>
+|region=[[Unova]]
+}}
+{{Character Infobox/Game
+|color={{psychic color light}}
+|gen={{gen|IV}}, {{gen|V}}, {{gen|VIII}}, {{gen|IX}}
+|counterpart=[[Caitlin (Masters)]]
+|games={{v2|Platinum}}, {{game3|HeartGold and SoulSilver|HeartGold, SoulSilver|s}}, {{game3|Black and White|Black, White|s}}, {{B2W2|Black 2, White 2}}<br>{{pkmn|Masters EX}}
+|trainer=[[Elite Four]] <small>([[Generation V]])</small>
+|enva=Sarah Miller-Crews<ref name="Sarah Miller-Crews">[https://www.sarahmillercrews.com/video-clips Sarah Miller-Crews — Video Clips]</ref> <small>({{pkmn|Masters EX}})</small>
+|jpva=Satomi Satō<ref>Nintendo DREAM (vol. 329)</ref> <small>({{pkmn|Masters EX}})</small>
+}}
+{{Character Infobox/Team
+|color={{psychic color light}}
+|member=[[Unova League]]
+|rank=[[Elite Four]]
+|specialty={{t|Psychic}} types
+}}
+{{Character Infobox/Anime
+|color={{psychic color light}}
+|series=''[[Pokémon the Series]]''
+|debut=''[[BW090|Jostling for the Junior Cup!]]''
+|enva=Miriam Pultro
+|jpva=Miyu Matsuki
+}}
+{{Character Infobox/Manga
+|color={{psychic color light}}
+|series=''[[Pokémon Adventures]]''<!--<br>''[[Pocket Monsters BW (Kosaku Anakubo)|Pocket Monsters BW]]''--><br>''[[Pocket Monsters BW: The Heroes of Fire and Thunder]]''
+|debut=''[[PS418|Deprogramming Porygon-Z]]'' (''Pokémon Adventures'')<!--<br>[[PMBWXX]] (''Pocket Monsters BW'')--><br>''[[FAT3|A Very Important Thing]]'' (''Pocket Monsters BW: The Heroes of Fire and Thunder'')
+}}
+|}
+
+'''Caitlin''' (Japanese: '''カトレア''' ''Cattleya'') is a {{type|Psychic}} {{pkmn|Trainer}} and member of the [[Unova]] [[Elite Four]]. She is also the head of the [[Battle Castle]] in the {{gdis|Battle Frontier|IV}} that appeared in {{game|Platinum}} and {{2v2|HeartGold|SoulSilver}}, where she is known as '''Lady Caitlin''' (Japanese: '''カトレアおじょうさま''' ''Miss Cattleya'').
+
+==In the core series games==
+In {{game|Platinum}} and {{game|HeartGold and SoulSilver|s}}, Caitlin is the employer of [[Darach]] and oversees his [[Battle Castle]] {{pkmn|battle}}s. She is responsible for determining how much {{DL|Battle Castle|Castle Points|CP}} the {{player}} should receive depending on the outcome of the battle. She is said to be the most important person in the Battle Castle and acts like its princess.
+
+In {{game|Black and White|s}} and {{B2W2}}, Caitlin appears as a member of the [[Elite Four]] of [[Unova]]; she traveled to the [[region]] alone in order to develop her skills further. It is revealed that she possesses some sort of psychic powers, and that in the past, she had an explosive temper that would erupt if she lost a battle, causing her psychic powers to cause a lot of damage. This is the reason why [[Darach]] fought in her place in [[Generation IV]].<ref>Caitlin: "''In the past, when I battled, the force of my emotions shook me greatly. When my power awoke, I came close to destroying everything around me. That weak person no longer exists... Still, sometimes, my determination fails.''"</ref> It may also explain why she was quite impatient, as she demanded that Darach give the player Castle Points "at once!" after each victory in the Battle Castle.
+
+She later appears in [[Undella Town]] at a villa that she is lending to [[Cynthia]], as do the other female [[Gym Leader]]s and Elite Four members. She also mentions her time at the [[Battle Castle]] while in the villa.
+
+In [[Pokémon Masters EX]], in which she uses her Generation V design, she is stated to be an adult.
+
+===Pokémon===
+===={{game|Black and White|s}}====
+=====First battle (pre-[[National Pokédex]])=====
+{{Party
+| background = {{psychic color}}
+| border = {{psychic color dark}}
+| headcolor = {{psychic color light}}
+| sprite = Spr BW Caitlin.png
+| prize = {{Pdollar}}6000
+| class = Elite Four
+| name = Caitlin
+| location = Pokémon League (Unova)
+| locationname = Pokémon League
+| game = BW
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0579
+| pokemon = Reuniclus
+| gender = female
+| level = 48
+| type1 = Psychic
+| ability = Magic Guard
+| move1 = Energy Ball | move1type = Grass | move1cat = Special
+| move2 = Thunder | move2type = Electric | move2cat = Special
+| move3 = Focus Blast | move3type = Fighting | move3cat = Special
+| move4 = Psychic | move4type = Psychic | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0518
+| pokemon = Musharna
+| gender = female
+| level = 48
+| type1 = Psychic
+| ability = Synchronize
+| move1 = Reflect | move1type = Psychic | move1cat = Status
+| move2 = Charge Beam | move2type = Electric | move2cat = Special
+| move3 = Shadow Ball | move3type = Ghost | move3cat = Special
+| move4 = Psychic | move4type = Psychic | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0561
+| pokemon = Sigilyph
+| gender = female
+| level = 48
+| type1 = Psychic
+| type2 = Flying
+| ability = Wonder Skin
+| move1 = Shadow Ball | move1type = Ghost | move1cat = Special
+| move2 = Ice Beam | move2type = Ice | move2cat = Special
+| move3 = Air Slash | move3type = Flying | move3cat = Special
+| move4 = Psychic | move4type = Psychic | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0576
+| pokemon = Gothitelle
+| gender = female
+| level = 50
+| type1 = Psychic
+| ability = Frisk
+| move1 = Calm Mind | move1type = Psychic | move1cat = Status
+| move2 = Thunderbolt | move2type = Electric | move2cat = Special
+| move3 = Shadow Ball | move3type = Ghost | move3cat = Special
+| move4 = Psychic | move4type = Psychic | move4cat = Special
+}}
+{{Party/end}}
+=====[[Rematch]] (post-National Pokédex)=====
+{{Party
+| background = {{psychic color}}
+| border = {{psychic color dark}}
+| headcolor = {{psychic color light}}
+| sprite = Spr BW Caitlin.png
+| prize = {{Pdollar}}8760
+| class = Elite Four
+| name = Caitlin
+| location = Pokémon League (Unova)
+| locationname = Pokémon League
+| game = BW
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0518
+| pokemon = Musharna
+| gender = female
+| level = 71
+| type1 = Psychic
+| ability = Synchronize
+| move1 = Reflect | move1type = Psychic | move1cat = Status
+| move2 = Hypnosis | move2type = Psychic | move2cat = Status
+| move3 = Dream Eater | move3type = Psychic | move3cat = Special
+| move4 = Psychic | move4type = Psychic | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0561
+| pokemon = Sigilyph
+| gender = female
+| level = 71
+| type1 = Psychic
+| type2 = Flying
+| ability = Wonder Skin
+| move1 = Flash Cannon | move1type = Steel | move1cat = Special
+| move2 = Ice Beam | move2type = Ice | move2cat = Special
+| move3 = Air Slash | move3type = Flying | move3cat = Special
+| move4 = Psychic | move4type = Psychic | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0579
+| pokemon = Reuniclus
+| gender = female
+| level = 71
+| type1 = Psychic
+| ability = Magic Guard
+| move1 = Energy Ball | move1type = Grass | move1cat = Special
+| move2 = Thunder | move2type = Electric | move2cat = Special
+| move3 = Focus Blast | move3type = Fighting | move3cat = Special
+| move4 = Psychic | move4type = Psychic | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0576
+| pokemon = Gothitelle
+| gender = female
+| level = 71
+| type1 = Psychic
+| ability = Frisk
+| move1 = Flatter | move1type = Dark | move1cat = Status
+| move2 = Payback | move2type = Dark | move2cat = Physical
+| move3 = Thunderbolt | move3type = Electric | move3cat = Special
+| move4 = Psychic | move4type = Psychic | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0437
+| pokemon = Bronzong
+| gender = none
+| level = 71
+| type1 = Steel
+| type2 = Psychic
+| ability = Levitate
+| move1 = Payback | move1type = Dark | move1cat = Physical
+| move2 = Charge Beam | move2type = Electric | move2cat = Special
+| move3 = Flash Cannon | move3type = Steel | move3cat = Special
+| move4 = Psychic | move4type = Psychic | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0376
+| pokemon = Metagross
+| gender = none
+| level = 73
+| type1 = Steel
+| type2 = Psychic
+| ability = Clear Body
+| move1 = Bullet Punch | move1type = Steel | move1cat = Physical
+| move2 = Earthquake | move2type = Ground | move2cat = Physical
+| move3 = Zen Headbutt | move3type = Psychic | move3cat = Physical
+| move4 = Giga Impact | move4type = Normal | move4cat = Physical
+}}
+{{Party/end}}
+===={{B2W2}}====
+=====First battle (Easy Mode/Normal Mode)=====
+{{Party
+| background = {{psychic color}}
+| border = {{psychic color dark}}
+| headcolor = {{psychic color light}}
+| sprite = Spr B2W2 Caitlin.png
+| prize = {{tt|{{pdollar}}6400|Easy Mode}}/{{tt|{{pdollar}}6960|Normal Mode}}
+| class = Elite Four
+| name = Caitlin
+| location = Pokémon League (Unova)
+| locationname = Pokémon League
+| game = B2W2
+| pokemon = 4
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0518
+| pokemon = Musharna
+| gender = female
+| level = {{tt|52|Easy Mode}}/{{tt|56|Normal Mode}}
+| type1 = Psychic
+| ability = Synchronize
+| move1 = Reflect | move1type = Psychic | move1cat = Status
+| move2 = Yawn | move2type = Normal | move2cat = Status
+| move3 = Dream Eater | move3type = Psychic | move3cat = Special
+| move4 = Charge Beam | move4type = Electric | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0561
+| pokemon = Sigilyph
+| gender = female
+| level = {{tt|52|Easy Mode}}/{{tt|56|Normal Mode}}
+| type1 = Psychic
+| type2 = Flying
+| ability = Wonder Skin
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Shadow Ball | move2type = Ghost | move2cat = Special
+| move3 = Ice Beam | move3type = Ice | move3cat = Special
+| move4 = Air Slash | move4type = Flying | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0579
+| pokemon = Reuniclus
+| gender = female
+| level = {{tt|52|Easy Mode}}/{{tt|56|Normal Mode}}
+| type1 = Psychic
+| ability = Magic Guard
+| move1 = Focus Blast | move1type = Fighting | move1cat = Special
+| move2 = Psychic | move2type = Psychic | move2cat = Special
+| move3 = Energy Ball | move3type = Grass | move3cat = Special
+| move4 = Recover | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0576
+| pokemon = Gothitelle
+| gender = female
+| level = {{tt|54|Easy Mode}}/{{tt|58|Normal Mode}}
+| type1 = Psychic
+| ability = Frisk
+| held = Sitrus Berry
+| move1 = Calm Mind | move1type = Psychic | move1cat = Status
+| move2 = Psychic | move2type = Psychic | move2cat = Special
+| move3 = Shadow Ball | move3type = Ghost | move3cat = Special
+| move4 = Thunderbolt | move4type = Electric | move4cat = Special
+}}
+{{Party/end}}
+=====First battle (Challenge Mode)=====
+{{Party
+| background = {{psychic color}}
+| border = {{psychic color dark}}
+| headcolor = {{psychic color light}}
+| sprite = Spr B2W2 Caitlin.png
+| prize = {{Pdollar}}7440
+| class = Elite Four
+| name = Caitlin
+| location = Pokémon League (Unova)
+| locationname = Pokémon League
+| game = B2W2
+| pokemon = 5
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0518
+| pokemon = Musharna
+| gender = female
+| level = 60
+| type1 = Psychic
+| ability = Synchronize
+| held = Zoom Lens
+| move1 = Reflect | move1type = Psychic | move1cat = Status
+| move2 = Hypnosis | move2type = Psychic | move2cat = Status
+| move3 = Dream Eater | move3type = Psychic | move3cat = Special
+| move4 = Charge Beam | move4type = Electric | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0561
+| pokemon = Sigilyph
+| gender = female
+| level = 60
+| type1 = Psychic
+| type2 = Flying
+| ability = Wonder Skin
+| held = Expert Belt
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Shadow Ball | move2type = Ghost | move2cat = Special
+| move3 = Ice Beam | move3type = Ice | move3cat = Special
+| move4 = Air Slash | move4type = Flying | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0579
+| pokemon = Reuniclus
+| gender = female
+| level = 60
+| type1 = Psychic
+| ability = Magic Guard
+| held = Leftovers
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Energy Ball | move2type = Grass | move2cat = Special
+| move3 = Focus Blast | move3type = Fighting | move3cat = Special
+| move4 = Recover | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0576
+| pokemon = Gothitelle
+| gender = female
+| level = 60
+| type1 = Psychic
+| ability = Frisk
+| held = Wise Glasses
+| move1 = Calm Mind | move1type = Psychic | move1cat = Status
+| move2 = Psychic | move2type = Psychic | move2cat = Special
+| move3 = Shadow Ball | move3type = Ghost | move3cat = Special
+| move4 = Thunderbolt | move4type = Electric | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0376
+| pokemon = Metagross
+| gender = none
+| level = 62
+| type1 = Steel
+| type2 = Psychic
+| ability = Clear Body
+| held = Life Orb
+| move1 = Zen Headbutt | move1type = Psychic | move1cat = Physical
+| move2 = Bullet Punch | move2type = Steel | move2cat = Physical
+| move3 = Hammer Arm | move3type = Fighting | move3cat = Physical
+| move4 = Shadow Ball | move4type = Ghost | move4cat = Special
+}}
+{{Party/end}}
+=====Rematch (Easy Mode/Normal Mode)=====
+{{Party
+| background = {{psychic color}}
+| border = {{psychic color dark}}
+| headcolor = {{psychic color light}}
+| sprite = Spr B2W2 Caitlin.png
+| prize = {{tt|{{pdollar}}8280|Easy Mode}}/{{tt|{{pdollar}}8880|Normal Mode}}
+| class = Elite Four
+| name = Caitlin
+| location = Pokémon League (Unova)
+| locationname = Pokémon League
+| game = B2W2
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0518
+| pokemon = Musharna
+| gender = female
+| level = {{tt|68|Easy Mode}}/{{tt|72|Normal Mode}}
+| type1 = Psychic
+| ability = Synchronize
+| move1 = Yawn | move1type = Normal | move1cat = Status
+| move2 = Dream Eater | move2type = Psychic | move2cat = Special
+| move3 = Charge Beam | move3type = Electric | move3cat = Special
+| move4 = Reflect | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0561
+| pokemon = Sigilyph
+| gender = female
+| level = {{tt|68|Easy Mode}}/{{tt|72|Normal Mode}}
+| type1 = Psychic
+| type2 = Flying
+| ability = Wonder Skin
+| move1 = Air Slash | move1type = Flying | move1cat = Special
+| move2 = Psychic | move2type = Psychic | move2cat = Special
+| move3 = Flash Cannon | move3type = Steel | move3cat = Special
+| move4 = Ice Beam | move4type = Ice | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0576
+| pokemon = Gothitelle
+| gender = female
+| level = {{tt|68|Easy Mode}}/{{tt|72|Normal Mode}}
+| type1 = Psychic
+| ability = Frisk
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Shadow Ball | move2type = Ghost | move2cat = Special
+| move3 = Flatter | move3type = Dark | move3cat = Status
+| move4 = Thunderbolt | move4type = Electric | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0475
+| pokemon = Gallade
+| gender = male
+| level = {{tt|67|Easy Mode}}/{{tt|72|Normal Mode}}
+| type1 = Psychic
+| type2 = Fighting
+| ability = Steadfast
+| move1 = Close Combat | move1type = Fighting | move1cat = Physical
+| move2 = Psycho Cut | move2type = Psychic | move2cat = Physical
+| move3 = Leaf Blade | move3type = Grass | move3cat = Physical
+| move4 = Night Slash | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0579
+| pokemon = Reuniclus
+| gender = female
+| level = {{tt|68|Easy Mode}}/{{tt|72|Normal Mode}}
+| type1 = Psychic
+| ability = Magic Guard
+| held = Leftovers
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Thunder | move2type = Electric | move2cat = Special
+| move3 = Recover | move3type = Normal | move3cat = Status
+| move4 = Focus Blast | move4type = Fighting | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0376
+| pokemon = Metagross
+| gender = none
+| level = {{tt|70|Easy Mode}}/{{tt|74|Normal Mode}}
+| type1 = Steel
+| type2 = Psychic
+| ability = Clear Body
+| held = Sitrus Berry
+| move1 = Hammer Arm | move1type = Fighting | move1cat = Physical
+| move2 = Bullet Punch | move2type = Steel | move2cat = Physical
+| move3 = Zen Headbutt | move3type = Psychic | move3cat = Physical
+| move4 = Earthquake | move4type = Ground | move4cat = Physical
+}}
+{{Party/end}}
+=====Rematch (Challenge Mode)=====
+{{Party
+| background = {{psychic color}}
+| border = {{psychic color dark}}
+| headcolor = {{psychic color light}}
+| sprite = Spr B2W2 Caitlin.png
+| prize = {{Pdollar}}9480
+| class = Elite Four
+| name = Caitlin
+| location = Pokémon League (Unova)
+| locationname = Pokémon League
+| game = B2W2
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0518
+| pokemon = Musharna
+| gender = female
+| level = 77
+| type1 = Psychic
+| ability = Synchronize
+| held = Zoom Lens
+| move1 = Reflect | move1type = Psychic | move1cat = Status
+| move2 = Charge Beam | move2type = Electric | move2cat = Special
+| move3 = Dream Eater | move3type = Psychic | move3cat = Special
+| move4 = Hypnosis | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0065
+| pokemon = Alakazam
+| gender = male
+| level = 77
+| type1 = Psychic
+| ability = Synchronize
+| held = Expert Belt
+| move1 = Shadow Ball | move1type = Ghost | move1cat = Special
+| move2 = Focus Blast | move2type = Fighting | move2cat = Special
+| move3 = Psychic | move3type = Psychic | move3cat = Special
+| move4 = Charge Beam | move4type = Electric | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0576
+| pokemon = Gothitelle
+| gender = female
+| level = 77
+| type1 = Psychic
+| ability = Frisk
+| held = Wise Glasses
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Flatter | move2type = Dark | move2cat = Status
+| move3 = Shadow Ball | move3type = Ghost | move3cat = Special
+| move4 = Thunderbolt | move4type = Electric | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0475
+| pokemon = Gallade
+| gender = male
+| level = 77
+| type1 = Psychic
+| type2 = Fighting
+| ability = Steadfast
+| held = Muscle Band
+| move1 = Close Combat | move1type = Fighting | move1cat = Physical
+| move2 = Night Slash | move2type = Dark | move2cat = Physical
+| move3 = Leaf Blade | move3type = Grass | move3cat = Physical
+| move4 = Psycho Cut | move4type = Psychic | move4cat = Physical
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0579
+| pokemon = Reuniclus
+| gender = female
+| level = 77
+| type1 = Psychic
+| ability = Magic Guard
+| held = Leftovers
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Thunder | move2type = Electric | move2cat = Special
+| move3 = Recover | move3type = Normal | move3cat = Status
+| move4 = Focus Blast | move4type = Fighting | move4cat = Special
+}}
+{{Pokémon
+| gen = 5
+| ndex = 0376
+| pokemon = Metagross
+| gender = none
+| level = 79
+| type1 = Steel
+| type2 = Psychic
+| ability = Clear Body
+| held = Life Orb
+| move1 = Zen Headbutt | move1type = Psychic | move1cat = Physical
+| move2 = Bullet Punch | move2type = Steel | move2cat = Physical
+| move3 = Earthquake | move3type = Ground | move3cat = Physical
+| move4 = Hammer Arm | move4type = Fighting | move4cat = Physical
+}}
+{{Party/end}}
+
+==In the spin-off games==
+===[[Pokémon Masters EX]]===
+{{main|Caitlin (Masters)}}
+Caitlin forms a [[sync pair]] with {{p|Reuniclus}} and {{p|Sableye}} in [[Pokémon Masters EX]]. Her Sableye is capable of [[Mega Evolution|Mega Evolving]]. Caitlin became a playable sync pair on October 31, 2019.
+
+Caitlin has also made notable appearances in one of the game's main stories, the [[PML arc]].
+
+{{PairDex/h|Psychic}}
+{{PairDex|070|Caitlin|trainerlink=Caitlin (Masters)#Reuniclus|trainerimg=Caitlin|0579|Reuniclus|gender=female|Psychic|Ghost|Special Strike|6|Sync Pair Scout}}
+{{PairDex|070|Caitlin|trainerlink=Caitlin (Masters)#Sableye|trainerimg=Caitlin Fall 2021|sygna=Fall 2021|0302M|Sableye|gender=female|mega=Sablenite|form=[[Mega Evolution|Mega Sableye]]|Dark|Fairy|Support|exrole=Field|6|Seasonal Sync Pair Scout}}
+|}
+
+==Quotes==
+{{main|Caitlin/Quotes}}
+
+==In animation==
+===''Pokémon the Series''===
+[[File:Caitlin anime.png|thumb|250px|Caitlin in {{aniseries|BW}}]]
+====''Pokémon the Series: Black & White''====
+Caitlin debuted in ''[[BW090|Jostling for the Junior Cup!]]'', where she participated in an {{wp|exhibition game|exhibition match}} against {{an|Cynthia}} in the [[Pokémon World Tournament Junior Cup]]. Despite how powerful the two Trainers were, the time limit put on the battle ended before either of their Pokémon could be defeated, making the match a draw.
+
+She briefly reappeared in ''[[BW093|Goodbye, Junior Cup - Hello Adventure!]]'', where she was part of the Junior Cup's closing ceremony.
+
+====Character====
+Caitlin aims to battle with grace and elegance. Though she looks confident on the outside, it is implied she is still struggling to become an [[Elite Four]] member by her close friend and mentor {{an|Cynthia}}, as seen during the {{wp|exhibition game|exhibition match}} in ''[[BW090|Jostling for the Junior Cup!]]''.
+
+====Pokémon====
+This listing is of Caitlin's known {{OBP|Pokémon|species}} in {{aniseries|PTS}}:
+{{TrainerPoké
+|trainer=Caitlin
+|pkmn=Gothitelle
+|type1=Psychic
+|epnum=BW090
+|epname=Jostling for the Junior Cup!
+|img=Caitlin Gothitelle.png
+|vajp=Megumi Hayashibara
+|vaen=Emily Jenness
+|desc={{p|Gothitelle}} was used in the {{wp|exhibition game|exhibition match}} for the [[Pokémon World Tournament Junior Cup]] against [[Cynthia's Garchomp]]. The two proved powerful during the fight, but the battle ended in a draw due to the short time limit.
+
+Gothitelle's known moves are {{m|Flatter}}, {{m|Psychic}}, {{m|Thunderbolt}}, and {{m|Brick Break}}.}}
+
+====Voice actors====
+{{vatable|color={{psychic color}}|bordercolor={{psychic color light}}
+|ja=松来未祐 ''Miyu Matsuki''
+|en=Miriam Pultro
+|fi=Amy Burgess
+|fr_eu=Audrey d'Hulstère
+|es_la=Hiromi Hayakawa
+|es_eu=Sandra Jara
+|pl=Zofia Zborowska}}
+
+===GOTCHA!===
+Caitlin briefly appeared in [[GOTCHA!]].
+
+==In the manga==
+===Pokémon Adventures===
+[[File:Caitlin Pt Adventures.png|thumb|200px|Caitlin in Pokémon Adventures]]
+====History====
+====={{MangaArc|Platinum}}=====
+Caitlin first appeared alongside her valet [[Darach]] when she misheard {{adv|Looker}} referring to {{adv|Platinum}} as "Lady" as talking to her. When Looker tried to tell her about the mistake, Darach's Gallade immediately attacked him, stripping him down to his underwear. She later watched Platinum and Darach battle at the Battle Castle and scolded Darach when he was defeated. It is later revealed that Caitlin has gained a desire to battle after watching Platinum's battle against Darach. This desire to fight causes her latent psychic powers to awaken and go out of control while Caitlin crazily mutters the word "fight" over and over. She is calmed down by Darach when he offers her some tea.
+
+====={{MangaArc|Black & White}}=====
+[[File:Unova Elite Four Adventures.png|thumb|270px|left|Caitlin in the ''Black & White'' arc]]
+It is revealed that she has become a member of the [[Unova]] Elite Four. She reappears in the {{un|Pokémon League}}, when the Elite Four assemble before the tournament started. As they discuss [[Alder]]'s recent defeat by the hands of {{adv|N}}, the Elite Four inquire what to do about [[Team Plasma]]. Caitlin chooses to let Team Plasma continue their speeches, as they're technically not doing anything wrong. Despite defending Team Plasma's freedom of speech, Caitlin feels that their kidnapping of the Gym Leaders is too much and needs to be stopped. By using the ability of her Gothitelle and her own psychic powers, Caitlin begins to communicate with the Gym Leaders to try and find their current location. She is unable to determine the Gym Leader's location, but Caitlin is able to find out that they are alright. She travels to the location of {{adv|Black}}'s Gym battle against [[Drayden]] to relay a message to Black from the Gym Leaders.
+
+The four then watch as spectators for the tournament before their battles can begin. Although the tournament is won by Black, the event is interrupted by Team Plasma, who attacks the stadium by surrounding it with [[N's Castle]]. The Elite Four travel on Shauntal's {{p|Golurk}} to try and confront N at the top of the castle, but they are attacked by [[Colress|Hood Man]], who uses {{DL|Forces of nature (Adventures)|Tornadus}}, {{DL|Forces of nature (Adventures)|Thundurus}}, and {{DL|Forces of nature (Adventures)|Landorus}} against them to try and figure out how to activate the three Pokémon's Therian Formes. During the commotion, Black accidentally crashes onto Golurk and lands on the Elite Four. Caitlin reveals to Black that she had encountered his {{p|Munna}}, [[Musha]], right before they went to prepare for the Elite Four battles. Black was told by N that Musha had left because he no longer liked the taste of Black's dreams, but Caitlin reveals that Musha had really left to find some way to evolve and get stronger. With the [[Moon Stone]] received from Caitlin, Musha evolved into its final form, {{p|Musharna}}, right before it returned to Black.
+
+====Pokémon====
+{{anchor|Gothitelle 2}}{{TrainerPoké
+|pkmn=Gothitelle
+|trainer=Caitlin
+|type1=Psychic
+|img=Caitlin Gothitelle Adventures.png
+|epnum=PS511
+|epname=Dream a Little Dream
+|desc={{p|Gothitelle}} is Caitlin's only known Pokémon. By using Gothitelle's psychic abilities, Caitlin was able to communicate with the Gym Leaders kidnapped by Team Plasma to learn of their condition. Later, Caitlin used Gothitelle to connect Black's mind to the other Gym Leaders so they would be able to relay a message to him.
+
+Gothitelle's known moves are {{m|Telekinesis}} and {{m|Psyshock}}, and its Ability is {{a|Frisk}}.}}
+
+===Pocket Monsters BW===
+[[File:Caitlin FAT.png|thumb|140px|Caitlin in Pocket Monsters BW: The Heroes of Fire and Thunder]]
+Caitlin appears in {{vol|Pocket Monsters BW|3}} of {{OBP|Pocket Monsters BW|Kosaku Anakubo}}.
+
+===Pocket Monsters BW: The Heroes of Fire and Thunder===
+Caitlin appears in one panel in ''[[FAT3|A Very Important Thing]]'', alongside the other [[Elite Four]] members defeated by [[N]]'s {{p|Zekrom}} at the destroyed {{un|Pokémon League}}.
+{{-}}
+
+==In the TCG==
+This listing is of cards mentioning or featuring Caitlin or her Pokémon in the [[Pokémon Trading Card Game]].
+
+{{cardlist/header|Caitlin|Psychic|char=yes}}
+{{cardlist/entry|cardname={{TCG ID|Plasma Blast|Caitlin|78}}|type=Supporter|expanded=yes|enset=Plasma Blast|enrarity=Uncommon|ennum=78/101|jpset=Megalo Cannon|jprarity=U|jpnum=072/076|jpset2=BW-P Promotional cards|jpnum2=215/BW-P|enset3=Chilling Reign|enrarity3=Uncommon|ennum3=132/198|jpset3=Jet-Black Spirit|jprarity3=U|jpnum3=064/070|enset4=Chilling Reign|enrarity4=Rare Ultra|ennum4=189/198|jpset4=Jet-Black Spirit|jprarity4=SR|jpnum4=080/070|enset5=Chilling Reign|enrarity5=Rare Secret|ennum5=213/198|jpset5=Jet-Black Spirit|jprarity5=HR|jpnum5=088/070}}
+{{cardlist/entry|cardname={{TCG ID|Cosmic Eclipse|Cynthia & Caitlin|189}}|type=Supporter|expanded=yes|enset=Cosmic Eclipse|enrarity=Uncommon|ennum=189/236|jpset=Alter Genesis|jprarity=U|jpnum=088/095|enset2=Cosmic Eclipse|enrarity2=Rare Ultra|ennum2=228/236|jpset2=Alter Genesis|jprarity2=SR|jpnum2=106/095|jpset3=S-P Promotional cards|jpnum3=088/S-P}}
+{{cardlist/footer|Psychic}}
+
+==Gallery==
+===Artwork===
+====Standard====
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{psychic color dark}}; background: #{{psychic color}};"
+|-
+| style="{{roundy|20px}} border: 2px solid #{{castle color dark}}; background: #{{castle color light}}; width:96px; height:96px"| [[File:Platinum Caitlin.png|125px]]
+| style="{{roundy|20px}} border: 2px solid #{{psychic color dark}}; background: #{{psychic color light}}; width:96px; height:96px"| [[File:Black White Caitlin.png|400px]]
+|- 
+| Official artwork from<br>{{Color2|000|Pokémon Platinum Version|Platinum}}
+| Official artwork from<br>{{Color2|000|Pokémon Black and White}}<br> illustrated by {{color2|000|Yusuke Ohmura}}
+|-
+|colspan=2 style="{{roundy|20px}} border: 2px solid #{{castle color dark}}; background: #{{castle color light}}; width:96px; height:96px"| [[File:Sinnoh Battle Frontier Brain artwork.png|200px]]
+|-
+|colspan=2 | {{color2|000|Battle Frontier (Generation IV)|Battle Frontier}} artwork for {{color2|000|Pokémon Platinum}}
+|}
+
+====Raw TCG artwork====
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{psychic color dark}}; background: #{{psychic color}};"
+|-
+| style="{{roundy|20px}} border: 2px solid #{{psychic color dark}}; background: #{{psychic color light}}; overflow:hidden; width:96px; height:96px"| [[File:Unova Elite Four Hitoshi Ariga.png|300px]]
+|- 
+| Official artwork by {{color2|000|Hitoshi Ariga}}<br>for {{Color2|000|Plasma Blast (TCG)|Plasma Blast}}
+|}
+
+===Sprites===
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{psychic color dark}}; background: #{{psychic color}}; font-size:80%;"
+|-
+| colspan="2" style="{{roundy|80px}} border: 2px solid #{{castle color dark}}; background: #{{castle color light}};" | [[File:Spr Pt Darach Caitlin.png]]
+| style="{{roundy|80px}} border: 2px solid #{{castle color dark}}; background: #{{castle color light}}; width:80px" | [[File:Caitlin IV OD.png]]
+| style="{{roundy|20px}} border: 2px solid #{{castle color dark}}; background: #{{castle color light}};" | [[File:VSDarach.png]]
+|-
+| colspan="2" | Sprite, with {{color2|000|Darach}}, from <br>{{color2|000000|Pokémon Platinum Version|Platinum}}, {{color2|000000|Pokémon HeartGold and SoulSilver Versions|HeartGold, and SoulSilver}}
+| Overworld sprite from<br>{{color2|000000|Pokémon Platinum Version|Platinum}},<br>{{color2|000000|Pokémon HeartGold and SoulSilver Versions|HeartGold, and SoulSilver}}
+| VS sprite, with {{color2|000|Darach}}, from <br>{{color2|000000|Pokémon Platinum Version|Platinum}}, {{color2|000000|Pokémon HeartGold and SoulSilver Versions|HeartGold, and SoulSilver}}
+|-
+| style="{{roundy|80px}} border: 2px solid #{{psychic color dark}}; background: #{{psychic color light}};" | [[File:Spr BW Caitlin.png]]
+| style="{{roundy|80px}} border: 2px solid #{{psychic color dark}}; background: #{{psychic color light}};" | [[File:Spr B2W2 Caitlin.png]]
+| style="{{roundy|80px}} border: 2px solid #{{psychic color dark}}; background: #{{psychic color light}};" | [[File:Caitlin OD.png]]
+| style="{{roundy|20px}} border: 2px solid #{{psychic color dark}}; background: #{{psychic color light}};" | [[File:VSCaitlin.png]]
+|-
+| Sprite from <br>{{color2|000|Pokémon Black and White Versions|Black and White}}
+| Sprite from<br>{{color2|000|Pokémon Black and White Versions 2|Black 2 and White 2}}
+| Overworld sprite from<br>{{color2|000|Generation V}}
+| VS sprite from <br>{{color2|000|Generation V}}
+|}
+
+==Trivia==
+* Caitlin dresses in the Japanese {{wp|Gyaru|姫ギャル}} ''princess gal'' style.
+* Caitlin is the only character in Black and White who is either a [[Gym Leader]] or an [[Elite Four]] member who does not use a [[move]] introduced in [[Generation V]] in either battle.
+* Caitlin is the only Unova Elite Four member to have appeared in the {{pkmn|animated series}}, sharing this feat with [[Drake]] of the [[Hoenn]] Elite Four.
+* Caitlin's {{p|Gothitelle}} is the only Pokémon in the animated series to have used the move {{m|Flatter}}.
+* Caitlin is the only Unova Elite Four member whose highest level Pokémon changes between her initial and rematch team, going from Gothitelle to {{p|Metagross}}.
+* Caitlin and [[Koga]] are the only Elite Four members who appeared in another game before becoming members of the Elite Four.
+
+==Names==
+{| class="roundtable" style="background:#{{psychic color}}; border:3px solid #{{psychic color dark}}"
+|-
+! style="background:#{{psychic color light}}" | Language
+! style="background:#{{psychic color light}}" | Name
+! style="background:#{{psychic color light}}" | Origin
+|-
+| Japanese
+| カトレア ''Cattleya''
+| From the orchid genus ''{{wp|Cattleya}}''
+|-
+| English, Latin American Spanish,<br>Indonesian, Brazilian Portuguese
+| Caitlin
+| Similar to her Japanese name and possibly ''castle''
+|-
+| German
+| Kattlea
+| Similar to her Japanese name
+|-
+| European Spanish
+| Catleya
+| Similar to her Japanese name
+|-
+| French
+| Percila
+| From ''persil'' ({{wp|parsley}})
+|-
+| Italian
+| Catlina
+| Similar to her Japanese and English name
+|-
+| Korean
+| 카틀레야  ''Cattleya''
+| From 카틀레야 ''Cattleya''
+|-
+| Chinese (Traditional)
+| 嘉德麗雅 ''Jiādélìyǎ'' / ''Gādāklaih'ā''
+| rowspan="2" | From 嘉德麗雅蘭 / 嘉德丽雅兰 ''Jiādélìyǎ-lán / Gādāklaih'a-làahn'' (Cattleya orchid)
+|-
+| Chinese (Simplified)
+| 嘉德丽雅 ''Jiādélìyǎ''
+|-
+| Chinese (mainland China)
+| 卡特丽亚 ''Kǎtèlìyà''<ref group=n>Pokémon Adventures (''[[Platinum arc (Adventures)|Platinum]]'' arc)</ref>
+| From 卡特兰 ''Kǎtè-lán'' (Cattleya orchid)
+|-
+| Russian
+| Каттлея ''Kattleya''
+| Transcription of her Japanese name
+|-
+| Thai
+| คัทลียา ''Khatliya''
+| Transcription of her Japanese name
+|-
+| Vietnamese
+| Katorea
+| Transcription of her Japanese name
+|}
+{{-}}
+
+===Notes===
+{{reflist|group=n}}
+
+==References==
+<references/>
+
+==Related articles==
+* [[Darach]]
+* [[a:Category:Caitlin|Images on the Bulbagarden Archives]]
+{{-}}
+{{Unova League}}
+{{NPC|Castle|sinnoh=yes|johto=yes}}
+{{Pocket Monsters Characters}}
+{{Project CharacterDex notice}}
+
+[[Category:Game characters]]
+[[Category:Elite Four Trainers]]
+[[Category:Platinum characters]]
+[[Category:HeartGold and SoulSilver characters]]
+[[Category:Black and White characters]]
+[[Category:Black 2 and White 2 characters]]
+[[Category:Psychic-type Trainers]]
+[[Category:Manga characters]]
+[[Category:Pokémon Adventures characters]]
+[[Category:Pocket Monsters BW characters]]
+[[Category:Animation characters]]
+[[Category:Characters with confirmed ages]]
+
+[[de:Kattlea]]
+[[es:Catleya]]
+[[fr:Percila]]
+[[it:Catlina]]
+[[ja:カトレア]]
+[[zh:嘉德麗雅]]

@@ -25,6 +25,14 @@ struct CharacterInfo
     u8 starterCount;        // leading roster entries offerable as starters
                             // (legendaries sort to the tail; 0 = no filter)
     u8 hasSignature;        // roster[0] is the character's known ace/starter
+    u8 selectable;          // 0 = present but NOT offerable. The 2026-07-25
+                            // roster audit drops characters with fewer than 6
+                            // fully-evolved obtainable Pokemon (unless one is
+                            // legendary), but a save stores the character
+                            // INDEX -- deleting the row would silently
+                            // repoint every existing save at a different
+                            // character, so the row stays and the menu skips
+                            // it instead.
 };
 
 extern const struct CharacterInfo gCharacters[];

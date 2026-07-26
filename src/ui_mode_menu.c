@@ -214,7 +214,7 @@ static u16 FirstCharacterInGen(u8 gen)
 
     for (i = 0; i < GetCharacterCount(); i++)
     {
-        if (gCharacters[i].generation == gen)
+        if (gCharacters[i].generation == gen && gCharacters[i].selectable)
             return i + 1;
     }
     return 1;
@@ -240,7 +240,8 @@ static void CycleCharacter(int delta)
             else if (sel > (int)GetCharacterCount())
                 sel = 1;
         } while (guard-- > 0
-                 && gCharacters[sel - 1].generation != genSelection);
+                 && (gCharacters[sel - 1].generation != genSelection
+                     || !gCharacters[sel - 1].selectable));
     }
     characterSelection = sel;
     RandomizeStarterSelection();

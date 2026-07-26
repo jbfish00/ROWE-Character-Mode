@@ -1,0 +1,2321 @@
+{{CharInfobox|
+color={{diamond color}}
+|corecolor={{diamond color light}}
+|bordercolor={{diamond color dark}}
+|name=Lucas
+|jname=コウキ
+|tmname=Kouki
+|jtranslit=Kōki
+|image=Brilliant Diamond Shining Pearl Lucas.png
+|size=165px
+|caption=Art from {{pkmn|Brilliant Diamond and Shining Pearl}}
+|gender=Male
+|hometown=[[Twinleaf Town]] (as player)<br>[[Sandgem Town]] (as NPC)
+|region=[[Sinnoh]]
+|relatives=[[Johanna]], mentioned father (as player)<br>Unnamed father, younger sister, grandfather (as NPC)
+|colors=yes
+|eyes=Slate gray{{tt|*|Top-left, top-right and bottom-right PC default}}, Light blue{{tt|*|Bottom-left PC default}}, Brown
+|hair=Slate gray{{tt|*|Top-left PC default}},  Blond{{tt|*|Bottom left PC default}}, Brown{{tt|*|Top-right and bottom-right PC default}}
+|trainer=yes
+|trainerclass=[[Pokémon Trainer]], [[player character]]
+|game=yes
+|generation={{Gen|IV}}, {{Gen|VIII}}
+|games={{game3|Diamond and Pearl|Diamond, Pearl|s}}, {{v2|Platinum}}, {{pkmn|Brilliant Diamond and Shining Pearl|Brilliant Diamond, Shining Pearl}}<br>{{pkmn|Battle Revolution}}, {{pkmn|Masters EX}}
+|anime=cameo
+|epnum=M11
+|epname=Giratina and the Sky Warrior
+|gameanim=yes
+|pv=cameo
+|pvnum=GOTCHA!
+|pvname=GOTCHA!
+|manga=counterpart
+|mangacounterpart={{adv|Diamond}}, [[Hareta]], {{OBP|Dia|Pocket Monsters DP}}
+|envagame=Griffin Puatu<ref name="Griffin Puatu">[https://twitter.com/GriffinPuatu/status/1482382883641872386 Griffin Puatu on Twitter]</ref> <small>({{pkmn|Masters EX}})</small>
+|javagame=[[Shun Horie]] <small>({{pkmn|Masters EX}})</small>
+}}
+
+'''Lucas''' (Japanese: '''コウキ''' ''Kouki'') is the male [[player character]] of {{game2|Diamond|Pearl|Platinum}} and their [[Generation VIII]] remakes {{pkmn|Brilliant Diamond and Shining Pearl}}. His female counterpart is {{ga|Dawn}}.
+
+==In the core series games==
+===As the protagonist===
+====Pokémon Diamond, Pearl, Brilliant Diamond and Shining Pearl====
+Lucas lives in [[Twinleaf Town]] with his mother. Lucas and {{ga|Barry}} both see a television program about a [[red Gyarados]], so the two head to the nearby [[Lake Verity]] in search of a similar Pokémon. As the enter the lake area, Professor Rowan and his assistant {{ga|Dawn}} are leaving, but have inadvertently left a briefcase behind. Lucas and Barry wander into the tall grass, but are suddenly attacked by wild {{p|Starly}}; as a last resort, they each use one of the Pokémon in the briefcase the Professor has forgotten. The two take their Pokémon to Sandgem Town to return them to Professor Rowan, but Rowan decides to let the two keep their Pokémon, and also gives them each a [[Pokédex]].
+
+Lucas goes on to gather the eight [[Gym Badge]]s of [[Sinnoh]], defeat [[Team Galactic]], and conquer the {{si|Pokémon League}}. He has to stop [[Team Galactic]] from trying to use either {{p|Dialga}}{{sup/4|D}}{{sup/8|BD}} or {{p|Palkia}}{{sup/4|P}}{{sup/8|SP}} to destroy the entire universe in order to create a new one.
+
+====Pokémon Platinum====
+Lucas lives in [[Twinleaf Town]] with his mother. Lucas and {{ga|Barry}} both see a television program about Professor Rowan, so the two head to [[Sandgem Town]] to visit Professor Rowan at his lab to get some Pokémon of their own. They receive their Pokémon on {{rt|201|Sinnoh}} when Professor Rowan realizes that they are so dedicated to Pokémon that they would attempt to travel from Twinleaf Town to [[Sandgem Town]] through the [[tall grass]] without any Pokémon of their own.
+
+Lucas goes on to gather the eight [[Gym Badge]]s of [[Sinnoh]], defeat [[Team Galactic]], and conquer the {{si|Pokémon League}}. He has to go to the [[Distortion World]] and face Giratina, in order to stop both worlds from destroying each other.
+
+====Pokémon Black, White, Black 2, and White 2====
+In Pokémon Black, White, Black 2, and White 2, the player character from Diamond, Pearl and Platinum and their exploits are referenced by [[Cynthia]], who remembers a young Trainer who had defeated her.
+
+===As a non-playable character===
+If the player chooses Dawn, Lucas appears in the game as an NPC. He serves as [[Professor Rowan]]'s assistant. He lives in [[Sandgem Town]] with his little sister, grandfather, and father—who also works as an assistant of Professor Rowan. He received his [[first partner Pokémon]] before the player, having either a {{p|Turtwig}}, {{p|Chimchar}} or {{p|Piplup}}—the Pokémon he has is always the one that has a type disadvantage against the player's first partner Pokémon.
+
+He demonstrates how to catch Pokémon to the player by catching a wild {{p|Bidoof}}.
+
+====Pokémon====
+====={{game|Diamond and Pearl|s}}=====
+======Capture tutorial======
+{{Party
+| caption = {{PlayerChoice|0387|Turtwig}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = DP Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Sinnoh Route 202
+| locationname = Route 202
+| game = DP
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0393
+| pokemon = Piplup
+| gender = both
+| level = 5
+| type1 = Water
+| ability = Torrent
+| move1 = Pound | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0390|Chimchar}}| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = DP Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Sinnoh Route 202
+| locationname = Route 202
+| game = DP
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0387
+| pokemon = Turtwig
+| gender = both
+| level = 5
+| type1 = Grass
+| ability = Overgrow
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+| move2 = Withdraw | move2type = Water | move2cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0393|Piplup}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = DP Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Sinnoh Route 202
+| locationname = Route 202
+| game = DP
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0390
+| pokemon = Chimchar
+| gender = both
+| level = 5
+| type1 = Fire
+| ability = Blaze
+| move1 = Scratch | move1type = Normal | move1cat = Physical
+| move2 = Leer | move2type = Normal | move2cat = Status
+}}
+{{Party/end}}
+;Caught in tutorial
+{{Pokémon
+| gen = 4
+| ndex = 0399
+| pokemon = Bidoof
+| gender = both
+| level = 2
+| type1 = Normal
+| ability = Simple
+| ability2 = Unaware
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+}}
+
+======First [[Multi Battle]] partner======
+{{Party
+| caption = {{PlayerChoice|0387|Turtwig}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = DP Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Jubilife City
+| game = DP
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0393
+| pokemon = Piplup
+| gender = both
+| level = 13
+| type1 = Water
+| ability = Torrent
+| move1 = Bubble | move1type = Water | move1cat = Special
+| move2 = Pound | move2type = Normal | move2cat = Physical
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0390|Chimchar}}| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = DP Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Jubilife City
+| game = DP
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0387
+| pokemon = Turtwig
+| gender = both
+| level = 13
+| type1 = Grass
+| ability = Overgrow
+| move1 = Absorb | move1type = Grass | move1cat = Special
+| move2 = Tackle | move2type = Normal | move2cat = Physical
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0393|Piplup}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = DP Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Jubilife City
+| game = DP
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0390
+| pokemon = Chimchar
+| gender = both
+| level = 13
+| type1 = Fire
+| ability = Blaze
+| move1 = Ember | move1type = Fire | move1cat = Special
+| move2 = Scratch | move2type = Normal | move2cat = Physical
+}}
+{{Party/end}}
+======Second Multi Battle partner======
+{{Party
+| caption = {{PlayerChoice|0387|Turtwig}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = DP Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Veilstone City
+| game = DP
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0035
+| pokemon = Clefairy
+| gender = female
+| level = 25
+| type1 = Normal
+| ability = Cute Charm
+| move1 = Metronome | move1type = Normal | move1cat = Status
+| move2 = Sing | move2type = Normal | move2cat = Status
+| move3 = Gravity | move3type = Psychic | move3cat = Status
+| move4 = Wake-Up Slap | move4type = Fighting | move4cat = Physical
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0064
+| pokemon = Kadabra
+| gender = male
+| level = 25
+| type1 = Psychic
+| ability = Synchronize
+| move1 = Psybeam | move1type = Psychic | move1cat = Special
+| move2 = Psycho Cut | move2type = Psychic | move2cat = Physical
+| move3 = Reflect | move3type = Psychic | move3cat = Status
+| move4 = Light Screen | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0394
+| pokemon = Prinplup
+| gender = both
+| level = 28
+| type1 = Water
+| ability = Torrent
+| move1 = BubbleBeam | move1type = Water | move1cat = Special
+| move2 = Peck | move2type = Flying | move2cat = Physical
+| move3 = Fury Attack | move3type = Normal | move3cat = Physical
+| move4 = Metal Claw | move4type = Steel | move4cat = Physical
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0390|Chimchar}}| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = DP Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Veilstone City
+| game = DP
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0035
+| pokemon = Clefairy
+| gender = female
+| level = 25
+| type1 = Normal
+| ability = Cute Charm
+| move1 = Metronome | move1type = Normal | move1cat = Status
+| move2 = Sing | move2type = Normal | move2cat = Status
+| move3 = Gravity | move3type = Psychic | move3cat = Status
+| move4 = Wake-Up Slap | move4type = Fighting | move4cat = Physical
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0064
+| pokemon = Kadabra
+| gender = male
+| level = 25
+| type1 = Psychic
+| ability = Synchronize
+| move1 = Psybeam | move1type = Psychic | move1cat = Special
+| move2 = Psycho Cut | move2type = Psychic | move2cat = Physical
+| move3 = Reflect | move3type = Psychic | move3cat = Status
+| move4 = Light Screen | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0388
+| pokemon = Grotle
+| gender = both
+| level = 28
+| type1 = Grass
+| ability = Overgrow
+| move1 = Razor Leaf | move1type = Grass | move1cat = Physical
+| move2 = Mega Drain | move2type = Grass | move2cat = Special
+| move3 = Bite | move3type = Dark | move3cat = Physical
+| move4 = Curse | move4type = ??? | move4cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0393|Piplup}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = DP Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Veilstone City
+| game = DP
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0035
+| pokemon = Clefairy
+| gender = female
+| level = 25
+| type1 = Normal
+| ability = Cute Charm
+| move1 = Metronome | move1type = Normal | move1cat = Status
+| move2 = Sing | move2type = Normal | move2cat = Status
+| move3 = Gravity | move3type = Psychic | move3cat = Status
+| move4 = Wake-Up Slap | move4type = Fighting | move4cat = Physical
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0064
+| pokemon = Kadabra
+| gender = male
+| level = 25
+| type1 = Psychic
+| ability = Synchronize
+| move1 = Psybeam | move1type = Psychic | move1cat = Special
+| move2 = Psycho Cut | move2type = Psychic | move2cat = Physical
+| move3 = Reflect | move3type = Psychic | move3cat = Status
+| move4 = Light Screen | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0391
+| pokemon = Monferno
+| gender = both
+| level = 28
+| type1 = Fire
+| type2 = Fighting
+| ability = Blaze
+| move1 = Flame Wheel | move1type = Fire | move1cat = Physical
+| move2 = Ember | move2type = Fire | move2cat = Special
+| move3 = Mach Punch | move3type = Fighting | move3cat = Physical
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Party/end}}
+====={{game|Platinum}}=====
+======Capture tutorial======
+{{Party
+| caption = {{PlayerChoice|0387|Turtwig}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = Pt Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Sinnoh Route 202
+| locationname = Route 202
+| game = Pt
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0393
+| pokemon = Piplup
+| gender = both
+| level = 5
+| type1 = Water
+| ability = Torrent
+| move1 = Pound | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0390|Chimchar}}| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = Pt Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Sinnoh Route 202
+| locationname = Route 202
+| game = Pt
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0387
+| pokemon = Turtwig
+| gender = both
+| level = 5
+| type1 = Grass
+| ability = Overgrow
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+| move2 = Withdraw | move2type = Water | move2cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0393|Piplup}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = Pt Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Sinnoh Route 202
+| locationname = Route 202
+| game = Pt
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0390
+| pokemon = Chimchar
+| gender = both
+| level = 5
+| type1 = Fire
+| ability = Blaze
+| move1 = Scratch | move1type = Normal | move1cat = Physical
+| move2 = Leer | move2type = Normal | move2cat = Status
+}}
+{{Party/end}}
+;Caught in tutorial
+{{Pokémon
+| gen = 4
+| ndex = 0399
+| pokemon = Bidoof
+| gender = both
+| level = 2
+| type1 = Normal
+| ability = Simple
+| ability2 = Unaware
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+}}
+
+======First Multi Battle partner======
+{{Party
+| caption = {{PlayerChoice|0387|Turtwig}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = Pt Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Jubilife City
+| game = Pt
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0393
+| pokemon = Piplup
+| gender = both
+| level = 13
+| type1 = Water
+| ability = Torrent
+| move1 = Bubble | move1type = Water | move1cat = Special
+| move2 = Pound | move2type = Normal | move2cat = Physical
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0390|Chimchar}}| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = Pt Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Jubilife City
+| game = Pt
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0387
+| pokemon = Turtwig
+| gender = both
+| level = 13
+| type1 = Grass
+| ability = Overgrow
+| move1 = Absorb | move1type = Grass | move1cat = Special
+| move2 = Tackle | move2type = Normal | move2cat = Physical
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0393|Piplup}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = Pt Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Jubilife City
+| game = Pt
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0390
+| pokemon = Chimchar
+| gender = both
+| level = 13
+| type1 = Fire
+| ability = Blaze
+| move1 = Ember | move1type = Fire | move1cat = Special
+| move2 = Scratch | move2type = Normal | move2cat = Physical
+}}
+{{Party/end}}
+======Second Multi Battle partner======
+{{Party
+| caption = {{PlayerChoice|0387|Turtwig}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = Pt Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Veilstone City
+| game = Pt
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0035
+| pokemon = Clefairy
+| gender = female
+| level = 25
+| type1 = Normal
+| ability = Cute Charm
+| move1 = Metronome | move1type = Normal | move1cat = Status
+| move2 = Sing | move2type = Normal | move2cat = Status
+| move3 = Gravity | move3type = Psychic | move3cat = Status
+| move4 = Wake-Up Slap | move4type = Fighting | move4cat = Physical
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0064
+| pokemon = Kadabra
+| gender = male
+| level = 25
+| type1 = Psychic
+| ability = Synchronize
+| move1 = Psybeam | move1type = Psychic | move1cat = Special
+| move2 = Psycho Cut | move2type = Psychic | move2cat = Physical
+| move3 = Reflect | move3type = Psychic | move3cat = Status
+| move4 = Light Screen | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0394
+| pokemon = Prinplup
+| gender = both
+| level = 28
+| type1 = Water
+| ability = Torrent
+| move1 = BubbleBeam | move1type = Water | move1cat = Special
+| move2 = Peck | move2type = Flying | move2cat = Physical
+| move3 = Fury Attack | move3type = Normal | move3cat = Physical
+| move4 = Metal Claw | move4type = Steel | move4cat = Physical
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0390|Chimchar}}| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = Pt Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Veilstone City
+| game = Pt
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0035
+| pokemon = Clefairy
+| gender = female
+| level = 25
+| type1 = Normal
+| ability = Cute Charm
+| move1 = Metronome | move1type = Normal | move1cat = Status
+| move2 = Sing | move2type = Normal | move2cat = Status
+| move3 = Gravity | move3type = Psychic | move3cat = Status
+| move4 = Wake-Up Slap | move4type = Fighting | move4cat = Physical
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0064
+| pokemon = Kadabra
+| gender = male
+| level = 25
+| type1 = Psychic
+| ability = Synchronize
+| move1 = Psybeam | move1type = Psychic | move1cat = Special
+| move2 = Psycho Cut | move2type = Psychic | move2cat = Physical
+| move3 = Reflect | move3type = Psychic | move3cat = Status
+| move4 = Light Screen | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0388
+| pokemon = Grotle
+| gender = both
+| level = 28
+| type1 = Grass
+| ability = Overgrow
+| move1 = Razor Leaf | move1type = Grass | move1cat = Physical
+| move2 = Mega Drain | move2type = Grass | move2cat = Special
+| move3 = Bite | move3type = Dark | move3cat = Physical
+| move4 = Curse | move4type = ??? | move4cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0393|Piplup}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = Pt Lucas Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Lucas
+| location = Veilstone City
+| game = Pt
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0035
+| pokemon = Clefairy
+| gender = female
+| level = 25
+| type1 = Normal
+| ability = Cute Charm
+| move1 = Metronome | move1type = Normal | move1cat = Status
+| move2 = Sing | move2type = Normal | move2cat = Status
+| move3 = Gravity | move3type = Psychic | move3cat = Status
+| move4 = Wake-Up Slap | move4type = Fighting | move4cat = Physical
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0064
+| pokemon = Kadabra
+| gender = male
+| level = 25
+| type1 = Psychic
+| ability = Synchronize
+| move1 = Psybeam | move1type = Psychic | move1cat = Special
+| move2 = Psycho Cut | move2type = Psychic | move2cat = Physical
+| move3 = Reflect | move3type = Psychic | move3cat = Status
+| move4 = Light Screen | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 4
+| ndex = 0391
+| pokemon = Monferno
+| gender = both
+| level = 28
+| type1 = Fire
+| type2 = Fighting
+| ability = Blaze
+| move1 = Flame Wheel | move1type = Fire | move1cat = Physical
+| move2 = Ember | move2type = Fire | move2cat = Special
+| move3 = Mach Punch | move3type = Fighting | move3cat = Physical
+| move4 = Fury Swipes | move4type = Normal | move4cat = Physical
+}}
+{{Party/end}}
+====={{g|Brilliant Diamond and Shining Pearl}}=====
+======Capture tutorial======
+{{Party
+| caption = {{PlayerChoice|0387|Turtwig}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = LucasChallenge Everyday 1 BDSP.png{{!}}90px
+| prize = none
+| class = Pokémon Trainer
+| name = Lucas
+| location = Sinnoh Route 202
+| locationname = Route 202
+| game = BDSP
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0393
+| pokemon = Piplup
+| gender = both
+| level = 5
+| type1 = Water
+| ability = Torrent
+| move1 = Pound | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0390|Chimchar}}| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = LucasChallenge Everyday 1 BDSP.png{{!}}90px
+| prize = none
+| class = Pokémon Trainer
+| name = Lucas
+| location = Sinnoh Route 202
+| locationname = Route 202
+| game = BDSP
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0387
+| pokemon = Turtwig
+| gender = both
+| level = 5
+| type1 = Grass
+| ability = Overgrow
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+| move2 = Withdraw | move2type = Water | move2cat = Status
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0393|Piplup}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = LucasChallenge Everyday 1 BDSP.png{{!}}90px
+| prize = none
+| class = Pokémon Trainer
+| name = Lucas
+| location = Sinnoh Route 202
+| locationname = Route 202
+| game = BDSP
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0390
+| pokemon = Chimchar
+| gender = both
+| level = 5
+| type1 = Fire
+| ability = Blaze
+| move1 = Scratch | move1type = Normal | move1cat = Physical
+| move2 = Leer | move2type = Normal | move2cat = Status
+}}
+{{Party/end}}
+;Caught in tutorial
+{{Pokémon
+| gen = 8
+| ndex = 0399
+| pokemon = Bidoof
+| gender = both
+| level = 2
+| type1 = Normal
+| ability = Simple
+| ability2 = Unaware
+| move1 = Growl | move1type = Normal | move1cat = Status
+}}
+
+======First [[Multi Battle]] partner======
+{{Party
+| caption = {{PlayerChoice|0387|Turtwig}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = LucasChallenge Everyday 1 BDSP.png{{!}}90px
+| prize = none
+| class = Pokémon Trainer
+| name = Lucas
+| location = Jubilife City
+| game = BDSP
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0393
+| pokemon = Piplup
+| gender = both
+| level = 13
+| type1 = Water
+| ability = Torrent
+| move1 = Pound | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+| move3 = Water Gun | move3type = Water | move3cat = Special
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0390|Chimchar}}| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = LucasChallenge Everyday 1 BDSP.png{{!}}90px
+| prize = none
+| class = Pokémon Trainer
+| name = Lucas
+| location = Jubilife City
+| game = BDSP
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0387
+| pokemon = Turtwig
+| gender = both
+| level = 13
+| type1 = Grass
+| ability = Overgrow
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+| move2 = Withdraw | move2type = Water | move2cat = Status
+| move3 = Absorb | move3type = Grass | move3cat = Special
+| move4 = Razor Leaf | move4type = Grass | move4cat = Physical
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0393|Piplup}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = LucasChallenge Everyday 1 BDSP.png{{!}}90px
+| prize = none
+| class = Pokémon Trainer
+| name = Lucas
+| location = Jubilife City
+| game = BDSP
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0390
+| pokemon = Chimchar
+| gender = both
+| level = 13
+| type1 = Fire
+| ability = Blaze
+| move1 = Scratch | move1type = Normal | move1cat = Physical
+| move2 = Leer | move2type = Normal | move2cat = Status
+| move3 = Ember | move3type = Fire | move3cat = Special
+| move4 = Taunt | move4type = Dark | move4cat = Status
+}}
+{{Party/end}}
+======Second Multi Battle partner======
+{{Party
+| caption = {{PlayerChoice|0387|Turtwig}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = LucasChallenge Everyday 1 BDSP.png{{!}}90px
+| prize = none
+| class = Pokémon Trainer
+| name = Lucas
+| location = Veilstone City
+| game = BDSP
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0035
+| pokemon = Clefairy
+| gender = both
+| level = 25
+| type1 = Fairy
+| ability = Cute Charm
+| move1 = Sing | move1type = Normal | move1cat = Status
+| move2 = Disarming Voice | move2type = Fairy | move2cat = Special
+| move3 = Growl | move3type = Normal | move3cat = Status
+| move4 = Life Dew | move4type = Water | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0064
+| pokemon = Kadabra
+| gender = both
+| level = 25
+| type1 = Psychic
+| ability = Synchronize
+| move1 = Kinesis | move1type = Psychic | move1cat = Status
+| move2 = Psybeam | move2type = Psychic | move2cat = Special
+| move3 = Reflect | move3type = Psychic | move3cat = Status
+| move4 = Ally Switch | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0394
+| pokemon = Prinplup
+| gender = both
+| level = 28
+| type1 = Water
+| ability = Torrent
+| move1 = Metal Claw | move1type = Steel | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+| move3 = Peck | move3type = Flying | move3cat = Physical
+| move4 = Bubble Beam | move4type = Water | move4cat = Special
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0390|Chimchar}}| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = LucasChallenge Everyday 1 BDSP.png{{!}}90px
+| prize = none
+| class = Pokémon Trainer
+| name = Lucas
+| location = Veilstone City
+| game = BDSP
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0035
+| pokemon = Clefairy
+| gender = both
+| level = 25
+| type1 = Fairy
+| ability = Cute Charm
+| move1 = Sing | move1type = Normal | move1cat = Status
+| move2 = Disarming Voice | move2type = Fairy | move2cat = Special
+| move3 = Growl | move3type = Normal | move3cat = Status
+| move4 = Life Dew | move4type = Water | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0064
+| pokemon = Kadabra
+| gender = both
+| level = 25
+| type1 = Psychic
+| ability = Synchronize
+| move1 = Kinesis | move1type = Psychic | move1cat = Status
+| move2 = Psybeam | move2type = Psychic | move2cat = Special
+| move3 = Reflect | move3type = Psychic | move3cat = Status
+| move4 = Ally Switch | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0388
+| pokemon = Grotle
+| gender = both
+| level = 28
+| type1 = Grass
+| ability = Overgrow
+| move1 = Razor Leaf | move1type = Grass | move1cat = Physical
+| move2 = Curse | move2type = Ghost | move2cat = Status
+| move3 = Bite | move3type = Dark | move3cat = Physical
+| move4 = Mega Drain | move4type = Grass | move4cat = Special
+}}
+{{Party/end}}
+{{Party
+| caption = {{PlayerChoice|0393|Piplup}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = LucasChallenge Everyday 1 BDSP.png{{!}}90px
+| prize = none
+| class = Pokémon Trainer
+| name = Lucas
+| location = Veilstone City
+| game = BDSP
+| pokemon = 3
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0035
+| pokemon = Clefairy
+| gender = both
+| level = 25
+| type1 = Fairy
+| ability = Cute Charm
+| move1 = Sing | move1type = Normal | move1cat = Status
+| move2 = Disarming Voice | move2type = Fairy | move2cat = Special
+| move3 = Growl | move3type = Normal | move3cat = Status
+| move4 = Life Dew | move4type = Water | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0064
+| pokemon = Kadabra
+| gender = both
+| level = 25
+| type1 = Psychic
+| ability = Synchronize
+| move1 = Kinesis | move1type = Psychic | move1cat = Status
+| move2 = Psybeam | move2type = Psychic | move2cat = Special
+| move3 = Reflect | move3type = Psychic | move3cat = Status
+| move4 = Ally Switch | move4type = Psychic | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0391
+| pokemon = Monferno
+| gender = both
+| level = 28
+| type1 = Fire
+| type2 = Fighting
+| ability = Blaze
+| move1 = Mach Punch | move1type = Fighting | move1cat = Physical
+| move2 = Leer | move2type = Normal | move2cat = Status
+| move3 = Taunt | move3type = Dark | move3cat = Status
+| move4 = Flame Wheel | move4type = Fire | move4cat = Physical
+}}
+{{Party/end}}
+======Weekend battles======
+Before Version 1.1.0, Empoleon had the Ability {{a|Defiant}} instead of Torrent.
+{{Party
+| caption = {{PlayerChoice|0387|Turtwig}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = LucasChallenge Everyday 1 BDSP.png{{!}}90px
+| prize = {{PDollar}}6,656
+| class = Pokémon Trainer
+| name = Lucas
+| location = Sandgem Town
+| game = BDSP
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0414
+| pokemon = Mothim
+| gender = male
+| level = 58
+| type1 = Bug
+| type2 = Flying
+| ability = Tinted Lens
+| held = Focus Sash
+| heldgame = BDSP
+| move1 = Bug Buzz
+| move1type = Bug
+| move1cat = Special
+| move2 = Air Slash
+| move2type = Flying
+| move2cat = Special
+| move3 = Energy Ball
+| move3type = Grass
+| move3cat = Special
+| move4 = Quiver Dance
+| move4type = Bug
+| move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0467
+| pokemon = Magmortar
+| gender = male
+| level = 59
+| type1 = Fire
+| ability = Vital Spirit
+| held = Expert Belt
+| heldgame = BDSP
+| move1 = Fire Blast
+| move1type = Fire
+| move1cat = Special
+| move2 = Thunderbolt
+| move2type = Electric
+| move2cat = Special
+| move3 = Focus Blast
+| move3type = Fighting
+| move3cat = Special
+| move4 = Will-O-Wisp
+| move4type = Fire
+| move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0475
+| pokemon = Gallade
+| gender = male
+| level = 63
+| type1 = Psychic
+| type2 = Fighting
+| ability = Justified
+| held = Life Orb
+| heldgame = BDSP
+| move1 = Psycho Cut
+| move1type = Psychic
+| move1cat = Physical
+| move2 = Close Combat
+| move2type = Fighting
+| move2cat = Physical
+| move3 = Stone Edge
+| move3type = Rock
+| move3cat = Physical
+| move4 = Swords Dance
+| move4type = Normal
+| move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0465
+| pokemon = Tangrowth
+| gender = male
+| level = 59
+| type1 = Grass
+| ability = Regenerator
+| held = Lum Berry
+| heldgame = BDSP
+| move1 = Power Whip
+| move1type = Grass
+| move1cat = Physical
+| move2 = Earthquake
+| move2type = Ground
+| move2cat = Physical
+| move3 = Rock Slide
+| move3type = Rock
+| move3cat = Physical
+| move4 = Brick Break
+| move4type = Fighting
+| move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0036
+| pokemon = Clefable
+| gender = female
+| level = 60
+| type1 = Fairy
+| ability = Unaware
+| held = Sitrus Berry
+| heldgame = BDSP
+| move1 = Moonblast
+| move1type = Fairy
+| move1cat = Special
+| move2 = Calm Mind
+| move2type = Psychic
+| move2cat = Status
+| move3 = Moonlight
+| move3type = Fairy
+| move3cat = Status
+| move4 = Minimize
+| move4type = Normal
+| move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0395
+| pokemon = Empoleon
+| gender = male
+| level = 64
+| type1 = Water
+| type2 = Steel
+| ability = Torrent
+| held = Choice Band
+| heldgame = BDSP
+| move1 = Aqua Jet
+| move1type = Water
+| move1cat = Physical
+| move2 = Waterfall
+| move2type = Water
+| move2cat = Physical
+| move3 = Steel Wing
+| move3type = Steel
+| move3cat = Physical
+| move4 = Earthquake
+| move4type = Ground
+| move4cat = Physical
+}}
+{{Party/end}}
+Before Version 1.1.0, Torterra had the Ability {{a|Shell Armor}} instead of Overgrow.
+{{Party
+| caption = {{PlayerChoice|0390|Chimchar}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = LucasChallenge Everyday 1 BDSP.png{{!}}90px
+| prize = {{PDollar}}6,656
+| class = Pokémon Trainer
+| name = Lucas
+| location = Sandgem Town
+| game = BDSP
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0414
+| pokemon = Mothim
+| gender = male
+| level = 58
+| type1 = Bug
+| type2 = Flying
+| ability = Tinted Lens
+| held = Focus Sash
+| heldgame = BDSP
+| move1 = Bug Buzz
+| move1type = Bug
+| move1cat = Special
+| move2 = Air Slash
+| move2type = Flying
+| move2cat = Special
+| move3 = Energy Ball
+| move3type = Grass
+| move3cat = Special
+| move4 = Quiver Dance
+| move4type = Bug
+| move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0350
+| pokemon = Milotic
+| gender = male
+| level = 59
+| type1 = Water
+| ability = Marvel Scale
+| held = Flame Orb
+| heldgame = BDSP
+| move1 = Scald
+| move1type = Water
+| move1cat = Special
+| move2 = Substitute
+| move2type = Normal
+| move2cat = Status
+| move3 = Calm Mind
+| move3type = Psychic
+| move3cat = Status
+| move4 = Recover
+| move4type = Normal
+| move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0475
+| pokemon = Gallade
+| gender = male
+| level = 63
+| type1 = Psychic
+| type2 = Fighting
+| ability = Justified
+| held = Life Orb
+| heldgame = BDSP
+| move1 = Psycho Cut
+| move1type = Psychic
+| move1cat = Physical
+| move2 = Close Combat
+| move2type = Fighting
+| move2cat = Physical
+| move3 = Stone Edge
+| move3type = Rock
+| move3cat = Physical
+| move4 = Swords Dance
+| move4type = Normal
+| move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0467
+| pokemon = Magmortar
+| gender = male
+| level = 59
+| type1 = Fire
+| ability = Vital Spirit
+| held = Expert Belt
+| heldgame = BDSP
+| move1 = Fire Blast
+| move1type = Fire
+| move1cat = Special
+| move2 = Thunderbolt
+| move2type = Electric
+| move2cat = Special
+| move3 = Focus Blast
+| move3type = Fighting
+| move3cat = Special
+| move4 = Will-O-Wisp
+| move4type = Fire
+| move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0036
+| pokemon = Clefable
+| gender = female
+| level = 60
+| type1 = Fairy
+| ability = Unaware
+| held = Sitrus Berry
+| heldgame = BDSP
+| move1 = Moonblast
+| move1type = Fairy
+| move1cat = Special
+| move2 = Calm Mind
+| move2type = Psychic
+| move2cat = Status
+| move3 = Moonlight
+| move3type = Fairy
+| move3cat = Status
+| move4 = Minimize
+| move4type = Normal
+| move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0389
+| pokemon = Torterra
+| gender = male
+| level = 64
+| type1 = Grass
+| type2 = Ground
+| ability = Overgrow
+| held = Leftovers
+| heldgame = BDSP
+| move1 = Earthquake
+| move1type = Ground
+| move1cat = Physical
+| move2 = Synthesis
+| move2type = Grass
+| move2cat = Status
+| move3 = Leech Seed
+| move3type = Grass
+| move3cat = Status
+| move4 = Curse
+| move4type = Ghost
+| move4cat = Status
+}}
+{{Party/end}}
+Before Version 1.1.0, Infernape knew {{m|Overheat}}, {{m|Stone Edge}} and {{m|Grass Knot}} instead of Earthquake, Flare Blitz and Acrobatics. It also held a [[Choice Scarf]] instead of a White Herb.
+{{Party
+| caption = {{PlayerChoice|0393|Piplup}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = LucasChallenge Everyday 1 BDSP.png{{!}}90px
+| prize = {{PDollar}}6,656
+| class = Pokémon Trainer
+| name = Lucas
+| location = Sandgem Town
+| game = BDSP
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0414
+| pokemon = Mothim
+| gender = male
+| level = 58
+| type1 = Bug
+| type2 = Flying
+| ability = Tinted Lens
+| held = Focus Sash
+| heldgame = BDSP
+| move1 = Bug Buzz | move1type = Bug | move1cat = Special
+| move2 = Air Slash | move2type = Flying | move2cat = Special
+| move3 = Energy Ball | move3type = Grass | move3cat = Special
+| move4 = Quiver Dance | move4type = Bug | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0465
+| pokemon = Tangrowth
+| gender = male
+| level = 59
+| type1 = Grass
+| ability = Regenerator
+| held = Lum Berry
+| heldgame = BDSP
+| move1 = Power Whip | move1type = Grass | move1cat = Physical
+| move2 = Earthquake | move2type = Ground | move2cat = Physical
+| move3 = Rock Slide | move3type = Rock | move3cat = Physical
+| move4 = Brick Break | move4type = Fighting | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0475
+| pokemon = Gallade
+| gender = male
+| level = 63
+| type1 = Psychic
+| type2 = Fighting
+| ability = Justified
+| held = Life Orb
+| heldgame = BDSP
+| move1 = Psycho Cut | move1type = Psychic | move1cat = Physical
+| move2 = Close Combat | move2type = Fighting | move2cat = Physical
+| move3 = Stone Edge | move3type = Rock | move3cat = Physical
+| move4 = Swords Dance | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0350
+| pokemon = Milotic
+| gender = male
+| level = 59
+| type1 = Water
+| ability = Marvel Scale
+| held = Flame Orb
+| heldgame = BDSP
+| move1 = Scald | move1type = Water | move1cat = Special
+| move2 = Substitute | move2type = Normal | move2cat = Status
+| move3 = Calm Mind | move3type = Psychic | move3cat = Status
+| move4 = Recover | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0036
+| pokemon = Clefable
+| gender = female
+| level = 60
+| type1 = Fairy
+| ability = Unaware
+| held = Sitrus Berry
+| heldgame = BDSP
+| move1 = Moonblast | move1type = Fairy | move1cat = Special
+| move2 = Calm Mind | move2type = Psychic | move2cat = Status
+| move3 = Moonlight | move3type = Fairy | move3cat = Status
+| move4 = Minimize | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0392
+| pokemon = Infernape
+| gender = male
+| level = 64
+| type1 = Fire
+| type2 = Fighting
+| ability = Blaze
+| held = White Herb
+| heldgame = BDSP
+| move1 = Earthquake | move1type = Ground | move1cat = Physical
+| move2 = Close Combat | move2type = Fighting | move2cat = Physical
+| move3 = Flare Blitz | move3type = Fire | move3cat = Physical
+| move4 = Acrobatics | move4type = Flying | move4cat = Physical
+}}
+{{Party/end}}
+======Weekend battles (after entering the [[Hall of Fame]] 10 times)======
+Before Version 1.1.0, Empoleon had the Ability {{a|Defiant}} instead of Torrent.
+{{Party
+| caption = {{PlayerChoice|0387|Turtwig}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = LucasChallenge Everyday 1 BDSP.png{{!}}90px
+| prize = {{PDollar}}7,696
+| class = Pokémon Trainer
+| name = Lucas
+| location = Sandgem Town
+| game = BDSP
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0472
+| pokemon = Gliscor
+| gender = male
+| level = 68
+| type1 = Ground
+| type2 = Flying
+| ability = Poison Heal
+| held = Toxic Orb
+| heldgame = BDSP
+| move1 = Earthquake | move1type = Ground | move1cat = Physical
+| move2 = Acrobatics | move2type = Flying | move2cat = Physical
+| move3 = Fling | move3type = Dark | move3cat = Physical
+| move4 = Roost | move4type = Flying | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0346
+| pokemon = Cradily
+| gender = male
+| level = 69
+| type1 = Rock
+| type2 = Grass
+| ability = Storm Drain
+| held = Big Root
+| heldgame = BDSP
+| move1 = Giga Drain | move1type = Grass | move1cat = Special
+| move2 = Leech Seed | move2type = Grass | move2cat = Status
+| move3 = Ingrain | move3type = Grass | move3cat = Status
+| move4 = Stockpile | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0471
+| pokemon = Glaceon
+| gender = male
+| level = 70
+| type1 = Ice
+| ability = Ice Body
+| held = Leftovers
+| heldgame = BDSP
+| move1 = Freeze-Dry | move1type = Ice | move1cat = Special
+| move2 = Blizzard | move2type = Ice | move2cat = Special
+| move3 = Hail | move3type = Ice | move3cat = Status
+| move4 = Water Pulse | move4type = Water | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0479
+| pokemon = Rotom
+| form = -Heat
+| gender = none
+| level = 69
+| type1 = Electric
+| type2 = Fire
+| ability = Levitate
+| held = Choice Specs
+| heldgame = BDSP
+| move1 = Overheat | move1type = Fire | move1cat = Special
+| move2 = Thunderbolt | move2type = Electric | move2cat = Special
+| move3 = Volt Switch | move3type = Electric | move3cat = Special
+| move4 = Hex | move4type = Ghost | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0128
+| pokemon = Tauros
+| gender = male
+| level = 70
+| type1 = Normal
+| ability = Intimidate
+| held = Life Orb
+| heldgame = BDSP
+| move1 = Hyper Beam | move1type = Normal | move1cat = Special
+| move2 = Blizzard | move2type = Ice | move2cat = Special
+| move3 = Fire Blast | move3type = Fire | move3cat = Special
+| move4 = Thunder | move4type = Electric | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0395
+| pokemon = Empoleon
+| gender = male
+| level = 74
+| type1 = Water
+| type2 = Steel
+| ability = Torrent
+| held = Choice Band
+| heldgame = BDSP
+| move1 = Aqua Jet | move1type = Water | move1cat = Physical
+| move2 = Waterfall | move2type = Water | move2cat = Physical
+| move3 = Steel Wing | move3type = Steel | move3cat = Physical
+| move4 = Earthquake | move4type = Ground | move4cat = Physical
+}}
+{{Party/end}}
+Before Version 1.1.0, Torterra had the Ability {{a|Shell Armor}} instead of Overgrow.
+{{Party
+| caption = {{PlayerChoice|0390|Chimchar}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = LucasChallenge Everyday 1 BDSP.png{{!}}90px
+| prize = {{PDollar}}7,696
+| class = Pokémon Trainer
+| name = Lucas
+| location = Sandgem Town
+| game = BDSP
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0477
+| pokemon = Dusknoir
+| gender = male
+| level = 68
+| type1 = Ghost
+| ability = Pressure
+| held = Lum Berry
+| heldgame = BDSP
+| move1 = Brick Break | move1type = Fighting | move1cat = Physical
+| move2 = Earthquake | move2type = Ground | move2cat = Physical
+| move3 = Trick Room | move3type = Psychic | move3cat = Status
+| move4 = Will-O-Wisp | move4type = Fire | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0136
+| pokemon = Flareon
+| gender = male
+| level = 69
+| type1 = Fire
+| ability = Guts
+| held = Toxic Orb
+| heldgame = BDSP
+| move1 = Flare Blitz | move1type = Fire | move1cat = Physical
+| move2 = Facade | move2type = Normal | move2cat = Physical
+| move3 = Iron Tail | move3type = Steel | move3cat = Physical
+| move4 = Will-O-Wisp | move4type = Fire | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0409
+| pokemon = Rampardos
+| gender = male
+| level = 70
+| type1 = Rock
+| ability = Mold Breaker
+| held = Focus Sash
+| heldgame = BDSP
+| move1 = Head Smash | move1type = Rock | move1cat = Physical
+| move2 = Earthquake | move2type = Ground | move2cat = Physical
+| move3 = Iron Tail | move3type = Steel | move3cat = Physical
+| move4 = Zen Headbutt | move4type = Psychic | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0479
+| pokemon = Rotom
+| form = -Wash
+| gender = none
+| level = 69
+| type1 = Electric
+| type2 = Water
+| ability = Levitate
+| held = Choice Specs
+| heldgame = BDSP
+| move1 = Hydro Pump | move1type = Water | move1cat = Special
+| move2 = Thunderbolt | move2type = Electric | move2cat = Special
+| move3 = Volt Switch | move3type = Electric | move3cat = Special
+| move4 = Hex | move4type = Ghost | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0206
+| pokemon = Dunsparce
+| gender = male
+| level = 70
+| type1 = Normal
+| ability = Serene Grace
+| held = King's Rock
+| heldgame = BDSP
+| move1 = Rock Slide | move1type = Rock | move1cat = Physical
+| move2 = Roost | move2type = Flying | move2cat = Status
+| move3 = Coil | move3type = Poison | move3cat = Status
+| move4 = Glare | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0389
+| pokemon = Torterra
+| gender = male
+| level = 74
+| type1 = Grass
+| type2 = Ground
+| ability = Overgrow
+| held = Leftovers
+| heldgame = BDSP
+| move1 = Earthquake | move1type = Ground | move1cat = Physical
+| move2 = Synthesis | move2type = Grass | move2cat = Status
+| move3 = Leech Seed | move3type = Grass | move3cat = Status
+| move4 = Curse | move4type = Ghost | move4cat = Status
+}}
+{{Party/end}}
+Before Version 1.1.0, Infernape knew {{m|Overheat}}, {{m|Stone Edge}} and {{m|Grass Knot}} instead of Earthquake, Flare Blitz and Acrobatics. It also held a [[Choice Scarf]] instead of a White Herb.
+{{Party
+| caption = {{PlayerChoice|0393|Piplup}}
+| background = {{diamond color}}
+| border = {{diamond color dark}}
+| headcolor = {{diamond color light}}
+| sprite = LucasChallenge Everyday 1 BDSP.png{{!}}90px
+| prize = {{PDollar}}7,696
+| class = Pokémon Trainer
+| name = Lucas
+| location = Sandgem Town
+| game = BDSP
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0359
+| pokemon = Absol
+| gender = male
+| level = 68
+| type1 = Dark
+| ability = Super Luck
+| held = Razor Claw
+| heldgame = BDSP
+| move1 = Megahorn | move1type = Bug | move1cat = Physical
+| move2 = Psycho Cut | move2type = Psychic | move2cat = Physical
+| move3 = Stone Edge | move3type = Rock | move3cat = Physical
+| move4 = Night Slash | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0141
+| pokemon = Kabutops
+| gender = male
+| level = 69
+| type1 = Rock
+| type2 = Water
+| ability = Weak Armor
+| held = Focus Sash
+| heldgame = BDSP
+| move1 = Rock Slide | move1type = Rock | move1cat = Physical
+| move2 = Liquidation | move2type = Water | move2cat = Physical
+| move3 = Leech Life | move3type = Bug | move3cat = Physical
+| move4 = Swords Dance | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0196
+| pokemon = Espeon
+| gender = male
+| level = 70
+| type1 = Psychic
+| ability = Magic Bounce
+| held = Life Orb
+| heldgame = BDSP
+| move1 = Psychic | move1type = Psychic | move1cat = Special
+| move2 = Psyshock | move2type = Psychic | move2cat = Special
+| move3 = Grass Knot | move3type = Grass | move3cat = Special
+| move4 = Dazzling Gleam | move4type = Fairy | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0479
+| pokemon = Rotom
+| form = -Mow
+| gender = none
+| level = 69
+| type1 = Electric
+| type2 = Grass
+| ability = Levitate
+| held = Choice Specs
+| heldgame = BDSP
+| move1 = Leaf Storm | move1type = Grass | move1cat = Special
+| move2 = Thunderbolt | move2type = Electric | move2cat = Special
+| move3 = Volt Switch | move3type = Electric | move3cat = Special
+| move4 = Hex | move4type = Ghost | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0474
+| pokemon = Porygon-Z
+| gender = none
+| level = 70
+| type1 = Normal
+| ability = Adaptability
+| held = Silk Scarf
+| heldgame = BDSP
+| move1 = Tri Attack | move1type = Normal | move1cat = Special
+| move2 = Hyper Beam | move2type = Normal | move2cat = Special
+| move3 = Thunder Wave | move3type = Electric | move3cat = Status
+| move4 = Dark Pulse | move4type = Dark | move4cat = Special
+}}
+{{Pokémon
+| gen = 8
+| ndex = 0392
+| pokemon = Infernape
+| gender = male
+| level = 74
+| type1 = Fire
+| type2 = Fighting
+| ability = Blaze
+| held = White Herb
+| heldgame = BDSP
+| move1 = Earthquake | move1type = Ground | move1cat = Physical
+| move2 = Close Combat | move2type = Fighting | move2cat = Physical
+| move3 = Flare Blitz | move3type = Fire | move3cat = Physical
+| move4 = Acrobatics | move4type = Flying | move4cat = Physical
+}}
+{{Party/end}}
+
+==In the side series games==
+===[[Pokémon Battle Revolution]]===
+Lucas may appear in DS Battle multiplayer if a Diamond, Pearl, Platinum, HeartGold, or SoulSilver cartridge containing a game where the player character is male is connected to the Wii console. He can compete in both free fights and tournaments in a Colosseum.
+
+==In the spin-off games==
+[[File:SSBU Pokemon Trainer palette Lucas.png|200px|thumb|The male Pokémon Trainer's Lucas-based alternate palette in [[Super Smash Bros. Ultimate]]]]
+===[[Super Smash Bros. Ultimate]]===
+While Lucas himself does not appear directly, a palette swap color scheme based on Lucas's design appears for the male {{OBP|Pokémon Trainer|Super Smash Bros.}}, who is an incarnation of {{ga|Red}}.
+
+===[[Pokémon GO]]===
+{{main|Style (GO)}}
+For the release of {{g|Brilliant Diamond and Shining Pearl}}, Lucas's outfit was released as free style options in [[Pokémon GO]].
+
+===[[Pokémon Masters EX]]===
+{{main|Lucas (Masters)}}
+Lucas, who is based on [[Professor Rowan]]'s [[Professor's assistant|assistant]], in his {{game|Diamond and Pearl|s}} design, forms a [[sync pair]] with {{p|Dialga}}, {{p|Flareon}}, and {{p|Torterra}} in [[Pokémon Masters EX]]. Lucas became a playable sync pair on January 13, 2022.
+
+Lucas has also made notable appearances in one of the game's main stories, the [[villain arc]]. 
+
+{{PairDex/h|Diamond}}
+{{PairDex|145|Lucas|trainerlink=Lucas (Masters)#Dialga|trainerimg=Lucas|0483|Dialga|Dragon|Fighting|Tech|exrole=Support|6|Poké Fair Sync Pair Scout}}
+{{PairDex|145|Lucas|trainerlink=Lucas (Masters)#Flareon|trainerimg=Lucas|0136|Flareon|gender=male|Fire|Rock|Tech|exrole=Support|6|Variety Sync Pair Scout}}
+{{PairDex|145|Lucas|trainerlink=Lucas (Masters)#Torterra|trainerimg=Lucas|0389|Torterra|buddy=yes|gender=male|Ground|Ice|Field|exrole=Sprint|6|Mix Sync Pair Scout}}
+|}
+
+==Gallery==
+===Artwork===
+====Standard====
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color}}; font-size:80%;"
+|-
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:100px; height:100px"| [[File:Diamond Pearl Lucas.png|x225px]]
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:100px; height:100px"| [[File:Platinum Lucas.png|x225px]]
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:100px; height:150px"| [[File:PBR Lucas.png|x225px]]
+|-
+| Artwork from<br>{{color2|000|Pokémon Diamond and Pearl Versions|Diamond and Pearl}}
+| Artwork from<br>{{color2|000|Pokémon Platinum Version|Platinum}}
+| Artwork from<br>{{color2|000|Pokémon Battle Revolution}}
+|-
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:100px; height:150px"| [[File:Brilliant Diamond Shining Pearl Lucas.png|x225px]]
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:100px; height:150px"| [[File:BDSP Lucas Platinum Style.png|x225px]]
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:100px; height:150px"| [[File:Pt Wifi Plaza.png|x225px]]
+|-
+| Official artwork from<br>{{color2|000|Pokémon Brilliant Diamond and Shining Pearl Versions|Brilliant Diamond and Shining Pearl}}
+| Official artwork of "Platinum Style" from<br>{{color2|000|Pokémon Brilliant Diamond and Shining Pearl Versions|Brilliant Diamond and Shining Pearl}}
+| {{color2|000|Wi-Fi Plaza}} artwork<br>in {{color2|000|Pokémon Platinum Version|Platinum}}
+|-
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:100px; height:150px"| [[File:Distortion World.png|x225px]]
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:100px; height:150px"| [[File:Sinnoh Battle Frontier Brain artwork.png|x225px]]
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; overflow: hidden; width:100px; height:150px"| [[File:Seabreak path.png|x225px]]
+|-
+| In the {{color2|000|Distortion World}} with {{color2|000|Cynthia}}<br>in {{color2|000|Pokémon Platinum Version|Platinum}}
+| {{color2|000|Battle Frontier (Generation IV)|Battle Frontier}} artwork<br>in {{color2|000|Pokémon Platinum Version|Platinum}}
+| Discovering {{pcolor|Shaymin|000}} with {{color2|000|Dawn (game)|Dawn}} and {{color2|000|Professor Oak}}<br>in {{color2|000|Pokémon Platinum Version|Platinum}}
+|-
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:100px; height:150px"| [[File:Sinnoh Underground.png|x225px]]
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; overflow: hidden; width:100px; height:150px"| [[File:Brilliant Diamond Shining Pearl Key Art.png|x225px]]
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; overflow: hidden; width:100px; height:150px"| [[File:Grand Underground BDSP.png|x225px]]
+|-
+| In the {{color2|000|Underground}} with {{color2|000|Dawn (game)|Dawn}}<br>in {{color2|000|Pokémon Platinum Version|Platinum}}
+| Key art from<br>{{color2|000|Pokémon Brilliant Diamond and Shining Pearl|Brilliant Diamond and Shining Pearl}}
+| {{color2|000|Grand Underground}} artwork in<br>{{color2|000|Pokémon Brilliant Diamond and Shining Pearl|Brilliant Diamond and Shining Pearl}}
+|-
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; overflow: hidden; width:100px; height:150px"| [[File:Amity Square BDSP.png|x225px]]
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; overflow: hidden; width:100px; height:150px"| [[File:Super Contest Show BDSP.png|x225px]]
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:100px; height:150px"| [[File:Tomohiro Kitakaze Brilliant Diamond and Shining Pearl Release Art.png|x225px]]
+|-
+| {{color2|000|Amity Square}} artwork<br>in {{color2|000|Pokémon Brilliant Diamond and Shining Pearl|Brilliant Diamond and Shining Pearl}}
+| {{color2|000|Super Contest Show}} artwork in<br>{{color2|000|Pokémon Brilliant Diamond and Shining Pearl|Brilliant Diamond and Shining Pearl}}
+| {{color2|000|Pokémon Brilliant Diamond and Shining Pearl|Brilliant Diamond<br>and Shining Pearl}} Release Celebration art by <br>{{color2|000|Tomohiro Kitakaze}}<ref>[https://twitter.com/kitakazeee/status/1461463277276303360 Twitter post by Tomohiro Kitakaze celebrating the release of ''Pokémon Brilliant Diamond & Shining Pearl.]</ref>
+|}
+
+====Concept art====
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color}}; font-size:80%;"
+|-
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:100px; height:100px"| [[File:Dawn and Lucas Art Concept Art DP.png|x250px]]
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:100px; height:100px"| [[File:Lucas Concept Art Platinum.png|x250px]]
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:100px; height:150px"| [[File:Concept Art Lucas Pikachu Hoodie Style BDSP.jpg|x225px]]
+|-
+| Concept art with {{color2|000|Dawn (game)|Dawn}} from {{color2|000|Pokémon Diamond and Pearl Versions|Diamond and Pearl}}
+| Concept art from {{color2|000|Pokémon Platinum Version|Platinum}}
+| Concept art of Lucas' {{color2|000|Style (Brilliant Diamond and Shining Pearl)|Pikachu Hoodie Style}} from<br>{{color2|000|Pokémon Brilliant Diamond and Shining Pearl|Brilliant Diamond and Shining Pearl}}
+|-
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; overflow: hidden; width:100px; height:150px"| [[File:Concept Art Lucas Platinum Style BDSP.jpg|x225px]]
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; overflow: hidden; width:100px; height:150px"| [[File:Concept Art Lucas Contest Style BDSP.jpg|x225px]]
+| style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; overflow: hidden; width:100px; height:150px"| [[File:Concept Art Lucas Cycling Style BDSP.jpg|x225px]]
+|-
+| Concept art of Lucas's {{color2|000|Style (Brilliant Diamond and Shining Pearl)|Platinum Style}} from<br>{{color2|000|Pokémon Brilliant Diamond and Shining Pearl|Brilliant Diamond and Shining Pearl}}
+| Concept art of Lucas's {{color2|000|Style (Brilliant Diamond and Shining Pearl)|Contest Style}} from<br>{{color2|000|Pokémon Brilliant Diamond and Shining Pearl|Brilliant Diamond and Shining Pearl}}
+| Concept art of Lucas's {{color2|000|Bicycle|Cycling Style}} from<br>{{color2|000|Pokémon Brilliant Diamond and Shining Pearl|Brilliant Diamond and Shining Pearl}}
+|}
+
+====Merchandise====
+{| style="margin:auto; text-align:center; {{roundy|10px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color}}; font-size:80%;"
+|-
+| style="{{roundy|10px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; overflow: hidden; width:100px; height:150px"| [[File:BDSP Artbook Cover Diamond.png|x225px]]
+| style="{{roundy|10px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; overflow: hidden; width:100px; height:150px"| [[File:BDSP Artbook Cover Pearl.png|x225px]]
+| style="{{roundy|10px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; overflow: hidden; width:100px; height:150px"| [[File:Kotobukiya ArtFX J Figure Lucas Chimchar.png|x225px]]
+|-
+| Artwork from the {{color2|000|Pokémon Brilliant Diamond and Shining Pearl|Brilliant Diamond}} art book
+| Artwork from the {{color2|000|Pokémon Brilliant Diamond and Shining Pearl|Shining Pearl}} art book
+| Artwork by {{color2|000|Hitoshi Ariga}} for the<br>Lucas & Chimchar Kotobukiya ArtFX J Figure
+|}
+
+====Raw TCG artwork====
+For all images and products relating to this character in the TCG, see their ''[[#In the TCG|In the TCG]]'' section
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color}}; font-size:80%;"
+|-
+| style="{{roundy|20px}} border: 2px solid #{{pearl color dark}}; background:#{{pearl color light}}; overflow: hidden; width:200px"| [[File:Art Life 20230928 Friends in Sinnoh.jpg|200px]]
+|-
+| Full Artwork print  of {{color2|000|Friends in Sinnoh (Crown Zenith 131)|Friends in Sinnoh}} from {{color2|000|Crown Zenith (TCG)|Crown Zenith}}, illustrated by {{color2|000|Hideki Ishikawa}}
+|}
+
+===Sprites and models===
+{{missing image|section|Riding Bicycle (DP/Pt overworld sprites), also the larger sprites where the player is riding the Bicycle in the credits (DP/Pt versions)}}
+
+{| style="font-size:80%; margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color}}"
+| colspan="5" style="{{roundy|20px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color dark}}; font-size:125%; color:white;" |'''{{color2|fff|Generation IV}}'''
+|-
+|style="{{roundy|80px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:80px"| [[File:Spr DP Lucas.png]]
+|style="{{roundy|80px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:80px"| [[File:Lucaswalkdown.png]]
+|style="{{roundy|80px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:80px"| [[File:LucasContestwalkdown.png]]
+|style="{{roundy|80px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:80px"| [[File:DP Lucas Back.png]]
+|style="{{roundy|80px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:80px"| [[File:DP Lucas Intro.png]]
+|-
+| '''{{GameIcon|D}}{{GameIcon|P}}'''<br>Sprite
+| '''{{GameIcon|D}}{{GameIcon|P}}'''<br>Walking
+| '''{{GameIcon|D}}{{GameIcon|P}}{{GameIcon|Pt}}'''<br>Walking<br>(Contest)
+| '''{{GameIcon|D}}{{GameIcon|P}}'''<br>Back sprite
+| '''{{GameIcon|D}}{{GameIcon|P}}'''<br>Intro sprite
+|-
+| style="{{roundy|80px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:80px"| [[File:Spr Pt Lucas.png]]
+|style="{{roundy|80px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:80px"| [[File:LucasPtwalkdown.png]]
+|style="{{roundy|20px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:80px"| [[File:LucasChallenge.png]]
+|style="{{roundy|80px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:80px"| [[File:Pt Lucas Back.png]]
+|style="{{roundy|80px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:80px"| [[File:Pt Lucas Intro.png]]
+|-
+| '''{{GameIcon|Pt}}'''<br>Sprite
+| '''{{GameIcon|Pt}}'''<br>Walking
+| '''{{GameIcon|Pt}}'''<br>VS
+| '''{{GameIcon|Pt}}'''<br>Back sprite
+| '''{{GameIcon|Pt}}'''<br>Intro sprite
+|}
+
+{| style="font-size:80%; margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color}}"
+| colspan="6" style="{{roundy|20px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color dark}}; font-size:125%; color:white;" |'''{{color2|fff|Generation VIII}}'''
+|-
+|
+| style="{{roundy|15px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color light}}" | [[File:Lucas Select 1.png|100x100px]]
+| style="{{roundy|15px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color light}}" | [[File:Lucas Select 2.png|100x100px]]
+| style="{{roundy|15px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color light}}" | [[File:Lucas Select 3.png|100x100px]]
+| style="{{roundy|15px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color light}}" | [[File:Lucas Select 4.png|100x100px]]
+|-
+|
+| colspan=4 | '''{{GameIcon|BD}}{{GameIcon|SP}}'''<br>Character Selection
+|-
+| style="{{roundy|20px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color light}}" | [[File:LucasChallenge Everyday 1 BDSP.png|100px]]
+| style="{{roundy|20px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color light}}" | [[File:LucasChallenge Platinum 1 BDSP.png|100px]]
+| style="{{roundy|20px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color light}}" | [[File:LucasChallenge Pikachu Hoodie 1 BDSP.png|100px]]
+| style="{{roundy|20px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color light}}" | [[File:LucasChallenge Overalls 1 BDSP.png|100px]]
+| style="{{roundy|20px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color light}}" | [[File:LucasChallenge Eevee Jacket 1 BDSP.png|100px]]
+| style="{{roundy|20px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color light}}" | [[File:LucasChallenge Gengar Jacket 1 BDSP.png|100px]]
+|-
+| '''{{GameIcon|BD}}{{GameIcon|SP}}'''<br>VS<br>(Everyday Style)
+| '''{{GameIcon|BD}}{{GameIcon|SP}}'''<br>VS<br>(Platinum Style)
+| '''{{GameIcon|BD}}{{GameIcon|SP}}'''<br>VS<br>(Pikachu Hoodie Style)
+| '''{{GameIcon|BD}}{{GameIcon|SP}}'''<br>VS<br>(Overalls Style)
+| '''{{GameIcon|BD}}{{GameIcon|SP}}'''<br>VS<br>(Eevee Jacket Style)
+| '''{{GameIcon|BD}}{{GameIcon|SP}}'''<br>VS<br>(Gengar Jacket Style)
+|-
+| style="{{roundy|20px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color light}}" | [[File:LucasChallenge Cyber 1 BDSP.png|100px]]
+| style="{{roundy|20px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color light}}" | [[File:LucasChallenge Summer 1 BDSP.png|100px]]
+| style="{{roundy|20px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color light}}" | [[File:LucasChallenge Spring 1 BDSP.png|100px]]
+| style="{{roundy|20px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color light}}" | [[File:LucasChallenge Winter 1 BDSP.png|100px]]
+| style="{{roundy|20px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color light}}" | [[File:LucasChallenge Casual 1 BDSP.png|100px]]
+| style="{{roundy|20px}} border:2px solid #{{diamond color dark}}; background:#{{diamond color light}}" | [[File:LucasChallenge Leather Jacket 1 BDSP.png|100px]]
+|-
+| '''{{GameIcon|BD}}{{GameIcon|SP}}'''<br>VS<br>(Cyber Style)
+| '''{{GameIcon|BD}}{{GameIcon|SP}}'''<br>VS<br>(Summer Style)
+| '''{{GameIcon|BD}}{{GameIcon|SP}}'''<br>VS<br>(Spring Style)
+| '''{{GameIcon|BD}}{{GameIcon|SP}}'''<br>VS<br>(Winter Style)
+| '''{{GameIcon|BD}}{{GameIcon|SP}}'''<br>VS<br>(Casual Style)
+| '''{{GameIcon|BD}}{{GameIcon|SP}}'''<br>VS<br>(Leather Jacket Style)
+|-
+|
+|style="{{roundy|80px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:80px"| [[File:Lucas BDSP OD.png|100px]]
+|style="{{roundy|80px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:80px"| [[File:Lucas Platinum BDSP OD.png|100px]]
+|style="{{roundy|80px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:80px"| [[File:Lucas Contest BDSP OD.png|100px]]
+|style="{{roundy|80px}} border: 2px solid #{{diamond color dark}}; background: #{{diamond color light}}; width:80px"| [[File:Lucas Bike BDSP OD.png|100px]]
+|-
+|
+| '''{{GameIcon|BD}}{{GameIcon|SP}}'''<br>Overworld<br>(Everyday Style)
+| '''{{GameIcon|BD}}{{GameIcon|SP}}'''<br>Overworld<br>(Platinum Style)
+| '''{{GameIcon|BD}}{{GameIcon|SP}}'''<br>Overworld<br>(Contest Style)
+| '''{{GameIcon|BD}}{{GameIcon|SP}}'''<br>Overworld<br>(Cycling Style)
+|}
+
+==Quotes==
+{{main|Lucas (game)/Quotes}}
+
+==Counterparts==
+===In animation===
+====''Pokémon the Series''====
+[[File:Lucas anime.png|250px|thumb|Lucas in the ''[[M11|Giratina and the Sky Warrior]]'']]
+Lucas made a cameo appearance at the beginning of ''[[M11|Giratina and the Sky Warrior]]'', where he participated in a battle against {{ga|Brendan}}.
+
+=====Pokémon=====
+This listing is of Lucas's known {{OBP|Pokémon|species}} in {{aniseries|PTS}}:
+
+{{TrainerPoké
+|main=no
+|trainer=Lucas
+|width=68
+|pkmn=Magmortar
+|type1=Fire
+|img=Lucas Magmortar.png
+|epnum=M11
+|epname=Giratina and the Sky Warrior
+|vajp=Yūji Ueda
+|vaen=Bill Rogers
+|desc=Not much is known about Lucas's {{p|Magmortar}}, as it has only been seen briefly at the beginning of [[M11|the eleventh movie]], battling against {{ga|Brendan}}'s {{p|Rhyperior}}.
+
+Magmortar's known moves are {{m|Fire Blast}} and {{m|Fire Punch}}.}}
+
+====GOTCHA!====
+Lucas briefly appeared in [[GOTCHA!]].
+
+====Pokémon Evolutions====
+[[File:Lucas Evolutions.png|thumb||250px|Lucas in [[Pokémon Evolutions]]]]
+Lucas appeared in ''[[PE05|The Rival]]''. In flashbacks, he was shown choosing {{p|Chimchar}} as his [[first partner Pokémon]] at [[Lake Verity]] and using it to defeat a wild {{p|Starly}} alongside {{ga|Barry}}, before later helping Barry battle [[Team Galactic]] at the [[Spear Pillar]].
+
+=====Pokémon=====
+{{TrainerPoké
+|main=no
+|trainer=Lucas
+|width=68
+|pkmn=Infernape
+|stage1=Chimchar
+|stage2=Monferno
+|type1=Fire
+|type2=Fighting
+|img=Lucas Chimchar Evolutions.png
+|cap=Lucas's Chimchar
+|img2=Lucas Infernape Evolutions.png
+|cap2=Lucas's Infernape
+|epnum=PE05
+|epname=The Rival
+|desc={{p|Infernape}} is Lucas's [[first partner Pokémon]], evolved from the {{p|Chimchar}} that he found from a briefcase at [[Lake Verity]] and used to fend off a pair of wild {{p|Starly}}. At the [[Spear Pillar]], it battled against and defeated [[Mars's Purugly]].
+
+Infernape's only known move is {{m|Close Combat}}.}}
+
+===In the manga===
+====Pokémon Adventures====
+[[File:Diamond Adventures.png|thumb|100px|Lucas's Pokémon Adventures counterpart, Diamond]]
+{{main|Diamond (Adventures)}}
+Diamond from [[Pokémon Adventures]] is modeled after Lucas. Together with his friend {{adv|Pearl}}, they form an aspiring {{wp|manzai}} comedy duo. He is a big glutton with a love for the [[Proteam Omega]] TV show. 
+
+====Pokémon Diamond and Pearl Adventure!====
+{{main|Hareta}}
+Hareta from [[Pokémon Diamond and Pearl Adventure!]] is based on Lucas. He's a dimwitted, headstrong boy who was partially raised in the wild after [[Kaisei|his father]] left him in [[Professor Rowan]]'s care as a small child, causing him to constantly misunderstand how some everyday things, like [[Poké Ball]]s or [[Bicycle|bikes]], are supposed to be used.
+
+====Pocket Monsters DP====
+{{main|Dia (Pocket Monsters DP)}}
+Dia from {{OBP|Pocket Monsters DP|Kosaku Anakubo}} is based on Lucas's design.
+	
+====Pokémon Diamond and Pearl====
+{{main|Kenta (PDPV)}}
+Kenta from {{ma|Pokémon Diamond and Pearl}} is based on Lucas.
+
+====Pocket Monsters Diamond and Pearl: Regigigas Major Capture Operation!!====
+{{main|Kaito (RMCO)}}
+Kaito from [[Pocket Monsters Diamond and Pearl: Regigigas Major Capture Operation!!]] is based on Lucas.
+
+==In the TCG==
+This listing is of cards mentioning or featuring Lucas or his Pokémon in the [[Pokémon Trading Card Game]].
+
+{{cardlist/header|Other related cards|Supporter|char=yes}}
+{{cardlist/entry|cardname={{TCG ID|Crown Zenith|Friends in Sinnoh|131}}|type=Supporter|standard=yes|enset=Crown Zenith|enrarity=Uncommon|ennum=131/159|jpset=VSTAR Universe|jpnum=154/172|enset2=Crown Zenith|enrarity2=Rare Ultra|ennum2=149/159|jpset2=VSTAR Universe|jprarity2=SR|jpnum2=247/172}}
+{{cardlist/footer|Supporter}}
+
+==Trivia==
+[[File:Lucas anime artwork.png|thumb|220px|Animation concept art]]
+* In the early development of {{game|Diamond and Pearl|s}}, Lucas was originally going to have a father, which is further evidenced by script files leftover in their remakes, [[Pokémon Brilliant Diamond and Shining Pearl]].<ref>https://web.archive.org/web/20231001124935/https://twitter.com/Lewchube/status/1708462187696595066</ref>
+* The majority of his Japanese default names are shared with {{ga|Red}} from {{game|FireRed and LeafGreen|s}} and {{ga|Ethan}} from {{game|HeartGold and SoulSilver|s}}.
+* Lucas is 4'8" (142&nbsp;cm) tall and weighs 83.8&nbsp;lbs (38&nbsp;kg). This was confirmed by checking the heights and weights of certain Pokémon in the [[Pokédex]]. As such, {{p|Fearow}}, {{p|Sudowoodo}}, {{p|Yanma}}, {{p|Skuntank}}, and {{p|Togekiss}} are all the same weight as Lucas.
+* One of {{SSB|Pokémon Trainer}}'s palette swaps in [[Super Smash Bros. Ultimate]] has a color scheme based on Lucas's design in Diamond and Pearl.
+
+==Names==
+'''Lucas''' (Japanese: '''コウキ''' ''Kouki'') is his name when he appears as a [[non-player character]] in the [[core series]] games, and is also the name used for {{mas|Lucas|his appearance}} in [[Pokémon Masters EX]]. His Japanese name was spelled as '''Kouki''' on the packaging of [[Kotobukiya figurines|Kotobukiya ArtFX J Figure]].
+
+Some screenshots of {{game|Platinum}} on the Japanese Nintendo website refer to Lucas as '''プラット''' (''Plat'').<ref>[https://www.nintendo.co.jp/ds/cpuj/wi-fi/index.html Pokémon Platinum on Nintendo] (Japanese)</ref> [https://youtu.be/gU648Rj3wb8 A trailer] for {{g|Brilliant Diamond and Shining Pearl}} refers to Lucas in English as "'''Koki'''", an alternate romanization of his Japanese name
+
+{| class="roundtable" style="background:#{{diamond color}}; border:3px solid #{{diamond color dark}}"
+|-
+! style="background:#{{diamond color light}}" | Language
+! style="background:#{{diamond color light}}" | Name
+! style="background:#{{diamond color light}}" | Origin
+|-
+| Japanese
+| コウキ ''Kouki''
+| From 光輝 ''kōki'' (radiance)
+|-
+| English, Italian,<br>Brazilian Portuguese
+| Lucas
+| From ''lux'' (Latin for "light") or λευκός ''leukós'' (Ancient Greek for "bright")
+|-
+| German
+| Lucius
+| From ''lux'' (Latin for "light")
+|-
+| European Spanish,<br>Latin American Spanish
+| León
+| Similar to his English name. Literally means "lion" in Spanish.
+|-
+| French
+| Louka
+| From λευκός ''leukós'' (Ancient Greek for "bright")
+|-
+| Korean
+| 광휘 ''Gwanghwi''
+| From 광휘 (光輝) ''gwanghwi'' (radiance)
+|-
+| Chinese (Traditional)
+| 明輝 ''Mínghuī'' / ''Mìhngfāi''
+| rowspan="2" | From 明 ''míng / mìhng'' (bright) and 光輝 / 光辉 ''guānghuī / gwōngfāi'' (radiance)
+|-
+| Chinese (Simplified)
+| 明辉 ''Mínghuī''
+|}
+{{-}}
+
+===Optional names===
+{| style="background: #{{diamond color}}; {{roundy|10px}}; border: 3px solid #{{diamond color dark}}"
+|- style="text-align:center"
+! style="background:#{{diamond color light}}" | Japanese
+! style="background:#{{diamond color light}}" | English
+! style="background:#{{diamond color light}}" | German
+! style="background:#{{diamond color light}}" | European Spanish
+! style="background:#{{diamond color light}}" | French
+! style="background:#{{diamond color light}}" | Italian
+! style="background:#{{diamond color light}}" | Korean
+|- style="background: #FFF"
+|<ab>ダイヤ ''Dia''{{sup/4|D}}
+パール ''Pearl''{{sup/4|P}}
+プラチナ ''Platinum''{{sup/4|Pt}}
+サトシ ''Satoshi''
+ケン ''Ken''
+シゲキ ''Shigeki''
+ジャック ''Jack''
+ジャン ''Jean''
+ジョン ''John''
+カモン ''Kamon''
+タカシ ''Takashi''
+テツオ ''Tetsuo''
+トオル ''Tōru''
+ヒロキ ''Hiroki''
+マサオ ''Masao''
+タカオ ''Takao''
+タケヒロ ''Takehiro''
+ケイ ''Kay''
+ヒトシ ''Hitoshi''
+ヒロアキ ''Hiroaki''</ab>
+|<ab>Diamond{{sup/4|D}}
+Pearl{{sup/4|P}}
+Plato{{sup/4|Pt}}
+{{Ash}}
+Nic
+Jimmy
+Duncan
+Todd
+Ross
+Steven
+Darrell
+Reed
+Chris
+Brad
+Dwight
+Randy
+Andy
+Joey
+Eric
+Mark</ab>
+|<ab>Diamant{{sup/4|D}}
+Perl{{sup/4|P}}
+Plati{{sup/4|Pt}}
+Karsten
+Gerd
+Hans
+Jack
+Jan
+John
+Daniel
+Helge
+Uli
+Tobi
+Udo
+Bert
+Jon
+Ralf
+Boris
+Thomas
+Silvio</ab>
+|<ab>Diamant{{sup/4|D}}
+Perla{{sup/4|P}}
+Platino{{sup/4|Pt}}
+Ash
+Llamin
+Candel
+Juno
+Sergi
+Juanma
+Javi
+Ral
+Marino
+Toilo
+Ner
+Max
+Morel
+Rafa
+Rudy{{sup/4|D}}{{sup/4|Pt}} / Rosendo{{sup/4|P}}
+Eric
+Quimi</ab>
+|<ab>Diamant{{sup/4|D}}
+Perlo{{sup/4|P}}
+Platine{{sup/4|Pt}}
+Dilan
+Gurvan
+Gabriel
+Polo{{sup/4|DP}} / Allane{{sup/4|Pt}}
+Zack
+Marc
+Loris
+Max
+Damien
+Tom
+Greg
+Kamel
+Franck
+Ralph
+Seb
+Daniel
+Thomas</ab>
+|<ab>Diaman{{sup/4|D}}
+Perl{{sup/4|P}}
+Platin{{sup/4|Pt}}
+Ash
+Dimitri
+Attilio
+Mattia
+Silvano
+Rossano
+Kamon
+Karl
+Gabry
+Oscar
+Dino
+Daniel
+Manuele
+Ralph
+Lucio
+Paolo
+Marco</ab>
+|<ab>다이아몬드 ''Diamond''{{sup/4|D}}
+펄 ''Pearl''{{sup/4|P}}
+플래티넘 ''Platinum''{{sup/4|Pt}}
+지우 ''Jiwoo''
+캔 ''Ken''
+호진 ''Ho'jin''
+상우 ''Sang'u''
+쟝 ''Jyang''
+재범 ''Jaebeom''
+청운 ''Cheong'un''
+강산 ''Gangsan''
+인철 ''Incheol''
+지겸 ''Ji'gyeom''
+수호 ''Suho''
+찬호 ''Chanho''
+지훈 ''Jihun''
+윤호 ''Yunho''
+케이 ''Kay''
+다인 ''Da'in''
+상현 ''Sanghyeon''</ab>
+|}
+
+==References==
+<references/>
+
+==Related articles==
+{{Capture tutor}}
+{{Player characters|diamond}}
+{{Rival characters|diamond}}
+{{NPC|diamond|sinnoh=yes}}
+{{Project CharacterDex notice}}
+
+[[Category:Diamond and Pearl characters]]
+[[Category:Platinum characters]]
+[[Category:Brilliant Diamond and Shining Pearl characters]]
+[[Category:Champions]]
+[[Category:Friend characters]]
+[[Category:Laboratory assistants]]
+[[Category:Multi Battle partners]]
+[[Category:Pokémon Evolutions characters]]
+
+[[de:Lucius]]
+[[es:León]]
+[[fr:Louka]]
+[[it:Lucas (gioco)]]
+[[ja:コウキ]]
+[[zh:明輝]]

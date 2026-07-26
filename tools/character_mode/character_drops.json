@@ -1,0 +1,22 @@
+{
+ "_comment": "Characters that stay in the table (saves store the INDEX) but are not offered in this game: fewer than six fully-evolved members of their roster exist in its dex, and no legendary exempts them.",
+ "unselectable": [
+  "Burnet",
+  "Drasna",
+  "Drew",
+  "Gordie",
+  "Grant",
+  "Kabu",
+  "Kofu",
+  "Laventon",
+  "Magnolia",
+  "Olympia",
+  "Opal",
+  "Poppy",
+  "Sonia",
+  "Sophocles",
+  "Tracey",
+  "Viola",
+  "Wulfric"
+ ]
+}

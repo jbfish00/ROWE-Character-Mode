@@ -1,0 +1,358 @@
+{{Character Infobox
+|color={{frontier color}}
+|bordercolor={{frontier color dark}}
+|corecolor={{frontier color light}}
+|name=Greta
+|jname=コゴミ
+|tmname=Kogomi
+|image=Emerald Greta.png
+|size=360px
+|caption=Artwork from {{game|Emerald}}
+|age=Unconfirmed{{#tag:ref|In the [[story event]] [[Isle Disciples, Arena Tycoon]], {{mas|Klara}} and {{mas|Avery}} imply Greta is a kid<ref>'''{{mas|Klara}}''': ''"What's going on...? Are we being mocked? By a kid?!" [...]'' <br>'''{{mas|Avery}}''': ''"Why yes—we're the adults in the room, after all..."'' ({{g|Masters EX}})</ref>. Her exact age is unknown.|group="lower-alpha"}}
+|gender=Female
+|eyes=Blue
+|hair=Blonde
+|region=[[Hoenn]] <small>(games)</small><br>[[Kanto]] <small>(''[[S09|Pokémon the Series]]'')</small>
+}}
+{{Character Infobox/Game
+|color={{frontier color light}}
+|gen={{gen|III}}, {{gen|IX}}
+|counterpart=[[Greta (Masters)]]
+|games={{v2|Emerald}}<br>{{pkmn|Masters EX}}
+|trainer=[[Frontier Brain|Arena Tycoon<br><small>(Frontier Brain)</small>]]
+|enva=Anairis Quiñones<ref>https://x.com/anairis_q/status/1813452537791697323</ref> <small>({{pkmn|Masters EX}})</small>
+|jpva=[[Mariya Ise]] <small>({{pkmn|Masters EX}})</small>
+}}
+{{Character Infobox/Team
+|color={{frontier color light}}
+|member={{Gdis|Battle Frontier|III}}
+|rank=[[Frontier Brain]]
+|domain=[[Battle Arena]]
+|title=Brain
+|rewardtype=Symbol
+|reward=Guts Symbol
+|specialty={{t|Fighting}} types <small>({{pkmn|animated series}} only)</small>
+}}
+{{Character Infobox/Anime
+|color={{frontier color light}}
+|series=''[[Pokémon the Series]]''
+|debut=''[[AG149|Wheel of Frontier!]]''
+|enva=[[Sonny Dey]]
+|jpva=[[Sanae Kobayashi]]
+}}
+{{Character Infobox/Manga
+|color={{frontier color light}}
+|series=''[[Pokémon Adventures]]''<br>''[[Ash & Pikachu]]''
+|debut=''[[PS304|Swanky Showdown with Swalot]]'' <small>(''Pokémon Adventures'')</small><br>''[[SP34|An Awesome Showdown!!]]'' <small>(''Ash & Pikachu'')</small>
+}}
+|}
+'''Greta''' (Japanese: '''コゴミ''' ''Kogomi'') is the [[Frontier Brain]] and leader of the {{Gdis|Battle Frontier|III}}'s [[Battle Arena]]. She is the only character in the games to have the {{DL|Pokémon Trainer|Trainer class}} '''Arena Tycoon''' (Japanese: '''アリーナキャプテン''' ''Arena Captain'').
+
+==In the core series games==
+Greta can be blunt, and if an opponent looks weak, she will let them know. She likes tough Trainers and will gladly hand over the Guts Symbol if defeated.
+
+===Pokémon===
+====Silver Symbol challenge====
+{{Party
+| background = {{frontier color}}
+| border = {{frontier color dark}}
+| headcolor = {{frontier color light}}
+| sprite = Spr E Greta.png
+| prize = 12{{color2|000|Battle Point|BP}}
+| class = Arena Tycoon
+| classlink = Greta
+| name = Greta
+| location = Battle Arena
+| game = E
+| pokemon = 3
+| table = yes
+}}
+{{lop/facility/head|{{frontier color light}}|{{frontier color}}|{{frontier color}}|sortable=no}}
+{{lop/facility|game=3|214|Heracross|Salac Berry|Megahorn|Bug|Rock Tomb|Rock|Endure|Normal|Reversal|Fighting|Jolly|106|152||||100|1152}}
+{{lop/facility|game=3|197|Umbreon|Leftovers|Body Slam|Normal|Confuse Ray|Ghost|Psychic|Psychic|Faint Attack|Dark|Calm|152||100|152|106}}
+{{lop/facility|game=3|292|Shedinja|BrightPowder|Shadow Ball|Ghost|Return|Normal|Confuse Ray|Ghost|Aerial Ace|Flying|Adamant||252|6|||252}}
+{{lop/facility/foot|{{frontier color light}}}}
+{{Party/end}}
+====Gold Symbol challenge====
+{{Party
+| background = {{frontier color}}
+| border = {{frontier color dark}}
+| headcolor = {{frontier color light}}
+| sprite = Spr E Greta.png
+| prize = 13{{color2|000|Battle Point|BP}}
+| class = Arena Tycoon
+| classlink = Greta
+| name = Greta
+| location = Battle Arena
+| game = E
+| pokemon = 3
+| table = yes
+}}
+{{lop/facility/head|{{frontier color light}}|{{frontier color}}|{{frontier color}}|sortable=no}}
+{{lop/facility|game=3|197|Umbreon|Chesto Berry|Double-Edge|Normal|Confuse Ray|Ghost|Rest|Psychic|Psychic|Psychic|Calm|252|||252|6}}
+{{lop/facility|game=3|094|Gengar|Leftovers|Psychic|Psychic|Hypnosis|Psychic|Dream Eater|Psychic|Destiny Bond|Ghost|Modest|252||252|6}}
+{{lop/facility|game=3|286|Breloom|Lum Berry|Spore|Grass|Focus Punch|Fighting|Giga Drain|Grass|Headbutt|Normal|Jolly|6|252||||252}}
+{{lop/facility/foot|{{frontier color light}}}}
+{{Party/end}}
+
+==In the spin-off games==
+===[[Pokémon Masters EX]]===
+{{main|Greta (Masters)}}
+Greta forms a [[sync pair]] with {{p|Breloom}} in [[Pokémon Masters EX]]. Her Breloom is capable of [[Dynamax]]ing. Greta became a playable sync pair on July 16, 2024.
+
+{{PairDex/h|Frontier}}
+{{PairDex|209|Greta|trainerlink=Greta (Masters)#Breloom|trainerimg=Greta|0286|Breloom|gender=female|dynamax=yes|buddy=yes|Grass|Flying|Sprint|exrole=Field|6|Poké Fair Sync Pair Scout}}
+|}
+
+==Gallery==
+:''For images of Greta in [[Pokémon Masters EX]], see: [[Greta (Masters)#Gallery|Greta (Masters)]]''
+===Game assets===
+{| style="font-size:80%; margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{factory color dark}}; background:#{{factory color}}; color:#000"
+| colspan="3" style="{{roundy|20px}} border:2px solid #{{factory color dark}}; background:#{{factory color dark}}; font-size:125%; color:white" |'''{{color2|fff|Generation III}}
+|-
+| style="{{roundy|20px}} border:2px solid #{{factory color dark}}; background:#{{factory color light}}; width:80px; overflow:hidden" |[[File:Spr E Greta.png]]
+| style="{{roundy|20px}} border:2px solid #{{factory color dark}}; background:#{{factory color light}}; width:80px; overflow:hidden" |[[File:Greta OD.png]]
+|-
+|'''{{GameIcon|E}}''' <br> Sprite
+|'''{{GameIcon|E}}''' <br> Sprite <br> (Overworld)
+|-
+|}
+
+==Quotes==
+{{main|Greta/Quotes}}
+
+==In animation==
+===''Pokémon the Series''===
+[[File:Greta anime.png|thumb|250px|Greta in {{aniseries|AG}}]]
+====History====
+====={{aniseries|AG}}=====
+Greta appeared in ''[[AG149|Wheel of Frontier]]''. As in {{game|Emerald}}, she is the [[Frontier Brain]] of the [[Battle Arena]], and runs a karate dojo where she trains alongside her dozens of apprentices. Unlike the {{pkmn|games}}, however, in {{aniseries|PTS}}, she is a {{type|Fighting}} [[Type expert|expert]]. Before a {{pkmn|battle}}, a wheel is spun to decide how many Pokémon will be used in the match. While the matches are Single Battles, the other Pokémon that are intended to be used remain outside of their [[Poké Ball]]s until they faint.
+
+{{Ash}} spun a two-on-two match. His {{AP|Grovyle}} was defeated by Greta's {{p|Hariyama}} in the first round. [[Ash's Snorlax]], using its impressive endurance and equally powerful attacks, went on to defeat both of Greta's Pokémon despite the type disadvantage and earn Ash the [[Symbol|Guts Symbol]].
+
+====={{aniseries|DP}}=====
+She reappeared in a flashback in ''[[DP128|A Pyramiding Rage!]]''.
+
+====Character====
+Greta, like {{Ash}}, is a high-spirited individual and very passionate about [[Pokémon battle]]s. Unlike her game counterpart, who has no specific [[type]] that she [[Type expert|specializes]] in, she is an expert in {{t|Fighting}} Pokémon, like her role models [[Chuck]] and [[Brawly]], and continues to train her focus in order to improve her strength. 
+
+Speed-based strategies work poorly against Greta's team, and they actually help magnify her Pokémon's attacks. Her Pokémon's own speed and relentless [[physical move]]s make Greta a tough opponent. However, her Pokémon are weak to attacks from above or behind and can get hurt if their own attacks miss.
+
+====Pokémon====
+This listing is of Greta's known {{OBP|Pokémon|species}} in {{aniseries|PTS}}:
+{{TrainerPoké
+|trainer=Greta
+|pkmn=Hariyama
+|type1=Fighting
+|epnum=AG149
+|epname=Wheel of Frontier
+|vajp=Unshō Ishizuka
+|vaen=Bill Rogers
+|img=Greta Hariyama.png
+|desc={{p|Hariyama}} was the first Pokémon used by Greta in her {{pkmn|battle}} with {{Ash}}, where it first battled with {{AP|Grovyle}}. Despite Grovyle managing to outmatch Hariyama in speed and dealing some damage on it, Greta was finally able to use Grovyle's momentum as her own advantage, and land a strong hit on the {{pkmn|category|Wood Gecko Pokémon}}, knocking it out.
+
+Ash next used his {{AP|Snorlax}} against the Arm Thrust Pokémon. Despite having disadvantage in [[type]], {{p|Snorlax}} was able to keep itself safe from Hariyama's attacks by using {{m|Protect}}. Eventually, one of Hariyama's Focus Punches missed its opponent and it instead punched the battlefield, leaving it with a sore hand. It was then {{status|Freeze|frozen}} solid and knocked out with an {{m|Ice Punch}}.
+
+Hariyama's known moves are {{m|Arm Thrust}} and {{m|Focus Punch}}.}}
+
+{{TrainerPoké
+|trainer=Greta
+|pkmn=Medicham
+|type1=Fighting
+|type2=Psychic
+|epnum=AG149
+|epname=Wheel of Frontier
+|vajp=Megumi Hayashibara
+|vaen=
+|img=Greta Medicham.png
+|desc={{p|Medicham}} was the second Pokémon Greta used in her battle against {{Ash}}, going up against his {{AP|Snorlax}}. With its great speed and offense, Medicham quickly overwhelmed Snorlax, even leaving it {{status|Freeze|frozen}} with Ice Punch. Although Snorlax was able to heal itself with {{m|Rest}} while frozen, it was subjected to another barrage of powerful attacks, especially when its {{m|Hyper Beam}} missing forced it to [[recharge]]. Once Snorlax had finished recharging, however, Ash had it use Hyper Beam on the ground, sending Snorlax flying and allowing it to defeat Medicham with an airborne {{m|Body Slam}}, earning Ash the [[Symbol|Guts Symbol]].
+
+It reappeared in a flashback in ''[[DP128|A Pyramiding Rage!]]''.
+
+Medicham's known moves are {{m|Focus Punch}}, {{m|Ice Punch}}, and {{m|High Jump Kick}}.}}
+
+Greta has at least one other Pokémon, as one of the options for her battle wheel was to participate in a three-on-three battle.
+
+====Voice actors====
+{{vatable|color={{frontier color}}|bordercolor={{frontier color light}}
+|ja=小林沙苗 ''[[Sanae Kobayashi]]''
+|en=[[Sonny Dey]]
+|nl=Jannemien Cnossen
+|fr_eu=Francine Laffineuse
+|hi=सबीना मलिक मौसम ''Sabina Malik Mausum'' (Marvel HQ/Hungama TV)
+|pt_br=Samira Fernandes
+|es_la=Mildred Barrera
+|es_eu=Silvia Sarmentera}}
+
+==In the manga==
+===Ash & Pikachu===
+[[File:Greta AP.png|thumb|200px|Greta in [[Ash & Pikachu]]]]
+Greta appeared in ''[[SP34|An Awesome Showdown!!]]'', where she, like in the {{pkmn|animated series}}, battled {{Ash}} at the [[Battle Arena]] and lost.
+
+====Pokémon====
+{{anchor|Medicham 2}}{{TrainerPoké
+|width=74
+|trainer=Greta
+|pkmn=Medicham
+|type1=Fighting
+|type2=Psychic
+|img=Greta Medicham AP.png
+|epnum=SP34
+|epname=An Awesome Showdown!!
+|desc={{p|Medicham}} is Greta's only known Pokémon. It was sent out to battle [[Ash's Snorlax]] and lost.
+
+Medicham's known moves are {{m|Focus Punch}}, {{m|Ice Punch}}, and {{m|High Jump Kick}}.}}
+
+===Pokémon Adventures===
+[[File:Greta Adventures.png|thumb|230px|Greta in [[Pokémon Adventures]]]]
+====History====
+====={{MangaArc|Emerald}}=====
+Greta is one of the seven {{pkmn|Trainer}}s hired by Scott to be a Frontier Brain at the {{gdis|Battle Frontier|III}}. Greta is first seen hosting the Battle Frontier's opening ceremony. The ceremony is interrupted by {{adv|Emerald}}, who announces that he wishes to conquer the Battle Frontier. The press mistakenly report the incident as allowing an ordinary Trainer to take part in the Battle Frontier before it officially opens a week later. The Frontier Brains decide to use this assumption as free publicity and allow Emerald to challenge the Battle Frontier under the condition that he completes it before it officially opens.
+
+Later, while Emerald is challenging the [[Battle Pyramid]], Noland is attacked by an unknown assailant and several rental Pokémon are stolen. After Noland is taken to a hospital, the other Frontier Brains begin to suspect Emerald as the culprit. They head to the Battle Pyramid to confront Emerald and find him after having defeated Brandon. When they ask him about what happened, Emerald reveals that he did not attack Noland and is actually after the Mythical Pokémon {{adv|Jirachi}}. The Frontier Brains find Emerald's explanation suspicious, but decide to follow him into [[Artisan Cave]], where Jirachi is currently located at. Upon arriving, everyone is attacked by a horde of wild {{p|Smeargle}} while Emerald continues inside to find Jirachi. After the Frontier Brains get past the Smeargle, they meet up with Emerald, who has managed to find Jirachi. Emerald attempts to capture Jirachi, but is attacked by [[Guile Hideout]], the actual culprit who attacked Noland.
+
+Emerald is attacked by Guile's stolen rental Pokémon, but he refuses to fight them and continues to head after Jirachi. When Greta sees this, she angrily tells Emerald that stopping Guile is more important than Jirachi and goes off to help the others. When Spenser, Lucy, Tucker, and Brandon are defeated by Guile, Greta steps in to help and defeats the rental Pokémon. Eventually, Jirachi escapes, forcing Guile to leave to continue his pursuit of it. Injured from the battle, everyone decides to return to the Battle Frontier. Upon arriving, the press demand to know where the Frontier Brain's had gone and why they were injured. Tucker lies to everyone that they were all in training and sends Greta to have her battle with Emerald.
+
+At the [[Battle Arena]], Greta is Emerald's fourth opponent, and Emerald is allowed to battle her directly. Both sides fight hard, but Emerald eventually emerges as the victor, earning himself the Guts Symbol in the process. The battle leaves Emerald so exhausted that he and his Pokémon fall asleep. Greta brings Emerald and his Pokémon to the Battle Frontier's accommodations to sleep properly. When Greta and [[Todd Snap|reporter Todd]] undress Emerald to make his sleep more comfortable, they are shocked to find that Emerald is much shorter than he initially appears. Todd kicks Greta out of the room and asks her to pretend she saw nothing.
+
+The next day, Greta assists the other Frontier Brains in ushering people to the [[Battle Dome]]. During the tournament, Guile appears and manages to capture Jirachi. Guile uses the rental Pokémon to the attack innocent bystanders and heads to the {{gdis|Battle Tower|III}} to make his wish. Once he arrives at the Battle Tower, Guile uses Jirachi to wish for a gigantic Kyogre made of seawater to flood the entire Battle Frontier. Greta and the other Frontier Brains work together to get civilians to safety and fight off Guile's rental Pokémon while Emerald and the other Pokédex holders fight Guile. Eventually Emerald and the Pokédex holders manage to defeat Guile and destroy the gigantic Kyogre monster. The day after, an injured Greta and the other Frontier Brains congratulate Emerald for the hard work he put into saving everyone.
+
+====={{MangaArc|Omega Ruby & Alpha Sapphire}}=====
+Greta and the other Hoenn Frontier Brains battle and defeat the Admins of Neo [[Team Magma]] and Neo [[Team Aqua]], who had interfered in the launch of a rocket that was made to stop the [[Grand Meteor Delta|meteoroid]] threatening to destroy the world. Greta attempts to interrogate the Admins on the location of their accomplice, [[Zinnia]], only for the Admins to deny knowing where she had gone.
+
+====Pokémon====
+{{TrainerPoké
+|trainer=Greta
+|pkmn=Umbreon
+|type1=Dark
+|img=Greta Umbreon Adventures.png
+|epnum=PS304
+|epname=Swanky Showdown with Swalot
+|desc={{p|Umbreon}} is Greta's first known Pokémon. It was first seen at the {{gdis|Battle Frontier|III}}'s opening ceremony alongside its Trainer. At Artisan Cave, it was used to battle Guile's army of stolen rental Pokémon. At the [[Battle Arena]], Greta used Umbreon as her second Pokémon. It managed to defeat [[Emerald's Dusclops]], but was defeated by his {{TP|Emerald|Sudowoodo}}.
+
+Umbreon's known moves are {{m|Quick Attack}}, {{m|Double Team}}, {{m|Feint Attack}}, and {{m|Confuse Ray}}, and its Ability is {{a|Synchronize}}.}}
+
+{{TrainerPoké
+|trainer=Greta
+|pkmn=Shedinja
+|type1=Bug
+|type2=Ghost
+|img=Greta Shedinja Adventures.png
+|epnum=PS317
+|epname=Sneaky Like Shedinja
+|desc={{p|Shedinja}} is Greta's second known Pokémon. It was first used at the [[Battle Arena]] to battle Emerald. There, it was the third Pokémon Greta used and battled Emerald's Sudowoodo. Despite its single hit point, Shedinja managed to defend against Sudowoodo's supereffective hits and fight back. Despite this, Sudowoodo survived Shedinja's attacks, allowing it to win via judgment.
+
+Shedinja's known moves are {{m|Endure}} and {{m|Solar Beam}}, and its Ability is {{a|Wonder Guard}}.}}
+
+{{TrainerPoké
+|trainer=Greta
+|pkmn=Heracross
+|type1=Bug
+|type2=Fighting
+|img=Greta Heracross Adventures.png
+|epnum=PS317
+|epname=Sneaky Like Shedinja
+|desc={{p|Heracross}} is Greta's third known Pokémon. It was first used at the [[Battle Arena]] to battle Emerald. There, it was the first Pokémon Greta used and battle [[Emerald's Sceptile]]. Although Sceptile survived Heracross's Megahorn, it was defeated via judgment afterward.
+
+Heracross's only known move is {{m|Megahorn}}.}}
+
+==Trivia==
+* Greta and [[Spenser]] are the only [[Frontier Brain]]s whose game teams do not share a known Pokémon with their {{pkmn|animated series}} counterparts.
+* Greta's {{p|Shedinja}} has 1 stat point worth of {{EV}}s in {{stat|Defense}}, despite this being useless due to Shedinja having 1 [[HP]].
+* Greta's {{p|Heracross}} appears to be the only Pokémon in the {{gdis|Battle Frontier|III}} with less than 504 EVs, with 152 EVs being unused. This is most likely an oversight.
+
+==Names==
+{| class="roundtable" style="background:#{{frontier color}}; border:3px solid #{{frontier color dark}}"
+|-
+! style="background:#{{frontier color light}}" | Language
+! style="background:#{{frontier color light}}" | Name
+! style="background:#{{frontier color light}}" | Origin
+|-
+| Japanese
+| コゴミ ''Kogomi''
+| From 屈 ''kogomi'' ({{wp|fiddlehead}} of {{wp|Matteuccia|ostrich fern}})
+|-
+| English, Latin American Spanish
+| rowspan="2" | Greta
+| From ''guts'' or ''great''
+|-
+| German
+| From ''grob'' (rough)
+|-
+| European Spanish
+| Coro
+| From ''coraje'' (courage)
+|-
+| French
+| Carole
+| From ''cran'' (guts)
+|-
+| Italian
+| Valentina
+| From ''valore'' (valor)
+|-
+| Korean
+| 나리 ''Nari''
+| From 청나래고사리 ''cheongnarae-gosari'' (ostrich fern)
+|-
+| Chinese (Traditional)
+| 黃瓜香 ''Huángguāxiāng'' / ''Wòhnggwāhēung''
+| rowspan="2" | From 黃瓜香 / 黄瓜香 ''huángguāxiāng / wòhnggwāhēung'' (ostrich fern)
+|-
+| Chinese (mainland China)
+| 黄瓜香 ''Huángguāxiāng''<ref group=n>[[Pokémon Adventures]]</ref>
+|-
+| Vietnamese
+| Kogomi
+| Transcription of her Japanese name
+|}
+{{-}}
+
+''Arena Tycoon''
+{{langtable|color={{frontier color light}}|bordercolor={{frontier color}}
+|ja=アリーナキャプテン ''{{tt|Arīna Kyaputen|Arena Captain}}''
+|zh_yue=競技場主將 ''{{tt|Gihnggeihchèuhng Jyújeung|Arena Captain}}''
+|zh_cmn=競技場主將 / 竞技场主将 ''{{tt|Jìngjìchǎng Zhǔjiàng|Arena Captain}}''
+|fi=Areenapäällikkö
+|fr=Pro du Dojo
+|de=Ringmeister
+|it=Maestra Dojo
+|ko=아레나캡틴 ''{{tt|Arena Kaeptin|Arena Captain}}''
+|pt_br=Comandante da Arena
+|es_la=Tycoon de la Arena
+|es_eu=Maestra Dojo
+|vi=Đội trưởng của Sân vận động
+}}
+{{-}}
+
+===Notes===
+{{reflist|group=n}}
+
+==Notes==
+<references group="lower-alpha"/>
+
+==References==
+<references/>
+
+==Related articles==
+* [[a:Category:Greta|Images on the Bulbagarden Archives]]
+{{-}}
+{{Hoenn Frontier Brains}}
+{{TrainerNav|Frontier|hoenn=yes}}
+{{Project CharacterDex notice}}
+
+[[Category:Frontier Brains]]
+[[Category:Animation characters]]
+[[Category:Game characters]]
+[[Category:Emerald characters]]
+[[Category:Manga characters]]
+[[Category:Pokémon Adventures characters]]
+[[Category:Fighting-type Trainers]]
+[[Category:Trainers with unique classes]]
+
+[[de:Greta]]
+[[es:Coro]]
+[[fr:Carole (Dojo de Combat)]]
+[[it:Valentina]]
+[[ja:コゴミ]]
+[[zh:黃瓜香]]

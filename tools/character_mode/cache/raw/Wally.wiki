@@ -1,0 +1,894 @@
+{{redirect|Mitsuru|the Japanese voice actor|Mitsuru Ogata}}
+----
+{{CharInfobox
+|color={{tcg grass color light}}
+|corecolor=CED8F6
+|bordercolor={{tcg grass color}}
+|name=Wally
+|jname=ミツル
+|tmname=Mitsuru
+|image=Omega Ruby Alpha Sapphire Wally.png
+|size=150px
+|caption=Art from {{pkmn|Omega Ruby and Alpha Sapphire}} by [[Megumi Mizutani]]<ref>[[a:File:WallyRoaringSkies94.jpg|Wally (Roaring Skies 94)]]</ref>
+|colors=yes
+|age=yes
+|years=10{{sup/6|ORAS}}<ref name="ORAS age"/>
+|eyes=Ice blue
+|hair=Tea green
+|gender=Male
+|hometown=[[Petalburg City]]
+|region=[[Hoenn]]
+|relatives=[[Wanda]] (cousin), unnamed aunt and uncle, unnamed mother and father
+|trainer=yes
+|trainerclass=[[Pokémon Trainer]]
+|game=yes
+|generation={{gen|III}}, {{gen|VI}}, {{gen|VII}}
+|games={{game3|Ruby and Sapphire|Ruby, Sapphire|s}}, {{v2|Emerald}}, {{pkmn|Omega Ruby and Alpha Sapphire|Omega Ruby, Alpha Sapphire}}, {{pkmn|Sun and Moon|Sun, Moon}}, {{pkmn|Ultra Sun and Ultra Moon|Ultra Sun, Ultra Moon}}<br>{{pkmn|Masters EX}}
+|gameanim=yes
+|envagame=Melissa Mabie<ref>[https://imgur.com/a/7Irusjd Email confirmation from Melissa Mabie]</ref> <small>({{pkmn|Masters EX}})</small>
+|javagame=Ayumu Murase<ref>Nintendo DREAM (vol. 329)</ref> <small>({{pkmn|Masters EX}})</small>
+|pv=yes
+|pvnum=Pokémon Masters Animated Trailer
+|pvname=Pokémon Masters Animated Trailer
+|manga=counterpart
+|mangacounterpart={{adv|Wally}}
+}}
+'''Wally''' (Japanese: '''ミツル''' ''Mitsuru'') is one of the two [[rival]] characters in {{game|Ruby and Sapphire|s}}, {{v2|Emerald}}, [[Pokémon Omega Ruby and Alpha Sapphire|Omega Ruby, and Alpha Sapphire]], the other being {{ga|Brendan}}/{{ga|May}}. In Pokémon Omega Ruby and Alpha Sapphire, Wally in his later battles possesses a {{p|Gallade}} that can [[Mega Evolution|Mega Evolve]] with his handmade wooden Mega Pendant, which holds his [[Key Stone]]. The Mega Pendant is shaped like a Gallade's head.
+
+Wally is a young, sickly boy who lives in [[Petalburg City]]. Despite his illness, his dream is to train {{OBP|Pokémon|species}}. In his room, in Petalburg City, there are a lot of books about how to raise and battle with Pokémon covered in sticky notes, a notebook which has been written and erased again and again and a terrestrial globe with pins in places in the [[Kalos]] and [[Unova]] regions, suggesting that he has been wanting to go outside and catch Pokémon for a long time.
+
+==In the core series games==
+[[File:Wally ORAS.png|thumb|200px|left|Wally at the Petalburg Gym]]
+[[File:Wally Mauville ORAS.png|thumb|200px|Wally at the Mauville Gym]]
+
+In [[Pokémon Ruby and Sapphire Versions|Pokémon Ruby, and Sapphire]], {{v2|Emerald}}, [[Pokémon Omega Ruby and Alpha Sapphire|Omega Ruby, and Alpha Sapphire]], Wally is a sickly young boy who first appears in [[Petalburg City]], asking [[Norman]], the [[Petalburg Gym]] [[Gym Leader|Leader]], to help him catch a Pokémon before he moves to [[Verdanturf Town]] to live with his aunt and uncle. This is because Verdanturf is in a remarkably clean area and might improve Wally's sickness. Norman asks his child, the {{player}}, to assist Wally and loans Wally a {{p|Zigzagoon}}. Using this Pokémon, Wally is able to capture a {{p|Ralts}}. In Pokémon Omega Ruby and Alpha Sapphire, after catching his Ralts, Wally will give the player a new app for their [[PokéNav]] as thanks, the {{DL|PokéNav Plus|PlayNav}}.
+
+Wally shows up again later in [[Mauville City]], pleading with his uncle to let him challenge [[Wattson]]. He battles the player to prove his strength but loses. He decides his uncle is right but says he will train to become stronger.
+
+Wally eventually runs away from home and challenges the player at {{ho|Victory Road}}, seemingly recovered from his illness. In Pokémon Ruby, Sapphire, and Emerald, he remains at Victory Road and can be [[rematch]]ed after the player has entered the [[Hall of Fame]].
+
+In the [[remake]]s of Ruby and Sapphire, {{pkmn|Omega Ruby and Alpha Sapphire}}, Wally's Ralts eventually evolves into a {{p|Gallade}} instead of a {{p|Gardevoir}}. At some point in the game, Wally also obtains a [[Key Stone]] and {{DL|Key Stone|Appearance|Mega Pendant}}, allowing his Gallade to [[Mega Evolution|Mega Evolve]]. He is also revealed to have obtained all eight badges before the player meets Wally at Victory Road as he becomes a Certified Trainer at every Gym. The player can follow Wally's progress on the Hoenn News Network and see his name on the Gym statues starting from the time [[Mt. Chimney]] is explored.
+
+In the [[Delta Episode]], Wally is being harassed by Courtney{{sup/6|OR}}/Matt{{sup/6|AS}} who attempts to steal his [[Key Stone]]. Wally thanks the player when the player defeats Courtney/Matt, but reveals that his Key Stone had already disappeared before the Admin had arrived. At the end of the Delta Episode, Wally leaves his home again, with his Key Stone having been returned by the player.
+
+Later on, Wally arrives at the [[Battle Resort]] with an S. S. Ticket from Norman and grows stronger through his time at the Battle Resort. Wally re-battles the player at the [[Battle Maison]] but can only be battled again once the player has beaten one of the {{tc|Battle Chatelaine}}s in a Super Battle. Wally can also be selected as a partner for the [[Multi Battle]] challenge at the Battle Maison. Through his time at the Battle Maison, Wally is revealed to have met a lot of people who have helped him grow as a Trainer. He is revealed to be a strategic, enthusiastic Trainer who studies various move combinations and the allocation of base stats, who is willing to change his team make-up and Pokémon's moves to become stronger<!--According to a man in the Battle Resort Pokémon Center and Wally's quotes-->.
+
+In [[Pokémon Sun and Moon|Pokémon Sun, Moon]], [[Pokémon Ultra Sun and Ultra Moon|Ultra Sun, and Ultra Moon]], Wally appears in [[Alola]]'s [[Battle Tree]] as an opponent the player can battle and subsequently recruit. Unlike {{ga|Red}} and {{ga|Blue}}, he does not seem to have aged.
+
+==={{DL|PokéNav|Trainer's Eyes}}/{{DL|PokéNav|Match Call}}===
+'''{{PK}}{{MN}} Trainer Wally'''{{sup/3|RS}} / '''{{PK}}{{MN}} Lover Wally'''{{sup/3|E}} / '''Pokémon Trainer Wally'''{{sup/6|ORAS}}
+:'''Strategy'''
+:We let it all hang out.{{sup/3|RSE}} / We put everything we have into it!{{sup/6|ORAS}}
+:'''Trainer's Pokémon'''
+:{{p|Ralts|The 1st Pokémon I caught}}.{{sup/3|RSE}} / The first Pokémon I ever caught.{{sup/6|ORAS}}
+:'''Self-Introduction'''
+:Pokémon and I have grown stronger together.{{sup/3|RSE}} / My Pokémon and I have grown stronger together.{{sup/6|ORAS}}
+
+===Pokémon===
+====Pokémon Ruby, Sapphire, and Emerald====
+=====Capture tutorial=====
+[[Norman]] loans this Pokémon to Wally to show him how to catch Pokémon.
+{{Party
+| background = {{tcg grass color light}}
+| border = {{tcg grass color}}
+| headcolor = CED8F6
+| sprite = RS Wally Back.png
+| prize = none
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Wally
+| location = Hoenn Route 102
+| locationname = Route 102
+| game = RSE
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0263
+| pokemon = Zigzagoon
+| gender = both
+| level = 7
+| type1 = Normal
+| ability = Pickup
+| move1 = Tackle | move1type = Normal
+}}
+{{Party/end}}
+=====Caught in tutorial=====
+{{Pokémon
+|gen=3
+|ndex=0280
+|pokemon=Ralts
+|gender=male
+|level=5
+|type1=Psychic
+|ability=Synchronize
+|move1=Growl|move1type=Normal}}
+
+=====First battle=====
+Wally uses two [[Super Potion]]s in {{g|Ruby and Sapphire|s}}.
+{{Party
+| background = {{tcg grass color light}}
+| border = {{tcg grass color}}
+| headcolor = CED8F6
+| sprite = Spr RS Wally.png
+| prize = {{PDollar}}960
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = Wally
+| location = Mauville City
+| game = RSE
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0280
+| pokemon = Ralts
+| gender = male
+| level = 16
+| type1 = Psychic
+| ability = Synchronize
+| move1 = Growl | move1type = Normal
+| move2 = Confusion | move2type = Psychic
+| move3 = Double Team | move3type = Normal
+| move4 = Teleport | move4type = Psychic
+}}
+{{Party/end}}
+=====Second battle and [[rematch]]es=====
+The rematch battles are available after entering the [[Hall of Fame]].
+
+Wally uses two [[Super Potion]]s in {{v2|Ruby and Sapphire|s}} and two [[Full Restore]]s in {{v2|Emerald}}.
+
+{{Party
+| background = {{tcg grass color light}}
+| border = {{tcg grass color}}
+| headcolor = CED8F6
+| sprite = Spr RS Wally.png
+| prize = 1st: {{PDollar}}2,700 <br />2nd: {{PDollar}}2,880 <br />3rd: {{PDollar}}3,060 <br />4th: {{PDollar}}3,240 <br />5th+: {{PDollar}}3,420
+| class = {{PK}}{{MN}} Trainer
+| classlink = Pokémon Trainer
+| name = {{color2|000|Wally}}
+| location = Victory Road (Hoenn)
+| locationname = Victory Road
+| game = RSE
+| pokemon = 5
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0334
+| pokemon = Altaria
+| gender = male
+| level = {{tt|44|Second battle}}/{{tt|47|First rematch}}/{{tt|50|Second rematch}}/{{tt|53|Third rematch}}/{{tt|56|Fourth rematch onwards}}
+| type1 = Dragon
+| type2 = Flying
+| ability = Natural Cure
+| move1 = Aerial Ace | move1type = Flying
+| move2 = Safeguard | move2type = Normal
+| move3 = DragonBreath | move3type = Dragon
+| move4 = Dragon Dance | move4type = Dragon
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0301
+| pokemon = Delcatty
+| gender = female
+| level = {{tt|43|Second battle}}/{{tt|46|First rematch}}/{{tt|49|Second rematch}}/{{tt|52|Third rematch}}/{{tt|55|Fourth rematch onwards}}
+| type1 = Normal
+| ability = Cute Charm
+| move1 = Sing | move1type = Normal
+| move2 = Assist | move2type = Normal
+| move3 = Charm | move3type = Normal
+| move4 = Faint Attack | move4type = Dark
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0315
+| pokemon = Roselia
+| gender = male
+| level = {{tt|44|Second battle}}/{{tt|47|First rematch}}/{{tt|50|Second rematch}}/{{tt|53|Third rematch}}/{{tt|56|Fourth rematch onwards}}
+| type1 = Grass
+| type2 = Poison
+| ability = Natural Cure
+| move1 = Magical Leaf | move1type = Grass
+| move2 = Leech Seed | move2type = Grass
+| move3 = Giga Drain | move3type = Grass
+| move4 = Toxic | move4type = Poison
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0082
+| pokemon = Magneton
+| gender = none
+| level = {{tt|41|Second battle}}/{{tt|44|First rematch}}/{{tt|47|Second rematch}}/{{tt|50|Third rematch}}/{{tt|53|Fourth rematch onwards}}
+| type1 = Electric
+| type2 = Steel
+| ability = Magnet Pull
+| move1 = Supersonic | move1type = Normal
+| move2 = Thunderbolt | move2type = Electric
+| move3 = Tri Attack | move3type = Normal
+| move4 = Screech | move4type = Normal
+}}
+{{Pokémon
+| gen = 3
+| ndex = 0282
+| pokemon = Gardevoir
+| gender = male
+| level = {{tt|45|Second battle}}/{{tt|48|First rematch}}/{{tt|51|Second rematch}}/{{tt|54|Third rematch}}/{{tt|57|Fourth rematch onwards}}
+| type1 = Psychic
+| ability = Synchronize
+| move1 = Double Team | move1type = Normal
+| move2 = Calm Mind | move2type = Psychic
+| move3 = Psychic | move3type = Psychic
+| move4 = Future Sight | move4type = Psychic
+}}
+{{Party/end}}
+
+====Pokémon Omega Ruby and Alpha Sapphire====
+=====Capture tutorial=====
+[[Norman]] loans this Pokémon to Wally to show him how to catch Pokémon.
+{{Party
+| background = {{tcg grass color light}}
+| border = {{tcg grass color}}
+| headcolor = CED8F6
+| sprite = VSWally.png
+| size = 150px
+| prize = none
+| name = Wally
+| location = Hoenn Route 102
+| locationname = Route 102
+| game = ORAS
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0263
+| pokemon = Zigzagoon
+| gender = female
+| level = 7
+| type1 = Normal
+| ability = Pickup
+| ability2 = Gluttony
+| move1 = Tackle | move1type = Normal | move1cat = Physical
+| move2 = Growl | move2type = Normal | move2cat = Status
+| move3 = Tail Whip | move3type = Normal | move3cat = Status
+| move4 = Sand Attack | move4type = Ground | move4cat = Status
+}}
+{{Party/end}}
+=====Caught in tutorial=====
+{{Pokémon
+|gen=6
+|ndex=0280
+|pokemon=Ralts
+|gender=male
+|level=5
+|type1=Psychic|type2=Fairy
+|ability=Synchronize
+|move1=Growl|move1type=Normal|move1cat=Status}}
+
+=====First battle=====
+{{Party
+| background = {{tcg grass color light}}
+| border = {{tcg grass color}}
+| headcolor = CED8F6
+| sprite = VSWally.png
+| size = 150px
+| prize = {{PDollar}}680
+| class = Pokémon Trainer
+| name = Wally
+| location = Mauville City
+| game = ORAS
+| pokemon = 1
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0280
+| pokemon = Ralts
+| gender = male
+| level = 17
+| type1 = Psychic
+| type2 = Fairy
+| ability = Synchronize
+| move1 = Teleport | move1type = Psychic | move1cat = Status
+| move2 = Lucky Chant | move2type = Normal | move2cat = Status
+| move3 = Magical Leaf | move3type = Grass | move3cat = Special
+| move4 = Disarming Voice | move4type = Fairy | move4cat = Special
+}}
+{{Party/end}}
+=====Second battle=====
+{{Party
+| background = {{tcg grass color light}}
+| border = {{tcg grass color}}
+| headcolor = CED8F6
+| sprite = VSWally 2.png
+| size = 150px
+| prize = {{PDollar}}1,920
+| class = Pokémon Trainer
+| name = Wally
+| location = Victory Road (Hoenn)
+| locationname = Victory Road
+| game = ORAS
+| pokemon = 5
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0334
+| pokemon = Altaria
+| gender = male
+| level = 46
+| type1 = Dragon
+| type2 = Flying
+| ability = Natural Cure
+| move1 = Aerial Ace | move1type = Flying | move1cat = Physical
+| move2 = Safeguard | move2type = Normal | move2cat = Status
+| move3 = Dragon Pulse | move3type = Dragon | move3cat = Special
+| move4 = Cotton Guard | move4type = Grass | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0301
+| pokemon = Delcatty
+| gender = female
+| level = 46
+| type1 = Normal
+| ability = Cute Charm
+| move1 = Sing | move1type = Normal | move1cat = Status
+| move2 = Disarming Voice | move2type = Fairy | move2cat = Special
+| move3 = Charm | move3type = Fairy | move3cat = Status
+| move4 = Feint Attack | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0315
+| pokemon = Roselia
+| gender = female
+| level = 46
+| type1 = Grass
+| type2 = Poison
+| ability = Poison Point
+| move1 = Synthesis | move1type = Grass | move1cat = Status
+| move2 = Leech Seed | move2type = Grass | move2cat = Status
+| move3 = Petal Blizzard | move3type = Grass | move3cat = Physical
+| move4 = Toxic | move4type = Poison | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0082
+| pokemon = Magneton
+| gender = none
+| level = 46
+| type1 = Electric
+| type2 = Steel
+| ability = Sturdy
+| move1 = Screech | move1type = Normal | move1cat = Status
+| move2 = Discharge | move2type = Electric | move2cat = Special
+| move3 = Tri Attack | move3type = Normal | move3cat = Special
+| move4 = Flash Cannon | move4type = Steel | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0475
+| pokemon = Gallade
+| icon = mega
+| gender = male
+| level = 48
+| type1 = Psychic
+| type2 = Fighting
+| ability = Steadfast
+| held = Galladite
+| move1 = Psycho Cut | move1type = Psychic | move1cat = Physical
+| move2 = Close Combat | move2type = Fighting | move2cat = Physical
+| move3 = Slash | move3type = Normal | move3cat = Physical
+| move4 = Swords Dance | move4type = Normal | move4cat = Status
+}}
+{{Party/end}}
+=====Third battle=====
+Wally will only appear once the player defeats a {{tc|Battle Chatelaine}} in a Super Battle at the [[Battle Maison]].
+{{Party
+| background = {{tcg grass color light}}
+| border = {{tcg grass color}}
+| headcolor = CED8F6
+| sprite = VSWally 2.png
+| size = 150px
+| prize = {{PDollar}}2,640
+| class = Pokémon Trainer
+| name = Wally
+| location = Battle Maison
+| game = ORAS
+| pokemon = 5
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0334
+| pokemon = Altaria
+| gender = male
+| level = 64
+| type1 = Dragon
+| type2 = Flying
+| ability = Natural Cure
+| move1 = Aerial Ace | move1type = Flying | move1cat = Physical
+| move2 = Safeguard | move2type = Normal | move2cat = Status
+| move3 = Dragon Pulse | move3type = Dragon | move3cat = Special
+| move4 = Cotton Guard | move4type = Grass | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0301
+| pokemon = Delcatty
+| gender = female
+| level = 64
+| type1 = Normal
+| ability = Cute Charm
+| move1 = Sing | move1type = Normal | move1cat = Status
+| move2 = Disarming Voice | move2type = Fairy | move2cat = Special
+| move3 = Charm | move3type = Fairy | move3cat = Status
+| move4 = Feint Attack | move4type = Dark | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0407
+| pokemon = Roserade
+| gender = female
+| level = 64
+| type1 = Grass
+| type2 = Poison
+| ability = Poison Point
+| move1 = Synthesis | move1type = Grass | move1cat = Status
+| move2 = Leech Seed | move2type = Grass | move2cat = Status
+| move3 = Petal Blizzard | move3type = Grass | move3cat = Physical
+| move4 = Toxic | move4type = Poison | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0462
+| pokemon = Magnezone
+| gender = none
+| level = 64
+| type1 = Electric
+| type2 = Steel
+| ability = Sturdy
+| move1 = Screech | move1type = Normal | move1cat = Status
+| move2 = Discharge | move2type = Electric | move2cat = Special
+| move3 = Tri Attack | move3type = Normal | move3cat = Special
+| move4 = Flash Cannon | move4type = Steel | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0475
+| pokemon = Gallade
+| icon = mega
+| gender = male
+| level = 66
+| type1 = Psychic
+| type2 = Fighting
+| ability = Steadfast
+| held = Galladite
+| move1 = Psycho Cut | move1type = Psychic | move1cat = Physical
+| move2 = Close Combat | move2type = Fighting | move2cat = Physical
+| move3 = Slash | move3type = Normal | move3cat = Physical
+| move4 = Swords Dance | move4type = Normal | move4cat = Status
+}}
+{{Party/end}}
+=====Fourth battle onwards=====
+Wally has a 1% chance of giving the player an [[Ability Capsule]] upon being defeated.
+{{Party
+| background = {{tcg grass color light}}
+| border = {{tcg grass color}}
+| headcolor = CED8F6
+| sprite = VSWally 2.png
+| size = 150px
+| prize = {{PDollar}}3,240
+| class = Pokémon Trainer
+| name = Wally
+| location = Battle Maison
+| game = ORAS
+| pokemon = 6
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0407
+| pokemon = Roserade
+| gender = female
+| level = 79
+| type1 = Grass
+| type2 = Poison
+| ability = Poison Point
+| held = Bright Powder
+| move1 = Shadow Ball | move1type = Ghost | move1cat = Special
+| move2 = Leech Seed | move2type = Grass | move2cat = Status
+| move3 = Petal Blizzard | move3type = Grass | move3cat = Physical
+| move4 = Poison Jab | move4type = Poison | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0663
+| pokemon = Talonflame
+| gender = male
+| level = 79
+| type1 = Fire
+| type2 = Flying
+| ability = Gale Wings
+| held = Life Orb
+| move1 = Brave Bird | move1type = Flying | move1cat = Physical
+| move2 = Flare Blitz | move2type = Fire | move2cat = Physical
+| move3 = Steel Wing | move3type = Steel | move3cat = Physical
+| move4 = Tailwind | move4type = Flying | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0184
+| pokemon = Azumarill
+| gender = male
+| level = 79
+| type1 = Water
+| type2 = Fairy
+| ability = Huge Power
+| held = Assault Vest
+| move1 = Aqua Jet | move1type = Water | move1cat = Physical
+| move2 = Play Rough | move2type = Fairy | move2cat = Physical
+| move3 = Aqua Tail | move3type = Water | move3cat = Physical
+| move4 = Iron Tail | move4type = Steel | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0462
+| pokemon = Magnezone
+| gender = none
+| level = 79
+| type1 = Electric
+| type2 = Steel
+| ability = Sturdy
+| held = Air Balloon
+| move1 = Thunder Wave | move1type = Electric | move1cat = Status
+| move2 = Discharge | move2type = Electric | move2cat = Special
+| move3 = Reflect | move3type = Psychic | move3cat = Status
+| move4 = Flash Cannon | move4type = Steel | move4cat = Special
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0445
+| pokemon = Garchomp
+| gender = female
+| level = 79
+| type1 = Dragon
+| type2 = Ground
+| ability = Rough Skin
+| held = Rocky Helmet
+| move1 = Dragon Claw | move1type = Dragon | move1cat = Physical
+| move2 = Crunch | move2type = Dark | move2cat = Physical
+| move3 = Earthquake | move3type = Ground | move3cat = Physical
+| move4 = Stone Edge | move4type = Rock | move4cat = Physical
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0475
+| pokemon = Gallade
+| icon = mega
+| gender = male
+| level = 81
+| type1 = Psychic
+| type2 = Fighting
+| ability = Steadfast
+| held = Galladite
+| move1 = Psycho Cut | move1type = Psychic | move1cat = Physical
+| move2 = Close Combat | move2type = Fighting | move2cat = Physical
+| move3 = Leaf Blade | move3type = Grass | move3cat = Physical
+| move4 = Swords Dance | move4type = Normal | move4cat = Status
+}}
+{{Party/end}}
+=====Battle Maison Multi Battle=====
+Wally will always use these two Pokémon as the player's [[Multi Battle]] partner.
+
+{{Party
+| background = {{tcg grass color light}}
+| border = {{tcg grass color}}
+| headcolor = CED8F6
+| sprite = VSWally 2.png
+| size = 150px
+| prize = none
+| name = Wally
+| location = Battle Maison
+| game = ORAS
+| pokemon = 2
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0475
+| pokemon = Gallade
+| icon = mega
+| gender = male
+| level = 50
+| type1 = Psychic
+| type2 = Fighting
+| ability = Steadfast
+| held = Galladite
+| move1 = Psycho Cut | move1type = Psychic | move1cat = Physical
+| move2 = Close Combat | move2type = Fighting | move2cat = Physical
+| move3 = Leaf Blade | move3type = Grass | move3cat = Physical
+| move4 = Swords Dance | move4type = Normal | move4cat = Status
+}}
+{{Pokémon
+| gen = 6
+| ndex = 0462
+| pokemon = Magnezone
+| gender = none
+| level = 50
+| type1 = Electric
+| type2 = Steel
+| ability = Magnet Pull
+| held = Air Balloon
+| move1 = Thunder Wave | move1type = Electric | move1cat = Status
+| move2 = Thunder | move2type = Electric | move2cat = Special
+| move3 = Reflect | move3type = Psychic | move3cat = Status
+| move4 = Flash Cannon | move4type = Steel | move4cat = Special
+}}
+{{Party/end}}
+====Pokémon Sun, Moon, Ultra Sun, and Ultra Moon====
+Wally's Pokémon are kept in [[Ultra Ball]]s. 
+=====Battle Tree=====
+Wally uses three of these Pokémon in [[Pokémon battle|Single Battles]], four in [[Double Battle]]s, and two in [[Multi Battle]]s.
+
+{{Party
+| background = {{tcg grass color light}}
+| border = {{tcg grass color}}
+| headcolor = CED8F6
+| sprite = VSWally SM.png
+| size = 150px
+| prize = 2-7{{color2|000|Battle Point|BP}}
+| class = Pokémon Trainer
+| name = Wally
+| location = Battle Tree
+| game = SMUSUM
+| pokemon = 4
+| table = yes
+}}
+{{lop/facility/head|CED8F6|{{tcg grass color light}}|{{tcg grass color light}}}}
+{{lop/facility|game=6|334|Altaria|Altarianite|Dragon Dance|Dragon|Dragon Rush|Dragon|Giga Impact|Normal|Earthquake|Ground|Jolly||252||||252}}
+{{lop/facility|game=6|475|Gallade|Scope Lens|Psycho Cut|Psychic|Stone Edge|Rock|Shadow Sneak|Ghost|X-Scissor|Bug|Adamant||252||||252}}
+{{lop/facility|game=6|462|Magnezone|Bright Powder|Charge Beam|Electric|Flash Cannon|Steel|Magnet Rise|Electric|Thunder Wave|Electric|Modest|||252|252|||note={{sup/7|SM}}}}
+{{lop/facility|game=6|462|Magnezone|Bright Powder|Thunder|Electric|Flash Cannon|Steel|Magnet Rise|Electric|Thunder Wave|Electric|Timid||||252||252|note={{sup/7|USUM}}}}
+{{lop/facility|game=6|445|Garchomp|Choice Scarf|Outrage|Dragon|Earthquake|Ground|Fire Fang|Fire|Crunch|Dark|Jolly||252||||252}}
+{{lop/facility|game=6|334|Altaria|Wide Lens|Cotton Guard|Grass|Sing|Normal|Moonblast|Fairy|Dream Eater|Psychic|Calm|252||||252|}}
+{{lop/facility|game=6|475|Gallade|Galladite|Psycho Cut|Psychic|Close Combat|Fighting|Rock Slide|Rock|Destiny Bond|Ghost|Jolly||252||||252}}
+{{lop/facility|game=6|462|Magnezone|Assault Vest|Thunderbolt|Electric|Flash Cannon|Steel|Tri Attack|Normal|Volt Switch|Electric|Modest||||252|252||note={{sup/7|SM}}}}
+{{lop/facility|game=6|462|Magnezone|Assault Vest|Thunderbolt|Electric|Flash Cannon|Steel|Tri Attack|Normal|Volt Switch|Electric|Modest|252|||252|||note={{sup/7|USUM}}}}
+{{lop/facility|game=6|445|Garchomp|Garchompite|Sandstorm|Rock|Stone Edge|Rock|Earthquake|Ground|Dragon Claw|Dragon|Adamant|252|252||||}}
+{{lop/facility/foot|CED8F6}}
+{{Party/end}}
+
+==In the spin-off games==
+===[[Pokémon Masters EX]]===
+{{main|Wally (Masters)}}
+Wally forms a [[sync pair]] with {{p|Gallade}}, {{Shiny}} {{p|Gardevoir}}, {{p|Delcatty}}, and {{p|Altaria}} in [[Pokémon Masters EX]]. Both his Gallade and Shiny Gardevoir are capable of [[Mega Evolution|Mega Evolving]]. Wally became a playable sync pair on May 14, 2020.
+
+{{PairDex/h|flying|tcg grass}}
+{{PairDex|092|Wally|trainerlink=Wally (Masters)#Gallade|trainerimg=Wally|0475M|Gallade|mega=Galladite|form=[[Mega Evolution|Mega Gallade]]|gender=male|Fighting|Ghost|Physical Strike|6|Sync Pair Scout}}
+{{PairDex|092|Wally|trainerlink=Wally (Masters)#Gardevoir|trainerimg=Wally Sygna|sygna=[[Sygna suit|Sygna Suit]]|0282M s|Gardevoir|shiny=yes|mega=Gardevoirite|buddy=yes|form=[[Mega Evolution|Mega Gardevoir]]|gender=male|Fairy|Ghost|Tech|exrole=Sprint|6|Poké Fair Sync Pair Scout}}
+{{PairDex|092|Wally|trainerlink=Wally (Masters)#Delcatty|trainerimg=Wally|0301|Delcatty|gender=female|Normal|Fighting|Support|4EX|Trainer Lodge Friendship Level 100}}
+{{PairDex|092|Wally|trainerlink=Wally (Masters)#Altaria|trainerimg=Wally|0334|Altaria|gender=male|Dragon|Ice|Sprint|6|Training Ticket Exchange}}
+|}
+
+==Quotes==
+{{main|Wally/Quotes}}
+
+==In animation==
+===GOTCHA!===
+Wally briefly appeared in [[GOTCHA!]].
+
+==In the manga==
+[[File:Wally bike.png|thumb|200px|Wally in [[Pokémon Adventures]]]]
+===Pokémon Adventures===
+{{main|Wally (Adventures)}}
+Wally appears as a major supporting character in [[Pokémon Adventures]].
+{{-}}
+
+==In the TCG==
+This listing is of cards mentioning or featuring Wally or his Pokémon in the [[Pokémon Trading Card Game]].
+
+{{card list/header|Wally's Trainer cards|Grass|nocat=yes}}
+{{card list/card|cardname={{TCG ID|EX Sandstorm|Wally's Training|89}}|type=Trainer|type2=Supporter|color=FFF|rows=2}}
+{{card list/release|type=Trainer|type2=Supporter|enset=EX Sandstorm|ensymbol=SetSymbolSandstorm|enrarity=Uncommon|ennum=89/100|jpset=Miracle of the Desert|jpsymbol=SetSymbolSandstorm|jprarity=Uncommon|jpnum=052/053}}
+{{card list/release|type=Trainer|type2=Supporter|enset=EX Emerald|ensymbol=SetSymbolEmerald|enrarity=Uncommon|ennum=85/106}}
+
+{{card list/card|cardname={{TCG ID|Roaring Skies|Wally|94}}|type=Supporter|rows=4}}
+{{card list/release|type=Supporter|enset=Roaring Skies|enrarity=Uncommon|ennum=94/108|jpset=Emerald Break|jprarity=U|jpnum=076/078}}
+{{card list/release|type=Supporter|enset=Roaring Skies|enrarity=Rare Ultra|ennum=107/108|jpset=Emerald Break|jprarity=SR|jpnum=089/078}}
+{{card list/release|type=Supporter|enset=Generations|enrarity=Uncommon|ennum=RC27/RC32|jpset=PokéKyun Collection|jprarity=U|jpnum=032/032}}
+{{card list/release|type=Supporter|jpset=Ultra Moon Deck Build Box|jpsetlink=Ultra Sun & Ultra Moon Deck Build Boxes|jpsymbol=SetSymbolUltra Sun Ultra Moon Deck Build Boxes|jpnum=036/041}}
+
+{{card list/card|cardname={{TCG ID|Mega Evolution|Wally's Compassion|132}}|type=Supporter|newmark=I|rows=3}}
+{{card list/release|type=Supporter|enset=Mega Evolution|enrarity=Uncommon|ennum=132/132|jpset=Mega Symphonia|jprarity=U|jpnum=060/063}}
+{{card list/release|type=Supporter|enset=Mega Evolution|enrarity=Ultra Rare|ennum=176/132|jpset=Mega Symphonia|jprarity=SR|jpnum=085/063}}
+{{card list/release|type=Supporter|enset=Mega Evolution|enrarity=Special Illustration Rare|ennum=186/132|jpset=Mega Symphonia|jprarity=SAR|jpnum=091/063}}
+{{cardlist/footer|Grass}}
+
+
+{{card list/header|Other related cards|Grass|nocat=yes}}
+{{card list/card|cardname={{TCG ID|Cosmic Eclipse|Gallade|82}}|type=Psychic|newmark=C|rows=2}}
+{{card list/release|type=Psychic|enset=Cosmic Eclipse|enrarity=Rare Holo|ennum=82/236|jpset=Dream League|jprarity=R|jpnum=027/049}}
+{{card list/release|type=Psychic|enset=Cosmic Eclipse|enrarity=Rare Secret|ennum=244/236|jpset=Dream League|jprarity=CHR|jpnum=057/049}}
+{{cardlist/footer|Grass}}
+
+==Gallery==
+:For images on [[Wally (Adventures)|Wally's Pokémon Adventures counterpart]], see: [[Wally (Adventures)#Gallery|Wally (Adventures)]]
+:For images on Wally in [[Pokémon Masters EX]], see: [[Wally (Masters)#Gallery|Wally (Masters)]]
+===Artwork===
+====Standard====
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{tcg grass color}}; background: #{{tcg grass color light}}; font-size: 80%"
+|-
+| style="{{roundy|20px}} border: 2px solid #{{tcg grass color}}; background: #CED8F6; width:96px" | [[File:Ruby Sapphire Wally.png|100px]]
+| style="{{roundy|20px}} border: 2px solid #{{tcg grass color}}; background: #CED8F6; width:96px" | [[File:Omega Ruby Alpha Sapphire Wally.png|125px]]
+|-
+| Artwork from {{color2|000|Pokémon Ruby and Sapphire Versions|Ruby and Sapphire}}
+| Art for {{pkmn|Omega Ruby and Alpha Sapphire}} illustrated by [[Megumi Mizutani]]<ref>[[a:File:WallyEmeraldBreak76.jpg|Wally (Roaring Skies 94)]]</ref>
+|-
+| style="{{roundy|20px}} border: 2px solid #{{tcg grass color}}; background: #CED8F6; width:96px" | [[File:Pokémon Gallery Collection - Jirachi's Shooting Star.jpg|x200px]]
+| style="{{roundy|20px}} border: 2px solid #{{tcg grass color}}; background: #CED8F6; width:96px"| [[File:Wally with Mega Gallade.png|x250px]]
+|-
+| In "Jirachi's Shooting Star" by {{color2|000|Ken Sugimori}}
+| Artwork with {{color2|000|Mega Evolution|Mega}} {{pcolor|Gallade|000}} illustrated by {{color2|000|Hitoshi Ariga}}<ref>https://twitter.com/ariga_megamix/status/535724823721177088?s=20</ref>
+|}
+
+====Concept art====
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{tcg grass color}}; background: #{{tcg grass color light}}; font-size: 80%"
+|-
+| style="{{roundy|20px}} border: 2px solid #{{tcg grass color}}; background: #CED8F6; width:96px"| [[File:Wally ORAS concept art.png|x200px]]
+|-
+| Concept art from<br>{{color2|000|Pokémon Omega Ruby and Alpha Sapphire|Omega Ruby and Alpha Sapphire}}
+|}
+====Raw TCG artwork====
+For all images and products relating to this character in the TCG, see their ''[[Wally#In the TCG|In the TCG]]'' section
+{| style="margin:auto; text-align:center; {{roundy|5px}} border:2px solid #{{tcg grass color dark}}; background:#{{tcg grass color}}; font-size:80%"
+|-
+| style="{{roundy|5px}} border:2px solid #{{tcg grass color dark}}; background:#{{tcg grass color light}}; width:80px" | [[File:Wally Training.png|180px]]
+|-
+| Artwork for {{color2|000|Wally's Training (EX Sandstorm 89)|Wally's Training}} from {{color2|000|EX Sandstorm}}
+|}
+===Game assets===
+====Sprites and models====
+{| style="margin:auto; text-align:center; {{roundy|20px}} border: 2px solid #{{tcg grass color}}; background: #{{tcg grass color light}}; font-size: 80%"
+|-
+| style="{{roundy|80px}} border: 2px solid #{{tcg grass color}}; background: #CED8F6" | [[File:Spr RS Wally.png]]
+| style="{{roundy|80px}} border: 2px solid #{{tcg grass color}}; background: #CED8F6" | [[File:RS Wally Back.png]]
+| style="{{roundy|20px}} border: 2px solid #{{tcg grass color}}; background: #CED8F6" | [[File:VSWally.png|150px]]
+| colspan=2 style="{{roundy|20px}} border: 2px solid #{{tcg grass color}}; background: #CED8F6" | [[File:VSWally 2.png|150px]]
+| style="{{roundy|20px}} border: 2px solid #{{tcg grass color}}; background: #CED8F6" | [[File:VSWally SM.png|150px]]
+| style="{{roundy|80px}} border: 2px solid #{{tcg grass color}}; background: #CED8F6" | [[File:Spr SM Wally.png|100px]]
+|-
+| Sprite from<br>{{color2|000|Pokémon Ruby and Sapphire Versions|Ruby, Sapphire}}, and {{color2|000|Pokémon Emerald Version|Emerald}}
+| Back sprite from<br>{{color2|000|Pokémon Ruby and Sapphire Versions|Ruby, Sapphire}}, and {{color2|000|Pokémon Emerald Version|Emerald}}
+| VS model from<br>{{color2|000|Pokémon Omega Ruby and Alpha Sapphire|Omega Ruby and Alpha Sapphire}}
+| colspan=2 | VS model with {{color2|000|Key Stone|Mega Pendant}} from<br>{{color2|000|Pokémon Omega Ruby and Alpha Sapphire|Omega Ruby and Alpha Sapphire}}
+| VS sprite from<br>{{color2|000|Pokémon Sun and Moon|Sun, Moon}}, {{color2|000|Pokémon Ultra Sun and Ultra Moon|Ultra Sun, and Ultra Moon}}
+| High-poly model from<br>{{color2|000|Pokémon Sun and Moon|Sun, Moon}}, {{color2|000|Pokémon Ultra Sun and Ultra Moon|Ultra Sun, and Ultra Moon}}
+|-
+| colspan=2 style="{{roundy|80px}} border: 2px solid #{{tcg grass color}}; background: #CED8F6" | [[File:Wally OD.png]]
+| style="{{roundy|80px}} border: 2px solid #{{tcg grass color}}; background: #CED8F6" | [[File:Wally ORAS OD.png|100px]]
+| style="{{roundy|80px}} border: 2px solid #{{tcg grass color}}; background: #CED8F6" | [[File:Wally 2 ORAS OD.png|100px]]
+| style="{{roundy|80px}} border: 2px solid #{{tcg grass color}}; background: #CED8F6" | [[File:ORAS Wally Icon.png]]
+| colspan=2 style="{{roundy|80px}} border: 2px solid #{{tcg grass color}}; background: #CED8F6" | [[File:Wally SM OD.png|100px]]
+|-
+| colspan=2 | Overworld sprite from<br>{{color2|000|Pokémon Ruby and Sapphire Versions|Ruby, Sapphire}}, and {{color2|000|Pokémon Emerald Version|Emerald}}
+| Overworld model from<br>{{color2|000|Pokémon Omega Ruby and Alpha Sapphire|Omega Ruby and Alpha Sapphire}}
+| Overworld model with {{color2|000|Key Stone|Mega Pendant}} from<br>{{color2|000|Pokémon Omega Ruby and Alpha Sapphire|Omega Ruby and Alpha Sapphire}}
+| {{color2|000|Battle Maison}} icon from<br>{{color2|000|Pokémon Omega Ruby and Alpha Sapphire|Omega Ruby and Alpha Sapphire}}
+| colspan=2 |Overworld model from<br>{{color2|000|Pokémon Sun and Moon|Sun, Moon}}, {{color2|000|Pokémon Ultra Sun and Ultra Moon|Ultra Sun, and Ultra Moon}}
+|}
+
+
+==Trivia==
+[[File:Wally Victory Road ORAS.png|thumb|200px|Wally at Victory Road]]
+* Wally is the first rival:
+** Seen catching their first Pokémon in the {{pkmn2|wild}}.
+** Not seen in the player's [[hometown]] at any point in the games.
+** Not to be the {{player}}'s first {{pkmn|Trainer}} {{pkmn|battle}}.
+* Wally and the player's counterpart (either {{ga|Brendan}} or {{ga|May}}) are the first rivals:
+** To appear as multiple rivals in the same game.
+** Not to be named by the player.
+* Wally is the only rival whose first Pokémon evolves into different branched Evolutions depending on the games.
+* His illness is never explained, but his symptoms appear to clear up in clean air, suggesting that it is either {{wp|acute bronchitis}} or {{wp|asthma}}.
+* The flowers growing on the {{ho|Victory Road}} where the player meets Wally for the last time before the endgame appear to be flowers of {{wp|Lycoris radiata|Red Spider Lilies}}, which in Japanese culture are said to grow on the path where you meet someone for the last time and it symbolizes the end of a journey.
+* In {{game|Ruby and Sapphire|s}}, Wally challenges the {{player}} near the exit of {{ho|Victory Road}}, whereas in {{v2|Emerald}}, he is met after crossing the first bridge. Despite this, the [[rematch]]es with him occur near the end of Victory Road, regardless of the game.
+* In the [[Generation III]] games, it is possible for the capture tutorial to end with {{p|Ralts}} [[fainting]]. This can only happen if {{p|Zigzagoon}} is generated with 11 Attack, and the wild Ralts has a [[Nature]] that lowers Defense, an {{IV}} of 3 or less in HP, and 9 or less in Defense. With all this, Zigzagoon can do a maximum of 10 damage with its first {{m|Tackle}}, and after {{m|Growl}} is used on it, 7 with its second. This makes for a total of 17 damage, just enough to knock out Ralts. However, the game continues on as if it had been caught. Accounting for the odds of suitable stats, two maximum damage rolls, no Tackle misses and no potential speed tie losses, the probability of Ralts being knocked out is about 1 in 200,322. (Video example below)
+** In the Generation III games, it is also possible for Wally to catch a {{Shiny}} Ralts in the tutorial. However, it will not stay Shiny in subsequent battles.
+{{YouTubeVid|xERTYBk3Txk|channel/UCZz2ixp-5T6VeAPtAMQ5v5Q|name=ChickasaurusGL|tcg grass}}
+* In Pokémon Omega Ruby and Alpha Sapphire, after the player defeats [[Maxie]]{{sup/6|OR}} or [[Archie]]{{sup/6|AS}} at [[Mt. Chimney]], Wally is listed as a certified Trainer at all [[Hoenn]] Pokémon [[Gym]]s.
+** As the player visits [[Lavaridge Town]] after these events, all Gyms from that point onward (including the [[Petalburg Gym]]) list Wally's name first, while Wally's name appears after the player's name at the first three Gyms.
+* In Pokémon Omega Ruby and Alpha Sapphire, when Wally is battled on Victory Road, he gets his own battle theme, unlike in the original games. This later becomes his encounter theme when he is rematched at the [[Battle Resort]].
+* Wally shares his Italian name with [[Grant]]: they both go by the name of Lino.
+* Prior to {{pkmn|Sun and Moon}}, Wally shared his Chinese name with {{ga|Dawn}}.
+* Before the catching tutorial, Wally is given a {{i|Poké Ball}} by [[Norman]], as he appears to not have any. In Generation III, this is true, but in [[Generation VI]], Wally is shown to have 15 Poké Balls in his [[Bag]] during the tutorial.
+
+==Names==
+{| class="roundtable" style="background:#{{tcg grass color light}}; border:3px solid #{{tcg grass color}}"
+|-
+! style="background:#CED8F6" | Language
+! style="background:#CED8F6" | Name
+! style="background:#CED8F6" | Origin
+|-
+| Japanese
+| ミツル ''Mitsuru''
+| From 蔓 ''tsuru'' (vine), 羸る ''mitsuru'' (to be frail), 満つ ''mitsu'' (to be full), or 鶴 ''tsuru'' (crane, possibly in reference to the {{wp|Thousand origami cranes|thousand origami cranes}} presented to those who are seriously ill)
+|-
+| English, Latin American Spanish, Indonesian, Brazilian Portuguese
+| Wally
+| From ''wallflower'', referring to both a {{wp|Erysimum|flowering plant}} and an {{wp|Wallflower (person)|introverted person}}
+|-
+| German
+| Heiko
+| Diminutive form of ''{{wp|Heinrich (given name)|Heinrich}}'', a name of Old High German in origin meaning "home ruler"
+|-
+| European Spanish
+| Blasco
+| From ''blanco'' (white) and possibly ''blass'' (German for "pale")
+|-
+| French
+| Timmy
+| From ''timide'' (timid) or  possibly τιμάω ''tīmáō'' (Ancient Greek for "to honor")
+|-
+| Italian
+| Lino
+| Possibly from ''Lino'' ({{wp|Linus of Thrace|Linus}}, personification of lamentation in ancient Greek mythology) or ''lino'' ({{wp|flax}})
+|-
+| Korean
+| 민진 ''Minjin''
+| Similar to his Japanese name. Possibly from 민 (閔) ''min'' (affliction; endeavor) and 진 (進) ''jin'' (advance).
+
+|-
+| Chinese (Traditional)
+| 滿充 ''Mǎnchōng'' / ''Múhnchūng''
+| rowspan="2" | From 充滿 / 充满 ''chōngmǎn'' (brimming)
+|-
+| Chinese (Simplified)
+| 满充 ''Mǎnchōng''
+|-
+| Chinese (Taiwan and mainland China)
+| 小光 ''Xiǎo Guāng''<ref group=n name=TW>[[Pokémon Adventures]]</ref>
+| rowspan="2" | From the Japanese name 光 ''Mitsuru'' and 光 ''guāng'' (light)
+|-
+| Chinese (Hong Kong)
+| 小光 ''Síu Gwōng''<ref group=n name=TW />
+|-
+| Russian
+| Уолли ''Uolli''
+| Transcription of his English name
+|-
+| Thai
+| มิสึรุ ''Misueru''
+| Transcription of his Japanese name
+|-
+| Vietnamese
+| Mitsuru
+| Transcription of his Japanese name
+|}
+{{-}}
+
+===Notes===
+{{reflist|group=n}}
+
+==References==
+<references>
+<ref name="ORAS age">[[TV Mauville|Hoenn News Network]]: "''This remarkable '''10-year-old''' Trainer is originally from Petalburg City and is known to his friends and family as Wally.''"</ref>
+</references>
+
+==Related articles==
+{{Rival characters|tcg grass}}
+{{Capture tutor}}
+{{NPC|tcg grass|hoenn=yes|alola=yes}}
+{{Project CharacterDex notice}}
+
+[[Category:Rival characters]]
+[[Category:Friend characters]]
+[[Category:Ruby and Sapphire characters]]
+[[Category:Emerald characters]]
+[[Category:Omega Ruby and Alpha Sapphire characters]]
+[[Category:Sun and Moon characters]]
+[[Category:Ultra Sun and Ultra Moon characters]]
+[[Category:Multi Battle partners]]
+[[Category:Trainers who use Mega Evolution]]
+[[Category:Characters with confirmed ages]]
+
+[[de:Heiko]]
+[[es:Blasco]]
+[[fr:Timmy]]
+[[it:Lino (Hoenn)]]
+[[ja:ミツル]]
+[[zh:滿充]]

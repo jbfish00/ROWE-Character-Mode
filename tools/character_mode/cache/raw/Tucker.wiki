@@ -1,0 +1,373 @@
+{{Search|[[Frontier Brain]] whose Japanese name is Heath|other uses|Heath (disambiguation)}}
+----
+{{CharInfobox|
+color={{frontier color}} |
+corecolor={{frontier color light}} |
+bordercolor={{frontier color dark}} |
+name=Tucker |
+jname=ヒース |
+tmname=Heath |
+image=Emerald Tucker.png |
+size=360px |
+caption=Artwork from {{game|Emerald}} |
+gender=Male |
+colors=yes |
+eyes=Red violet |
+hair=Red violet |
+hometown=Unknown |
+region=[[Hoenn]] <small>(games)</small><br>[[Kanto]] <small>({{aniseries|PTS}})</small> |
+relatives=Unknown |
+trainer=yes |
+trainerclass=[[Frontier Brain|Dome Ace<br><small>(Frontier Brain)</small>]] |
+game=yes |
+generation={{Gen|III}} |
+games={{v2|Emerald}} |
+leader=no |
+brain=yes |
+facility=[[Battle Dome]] |
+symbol=Tactics Symbol |
+anime=yes |
+epnum=AG153 |
+epname=Tactics Theatrics!! |
+enva=[[Bill Rogers]]|
+java=[[Kenta Miyake]]|
+}}
+'''Tucker''' (Japanese: '''ヒース''' ''Heath'') is the [[Frontier Brain]] and commissioner of the {{Gdis|Battle Frontier|III}}'s [[Battle Dome]]. He is the only character in the games to have the {{DL|Pokémon Trainer|Trainer class}} '''Dome Ace''' (Japanese: '''ドームスーパースター''' ''Dome Superstar'').
+
+==In the core series games==
+Tucker is a superstar and enjoys the sound of a crowd chanting his name. He appears to dance and perform a moonwalk to entertain the crowd. Tucker prefaces battles with narcissistic comments, and if he loses, turns over the Tactics Symbol to the Trainer's {{DL|Trainer Card (game)|Frontier Pass}}.
+
+===Pokémon===
+Tucker uses two of these Pokémon when battling the {{player}}.
+====Silver Symbol challenge====
+{{Party
+| background = {{frontier color}}
+| border = {{frontier color dark}}
+| headcolor = {{frontier color light}}
+| sprite = Spr E Tucker.png
+| prize = 13{{color2|000|Battle Point|BP}}
+| class = Dome Ace
+| classlink = Tucker
+| name = Tucker
+| location = Battle Dome
+| game = E
+| pokemon = 2
+| table = yes
+}}
+{{lop/facility/head|{{frontier color light}}|{{frontier color}}|{{frontier color}}|sortable=no}}
+{{lop/facility|game=3|260|Swampert|Focus Band|Surf|Water|Earthquake|Ground|Ice Beam|Ice|Counter|Fighting|Brave|152|152|106|100}}
+{{lop/facility|game=3|373|Salamence|Lum Berry|Earthquake|Ground|Brick Break|Fighting|Dragon Claw|Dragon|Aerial Ace|Flying|Adamant|152|152|106|||100}}
+{{lop/facility|game=3|006|Charizard|White Herb|Overheat|Fire|Rock Slide|Rock|Aerial Ace|Flying|Earthquake|Ground|Quiet|100|152|106|||152}}
+{{lop/facility/foot|{{frontier color light}}}}
+{{Party/end}}
+====Gold Symbol challenge====
+{{Party
+| background = {{frontier color}}
+| border = {{frontier color dark}}
+| headcolor = {{frontier color light}}
+| sprite = Spr E Tucker.png
+| prize = 15{{color2|000|Battle Point|BP}}
+| class = Dome Ace
+| classlink = Tucker
+| name = Tucker
+| location = Battle Dome
+| game = E
+| pokemon = 2
+| table = yes
+}}
+{{lop/facility/head|{{frontier color light}}|{{frontier color}}|{{frontier color}}|sortable=no}}
+{{lop/facility|game=3|260|Swampert|Leftovers|Surf|Water|Earthquake|Ground|Ice Beam|Ice|Mirror Coat|Psychic|Brave|252|252|6}}
+{{lop/facility|game=3|376|Metagross|Quick Claw|Psychic|Psychic|Meteor Mash|Steel|Earthquake|Ground|Protect|Normal|Brave|252|252|6}}
+{{lop/facility|game=3|380|Latias|Chesto Berry|Thunderbolt|Electric|Psychic|Psychic|Calm Mind|Psychic|Rest|Psychic|Modest|252||252|||6}}
+{{lop/facility/foot|{{frontier color light}}}}
+{{Party/end}}
+===Quotes===
+;Initial battle
+*Before battle
+:''"Ahahah! Do you hear it? This crowd! They're all itching to see our match! Ahahah! I bet you're twitching all over from the tension of getting to battle me! But don't worry about a thing! I'm the no. 1 star of the <sc>Battle Dome!</sc> I, <sc>Tucker</sc> the <sc>Dome Ace</sc>, will bathe you in a brilliant glow! Your strategy! Let's see it! The final match! <{{player}}> versus the <sc>Dome Ace, Tucker</sc>! Let the battle begin!"''
+
+*Being defeated
+:''"Grr... What the..."''
+
+*If the player is defeated
+:''"Ahahaha! Aren't you embarrassed? Everyone's watching!"''
+
+*After being defeated
+:''"Rules are rules! Let me see your <sc>Frontier Pass</sc>."''
+:''"... ... ... ... ... ... I sorely underestimate you. I won't make the same mistake next time..."''
+
+;Rematch
+*Before battle
+:''"Ah... The pummeling roar of the crowd... Their furnace-like heat of excitement... This is a wonderful place... To the crowd, I am the <sc>Dome Ace</sc>... I represent their hopes and dreams... I must never fade from their sight... I must burn! Brighter and more brilliant! I must light all that gather here! I will unleash all the power that I possess! Right here and now! The final match! <player> versus the <sc>Dome Ace, Tucker</sc>! Let the battle begin!"''
+
+*Being defeated
+:''"Ahahaha! You're inspiring!"''
+
+*If the player is defeated
+:''"My <sc>Dome Ace</sc> title isn't just for show!"''
+
+*After being defeated
+:''"You're genuinely fantastic! Never before! I haven't ever lost in the times I've had to unleash my power. Yes, quite fantastic! Your <sc>Frontier Pass</sc>, please?"''
+:''"You're strong, but above all, you have a unique charm! In you, I see a definite potential for a superstar like me. I will very much look forward to our next encounter!"''
+
+==Gallery==
+===Game assets===
+{| style="font-size:80%; margin:auto; text-align:center; {{roundy|20px}} border:2px solid #{{factory color dark}}; background:#{{factory color}}; color:#000"
+| colspan="3" style="{{roundy|20px}} border:2px solid #{{factory color dark}}; background:#{{factory color dark}}; font-size:125%; color:white" |'''{{color2|fff|Generation III}}
+|-
+| style="{{roundy|20px}} border:2px solid #{{factory color dark}}; background:#{{factory color light}}; width:80px; overflow:hidden" |[[File:Spr E Tucker.png]]
+| style="{{roundy|20px}} border:2px solid #{{factory color dark}}; background:#{{factory color light}}; width:80px; overflow:hidden" |[[File:Tucker OD.png]]
+|-
+|'''{{GameIcon|E}}''' <br> Sprite
+|'''{{GameIcon|E}}''' <br> Sprite <br> (Overworld)
+|-
+|}
+
+==In animation==
+===''Pokémon the Series''===
+[[File:Tucker anime.png|thumb|250px|Tucker in {{aniseries|AG}}]]
+====History====
+====={{aniseries|AG}}=====
+Tucker appeared in ''[[AG153|Tactics Theatrics!!]]'', where he was revealed to be a superstar with a large fanbase. His challenge consists of a [[Double Battle]], which takes place in the [[Battle Dome]] in front of a large audience. Automatically before the battle, he allows challengers to send in their Pokémon from other locations. Even though {{Ash}} was allowed to do this, he still used two Pokémon from his current [[party]], {{AP|Corphish}} and {{AP|Swellow}}.
+
+Tucker faced off against Ash with his {{p|Arcanine}} and {{p|Swampert}}. Although he was defeated by Ash, he held a strong start for a while with his Pokémon's teamwork and strategy, including the use of the "Fusion of {{t|Fire}} and {{t|Water}}", an advanced combination which involved trapping the opponents in a water and fire whirlwind. Throughout the battle, {{an|May}} was very impressed by Tucker's showmanship skills and noted that his battle with Ash had some similarities to a [[Contest Battle]]. She later adapted his combination technique into her own battling style during the [[Kanto Grand Festival]].
+
+He reappeared in flashbacks in ''[[AG182|Channeling the Battle Zone!]]''
+
+====={{aniseries|DP}}=====
+Tucker reappeared in another flashback in ''[[DP128|A Pyramiding Rage!]]''.
+
+====Character====
+Being an actor, Tucker likes to make his {{pkmn|battle}}s entertaining for spectators. He often brandishes his Pokémon and their attacks with descriptive phrases like "Burn with your fiery might, {{p|Arcanine}} use {{m|Flamethrower}}". Tucker's strategy is based on drawing out his opponent's best strategies in order to take them down, and he uses the [[Double Battle]] format to create spectacular and damaging [[move]] combinations. He also prefers to attack in quick succession, and is able to have his Pokémon turn one move into another, as seen when he turned Arcanine's Flamethrower into a {{m|Fire Blast}}.
+
+He is undoubtedly the most famous [[Kanto]] [[Frontier Brain]], and his battles are known to attract the attention of the media. A press conference is held whenever he has a new challenger.
+
+====Pokémon====
+This listing is of Tucker's known {{OBP|Pokémon|species}} in {{aniseries|PTS}}:
+{{MissingInfo|1|enva}}
+{{TrainerPoké
+|trainer=Tucker
+|pkmn=Swampert
+|type1=Water
+|type2=Ground
+|img=Tucker Swampert.png
+|epnum=AG153
+|epname=Tactics Theatrics!!
+|vajp=Kōichi Sakaguchi
+|vaen=
+|desc={{p|Swampert}} was one of the two Pokémon that battled [[Ash's Corphish]] and {{AP|Swellow}}. While Swampert was slow, its {{stat|defense}} worked in perfect combination with {{p|Arcanine}}'s {{stat|speed}}. In the [[Double Battle]], Swampert's main target was Corphish. However, after Tucker used the "Fusion of {{t|Fire}} and {{t|Water}}", Corphish and Swellow regained their fighting spirit and won the match for {{Ash}}. Swampert was defeated by a devastating {{m|Aerial Ace}} from Swellow.
+
+It also appeared in flashbacks in ''[[AG182|Channeling the Battle Zone!]]'' and ''[[DP128|A Pyramiding Rage!]]''.
+
+Swampert's known moves are {{m|Protect}}, {{m|Mud Shot}}, {{m|Dynamic Punch}}, {{m|Water Gun}}, and {{m|Water Pulse}}.}}
+
+{{TrainerPoké
+|trainer=Tucker
+|pkmn=Arcanine
+|type1=Fire
+|img=Tucker Arcanine.png
+|epnum=AG153
+|epname=Tactics Theatrics!!
+|vajp=Chie Satō
+|vaen=Chie Satō
+|desc=The other Pokémon Tucker used was {{p|Arcanine}}. {{p|Swampert}} and Arcanine were a perfect combination, taking advantage of Arcanine's {{stat|speed}} and Swampert's {{stat|defense}}. Arcanine's incredible agility and speed gave the impression that it could fly, making it an even match against aerial opponents like {{AP|Swellow}}. Despite nearly being overwhelmed by Tucker's "Fusion of {{t|Fire}} and {{t|Water}}", [[Ash's Corphish]] and Swellow regained their fighting spirit. Corphish used {{m|Bubble Beam}} on Arcanine's Flamethrower to enshroud the whole stadium in a dense fog. As a result, Swellow and Corphish were able to deal the final blows to Tucker's Pokémon, with Arcanine defeated by a devastating {{m|Crabhammer}} from Corphish.
+
+It also appeared in flashbacks in ''[[AG182|Channeling the Battle Zone!]]'' and ''[[DP128|A Pyramiding Rage!]]''.
+
+Arcanine's known moves are {{m|Extreme Speed}}, {{m|Flamethrower}}, {{m|Fire Blast}}, and {{m|Aerial Ace}}.}}
+
+====Voice actors====
+{{vatable|color={{frontier color}}|bordercolor={{frontier color light}}
+|ja=三宅健太 ''[[Kenta Miyake]]''
+|en=[[Bill Rogers]]
+|nl=Tony Neef
+|fi=Aku Laitinen
+|it=Claudio Moneta
+|pt_br=Sérgio Corcetti
+|es_la=Irwin Daayán
+|es_eu=Juan Sainz Maza
+}}
+
+==In the manga==
+===Pokémon Adventures===
+[[File:Tucker Adventures.png|thumb|250px|Tucker in [[Pokémon Adventures]]]]
+====History====
+====={{MangaArc|Emerald}}=====
+Tucker is one of the seven {{pkmn|Trainer}}s hired by [[Scott]] to be a Frontier Brain at the Battle Frontier. Tucker is first seen running late to the Battle Frontier's opening ceremony. He is interrupted by {{adv|Emerald}}, who asks to direct him where the Battle Frontier's owner is. The incident leads into a fight, which ends with Emerald tying Tucker up and leaving backstage while he goes to interrupt the ceremony, where he announces to everyone that he wishes to conquer the Battle Frontier. The press mistakenly report the incident as allowing an ordinary Trainer to take part in the Battle Frontier before it officially opens a week later. The Frontier Brains decide to use this assumption as free publicity and allow Emerald to challenge the Battle Frontier under the condition that he completes it before it officially opens.
+
+Later, while Emerald is challenging the Battle Pyramid, Noland is attacked by an unknown assailant and several rental Pokémon are stolen. After Noland is taken to a hospital, the other Frontier Brains begin to suspect Emerald as the culprit. They head to the Battle Pyramid to confront Emerald and find him after having defeated Brandon. When they ask him about what happened, Emerald reveals that he did not attack Noland and is actually after the Mythical Pokémon {{adv|Jirachi}}. The Frontier Brains find Emerald's explanation suspicious, but decide to follow him into [[Artisan Cave]], where Jirachi is currently located at. Upon arriving, everyone is attacked by a horde of wild {{p|Smeargle}} while Emerald continues inside to find Jirachi. After the Frontier Brains get past the Smeargle, they meet up with Emerald, who has managed to find Jirachi. Emerald attempts to capture Jirachi, but is attacked by [[Guile Hideout]], the actual culprit who attacked Noland. When Jirachi runs off, Emerald attempts to pursue it, only to be attacked by the rental Pokémon Guile had stolen. Tucker, Brandon, Lucy, and Spenser all try to attack Guile to avenge Noland, but are easily defeated. Eventually, Jirachi escapes, forcing Guile to leave to continue his pursuit of it. Injured from the battle, everyone decides to return to the Battle Frontier. When they meet up with Scott again, he reveals that he was aware of Guile and Emerald's true mission the entire time. Scott states that he withheld the information from the Frontier Brains to help them get stronger as they still would have lost even if they had known of Guile beforehand.
+
+The next day, visitors from around Hoenn arrive to watch and participate in the Battle Dome, which Emerald challenges to win his fifth Symbol. During the tournament, Tucker battles {{adv|Sapphire}} in the semi-finals while Emerald battles {{adv|Ruby}}. Eventually, both Tucker and Emerald defeats their opponents and face each other in the finals, which ends in Tucker's victory. Dejected, Emerald leaves to go challenge the Battle Palace while Tucker gloats over his victory. Just as he leaves to meet with the others, Tucker notices Guile running past the Battle Dome's window. He leaps to confront the villain, but arrives with the other Frontier Brain's just as Guile manages to successfully capture Jirachi.
+
+Guile uses the rental Pokémon to the attack innocent bystanders and heads to the Battle Tower to make his wish. Once he arrives at the Battle Tower, Guile uses Jirachi to wish for a gigantic Kyogre made of seawater to flood the entire Battle Frontier. Tucker and the other Frontier Brains work together to get civilians to safety and fight off Guile's rental Pokémon while Emerald and the other Pokédex holders fight Guile. Eventually Emerald and the Pokédex holders manage to defeat Guile and destroy the gigantic Kyogre monster. The day after, an injured Tucker and the other Frontier Brains congratulate Emerald for the hard work he put into saving everyone.
+
+====={{MangaArc|Omega Ruby & Alpha Sapphire}}=====
+Tucker and the other Hoenn Frontier Brains battle and defeat the Admins of Neo [[Team Magma]] and Neo [[Team Aqua]], who had interfered in the launch of a rocket that was made to stop the [[Grand Meteor Delta|meteoroid]] threatening to destroy the world. Later, Tucker and the other Hoenn Frontier Brains are called to [[Sootopolis City]] to assist in stopping the meteoroid.
+
+====Pokémon====
+{{TrainerPoké
+|trainer=Tucker
+|gender=male
+|pkmn=Salamence
+|type1=Dragon
+|type2=Flying
+|img=Tucker Salamence Adventures.png
+|epnum=PS304
+|epname=Swanky Showdown with Swalot
+|desc={{p|Salamence}} is Tucker's first known Pokémon. He was first seen with his Trainer flying to the Battle Frontier's opening ceremony before being attacked by Emerald. During the Battle Dome tournament, Salamence was used to battle Sapphire's {{p|Aggron}}, [[Rono]], in the semifinals. The battle was unseen, but Sapphire was eventually defeated, which she attributed to her fear of Salamence. In the {{MangaArc|Omega Ruby & Alpha Sapphire}}, he was seen helping Tucker fight the Admins of Neo Team Magma and Neo Team Aqua. Outside of battle, Tucker uses him as a mode of flight transportation.
+
+Salamence's only known move is {{m|Fire Blast}}, and his Ability is {{a|Intimidate}}.}}
+
+{{TrainerPoké
+|trainer=Tucker
+|pkmn=Charizard
+|type1=Fire
+|type2=Flying
+|img=Tucker Charizard Adventures.png
+|epnum=PS323
+|epname=A Cheeky Charizard Change-Up I
+|desc={{p|Charizard}} is Tucker's second known Pokémon. It was first used to battle Emerald in the Battle Dome's finals. It proved to be a tough opponent and single-handedly defeated Emerald's {{p|Alakazam}} and {{p|Metagross}} despite their supereffective moves.
+
+Charizard's known moves are {{m|Earthquake}} and {{m|Overheat}}.}}
+
+{{TrainerPoké
+|trainer=Tucker
+|pkmn=Metagross
+|type1=Steel
+|type2=Psychic
+|img=376Metagross.png
+|epnum=PS323
+|epname=A Cheeky Charizard Change-Up I
+|desc={{p|Metagross}} is Tucker's third known Pokémon. When {{adv|Ruby}} was wondering the sequence of Tucker's Pokémon, Sapphire mentions that {{p|Metagross}} will go last. However, since Charizard defeated Emerald's Pokémon single-handedly, Metagross was not seen.
+
+None of Metagross's moves are known.}}
+
+===Pokémon Battle Frontier===
+[[File:Tucker CBF.png|thumb|200px|Tucker in [[Pokémon Battle Frontier]]]]
+Tucker appeared in ''[[CBF4|Introducing the Frontier Brains!]]'', where he introduced himself and his two Pokémon (while admiring them) to {{OBP|Enta|CBF}}. He battled Enta in a Double Battle. He was able to defeat [[Enta's Vulpix]] but lost to his {{p|Feebas}} after it activated {{a|Swift Swim}} when Enta's Vulpix blew a hole in the roof with {{m|Flamethrower}} earlier. Tucker then informed Enta that his Feebas wouldn't have stood a chance against his Pokémon due to it being ugly. After the battle, Feebas evolved into {{p|Milotic}}, proving Tucker wrong.
+
+====Pokémon====
+{{anchor|Swampert 2}}{{TrainerPoké
+|width=70
+|trainer=Tucker
+|pkmn=Swampert
+|type1=Water
+|type2=Ground
+|img=Tucker Swampert CBF.png
+|epnum=CBF4
+|epname=Introducing the Frontier Brains!
+|desc={{p|Swampert}} was sent out in a Double Battle alongside Salamence against Enta's {{p|Vulpix}} and {{p|Feebas}}. It was able to defeat Vulpix but lost to Feebas.
+
+Swampert's only known move is {{m|Water Gun}}.}}
+
+{{anchor|Salamence 2}}{{TrainerPoké
+|trainer=Tucker
+|pkmn=Salamence
+|type1=Dragon
+|type2=Flying
+|img=Tucker Salamence CBF.png
+|epnum=CBF4
+|epname=Introducing the Frontier Brains!
+|desc={{p|Salamence}} was sent out in a double battle alongside Swampert against Enta's {{p|Vulpix}} and {{p|Feebas}}. It was able to defeat Vulpix but lost to Feebas.
+
+Salamence's only known move is {{m|Rock Slide}}.}}
+
+==Trivia==
+* In [[Pokémon Adventures]], Tucker is the only [[Frontier Brain]] whom {{adv|Emerald}} didn't defeat to win a [[Symbol]], aside from [[Anabel]], who simply awarded him her Ability Symbol for having battled with her fairly while she was under [[Guile Hideout]]'s control. In turn, Tucker is also the only Brain who never lost a fight with Emerald to yield him a Symbol, since the 10 [[Pokédex holder]]s had their own tournament instead.
+* All of the Pokémon used by Tucker in the games received [[Mega Evolution]]s in [[Generation VI]].
+* Tucker's {{p|Arcanine}} was the first non-{{type|Flying}} Pokémon to use {{m|Aerial Ace}} in the {{pkmn|animated series}}.
+
+==Names==
+{| class="roundtable" style="background:#{{frontier color}}; border:3px solid #{{frontier color dark}}"
+|-
+! style="background:#{{frontier color light}}" | Language
+! style="background:#{{frontier color light}}" | Name
+! style="background:#{{frontier color light}}" | Origin
+|-
+| Japanese
+| ヒース ''Heath''
+| From ''{{wp|Ericaceae|heath}}''
+|-
+| English, Latin American Spanish
+| Tucker
+| From ''tactics''
+|-
+| German
+| Tasso
+| From ''Taktik'' (tactics)
+|-
+| European Spanish
+| Tactio
+| From ''táctica'' (tactics)
+|-
+| French
+| Takim
+| From ''tactique'' (tactics)
+|-
+| Italian
+| Tolomeo
+| From πτόλεμος ''ptólemos'' (Ancient Greek for "war")
+|-
+| Korean
+| 하인즈 ''Heinz''
+| Similar to his Japanese name
+|-
+| Chinese (Taiwan)
+| 希爾斯 ''Xī'ěrsī''<ref group=n name=TW>[[Pokémon animated series]], [[Pokémon Adventures]]</ref>
+| rowspan="2" | Transcription of his Japanese name
+|-
+| Chinese (Hong Kong)
+| 希爾斯 ''Hēiyíhsī''<ref group=n name=TW />
+|-
+| Chinese (mainland China)
+| 石南 ''Shínán''<ref group=n>Pokémon Adventures (third edition)</ref><br>希尔斯 ''Xī'ěrsī''<ref group=n>Pokémon Adventures (first and second edition)</ref>
+| From 石南 ''shínán'' (heath)<br>Transcription of his Japanese name
+|-
+| Vietnamese
+| Heath
+| Transcription of his Japanese name
+|}
+{{-}}
+
+''Dome Ace''
+{{langtable|color={{frontier color light}}|bordercolor={{frontier color}}
+|ja=ドームスーパースター ''{{tt|Dōmu Sūpāsutā|Dome Superstar}}''
+|zh_yue=巨蛋超級巨星 ''{{tt|Geuihdáan Chīukāp-Geuihsīng|Dome Superstar}}''
+|zh_cmn=巨蛋超級巨星 / 巨蛋超级巨星 ''{{tt|Jùdàn Chāojí-Jùxīng|Dome Superstar}}''<ref group=n>Pokémon animated series, Pokémon Adventures (Jilin Publishing edition)</ref><br>巨蛋超級明星 ''{{tt|Jùdàn Chāojí-Míngxīng|Dome Superstar}}''<ref group=n>Pokémon Adventures (Ching Win edition)</ref>
+|fi=Kupuässä
+|fr=Star du Dôme
+|de=Stadionstar
+|it=Astro Cupola
+|ko=돔슈퍼스타 ''{{tt|Dom Syupeoseuta|Dome Superstar}}''
+|pt_br=Estrela da Cúpula
+|es_eu=Astro Cúpula
+|es_la=As del Domo
+|vi=Siêu sao của Nhà vòm
+}}
+
+===Notes===
+{{reflist|group=n}}
+
+==Related articles==
+* [[a:Category:Tucker|Images on the Bulbagarden Archives]]
+{{-}}
+{{Hoenn Frontier Brains}}
+{{TrainerNav|Frontier|hoenn=yes}}
+{{Project CharacterDex notice}}
+
+[[Category:Frontier Brains]]
+[[Category:Animation characters]]
+[[Category:Game characters]]
+[[Category:Emerald characters]]
+[[Category:Manga characters]]
+[[Category:Pokémon Adventures characters]]
+[[Category:Pokémon Battle Frontier characters]]
+[[Category:Trainers with unique classes]]
+[[Category:Trainers with Legendary Pokémon]]
+
+[[de:Tasso]]
+[[es:Tactio]]
+[[fr:Takim]]
+[[it:Tolomeo]]
+[[ja:ヒース]]
+[[zh:石南]]
