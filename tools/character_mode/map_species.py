@@ -300,17 +300,63 @@ def main():
     unmatched = set()
     mapped = {}
 
+    def resolve(name):
+        name = NAME_FIXES.get(name, name)
+        const = n2c.get(name)
+        if const is None:
+            const = regional_fallback(name, n2c)
+        return const
+
+    # A removal is a verdict on the whole FAMILY, not on the single name the
+    # auditor was shown. Plain name subtraction (above) misses siblings the
+    # scraper listed separately: Leaf's Charmander was removed, but her raw
+    # list also held "Charizard", so the family walked straight back in after
+    # canonicalization. Re-apply the removals here, where a family is one
+    # constant. Safe against the family rule for the same reason the plain
+    # subtraction is: the file only lists species whose ENTIRE family went.
+    # ...but a family a wave explicitly KEPT outranks another wave's removal of
+    # one of its members -- one canon member makes the family canon (the user's
+    # family rule). Lana's Milotic is "another trainer's" and her Feebas is her
+    # own; without this the Milotic verdict would take the Feebas with it.
+    kpath = os.path.join(HERE, "audit_keeps.json")
+    audit_keeps = {}
+    if os.path.isfile(kpath):
+        with open(kpath, encoding="utf-8") as f:
+            audit_keeps = json.load(f).get("keeps", {})
+
+    family_removed = {}
+    shielded = 0
+    for disp, rows in removals.items():
+        kept_bases = set()
+        for name in audit_keeps.get(disp, ()):
+            const = resolve(name)
+            if const is not None:
+                kept_bases.add(canonical(const))
+        bases = set()
+        for r in rows:
+            const = resolve(r["species"] if isinstance(r, dict) else r)
+            if const is None:
+                continue
+            base = canonical(const)
+            if base in kept_bases:
+                shielded += 1
+                continue
+            bases.add(base)
+        family_removed[disp] = bases
+    swept = 0
+
     for disp, info in sorted(raw.items()):
         consts = set()
         for name in info["species"]:
-            name = NAME_FIXES.get(name, name)
-            const = n2c.get(name)
+            const = resolve(name)
             if const is None:
-                const = regional_fallback(name, n2c)
-            if const is None:
-                unmatched.add(name)
+                unmatched.add(NAME_FIXES.get(name, name))
                 continue
-            consts.add(canonical(const))
+            base = canonical(const)
+            if base in family_removed.get(disp, ()):
+                swept += 1
+                continue
+            consts.add(base)
         entry = {"page": info["page"], "category": info["category"],
                  "gen": info.get("gen", 0), "species": sorted(consts)}
         ace = SIGNATURES.get(disp)
@@ -331,6 +377,13 @@ def main():
                     print("SIGNATURE NOT ON ROSTER: %s -> %s (%s)"
                           % (disp, ace, canonical(const)))
         mapped[disp] = entry
+
+    if swept:
+        print("removals overlay: %d more swept at family level" % swept)
+
+    if shielded:
+        print("removals overlay: %d held back by an audit keep on the family"
+              % shielded)
 
     with open(os.path.join(HERE, "rosters_mapped.json"), "w") as f:
         json.dump(mapped, f, indent=1, sort_keys=True)

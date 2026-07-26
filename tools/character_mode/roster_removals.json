@@ -1614,6 +1614,11 @@
     "confidence": "high",
     "reason": "Shauntal's Golurk that the Elite Four rode to N's Castle",
     "species": "Golurk"
+   },
+   {
+    "confidence": "high",
+    "reason": "Caitlin never owns a Pawniard or Bisharp. Her complete documented set is Reuniclus, Musharna, Sigilyph, Gothitelle, Bronzong, Metagross, Gallade, Alakazam (BW/B2W2 first battle, rematch, Challenge Mode), Sableye (Masters EX), Gothitelle (anime BW090 and Adventures PS511) — verified against the cached Bulbapedia page and re-checked live. Bisharp belongs to Grimsley, the neighbouring Unova Elite Four member, whose team sits adjacent to hers in every Elite Four listing. Classic same-page-neighbour bleed.",
+    "species": "Pawniard"
    }
   ],
   "Calem": [
@@ -1621,6 +1626,11 @@
     "confidence": "high",
     "reason": "AZ's Golurk, the Pokémon Calem's Chesnaught defeated in PG18",
     "species": "Golurk"
+   },
+   {
+    "confidence": "high",
+    "reason": "No Scatterbug, Spewpa or Vivillon anywhere on Calem's page. His full NPC set is Fletchling, Bunnelby (catching tutorial), Espurr/Meowstic, Absol, the starter line, Jolteon/Flareon/Vaporeon, Clefable and Altaria (Kiloude rematches), plus Xerneas/Yveltal as protagonist; Masters EX gives Espurr-Meowstic, shiny Greninja, Fennekin and Sylveon; Generations gives Chesnaught and Charizard; Evolutions gives Xerneas. All four battle sections and the rematch section were pulled live and checked. Vivillon in Kalos belongs to Viola, not the rival.",
+    "species": "Scatterbug"
    }
   ],
   "Candice": [
@@ -4686,6 +4696,11 @@
    },
    {
     "confidence": "high",
+    "reason": "No Aron anywhere in James's ownership record. Absent from every cached section of the Bulbapedia James page (anime on hand/at home/released/traded/escaped/temporary/status unknown, Yellow and Let's Go battle teams, Pokémon GO Team GO Rocket teams, Masters EX, Electric Tale of Pikachu, Ash & Pikachu, Pokémon Journeys manga), absent from the live page, absent from 'List of Pokémon temporarily owned by the Team Rocket trio', and absent from the Rocket Prize Master dispensed list. Cannot be positively justified.",
+    "species": "Aron"
+   },
+   {
+    "confidence": "high",
     "reason": "from the same BW075 Fossil arc, never owned by James",
     "species": "Carracosta"
    },
@@ -4806,6 +4821,11 @@
    },
    {
     "confidence": "high",
+    "reason": "Filed under 'Status unknown' with Bulbapedia explicitly disclaiming ownership: \"Multiple Pidgey were seen in one of Team Rocket's mottos in the episode. However, it is unknown if they still have the Pidgey with them or if the Pidgey even belong to them.\" (EP133). Textbook 'merely appeared in an episode' — no capture, no use, no possession claim. (Contrast the already-kept Numel in the same section, where James states he owned them.)",
+    "species": "Pidgey"
+   },
+   {
+    "confidence": "high",
     "reason": "Ash's Pikachu, the trio's perennial target",
     "species": "Pikachu"
    },
@@ -4878,6 +4898,11 @@
     "confidence": "high",
     "reason": "Jessie's Yanmega, borrowed by James for the Squallville PokéRinger (DP118)",
     "species": "Yanmega"
+   },
+   {
+    "confidence": "high",
+    "reason": "No Zubat anywhere in James's ownership record — same exhaustive sweep as Aron (full cached section set + live page + temporarily-owned list + Rocket Prize Master). His Kanto game teams are Ekans/Koffing/Meowth (Yellow) and Koffing/Weezing (Let's Go); his GO teams are Pinsir/Koffing/Grimer and Koffing/Sneasel/Beldum. Likely confusion with a generic Team Rocket Grunt team.",
+    "species": "Zubat"
    },
    {
     "confidence": "high",
@@ -5198,6 +5223,11 @@
     "confidence": "high",
     "reason": "Cilan's Crustle, her opponent in the BW063 Tag Battle",
     "species": "Crustle"
+   },
+   {
+    "confidence": "high",
+    "reason": "Bulbapedia's Professor Juniper page disclaims it outright: \"In BW069 (Climbing the Tower of Success!), Professor Juniper was shown with a Darumaka in a fantasy, but it's unknown if she actually owns one.\" It is a one-line note wedged between her real anime Pokémon tables, not a table entry — a fantasy-sequence appearance, not research, distribution, or ownership. Fails the professor rule (Pokémon they research, study or hand out).",
+    "species": "Darumaka"
    },
    {
     "confidence": "high",
@@ -6187,6 +6217,11 @@
   ],
   "Leaf": [
    {
+    "confidence": "medium",
+    "reason": "Her only tie to the Charmander line anywhere on Leaf (game) is Super Smash Bros. Ultimate: 'She shares HIS team of Squirtle, Ivysaur, and Charizard' — Red's Pokemon Trainer team on a female skin, in a crossover fighter that is not a core game, facility, anime or manga. Her actual documented rosters are all Masters EX (Venusaur, Blastoise, Eevee, Moltres, Clefable) and contain no Charmander line; the core-series section only says Oak 'gives her a choice of Pokemon' without naming one. The audit already cut Groudon/Pikachu from her for a comparable out-of-scope appearance (a cut Battle Revolution trailer).",
+    "species": "Charmander"
+   },
+   {
     "confidence": "high",
     "reason": "used only in the Pokémon Battle Revolution debut trailer; she was cut from the final game",
     "species": "Groudon"
@@ -6961,6 +6996,11 @@
    },
    {
     "confidence": "high",
+    "reason": "No Scatterbug, Spewpa or Vivillon appears anywhere in Malva's documentation - not in the cached wikitext of any section, and not on the live Bulbapedia page (checked all media). Her X/Y teams are Pyroar/Torkoal/Chandelure/Talonflame across the League, all five Battle Chateau writs and Hotel Richissime; Masters EX is Talonflame only; the anime gives her Houndoom; Adventures gives her Pyroar, Talonflame, Delphox (Fennekin) and Yveltal, plus a borrowed Aegislash. Unsupported in any medium.",
+    "species": "Scatterbug"
+   },
+   {
+    "confidence": "high",
     "reason": "the Legendary Team Flare moved / Y later obtained; never Malva's",
     "species": "Xerneas"
    },
@@ -7200,6 +7240,11 @@
     "confidence": "high",
     "reason": "Matt's Larvitar, only befriended at a Pokémon Center",
     "species": "Larvitar"
+   },
+   {
+    "confidence": "high",
+    "reason": "Not hers. The only occurrence of the string 'Manaphy' on May (anime) is an editor directive at the top of the Befriended section: '<!--Do not put in that Manaphy was befriended by May.-->' - i.e. Bulbapedia explicitly refuses to list the Temple of the Sea Manaphy among her Pokemon. The scraper harvested the HTML comment. Consistent with the audit's earlier cut of her 'Temporary' entries (Larvitar, Hitmonchan).",
+    "species": "Manaphy"
    },
    {
     "confidence": "high",
@@ -7539,6 +7584,16 @@
     "confidence": "high",
     "reason": "wild Pokemon living near his childhood home that he protected but never owned",
     "species": "Deerling"
+   },
+   {
+    "confidence": "high",
+    "reason": "Sole source is one BW118 flashback entry on N (anime) > Pokemon > Befriended: 'Lillipup and Mincinno were two of the Pokemon shown to be friends of N when he was a child. He used to spend his time with them.' Wild Pokemon around his childhood home - never caught, never used, no moves known. The audit already removed Cottonee, Deerling and Petilil from N at high confidence with the reason 'wild Pokemon living near his childhood home that he protected but never owned', and Alomomola and Braviary as befriended/released; this is the same scene and the same template. Nothing in Black/White, the B2W2 first and season battles, Released, Masters EX, Generations/Evolutions or any manga gives him a Lillipup line - every one of his verified species traces to a game team.",
+    "species": "Lillipup"
+   },
+   {
+    "confidence": "high",
+    "reason": "Same single BW118 'Befriended' entry ('Lillipup and Mincinno ... friends of N when he was a child'); wild childhood playmate, not owned, and absent from every game, Masters EX and manga team. Falls under the identical precedent that removed Cottonee/Deerling/Petilil.",
+    "species": "Minccino"
    },
    {
     "confidence": "high",
@@ -8218,6 +8273,11 @@
     "species": "Bellibolt"
    },
    {
+    "confidence": "medium",
+    "reason": "the only Steelix anywhere near Poppy is the New Year's 2025 Masters EX sync pair, and Bulbapedia codes it {{TP|Jasmine|Steelix}} with pokemonlink=Jasmine's Steelix — it is Jasmine's signature shiny Steelix, another trainer's Pokemon lent for a seasonal pair. Poppy owns no Onix/Steelix/Steelix line member in any game team (SV: Copperajah, Magnezone, Bronzong, Corviknight, Tinkaton, Bastiodon), in Horizons (Tinkaton, Copperajah), or in Adventures (Tinkaton, Copperajah)",
+    "species": "Onix"
+   },
+   {
     "confidence": "high",
     "reason": "Dot's Quaxly, her opponent in the same tag battle",
     "species": "Quaxly"
@@ -8490,9 +8550,19 @@
     "species": "Scyther"
    },
    {
+    "confidence": "medium",
+    "reason": "Bulbapedia's single 'Status unknown' entry is titled 'Spearow OR Tentacool' and states only that Ritchie 'owns either Spearow or Tentacool' — exactly one of the two is his and the other is his opponent's (both images are filed as 'Ritchie Assunta Spearow/Tentacool.png' from the EP080 Indigo Conference match). Neither species can be positively attributed to Ritchie, and keeping both guarantees importing one of Assunta's",
+    "species": "Spearow"
+   },
+   {
     "confidence": "high",
     "reason": "Ash's Squirtle, beaten by his Butterfree at the Indigo League",
     "species": "Squirtle"
+   },
+   {
+    "confidence": "medium",
+    "reason": "same coin-flip entry as Spearow — Bulbapedia cannot say which of the two is Ritchie's, so neither is positively justifiable and one necessarily belongs to Assunta",
+    "species": "Tentacool"
    }
   ],
   "Roark": [
@@ -8712,6 +8782,13 @@
     "confidence": "high",
     "reason": "Roy's Wattrel, which she encouraged with a rap",
     "species": "Wattrel"
+   }
+  ],
+  "Sabi": [
+   {
+    "confidence": "medium",
+    "reason": "the Hisuian Braviary is in her ====In service to==== subsection, not her ===Pokemon=== list — it is the noble/Ride Pokemon she is warden of on the Diamond Clan's behalf, and the player fights it as an opponent at Snowpoint Temple to earn the ride. Her actual team is Rhyperior / Magmortar / Electivire (already verified as Rhyhorn / Magby / Elekid). Compare Palina, where Bulbapedia puts Growlithe in ===Pokemon=== and the noble Arcanine in 'In service to' — the same structural split, opposite outcome",
+    "species": "Rufflet"
    }
   ],
   "Sabrina": [
@@ -9485,6 +9562,11 @@
     "species": "Bulbasaur"
    },
    {
+    "confidence": "medium",
+    "reason": "Family base of Tracey's supposed Dodrio, which Bulbapedia files under '====Status unknown====' with the text: 'Tracey was seen riding a Dodrio in a flashback while Pokemon watching. However, it is unknown whether Dodrio belonged to him or if it was simply borrowed.' (EP084 The Lost Lapras). A single flashback sighting with the wiki itself disclaiming ownership is not positively justifiable; borrowed Pokemon are an explicit REMOVE.",
+    "species": "Doduo"
+   },
+   {
     "confidence": "high",
     "reason": "Gary's newly caught Electivire, which he watched battle Ash",
     "species": "Electivire"
@@ -9762,6 +9844,11 @@
   "Wally": [
    {
     "confidence": "high",
+    "reason": "No Scatterbug, Spewpa or Vivillon anywhere in Wally's documented ownership. Checked every team section of Bulbapedia's 'Wally': RSE capture tutorial (Zigzagoon, loaned by Norman) and Ralts line, RSE first/second/rematch teams, ORAS first through fourth battles, the ORAS Battle Maison Multi Battle pair (Mega Gallade + Magnezone, fetched live), the SM/USUM Battle Tree lop/facility pool (Altaria x2, Gallade x2, Magnezone x4, Garchomp x2 - the trap table, read directly), Masters EX (Gallade, Shiny Gardevoir, Delcatty, Altaria), GOTCHA! and Pokemon Adventures. He owns no Kalos bug line in any medium.",
+    "species": "Scatterbug"
+   },
+   {
+    "confidence": "high",
     "reason": "Norman's Zigzagoon, only loaned to Wally for the capture tutorial",
     "species": "Zigzagoon"
    }
@@ -10003,6 +10090,11 @@
     "confidence": "high",
     "reason": "James's Carnivine, borrowed by Jessie as an opponent",
     "species": "Carnivine"
+   },
+   {
+    "confidence": "high",
+    "reason": "Bulbapedia files this under '===Temporary===': 'Zoey used a Chimchar when she was younger in the Snowpoint Trainers' School, as seen in a flashback in DP126 Classroom Training!. It is unknown if it actually belonged to her or if it was [borrowed].' A school-supplied Pokemon in a one-shot flashback, in a section explicitly marked Temporary, with the wiki disclaiming ownership.",
+    "species": "Chimchar"
    },
    {
     "confidence": "high",

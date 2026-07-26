@@ -386,7 +386,7 @@
    },
    "Lucario": {
     "owned_form": "Lucario",
-    "source": null
+    "source": "Sun/Moon & Ultra Sun/Ultra Moon (Battle Tree)"
    },
    "Metagross": {
     "owned_form": "Metagross",
@@ -555,6 +555,10 @@
     "owned_form": "Hisuian Lilligant",
     "source": "Legends: Arceus"
    },
+   "Petilil": {
+    "owned_form": "Hisuian Lilligant",
+    "source": "Games — Pokémon Legends: Arceus (Path of Tenacity) + Pokémon Masters EX"
+   },
    "Purugly": {
     "owned_form": "Purugly",
     "source": "Legends: Arceus"
@@ -680,42 +684,36 @@
   },
   "Ash": {
    "Aipom": {
-    "derived": "section",
     "owned_form": "Aipom",
-    "source": "Anime"
+    "source": "Anime — Diamond & Pearl"
    },
    "Buizel": {
-    "derived": "section",
     "owned_form": "Buizel",
-    "source": "Anime"
+    "source": "Anime — Diamond & Pearl"
    },
    "Bulbasaur": {
-    "derived": "section",
     "owned_form": "Bulbasaur",
-    "source": "Anime"
+    "source": "Anime — Indigo League"
    },
    "Caterpie": {
-    "derived": "section",
-    "owned_form": "Caterpie",
-    "source": "Anime"
+    "owned_form": "Butterfree",
+    "source": "Anime — Indigo League"
    },
    "Charizard": {
     "owned_form": "Charizard",
     "source": "Anime — Indigo League"
    },
    "Chikorita": {
-    "derived": "section",
-    "owned_form": "Chikorita",
-    "source": "Anime"
+    "owned_form": "Bayleef",
+    "source": "Anime — Gold and Silver"
    },
    "Chimchar": {
     "owned_form": "Infernape",
     "source": "Anime — Diamond & Pearl"
    },
    "Corphish": {
-    "derived": "section",
     "owned_form": "Corphish",
-    "source": "Anime"
+    "source": "Anime — Ruby and Sapphire"
    },
    "Cosmoem": {
     "owned_form": "Solgaleo",
@@ -726,9 +724,8 @@
     "source": "Anime — Sun & Moon"
    },
    "Cyndaquil": {
-    "derived": "section",
-    "owned_form": "Cyndaquil",
-    "source": "Anime"
+    "owned_form": "Quilava",
+    "source": "Anime — Gold and Silver"
    },
    "Dracovish": {
     "owned_form": "Dracovish",
@@ -747,9 +744,8 @@
     "source": "Anime — Journeys"
    },
    "Gligar": {
-    "derived": "section",
-    "owned_form": "Gligar",
-    "source": "Anime"
+    "owned_form": "Gliscor",
+    "source": "Anime — Diamond and Pearl"
    },
    "Goomy": {
     "owned_form": "Goodra",
@@ -760,24 +756,20 @@
     "source": "Anime — XY"
    },
    "Grimer": {
-    "derived": "section",
-    "owned_form": "Grimer",
-    "source": "Anime"
+    "owned_form": "Muk",
+    "source": "Anime — Indigo League"
    },
    "Hawlucha": {
-    "derived": "section",
     "owned_form": "Hawlucha",
-    "source": "Anime"
+    "source": "Anime — XY"
    },
    "Heracross": {
-    "derived": "section",
     "owned_form": "Heracross",
-    "source": "Anime"
+    "source": "Anime — Gold and Silver"
    },
    "Hoothoot": {
-    "derived": "section",
-    "owned_form": "Hoothoot",
-    "source": "Anime"
+    "owned_form": "Noctowl",
+    "source": "Anime — Gold and Silver"
    },
    "Incineroar": {
     "owned_form": "Incineroar",
@@ -788,19 +780,16 @@
     "source": "Anime — Diamond & Pearl"
    },
    "Krabby": {
-    "derived": "section",
-    "owned_form": "Krabby",
-    "source": "Anime"
+    "owned_form": "Kingler",
+    "source": "Anime — Indigo League"
    },
    "Lapras": {
-    "derived": "section",
     "owned_form": "Lapras",
-    "source": "Anime"
+    "source": "Anime — Orange Islands"
    },
    "Larvitar": {
-    "derived": "section",
     "owned_form": "Larvitar",
-    "source": "Anime"
+    "source": "Anime — Gold and Silver (Ash's Larvitar)"
    },
    "Lucario": {
     "owned_form": "Lucario",
@@ -811,38 +800,36 @@
     "source": "Anime — Sun & Moon"
    },
    "Mankey": {
-    "derived": "section",
-    "owned_form": "Mankey",
-    "source": "Anime"
+    "owned_form": "Primeape",
+    "source": "Anime — Indigo League / Journeys"
    },
    "Meltan": {
     "owned_form": "Melmetal",
     "source": "Anime — Sun & Moon"
    },
+   "Mime jr.": {
+    "owned_form": "Mr. Mime (Mimey)",
+    "source": "Anime — 'At home' section of Ash's Pokemon"
+   },
    "Munchlax": {
-    "derived": "section",
-    "owned_form": "Munchlax",
-    "source": "Anime"
+    "owned_form": "Snorlax",
+    "source": "Anime — Orange Islands"
    },
    "Noibat": {
-    "derived": "section",
-    "owned_form": "Noibat",
-    "source": "Anime"
+    "owned_form": "Noivern",
+    "source": "Anime — XY"
    },
    "Oshawott": {
-    "derived": "section",
     "owned_form": "Oshawott",
-    "source": "Anime"
+    "source": "Anime — Black & White"
    },
    "Phanpy": {
-    "derived": "section",
-    "owned_form": "Phanpy",
-    "source": "Anime"
+    "owned_form": "Donphan",
+    "source": "Anime — Gold and Silver"
    },
    "Pidgey": {
-    "derived": "section",
-    "owned_form": "Pidgey",
-    "source": "Anime"
+    "owned_form": "Pidgeot",
+    "source": "Anime — Indigo League"
    },
    "Pidove": {
     "owned_form": "Unfezant",
@@ -853,33 +840,28 @@
     "source": "Anime — Indigo League"
    },
    "Poipole": {
-    "derived": "section",
-    "owned_form": "Poipole",
-    "source": "Anime"
+    "owned_form": "Naganadel",
+    "source": "Anime — Sun & Moon"
    },
    "Roggenrola": {
-    "derived": "section",
-    "owned_form": "Roggenrola",
-    "source": "Anime"
+    "owned_form": "Boldore",
+    "source": "Anime — Black & White"
    },
    "Rowlet": {
-    "derived": "section",
     "owned_form": "Rowlet",
-    "source": "Anime"
+    "source": "Anime — Sun & Moon"
    },
    "Sandile": {
-    "derived": "section",
-    "owned_form": "Sandile",
-    "source": "Anime"
+    "owned_form": "Krookodile",
+    "source": "Anime — Black & White"
    },
    "Scraggy": {
     "owned_form": "Scraggy",
     "source": "Anime — Black & White"
    },
    "Sewaddle": {
-    "derived": "section",
-    "owned_form": "Sewaddle",
-    "source": "Anime"
+    "owned_form": "Leavanny",
+    "source": "Anime — Black & White"
    },
    "Sirfetch'd": {
     "owned_form": "Sirfetch'd",
@@ -890,23 +872,20 @@
     "source": "Anime — XY"
    },
    "Snivy": {
-    "derived": "section",
     "owned_form": "Snivy",
-    "source": "Anime"
+    "source": "Anime — Black & White"
    },
    "Snorunt": {
-    "derived": "section",
-    "owned_form": "Snorunt",
-    "source": "Anime"
+    "owned_form": "Glalie",
+    "source": "Anime — Ruby and Sapphire"
    },
    "Solgaleo": {
     "owned_form": "Solgaleo",
     "source": "Anime — Sun & Moon"
    },
    "Squirtle": {
-    "derived": "section",
     "owned_form": "Squirtle",
-    "source": "Anime"
+    "source": "Anime — Indigo League"
    },
    "Staravia": {
     "owned_form": "Staraptor",
@@ -917,39 +896,32 @@
     "source": "Anime — Ruby & Sapphire era"
    },
    "Tauros": {
-    "derived": "section",
     "owned_form": "Tauros",
-    "source": "Anime"
+    "source": "Anime — Indigo League"
    },
    "Tepig": {
-    "derived": "section",
-    "owned_form": "Tepig",
-    "source": "Anime"
+    "owned_form": "Pignite",
+    "source": "Anime — Black & White"
    },
    "Torkoal": {
-    "derived": "section",
     "owned_form": "Torkoal",
-    "source": "Anime"
+    "source": "Anime — Ruby and Sapphire"
    },
    "Totodile": {
-    "derived": "section",
     "owned_form": "Totodile",
-    "source": "Anime"
+    "source": "Anime — Gold and Silver"
    },
    "Treecko": {
-    "derived": "section",
-    "owned_form": "Treecko",
-    "source": "Anime"
+    "owned_form": "Sceptile",
+    "source": "Anime — Ruby and Sapphire"
    },
    "Turtwig": {
-    "derived": "section",
-    "owned_form": "Turtwig",
-    "source": "Anime"
+    "owned_form": "Torterra",
+    "source": "Anime — Diamond and Pearl"
    },
    "Tympole": {
-    "derived": "section",
-    "owned_form": "Tympole",
-    "source": "Anime"
+    "owned_form": "Palpitoad",
+    "source": "Anime — Black & White"
    }
   },
   "Barry": {
@@ -1140,6 +1112,10 @@
    "Inteleon": {
     "owned_form": "Inteleon",
     "source": "Masters EX"
+   },
+   "IrnValiant": {
+    "owned_form": "Iron Valiant",
+    "source": "Pokemon Masters EX — Sygna Suit Bede & Iron Valiant"
    },
    "Iron Valiant": {
     "owned_form": "Iron Valiant",
@@ -1733,11 +1709,11 @@
   "Brandon": {
    "Articuno": {
     "owned_form": "Articuno",
-    "source": null
+    "source": "Emerald (Battle Pyramid, Gold Symbol challenge)"
    },
    "Dusclops": {
     "owned_form": "Dusclops",
-    "source": null
+    "source": "Anime — Battle Frontier arc (on hand)"
    },
    "Duskull": {
     "derived": "section",
@@ -1746,7 +1722,7 @@
    },
    "Moltres": {
     "owned_form": "Moltres",
-    "source": null
+    "source": "Emerald (Battle Pyramid, Gold Symbol challenge)"
    },
    "Nincada": {
     "derived": "section",
@@ -1784,7 +1760,7 @@
    },
    "Zapdos": {
     "owned_form": "Zapdos",
-    "source": null
+    "source": "Emerald (Battle Pyramid, Gold Symbol challenge)"
    }
   },
   "Brassius": {
@@ -2087,9 +2063,8 @@
     "source": "Anime — Ruby & Sapphire era"
    },
    "Mudkip": {
-    "derived": "section",
-    "owned_form": "Mudkip",
-    "source": "Anime"
+    "owned_form": "Marshtomp",
+    "source": "Anime — Ruby and Sapphire / Diamond and Pearl (on hand)"
    },
    "Ninetales": {
     "owned_form": "Ninetales",
@@ -2893,6 +2868,10 @@
     "owned_form": "Pignite",
     "source": "Black/White"
    },
+   "Porygon": {
+    "owned_form": "Porygon-Z",
+    "source": "Games — Black 2 and White 2, Pokemon World Tournament (Type Expert / World Leaders / Mix Master)"
+   },
    "Porygon-Z": {
     "owned_form": "Porygon-Z",
     "source": "PWT"
@@ -3567,6 +3546,10 @@
     "owned_form": "Milotic",
     "source": "Diamond/Pearl"
    },
+   "Porygon": {
+    "owned_form": "Porygon-Z",
+    "source": "Games — Brilliant Diamond and Shining Pearl, Champion rematch (after Stark Mountain)"
+   },
    "Porygon-Z": {
     "owned_form": "Porygon-Z",
     "source": "BDSP"
@@ -3661,11 +3644,11 @@
   "Dahlia": {
    "Blaziken": {
     "owned_form": "Blaziken",
-    "source": null
+    "source": "Platinum/HeartGold/SoulSilver (Battle Arcade, Gold Print challenge)"
    },
    "Dusknoir": {
     "owned_form": "Dusknoir",
-    "source": null
+    "source": "Platinum/HeartGold/SoulSilver (Battle Arcade, Silver Print challenge)"
    },
    "Lotad": {
     "derived": "section",
@@ -3678,7 +3661,7 @@
    },
    "Medicham": {
     "owned_form": "Medicham",
-    "source": null
+    "source": "Platinum/HeartGold/SoulSilver (Battle Arcade, Silver Print challenge)"
    },
    "Meditite": {
     "derived": "section",
@@ -3687,7 +3670,7 @@
    },
    "Togekiss": {
     "owned_form": "Togekiss",
-    "source": null
+    "source": "Platinum/HeartGold/SoulSilver (Battle Arcade, Gold Print challenge)"
    },
    "Togepi": {
     "derived": "section",
@@ -3696,25 +3679,25 @@
    },
    "Zapdos": {
     "owned_form": "Zapdos",
-    "source": null
+    "source": "Platinum/HeartGold/SoulSilver (Battle Arcade, Gold Print challenge)"
    }
   },
   "Darach": {
    "Empoleon": {
     "owned_form": "Empoleon",
-    "source": null
+    "source": "Platinum/HeartGold/SoulSilver (Battle Castle, Silver Print challenge)"
    },
    "Entei": {
     "owned_form": "Entei",
-    "source": null
+    "source": "Platinum/HeartGold/SoulSilver (Battle Castle, Gold Print challenge)"
    },
    "Gallade": {
     "owned_form": "Gallade",
-    "source": null
+    "source": "Platinum/HeartGold/SoulSilver (Battle Castle, Gold Print challenge)"
    },
    "Houndoom": {
     "owned_form": "Houndoom",
-    "source": null
+    "source": "Platinum/HeartGold/SoulSilver (Battle Castle, Silver Print challenge)"
    },
    "Houndour": {
     "derived": "section",
@@ -3728,7 +3711,7 @@
    },
    "Staraptor": {
     "owned_form": "Staraptor",
-    "source": null
+    "source": "Platinum/HeartGold/SoulSilver (Battle Castle, Silver Print challenge)"
    },
    "Starly": {
     "derived": "section",
@@ -3762,9 +3745,8 @@
     "source": "BDSP"
    },
    "Buizel": {
-    "derived": "section",
     "owned_form": "Buizel",
-    "source": "Anime"
+    "source": "Anime — Diamond and Pearl ('Traded away' section of Dawn's Pokemon)"
    },
    "Buneary": {
     "owned_form": "Buneary",
@@ -4354,6 +4336,14 @@
    }
   },
   "Ethan": {
+   "Bulbasaur": {
+    "owned_form": "Bulbasaur",
+    "source": "Games — HeartGold and SoulSilver, Pokegear calls ('Mentioned' section)"
+   },
+   "Chikorita": {
+    "owned_form": "Chikorita",
+    "source": "Games — Gold/Silver/Crystal and HeartGold/SoulSilver (protagonist's starter)"
+   },
    "Cyndaquil": {
     "owned_form": "Typhlosion",
     "source": "Masters EX"
@@ -4374,6 +4364,10 @@
     "owned_form": "Marill",
     "source": "HeartGold/SoulSilver"
    },
+   "Porygon": {
+    "owned_form": "Porygon",
+    "source": "Games — HeartGold and SoulSilver, Pokegear calls ('Mentioned' section)"
+   },
    "Quilava": {
     "owned_form": "Typhlosion",
     "source": "Masters EX"
@@ -4386,9 +4380,17 @@
     "owned_form": "Rattata",
     "source": "HeartGold/SoulSilver"
    },
+   "Tangela": {
+    "owned_form": "Tangela",
+    "source": "Games — HeartGold and SoulSilver, Pokegear calls ('Mentioned' section)"
+   },
    "Tauros": {
     "owned_form": "Tauros",
     "source": "HeartGold/SoulSilver"
+   },
+   "Totodile": {
+    "owned_form": "Totodile",
+    "source": "Games — Gold/Silver/Crystal and HeartGold/SoulSilver (protagonist's starter)"
    },
    "Typhlosion": {
     "owned_form": "Typhlosion",
@@ -4700,6 +4702,10 @@
    }
   },
   "Gaeric": {
+   "Bergmite": {
+    "owned_form": "Avalugg (Hisuian)",
+    "source": "Games — Pokemon Legends: Arceus (Gaeric's battle teams)"
+   },
    "Froslass": {
     "owned_form": "Froslass",
     "source": "Legends: Arceus"
@@ -4853,14 +4859,12 @@
     "source": "Anime — Journeys"
    },
    "Horsea": {
-    "derived": "section",
-    "owned_form": "Horsea",
-    "source": "Anime"
+    "owned_form": "Kingdra",
+    "source": "Anime — Johto (Silver Conference registration roster, EP269)"
    },
    "Houndour": {
-    "derived": "section",
-    "owned_form": "Houndour",
-    "source": "Anime"
+    "owned_form": "Houndoom",
+    "source": "Anime — Johto (Silver Conference registration roster, EP269)"
    },
    "Kingler": {
     "owned_form": "Kingler",
@@ -4887,9 +4891,8 @@
     "source": "Manga — The Electric Tale of Pikachu"
    },
    "Pinsir": {
-    "derived": "section",
     "owned_form": "Pinsir",
-    "source": "Anime"
+    "source": "Anime — Johto (Silver Conference registration roster, EP269)"
    },
    "Rapidash": {
     "owned_form": "Rapidash",
@@ -4908,9 +4911,8 @@
     "source": "Anime — Johto"
    },
    "Skarmory": {
-    "derived": "section",
     "owned_form": "Skarmory",
-    "source": "Anime"
+    "source": "Anime — Johto (Silver Conference registration roster, EP269)"
    },
    "Slowbro": {
     "owned_form": "Slowbro",
@@ -4921,9 +4923,8 @@
     "source": "Manga — The Electric Tale of Pikachu"
    },
    "Spearow": {
-    "derived": "section",
-    "owned_form": "Spearow",
-    "source": "Anime"
+    "owned_form": "Fearow",
+    "source": "Anime — Johto (Silver Conference registration roster, EP269)"
    },
    "Squirtle": {
     "owned_form": "Blastoise",
@@ -5293,9 +5294,17 @@
    }
   },
   "Gloria": {
+   "Calyrex": {
+    "owned_form": "Calyrex",
+    "source": "Games — Sword and Shield: The Crown Tundra"
+   },
    "Cinderace": {
     "owned_form": "Cinderace",
     "source": "Masters EX"
+   },
+   "Eternatus": {
+    "owned_form": "Eternatus",
+    "source": "Games — Sword and Shield (main story)"
    },
    "Inteleon": {
     "owned_form": "Inteleon",
@@ -5312,36 +5321,60 @@
    "Zacian": {
     "owned_form": "Zacian (Crowned Sword)",
     "source": "Masters EX"
+   },
+   "Zamazenta": {
+    "owned_form": "Zamazenta",
+    "source": "Games — Sword and Shield (post-game, Sordward & Shielbert)"
    }
   },
   "Goh": {
    "Absol": {
-    "derived": "section",
     "owned_form": "Absol",
-    "source": "Anime"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Aerodactyl": {
-    "derived": "section",
     "owned_form": "Aerodactyl",
-    "source": "Anime"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Arctozolt": {
+    "owned_form": "Arctozolt",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Bellsprout": {
+    "owned_form": "Bellsprout",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Binacle": {
+    "owned_form": "Binacle",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Bruxish": {
+    "owned_form": "Bruxish",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Bunnelby": {
     "owned_form": "Bunnelby",
     "source": "Anime — Journeys"
    },
+   "Carvanha": {
+    "owned_form": "Sharpedo",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
    "Caterpie": {
-    "derived": "section",
     "owned_form": "Caterpie",
-    "source": "Anime"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Chinchou": {
-    "derived": "section",
     "owned_form": "Chinchou",
-    "source": "Anime — Johto"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Cinderace": {
     "owned_form": "Cinderace",
     "source": "Anime — Journeys"
+   },
+   "Corsola": {
+    "owned_form": "Corsola",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Cubone": {
     "owned_form": "Cubone",
@@ -5364,9 +5397,8 @@
     "source": "Anime — Journeys"
    },
    "Drowzee": {
-    "derived": "section",
     "owned_form": "Drowzee",
-    "source": "Anime — Johto"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Dugtrio": {
     "owned_form": "Dugtrio",
@@ -5376,6 +5408,10 @@
     "owned_form": "Durant",
     "source": "Anime — Journeys"
    },
+   "Ekans": {
+    "owned_form": "Ekans",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
    "Eternatus": {
     "owned_form": "Eternatus",
     "source": "Anime — Journeys"
@@ -5384,10 +5420,17 @@
     "owned_form": "Exeggutor",
     "source": "Anime — Journeys"
    },
+   "Falinks": {
+    "owned_form": "Falinks",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
    "Farfetch'd": {
-    "derived": "section",
     "owned_form": "Farfetch'd",
-    "source": "Anime"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Ferroseed": {
+    "owned_form": "Ferrothorn",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Flabébé": {
     "owned_form": "Floette",
@@ -5398,18 +5441,28 @@
     "source": "Anime — Journeys"
    },
    "Froakie": {
-    "derived": "section",
     "owned_form": "Froakie",
-    "source": "Anime"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Geodude": {
+    "owned_form": "Geodude",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Goldeen": {
+    "owned_form": "Goldeen",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Golurk": {
     "owned_form": "Golurk",
     "source": "Anime — Journeys"
    },
+   "Gossifleur": {
+    "owned_form": "Gossifleur",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
    "Grimer": {
-    "derived": "section",
     "owned_form": "Grimer",
-    "source": "Anime"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Grookey": {
     "owned_form": "Grookey",
@@ -5420,83 +5473,136 @@
     "source": "Anime — Journeys"
    },
    "Hoothoot": {
-    "derived": "section",
     "owned_form": "Hoothoot",
-    "source": "Anime — Johto"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Kingdra": {
     "owned_form": "Kingdra",
     "source": "Anime — Journeys"
    },
+   "Krabby": {
+    "owned_form": "Krabby",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
    "Magikarp": {
-    "derived": "section",
     "owned_form": "Magikarp",
-    "source": "Anime"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Mankey": {
+    "owned_form": "Mankey",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Mantyke": {
-    "derived": "section",
     "owned_form": "Mantyke",
-    "source": "Anime"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Milcery": {
+    "owned_form": "Milcery",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Misdreavus": {
-    "derived": "section",
     "owned_form": "Misdreavus",
-    "source": "Anime"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Morelull": {
+    "owned_form": "Morelull",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Murkrow": {
-    "derived": "section",
     "owned_form": "Murkrow",
-    "source": "Anime — Johto"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Nidoran♀": {
-    "derived": "section",
     "owned_form": "Nidoran♀",
-    "source": "Manga"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Nincada": {
+    "owned_form": "Shedinja",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Ninetales": {
     "owned_form": "Ninetales",
     "source": "Anime — Journeys"
    },
+   "Numel": {
+    "owned_form": "Camerupt",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Oddish": {
+    "owned_form": "Oddish",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
    "Panpour": {
-    "derived": "section",
     "owned_form": "Panpour",
-    "source": "Anime"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Pansear": {
+    "owned_form": "Pansear",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Paras": {
-    "derived": "section",
     "owned_form": "Paras",
-    "source": "Manga"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Passimian": {
+    "owned_form": "Passimian",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Petilil": {
+    "owned_form": "Lilligant",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Phantump": {
+    "owned_form": "Phantump",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Pidgey": {
+    "owned_form": "Pidgey",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Pikachu": {
     "owned_form": "Raichu",
     "source": "Anime — Journeys"
    },
    "Pineco": {
-    "derived": "section",
     "owned_form": "Pineco",
-    "source": "Anime — Johto"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Pinsir": {
     "owned_form": "Pinsir",
     "source": "Anime — Journeys"
    },
+   "Poliwag": {
+    "owned_form": "Poliwag",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
    "Pyukumuku": {
-    "derived": "section",
     "owned_form": "Pyukumuku",
-    "source": "Anime"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Raboot": {
     "owned_form": "Cinderace",
     "source": "Anime — Journeys"
+   },
+   "Rattata": {
+    "owned_form": "Rattata",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Regieleki": {
     "owned_form": "Regieleki",
     "source": "Anime — Journeys"
    },
    "Roggenrola": {
-    "derived": "section",
     "owned_form": "Roggenrola",
-    "source": "Anime"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Sandile": {
+    "owned_form": "Sandile",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Scatterbug": {
+    "owned_form": "Scatterbug",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Scizor": {
     "owned_form": "Scizor",
@@ -5511,19 +5617,16 @@
     "source": "Anime — Journeys"
    },
    "Seel": {
-    "derived": "section",
-    "owned_form": "Seel",
-    "source": "Anime"
+    "owned_form": "Dewgong",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Sentret": {
-    "derived": "section",
     "owned_form": "Sentret",
-    "source": "Anime — Johto"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Skwovet": {
-    "derived": "section",
     "owned_form": "Skwovet",
-    "source": "Anime"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Slowpoke": {
     "owned_form": "Slowpoke",
@@ -5533,39 +5636,65 @@
     "owned_form": "Inteleon",
     "source": "Anime — Journeys"
    },
+   "Spearow": {
+    "owned_form": "Spearow",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
    "Spinarak": {
-    "derived": "section",
-    "owned_form": "Spinarak",
-    "source": "Anime — Johto"
+    "owned_form": "Ariados",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Stunfisk": {
+    "owned_form": "Stunfisk",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Suicune": {
     "owned_form": "Suicune",
     "source": "Anime — Journeys"
    },
    "Swablu": {
-    "derived": "section",
-    "owned_form": "Swablu",
-    "source": "Anime"
+    "owned_form": "Altaria",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Taillow": {
-    "derived": "section",
     "owned_form": "Taillow",
-    "source": "Anime"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Tentacool": {
+    "owned_form": "Tentacool",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Trapinch": {
-    "derived": "section",
     "owned_form": "Trapinch",
-    "source": "Anime"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Tyrogue": {
+    "owned_form": "Hitmonchan",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Venonat": {
-    "derived": "section",
     "owned_form": "Venonat",
-    "source": "Anime"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Voltorb": {
+    "owned_form": "Voltorb",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    },
    "Weedle": {
-    "derived": "section",
     "owned_form": "Weedle",
-    "source": "Anime"
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Wingull": {
+    "owned_form": "Wingull",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Wurmple": {
+    "owned_form": "Wurmple",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
+   },
+   "Zubat": {
+    "owned_form": "Golbat",
+    "source": "Anime — Pokemon Journeys (List of Goh's Pokemon)"
    }
   },
   "Gordie": {
@@ -5580,6 +5709,10 @@
    "Shuckle": {
     "owned_form": "Shuckle",
     "source": "Sword/Shield"
+   },
+   "Stonjourne": {
+    "owned_form": "Stonjourner",
+    "source": "Games — Pokemon Sword (Circhester Gym battle, Champion tournaments, Galarian Star Tournament)"
    },
    "Stonjourner": {
     "owned_form": "Stonjourner",
@@ -5615,7 +5748,7 @@
   "Greta": {
    "Breloom": {
     "owned_form": "Breloom",
-    "source": null
+    "source": "Emerald (Battle Arena, Gold Symbol challenge)"
    },
    "Eevee": {
     "derived": "section",
@@ -5624,11 +5757,11 @@
    },
    "Gengar": {
     "owned_form": "Gengar",
-    "source": null
+    "source": "Emerald (Battle Arena, Gold Symbol challenge)"
    },
    "Hariyama": {
     "owned_form": "Hariyama",
-    "source": null
+    "source": "Anime — Battle Frontier arc"
    },
    "Heracross": {
     "derived": "section",
@@ -5642,7 +5775,7 @@
    },
    "Medicham": {
     "owned_form": "Medicham",
-    "source": null
+    "source": "Anime — Battle Frontier arc"
    },
    "Meditite": {
     "derived": "section",
@@ -5875,6 +6008,10 @@
    }
   },
   "Hassel": {
+   "Archaludon": {
+    "owned_form": "Duraludon",
+    "source": "Games — Scarlet/Violet League Club Room & Academy Ace Tournament team"
+   },
    "Arctibax": {
     "owned_form": "Baxcalibur",
     "source": "Scarlet/Violet"
@@ -5913,6 +6050,10 @@
    }
   },
   "Hau": {
+   "Blacefalon": {
+    "owned_form": "Blacephalon",
+    "source": "Games — Ultra Sun/Ultra Moon post-game (Poni Grove)"
+   },
    "Blacephalon": {
     "owned_form": "Blacephalon",
     "source": "Ultra Sun/Ultra Moon"
@@ -5926,9 +6067,8 @@
     "source": "Sun/Moon"
    },
    "Crabrawler": {
-    "derived": "section",
-    "owned_form": "Crabrawler",
-    "source": "Masters EX"
+    "owned_form": "Crabominable",
+    "source": "Pokemon Masters EX (Hau & Crabominable sync pair)"
    },
    "Dartrix": {
     "owned_form": "Decidueye",
@@ -6184,6 +6324,14 @@
     "owned_form": "Scrafty",
     "source": "Black/White (Battle Subway)"
    },
+   "Snivy": {
+    "owned_form": "Snivy",
+    "source": "Games — Black and White first partner (player's choice)"
+   },
+   "Tepig": {
+    "owned_form": "Tepig",
+    "source": "Games — Black and White first partner (player's choice)"
+   },
    "Throh": {
     "owned_form": "Throh",
     "source": "Black/White (Battle Subway)"
@@ -6314,6 +6462,10 @@
     "owned_form": "Iron Leaves",
     "source": "Masters EX"
    },
+   "IronLeaves": {
+    "owned_form": "Iron Leaves",
+    "source": "Pokemon Masters EX (Champion Hilda & Iron Leaves, EX Master Fair sync pair)"
+   },
    "Jellicent": {
     "owned_form": "Jellicent",
     "source": "Black/White & Black 2/White 2 (Battle Subway — Multi Train partner)"
@@ -6350,6 +6502,10 @@
     "owned_form": "Musharna",
     "source": "Black/White & Black 2/White 2 (Battle Subway — Multi Train partner)"
    },
+   "Oshawott": {
+    "owned_form": "Oshawott",
+    "source": "Games — Black and White first partner (player's choice)"
+   },
    "Pignite": {
     "owned_form": "Emboar",
     "source": "Masters EX"
@@ -6369,6 +6525,10 @@
    "Scrafty": {
     "owned_form": "Scrafty",
     "source": "Black/White & Black 2/White 2 (Battle Subway — Multi Train partner)"
+   },
+   "Snivy": {
+    "owned_form": "Snivy",
+    "source": "Games — Black and White first partner (player's choice)"
    },
    "Tepig": {
     "owned_form": "Emboar",
@@ -6416,9 +6576,17 @@
     "owned_form": "Dubwool",
     "source": "Sword/Shield"
    },
+   "Heatmor": {
+    "owned_form": "Heatmor",
+    "source": "Games — Sword and Shield (Hop's rival battle teams)"
+   },
    "Inteleon": {
     "owned_form": "Inteleon",
     "source": "Sword/Shield"
+   },
+   "Phantump": {
+    "owned_form": "Trevenant",
+    "source": "Games — Sword and Shield (Hop's rival battle teams)"
    },
    "Pincurchin": {
     "owned_form": "Pincurchin",
@@ -6441,17 +6609,28 @@
     "source": "Sword/Shield"
    },
    "Rookidee": {
-    "derived": "section",
     "owned_form": "Rookidee",
-    "source": "Sword/Shield"
+    "source": "Games — Sword and Shield (Hop's rival battle teams)"
+   },
+   "Silicobra": {
+    "owned_form": "Silicobra",
+    "source": "Games — Sword and Shield (Hop's rival battle teams)"
    },
    "Snorlax": {
     "owned_form": "Snorlax",
     "source": "Sword/Shield"
    },
+   "Toxel": {
+    "owned_form": "Toxel",
+    "source": "Games — Sword and Shield (Hop's rival battle teams)"
+   },
    "Wooloo": {
     "owned_form": "Dubwool",
     "source": "Sword/Shield"
+   },
+   "Yamper": {
+    "owned_form": "Boltund",
+    "source": "Games — Sword and Shield (Hop's rival battle teams)"
    },
    "Zacian": {
     "owned_form": "Zacian",
@@ -6643,6 +6822,10 @@
     "owned_form": "Flutter Mane",
     "source": "Masters EX"
    },
+   "FluttrMane": {
+    "owned_form": "Flutter Mane",
+    "source": "Pokémon Masters EX — Iono (Fall 2024) sync pair"
+   },
    "Kilowattrel": {
     "owned_form": "Kilowattrel",
     "source": "Scarlet/Violet"
@@ -6666,6 +6849,10 @@
    "Raging Bolt": {
     "owned_form": "Raging Bolt",
     "source": "Masters EX"
+   },
+   "RagingBolt": {
+    "owned_form": "Raging Bolt",
+    "source": "Pokémon Masters EX — Sygna Suit Iono sync pair"
    },
    "Tadbulb": {
     "owned_form": "Bellibolt",
@@ -6780,9 +6967,8 @@
     "source": "Anime — Ruby and Sapphire"
    },
    "Growlithe": {
-    "derived": "section",
-    "owned_form": "Growlithe",
-    "source": "Anime"
+    "owned_form": "Growlithe (Growlie)",
+    "source": "Anime — Pokémon the Series (James's childhood Growlithe, nicknamed Growlie)"
    },
    "Gyarados": {
     "owned_form": "Gyarados",
@@ -6808,6 +6994,10 @@
     "owned_form": "Mime Jr.",
     "source": "Anime — Ruby and Sapphire"
    },
+   "Mime jr.": {
+    "owned_form": "Mime Jr.",
+    "source": "Anime — Pokémon the Series: Diamond and Pearl onward (on hand)"
+   },
    "Morpeko": {
     "owned_form": "Morpeko",
     "source": "Anime — Journeys"
@@ -6830,9 +7020,8 @@
     "source": "Anime — Indigo League"
    },
    "Yamask": {
-    "derived": "section",
     "owned_form": "Yamask",
-    "source": "Anime"
+    "source": "Anime — Pokémon the Series: Black & White onward (on hand)"
    }
   },
   "Janine": {
@@ -7057,9 +7246,8 @@
     "source": "Anime — Ruby & Sapphire era"
    },
    "Shellder": {
-    "derived": "section",
     "owned_form": "Shellder",
-    "source": "Anime"
+    "source": "Anime — original series, EP047 (Seafoam Islands); Jessie's Pokémon > 'Evolved with another Pokémon'"
    },
    "Starmie": {
     "owned_form": "Starmie",
@@ -7331,9 +7519,8 @@
     "source": "Sword/Shield"
    },
    "Sizzlipede": {
-    "derived": "section",
-    "owned_form": "Sizzlipede",
-    "source": "Masters EX"
+    "owned_form": "Centiskorch (Gigantamax)",
+    "source": "Games — Pokémon Sword and Shield, Motostoke Gym battle (also rematch, Champion tournament, Galarian Star Tournament)"
    },
    "Torkoal": {
     "owned_form": "Torkoal",
@@ -7390,6 +7577,10 @@
    "Probopass": {
     "owned_form": "Probopass",
     "source": "Legends: Arceus"
+   },
+   "Rufflet": {
+    "owned_form": "Braviary (Hisuian)",
+    "source": "Games — Pokémon Legends: Arceus, Kamado's battle team (Hisuian Braviary Lv.61) and Path of Tenacity"
    },
    "Snorlax": {
     "owned_form": "Snorlax",
@@ -7552,9 +7743,8 @@
     "source": "Scarlet/Violet"
    },
    "Crabrawler": {
-    "derived": "section",
-    "owned_form": "Crabrawler",
-    "source": "Anime"
+    "owned_form": "Crabominable",
+    "source": "Games — Pokémon Scarlet and Violet, Cascarrafa Gym battle (also rematch and League Club Room)"
    },
    "Feraligatr": {
     "owned_form": "Feraligatr",
@@ -7720,6 +7910,10 @@
     "owned_form": "Crabominable",
     "source": "Pokémon Legends: Z-A"
    },
+   "Crabrawler": {
+    "owned_form": "Crabominable (Mega)",
+    "source": "Games — Pokémon Legends: Z-A, Korrina (Successor) rematch team at Quasartico Inc."
+   },
    "Gallade": {
     "owned_form": "Gallade",
     "source": "Pokémon Legends: Z-A"
@@ -7811,6 +8005,10 @@
    "Crabominable": {
     "owned_form": "Crabominable",
     "source": "Sun/Moon + Ultra Sun/Ultra Moon (Battle Royal Dome, Master Rank)"
+   },
+   "Crabrawler": {
+    "owned_form": "Crabominable",
+    "source": "Games — Pokémon Sun/Moon and Ultra Sun/Ultra Moon, Battle Royal Dome team as The Royal (Masked Royal)"
    },
    "Cutiefly": {
     "owned_form": "normal",
@@ -7935,9 +8133,8 @@
     "source": "Anime — Sun & Moon"
    },
    "Feebas": {
-    "derived": "section",
     "owned_form": "Feebas",
-    "source": "Anime"
+    "source": "Anime — Pokémon the Series: Sun & Moon, SM033 (Big Sky, Small Fry!)"
    },
    "Lanturn": {
     "owned_form": "Lanturn",
@@ -8679,6 +8876,10 @@
     "owned_form": "Empoleon",
     "source": "Diamond/Pearl"
    },
+   "Porygon": {
+    "owned_form": "Porygon-Z",
+    "source": "Games - Brilliant Diamond/Shining Pearl"
+   },
    "Porygon-Z": {
     "owned_form": "Porygon-Z",
     "source": "Brilliant Diamond/Shining Pearl"
@@ -8762,7 +8963,7 @@
    },
    "Gyarados": {
     "owned_form": "Gyarados",
-    "source": null
+    "source": "Emerald (Battle Pike, Gold Symbol challenge)"
    },
    "Makuhita": {
     "owned_form": "normal",
@@ -8792,7 +8993,7 @@
    },
    "Steelix": {
     "owned_form": "Steelix",
-    "source": null
+    "source": "Emerald (Battle Pike, Gold Symbol challenge)"
    },
    "Swinub": {
     "owned_form": "normal",
@@ -8807,6 +9008,10 @@
    "Bewear": {
     "owned_form": "Bewear",
     "source": "Sun/Moon"
+   },
+   "Blacefalon": {
+    "owned_form": "Blacephalon",
+    "source": "Manga - Pokemon Adventures (Sun & Moon arc)"
    },
    "Blacephalon": {
     "owned_form": "Blacephalon",
@@ -8914,6 +9119,10 @@
     "owned_form": "Meganium",
     "source": "Masters EX"
    },
+   "Bulbasaur": {
+    "owned_form": "Bulbasaur",
+    "source": "Games - HeartGold/SoulSilver (Pokegear calls)"
+   },
    "Celebi": {
     "owned_form": "Celebi",
     "source": "Masters EX"
@@ -8923,9 +9132,8 @@
     "source": "Masters EX"
    },
    "Cyndaquil": {
-    "derived": "section",
-    "owned_form": "Cyndaquil",
-    "source": "Anime"
+    "owned_form": "Egg (hatched as Dawn's Cyndaquil)",
+    "source": "Anime - Diamond and Pearl (DP143)"
    },
    "Entei": {
     "owned_form": "Entei",
@@ -8951,6 +9159,10 @@
     "owned_form": "Phanpy",
     "source": "Masters EX"
    },
+   "Porygon": {
+    "owned_form": "Porygon",
+    "source": "Games - HeartGold/SoulSilver (Pokegear calls)"
+   },
    "Rattata": {
     "owned_form": "Rattata",
     "source": "HeartGold/SoulSilver"
@@ -8958,6 +9170,14 @@
    "Sentret": {
     "owned_form": "Sentret",
     "source": "Manga — Pokémon HeartGold SoulSilver: Pokédex Completion Comic"
+   },
+   "Tangela": {
+    "owned_form": "Tangela",
+    "source": "Games - HeartGold/SoulSilver (Pokegear calls)"
+   },
+   "Tauros": {
+    "owned_form": "Tauros",
+    "source": "Games - HeartGold/SoulSilver (Pokegear calls)"
    },
    "Vaporeon": {
     "owned_form": "Vaporeon",
@@ -9406,9 +9626,8 @@
     "source": "Omega Ruby/Alpha Sapphire"
    },
    "Bulbasaur": {
-    "derived": "section",
-    "owned_form": "Bulbasaur",
-    "source": "Anime"
+    "owned_form": "Venusaur",
+    "source": "Anime - Advanced Generation"
    },
    "Claydol": {
     "owned_form": "Claydol",
@@ -9638,6 +9857,10 @@
     "owned_form": "Skuntank",
     "source": "Legends: Arceus"
    },
+   "Voltorb": {
+    "owned_form": "Hisuian Electrode",
+    "source": "Legends: Arceus"
+   },
    "Zubat": {
     "owned_form": "Golbat",
     "source": "Legends: Arceus"
@@ -9713,9 +9936,8 @@
     "source": "Pokémon Stadium 2"
    },
    "Azurill": {
-    "derived": "section",
     "owned_form": "Azurill",
-    "source": "Anime"
+    "source": "Anime - Misty's Azurill"
    },
    "Blastoise": {
     "owned_form": "Blastoise",
@@ -9734,9 +9956,8 @@
     "source": "Anime — Journeys"
    },
    "Corsola": {
-    "derived": "section",
     "owned_form": "Corsola",
-    "source": "Anime"
+    "source": "Anime - Johto (kept at the Cerulean Gym)"
    },
    "Dewgong": {
     "owned_form": "Dewgong",
@@ -9791,9 +10012,8 @@
     "source": "Gold/Silver"
    },
    "Luvdisc": {
-    "derived": "section",
-    "owned_form": "Luvdisc",
-    "source": "Anime"
+    "owned_form": "Luvdisc (Caserin)",
+    "source": "Anime - Caserin, at the Cerulean Gym"
    },
    "Magikarp": {
     "owned_form": "Magikarp",
@@ -10357,6 +10577,10 @@
     "owned_form": "Dudunsparce",
     "source": "Scarlet/Violet"
    },
+   "Dunsparce": {
+    "owned_form": "Dudunsparce",
+    "source": "Games - Scarlet/Violet"
+   },
    "Dusknoir": {
     "owned_form": "Dusknoir",
     "source": "Scarlet/Violet"
@@ -10394,9 +10618,8 @@
     "source": "Scarlet/Violet"
    },
    "Lechonk": {
-    "derived": "section",
     "owned_form": "Lechonk",
-    "source": "Scarlet/Violet"
+    "source": "Games - Scarlet/Violet official website (cited on Bulbapedia)"
    },
    "Lycanroc": {
     "owned_form": "Lycanroc",
@@ -10454,6 +10677,10 @@
     "owned_form": "Scream Tail",
     "source": "Masters EX"
    },
+   "ScreamTail": {
+    "owned_form": "Scream Tail",
+    "source": "Pokemon Masters EX"
+   },
    "Skeledirge": {
     "owned_form": "Skeledirge",
     "source": "Scarlet/Violet"
@@ -10463,9 +10690,8 @@
     "source": "Scarlet/Violet"
    },
    "Smoliv": {
-    "derived": "section",
     "owned_form": "Smoliv",
-    "source": "Scarlet/Violet"
+    "source": "Games - Scarlet/Violet official website (cited on Bulbapedia)"
    },
    "Sprigatito": {
     "owned_form": "Meowscarada",
@@ -10476,9 +10702,8 @@
     "source": "Scarlet/Violet"
    },
    "Wattrel": {
-    "derived": "section",
-    "owned_form": "Wattrel",
-    "source": "Anime"
+    "owned_form": "Kilowattrel",
+    "source": "Anime - Pokemon: Paldean Winds"
    }
   },
   "Nessa": {
@@ -10544,7 +10769,7 @@
    },
    "Breloom": {
     "owned_form": "Breloom",
-    "source": null
+    "source": "Anime — Battle Frontier arc (at the Battle Factory)"
    },
    "Bulbasaur": {
     "derived": "section",
@@ -10553,7 +10778,7 @@
    },
    "Camerupt": {
     "owned_form": "Camerupt",
-    "source": null
+    "source": "Anime — Battle Frontier arc (at the Battle Factory)"
    },
    "Electrike": {
     "derived": "section",
@@ -10562,7 +10787,7 @@
    },
    "Golduck": {
     "owned_form": "Golduck",
-    "source": null
+    "source": "Anime — Battle Frontier arc (at the Battle Factory)"
    },
    "Lairon": {
     "owned_form": "Lairon",
@@ -10570,7 +10795,7 @@
    },
    "Machamp": {
     "owned_form": "Machamp",
-    "source": null
+    "source": "Anime — Battle Frontier arc (at the Battle Factory)"
    },
    "Machop": {
     "derived": "section",
@@ -10606,7 +10831,7 @@
    },
    "Rhydon": {
     "owned_form": "Rhydon",
-    "source": null
+    "source": "Anime — Battle Frontier arc (at the Battle Factory)"
    },
    "Rhyhorn": {
     "derived": "section",
@@ -11097,6 +11322,10 @@
    "Rockruff": {
     "owned_form": "Lycanroc",
     "source": "Anime - Sun & Moon era"
+   },
+   "Stufful": {
+    "owned_form": "Stufful",
+    "source": "Games — Pokemon Sun/Moon/USUM (Olivia's Jewelry Shop and house)"
    }
   },
   "Olympia": {
@@ -11132,6 +11361,10 @@
    }
   },
   "Palina": {
+   "Growlithe": {
+    "owned_form": "Growlithe (Hisuian)",
+    "source": "Games — Pokemon Legends: Arceus (Palina's partner Pokemon)"
+   },
    "Hisuian Arcanine": {
     "owned_form": "Hisuian Arcanine",
     "source": "Legends: Arceus"
@@ -11153,7 +11386,7 @@
    },
    "Dragonite": {
     "owned_form": "Dragonite",
-    "source": null
+    "source": "Diamond/Pearl & Platinum/HeartGold/SoulSilver (Battle Tower, Silver Print challenge)"
    },
    "Dratini": {
     "derived": "section",
@@ -11466,6 +11699,10 @@
     "owned_form": "Iron Treads",
     "source": "Masters EX"
    },
+   "IronTreads": {
+    "owned_form": "Iron Treads",
+    "source": "Pokemon Masters EX — Poppy & Iron Treads sync pair (released 2026-05-03)"
+   },
    "Magnezone": {
     "owned_form": "Magnezone",
     "source": "Scarlet/Violet"
@@ -11474,6 +11711,10 @@
     "derived": "section",
     "owned_form": "Onix",
     "source": "Masters EX"
+   },
+   "Rookidee": {
+    "owned_form": "Corviknight",
+    "source": "Games — Pokemon Scarlet/Violet, Champion Assessment + League Club Room rematch"
    },
    "Tinkaton": {
     "owned_form": "Tinkaton",
@@ -11579,6 +11820,10 @@
    }
   },
   "Raihan": {
+   "Archaludon": {
+    "owned_form": "Archaludon",
+    "source": "Evolution-family expansion of his Duraludon (Sword/Shield Gym battle, Champion Cup, Galarian Star Tournament; Journeys anime; Adventures)"
+   },
    "Duraludon": {
     "owned_form": "Duraludon",
     "source": "Sword/Shield"
@@ -11655,6 +11900,10 @@
     "owned_form": "Articuno",
     "source": "Masters EX"
    },
+   "Bellsprout": {
+    "owned_form": "Victreebel / Bellsprout",
+    "source": "Anime — Pokemon Origins (Victreebel, PO03 vs Giovanni) + manga Pokemon Adventures (Bellsprout, 'Status unknown', PS009)"
+   },
    "Blastoise": {
     "owned_form": "Blastoise",
     "source": "Gold/Silver"
@@ -11671,9 +11920,17 @@
     "owned_form": "Charizard",
     "source": "Anime — Pokémon Origins"
    },
+   "Doduo": {
+    "owned_form": "Dodrio",
+    "source": "Anime — Pokemon Origins PO04 (Red's Dodrio, used vs Agatha's Gengar and Blue's Exeggutor)"
+   },
    "Dragonite": {
     "owned_form": "Dragonite",
     "source": "Pokémon Stadium 2"
+   },
+   "Ekans": {
+    "owned_form": "Arbok",
+    "source": "Anime — Pokemon Origins PO04"
    },
    "Entei": {
     "owned_form": "Entei",
@@ -11687,9 +11944,21 @@
     "owned_form": "Feraligatr",
     "source": "Pokémon Stadium 2"
    },
+   "Gastly": {
+    "owned_form": "Haunter -> Gengar",
+    "source": "Anime — Pokemon Origins PO03/PO04"
+   },
+   "Happiny": {
+    "owned_form": "Chansey",
+    "source": "Anime — Pokemon Origins PO04 (Kanto Safari Zone)"
+   },
    "Jolteon": {
     "owned_form": "Jolteon",
     "source": "Pokémon Stadium 2"
+   },
+   "Kabuto": {
+    "owned_form": "Kabutops",
+    "source": "Anime — Pokemon Origins PO03 (used vs Giovanni's Rhyhorn)"
    },
    "Lapras": {
     "owned_form": "Lapras",
@@ -11699,17 +11968,53 @@
     "owned_form": "Machamp",
     "source": "Let's Go"
    },
+   "Magikarp": {
+    "owned_form": "Magikarp / Gyarados",
+    "source": "Anime — Pokemon Origins PO02 (sold to Red by the Magikarp salesman) + manga Adventures (Gyara, on hand)"
+   },
    "Meganium": {
     "owned_form": "Meganium",
     "source": "Pokémon Stadium 2"
+   },
+   "Meowth": {
+    "owned_form": "Persian",
+    "source": "Anime — Pokemon Origins PO04"
+   },
+   "Mewtwo": {
+    "owned_form": "Mewtwo",
+    "source": "Anime — Pokemon Origins PO04 (Cerulean Cave)"
+   },
+   "Moltres": {
+    "owned_form": "Moltres",
+    "source": "Anime — Pokemon Origins PO04"
+   },
+   "Nidoran♀": {
+    "owned_form": "Nidoqueen",
+    "source": "Manga — Pokemon Adventures PS021 (Kanto Safari Zone, 'Long Live the Nidoking!')"
+   },
+   "Pidgey": {
+    "owned_form": "Pidgey",
+    "source": "Anime — Pokemon Origins PO01 (Route 1)"
    },
    "Pikachu": {
     "owned_form": "Pikachu",
     "source": "Gold/Silver"
    },
+   "Ponyta": {
+    "owned_form": "Rapidash",
+    "source": "Anime — Pokemon Origins PO04 (used at the Seafoam Islands vs Articuno)"
+   },
+   "Psyduck": {
+    "owned_form": "Psyduck",
+    "source": "Anime — Pokemon Origins PO03"
+   },
    "Raikou": {
     "owned_form": "Raikou",
     "source": "Pokémon Stadium 2"
+   },
+   "Rattata": {
+    "owned_form": "Rattata",
+    "source": "Anime — Pokemon Origins PO01"
    },
    "Scizor": {
     "owned_form": "Scizor",
@@ -11719,6 +12024,10 @@
     "owned_form": "Snorlax",
     "source": "Gold/Silver"
    },
+   "Spearow": {
+    "owned_form": "Spearow (also Fearow)",
+    "source": "Anime — Pokemon Origins PO01 (caught on Route 1) + PO04 Fearow; manga Adventures Fearow (PS009)"
+   },
    "Suicune": {
     "owned_form": "Suicune",
     "source": "Pokémon Stadium 2"
@@ -11727,13 +12036,25 @@
     "owned_form": "Tauros",
     "source": "Pokémon Stadium 2"
    },
+   "Tentacool": {
+    "owned_form": "Tentacool",
+    "source": "Anime — Pokemon Origins PO04"
+   },
    "Typhlosion": {
     "owned_form": "Typhlosion",
     "source": "Pokémon Stadium 2"
    },
+   "Tyrogue": {
+    "owned_form": "Hitmonlee",
+    "source": "Anime — Pokemon Origins PO03 (tied with Giovanni's Rhyhorn)"
+   },
    "Venusaur": {
     "owned_form": "Venusaur",
     "source": "Gold/Silver"
+   },
+   "Zapdos": {
+    "owned_form": "Zapdos",
+    "source": "Anime — Pokemon Origins PO04"
    }
   },
   "Rei": {
@@ -12008,9 +12329,8 @@
     "source": "Sword/Shield"
    },
    "Eternatus": {
-    "derived": "section",
     "owned_form": "Eternatus",
-    "source": "Anime"
+    "source": "Anime — Journeys JN012/JN044-045 + manga Pokemon Adventures PASS25"
    },
    "Ferrothorn": {
     "owned_form": "Ferrothorn",
@@ -12368,13 +12688,25 @@
     "owned_form": "Brute Bonnet",
     "source": "Scarlet"
    },
+   "BruteBonet": {
+    "owned_form": "Brute Bonnet",
+    "source": "Games — Pokemon Scarlet, AI Sada's Zero Lab battle team (Lv. 66)"
+   },
    "Flutter Mane": {
     "owned_form": "Flutter Mane",
     "source": "Scarlet"
    },
+   "FluttrMane": {
+    "owned_form": "Flutter Mane",
+    "source": "Games — Pokemon Scarlet, AI Sada's Zero Lab battle team (Lv. 66)"
+   },
    "Gouging Fire": {
     "owned_form": "normal",
     "source": "Pokémon Scarlet — The Indigo Disk (Area Zero research)"
+   },
+   "GougngFire": {
+    "owned_form": "Gouging Fire",
+    "source": "Professor rule — Scarlet Book / Area Zero time-machine research (Pokemon Scarlet, The Indigo Disk)"
    },
    "Great Tusk": {
     "owned_form": "normal",
@@ -12388,25 +12720,49 @@
     "owned_form": "normal",
     "source": "Pokémon Scarlet — The Indigo Disk (Area Zero research)"
    },
+   "RagingBolt": {
+    "owned_form": "Raging Bolt",
+    "source": "Professor rule — Scarlet Book / Area Zero time-machine research (Pokemon Scarlet, The Indigo Disk)"
+   },
    "Roaring Moon": {
     "owned_form": "Roaring Moon",
     "source": "Scarlet"
+   },
+   "RoarngMoon": {
+    "owned_form": "Roaring Moon",
+    "source": "Games — Pokemon Scarlet, AI Sada's Zero Lab battle team (Lv. 67)"
    },
    "Sandy Shocks": {
     "owned_form": "Sandy Shocks",
     "source": "Scarlet"
    },
+   "SandyShock": {
+    "owned_form": "Sandy Shocks",
+    "source": "Games — Pokemon Scarlet, AI Sada's Zero Lab battle team (Lv. 66)"
+   },
    "Scream Tail": {
     "owned_form": "Scream Tail",
     "source": "Scarlet"
+   },
+   "ScreamTail": {
+    "owned_form": "Scream Tail",
+    "source": "Games — Pokemon Scarlet, AI Sada's Zero Lab battle team (Lv. 66)"
    },
    "Slither Wing": {
     "owned_form": "Slither Wing",
     "source": "Scarlet"
    },
+   "SlithrWing": {
+    "owned_form": "Slither Wing",
+    "source": "Games — Pokemon Scarlet, AI Sada's Zero Lab battle team (Lv. 66)"
+   },
    "Walking Wake": {
     "owned_form": "normal",
     "source": "Pokémon Scarlet — The Teal Mask / Indigo Disk (Area Zero research)"
+   },
+   "WalkngWake": {
+    "owned_form": "Walking Wake",
+    "source": "Professor rule — Scarlet Book / Area Zero time-machine research (Pokemon Scarlet)"
    }
   },
   "Samson Oak": {
@@ -12741,9 +13097,8 @@
     "source": "X/Y"
    },
    "Pancham": {
-    "derived": "section",
     "owned_form": "Pancham",
-    "source": "Anime — XY era"
+    "source": "Anime — XY series (caught in XY058 'Dreaming a Performer's Dream!')"
    },
    "Quilladin": {
     "owned_form": "Chesnaught",
@@ -13157,11 +13512,11 @@
   "Spenser": {
    "Arcanine": {
     "owned_form": "Arcanine",
-    "source": null
+    "source": "Emerald (Battle Palace, Gold Symbol challenge)"
    },
    "Azurill": {
     "owned_form": "Azurill",
-    "source": null
+    "source": "Emerald (Battle Palace — walks on with him, never battles)"
    },
    "Baltoy": {
     "derived": "section",
@@ -13175,7 +13530,7 @@
    },
    "Chansey": {
     "owned_form": "Chansey",
-    "source": null
+    "source": "Anime — Battle Frontier arc"
    },
    "Claydol": {
     "owned_form": "Claydol",
@@ -13183,11 +13538,11 @@
    },
    "Crobat": {
     "owned_form": "Crobat",
-    "source": null
+    "source": "Emerald (Battle Palace, Silver Symbol challenge)"
    },
    "Dusclops": {
     "owned_form": "Dusclops",
-    "source": null
+    "source": "Emerald (Battle Palace — walks on with him, never battles)"
    },
    "Happiny": {
     "derived": "section",
@@ -13210,7 +13565,7 @@
    },
    "Slaking": {
     "owned_form": "Slaking",
-    "source": null
+    "source": "Emerald (Battle Palace, Silver Symbol challenge)"
    },
    "Slakoth": {
     "derived": "section",
@@ -13219,7 +13574,7 @@
    },
    "Suicune": {
     "owned_form": "Suicune",
-    "source": null
+    "source": "Emerald (Battle Palace, Gold Symbol challenge)"
    },
    "Venusaur": {
     "owned_form": "Venusaur",
@@ -13581,7 +13936,7 @@
   "Tucker": {
    "Arcanine": {
     "owned_form": "Arcanine",
-    "source": null
+    "source": "Anime — Battle Frontier arc"
    },
    "Bagon": {
     "derived": "section",
@@ -13595,7 +13950,7 @@
    },
    "Charizard": {
     "owned_form": "Charizard",
-    "source": null
+    "source": "Emerald (Battle Dome, Silver Symbol challenge)"
    },
    "Charmander": {
     "derived": "section",
@@ -13609,7 +13964,7 @@
    },
    "Latias": {
     "owned_form": "Latias",
-    "source": null
+    "source": "Emerald (Battle Dome, Gold Symbol challenge)"
    },
    "Metagross": {
     "owned_form": "Metagross",
@@ -13660,6 +14015,10 @@
    }
   },
   "Turo": {
+   "IrnValiant": {
+    "owned_form": "Iron Valiant",
+    "source": "Games - Pokemon Violet (AI Turo, Zero Lab first battle)"
+   },
    "Iron Boulder": {
     "owned_form": "normal",
     "source": "Pokémon Violet — The Indigo Disk (Area Zero research)"
@@ -13700,6 +14059,18 @@
     "owned_form": "Iron Valiant",
     "source": "Violet"
    },
+   "IronBundle": {
+    "owned_form": "Iron Bundle",
+    "source": "Games - Pokemon Violet (AI Turo, Zero Lab first battle)"
+   },
+   "IronJuglis": {
+    "owned_form": "Iron Jugulis",
+    "source": "Games - Pokemon Violet (AI Turo, Zero Lab first battle)"
+   },
+   "IronThorns": {
+    "owned_form": "Iron Thorns",
+    "source": "Games - Pokemon Violet (AI Turo, Zero Lab first battle)"
+   },
    "Miraidon": {
     "owned_form": "Miraidon",
     "source": "Violet"
@@ -13724,9 +14095,17 @@
    }
   },
   "Victor": {
+   "Calyrex": {
+    "owned_form": "Calyrex",
+    "source": "Games - Pokemon Sword and Shield: The Crown Tundra"
+   },
    "Eternatus": {
     "owned_form": "Eternatus",
     "source": "Anime — Pokémon Evolutions"
+   },
+   "Glastrier": {
+    "owned_form": "Glastrier",
+    "source": "Games - Pokemon Sword: The Crown Tundra"
    },
    "Greedent": {
     "owned_form": "Greedent",
@@ -13736,14 +14115,17 @@
     "owned_form": "Inteleon",
     "source": "Anime — Pokémon Evolutions"
    },
+   "Kubfu": {
+    "owned_form": "Urshifu",
+    "source": "Games - Pokemon Sword and Shield: The Isle of Armor"
+   },
    "Rillaboom": {
     "owned_form": "Rillaboom",
     "source": "Masters EX"
    },
    "Scorbunny": {
-    "derived": "section",
-    "owned_form": "Scorbunny",
-    "source": "Anime"
+    "owned_form": "Cinderace",
+    "source": "Games - Pokemon Sword and Shield (starter)"
    },
    "Sirfetch'd": {
     "owned_form": "Sirfetch'd",
@@ -13859,6 +14241,10 @@
     "owned_form": "Giratina",
     "source": "Legends: Arceus"
    },
+   "Growlithe": {
+    "owned_form": "Arcanine (Hisuian)",
+    "source": "Games - Pokemon Legends: Arceus (Temple of Sinnoh final battle)"
+   },
    "Hisuian Arcanine": {
     "owned_form": "Hisuian Arcanine",
     "source": "Legends: Arceus"
@@ -13881,6 +14267,10 @@
    }
   },
   "Wallace": {
+   "Blacefalon": {
+    "owned_form": "Blacephalon",
+    "source": "Pokemon Masters EX - New Year's 2024 Wallace sync pair"
+   },
    "Blacephalon": {
     "owned_form": "Blacephalon",
     "source": "Masters EX"
@@ -14404,6 +14794,10 @@
    "Steelix": {
     "owned_form": "Steelix",
     "source": "Legends: Arceus"
+   },
+   "Zorua": {
+    "owned_form": "Zoroark (Hisuian)",
+    "source": "Games - Pokemon Legends: Arceus (Zisu's training battle team)"
    }
   },
   "Zoey": {

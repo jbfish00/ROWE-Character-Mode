@@ -269,13 +269,16 @@ def main():
 
     rekeyed = {}
     for char, entries in sources.items():
-        out = {}
+        # ...and the audit keyed characters by PAGE name too ("Lana (anime)"),
+        # while the lookup below uses the menu name. Four Alola captains lost
+        # every source label to that mismatch.
+        char = re.sub(r"\s*\(anime\)$", "", char)
+        out = rekeyed.setdefault(char, {})
         for species_name, info in entries.items():
             out.setdefault(species_name, info)
             base = _base_name(species_name)
             if base:
                 out.setdefault(base, info)
-        rekeyed[char] = out
     sources = rekeyed
 
     chars = []

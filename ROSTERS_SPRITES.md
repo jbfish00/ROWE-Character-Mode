@@ -4,7 +4,7 @@ Each character's **final-evolution** roster, in **National Pokédex order**, wit
 
 **219 playable characters.**
 
-Under each Pokémon is the source of that character's appearance — the game, the anime series or era, the movie, or the manga. **3210 of 3404 entries (94%) are attributed**; the remainder joined the roster through an earlier research pass and their source has not been established yet.
+Under each Pokémon is the source of that character's appearance — the game, the anime series or era, the movie, or the manga. **3386 of 3386 entries (100%) are attributed**; the remainder joined the roster through an earlier research pass and their source has not been established yet.
 
 17 further characters remain in the data but are not offered in this game and are therefore not listed here.
 
