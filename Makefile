@@ -101,7 +101,11 @@ MAPJSON := tools/mapjson/mapjson$(EXE)
 JSONPROC := tools/jsonproc/jsonproc$(EXE)
 SCRIPT := tools/poryscript/poryscript$(EXE)
 
-TOOLDIRS := $(filter-out tools/agbcc tools/binutils tools/poryscript tools/character_mode tools/mgba_scripts,$(wildcard tools/*))
+# $(wildcard tools/*) matches loose FILES too, and `make -C <a-file>` fails
+# with "Error 2" -- which is what a stray tools/check_species_names.py did.
+# The error was non-fatal only by luck of scheduling, and its real cost was
+# that the tools target silently stopped being a build gate. Match directories.
+TOOLDIRS := $(filter-out tools/agbcc tools/binutils tools/poryscript tools/character_mode tools/mgba_scripts,$(patsubst %/,%,$(wildcard tools/*/)))
 TOOLBASE = $(TOOLDIRS:tools/%=%)
 TOOLS = $(foreach tool,$(TOOLBASE),tools/$(tool)/$(tool)$(EXE))
 
