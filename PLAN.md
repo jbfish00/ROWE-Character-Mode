@@ -22,13 +22,13 @@ fixed, the 1% legendary encounter rule is shipped, and the whole suite is green.
 
 | | |
 |---|---|
-| Branch | `character-mode`, HEAD `a5befab7`, **working tree clean** |
+| Branch | `character-mode`, HEAD `48a41097`, **working tree clean** |
 | Rosters | **AUDITED** — 236 table slots / **206 selectable** / 30 hidden, 3,376 rows, **every row sourced** |
 | Threshold | **ENFORCED** — the only game in the project where it is |
 | Sprites | **168 of 236** have a front pic (68 are `CHAR_ASSET_NONE`) |
 | Name length | **12/12 LANDED** (`71cebcbe`), verified by a new headless suite |
 | Legendary rule | **SHIPPED** — 1% wild encounters, offered-until-caught, no roaming |
-| Readiness | **GREEN** — selftest 33/33 and **all 10 suite runs passing** |
+| Readiness | **GREEN** — selftest 33/33 and **all 11 suite runs passing** |
 
 Every number above was re-derived from this tree, not taken from notes.
 
@@ -249,18 +249,80 @@ mismatch makes it exit 1). Its `LEGENDARY_BASES` extraction also hard-fails belo
 90 entries — **the first version of that check silently parsed an empty set and
 passed vacuously**, which is the same failure shape as §1 and §4.
 
-### Still open here
+### Per-character encounter tables — DONE (spec §3)
 
-**Per-character encounter tables** (spec §3) — the generated doc of what each
-character can actually meet, with rates and empty pools called out. Not started;
-it belongs beside `emit_roster_docs.py` and must be derived from emitted data,
-never from `rosters_mapped.json`.
+`ENCOUNTERS.md` (126 KB, GENERATED) — what each of the 236 characters can meet
+in the wild, from `tools/character_mode/emit_encounter_docs.py`. Built from
+`src/data/characters.h`, the table the ROM compiles, **not**
+`rosters_mapped.json` (which sits upstream of the level bands and would promise
+families the ROM cannot spawn). Deterministic across `PYTHONHASHSEED`.
+
+**93 of 236 have a legendary; 143 have none and never roll the 1%. One roster is
+all-legendary (Tobias), so his stay repeatable. No character has an empty pool** —
+that last one is the catch-nothing failure mode and is called out explicitly at
+the top rather than left to be noticed.
+
+⚠️ **`ENCOUNTERS.md` is narrower than `ROSTERS.md` on purpose.** ROSTERS.md
+documents what can be OWNED and walks form siblings, because the catch gate
+canonicalizes forms (owning Wooper legalises Clodsire). The wild stage picker
+walks `gEvolutionTable` **alone**, so a form that is legal to own can be
+impossible to meet. Do not "fix" one to match the other.
+
+**The generator's model is checked against the ENGINE, not itself.** It
+reimplements `CharacterMode_PickEvolutionStageForLevel` in Python, and a
+generator agreeing with its own model is exactly how ROSTERS.md and the ROM
+drifted apart in both directions before the 2026-07-24 resync. So it also emits
+`tools/mgba_scripts/encounter_probes.lua`, which
+`tools/mgba_scripts/encounter_doc_e2e.lua` replays against the real in-ROM
+function (60/60). Both directions are asserted — nothing undocumented appears,
+**and** everything documented does appear; the second is the one a naive test
+drops, and the one that catches a doc promising stages the ROM cannot produce.
+Verified by negative control (a deliberately wrong probe fails both directions).
 
 The rule: if a legendary is on the roster, a **1% chance** to meet one in any area,
 rolled *before* the existing 10% non-legendary override (independent, so a
 character with no legendary is unaffected). Each legendary is offered **until
 caught**, then dropped — via the **Pokédex caught flag**, costing zero new save
 state. Characters with no non-legendary families keep theirs repeatable.
+
+## 5b. `GetFirstEvolution` — the repo-wide cost, fixed properly
+
+§5 sidestepped this function in the wild-encounter path. It is now fixed at
+source, for all **nine** callers — `CharacterMode_FamilyBase` (the catch gate,
+hit on every caught species), six learnset helpers in `src/pokemon.c`,
+`src/pokedex_area_screen.c`, and `level_scaling.c` itself.
+
+It was a triple-nested scan: per walk-back step it swept all
+`NUM_SPECIES * EVOS_PER_MON` entries of `gEvolutionTable` looking for anything
+that evolves into the current species — **~14,820 comparisons that find nothing**
+for a species with no pre-evolution, on every call.
+
+`src/data/pokemon/pre_evolution.h` reverses that table once at build time
+(`tools/character_mode/emit_pre_evolution.py`, 667 of 1482 species have a
+pre-evolution), so the lookup is O(chain) instead of O(NUM_SPECIES × EVOS_PER_MON)
+per step.
+
+⚠️ **It is a ROM table, not a boot-built cache, and that was forced.** A
+2,964-byte EWRAM array overflows this tree's EWRAM by 2,141 bytes — the link
+fails with *"cannot move location counter backwards"*. **There is under 1 KB of
+EWRAM free.** Anything needing runtime scratch of any size has to account for
+that.
+
+⚠️ **Two quirks of the old scan are preserved deliberately.** It did not filter
+by method, so a mega form's pre-evolution is its base form; and
+`gEvolutionTable` rows are zero-filled, so a short row still "targets"
+`SPECIES_NONE` and the lowest such row (Bulbasaur) meant
+`GetFirstEvolution(SPECIES_NONE) == SPECIES_BULBASAUR`. Odd, but shipped, and
+some caller may lean on it. The zero-fill is invisible in the source and has to
+be modelled by the generator.
+
+**Equivalence is proven, not argued.** `GetFirstEvolutionReference` (the original
+scan) is kept, and `tools/mgba_scripts/pre_evolution_e2e.lua` sweeps **all 1482
+species** through both via `CM_REQ_VERIFY_PREEVO`: **0 mismatches**. The test also
+asserts the sweep actually covered the table, so it cannot pass by checking
+nothing.
+
+---
 
 ## 6. The Pokedex out-of-bounds write — FIXED (`b6b677a7`)
 
@@ -292,13 +354,12 @@ difference, not a defect.
 ## 7. Open work, in priority order
 
 1. **68 characters still have no portrait** — art acquisition, not tooling (§3).
-2. **Per-character encounter tables** (§5, spec §3) — the one piece of the
-   legendary work not yet done.
-3. Trainer card shows only the Hoenn 8 badges; the Johto 8 need art and a second row.
-4. `FLAG_FULL_RANDOMIZED_MODE` and friends cannot be enabled without tilemap art
+2. Trainer card shows only the Hoenn 8 badges; the Johto 8 need art and a second row.
+3. `FLAG_FULL_RANDOMIZED_MODE` and friends cannot be enabled without tilemap art
    (the mode NAMES are baked into the UI tilemap, not printed as text).
 
-Nothing is blocking a playthrough.
+**Every remaining item needs ART, not code.** Nothing is blocking a playthrough,
+and there is no outstanding engine work.
 
 ---
 
@@ -320,14 +381,15 @@ CM_SAV_OUT=~/Documents/rowe_fixture.sav timeout 300 "$MGBA" \
     --script tools/mgba_scripts/make_fixture_save.lua pokeemerald.gba
 ```
 
-The suite (10 runs). Logs are ~130 MB; `timeout` exit 124 is NORMAL — the harness
+The suite (11 runs). Logs are ~130 MB; `timeout` exit 124 is NORMAL — the harness
 never exits on its own and the RESULT line prints well before the timeout:
 
 ```bash
 MGBA="../Character Hacks/Seaglass-Character-Mode/tools/mgba_src/build/mgba-headless"
 export CM_SAV=~/Documents/rowe_fixture.sav
 for t in boot_smoke continue_smoke ot_roundtrip_e2e legendary_encounter_e2e \
-         catch_gate_e2e pc_sweep_e2e johto_gym_e2e gigaton_reselect_e2e; do
+         encounter_doc_e2e catch_gate_e2e pc_sweep_e2e johto_gym_e2e \
+         gigaton_reselect_e2e; do
     timeout 100 "$MGBA" --script tools/mgba_scripts/$t.lua pokeemerald.gba > /tmp/$t.log 2>&1
     echo "$t $(grep -aoE 'RESULT: [A-Z]+' /tmp/$t.log | tail -1)"
 done
@@ -343,6 +405,15 @@ scripts in `tools/mgba_scripts/`.
 
 ## 9. Traps
 
+- **EWRAM has under 1 KB free.** A ~3 KB runtime table overflows it and the link
+  fails with "cannot move location counter backwards". Generate ROM data instead
+  (§5b). A new `EWRAM_DATA` also needs its object listed in `sym_ewram.txt`, or
+  the section is discarded and the link fails differently.
+- **Mailbox request ids are DERIVED now**, by `gen_anchors.py` from the C enum
+  into `anchors.lua`'s `REQ` table. The enum is positional and was hand-mirrored
+  in Lua; inserting rather than appending renumbered every later request and a
+  passing test carried on asking for something else. That happened **four times
+  in one session** before it was automated. Never reintroduce a literal id.
 - **NEVER hardcode a struct offset in a test.** `gTestStructOffsets`
   (`character_mode_selftest.c`) is a compiler-generated `offsetof()` table,
   exported by `gen_anchors.py` and read as `H.off.*`. The hardcoded ones drifted
