@@ -37,13 +37,14 @@ local H = dofile("tools/mgba_scripts/harness.lua")
 local D = dofile("tools/mgba_scripts/intro_drive.lua")(H)
 
 local LEVEL  = 30
--- 1000 trials: at 1% the expected count is 10 and P(zero fires) is about 4e-5,
--- so the positive assertion below will not flake. Sampling is not free -- see
--- the note on cost at the LEGENDARY_ROLL_STATS step.
-local TRIALS = 1000
+-- 4000 trials (the mailbox cap): at 1% the expected count is 40 and P(zero
+-- fires) is about 2e-18, so the positive assertion below cannot flake.
+local TRIALS = 4000
 local ROLL_TIMEOUT = 30000   -- frames; these loops are genuinely slow
--- Measured at ~11.8 frames per trial, so keep this small.
-local END_TO_END_TRIALS = 100
+-- Was ~11.8 frames per trial while the roster filter called
+-- CharacterMode_FamilyBase per entry; the IsLegendaryRosterEntry shortcut cut
+-- that to ~0.9, so a full-strength end-to-end sample is now affordable.
+local END_TO_END_TRIALS = 2000
 
 -- 1. Real new game -> Character Mode -> the field. The default pick is Gen I /
 --    Red, whose roster carries six legendaries (Articuno, Deoxys, Entei, Raikou,
@@ -101,8 +102,8 @@ D.addStep("the pool entry has a national dex number and is uncaught", function()
 --    list and each entry costs a CharacterMode_FamilyBase evolution-table walk;
 --    2000 trials of that does not finish in any reasonable time. The legendary
 --    roll early-outs on 99 of 100 calls, so 2000 trials of it is cheap -- and
---    1000 is what makes P(zero fires) about 4e-5 instead of a coin flip.
-D.mbStep("the 1% legendary roll fires (1000 samples)",
+--    4000 is what makes P(zero fires) about 2e-18 instead of a coin flip.
+D.mbStep("the 1% legendary roll fires (4000 samples)",
     D.REQ.LEGENDARY_ROLL_STATS, LEVEL, TRIALS, function()
         local r = D.mbResult()
         local fires = r % 0x10000
@@ -111,10 +112,10 @@ D.mbStep("the 1% legendary roll fires (1000 samples)",
 
         H.assertEq("the pool was non-empty for the sampled rolls", poolNonEmpty, 1)
         H.assertTrue("a legendary was actually produced", fires > 0)
-        -- 1% of 1000 is 10; this band is several sigma either side, so it
+        -- 1% of 4000 is 40; this band is several sigma either side, so it
         -- catches a rate that is wildly wrong without flaking on variance.
-        H.assertTrue("the rate is consistent with 1% (2..40 of 1000)",
-                     fires >= 2 and fires <= 40)
+        H.assertTrue("the rate is consistent with 1% (15..75 of 4000)",
+                     fires >= 15 and fires <= 75)
     end, ROLL_TIMEOUT)
 
 -- 3b. End-to-end through the SHIPPING entry point -- the function
@@ -128,8 +129,12 @@ D.mbStep("the shipping override still fires, with the legendary roll inline",
         local total = math.floor(r / 0x10000)
         H.log(string.format("end to end: %d legendary, %d total in %d rolls",
                             legendary, total, END_TO_END_TRIALS))
-        H.assertTrue("the 10% roster override still fires", total > 0)
-        -- The legendary roll must not have swallowed the override path.
+        -- With 2000 rolls the end-to-end legendary count is ~20, so this can
+        -- now be asserted positively through the SHIPPING entry point rather
+        -- than inferred from the cheap sampler.
+        H.assertTrue("a legendary came out of the shipping override",
+                     legendary > 0)
+        H.assertTrue("the 10% roster override still fires", total > 150)
         H.assertTrue("overrides dominate the legendary roll", total > legendary)
     end, ROLL_TIMEOUT)
 

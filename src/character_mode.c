@@ -234,6 +234,49 @@ static const u16 sLegendaryFamilyBases[] =
     SPECIES_OKIDOGI, SPECIES_MUNKIDORI, SPECIES_FEZANDIPITI, SPECIES_OGERPON, SPECIES_TERAPAGOS, SPECIES_PECHARUNT,
 };
 
+// Legendary test for a ROSTER ENTRY specifically, with no CharacterMode_FamilyBase
+// walk. Rosters store canonical family bases, so plain membership in
+// sLegendaryFamilyBases is exact for them.
+//
+// This matters because FamilyBase is brutally expensive: it calls
+// GetFirstEvolution (level_scaling.c), which is a triple-nested scan over
+// gEvolutionTable -- for a species with no pre-evolution it compares all
+// NUM_SPECIES * EVOS_PER_MON entries and finds nothing. The wild-override path
+// ran that for all ~47 roster entries on every fired encounter: ~3.3M cycles,
+// about 0.2 s of GBA time, measured at ~11.8 emulated frames per roll.
+//
+// The equivalence is not assumed -- audit_rosters.py fails the build if any
+// roster entry's direct membership disagrees with its canonical base's. Today
+// the only non-canonical entries are Pikachu, Galarian Zigzagoon and Paldean
+// Wooper, none of them legendary.
+//
+// Use CharacterMode_IsLegendaryOrMythical instead for an ARBITRARY species (a
+// caught mon, a rolled evolution stage) -- those are not roster entries and do
+// need the walk.
+static bool8 IsLegendaryRosterEntry(u16 species)
+{
+    u32 i;
+
+    for (i = 0; i < ARRAY_COUNT(sLegendaryFamilyBases); i++)
+    {
+        if (sLegendaryFamilyBases[i] == species)
+            return TRUE;
+    }
+    return FALSE;
+}
+
+static bool8 RosterHasLegendary(const struct CharacterInfo *character)
+{
+    u32 i;
+
+    for (i = 0; character->roster[i] != SPECIES_NONE; i++)
+    {
+        if (IsLegendaryRosterEntry(character->roster[i]))
+            return TRUE;
+    }
+    return FALSE;
+}
+
 bool8 CharacterMode_IsLegendaryOrMythical(u16 species)
 {
     u16 base = CharacterMode_FamilyBase(species);
@@ -367,7 +410,7 @@ u8 CharacterMode_BuildLegendaryPool(u8 level, u16 *out, u8 outCount,
     // precisely FOR having a legendary.
     for (i = 0; character->roster[i] != SPECIES_NONE; i++)
     {
-        if (!CharacterMode_IsLegendaryOrMythical(character->roster[i]))
+        if (!IsLegendaryRosterEntry(character->roster[i]))
         {
             hasOrdinary = TRUE;
             break;
@@ -381,7 +424,7 @@ u8 CharacterMode_BuildLegendaryPool(u8 level, u16 *out, u8 outCount,
     {
         u16 offered;
 
-        if (!CharacterMode_IsLegendaryOrMythical(character->roster[i]))
+        if (!IsLegendaryRosterEntry(character->roster[i]))
             continue;
 
         // Filter on the species actually OFFERED, not the family base: the few
@@ -414,11 +457,23 @@ u8 CharacterMode_BuildLegendaryPool(u8 level, u16 *out, u8 outCount,
 // -- CharacterMode_BuildLegendaryPool exists so that can be done deterministically.
 u16 CharacterMode_RollWildLegendarySpecies(u8 level)
 {
+    const struct CharacterInfo *character = GetActiveCharacter();
     u16 candidates[16];
     u8 count;
 
-    if (GetActiveCharacter() == NULL)
+    if (character == NULL)
         return SPECIES_NONE;
+
+    // THE DATA CHECK MUST PRECEDE THE RNG CALL. Consuming a Random() before
+    // knowing the character even has a legendary shifts the encounter RNG
+    // stream for every character that does not -- 113 of the 206 selectable
+    // ones here -- which breaks the design's guarantee that they are completely
+    // unaffected by this feature. Nothing looks broken; their rolls just stop
+    // matching what the same save produced before. Unbound hit this first and
+    // the spec now states it as a rule for every game.
+    if (!RosterHasLegendary(character))
+        return SPECIES_NONE;
+
     if (Random() % 100 >= WILD_LEGENDARY_CHANCE_PERCENT)
         return SPECIES_NONE;
 
@@ -452,7 +507,7 @@ u16 CharacterMode_RollWildOverrideSpecies(u8 level)
 
     for (i = 0; character->roster[i] != SPECIES_NONE && candidateCount < ARRAY_COUNT(candidates); i++)
     {
-        if (!CharacterMode_IsLegendaryOrMythical(character->roster[i]))
+        if (!IsLegendaryRosterEntry(character->roster[i]))
             candidates[candidateCount++] = character->roster[i];
     }
 

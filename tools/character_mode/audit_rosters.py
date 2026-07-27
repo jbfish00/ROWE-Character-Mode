@@ -22,6 +22,7 @@ Exit code 1 on any finding; prints a summary either way.
 """
 import os
 import re
+import pathlib
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -126,6 +127,24 @@ def rosters():
     return chars
 
 
+
+def legendary_bases():
+    """LEGENDARY_BASES from emit_characters.py, executed rather than parsed so a
+    reformat of that literal cannot silently yield an empty set -- an empty set
+    makes the invariant check below pass vacuously."""
+    src = (pathlib.Path(__file__).resolve().parent / "emit_characters.py").read_text()
+    start = src.index("LEGENDARY_BASES")
+    end = src.index("# Manual asset overrides")
+    ns = {}
+    exec(compile(src[start:end], "legendary_bases", "exec"), ns)
+    bases = ns["LEGENDARY_BASES"]
+    if len(bases) < 90:
+        raise SystemExit("audit_rosters: LEGENDARY_BASES came out at %d entries, "
+                         "expected ~98 -- the extraction is broken and every "
+                         "check using it would pass vacuously" % len(bases))
+    return bases
+
+
 def main():
     ids, raw = species_ids()
     parent = parent_map()
@@ -135,6 +154,7 @@ def main():
         print("WARNING: could not resolve NUM_SPECIES -- range check skipped")
 
     chars = rosters()
+    legend = legendary_bases()
     findings = []
     entry_total = 0
     shadowed = 0
@@ -155,6 +175,19 @@ def main():
             if num_species is not None and sid >= num_species:
                 findings.append("%s: %s id %d >= NUM_SPECIES" % (name, e, sid))
             base = canonical_base(e, parent, form_base)
+            # src/character_mode.c's IsLegendaryRosterEntry tests roster entries
+            # against sLegendaryFamilyBases DIRECTLY, with no FamilyBase walk,
+            # because that walk costs ~0.2 s of GBA time per fired wild
+            # encounter. That shortcut is exact only while an entry's own
+            # legendary-ness matches its canonical base's. Enforce it here so a
+            # future roster addition cannot quietly make the wild-encounter
+            # filter wrong.
+            if (e in legend) != (base in legend):
+                findings.append(
+                    "%s: %s and its canonical base %s disagree on being "
+                    "legendary -- character_mode.c's IsLegendaryRosterEntry "
+                    "shortcut is no longer exact; it must fall back to "
+                    "CharacterMode_IsLegendaryOrMythical" % (name, e, base))
             if base != e:
                 shadowed += 1
                 if base not in roster_set:
