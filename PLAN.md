@@ -22,7 +22,7 @@ fixed, the 1% legendary encounter rule is shipped, and the whole suite is green.
 
 | | |
 |---|---|
-| Branch | `character-mode`, HEAD `7a11d933`, **working tree clean** |
+| Branch | `character-mode`, HEAD `a5befab7`, **working tree clean** |
 | Rosters | **AUDITED** — 236 table slots / **206 selectable** / 30 hidden, 3,376 rows, **every row sourced** |
 | Threshold | **ENFORCED** — the only game in the project where it is |
 | Sprites | **168 of 236** have a front pic (68 are `CHAR_ASSET_NONE`) |
@@ -212,15 +212,42 @@ direction: the pool is non-empty, every entry has a real dex number, the roll
 **fires** at ~1%, catching one removes exactly that one, and the 10% override
 survives.
 
-⚠️ **Sampling a 1% event here is expensive — measured at ~11.8 frames per trial**
-through the full override, because the 10% path rebuilds a 47-entry candidate
-list and every entry costs a `CharacterMode_FamilyBase` evolution-table walk.
-2000 trials does not finish inside any sane deadline. The test therefore samples
-the *legendary roll alone* (which early-outs on 99 of 100 calls) for statistical
-weight and runs only a small end-to-end sample for wiring. That per-encounter
-cost is **pre-existing**, not something this feature introduced, but it is real:
-roughly 0.2 s of GBA time on the 10% path. Worth optimising if wild encounters
-ever feel like they hitch.
+### Two follow-up fixes (`ROLL-ORDER` + `13x`)
+
+**The RNG check now precedes the data check.** The first version consumed a
+`Random()` before testing whether the character had any legendary at all, so the
+**113 of 206 selectable characters with none** burned an extra RNG call per wild
+encounter and their roll stream silently diverged from what the same save
+produced before — breaking §1.1's "completely unaffected" guarantee. Nothing
+looks broken; the rolls just stop matching. Unbound hit this independently and
+the spec now states it as a rule for every game: **the data check goes before the
+RNG call.**
+
+**The wild-override path is ~13x faster.** The cost centre is
+`GetFirstEvolution` (`src/level_scaling.c:239`) — a triple-nested scan that, for
+a species with no pre-evolution, compares all `NUM_SPECIES * EVOS_PER_MON`
+entries and finds nothing. `CharacterMode_FamilyBase` called it once per roster
+entry, so a fired encounter walked it ~47 times.
+
+Rosters store **canonical family bases**, so for a roster entry plain membership
+in `sLegendaryFamilyBases` is exact — no walk needed. `IsLegendaryRosterEntry()`
+does that, and the three roster-scanning paths use it. `CharacterMode_
+IsLegendaryOrMythical` stays for arbitrary species (a caught mon, a rolled
+evolution stage), which genuinely need the walk.
+
+| | before | after |
+|---|---|---|
+| 200 rolls | 2354 frames | **181 frames** |
+| per roll | 11.8 frames | **0.9 frames** |
+| GBA time per fired encounter | ~0.2 s | **~0.015 s** |
+
+⚠️ **The shortcut is exact only while an entry's legendary-ness matches its
+canonical base's, and that is now a build gate.** `audit_rosters.py` fails if any
+roster entry disagrees with its base, naming the entry and telling you to fall
+back to the walking version. Verified by negative control (injecting a fake
+mismatch makes it exit 1). Its `LEGENDARY_BASES` extraction also hard-fails below
+90 entries — **the first version of that check silently parsed an empty set and
+passed vacuously**, which is the same failure shape as §1 and §4.
 
 ### Still open here
 
@@ -320,6 +347,17 @@ scripts in `tools/mgba_scripts/`.
   (`character_mode_selftest.c`) is a compiler-generated `offsetof()` table,
   exported by `gen_anchors.py` and read as `H.off.*`. The hardcoded ones drifted
   silently and reported a working feature as broken (§1).
+- **A data check must precede any RNG call** in encounter code. Consuming a
+  `Random()` before knowing the feature applies shifts the roll stream for every
+  character it does not apply to. Nothing looks broken — the rolls just stop
+  matching what the same save produced before.
+- **Never hardcode a struct offset in a test** (see §1) — use `H.off.*`.
+- **A check built on an extracted set must fail loudly if the set comes out
+  empty.** The roster-audit invariant first "passed" against a zero-entry
+  `LEGENDARY_BASES`, so both sides of every comparison were false. It now
+  hard-fails below 90 entries. Three separate tests in this repo have now passed
+  vacuously (§1, §4, this one) — when a new assertion goes green first try,
+  break it on purpose and watch it fail before believing it.
 - **A `.sav` is a build artifact now.** Regenerate; never check one in, and never
   point `CM_SAV` at a pre-2026-07-26 file.
 - **`make compare` will never pass** and is not the goal — this is a fork, not a
