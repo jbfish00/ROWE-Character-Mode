@@ -18,6 +18,9 @@ u16 GetTrainerPokemon(u16 basespecies, u8 level);
 u16 GetBaseSpecie(u16 basespecies);
 u16 GetHeldItem(u16 baseitem);
 u16 GetFirstEvolution(u16 species);
+// Reference (slow) implementation, kept only so CM_REQ_VERIFY_PREEVO can prove
+// the fast one equivalent. Never call it from gameplay code.
+u16 GetFirstEvolutionReference(u16 species);
 u8 GetEvsfromPokemon(u8 evs);
 bool8 IsMoveUsable(u8 movepower);
 u16 GetMapRandomPokemon(u16 TrainerClass, u16 species);

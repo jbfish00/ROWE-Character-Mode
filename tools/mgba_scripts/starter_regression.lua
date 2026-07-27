@@ -49,9 +49,12 @@ local QUESTIONS_MAX   = 3    -- MULTI_NEW_GAME_QUESTIONS: 4 rows, max cursor 3
 local IDX_CHARACTER_MODE = 2
 local IDX_START_GAME     = 3
 
-local REQ_QUERY_PARTY_MON = 8
-local REQ_QUERY_FLAG      = 9
-local REQ_QUERY_VAR       = 10
+-- Request ids come from anchors.lua (derived from the C enum by
+-- gen_anchors.py); the enum is positional, so literals here rot
+-- silently the moment a request is inserted rather than appended.
+local REQ_QUERY_PARTY_MON = H.anchors.REQ.QUERY_PARTY_MON
+local REQ_QUERY_FLAG = H.anchors.REQ.QUERY_FLAG
+local REQ_QUERY_VAR = H.anchors.REQ.QUERY_VAR
 
 local STATUS_DONE     = 1
 local STATUS_REJECTED = 2

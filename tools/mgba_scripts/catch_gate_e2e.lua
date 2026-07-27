@@ -47,13 +47,16 @@ local B_OUTCOME_CAUGHT = 7
 local MON_GIVEN_TO_PARTY = 0
 local MON_GIVEN_TO_PC    = 1
 
-local REQ_SET_CHARACTER = 1
-local REQ_GIVE_ITEM     = 2
-local REQ_SET_LAST_BALL = 3
-local REQ_WILD_BATTLE   = 4
-local REQ_GIVE_MON      = 5
-local REQ_UNLOCK        = 6
-local REQ_QUERY_BALL    = 7
+-- Request ids come from anchors.lua (derived from the C enum by
+-- gen_anchors.py); the enum is positional, so literals here rot
+-- silently the moment a request is inserted rather than appended.
+local REQ_SET_CHARACTER = H.anchors.REQ.SET_CHARACTER
+local REQ_GIVE_ITEM = H.anchors.REQ.GIVE_ITEM
+local REQ_SET_LAST_BALL = H.anchors.REQ.SET_LAST_BALL
+local REQ_WILD_BATTLE = H.anchors.REQ.WILD_BATTLE
+local REQ_GIVE_MON = H.anchors.REQ.GIVE_MON
+local REQ_UNLOCK = H.anchors.REQ.UNLOCK
+local REQ_QUERY_BALL = H.anchors.REQ.QUERY_BALL
 
 local STATUS_DONE     = 1
 local STATUS_REJECTED = 2

@@ -38,16 +38,16 @@ D.QUESTIONS_MAX      = 3  -- MULTI_NEW_GAME_QUESTIONS: 4 rows, max cursor 3
 D.IDX_CHARACTER_MODE = 2
 D.IDX_START_GAME     = 3
 
--- Mailbox request ids -- MUST match the enum in src/character_mode_selftest.c.
-D.REQ = {
-    SET_CHARACTER = 1, GIVE_ITEM = 2, SET_LAST_BALL = 3, WILD_BATTLE = 4,
-    GIVE_MON = 5, UNLOCK = 6, QUERY_BALL = 7, QUERY_PARTY_MON = 8,
-    QUERY_FLAG = 9, QUERY_VAR = 10, RUN_SCRIPT = 11, SET_MON_HP = 12,
-    SET_BATTLE_STYLE = 13, SET_MON_MOVE = 14, SWEEP_PARTY = 15,
-    SAVE = 16, QUERY_OT = 17, SET_PLAYER_NAME = 18, SET_NICKNAME = 19,
-    LEGENDARY_POOL = 20, WILD_ROLL_STATS = 21, DEX_CAUGHT = 22,
-    LEGENDARY_ROLL_STATS = 23,
-}
+-- Mailbox request ids, DERIVED from the enum in src/character_mode_selftest.c
+-- by gen_anchors.py. They used to be mirrored by hand here, and the enum is
+-- positional -- so adding a request in the middle silently renumbered every
+-- later one and a passing test carried on asking for something else. That
+-- happened four times in one session before this was automated. If D.REQ is
+-- missing an id you just added, re-run gen_anchors.py.
+D.REQ = H.anchors.REQ or {}
+if not D.REQ.SET_CHARACTER then
+    error("anchors.lua has no REQ table -- re-run tools/mgba_scripts/gen_anchors.py")
+end
 
 D.STATUS_DONE     = 1
 D.STATUS_REJECTED = 2

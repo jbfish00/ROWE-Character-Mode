@@ -6,6 +6,7 @@
 #include "event_data.h"
 #include "item.h"
 #include "mgba.h"
+#include "level_scaling.h"  // GetFirstEvolution + its reference implementation
 #include "pokedex.h"  // GetSetPokedexFlag / FLAG_*_CAUGHT for the legendary pool
 #include "pokemon.h"
 #include "save.h"
@@ -147,6 +148,21 @@ enum
                            // can be sampled thousands of times cheaply -- which
                            // is what makes a NON-FLAKY positive assertion on a
                            // 1% event possible at all.
+    CM_REQ_PICK_STAGE,     // argA: species (a family base), argB: level.
+                           // result = CharacterMode_PickEvolutionStageForLevel().
+                           // The stage picker is what decides which evolution a
+                           // wild roster spawn comes out as, and it is the model
+                           // ENCOUNTERS.md reimplements in Python. Exposing it
+                           // lets a test check the doc's model against the
+                           // ENGINE rather than against itself.
+    CM_REQ_VERIFY_PREEVO,  // argA: first species, argB: how many. Compares
+                           // GetFirstEvolution against GetFirstEvolutionReference
+                           // over that range. result = mismatches | (checked<<16).
+                           // The fast path is a precomputed reverse of
+                           // gEvolutionTable; this proves it EXHAUSTIVELY
+                           // equivalent to the scan it replaced instead of
+                           // spot-checking a few species. Chunked because a full
+                           // sweep of the reference is ~22M iterations.
 };
 
 enum
@@ -579,6 +595,28 @@ void CharacterMode_PumpTestMailbox(void)
             }
             mb->result = ((u32)totalFires << 16) | legendaryFires;
         }
+        break;
+    case CM_REQ_VERIFY_PREEVO:
+        {
+            u16 first = mb->argA;
+            u16 count = mb->argB;
+            u16 mismatches = 0;
+            u16 checked = 0;
+            u16 sp;
+
+            if (count > 64)
+                count = 64;   // the reference is O(NUM_SPECIES * EVOS_PER_MON)
+            for (sp = first; sp < first + count && sp < NUM_SPECIES; sp++)
+            {
+                checked++;
+                if (GetFirstEvolution(sp) != GetFirstEvolutionReference(sp))
+                    mismatches++;
+            }
+            mb->result = ((u32)checked << 16) | mismatches;
+        }
+        break;
+    case CM_REQ_PICK_STAGE:
+        mb->result = CharacterMode_PickEvolutionStageForLevel(mb->argA, mb->argB);
         break;
     case CM_REQ_LEGENDARY_ROLL_STATS:
         {

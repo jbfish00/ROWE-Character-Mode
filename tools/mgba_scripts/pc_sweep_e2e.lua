@@ -44,10 +44,13 @@ local MAP_TRUCK_NUM   = 40
 local QUESTIONS_MAX  = 3
 local IDX_START_GAME = 3
 
-local REQ_SET_CHARACTER   = 1
-local REQ_GIVE_MON        = 5
-local REQ_QUERY_PARTY_MON = 8
-local REQ_SWEEP_PARTY     = 15
+-- Request ids come from anchors.lua (derived from the C enum by
+-- gen_anchors.py); the enum is positional, so literals here rot
+-- silently the moment a request is inserted rather than appended.
+local REQ_SET_CHARACTER = H.anchors.REQ.SET_CHARACTER
+local REQ_GIVE_MON = H.anchors.REQ.GIVE_MON
+local REQ_QUERY_PARTY_MON = H.anchors.REQ.QUERY_PARTY_MON
+local REQ_SWEEP_PARTY = H.anchors.REQ.SWEEP_PARTY
 
 local MON_GIVEN_TO_PARTY = 0
 

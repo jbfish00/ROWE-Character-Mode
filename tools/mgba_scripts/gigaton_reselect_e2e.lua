@@ -42,11 +42,14 @@ local MOVE_GIGATON_HAMMER = 757
 local MOVE_TACKLE         = 33
 local SPECIES_MAGIKARP    = 129
 
-local REQ_SET_CHARACTER = 1
-local REQ_WILD_BATTLE   = 4
-local REQ_UNLOCK        = 6
-local REQ_SET_MON_HP    = 12
-local REQ_SET_MON_MOVE  = 14
+-- Request ids come from anchors.lua (derived from the C enum by
+-- gen_anchors.py); the enum is positional, so literals here rot
+-- silently the moment a request is inserted rather than appended.
+local REQ_SET_CHARACTER = H.anchors.REQ.SET_CHARACTER
+local REQ_WILD_BATTLE = H.anchors.REQ.WILD_BATTLE
+local REQ_UNLOCK = H.anchors.REQ.UNLOCK
+local REQ_SET_MON_HP = H.anchors.REQ.SET_MON_HP
+local REQ_SET_MON_MOVE = H.anchors.REQ.SET_MON_MOVE
 
 local STATUS_DONE     = 1
 local STATUS_REJECTED = 2

@@ -57,6 +57,29 @@ LOCAL_SYMBOLS = [
 ]
 
 
+def mailbox_requests():
+    """CM_REQ_* name -> id, read straight from the enum in
+    src/character_mode_selftest.c.
+
+    The Lua side used to mirror these ids by hand, and the enum is POSITIONAL --
+    so inserting a request in the middle silently renumbered every later one and
+    a passing test carried on asking for something else entirely. That happened
+    four times in one session. Deriving them removes the possibility.
+    """
+    src = os.path.join(TARGET, "src/character_mode_selftest.c")
+    with open(src, encoding="utf-8", errors="replace") as f:
+        text = f.read()
+    m = re.search(r"enum\s*\{\s*CM_REQ_NONE = 0,(.*?)\};", text, re.S)
+    if not m:
+        raise SystemExit("gen_anchors: could not find the CM_REQ enum in %s" % src)
+    names = re.findall(r"^\s*(CM_REQ_[A-Z0-9_]+),", m.group(1), re.M)
+    if len(names) < 10:
+        raise SystemExit("gen_anchors: parsed only %d mailbox requests -- the "
+                         "enum shape changed and every test would send the "
+                         "wrong id" % len(names))
+    return [(n[len("CM_REQ_"):], i + 1) for i, n in enumerate(names)]
+
+
 def main():
     with open(MAP, encoding="utf-8", errors="replace") as f:
         text = f.read()
@@ -85,6 +108,8 @@ def main():
                 found[sym if i == 0 else "%s_%d" % (sym, i + 1)] = a
                 SYMBOLS.append(sym if i == 0 else "%s_%d" % (sym, i + 1))
 
+    reqs = mailbox_requests()
+
     digest = hashlib.sha1(text.encode("utf-8", "replace")).hexdigest()[:16]
     out = os.path.join(HERE, "anchors.lua")
     with open(out, "w") as f:
@@ -94,8 +119,15 @@ def main():
         f.write('    mapDigest = "%s",\n' % digest)
         for sym in SYMBOLS:
             f.write("    %s = 0x%08X,\n" % (sym, found[sym]))
+        f.write("    -- Mailbox request ids, derived from the enum in\n")
+        f.write("    -- src/character_mode_selftest.c. Never hand-mirror these.\n")
+        f.write("    REQ = {\n")
+        for name, rid in reqs:
+            f.write("        %s = %d,\n" % (name, rid))
+        f.write("    },\n")
         f.write("}\n")
-    print("wrote %s (%d symbols, map digest %s)" % (out, len(found), digest))
+    print("wrote %s (%d symbols, %d mailbox requests, map digest %s)"
+          % (out, len(found), len(reqs), digest))
 
 
 if __name__ == "__main__":
