@@ -22,7 +22,7 @@ fixed, the 1% legendary encounter rule is shipped, and the whole suite is green.
 
 | | |
 |---|---|
-| Branch | `character-mode`, HEAD `48a41097`, **working tree clean** |
+| Branch | `character-mode`, **working tree clean** (last feature commit `48a41097`; a doc commit follows it — don't treat either hash as HEAD) |
 | Rosters | **AUDITED** — 236 table slots / **206 selectable** / 30 hidden, 3,376 rows, **every row sourced** |
 | Threshold | **ENFORCED** — the only game in the project where it is |
 | Sprites | **168 of 236** have a front pic (68 are `CHAR_ASSET_NONE`) |
