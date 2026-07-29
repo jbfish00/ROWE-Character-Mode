@@ -72,6 +72,19 @@ def load_unselectable():
         return set(json.load(f).get("unselectable", []))
 
 
+def hidden_slot_count():
+    """How many table slots are compiled with .selectable = 0.
+
+    NOT len(load_unselectable()). A character the threshold drops keeps its slot
+    and is hidden -- but one whose roster comes out EMPTY in this game's dex is
+    dropped from gCharacters entirely and has no slot at all. Cogita and Iscan
+    are in character_drops.json for that second reason, so the drops file says
+    32 while only 30 slots exist. Printing the drops count made ROSTERS.md
+    promise save compatibility for two slots that are not there."""
+    text = read(os.path.join(TARGET, "src/data/characters.h"))
+    return len(re.findall(r"\.selectable = 0,", text))
+
+
 def load_sources():
     """{character: {species display name: {source, owned_form}}} from the
     2026-07-25 roster audit. Absent file = an empty Source column."""
@@ -87,12 +100,42 @@ REGION_PREFIX = {"_ALOLAN": "Alolan", "_ALOLA": "Alolan", "_GALARIAN": "Galarian
                  "_PALDEAN": "Paldean", "_PALDEA": "Paldean"}
 
 
+_COLLAPSE = None
+
+
+def _collapse_table():
+    """Cached {form member -> slot-0 species}. regional_form needs it to tell a
+    plain regional form from a mega/zen variant OF one."""
+    global _COLLAPSE
+    if _COLLAPSE is None:
+        _COLLAPSE = form_tables()[0]
+    return _COLLAPSE
+
+
 def regional_form(const):
     """Region a SPECIES_ constant marks, or None. Regional forms get their own
-    doc row (user, 2026-07-25); megas and cosmetic forms stay folded in."""
+    doc row (user, 2026-07-25); megas and cosmetic forms stay folded in.
+
+    A constant can carry a form qualifier BEFORE the region --
+    SPECIES_SANDSLASH_MEGA_ALOLA, SPECIES_DARMANITAN_ZEN_MODE_GALARIAN. A bare
+    endswith() test called those plain regional forms, so they got their own row
+    AND rendered to the same display name as the real one ("Alolan Sandslash",
+    "Galarian Darmanitan"): a duplicate row for 17 characters, every one of
+    their header counts one too high. They are variants of a regional form, not
+    the regional form, and must fold in.
+
+    The test is whether the constant is exactly <base><region> -- i.e. whatever
+    is left after stripping the region is a base species and not itself a form.
+    """
+    collapse = _collapse_table()
     for suffix, prefix in REGION_PREFIX.items():
-        if const.endswith(suffix):
-            return prefix
+        if not const.endswith(suffix):
+            continue
+        # SPECIES_SANDSLASH_MEGA is a form of SPECIES_SANDSLASH, so
+        # SPECIES_SANDSLASH_MEGA_ALOLA is a variant, not a regional form.
+        if collapse.get(const[:-len(suffix)]) is not None:
+            return None
+        return prefix
     return None
 
 
@@ -242,6 +285,9 @@ def main():
         return {s for s in out if not kids.get(s)}
 
     unselectable = load_unselectable()
+    # The prose count of hidden slots must come from the COMPILED table, not
+    # from the drops file -- see hidden_slot_count().
+    hidden = hidden_slot_count()
 
     # The audit recorded a source against the species the character OWNED
     # ("Pikachu"); the roster stores that family's BASE ("Pichu"), which is what
@@ -322,12 +368,16 @@ def main():
     # ---- ROSTERS.md --------------------------------------------------------
     sourced = sum(1 for c in chars for _n, _d, src in c["finals"] if src and src != "—")
     total_rows = sum(len(c["finals"]) for c in chars)
+    # The "the remainder ..." clause only makes sense while there IS a
+    # remainder; at 100% it read as an unexplained contradiction.
     coverage_note = (
         "Under each Pokémon is the source of that character's appearance — the game, "
         "the anime series or era, the movie, or the manga. **%d of %d entries (%.0f%%) "
-        "are attributed**; the remainder joined the roster through an earlier research "
-        "pass and their source has not been established yet."
-        % (sourced, total_rows, 100.0 * sourced / max(total_rows, 1)))
+        "are attributed**%s"
+        % (sourced, total_rows, 100.0 * sourced / max(total_rows, 1),
+           "." if sourced >= total_rows else
+           "; the remainder joined the roster through an earlier research pass and "
+           "their source has not been established yet."))
 
     out = ["# Character Mode — Final-Evolution Rosters (Pokémon ROWE)", "",
            "Every playable character and the **final evolutions** their complete roster "
@@ -340,7 +390,7 @@ def main():
            ("%d further characters remain in the data but are not offered in this "
             "game: fewer than six fully-evolved members of their roster exist in "
             "its Pokédex. They keep their slot so existing saves stay valid."
-            % len(unselectable)) if unselectable else "", "",
+            % hidden) if hidden else "", "",
            coverage_note, "",
            "GENERATED by `tools/character_mode/emit_roster_docs.py` from the same data "
            "the ROM enforces (`rosters_mapped.json` + `src/data/characters.h`) — "
@@ -375,8 +425,8 @@ def main():
            "", "**%d playable characters.**" % len(chars), "",
            coverage_note, "",
            ("%d further characters remain in the data but are not offered in this game "
-            "and are therefore not listed here." % len(unselectable))
-           if unselectable else "", "",
+            "and are therefore not listed here." % hidden)
+           if hidden else "", "",
            "GENERATED by `tools/character_mode/emit_roster_docs.py` — do not hand-edit.",
            "", "## Generations", ""]
     for g in gens:
