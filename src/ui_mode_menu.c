@@ -151,6 +151,17 @@ EWRAM_DATA static u8 	genSelection 			  = 0; // EWRAM inits are discarded; set o
 //Sprites
 EWRAM_DATA static u8 StarterSpriteId = 0;
 
+// NO CHARACTER PORTRAIT HERE, AND IT IS NOT AN OVERSIGHT -- see PLAN.md §7.4.
+// A 64x64 trainer pic was wired up on 2026-07-28 and REVERTED the same day:
+// there is no free 64x64 region on this screen. The reasoning that put it at
+// (150, 60) checked the mode CHECKBOX column (screen x 184) and missed that the
+// mode LABELS start at x ~118, so the sprite covered the "MODES" heading and
+// seven of the nine labels. Rendering graphics/ui_menu/tilemap.bin over
+// tiles.png shows the layout is full: the widest free gaps are the 16 px
+// between the left panel and the modes panel, and the 40 px right of it.
+// Showing a portrait needs the menu tilemap redrawn to make room -- art, not
+// wiring.
+
 static const u16 StarterPokemon[] = {
 	SPECIES_MEOWTH,
 	SPECIES_SLUGMA,
@@ -198,12 +209,32 @@ static u8 GetNumStarters(void)
 
 // Default starter: the character's signature ace when known (roster[0]),
 // otherwise a random non-legendary roster member.
+//
+// An ALL-LEGENDARY roster (starterCount == 0) has no non-legendary member to
+// roll, so GetNumStarters() falls back to the whole roster -- and rolling over
+// THAT handed the character a random legendary. It is roster[0], deliberately:
+// the user's rule is that such a character still gets a starter and always the
+// same one, so Tobias always starts with Darkrai rather than a coin flip
+// between Darkrai and Latios.
+//
+// Tobias is currently the only character in this state. Cogita and Iscan --
+// the sharp cases in Unbound and Radical Red -- resolve to EMPTY rosters in
+// ROWE's dex and are not in gCharacters at all, so nothing else reaches here.
 static void RandomizeStarterSelection(void)
 {
-    if (characterSelection != 0 && !gCharacters[characterSelection - 1].hasSignature)
-        starterselection = Random() % GetNumStarters();
-    else
+    const struct CharacterInfo *character;
+
+    if (characterSelection == 0)
+    {
         starterselection = 0;
+        return;
+    }
+
+    character = &gCharacters[characterSelection - 1];
+    if (character->hasSignature || character->starterCount == 0)
+        starterselection = 0;
+    else
+        starterselection = Random() % GetNumStarters();
 }
 
 // 1-based index of the first character in a generation (a character always

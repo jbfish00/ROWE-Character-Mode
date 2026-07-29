@@ -16,7 +16,8 @@ Checks, per character:
   2. every entry is a defined species constant with id < NUM_SPECIES
   3. every entry's canonical family base is also present on the roster
      (entries that are not canonical bases must be shadowed)
-  4. starterCount <= roster length
+  4. starterCount <= roster length, and starterCount == 0 only on a roster that
+     really is all-legendary (ui_mode_menu.c reads 0 as "hand out roster[0]")
 
 Exit code 1 on any finding; prints a summary either way.
 """
@@ -165,6 +166,24 @@ def main():
         if starter_count > len(entries):
             findings.append("%s: starterCount %d > roster size %d"
                             % (name, starter_count, len(entries)))
+        # starterCount == 0 means "no non-legendary starter exists", and
+        # ui_mode_menu.c's RandomizeStarterSelection answers it by handing the
+        # character roster[0] deliberately (Tobias always starts with Darkrai)
+        # instead of rolling over its legendaries. That is only the right answer
+        # when the roster really IS all-legendary -- for anything else a 0 here
+        # would silently suppress the starter roll. Catch the second case the
+        # moment a roster change creates one.
+        if starter_count == 0:
+            ordinary = [e for e in entries
+                        if canonical_base(e, parent, form_base) not in legend]
+            if ordinary:
+                findings.append(
+                    "%s: starterCount is 0 but the roster has %d non-legendary "
+                    "entr%s (%s) -- ui_mode_menu.c treats starterCount 0 as "
+                    "'all-legendary, hand out roster[0]', so this character "
+                    "would lose its starter choice"
+                    % (name, len(ordinary), "y" if len(ordinary) == 1 else "ies",
+                       ", ".join(ordinary[:4])))
         roster_set = set(entries)
         for e in entries:
             entry_total += 1
