@@ -586,7 +586,15 @@ static void CB2_InitBattleInternal(void)
     SetVBlankCallback(VBlankCB_Battle);
     SetUpBattleVarsAndBirchZigzagoon();
 	
-	if(FlagGet(FLAG_FULL_RANDOMIZED_MODE))
+	// Character Mode wins if both are somehow set. This is the guard that
+	// actually protects the roster: RandomizeParty() replaces every party
+	// member's species outright, so a Character Mode save would come out of the
+	// next battle holding Pokemon its own catch gate would have refused. The
+	// two modes are made exclusive at all three set points (the intro's
+	// Randomized Party and Character Mode scripts, and the START commit in
+	// ui_mode_menu.c); this covers the paths that bypass them -- the debug
+	// toggle, and any save written before the exclusion existed.
+	if(FlagGet(FLAG_FULL_RANDOMIZED_MODE) && !FlagGet(FLAG_CHARACTER_MODE))
 		RandomizeParty();
 	
 	RandomizeIfSpeciesNone();

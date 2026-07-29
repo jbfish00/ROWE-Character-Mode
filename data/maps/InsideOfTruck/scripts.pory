@@ -1022,11 +1022,29 @@ script Start_EventScript_Chose_City_Surprise{
 	end
 }
 
+// The other half of the Character Mode / Randomized Party Mode exclusion -- see
+// Start_EventScript_Game_Mode_Random_Party for the ruling and the full list of
+// enforcement points.
+//
+// The check has to happen HERE, before the menu opens, rather than at the START
+// commit inside it: Task_MenuMain has no B_BUTTON case, so the mode menu cannot
+// be backed out of and entering it always commits a character. Asking first is
+// the only place the player can still answer NO and keep what they had.
 script Start_EventScript_Character_Mode{
+	goto_if_set(FLAG_FULL_RANDOMIZED_MODE, Start_EventScript_Character_Mode_Conflict)
 	fadescreen(FADE_TO_BLACK)
 	special(Special_OpenCharacterModeMenu)
 	waitstate
 	goto(Start_EventScript_Starter_Chose)
+}
+
+script Start_EventScript_Character_Mode_Conflict{
+	msgbox(format("{COLOR BLUE}Character Mode{COLOR DARK_GREY} can't be used together with {COLOR BLUE}Randomized Party Mode{COLOR DARK_GREY}, which is active.\pTurn Randomized Party Mode off?"), MSGBOX_YESNO)
+	if(var(VAR_RESULT) == NO){
+		goto(Start_EventScript_Starter_Chose)
+	}
+	clearflag(FLAG_FULL_RANDOMIZED_MODE)
+	goto(Start_EventScript_Character_Mode)
 }
 
 script Start_EventScript_Game_Start{
@@ -1576,10 +1594,26 @@ script Start_EventScript_Game_Mode_Inverse{
 }
 
 //Randomized Party Mode
+//
+// This script used to set FLAG_PARTY_RANDOMIZED_MODE (0x30), which NOTHING in
+// this fork's C reads -- so the mode was a no-op. The engine side of the same
+// feature reads FLAG_FULL_RANDOMIZED_MODE (9137): RandomizeParty() in
+// battle_main.c, plus the evolution, growth-rate, New Game+ and main-menu
+// gates. The two halves were never joined; this is the join.
+//
+// It is MUTUALLY EXCLUSIVE with Character Mode by the user's ruling
+// (2026-07-29). RandomizeParty() rewrites the whole party before every battle,
+// so a roster-legal party becomes arbitrary species and the catch gate is
+// bypassed outright. Enforced in three places, and all three must stay:
+//   - here, with a prompt before anything is changed;
+//   - Start_EventScript_Character_Mode, the same prompt in the other direction;
+//   - ui_mode_menu.c at the START commit, and battle_main.c at the
+//     RandomizeParty() call site, which is the guard that actually protects the
+//     roster if the flags are ever both set (an old save, the debug toggle).
 script Start_EventScript_Game_Mode_Random_Party{
 	lockall
 
-	if(!flag(FLAG_PARTY_RANDOMIZED_MODE)){
+	if(!flag(FLAG_FULL_RANDOMIZED_MODE)){
 		msgbox(format("Do you want to {COLOR GREEN}enable{COLOR DARK_GREY} the {COLOR BLUE}Randomized Party Mode{COLOR DARK_GREY}?"), MSGBOX_DEFAULT)
 		waitmessage
 		multichoice(0, 0, MULTI_GAME_MODE_ENABLE, 0)
@@ -1592,17 +1626,26 @@ script Start_EventScript_Game_Mode_Random_Party{
 
 	switch(var(VAR_RESULT)){
 		case 0:
-			if(!flag(FLAG_PARTY_RANDOMIZED_MODE)){
+			if(!flag(FLAG_FULL_RANDOMIZED_MODE)){
+				// Ask BEFORE setting anything, and leave both flags untouched on NO.
+				if(flag(FLAG_CHARACTER_MODE)){
+					msgbox(format("{COLOR BLUE}Randomized Party Mode{COLOR DARK_GREY} can't be used together with {COLOR BLUE}Character Mode{COLOR DARK_GREY}, which is active.\pTurn Character Mode off?"), MSGBOX_YESNO)
+					if(var(VAR_RESULT) == NO){
+						goto(Start_EventScript_Game_Mode_Random_Party)
+					}
+					clearflag(FLAG_CHARACTER_MODE)
+					setvar(VAR_CHARACTER_ID, 0)
+				}
 				playfanfare(SE_SAVE)
 				msgbox(format("The {COLOR BLUE}Randomized Party Mode{COLOR DARK_GREY} was {COLOR GREEN}enabled{COLOR DARK_GREY}!"), MSGBOX_DEFAULT)
 				waitfanfare
-				setflag(FLAG_PARTY_RANDOMIZED_MODE)
+				setflag(FLAG_FULL_RANDOMIZED_MODE)
 			}
 			else{
 				playfanfare(SE_BOO)
 				msgbox(format("The {COLOR BLUE}Randomized Party Mode{COLOR DARK_GREY} was {COLOR RED}disabled{COLOR DARK_GREY}!"), MSGBOX_DEFAULT)
 				waitfanfare
-				clearflag(FLAG_PARTY_RANDOMIZED_MODE)
+				clearflag(FLAG_FULL_RANDOMIZED_MODE)
 			}
 		break
 		case 1:
@@ -2296,7 +2339,10 @@ script Start_EventScript_Game_Modes_Default{
 	clearflag(FLAG_NO_EVOLUTION_MODE)
 	clearflag(FLAG_DOUBLE_BATTLE_MODE)
 	clearflag(FLAG_NO_EVS_MODE)
-	clearflag(FLAG_PARTY_RANDOMIZED_MODE)
+	// Was FLAG_PARTY_RANDOMIZED_MODE, which no C reads -- so "all of the modes
+	// were disabled" left Randomized Party Mode running. It is the same mode;
+	// the flag it actually runs on is FLAG_FULL_RANDOMIZED_MODE.
+	clearflag(FLAG_FULL_RANDOMIZED_MODE)
 	clearflag(FLAG_RANDOMIZED_MODE)
 	clearflag(FLAG_INVERSE_MODE)
 	clearflag(FLAG_NO_SIGNATURE_MODE)

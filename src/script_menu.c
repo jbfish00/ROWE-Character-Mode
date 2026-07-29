@@ -1062,43 +1062,82 @@ static const struct ListMenuItem sSet5[] =
 
 //Mode Selection -------------------------------------------------------------------------
 
-static const u8 sText_Mode_Perfect_Ivs[] 	     = _("Perfect Iv Mode");
+static const u8 sText_Mode_Grindless[] 		     = _("Grindless Mode");
 static const u8 sText_Mode_No_Evs[] 		     = _("No Evs Mode");
+static const u8 sText_Mode_Last_Gen[] 		     = _("Last Gen Mode");
+static const u8 sText_Mode_Monotype[] 		     = _("Monotype Mode");
 static const u8 sText_Mode_Gym_Shuffle[] 	     = _("Gym Shuffle Mode");
-static const u8 sText_Mode_Inverse[] 		     = _("Inverse Mode");
 static const u8 sText_Mode_Randomized[] 	     = _("Randomized Mode");
-static const u8 sText_Mode_Random_Party[] 	     = _("Random Party Mode");
 static const u8 sText_Mode_Double_Battle[] 	     = _("Double Battle Mode");
-static const u8 sText_Mode_No_Evolution[] 	     = _("No Evolution Mode");
+static const u8 sText_Mode_Little_Cup[] 	     = _("Little Cup Mode");
+static const u8 sText_Mode_More_Modes[] 	     = _("More Modes...");
+static const u8 sText_Mode_Save[] 			     = _("Save");
+
+static const u8 sText_Mode_Scalemon[] 		     = _("Scalemon Mode");
+static const u8 sText_Mode_Inverse[] 		     = _("Inverse Mode");
+static const u8 sText_Mode_True_Random[] 	     = _("True Random Mode");
+static const u8 sText_Mode_Random_Party[] 	     = _("Random Party Mode");
 static const u8 sText_Mode_Random_Type_Mode[]    = _("Random Type Mode");
 static const u8 sText_Mode_Random_Ability_Mode[] = _("Random Ability Mode");
 static const u8 sText_Mode_Third_Type_Mode[]     = _("Third Type Mode");
-static const u8 sText_Mode_Leveless[] 		     = _("Leveless Mode");
 static const u8 sText_Mode_Old_STAB_Mode[] 		 = _("Old STAB Mode");
 static const u8 sText_Mode_No_Split[] 		     = _("No Split Mode");
-static const u8 sText_Mode_Vanilla[] 		     = _("Vanilla Mode");
 static const u8 sText_Mode_No_Mega[] 		     = _("No Mega Mode");
-static const u8 sText_Mode_Save[] 			     = _("Save");
+static const u8 sText_Mode_Metronome_Only[]      = _("Metronome Only Mode");
+static const u8 sText_Mode_Vanilla[] 		     = _("Vanilla Mode");
+static const u8 sText_Mode_No_Custom_Forms[]     = _("No Custom Forms");
+static const u8 sText_Mode_No_Signature[] 	     = _("No Signature Mode");
+static const u8 sText_Mode_Back[] 			     = _("Back");
 
+// INDEX-CRITICAL: rows here are matched by POSITION against the switch in
+// Start_EventScript_Game_Modes (data/maps/InsideOfTruck/scripts.pory). The list
+// is ours, the switch is 2.X's, and nothing checks that they agree -- the
+// Blue Nurse and the Slateport ferry drifted apart the same way at the rebase.
+//
+// This one HAD drifted, and every row but two ran the wrong mode: the old list
+// was a 17-entry grab-bag against a 9-case switch, so "Perfect Iv Mode" set
+// Grindless, "Randomized Mode" set Gym Shuffle, and "Random Party Mode" set
+// plain Randomized. Perfect IVs, No Evolution and Leveless are NOT dropped by
+// the correction -- the switch never had a case for them and they are set from
+// the checkbox panel in ui_mode_menu.c instead.
+//
+// Row 9 (Save) deliberately has no case: the switch's `default` is Save.
 static const struct ListMenuItem sSet6[] =
 {
-	{sText_Mode_Perfect_Ivs, 	     0},
+	{sText_Mode_Grindless, 		     0},
     {sText_Mode_No_Evs, 		     1},
-	{sText_Mode_Gym_Shuffle, 	     2},
-    {sText_Mode_Inverse, 		     3},
-    {sText_Mode_Randomized, 	     4},
-    {sText_Mode_Random_Party, 	     5},
+	{sText_Mode_Last_Gen, 		     2},
+    {sText_Mode_Monotype, 		     3},
+    {sText_Mode_Gym_Shuffle, 	     4},
+    {sText_Mode_Randomized, 	     5},
     {sText_Mode_Double_Battle, 	     6},
-    {sText_Mode_No_Evolution, 	     7},
-    {sText_Mode_Random_Type_Mode, 	 8},
-    {sText_Mode_Random_Ability_Mode, 9},
-    {sText_Mode_Third_Type_Mode, 	 10},
-    {sText_Mode_Leveless, 		     11},
-    {sText_Mode_Old_STAB_Mode, 		 12},
-    {sText_Mode_No_Split, 		     13},
-    {sText_Mode_No_Mega, 		     14},
-    {sText_Mode_Vanilla, 		     15},
-	{sText_Mode_Save, 			     16},
+    {sText_Mode_Little_Cup, 	     7},
+    {sText_Mode_More_Modes, 	     8},
+	{sText_Mode_Save, 			     9},
+};
+
+// INDEX-CRITICAL, same contract: matched by position against the switch in
+// Start_EventScript_Game_Modes_Other. SCROLLING_OTHER_GAME_MODES was pointed at
+// sSet6 as a placeholder and never given a list of its own, so all 14 of these
+// rows were reading the game-modes labels. Row 14 (Back) has no case; the
+// switch's `default` returns to the main modes menu.
+static const struct ListMenuItem sSetOtherGameModes[] =
+{
+	{sText_Mode_Scalemon, 		     0},
+    {sText_Mode_Inverse, 		     1},
+	{sText_Mode_True_Random, 	     2},
+    {sText_Mode_Random_Party, 	     3},
+    {sText_Mode_Random_Type_Mode, 	 4},
+    {sText_Mode_Random_Ability_Mode, 5},
+    {sText_Mode_Third_Type_Mode, 	 6},
+    {sText_Mode_Old_STAB_Mode, 		 7},
+    {sText_Mode_No_Split, 		     8},
+    {sText_Mode_No_Mega, 		     9},
+    {sText_Mode_Metronome_Only, 	 10},
+    {sText_Mode_Vanilla, 		     11},
+    {sText_Mode_No_Custom_Forms, 	 12},
+    {sText_Mode_No_Signature, 		 13},
+	{sText_Mode_Back, 			     14},
 };
 
 //----------------------------------------------------------------------------------------
@@ -1471,7 +1510,7 @@ struct
 	{sSetSeviiTicket, ARRAY_COUNT(sSetSeviiTicket)},	// 12 SCROLLING_SEVII_TICKET
 	{sSetGenerations, ARRAY_COUNT(sSetGenerations)},	// 13 SCROLLING_GENERATIONS
 	{sSetTypes, ARRAY_COUNT(sSetTypes)},	// 14 SCROLLING_TYPES
-	{sSet6,  ARRAY_COUNT(sSet6)},	// 15 SCROLLING_OTHER_GAME_MODES (reuses the game-modes list)
+	{sSetOtherGameModes, ARRAY_COUNT(sSetOtherGameModes)},	// 15 SCROLLING_OTHER_GAME_MODES
 	{sSetGenerations, ARRAY_COUNT(sSetGenerations)},	// 16 SCROLLING_STARTER_REGION
 	{sSetEndlessBattleDifficulty, ARRAY_COUNT(sSetEndlessBattleDifficulty)},	// 17
 	{sSetEndlessBattleQuestion, ARRAY_COUNT(sSetEndlessBattleQuestion)},	// 18

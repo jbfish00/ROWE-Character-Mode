@@ -715,6 +715,13 @@ static void Task_MenuMain(u8 taskId)
     {
         if (characterSelection != 0)
         {
+            // Randomized Party Mode and Character Mode are mutually exclusive
+            // (user ruling 2026-07-29) -- RandomizeParty() overwrites the party
+            // with arbitrary species every battle, bypassing the catch gate.
+            // The intro script asks before it ever gets here, so by this point
+            // the player has already agreed; this keeps the invariant true even
+            // if some future path reaches the menu without asking.
+            FlagClear(FLAG_FULL_RANDOMIZED_MODE);
             FlagSet(FLAG_CHARACTER_MODE);
             VarSet(VAR_CHARACTER_ID, characterSelection);
             CharacterMode_SweepPartyToPC();
