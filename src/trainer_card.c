@@ -186,6 +186,12 @@ static const u16 sTrainerCardSticker3_Pal[] = INCBIN_U16("graphics/trainer_card/
 static const u16 sTrainerCardSticker4_Pal[] = INCBIN_U16("graphics/trainer_card/stickers_fr4.gbapal");
 static const u32 sHoennTrainerCardBadges_Gfx[] = INCBIN_U32("graphics/trainer_card/badges.4bpp.lz");
 static const u32 sKantoTrainerCardBadges_Gfx[] = INCBIN_U32("graphics/trainer_card/badges_fr.4bpp.lz");
+// The Johto eight (gyms 9-16). Shapes converted from the pokecrystal decomp's
+// own trainer-card badge sheet; recoloured to a gold ramp because that art is
+// 2bpp and renders through a near-greyscale palette even upstream. It is drawn
+// with palNum 4, which the card ALREADY loads with sTrainerCardGold_Pal
+// unconditionally -- so this needs no new palette and no new palette slot.
+static const u32 sJohtoTrainerCardBadges_Gfx[] = INCBIN_U32("graphics/trainer_card/badges_johto.4bpp.lz");
 
 static const struct BgTemplate sTrainerCardBgTemplates[4] =
 {
@@ -564,6 +570,12 @@ static bool8 LoadCardGfx(void)
             LZ77UnCompWram(sHoennTrainerCardBadges_Gfx, sData->badgeTiles);
         else
             LZ77UnCompWram(sKantoTrainerCardBadges_Gfx, sData->badgeTiles);
+        // badgeTiles is 0x80 * NUM_BADGES = 64 tiles and a badge sheet is only
+        // 32, so the upper half was allocated, uploaded to VRAM and left
+        // uninitialised. The Johto eight go there: tiles 224-255, since bg3's
+        // template has .baseTile = 192 and LoadBgTiles uploads the whole array.
+        LZ77UnCompWram(sJohtoTrainerCardBadges_Gfx,
+                       &sData->badgeTiles[0x80 * NUM_BADGES_PER_REGION]);
         break;
     case 4:
         if (sData->cardType != CARD_TYPE_FRLG)
@@ -1533,11 +1545,15 @@ static void DrawStarsAndBadgesOnCard(void)
     FillBgTilemapBufferRect(3, 143, 15, yOffsets[sData->isHoenn], sData->trainerCard.stars, 1, 4);
     if (!sData->isLink)
     {
+        // TWO rows of eight: Hoenn on y 15/16, Johto on y 17/18. A single
+        // 16-badge row is what does NOT fit -- it runs x = 4..49 on a 30-tile
+        // card. Each row keeps the original x = 4..25 spacing.
+        //
+        // The two rows use different tiles AND different palettes. Hoenn is
+        // tiles 192.. at palNum 3 (sHoenn/KantoTrainerCardBadges_Pal); Johto is
+        // tiles 224.. at palNum 4 (sTrainerCardGold_Pal), which the card loads
+        // unconditionally, so the gold ramp costs nothing.
         x = 4;
-        // Only the Hoenn eight are drawn. The badge row runs x = 4..25 (the card is 30
-        // tiles wide) and the badge tiles run 192..223, so a 16-badge loop would push x
-        // to 49 -- wrapping into the next tilemap row -- and badge 9's tiles would
-        // collide with badge 1's. Showing the Johto eight needs new art and a second row.
         for (i = 0; i < NUM_BADGES_PER_REGION; i++, tileNum += 2, x += 3)
         {
             if (sData->badgeCount[i])
@@ -1546,6 +1562,23 @@ static void DrawStarsAndBadgesOnCard(void)
                 FillBgTilemapBufferRect(3, tileNum + 1, x + 1, 15, 1, 1, palNum);
                 FillBgTilemapBufferRect(3, tileNum + 16, x, 16, 1, 1, palNum);
                 FillBgTilemapBufferRect(3, tileNum + 17, x + 1, 16, 1, 1, palNum);
+            }
+        }
+
+        // Johto: tileNum has advanced to 208 (192 + 8*2), but the second sheet
+        // starts a full 32 tiles after the first, so re-seat it rather than
+        // letting it run on -- the sheets are 16 tiles wide, 2 rows each.
+        tileNum = 192 + (16 * 2);
+        palNum = 4;
+        x = 4;
+        for (; i < NUM_BADGES; i++, tileNum += 2, x += 3)
+        {
+            if (sData->badgeCount[i])
+            {
+                FillBgTilemapBufferRect(3, tileNum, x, 17, 1, 1, palNum);
+                FillBgTilemapBufferRect(3, tileNum + 1, x + 1, 17, 1, 1, palNum);
+                FillBgTilemapBufferRect(3, tileNum + 16, x, 18, 1, 1, palNum);
+                FillBgTilemapBufferRect(3, tileNum + 17, x + 1, 18, 1, 1, palNum);
             }
         }
     }
