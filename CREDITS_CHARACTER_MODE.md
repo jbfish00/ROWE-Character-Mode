@@ -29,6 +29,14 @@ This mod is distributed as a patch only, never as a prebuilt ROM.
   Ash Ketchum FRLG-style overworld sprite set
   (tools/character_mode/donor_sheets/ash_streakofsprites.png).
 
+## Trainer card badges
+- **pret/pokecrystal** decompilation — the eight **Johto badge** shapes on the
+  trainer card's second row (`graphics/trainer_card/badges_johto.png`), converted
+  from that project's own `gfx/trainer_card/badges.png`. The source art is 2bpp
+  and renders through a near-greyscale palette upstream; the four shades are
+  remapped onto a gold ramp here. The Hoenn and Kanto badge sheets are
+  pokeemerald's and pokefirered's own.
+
 ## Rosters
 - Character Pokémon rosters compiled from **Bulbapedia**
   (https://bulbapedia.bulbagarden.net), CC BY-NC-SA.
