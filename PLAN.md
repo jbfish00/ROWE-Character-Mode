@@ -6,7 +6,10 @@ name-length expansion, playthrough readiness and the open engine work — plus t
 traps specific to this tree.
 
 `CLAUDE.md` (gitignored) remains the authority for architecture and history; this
-file is **state and next steps**. Verified 2026-07-26 against this working tree.
+file is **state and next steps**. Verified 2026-07-26 against this working tree;
+§7 re-derived 2026-07-28, and the seven commits it describes were **landed
+2026-07-29** (`0f321aea`..`e5e40c83`) after a full rebuild, an anchor regeneration
+and a clean suite re-run. Tree clean.
 
 > A mirror of this file lives at
 > `/home/jbfish00/Documents/Character Hacks/game_plans/rowe.md`, alongside plans
@@ -22,15 +25,18 @@ fixed, the 1% legendary encounter rule is shipped, and the whole suite is green.
 
 | | |
 |---|---|
-| Branch | `character-mode`, **working tree clean** (last feature commit `48a41097`; a doc commit follows it — don't treat either hash as HEAD) |
-| Rosters | **AUDITED** — 236 table slots / **206 selectable** / 30 hidden, 3,376 rows, **every row sourced** |
+| Branch | `character-mode`, **working tree clean**. Last feature commit `c231ba2a`, followed by an anchors commit `e5e40c83` and a doc commit — don't treat any single hash as HEAD |
+| Rosters | **AUDITED** — 236 table slots / **206 selectable** / 30 hidden, **3,359** rows, **every row sourced** |
 | Threshold | **ENFORCED** — the only game in the project where it is |
 | Sprites | **168 of 236** have a front pic (68 are `CHAR_ASSET_NONE`) |
 | Name length | **12/12 LANDED** (`71cebcbe`), verified by a new headless suite |
 | Legendary rule | **SHIPPED** — 1% wild encounters, offered-until-caught, no roaming |
-| Readiness | **GREEN** — selftest 33/33 and **all 11 suite runs passing** |
+| Modes | **Randomized Party Mode SHIPPED** (`c231ba2a`), exclusive with Character Mode; both Game Modes menus de-drifted and pinned |
+| Readiness | **GREEN** — selftest 33/33 and **all 11 suite runs passing**, tallies identical to the pre-change baseline (re-run 2026-07-29 on `08eef0c3…`) |
 
 Every number above was re-derived from this tree, not taken from notes.
+⚠️ The suite is **11 runs**, not 12 — §0 and §7 both said 12 while §8 said 11.
+Nine scripts plus the two `starter_regression` paths; the 11 tallies are in §7.
 
 ---
 
@@ -70,8 +76,9 @@ the game's own output.**
 
 The 2026-07-25 adversarial roster audit landed here first (`f9f61363`, `d9f96d59`,
 `2ca9d486`, `5dfdda7f`). Verified in `src/data/characters.h`: **236 slots,
-206 selectable, 30 hidden**, 3,376 documented rows, **every row carries a Source** —
-the only game at 100% attribution (the ports sit at 96%, residue in Goh/Ash/Red).
+206 selectable, 30 hidden**, **3,359** documented rows (3,376 before `2e71ffd2`
+removed 17 duplicates — see §7.2), **every row carries a Source** — the only game
+at 100% attribution (the ports sit at 96%, residue in Goh/Ash/Red).
 
 **This is the only game where the playability threshold is actually enforced.**
 `u8 selectable` on `struct CharacterInfo`, gating `FirstCharacterInGen()` and
@@ -353,13 +360,269 @@ difference, not a defect.
 
 ## 7. Open work, in priority order
 
-1. **68 characters still have no portrait** — art acquisition, not tooling (§3).
-2. Trainer card shows only the Hoenn 8 badges; the Johto 8 need art and a second row.
-3. `FLAG_FULL_RANDOMIZED_MODE` and friends cannot be enabled without tilemap art
-   (the mode NAMES are baked into the UI tilemap, not printed as text).
+Re-derived 2026-07-28 from this tree, not from notes. **The previous version of
+this section said "every remaining item needs ART, not code" — that was wrong.**
+Four code items were open and unlisted; three of them are data/doc correctness
+bugs that the existing verifier passes over by construction.
 
-**Every remaining item needs ART, not code.** Nothing is blocking a playthrough,
-and there is no outstanding engine work.
+**The five code/parity items are FIXED and now COMMITTED** — `0f321aea`,
+`2e71ffd2`, `913e13eb`, `ef8cdb7e`, `77ac8e20`, `c231ba2a`, `e5e40c83`
+(2026-07-29). Suite re-run on the final build: `make` 0 errors ·
+`audit_rosters.py` OK (236 characters, 2775 entries) · `verify_docs.py` OK ·
+`check_name_lengths.py` 16/16 · `check_mode_menus.py` OK (25 rows) + its
+self-test · in-ROM selftest **33/33** · **all 11 suite runs PASS**, tallies
+IDENTICAL to the pre-change baseline (boot 2, continue 2, ot_roundtrip 19,
+legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13,
+gigaton 9, starter red 6 + normal 6) — so nothing regressed.
+
+⚠️ **Two process points from the commit pass, both worth repeating.**
+`gen_anchors.py` had NOT been re-run after the final link — `anchors.lua`
+predated `pokeemerald.gba` by two minutes, so any suite run made before it was
+reading stale addresses. Regenerate, then run. And the three new `verify_docs`
+checks plus the `audit_rosters` `starterCount == 0` guard were **re-proven by
+negative control at commit time**, not taken on the strength of the note saying
+they had been: inject a duplicate row, bump a header, restore the old `32`, force
+a 0 onto Red's roster — each exits 1 and names the culprit.
+
+### Code — DONE
+
+1. ✅ **Tobias always starts with Darkrai.** He was the only `.starterCount = 0`
+   row (`hasSignature = 0`, roster `[DARKRAI, LATIOS]`), so `GetNumStarters()`
+   fell through to the full roster and `RandomizeStarterSelection()` rolled
+   `Random() % 2` — a *random* legendary. **User ruling 2026-07-28: an
+   all-legendary roster DOES get a starter, and always the same one.**
+   `RandomizeStarterSelection` now takes `roster[0]` when `hasSignature` **or**
+   `starterCount == 0`. Written generically, so any future all-legendary
+   character behaves the same.
+   ⚠️ Tobias is the entire population of this case here — Cogita and Iscan
+   resolve to EMPTY rosters in ROWE's dex and are not in `gCharacters` at all,
+   unlike Unbound/Radical Red where Cogita is the sharp case.
+   **Guarded**: `audit_rosters.py` now fails if `starterCount == 0` appears on a
+   roster that is not genuinely all-legendary — that 0 is read as "hand out
+   roster[0]", so on an ordinary roster it would silently kill the starter
+   choice. Proven by negative control (forcing Tucker to 0 exits 1 and names his
+   five non-legendary entries).
+
+2. ✅ **The 17 duplicated roster rows are gone** (3376 → **3359**, exactly 17
+   removed, 0 added). Root cause was `regional_form()` testing a bare
+   `endswith()`, so `SPECIES_SANDSLASH_MEGA_ALOLA` and
+   `SPECIES_DARMANITAN_ZEN_MODE_GALARIAN` were classified as plain regional forms
+   and rendered to the same display name as the real ones ("Alolan Sandslash" ×11
+   characters, "Galarian Darmanitan" ×6). A constant now earns its own row only
+   when what remains after stripping the region is a base species rather than
+   another form. All 17 headers now match their distinct counts (Oak 75 → 74).
+   `derive_drops.py` shares the classifier, so the threshold was re-derived: it
+   is **unchanged** at 206 offered / 30 hidden. (Melony goes 7 → 6 finals and
+   still clears the bar.)
+
+3. ✅ **The hidden-slot count is derived from the compiled table.** New
+   `hidden_slot_count()` counts `.selectable = 0` in `characters.h` instead of
+   `len(character_drops.json)`, so ROSTERS.md and ROSTERS_SPRITES.md now say
+   **30**, not 32. The coverage note no longer trails *"the remainder … has not
+   been established yet"* once attribution reaches 100%.
+
+   ⚠️ **`verify_docs.py` could not see 2 or 3, by construction** — it accumulated
+   into a LIST on both sides, so duplicates inflated both equally and
+   `3376 == 3376` passed. It now compares against the DISTINCT set and has three
+   new checks, **each proven by negative control**: an injected duplicate row, a
+   header disagreeing with its distinct count (the exact historical symptom), and
+   a hidden-slot claim disagreeing with the compiled table. This was the fourth
+   vacuously-passing check in this repo (§9) — the pattern is the point.
+
+4. ⛔ **Selection-screen portrait — IMPLEMENTED AND REVERTED THE SAME DAY. It is
+   art-blocked, not wiring.** The first pass put a 64×64 `trainerFrontPic` sprite
+   at (150, 60), reasoning it sat clear of the mode checkbox column at screen
+   x 184. That was the wrong landmark: the checkboxes are at x 184 but the mode
+   **labels** start at x ≈118, so the sprite covered the "MODES" heading and
+   seven of the nine mode names.
+   **How that was settled — reuse this, it is cheap.** Render
+   `graphics/ui_menu/tilemap.bin` (uncompressed, 32×32 entries, tile id in the
+   low 10 bits, flips at bits 10/11) over `graphics/ui_menu/tiles.png` and draw
+   the proposed sprite rect on top. That produces the actual screen without
+   booting anything, and it showed the layout is **full**: the widest free gaps
+   are the **16 px** between the left option panel and the modes panel, and the
+   **40 px** to the right of the modes panel. There is no free 64×64 region.
+   Showing a portrait therefore needs the menu tilemap redrawn to make room —
+   which puts it in the same class as §7.8-10, not ahead of them.
+   ⚠️ **The general lesson: a coordinate argument about a screen is not evidence
+   about that screen.** The bounds check was arithmetically correct and still
+   wrong, because it was checked against the one element whose position was in
+   the C source (the checkbox blit) rather than against the elements that are in
+   the tilemap. Render the tilemap before placing anything on this menu.
+
+5. ✅ **Character Mode ON/OFF** in the debug Flags submenu, the counterpart to
+   the ports' `CMDbgOff`. It toggles the FLAG only and deliberately keeps
+   `VAR_CHARACTER_ID`, so switching back on resumes the SAME character instead of
+   the broken flag-set-but-no-character state; enabling with no character ever
+   selected is refused. Debug-only, so normal play still has the mode locked in
+   for the save — which is what the playthrough checklist promises.
+
+### Process — DONE
+
+6. ✅ **`derive_drops.py` is now in the documented pipeline order** in
+   `CLAUDE.md`, with the reason attached. It must run **before**
+   `emit_characters.py`, which reads `character_drops.json` to set
+   `.selectable` — so following the old chain after a roster change emitted the
+   PREVIOUS roster's threshold, silently. That is how the 2026-07-25 pass shipped
+   20 characters who could not field six fully-evolved Pokemon while hiding 5 who
+   could. The file itself was always fine (it reproduces byte-identical); the bug
+   was that nothing told you to re-run it.
+
+7. ✅ **ROWE's playthrough checklist now has a wild-encounter block** — it ships
+   the 10% roster override and the 1% legendary rule and asked the player to
+   verify neither, while Unbound, Lazarus and Seaglass all did. Added the 10%/1%
+   checks, the offered-until-caught rule, the area-level (not canon-level) note,
+   Tobias's repeatable legendaries and always-Darkrai starter, and the
+   ROSTERS-vs-ENCOUNTERS "own but cannot meet" caveat, plus a check on the
+   selection screen. **ROWE is now 24 items, workspace total 112, 0 done.**
+   (`READINESS_PLAN.md` said 76 in one place and 68 in another; both were stale
+   before Seaglass's section landed. Both corrected, with a note to recount
+   rather than copy.)
+
+   **The playthrough itself remains the single largest piece of unfinished work
+   in this repo, and nothing automated can close it.**
+
+### Art — re-examined 2026-07-28. Two of the three were smaller than documented.
+
+8. **Genuinely blocked on ACQUISITION, and now measured.**
+   `import_donor_front_pics.py --dry-run` reports **0 to import** — every sprite
+   staged in `sprites/donors/` (rogue, ashgray, hns, taar, platinum, kalarie,
+   pokesho, pokesho_field, loulilie) is already in. So there is no un-imported
+   art sitting on disk; the gap is real. **71 characters have no staged art**
+   (Ash, Tate, Paul, Zoey, Nando, Ghetsis, Colress, Trip, Alain, Sawyer, Guzma,
+   Plumeria, Lusamine, the Alola anime cast, most professors …). Also **224 of
+   236 have no back pic** (only 12 exist) and **135 have no overworld art**.
+   ⚠️ The importer counts **238**, not 236 — it iterates the roster data, which
+   still holds Cogita and Iscan, the two dropped from `gCharacters` entirely.
+   That is why its "167 have a front pic" is one off the table's 168; do not
+   chase the discrepancy, it is this.
+   Sourcing leads are in `../Character Hacks/SPRITE_PLAN.md`, which is the
+   runbook — not this file.
+
+9. ✅ **Trainer card now draws all 16 badges — Johto in gold on a second row.**
+   The old in-code comment blamed a tile collision ("a 16-badge loop pushes x to
+   49 and badge 9's tiles collide with badge 1's"). That is true only of ONE row,
+   and it hid the fact that the tile budget was never the problem:
+   `badgeTiles` is `0x80 * NUM_BADGES` = **2048 bytes = 64 tiles**, uploaded by
+   `LoadBgTiles(3, …, ARRAY_COUNT(...), 0)` against a bg3 template whose
+   `.baseTile` is 192 — so tiles **192-255 were already reserved and uploaded**,
+   while a badge sheet is only 1024 bytes = **32 tiles**. **Half of it was
+   allocated, sent to VRAM, and left uninitialised.** The Johto eight go there
+   (tiles 224-255) and a second row goes at y 17/18, which `front.bin`
+   (600 entries = 30×20) leaves near-uniform.
+
+   **Art**: `graphics/trainer_card/badges_johto.png`, 128×16 — the 8 Johto shapes
+   converted from the pokecrystal decomp's own card sheet
+   (`../Character Hacks/Prism-Character-Mode/tools/pokecrystal_donor/gfx/trainer_card/badges.png`,
+   11 sprites of 16×16; the first 8 are Zephyr … Rising). That art is 2bpp and
+   renders through `PREDEFPAL_CGB_BADGE`
+   (`RGB 31,31,31, 26,21,22, 15,15,18, 00,00,00`) — near-greyscale even upstream
+   — so **the user chose gold** (2026-07-28) and the 4 shades are remapped onto
+   a light/mid/dark gold ramp.
+   ⚠️ **It needs NO new palette and NO new palette slot.** It draws with
+   `palNum 4`, which `SetCardBgsAndPals` already loads with `sTrainerCardGold_Pal`
+   **unconditionally**, outside the Hoenn/Kanto branch. Index 0 is the same
+   backdrop value the Hoenn sheet uses, so it stays transparent. The two rows
+   deliberately use different tiles AND different palettes.
+
+   **Placement was checked by rendering, not by arithmetic** — `front.bin`
+   composited over `card.png` with both badge sheets pasted where the code draws
+   them. After §7.4 that is the rule on this repo's screens, not an optional
+   extra.
+
+10. ✅ **`FLAG_FULL_RANDOMIZED_MODE` — SHIPPED as "Randomized Party Mode",
+    mutually exclusive with Character Mode** (user ruling 2026-07-29). The
+    gameplay analysis below was right and is why the ruling went that way. The
+    *implementation* analysis was wrong in an instructive direction.
+
+    ⚠️ **It was never a missing setter. It was a MISROUTED one.** The intro
+    already ships a complete enable/disable/explain flow —
+    `Start_EventScript_Game_Mode_Random_Party`, the donor's — and it set
+    **`FLAG_PARTY_RANDOMIZED_MODE` (0x30), which no C in this fork reads.**
+    Meanwhile `FLAG_FULL_RANDOMIZED_MODE` (9137, our own appended block) had the
+    24 readers and no writer. Two halves of one feature, never joined: 2.X's
+    script setting 2.X's flag, our engine reading ours. **The fix was repointing
+    a flag, not adding a 10th checkbox row to `ModeFlags[]` — `NUM_MODES` is
+    untouched and the tilemap was never involved.**
+    The general lesson: *"no setter"* was derived from grepping C. The setter was
+    in `data/`, under a different flag name for the same feature. **When a flag
+    has readers and no writers, grep `data/` for the FEATURE, not just for the
+    flag.**
+
+    ⚠️ **And the menu it lives in was mislabeled — all of it.** Both
+    `SCROLLING_GAME_MODES` and `SCROLLING_OTHER_GAME_MODES` pointed at `sSet6`, a
+    17-entry list, while the two scripts switch on **9** and **14** cases.
+    `SCROLLING_OTHER_GAME_MODES` had never been given a list at all. So picking
+    "Perfect Iv Mode" set Grindless, "Randomized Mode" set Gym Shuffle, and
+    "Random Party Mode" set plain Randomized — only "No Evs" and "Double Battle"
+    happened to line up. This is the **menu↔script index drift** class that
+    already hit the Blue Nurse and the Slateport ferry at the rebase; the modes
+    menu had simply never been audited. `sSet6` is now the correct 9+Save list,
+    `sSetOtherGameModes` is new and correct, and **`tools/check_mode_menus.py`
+    pins all 25 rows to their switch cases and fails loudly on either side**
+    (proven by negative control: `--self-test` swaps two rows and is caught).
+    Perfect IVs / No Evolution / Leveless are not lost — the switch never had
+    cases for them; they are set from the checkbox panel in `ui_mode_menu.c`.
+
+    **The exclusion, enforced in four places** (all four must stay):
+    - `Start_EventScript_Game_Mode_Random_Party` — enabling it while Character
+      Mode is on prompts *"Turn Character Mode off?"*; NO changes nothing, YES
+      clears `FLAG_CHARACTER_MODE` + `VAR_CHARACTER_ID`.
+    - `Start_EventScript_Character_Mode` — the mirror prompt. It has to ask
+      **before** opening the menu: `Task_MenuMain` has **no `B_BUTTON` case**, so
+      the mode menu cannot be backed out of and entering it always commits a
+      character. This is the only point where NO can still mean anything.
+    - `ui_mode_menu.c` at the START commit — `FlagClear(FLAG_FULL_RANDOMIZED_MODE)`,
+      and the debug toggle does the same, so the invariant holds on paths that
+      never see a prompt.
+    - `battle_main.c` at the `RandomizeParty()` call site — **Character Mode
+      wins if both are somehow set.** This is the one that actually protects the
+      roster (old saves, the debug toggle), and it is the guard to keep if any
+      of the others are ever refactored away.
+    - `Start_EventScript_Game_Modes_Default` ("all of the modes were disabled")
+      cleared the dead 0x30 and so left the mode running; it clears 9137 now.
+
+    Why the ruling was the right one, kept from the original analysis: its own
+    Hall of Fame string calls it **"Random Party Mode"** (`hall_of_fame.c:1124`),
+    which is the accurate name. Every full-random call site passes `SPECIES_NONE`
+    to `GetRandomFirstStage`, taking the `Random() % POKEMON_FAMILIES` branch
+    rather than the seeded one — a *fresh* roll every call, not the fixed
+    per-save shuffle `FLAG_RANDOMIZED_MODE` gives. It also re-rolls **the whole
+    party at the start of every battle** (`RandomizeParty`,
+    `level_scaling.c:2325` — wipes all four move slots, replaces the species,
+    renames, recalculates stats, regrants a moveset, keeping only the level);
+    disables evolution (`pokemon.c:7089`); gives **every** species Bulbasaur's
+    growth rate (`pokemon.c:9569`); disables New Game+ (`new_game.c:309`); hides
+    the game-clear main-menu options (`main_menu.c:843/865/892`); and suppresses
+    DexNav's own randomiser (`dexnav.c:959/1030/1188`). **`RandomizeParty`
+    overwrites roster-legal Pokemon with arbitrary species, bypassing the catch
+    gate** — teaching it the roster would have meant a per-battle roster-filtered
+    reroll, i.e. a different feature. Exclusion was the smaller, honest answer.
+
+**Nothing here blocks a playthrough.** 1-3, 5, 6, 7, **9** and **10** are done,
+green and **committed** (`0f321aea`..`e5e40c83`). **4 was implemented and
+reverted** — it is art-blocked after all, and the way that was established
+(render the tilemap, do not reason about coordinates) is now the rule for this
+repo's screens. **8 is the only real art wall left**, and it is acquisition:
+every staged sprite is already imported.
+
+### So what is actually next, in order
+
+1. **The playthrough (§7.7).** 24 checklist items, 0 done. It is the largest
+   piece of unfinished work in this repo and **nothing automated can close it** —
+   the headless suite covers gates and data, not whether the game is any good to
+   play. Three of the four newest features (the trainer card's second badge row,
+   Randomized Party Mode's prompts, the wild-encounter block) are code- and
+   render-verified but have never been seen by a player.
+2. **Art acquisition (§7.8)** — 71 characters with no staged front pic, 224 with
+   no back pic, 135 with no overworld art. Runbook is
+   `../Character Hacks/SPRITE_PLAN.md`; the importer is additive and idempotent,
+   so staged art needs no code work, only sourcing.
+3. **The selection-screen portrait (§7.4)** and any 10th mode row — both need the
+   `ui_menu` tilemap redrawn. Same class as 2, not ahead of it.
+
+There is no open engine defect on this list. If one turns up, §9 is the trap
+list to read first.
 
 ---
 
@@ -369,6 +632,8 @@ and there is no outstanding engine work.
 make -j$(nproc)                             # agbcc, MODERN=0. NEVER `make compare`.
 python3 tools/check_name_lengths.py         # 16 checks — the gate for the 12/12 change
 python3 tools/check_species_names.py        # abbreviated-species-name detector
+python3 tools/check_mode_menus.py           # menu row <-> pory switch case drift (§7.10)
+python3 tools/check_mode_menus.py --self-test   # its negative control
 python3 tools/mgba_scripts/gen_anchors.py   # MUST re-run after every build
 ```
 
@@ -418,6 +683,16 @@ scripts in `tools/mgba_scripts/`.
   (`character_mode_selftest.c`) is a compiler-generated `offsetof()` table,
   exported by `gen_anchors.py` and read as `H.off.*`. The hardcoded ones drifted
   silently and reported a working feature as broken (§1).
+- **A flag with C readers and no C writer may be written from `data/` under a
+  DIFFERENT NAME.** `FLAG_FULL_RANDOMIZED_MODE` was written up as "no setter" on
+  the strength of a C grep; the setter was the donor's intro script, setting the
+  2.X-named `FLAG_PARTY_RANDOMIZED_MODE` for the same feature. Grep `data/` for
+  the FEATURE before concluding a flag is dead. (§7.10)
+- **`scrollingmultichoice` menus are matched to their scripts BY POSITION and
+  nothing checks it.** Ours are in `src/script_menu.c`, the switches are 2.X's in
+  `data/`. Three menus have drifted so far (Blue Nurse, Slateport ferry, both
+  Game Modes menus). `tools/check_mode_menus.py` now pins the two modes menus;
+  the rest are still grep-and-read.
 - **A data check must precede any RNG call** in encounter code. Consuming a
   `Random()` before knowing the feature applies shifts the roll stream for every
   character it does not apply to. Nothing looks broken — the rolls just stop
@@ -434,7 +709,16 @@ scripts in `tools/mgba_scripts/`.
 - **`make compare` will never pass** and is not the goal — this is a fork, not a
   byte-matching decomp.
 - **`gen_anchors.py` must be re-run after every build**, or the mGBA scripts read
-  stale addresses.
+  stale addresses. It had not been, before the 2026-07-29 commit pass —
+  `anchors.lua` predated the link by two minutes. ⚠️ **But mtime is the wrong
+  test**: `make` relinks on every invocation even with nothing to do, so the ROM
+  is *always* newer than the anchors afterwards. Compare `gen_anchors.py`'s **map
+  digest** and whether re-running changes the file (`d8509533df699ec0` /
+  no change, for this build), and compare the ROM by checksum
+  (`08eef0c3f892247cfc16836c1078eb72`) rather than by timestamp.
+- **A whitespace-only source edit can be verified for free.** Rebuild and compare
+  the ROM md5; if it is identical, an already-green suite result carries over and
+  does not need re-running. Used for a stray blank line in `ui_mode_menu.c`.
 - **More than one session works in this tree.** Stage by name; **never
   `git add -A`.**
 - **Never size a struct here with a modern compiler** (§4).
