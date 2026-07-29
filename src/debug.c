@@ -104,6 +104,7 @@ enum { // Flags
     DEBUG_FLAG_MENU_ITEM_GYMSHUFFLEONOFF,
     DEBUG_FLAG_MENU_ITEM_MGBAPRINTONOFF,
     DEBUG_FLAG_MENU_ITEM_DEBUGMENUONOFF,
+    DEBUG_FLAG_MENU_ITEM_CHARACTER_MODE_ONOFF,
 };
 enum { // Vars
     DEBUG_VARS_MENU_ITEM_VARS,
@@ -217,6 +218,7 @@ static void DebugAction_Flags_CatchingOnOff(u8);
 static void DebugAction_Flags_ClearDailyFlags(u8);
 static void DebugAction_Flags_EnableRandomizedMode(u8);
 static void DebugAction_Flags_ReshuffleGyms(u8);
+static void DebugAction_Flags_SwitchCharacterMode(u8);
 
 static void DebugAction_Vars_Vars(u8 taskId);
 static void DebugAction_Vars_Select(u8 taskId);
@@ -306,6 +308,7 @@ static const u8 gDebugText_FlagUnset[] =                    _("FALSE");
 static const u8 gDebugText_ClearDailyFlags[] =              _("Clear Daily Flags");
 static const u8 gDebugText_EnableRandomizedMode[] =         _("Randomized ON/OFF");
 static const u8 gDebugText_ReshuffleGyms[] 	=         		_("Reshuffle Gyms");
+static const u8 gDebugText_Flags_SwitchCharacterMode[] =    _("Character Mode ON/OFF");
 // Variables Menu
 static const u8 gDebugText_Vars_Vars[] =             _("Set Vars XXXX");
 static const u8 gDebugText_Vars_Debug_Follower[] =   _("Enable/Disable Debug Followers");
@@ -417,6 +420,7 @@ static const struct ListMenuItem sDebugMenu_Items_Flags[] =
 	[DEBUG_FLAG_MENU_ITEM_CLEAR_DAILY_FLAGS]        = {gDebugText_ClearDailyFlags,            DEBUG_FLAG_MENU_ITEM_CLEAR_DAILY_FLAGS},
 	[DEBUG_FLAG_MENU_ITEM_RANDOMIZEONOFF]           = {gDebugText_EnableRandomizedMode,       DEBUG_FLAG_MENU_ITEM_RANDOMIZEONOFF},
 	[DEBUG_FLAG_MENU_ITEM_RESHUFFLE_GYMS]           = {gDebugText_ReshuffleGyms,              DEBUG_FLAG_MENU_ITEM_RESHUFFLE_GYMS},
+    [DEBUG_FLAG_MENU_ITEM_CHARACTER_MODE_ONOFF]     = {gDebugText_Flags_SwitchCharacterMode,  DEBUG_FLAG_MENU_ITEM_CHARACTER_MODE_ONOFF},
 };
 static const struct ListMenuItem sDebugMenu_Items_Vars[] =
 {
@@ -479,6 +483,7 @@ static void (*const sDebugMenu_Actions_Flags[])(u8) =
 	[DEBUG_FLAG_MENU_ITEM_CLEAR_DAILY_FLAGS]        = DebugAction_Flags_ClearDailyFlags,
 	[DEBUG_FLAG_MENU_ITEM_RANDOMIZEONOFF]           = DebugAction_Flags_EnableRandomizedMode,
 	[DEBUG_FLAG_MENU_ITEM_RESHUFFLE_GYMS]           = DebugAction_Flags_ReshuffleGyms,
+    [DEBUG_FLAG_MENU_ITEM_CHARACTER_MODE_ONOFF]     = DebugAction_Flags_SwitchCharacterMode,
 };
 static void (*const sDebugMenu_Actions_Vars[])(u8) =
 {
@@ -1158,6 +1163,38 @@ static void DebugAction_Flags_SwitchDebugMode(u8 taskId)
     }else{
         FlagSet(FLAG_DEBUG_MODE);
         PlaySE(SE_PC_LOGIN);
+    }
+}
+
+// Character Mode ON/OFF -- the equivalent of the four binary ports' CMDbgOff
+// code, which ROWE had no counterpart for: outside this menu the only
+// FlagClear(FLAG_CHARACTER_MODE) lives in the intro mode menu, and that menu is
+// unreachable once play starts (MENU_ACTION_UI_MODE_MENU is commented out in
+// start_menu.c), so an active Character Mode could not be turned off at all.
+//
+// This toggles the FLAG only and deliberately leaves VAR_CHARACTER_ID set: the
+// flag is what every gate reads, and keeping the id means switching back on
+// resumes the SAME character rather than landing in the broken
+// flag-set-but-no-character-selected state. Turning it on when no character was
+// ever selected would be exactly that state, so it is refused instead.
+static void DebugAction_Flags_SwitchCharacterMode(u8 taskId)
+{
+    if (FlagGet(FLAG_CHARACTER_MODE))
+    {
+        FlagClear(FLAG_CHARACTER_MODE);
+        PlaySE(SE_PC_OFF);
+    }
+    else if (VarGet(VAR_CHARACTER_ID) != 0)
+    {
+        // Keeps the Character Mode / Randomized Party Mode exclusion true on the
+        // one path that never sees the intro's prompts.
+        FlagClear(FLAG_FULL_RANDOMIZED_MODE);
+        FlagSet(FLAG_CHARACTER_MODE);
+        PlaySE(SE_PC_LOGIN);
+    }
+    else
+    {
+        PlaySE(SE_FAILURE);
     }
 }
 
