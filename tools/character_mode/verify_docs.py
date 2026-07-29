@@ -12,6 +12,16 @@ itself, which is what actually compiles into the ROM:
      roster, expanded through evolution families exactly as the catch gate does
   4. no listed species is missing from the game's species table
   5. the counts in ROSTERS.md, ROSTERS_SPRITES.md and README.md agree
+  6. no character has a DUPLICATED row, and each "Final evolutions (N)" header
+     matches that character's DISTINCT row count
+  7. the "N further characters remain in the data" claim matches the number of
+     slots actually compiled with `.selectable = 0`
+
+Checks 6 and 7 exist because this file used to compare a list against a list and
+a JSON file against itself, so both of the defects they catch passed it: 17
+characters carried a duplicated row (3376 == 3376) and ROSTERS.md promised save
+compatibility for 32 hidden slots when only 30 existed. Both are proven by
+negative control -- injecting either defect makes this exit 1 and name it.
 
 Exit 1 on any mismatch. Run after emit_roster_docs.py.
 """
@@ -65,6 +75,7 @@ def main():
         return out
 
     doc = {}
+    doc_header_count = {}
     lines = read(os.path.join(TARGET, "ROSTERS.md")).splitlines()
     cur = None
     for line in lines:
@@ -73,11 +84,32 @@ def main():
             cur = m.group(1).strip()
             doc[cur] = []
             continue
+        m = re.match(r"^\*\*Final evolutions \((\d+)\):\*\*", line)
+        if m and cur:
+            doc_header_count[cur] = int(m.group(1))
+            continue
         m = re.match(r"^\| (.+?) \| (.*?) \|$", line)
         if m and cur and m.group(1) not in ("Pokémon", "---"):
             doc[cur].append(m.group(1).strip())
 
     fails = []
+
+    # A DUPLICATE ROW IS INVISIBLE TO A LIST-vs-LIST COMPARISON. Every count in
+    # this file used to be len() of a list on both sides, so 17 characters
+    # carrying a duplicated row (SPECIES_SANDSLASH_MEGA_ALOLA rendering as
+    # "Alolan Sandslash", same as the plain form) inflated both sides equally
+    # and 3376 == 3376 passed. Compare against the DISTINCT set, and say so.
+    for char, listed in doc.items():
+        dupes = sorted({mon for mon in listed if listed.count(mon) > 1})
+        if dupes:
+            fails.append("%s: duplicated row(s) in ROSTERS.md: %s"
+                         % (char, ", ".join(dupes)))
+        if char in doc_header_count and doc_header_count[char] != len(set(listed)):
+            fails.append("%s: header says %d final evolutions, %d distinct rows"
+                         % (char, doc_header_count[char], len(set(listed))))
+    for char in doc:
+        if char not in doc_header_count:
+            fails.append("%s: no 'Final evolutions (N)' header in ROSTERS.md" % char)
     for char in doc:
         if char not in in_rom:
             fails.append("%s: in ROSTERS.md but not in characters.h" % char)
@@ -142,6 +174,21 @@ def main():
         if counts[path] is not None and counts[path] != len(doc):
             fails.append("%s says %s characters, ROSTERS.md lists %d"
                          % (path, counts[path], len(doc)))
+
+    # The hidden-slot claim is a promise about SAVE COMPATIBILITY, so it has to
+    # match the compiled table, not character_drops.json -- a character whose
+    # roster comes out empty in this dex is dropped from gCharacters entirely
+    # and has no slot to keep. The drops file says 32; only 30 slots exist.
+    hidden_in_rom = len(re.findall(r"\.selectable = 0,", header))
+    for path in ("ROSTERS.md", "ROSTERS_SPRITES.md"):
+        m = re.search(r"(\d+) further characters remain in the data",
+                      read(os.path.join(TARGET, path)))
+        if m and int(m.group(1)) != hidden_in_rom:
+            fails.append("%s claims %s hidden characters, characters.h compiles %d "
+                         "slots with .selectable = 0" % (path, m.group(1), hidden_in_rom))
+        if m is None and hidden_in_rom:
+            fails.append("%s does not mention the %d hidden characters"
+                         % (path, hidden_in_rom))
 
     print("characters.h: %d total, %d selectable" % (len(in_rom), len(selectable)))
     print("ROSTERS.md:   %d documented, %d Pokemon rows"
