@@ -449,11 +449,22 @@ def previous_report():
     path = os.path.join(HERE, "donor_ow_backs.txt")
     if not os.path.isfile(path):
         return {}
-    out = {}
+    out, rows = {}, 0
     for line in read(path).splitlines():
-        m = re.match(r"(ow|back)\s{3}(.+?)\s{2,}(\S+)\s{2,}(\S.*?)\s{2,}", line)
+        if line.startswith("#") or not line.strip():
+            continue
+        rows += 1
+        m = re.match(r"(ow|back)\s+(.+?)\s{2,}(\S+)\s{2,}(\S.*?)\s{2,}", line)
         if m:
             out[(m.group(1), m.group(2).strip())] = (m.group(3), m.group(4).strip())
+    # ⚠️ A parser that quietly matches nothing is a check that cannot fail, and
+    # this one already was one: the first regex wanted exactly three spaces after
+    # the kind, which "ow   " has and "back " does not -- so drift detection was
+    # blind to every back pic and said so by staying silent.
+    assert len(out) == rows, (
+        "donor_ow_backs.txt: parsed %d of %d rows -- the report format and this "
+        "parser have drifted, and drift detection is now partly blind"
+        % (len(out), rows))
     return out
 
 
