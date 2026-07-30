@@ -1,0 +1,36 @@
+# Overworld sheets and back pics imported from sprites/donors/ by
+# tools/character_mode/import_donor_ow_backs.py -- regenerate, do not edit.
+ow   Jessie                   kalarie    jessie_ow.png                               9 frames of 16x32
+ow   James                    kalarie    james_ow.png                                9 frames of 16x32
+ow   Lyra                     rogue      lyra_ow_walking.png + lyra_ow_running.png  18 frames of 16x32
+ow   Calem                    rogue      calem_ow_walking.png                        9 frames of 16x32
+ow   Serena                   rogue      serena_ow_walking.png                       9 frames of 16x32
+ow   Korrina                  taar       korrina_ow.png                              9 frames of 16x32
+ow   Elio                     rogue      elio_ow_walking.png                         9 frames of 16x32
+ow   Selene                   rogue      selene_ow_walking.png                       9 frames of 16x32
+ow   Acerola                  taar       acerola_ow.png                              9 frames of 16x32
+ow   Kiawe (anime)            taar_gap   kiawe_ow.png                                9 frames of 16x32
+ow   Nessa                    taar       nessa_ow.png                                9 frames of 32x32
+ow   Bede                     taar       bede_ow.png                                 9 frames of 16x32
+ow   Larry                    taar       larry_ow.png                                9 frames of 16x32
+ow   Victor                   rogue      victor_ow_walking.png                       9 frames of 16x32
+ow   Gloria                   rogue      gloria_ow_walking.png                       9 frames of 16x32
+ow   Oak                      rogue      oak_ow.png                                  9 frames of 16x32
+ow   Elm                      taar_gap   elm_ow.png                                  9 frames of 16x32
+ow   Birch                    rogue      birch_ow.png                                9 frames of 16x32
+ow   Rowan                    taar       rowan_ow.png                                9 frames of 16x32
+ow   Anabel                   rogue      anabel_ow.png                               9 frames of 16x32
+ow   Brandon                  rogue      brandon_ow.png                              9 frames of 16x32
+ow   Greta                    rogue      greta_ow.png                                9 frames of 16x32
+ow   Lucy                     rogue      lucy_ow.png                                 9 frames of 16x32
+ow   Noland                   rogue      noland_ow.png                               9 frames of 16x32
+ow   Palmer                   taar       palmer_ow.png                               9 frames of 16x32
+ow   Spenser                  rogue      spenser_ow.png                              9 frames of 16x32
+ow   Tucker                   rogue      tucker_ow.png                               9 frames of 16x32
+back Blue                     taar       blue_back.png                     5 frames
+back Lance                    taar       lance_back.png                    5 frames
+back Lyra                     rogue      lyra_back.png                     5 frames
+back Phoebe                   taar       phoebe_back.png                   4 frames
+back Calem                    rogue      calem_back.png                    5 frames
+back Serena                   rogue      serena_back.png                   5 frames
+back Noland                   taar_gap   noland_back.png                   4 frames

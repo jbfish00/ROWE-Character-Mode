@@ -1,7 +1,7 @@
 Red              ow=OBJ_EVENT_GFX_RED_NORMAL           front=TRAINER_PIC_RED            back=TRAINER_BACK_PIC_RED
 Leaf             ow=OBJ_EVENT_GFX_LEAF_NORMAL          front=TRAINER_PIC_LEAF           back=TRAINER_BACK_PIC_LEAF
-Blue             ow=OBJ_EVENT_GFX_CM_BLUE              front=TRAINER_PIC_BLUE           back=-
-Lance            ow=OBJ_EVENT_GFX_CM_LANCE             front=TRAINER_PIC_LANCE          back=-
+Blue             ow=OBJ_EVENT_GFX_CM_BLUE              front=TRAINER_PIC_BLUE           back=TRAINER_BACK_PIC_CM_BLUE
+Lance            ow=OBJ_EVENT_GFX_CM_LANCE             front=TRAINER_PIC_LANCE          back=TRAINER_BACK_PIC_CM_LANCE
 Lorelei          ow=OBJ_EVENT_GFX_CM_LORELEI           front=TRAINER_PIC_LORELEI        back=-
 Bruno            ow=OBJ_EVENT_GFX_CM_BRUNO             front=TRAINER_PIC_BRUNO          back=-
 Agatha           ow=OBJ_EVENT_GFX_CM_AGATHA            front=TRAINER_PIC_AGATHA         back=-
@@ -17,11 +17,11 @@ Ash              ow=OBJ_EVENT_GFX_CM_ASH               front=-                  
 Gary             ow=OBJ_EVENT_GFX_CM_BLUE              front=TRAINER_PIC_BLUE           back=-
 Ritchie          ow=-                                  front=TRAINER_PIC_RITCHIE        back=-
 Tracey           ow=-                                  front=TRAINER_PIC_TRACEY         back=-
-Jessie           ow=-                                  front=TRAINER_PIC_JESSIE         back=-
-James            ow=-                                  front=TRAINER_PIC_JAMES          back=-
+Jessie           ow=OBJ_EVENT_GFX_CM_JESSIE            front=TRAINER_PIC_JESSIE         back=-
+James            ow=OBJ_EVENT_GFX_CM_JAMES             front=TRAINER_PIC_JAMES          back=-
 Ethan            ow=OBJ_EVENT_GFX_CM_ETHAN             front=TRAINER_PIC_ETHAN          back=TRAINER_BACK_PIC_CM_ETHAN
 Kris             ow=OBJ_EVENT_GFX_CM_KRIS              front=TRAINER_PIC_KRIS           back=TRAINER_BACK_PIC_CM_KRIS
-Lyra             ow=-                                  front=TRAINER_PIC_LYRA           back=-
+Lyra             ow=OBJ_EVENT_GFX_CM_LYRA              front=TRAINER_PIC_LYRA           back=TRAINER_BACK_PIC_CM_LYRA
 Will             ow=OBJ_EVENT_GFX_CM_WILL              front=TRAINER_PIC_WILL           back=-
 Karen            ow=OBJ_EVENT_GFX_CM_KAREN             front=TRAINER_PIC_KAREN          back=-
 Janine           ow=OBJ_EVENT_GFX_CM_JANINE            front=TRAINER_PIC_JANINE         back=-
@@ -41,7 +41,7 @@ May              ow=OBJ_EVENT_GFX_MAY_NORMAL           front=TRAINER_PIC_MAY    
 Steven           ow=OBJ_EVENT_GFX_CM_STEVEN            front=TRAINER_PIC_STEVEN         back=TRAINER_BACK_PIC_STEVEN
 Wallace          ow=OBJ_EVENT_GFX_CM_WALLACE           front=TRAINER_PIC_CHAMPION_WALLACE back=-
 Sidney           ow=OBJ_EVENT_GFX_CM_SIDNEY            front=TRAINER_PIC_ELITE_FOUR_SIDNEY back=-
-Phoebe           ow=OBJ_EVENT_GFX_CM_PHOEBE            front=TRAINER_PIC_ELITE_FOUR_PHOEBE back=-
+Phoebe           ow=OBJ_EVENT_GFX_CM_PHOEBE            front=TRAINER_PIC_ELITE_FOUR_PHOEBE back=TRAINER_BACK_PIC_CM_PHOEBE
 Glacia           ow=OBJ_EVENT_GFX_CM_GLACIA            front=TRAINER_PIC_ELITE_FOUR_GLACIA back=-
 Drake            ow=OBJ_EVENT_GFX_CM_DRAKE             front=TRAINER_PIC_ELITE_FOUR_DRAKE back=-
 Roxanne          ow=OBJ_EVENT_GFX_CM_ROXANNE           front=TRAINER_PIC_LEADER_ROXANNE back=-
@@ -109,8 +109,8 @@ N                ow=OBJ_EVENT_GFX_CM_N                 front=TRAINER_PIC_N      
 Ghetsis          ow=OBJ_EVENT_GFX_CM_GHETSIS           front=TRAINER_PIC_GHETSIS        back=-
 Colress          ow=OBJ_EVENT_GFX_CM_COLRESS           front=TRAINER_PIC_COLRESS        back=-
 Trip             ow=-                                  front=-                          back=-
-Calem            ow=-                                  front=TRAINER_PIC_CALEM          back=-
-Serena           ow=-                                  front=TRAINER_PIC_SERENA         back=-
+Calem            ow=OBJ_EVENT_GFX_CM_CALEM             front=TRAINER_PIC_CALEM          back=TRAINER_BACK_PIC_CM_CALEM
+Serena           ow=OBJ_EVENT_GFX_CM_SERENA            front=TRAINER_PIC_SERENA         back=TRAINER_BACK_PIC_CM_SERENA
 Diantha          ow=-                                  front=TRAINER_PIC_DIANTHA        back=-
 Malva            ow=-                                  front=TRAINER_PIC_MALVA          back=-
 Siebold          ow=-                                  front=TRAINER_PIC_SIEBOLD        back=-
@@ -118,7 +118,7 @@ Wikstrom         ow=-                                  front=TRAINER_PIC_WIKSTRO
 Drasna           ow=-                                  front=TRAINER_PIC_DRASNA         back=-
 Viola            ow=-                                  front=TRAINER_PIC_VIOLA          back=-
 Grant            ow=-                                  front=TRAINER_PIC_GRANT          back=-
-Korrina          ow=-                                  front=TRAINER_PIC_KORRINA        back=-
+Korrina          ow=OBJ_EVENT_GFX_CM_KORRINA           front=TRAINER_PIC_KORRINA        back=-
 Ramos            ow=-                                  front=TRAINER_PIC_RAMOS          back=-
 Clemont          ow=-                                  front=TRAINER_PIC_CLEMONT        back=-
 Valerie          ow=-                                  front=TRAINER_PIC_VALERIE        back=-
@@ -128,13 +128,13 @@ Shauna           ow=-                                  front=TRAINER_PIC_SHAUNA 
 Lysandre         ow=-                                  front=TRAINER_PIC_LYSANDRE       back=-
 Alain            ow=-                                  front=-                          back=-
 Sawyer           ow=-                                  front=-                          back=-
-Elio             ow=-                                  front=TRAINER_PIC_ELIO           back=-
-Selene           ow=-                                  front=TRAINER_PIC_SELENE         back=-
+Elio             ow=OBJ_EVENT_GFX_CM_ELIO              front=TRAINER_PIC_ELIO           back=-
+Selene           ow=OBJ_EVENT_GFX_CM_SELENE            front=TRAINER_PIC_SELENE         back=-
 Kukui            ow=-                                  front=TRAINER_PIC_KUKUI          back=-
 Hau              ow=-                                  front=TRAINER_PIC_HAU            back=-
 Molayne          ow=-                                  front=TRAINER_PIC_MOLAYNE        back=-
 Kahili           ow=-                                  front=TRAINER_PIC_KAHILI         back=-
-Acerola          ow=-                                  front=TRAINER_PIC_ACEROLA        back=-
+Acerola          ow=OBJ_EVENT_GFX_CM_ACEROLA           front=TRAINER_PIC_ACEROLA        back=-
 Hala             ow=-                                  front=TRAINER_PIC_HALA           back=-
 Olivia           ow=-                                  front=TRAINER_PIC_OLIVIA         back=-
 Nanu             ow=-                                  front=TRAINER_PIC_NANU           back=-
@@ -144,13 +144,13 @@ Guzma            ow=-                                  front=-                  
 Plumeria         ow=-                                  front=-                          back=-
 Lusamine         ow=-                                  front=-                          back=-
 Lillie (anime)   ow=-                                  front=TRAINER_PIC_LILLIE         back=-
-Kiawe (anime)    ow=-                                  front=TRAINER_PIC_KIAWE          back=-
+Kiawe (anime)    ow=OBJ_EVENT_GFX_CM_KIAWE             front=TRAINER_PIC_KIAWE          back=-
 Lana (anime)     ow=-                                  front=TRAINER_PIC_LANA           back=-
 Mallow (anime)   ow=-                                  front=TRAINER_PIC_MALLOW         back=-
 Sophocles        ow=-                                  front=TRAINER_PIC_SOPHOCLES      back=-
 Leon             ow=-                                  front=TRAINER_PIC_LEON           back=-
 Milo             ow=-                                  front=TRAINER_PIC_MILO           back=-
-Nessa            ow=-                                  front=TRAINER_PIC_NESSA          back=-
+Nessa            ow=OBJ_EVENT_GFX_CM_NESSA             front=TRAINER_PIC_NESSA          back=-
 Kabu             ow=-                                  front=TRAINER_PIC_KABU           back=-
 Bea              ow=-                                  front=TRAINER_PIC_BEA            back=-
 Allister         ow=-                                  front=TRAINER_PIC_ALLISTER       back=-
@@ -160,7 +160,7 @@ Melony           ow=-                                  front=TRAINER_PIC_MELONY 
 Piers            ow=-                                  front=TRAINER_PIC_PIERS          back=-
 Raihan           ow=-                                  front=TRAINER_PIC_RAIHAN         back=-
 Hop              ow=-                                  front=TRAINER_PIC_HOP            back=-
-Bede             ow=-                                  front=TRAINER_PIC_BEDE           back=-
+Bede             ow=OBJ_EVENT_GFX_CM_BEDE              front=TRAINER_PIC_BEDE           back=-
 Marnie           ow=-                                  front=TRAINER_PIC_MARNIE         back=-
 Rose             ow=-                                  front=-                          back=-
 Goh              ow=-                                  front=-                          back=-
@@ -174,18 +174,18 @@ Katy             ow=-                                  front=TRAINER_PIC_KATY   
 Brassius         ow=-                                  front=TRAINER_PIC_BRASSIUS       back=-
 Iono             ow=-                                  front=TRAINER_PIC_IONO           back=-
 Kofu             ow=-                                  front=TRAINER_PIC_KOFU           back=-
-Larry            ow=-                                  front=TRAINER_PIC_LARRY          back=-
+Larry            ow=OBJ_EVENT_GFX_CM_LARRY             front=TRAINER_PIC_LARRY          back=-
 Ryme             ow=-                                  front=TRAINER_PIC_RYME           back=-
 Tulip            ow=-                                  front=TRAINER_PIC_TULIP          back=-
 Grusha           ow=-                                  front=TRAINER_PIC_GRUSHA         back=-
 Arven            ow=-                                  front=TRAINER_PIC_ARVEN          back=-
 Penny            ow=-                                  front=TRAINER_PIC_PENNY          back=-
-Victor           ow=-                                  front=TRAINER_PIC_VICTOR         back=-
-Gloria           ow=-                                  front=TRAINER_PIC_GLORIA         back=-
-Oak              ow=-                                  front=TRAINER_PIC_OAK            back=-
-Elm              ow=-                                  front=-                          back=-
-Birch            ow=-                                  front=-                          back=-
-Rowan            ow=-                                  front=-                          back=-
+Victor           ow=OBJ_EVENT_GFX_CM_VICTOR            front=TRAINER_PIC_VICTOR         back=-
+Gloria           ow=OBJ_EVENT_GFX_CM_GLORIA            front=TRAINER_PIC_GLORIA         back=-
+Oak              ow=OBJ_EVENT_GFX_CM_OAK               front=TRAINER_PIC_OAK            back=-
+Elm              ow=OBJ_EVENT_GFX_CM_ELM               front=-                          back=-
+Birch            ow=OBJ_EVENT_GFX_CM_BIRCH             front=-                          back=-
+Rowan            ow=OBJ_EVENT_GFX_CM_ROWAN             front=-                          back=-
 Juniper          ow=-                                  front=-                          back=-
 Sycamore         ow=-                                  front=-                          back=-
 Burnet           ow=-                                  front=-                          back=-
@@ -198,11 +198,11 @@ Sada             ow=-                                  front=-                  
 Turo             ow=-                                  front=-                          back=-
 Adaman           ow=-                                  front=-                          back=-
 Akari            ow=-                                  front=-                          back=-
-Anabel           ow=-                                  front=TRAINER_PIC_SALON_MAIDEN_ANABEL back=-
+Anabel           ow=OBJ_EVENT_GFX_CM_ANABEL            front=TRAINER_PIC_SALON_MAIDEN_ANABEL back=-
 Arezu            ow=-                                  front=-                          back=-
 Argenta          ow=-                                  front=TRAINER_PIC_ARGENTA        back=-
 Beni             ow=-                                  front=-                          back=-
-Brandon          ow=-                                  front=TRAINER_PIC_PYRAMID_KING_BRANDON back=-
+Brandon          ow=OBJ_EVENT_GFX_CM_BRANDON           front=TRAINER_PIC_PYRAMID_KING_BRANDON back=-
 Calaba           ow=-                                  front=-                          back=-
 Charm            ow=-                                  front=-                          back=-
 Clover           ow=-                                  front=-                          back=-
@@ -211,28 +211,28 @@ Cyllene          ow=-                                  front=-                  
 Dahlia           ow=-                                  front=TRAINER_PIC_DAHLIA         back=-
 Darach           ow=-                                  front=TRAINER_PIC_DARACH         back=-
 Gaeric           ow=-                                  front=-                          back=-
-Greta            ow=-                                  front=TRAINER_PIC_ARENA_TYCOON_GRETA back=-
+Greta            ow=OBJ_EVENT_GFX_CM_GRETA             front=TRAINER_PIC_ARENA_TYCOON_GRETA back=-
 Ingo             ow=-                                  front=-                          back=-
 Irida            ow=-                                  front=-                          back=-
 Kamado           ow=-                                  front=-                          back=-
 Lian             ow=-                                  front=-                          back=-
-Lucy             ow=-                                  front=TRAINER_PIC_PIKE_QUEEN_LUCY back=-
+Lucy             ow=OBJ_EVENT_GFX_CM_LUCY              front=TRAINER_PIC_PIKE_QUEEN_LUCY back=-
 Mai              ow=-                                  front=-                          back=-
 Melli            ow=-                                  front=-                          back=-
-Noland           ow=-                                  front=TRAINER_PIC_FACTORY_HEAD_NOLAND back=-
+Noland           ow=OBJ_EVENT_GFX_CM_NOLAND            front=TRAINER_PIC_FACTORY_HEAD_NOLAND back=TRAINER_BACK_PIC_CM_NOLAND
 Palina           ow=-                                  front=-                          back=-
-Palmer           ow=-                                  front=TRAINER_PIC_PALMER         back=-
+Palmer           ow=OBJ_EVENT_GFX_CM_PALMER            front=TRAINER_PIC_PALMER         back=-
 Pesselle         ow=-                                  front=-                          back=-
 Rei              ow=-                                  front=-                          back=-
 Ress             ow=-                                  front=-                          back=-
 Rye              ow=-                                  front=-                          back=-
 Sabi             ow=-                                  front=-                          back=-
 Sanqua           ow=-                                  front=-                          back=-
-Spenser          ow=-                                  front=TRAINER_PIC_PALACE_MAVEN_SPENSER back=-
+Spenser          ow=OBJ_EVENT_GFX_CM_SPENSER           front=TRAINER_PIC_PALACE_MAVEN_SPENSER back=-
 Thorton          ow=-                                  front=TRAINER_PIC_THORTON        back=-
 Tobias           ow=-                                  front=-                          back=-
 Tobias           WARNING: all-legendary roster, starters fall back to full roster
-Tucker           ow=-                                  front=TRAINER_PIC_DOME_ACE_TUCKER back=-
+Tucker           ow=OBJ_EVENT_GFX_CM_TUCKER            front=TRAINER_PIC_DOME_ACE_TUCKER back=-
 Volo             ow=-                                  front=-                          back=-
 Zisu             ow=-                                  front=-                          back=-
 
