@@ -115,14 +115,20 @@ def main():
     with open(os.path.join(HERE, "rosters_mapped.json")) as f:
         mapped = json.load(f)
 
-    # Only overworld sprites built by import_sprites.py are safe to use as the
-    # player avatar (they carry the full 24-entry player animation table).
-    # Assigning ROWE's native NPC gfx ids (Steven, gym leaders, ...) as the
-    # player OW sprite crashes on run - so restrict owGfxId to the imported set.
+    # Only overworld sprites built as 18-frame PLAYER-GRADE sheets are safe to
+    # use as the player avatar (they carry the full 24-entry player animation
+    # table, whose walk/run anims reference frames 0-17). Assigning ROWE's
+    # native NPC gfx ids (Steven, gym leaders, the Frontier Brains, ...) as the
+    # player OW sprite reads past the end of a SHORT pic table and crashes - so
+    # restrict owGfxId to the two importers' own allowlists.
+    #   imported_ow.txt        import_sprites.py       (95 sheets, 2026-07)
+    #   imported_ow_donor.txt  import_donor_ow_backs.py
     imported_ow = set()
-    imp_path = os.path.join(HERE, "imported_ow.txt")
-    if os.path.isfile(imp_path):
-        imported_ow = set(read(imp_path).split())
+    for fname in ("imported_ow.txt", "imported_ow_donor.txt"):
+        imp_path = os.path.join(HERE, fname)
+        if os.path.isfile(imp_path):
+            imported_ow |= {t for t in read(imp_path).split()
+                            if t.startswith("OBJ_EVENT_GFX_")}
 
     obj_gfx = set(re.findall(r"#define (OBJ_EVENT_GFX_\w+)",
                              read(os.path.join(TARGET, "include/constants/event_objects.h"))))
