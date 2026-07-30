@@ -1,0 +1,102 @@
+SPRITE HARVEST — PROVENANCE AND ATTRIBUTION
+===========================================
+Set name          : taar_gap  (gap-fill pass over an ALREADY-HARVESTED donor set)
+Harvested         : 2026-07-28
+Target            : Pokemon ROWE Character Mode
+
+Source repository : https://github.com/Pawkkie/Team-Aquas-Asset-Repo
+Branch            : main
+Commit SHA        : 36b619ecd1d2df95212b375c95803af78414f78a  (committed 2026-07-11)
+
+WHY THIS DIRECTORY EXISTS
+-------------------------
+TAAR was harvested on 2026-07-25 into `sprites/donors/taar/`. That pass took the
+files that matched then-known roster names; these six map to ROWE roster entries
+that still have an empty asset slot and were not staged.
+
+LICENCE — the repo README, verbatim
+-----------------------------------
+  "This is a collection of **_free to use_** assets that are intended to be used
+   for Generation 3 Pokemon decomp hacking, initially created and managed by
+   members of the Team Aqua's Hideout Discord server. ... All assets are both
+   free to use and edit by default, but if any assets specifically mention *not*
+   being free to edit, please respect the author's wishes."
+
+  "Any assets you've made personally, or any assets you've found that are free to
+   use, **_provided they are submitted alongside credit to their original
+   creator._**"
+
+  "Any folder that includes an actual asset that is not **_exclusively_** the work
+   of one individual **_must supply a README.md_** indicating: The original
+   creator(s) of an asset if it was part of a larger scale project; The original
+   creator of an asset that has been modified in any way (recoloured / resized
+   etc.)"
+
+Source: https://github.com/Pawkkie/Team-Aquas-Asset-Repo  (README.md, no LICENSE
+file exists in the repository).
+
+ATTRIBUTION — free to use and edit, BUT the ORIGINAL CREATOR must be credited.
+TAAR is organised as `<asset type>/<creator or project>/...`, so the SECOND PATH
+ELEMENT is the attribution. Per-file below, taken from each author folder's own
+README:
+
+  thorton_front.png
+      upstream : Trainer Front Sprites/BrandonXL/thorton.png
+      ARTIST   : BrandonXL
+      folder README, verbatim: "## Thorton Front Sprite / - Trainer Front sprite
+      / - Made by BrandonXL"
+
+  kiawe_ow.png
+      upstream : Overworld Trainer Sprites/PurrfectDoodle/FRLG/kiawe.png
+      ARTIST   : PurrfectDoodle (Eva)
+      folder README, verbatim: "# Fire Red / Leaf Green style overworld sprites
+      > **Please credit PurrfectDoodle (Eva) :)**"
+
+  elm_ow.png
+      upstream : Overworld Trainer Sprites/IAG/prof_elm.png
+      ARTIST   : IAG
+      folder README, verbatim: "## IAG's Assorted OW Trainer Sprites ... All
+      sprites use the RSE style (facing towards the camera rather than forwards
+      on the perspective plane). As indexed PNGs, they can be dropped directly
+      into pokeemerald-expansion and work out of the box; no need for a `.pal`
+      file. If you use any of these sprites, please credit IAG."
+
+  birch_ow_hyo.png
+      upstream : Overworld Trainer Sprites/hyo/prof_birch.png
+      ARTIST   : hyo  (Discord: hyoart, Twitter: @hyo_oppa)
+      folder README, verbatim: "# hyo's reworked FRLG-styled RSE overworld
+      sprites / **If used or edited, please give credit to hyo.** All of the
+      sprites were made from the groundup to match the style of FireRed and
+      Leafgreen. Please be aware that this collection is different from the
+      one's made by Poffin_Case!"
+
+  rowan_ow_spilledpizza.png
+      upstream : Overworld Trainer Sprites/spilledpizza/graphics/object_events/
+                 pics/people/DP_prof_rowan.png
+      ARTIST   : spilledpizza — folder is a multi-contributor set, so its FULL
+      credit list travels with the file, verbatim from its README.txt:
+        "Credits: spilledpizza(myself) / TheWiggliestJiggliest / RichardPT /
+         robloxmaster376 / The Spriters Resource / The Radiant Quartz/Prismatic
+         Platinum team for their support"
+
+  noland_back.png
+      upstream : Trainer Back Sprites/kwenio/noland.png
+      ARTIST   : kwenio  (no folder README present; TAAR's second-path-element
+      rule is the attribution)
+      ⚠ NOT INJECTABLE AS DOWNLOADED — see manifest.json. It is 64x256 (the
+      correct 4-frame Emerald back-pic geometry) but ships as RGBA with 56
+      distinct opaque colours. 4bpp holds 16. It needs a DELIBERATE quantisation
+      pass; do not let an importer guess, because silently dropping colours
+      produces plausible-looking corrupt art that is only caught by eye.
+
+FORMAT VERIFICATION
+-------------------
+Every file was measured locally with PIL, not assumed. Numbers per file are in
+../manifest.json, including the actual index range used — a PNG can declare a
+large palette while using indices outside 0..15, and `to_4bpp`'s `& 0xF` mangles
+that case silently.
+
+DISTRIBUTION
+------------
+No ROM binaries were downloaded. Any downstream release is a patch, never a
+modified ROM.
