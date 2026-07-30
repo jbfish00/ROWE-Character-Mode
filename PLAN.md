@@ -102,9 +102,37 @@ Rules the user set for roster work, all binding, in
 
 ## 3. Sprites
 
-**168 of 236 characters have a front pic**, up from 68 (`ca2657fa`). Confirmed by
-counting `.trainerFrontPic` in `src/data/characters.h`: exactly **68 are
-`CHAR_ASSET_NONE`**.
+**184 of 236 characters have a front pic**, up from 68 (`ca2657fa`) then 168
+(2026-07-29). **Overworld 128 of 236** and **back pics 19 of 236** as of
+2026-07-30. All three re-counted from `src/data/characters.h` on 2026-07-30:
+`.trainerFrontPic` has **52** `CHAR_ASSET_NONE`, `.owGfxId` has **108**, and
+`.backPic` has **217** `CHAR_ASSET_NONE_U8`.
+
+⚠️ **This section read "168 … exactly 68" until 2026-07-30 while §0 and §7.8
+already said 184/52** — the same count-drift this file keeps hitting. Note the
+back-pic sentinel is `CHAR_ASSET_NONE_U8`, **not** `CHAR_ASSET_NONE`: counting
+with the wrong one reports 236 of 236 covered, which is how a recount can be
+confidently wrong. Derive all three together:
+
+```bash
+python3 - <<'EOF'
+import re
+s = open('src/data/characters.h').read()
+tbl = s[s.index('gCharacters[] ='):]
+for fld, sent in (('trainerFrontPic','CHAR_ASSET_NONE'),
+                  ('owGfxId','CHAR_ASSET_NONE'),
+                  ('backPic','CHAR_ASSET_NONE_U8')):
+    v = re.findall(r'\.%s = ([A-Za-z0-9_]+)' % fld, tbl)
+    print(fld, 'set', sum(1 for x in v if x != sent), 'of', len(v))
+EOF
+```
+
+📄 A live per-character view of all three slots, parsed from this same file, is
+published at `claude.ai/code/artifact/652cffb5-6998-4d4a-a4e7-30d455bb5261`.
+⚠️ It is **ROWE-only** and does **not** supersede the cross-game
+*Character Mode — Sprite Coverage by Character* artifact, which carries
+hand-written provenance and licence caveats for all five ports. Neither can be
+regenerated from the other.
 
 ⚠️ **This repo does NOT need a render surface.** `src/trainer_card.c` has drawn
 `GetAppearanceCharacter()->trainerFrontPic` since the costume work. Do not go
@@ -791,8 +819,53 @@ a 0 onto Red's roster — each exits 1 and names the culprit.
     Honchkrow and Pawmot each differ from the donor in other rows too. Anyone
     resyncing these arrays wholesale should read that list first.
 
-**Nothing here blocks a playthrough.** 1-3, 5, 6, 7, **9**, **10**, **11** and
-**12** are done,
+13. ✅ **`map_species.py` did not reproduce the committed roster — FIXED
+    (`6a6c5b56`, 2026-07-30).** Re-running the documented chain against HEAD's
+    inputs gave **2775 → 2739 entries (−36)**, `unmatched_names.txt` 6 → 34, and
+    Hala, Kabu and Kofu lost their `signature` key
+    (`SIGNATURE UNRESOLVED: Kofu -> Crabominable`), which then hid **Kofu and
+    Poppy** once `derive_drops.py` re-derived the threshold. **So the documented
+    roster pipeline could not safely be re-run at all** — and nothing said so.
+
+    **Cause.** `NAME_FIXES` maps Bulbapedia names to in-game display names and
+    was written against the **10-character** `POKEMON_NAME_LENGTH`. `71cebcbe`
+    raised it to 12 and restored the full spellings in `species_names.h`,
+    orphaning **33 of the table's 42 rows** — `"Crabominable" -> "Crabminabl"`,
+    `"Centiskorch" -> "Centiskorc"`, the whole Paradox block. `resolve()` returns
+    `None` for an orphaned row, and `None` means *"the ROM does not have this
+    species"* — **indistinguishable from a genuinely absent Hisuian form.**
+    `rosters_mapped.json` was last generated the day *before* that commit, so the
+    committed data was right and the **script** had rotted.
+    ⚠️ `CharacterMode_FamilyBase` and the Crabrawler/Sizzlipede evolution data
+    were never involved. Those three characters simply owned the affected ace
+    names — which is exactly why the first diagnosis reached for the family walk.
+
+    **Ground truth is the committed roster.** `SPECIES_CRABOMINABLE` and
+    `SPECIES_CENTISKORCH` are real and obtainable; the regenerated file was
+    deleting them. Kofu and Poppy are correctly selectable. After the fix the
+    chain reproduces `rosters_mapped.json`, `character_drops.json`,
+    `characters.h`, `ROSTERS.md`, `ROSTERS_SPRITES.md` and all 9
+    `sprites/gen_*.md` **byte-identically**.
+
+    **Three guards, each proven by negative control** (re-add a truncated row;
+    point Kofu's ace at a dead name; point it at `Garchomp`; revert one
+    `audit_keeps.json` name): a stale `NAME_FIXES` target, either signature
+    failure path, and an unresolvable `audit_keeps.json` entry all now **exit 1
+    and write nothing**. The signature drop was never a benign fallback — it
+    downgrades the character to a random starter and can hide them.
+    `audit_keeps.json` also had **23** names in the old 10-char spelling, so it
+    was shielding nothing for them; normalized.
+
+    ⭐ **The rule: a lookup table keyed on another file's contents is an
+    undeclared dependency.** *"Not in the ROM"* and *"my table is stale"* are the
+    same `None`. ⚠️ **Unbound, Lazarus, Radical Red and Seaglass all have a
+    `NAME_FIXES` table and none of them has this guard** — measured 2026-07-30.
+    Their rows may well still resolve (ROWE is the only game that took the 12/12
+    change); the exposure is that nothing would tell them. **One unported check,
+    not four new bugs.**
+
+**Nothing here blocks a playthrough.** 1-3, 5, 6, 7, **9**, **10**, **11**,
+**12** and **13** are done,
 green and **committed** (`0f321aea`..`e5e40c83`). **4 was implemented and
 reverted** — it is art-blocked after all, and the way that was established
 (render the tilemap, do not reason about coordinates) is now the rule for this
@@ -802,13 +875,38 @@ imported, and the tools to import a newly staged one already exist.
 
 ### So what is actually next, in order
 
-1. **The playthrough (§7.7).** 24 checklist items, 0 done. It is the largest
-   piece of unfinished work in this repo and **nothing automated can close it** —
-   the headless suite covers gates and data, not whether the game is any good to
-   play. Three of the four newest features (the trainer card's second badge row,
-   Randomized Party Mode's prompts, the wild-encounter block) are code- and
-   render-verified but have never been seen by a player.
+1. **The playthrough (§7.7). It is 28 items, not 24** — recounted 2026-07-30 with
+   `grep -c "^- \[ \]"`; the workspace total is **116**, not 112. Both numbers had
+   been copied forward for sessions under a note that said *"recount it, do not
+   copy it"*. Derive them.
+
+   ⚠️ **"Nothing automated can close it" is true of the WHOLE and false item by
+   item, and that distinction was costing real work.**
+   📄 `../Character Hacks/game_plans/rowe_playthrough_coverage.md` maps all 28 to
+   the assertion that already proves them: **14 fully machine-proven, 4 partly,
+   6 automatable-but-not-yet, 2 genuinely human, 2 not tests at all.** Read it
+   before working the list, or you will re-verify by hand what the suite asserts
+   on every run.
+
+   The irreducible human list is short: **look at your character** (item 19 — and
+   it just got bigger, 27 new overworld sheets and 7 back pics landed 2026-07-30
+   verified as decoded artifacts but never seen animating), **reach the credits**
+   (item 28), and the residue of 3/25/26 — pick someone who is *not* Red and
+   confirm scroll-and-commit, their set-piece gates, and costume persistence.
+
+   ⚠️ **One checklist item was factually wrong until 2026-07-30**: it told players
+   an off-roster catch goes to the PC. **ROWE refuses the ball**
+   (`BattleScript_CharacterBallBlock`) and nothing reaches the box — that is the
+   *other four games'* behaviour. Anyone following it would have filed a bug that
+   was not one.
 2. ✅ **The overworld / back-pic importer (§7.8b)** — DONE 2026-07-30.
+2b. **The 6 automatable playthrough gaps**, in the order worth doing them:
+   the **Randomized Party Mode exclusion** (items 21/22/23 — newest feature, four
+   enforcement points, zero e2e coverage, and item 22 guards a screen with no
+   cancel button, so it is the highest risk per unit of work); **Tobias's
+   always-Darkrai starter** and **repeatable legendaries** (16/15 — a
+   `starter_regression` variant, cheap); **the in-game trade path** (11 — audited
+   statically, never driven); and **costume persistence across a reload** (26).
 3. **Art acquisition (§7.8)** — 52 characters with no front pic, 217 with no back
    pic, 108 with no overworld art. Runbook is
    `../Character Hacks/SPRITE_PLAN.md`. Nine of the 52 (Paul, Zoey, Nando, Trip,
@@ -817,11 +915,24 @@ imported, and the tools to import a newly staged one already exist.
    requests — **Emerald Enhanced** (would close Lusamine + Lillie's back pic;
    they "rarely decline") and **Wolfang62** (four professors) — are the
    highest-value moves and **nobody has asked yet**.
+   📄 **Both are now DRAFTED** in `../Character Hacks/PERMISSION_REQUESTS.md`
+   with a tracking table — ready to send, **not sent**. Sending is the user's to
+   do, not an agent's.
+   ⚠️ **An attribution debt is open on art already shipped.**
+   `CREDITS_CHARACTER_MODE.md` claims a `harvest_index.json` in
+   `sprites/donors/taar/` makes each file's author recoverable. **That file does
+   not exist**, so six TAAR overworld sheets now in the ROM (Korrina, Acerola,
+   Nessa, Bede, Larry, Palmer) cannot be attributed to an individual — weaker
+   than TAAR's licence asks. Fix: re-fetch at `36b619ec…` and match by content.
 4. **The selection-screen portrait (§7.4)** and any 10th mode row — both need the
    `ui_menu` tilemap redrawn. Same class as 2, not ahead of it.
 
-There is no open engine defect on this list. If one turns up, §9 is the trap
-list to read first.
+⚠️ **"There is no open engine defect on this list" was WRONG when it was
+written** — §7.11 was a live hang, reachable in ordinary late-game play, sitting
+undetected behind five green checkers and an 11-run suite. It is fixed. Treat the
+sentence as a claim to re-earn after each pass, not a standing property: what
+found it was asking *"which tables does `fix_species_graphics.py` NOT know
+about?"*, and the answer was four. §9 is the trap list to read first.
 
 ---
 
