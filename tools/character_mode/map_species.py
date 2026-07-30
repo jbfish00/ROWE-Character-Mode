@@ -130,38 +130,52 @@ def regional_fallback(name, n2c):
     return n2c.get(base)
 
 
-# Bulbapedia name -> in-game display name divergences (10-char cap, forms).
+# Bulbapedia name -> in-game display name divergences (capitalisation, forms).
+#
+# WARNING: this table tracks src/data/text/species_names.h and ROTS WHEN THAT
+# FILE CHANGES. It used to carry 33 more rows spelling the 10-character truncations
+# ("Crabominable" -> "Crabminabl", "Centiskorch" -> "Centiskorc", the whole
+# Paradox block). Commit 71cebcbe raised POKEMON_NAME_LENGTH 10 -> 12 and wrote
+# the full names back into species_names.h, at which point every one of those
+# rows pointed at a string no longer in the game -- so those species silently
+# stopped resolving and dropped out of every roster (36 entries), and Hala,
+# Kabu and Kofu lost their `signature` key. rosters_mapped.json had last been
+# generated the day before, so the damage only showed up the next time anyone
+# re-ran this script. check_name_fixes() below now makes that class of rot a
+# hard error instead of a silent data loss.
 NAME_FIXES = {
     "Nidoran♀": "Nidoran♀", "Nidoran♂": "Nidoran♂",
     "Mr. Mime": "Mr. Mime",
     "Farfetch'd": "Farfetch'd", "Sirfetch'd": "Sirfetch'd",
-    "Meowscarada": "Meowscrada", "Oinkologne": "Oinkolgne",
-    "Squawkabilly": "Squawkbily", "Kilowattrel": "Kilowattrl",
-    "Brambleghast": "Brmbleghst", "Dudunsparce": "Dudnsparce",
-    "Poltchageist": "Poltchagst", "Fezandipiti": "Fezandipti",
-    "Scream Tail": "ScreamTail", "Brute Bonnet": "BruteBonet",
-    "Flutter Mane": "FluttrMane", "Slither Wing": "SlithrWing",
-    "Sandy Shocks": "SandyShock", "Iron Treads": "IronTreads",
-    "Iron Bundle": "IronBundle", "Iron Jugulis": "IronJuglis",
-    "Iron Thorns": "IronThorns", "Iron Valiant": "IrnValiant",
-    "Roaring Moon": "RoarngMoon", "Walking Wake": "WalkngWake",
-    "Iron Leaves": "IronLeaves", "Gouging Fire": "GougngFire",
-    "Raging Bolt": "RagingBolt", "Iron Boulder": "IronBouldr",
     "Flabébé": "Flabébé",
     "Mime Jr.": "Mime jr.",
     "Porygon-Z": "Porygon-z",
-    "Blacephalon": "Blacefalon",
     "Type: Null": "Type: Null",
-    "Fletchinder": "Flechinder",
-    "Crabominable": "Crabminabl",
-    "Corvisquire": "Corvisquir",
-    "Corviknight": "Corviknigh",
-    "Barraskewda": "Barraskewd",
-    "Centiskorch": "Centiskorc",
-    "Polteageist": "Polteageis",
-    "Stonjourner": "Stonjourne",
 }
 
+
+def check_name_fixes(n2c):
+    """Every NAME_FIXES target must be a name species_names.h actually has.
+
+    A target that has gone missing does not raise -- it just makes resolve()
+    return None, which drops the species from every roster that lists it and
+    strips the `signature` key off any character whose ace it was. That is
+    exactly how the 10 -> 12 name-length change corrupted the rosters, and it
+    was invisible because a dropped species looks identical to a species the
+    ROM does not have. Fail loudly instead."""
+    names = set(n2c)
+    stale = sorted((src, dst) for src, dst in NAME_FIXES.items()
+                   if dst not in names)
+    if not stale:
+        return
+    print("NAME_FIXES IS STALE -- %d target name(s) are not in "
+          "src/data/text/species_names.h:" % len(stale))
+    for src, dst in stale:
+        hint = ("  (the file now spells it %r)" % src) if src in names else ""
+        print("  %r -> %r%s" % (src, dst, hint))
+    print("Fix or drop these rows before regenerating; leaving them would "
+          "silently delete species from rosters.")
+    raise SystemExit(1)
 
 
 # Known signature/ace Pokemon per character (any stage; resolved to the
@@ -295,6 +309,7 @@ def main():
               % (dropped, len(removals)))
 
     n2c = name_to_const()
+    check_name_fixes(n2c)
     evo_base = first_stage_map()
     canonical = make_canonical(evo_base, base_form_map())
     unmatched = set()
@@ -324,6 +339,23 @@ def main():
         with open(kpath, encoding="utf-8") as f:
             audit_keeps = json.load(f).get("keeps", {})
 
+    # A keep that does not resolve shields nothing, and says so nowhere -- the
+    # family it was meant to protect just gets deleted the next time a wave
+    # removes a sibling. audit_keeps.json was written with the pre-71cebcbe
+    # 10-character in-game spellings ("Blacefalon", "IrnValiant", ...), and all
+    # 23 of those stopped resolving when the names went to 12 characters. They
+    # happened to be inert (none of those characters had a matching removal),
+    # which is luck, not safety. Same class of silent skip as the NAME_FIXES rot
+    # above, so it gets the same treatment.
+    dead_keeps = sorted((disp, name) for disp, names in audit_keeps.items()
+                        for name in names if resolve(name) is None)
+    if dead_keeps:
+        print("audit_keeps.json HAS %d UNRESOLVABLE SPECIES NAME(S) -- a keep "
+              "that does not resolve silently shields nothing:" % len(dead_keeps))
+        for disp, name in dead_keeps:
+            print("  %s: %r" % (disp, name))
+        raise SystemExit(1)
+
     family_removed = {}
     shielded = 0
     for disp, rows in removals.items():
@@ -344,6 +376,7 @@ def main():
             bases.add(base)
         family_removed[disp] = bases
     swept = 0
+    sig_errors = []
 
     for disp, info in sorted(raw.items()):
         consts = set()
@@ -363,7 +396,9 @@ def main():
         if ace:
             const = n2c.get(NAME_FIXES.get(ace, ace))
             if const is None:
-                print("SIGNATURE UNRESOLVED: %s -> %s" % (disp, ace))
+                sig_errors.append(
+                    "SIGNATURE UNRESOLVED: %s -> %s (no such name in "
+                    "species_names.h)" % (disp, ace))
             else:
                 # The starter keeps its regional form (Piers starts with
                 # Galarian Zigzagoon): walk evolution only, don't collapse
@@ -374,9 +409,24 @@ def main():
                 if canonical(const) in consts:
                     entry["signature"] = sig
                 else:
-                    print("SIGNATURE NOT ON ROSTER: %s -> %s (%s)"
-                          % (disp, ace, canonical(const)))
+                    sig_errors.append(
+                        "SIGNATURE NOT ON ROSTER: %s -> %s (family base %s "
+                        "is not among this character's %d species)"
+                        % (disp, ace, canonical(const), len(consts)))
         mapped[disp] = entry
+
+    # Every character named in SIGNATURES must come out of this loop WITH a
+    # signature. Dropping the key is not a benign fallback: emit_characters.py
+    # then gives that character a random starter, and derive_drops.py can hide
+    # them outright. Both previous failure modes only ever printed a line to
+    # stdout and carried on, which is how a real regression (Kofu and Poppy
+    # newly unselectable) got as far as a rebuilt ROM.
+    if sig_errors:
+        print("\n%d SIGNATURE FAILURE(S) -- refusing to write "
+              "rosters_mapped.json:" % len(sig_errors))
+        for e in sig_errors:
+            print("  " + e)
+        raise SystemExit(1)
 
     if swept:
         print("removals overlay: %d more swept at family level" % swept)

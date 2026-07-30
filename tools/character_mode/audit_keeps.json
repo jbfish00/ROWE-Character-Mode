@@ -253,7 +253,6 @@
    "Hatterene",
    "Hattrem",
    "Inteleon",
-   "IrnValiant",
    "Iron Valiant",
    "Mawile",
    "Ponyta",
@@ -1325,7 +1324,6 @@
    "Barbaracle",
    "Coalossal",
    "Shuckle",
-   "Stonjourne",
    "Stonjourner",
    "Tyranitar"
   ],
@@ -1403,7 +1401,6 @@
    "Noivern"
   ],
   "Hau": [
-   "Blacefalon",
    "Blacephalon",
    "Brionne",
    "Crabominable",
@@ -1449,7 +1446,6 @@
    "Emboar",
    "Grapploct",
    "Iron Leaves",
-   "IronLeaves",
    "Leafeon",
    "Mienfoo",
    "Oshawott",
@@ -1510,14 +1506,12 @@
    "Electivire",
    "Electrode",
    "Flutter Mane",
-   "FluttrMane",
    "Kilowattrel",
    "Luxio",
    "Luxray",
    "Magnemite",
    "Mismagius",
    "Raging Bolt",
-   "RagingBolt",
    "Tadbulb",
    "Voltorb",
    "Wattrel"
@@ -2016,7 +2010,7 @@
   "Lusamine": [
    "Absol",
    "Bewear",
-   "Blacefalon",
+   "Blacephalon",
    "Clefable",
    "Clefairy",
    "Cleffa",
@@ -2406,7 +2400,6 @@
    "Rockruff",
    "Rowlet",
    "Scream Tail",
-   "ScreamTail",
    "Skeledirge",
    "Sliggoo",
    "Smoliv",
@@ -2558,7 +2551,6 @@
    "Copperajah",
    "Corviknight",
    "Iron Treads",
-   "IronTreads",
    "Magnezone",
    "Rookidee",
    "Tinkaton",
@@ -2791,21 +2783,15 @@
   ],
   "Sada": [
    "Brute Bonnet",
-   "BruteBonet",
    "Flutter Mane",
-   "FluttrMane",
-   "GougngFire",
+   "Gouging Fire",
    "Koraidon",
-   "RagingBolt",
+   "Raging Bolt",
    "Roaring Moon",
-   "RoarngMoon",
    "Sandy Shocks",
-   "SandyShock",
    "Scream Tail",
-   "ScreamTail",
    "Slither Wing",
-   "SlithrWing",
-   "WalkngWake"
+   "Walking Wake"
   ],
   "Samson Oak": [
    "Araquanid",
@@ -3077,16 +3063,12 @@
    "Gardevoir"
   ],
   "Turo": [
-   "IrnValiant",
    "Iron Bundle",
    "Iron Hands",
    "Iron Jugulis",
    "Iron Moth",
    "Iron Thorns",
    "Iron Valiant",
-   "IronBundle",
-   "IronJuglis",
-   "IronThorns",
    "Miraidon"
   ],
   "Valerie": [
@@ -3132,7 +3114,6 @@
    "Growlithe"
   ],
   "Wallace": [
-   "Blacefalon",
    "Blacephalon",
    "Gyarados",
    "Ludicolo",
