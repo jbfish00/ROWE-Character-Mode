@@ -190,6 +190,30 @@ def main():
             fails.append("%s does not mention the %d hidden characters"
                          % (path, hidden_in_rom))
 
+    # Every portrait Character Mode can draw needs a gTrainerFrontPicCoords row.
+    #
+    # ⚠️ THIS IS THE ONE ART DEFECT THE BUILD CANNOT CATCH. A missing sprite or
+    # palette row is a link error; a missing COORDS row compiles and links fine
+    # and draws the sprite 32 px too low at runtime, because the y is
+    # `(8 - size) * 4 + 40` and an absent row means `size = 0` -> 72, not 40.
+    # CLAUDE.md records this one as learned the hard way, and it stayed
+    # unpinned until the 2026-07-29 art pass added 16 portraits at once.
+    fp_tables = read(os.path.join(TARGET, "src/data/trainer_graphics/front_pic_tables.h"))
+    m = re.search(r"gTrainerFrontPicCoords\[\].*?\n\};", fp_tables, re.S)
+    if not m:
+        fails.append("gTrainerFrontPicCoords not found in front_pic_tables.h")
+    else:
+        coords = set(re.findall(r"\[(TRAINER_PIC_\w+)\]", m.group(0)))
+        used = set(re.findall(r"\.trainerFrontPic = (TRAINER_PIC_\w+)", header))
+        for pic in sorted(used - coords):
+            fails.append("%s is drawn by Character Mode but has no "
+                         "gTrainerFrontPicCoords row (sprite would render 32 px low)"
+                         % pic)
+        print("front pics:   %d distinct portraits, all with a coords row"
+              % len(used) if not (used - coords) else
+              "front pics:   %d distinct portraits, %d MISSING a coords row"
+              % (len(used), len(used - coords)))
+
     print("characters.h: %d total, %d selectable" % (len(in_rom), len(selectable)))
     print("ROSTERS.md:   %d documented, %d Pokemon rows"
           % (len(doc), sum(len(v) for v in doc.values())))

@@ -15,11 +15,19 @@ inject -- which are already 64x64 indexed PNGs with 16-colour palettes, byte
 format-identical to the decomp's own front pics. No conversion, only wiring.
 
 It is additive and idempotent:
-  - a character that already resolves to ANY existing TRAINER_PIC is skipped,
-    so the 46 imports above (and every vanilla pic) are left alone
+  - a character that already resolves to an existing TRAINER_PIC *from another
+    source* is skipped, so the 46 imports above (and every vanilla pic) are
+    left alone
   - all generated C lives in `donor-*` marker blocks, a separate namespace from
     import_sprites.py's, so the two tools never fight over the same text
-  - re-running replaces those blocks in place
+  - re-running replaces those blocks in place, re-emitting EVERY character this
+    script has ever imported and holding each one's TRAINER_PIC id fixed
+
+⚠️ THAT LAST POINT IS LOAD-BEARING AND WAS ONCE FALSE. Because the blocks are
+rewritten wholesale, anything missing from this run's `picks` is deleted, not
+preserved. Until 2026-07-29 the "already has a pic" test counted this script's
+own previous output, so the first run that actually had new art to import
+emitted a block of only the new picks and wiped the other 99. See `mine()`.
 
 Emits, per character (conventions copied exactly from import_sprites.py):
     graphics/trainers/front_pics/<snake>.png     the art
@@ -137,36 +145,86 @@ def candidates(disp):
     return out
 
 
+def mine(trainers_h):
+    """`{KEY: id}` for the pics THIS script emitted on a previous run.
+
+    ⚠️ THE REASON THIS FUNCTION EXISTS -- it is the whole idempotency story,
+    and the docstring above used to claim idempotency this script did not have.
+
+    Every block is REWRITTEN WHOLESALE on each run: `_block()` deletes the old
+    marker block and writes a new one built from `picks`. So a character absent
+    from `picks` is not "left alone", it is DELETED. And the old `have` test
+    treated this script's OWN previous output as somebody else's art and skipped
+    those characters -- so the second run with real work to do emitted a block
+    containing only the NEW picks and silently dropped every earlier one.
+
+    That is not a hypothetical. Run on 2026-07-29 with 9 newly staged sprites,
+    it took `include/constants/trainers.h` from 287 TRAINER_PIC defines to 197:
+    99 previously imported pics destroyed, 9 added. It survived since `ca2657fa`
+    only because every re-run until then found 0 to import and returned at the
+    `if not picks` early-out before touching a file -- the bug was unreachable
+    in exactly the case anyone ever tested.
+
+    So: previously-imported characters are re-picked from staged art every run,
+    and their ids are held FIXED, so the emitted block is a superset and re-runs
+    are genuinely idempotent.
+    """
+    m = re.search(re.escape(MS.format(tag="donor-pic-ids")) + r"(.*?)"
+                  + re.escape(ME.format(tag="donor-pic-ids")), trainers_h, re.S)
+    if not m:
+        return {}
+    return {k: int(v) for k, v in
+            re.findall(r"#define TRAINER_PIC_(\w+)\s+(\d+)", m.group(1))}
+
+
 def main():
     dry = "--dry-run" in sys.argv
     trainers_h_path = os.path.join(TARGET, "include/constants/trainers.h")
     trainers_h = read(trainers_h_path)
     have = set(re.findall(r"#define (TRAINER_PIC_\w+)", trainers_h))
+    ours = mine(trainers_h)
+    # Our own defines are not "somebody already covered this character".
+    have -= {"TRAINER_PIC_" + k for k in ours}
 
-    picks, skipped, missing = [], [], []
+    picks, skipped, missing, lost = [], [], [], []
     for disp in display_names():
+        key = re.sub(r"[^A-Za-z0-9]+", "_",
+                     disp[:-len(" (anime)")] if disp.endswith(" (anime)") else disp
+                     ).strip("_").upper()
         if any(c in have for c in const_candidates(disp, "TRAINER_PIC_")):
             skipped.append(disp)
             continue
         cands = candidates(disp)
         if not cands:
-            missing.append(disp)
+            # A character WE imported before must still resolve, or this run
+            # would quietly delete art that is live in the ROM.
+            if key in ours:
+                lost.append(disp)
+            else:
+                missing.append(disp)
             continue
         src, path = cands[0]
-        key = re.sub(r"[^A-Za-z0-9]+", "_",
-                     disp[:-len(" (anime)")] if disp.endswith(" (anime)") else disp
-                     ).strip("_").upper()
         picks.append(dict(disp=disp, key=key, src=src, path=path,
                           snake="cm_donor_" + slug(disp)))
 
-    print(f"{len(skipped)} characters already have a front pic (left untouched)")
-    print(f"{len(picks)} to import, {len(missing)} still have no staged art")
+    if lost:
+        sys.exit("REFUSING TO RUN -- %d character(s) imported by a previous run no "
+                 "longer resolve to any staged donor art: %s\n"
+                 "Re-running now would DELETE their defines, INCBINs and table rows "
+                 "while leaving the ROM referencing them. Restore the staged art (or "
+                 "remove them from the donor-* blocks deliberately) first."
+                 % (len(lost), ", ".join(lost)))
+
+    fresh = [p for p in picks if p["key"] not in ours]
+    print(f"{len(skipped)} characters have a front pic from another source (untouched)")
+    print(f"{len(picks)} donor pics to emit ({len(fresh)} new, "
+          f"{len(picks) - len(fresh)} re-emitted), {len(missing)} still have no staged art")
     by_src = {}
-    for p in picks:
+    for p in fresh:
         by_src[p["src"]] = by_src.get(p["src"], 0) + 1
     for s in PREFERENCE:
         if by_src.get(s):
-            print(f"   {s:<10} {by_src[s]}")
+            print(f"   new from {s:<12} {by_src[s]}")
     if missing:
         print(f"  no art: {', '.join(missing[:14])}" + (" ..." if len(missing) > 14 else ""))
     if dry:
@@ -187,9 +245,17 @@ def main():
     # --- TRAINER_PIC ids -------------------------------------------------
     # Continue above the current maximum. Ids are sparse and designated-
     # initialized, so gaps are free; what matters is never reusing one.
+    # An id we issued before is HELD, so a re-run is a superset and not a
+    # renumbering -- `characters.h` is regenerated from these, and letting them
+    # shuffle would repoint every portrait on every run for no reason.
     maxpic = max(int(m) for m in re.findall(r"#define TRAINER_PIC_\w+\s+(\d+)", trainers_h))
-    for i, p in enumerate(picks):
-        p["id"] = maxpic + 1 + i
+    nxt = maxpic + 1
+    for p in picks:
+        if p["key"] in ours:
+            p["id"] = ours[p["key"]]
+        else:
+            p["id"] = nxt
+            nxt += 1
     ids_block = "\n".join("#define TRAINER_PIC_%s%s%d"
                           % (p["key"], " " * max(1, 24 - len(p["key"])), p["id"])
                           for p in picks)
@@ -243,7 +309,12 @@ def main():
           "# Character front pics imported from sprites/donors/ by\n"
           "# tools/character_mode/import_donor_front_pics.py -- regenerate, do not edit.\n"
           + manifest + "\n")
-    print(f"imported {len(picks)} front pics (ids {picks[0]['id']}-{picks[-1]['id']})")
+    if fresh:
+        print("imported %d NEW front pics (ids %s), re-emitted %d existing"
+              % (len(fresh), ", ".join(str(p["id"]) for p in fresh),
+                 len(picks) - len(fresh)))
+    else:
+        print("re-emitted %d front pics unchanged (no new staged art)" % len(picks))
     print("next: python3 tools/character_mode/emit_characters.py && make -j")
     return 0
 
