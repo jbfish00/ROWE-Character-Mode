@@ -1,0 +1,62 @@
+SPRITE HARVEST — PROVENANCE AND ATTRIBUTION
+===========================================
+Set name   : pc_greenphx_gba64
+Harvested  : 2026-07-28
+Target     : Pokemon ROWE Character Mode front pics
+
+SOURCE
+------
+Thread   : "GBA (64x64 + 16-colour) Trainer Sprites!" — The PokeCommunity Forums
+URL      : https://www.pokecommunity.com/threads/gba-64x64-16-colour-trainer-sprites.463927/
+Download : https://www.mediafire.com/file/0t3qf2pq3wp0z57/64x64_Trainer_Sprites.rar/file
+           (61,969 bytes, RAR5, 79 PNGs + readme.txt)
+Author   : Greenphx
+
+⚠ pokecommunity.com serves HTTP 403 to curl and to WebFetch (Cloudflare). The thread
+was read through the Wayback Machine at capture 20250524124742 using the `id_` raw
+form. The MediaFire download host is NOT Cloudflare-gated and served the archive
+directly. Note for anyone repeating this: the NEWEST Wayback capture of a
+pokecommunity thread is often the Cloudflare "One moment, please..." interstitial
+rather than the page — check the decoded text before trusting a capture.
+
+LICENCE — verbatim
+------------------
+Thread opening post:
+  "Also, if you do use these, I'd like credits, but they aren't required."
+
+readme.txt inside 64x64_Trainer_Sprites.rar:
+  "All sprites shrunk by Greenphx. ... Please give credits if used. Not required
+   tho. They should all work in Emerald/Fire Red, none tested, but they are
+   formatted (64x64 and 16 colours)"
+
+Credit is not contractually required, but this project credits anyway.
+
+ATTRIBUTION CHAIN
+-----------------
+  Greenphx                — the 80x80 -> 64x64 / 16-colour GBA conversion, i.e. the
+                            work that makes these usable at all
+  The Spriters Resource   — the 80x80 DS-era rips Greenphx worked from
+                            (HGSS sheet 28037 / Platinum fullview 18524)
+  Game Freak / Nintendo / Creatures — the underlying official character art
+
+FILES
+-----
+  argenta_front.png   Argenta  (Arcade Star, Battle Frontier)
+  dahlia_front.png    Dahlia   (Argenta's Battle Arcade counterpart / Battle Frontier)
+  thorton_front.png   Thorton  (Factory Head, Battle Frontier)
+
+Thorton is ALSO available from Team Aqua's Asset Repo (BrandonXL) — see
+../taar_gap/. The two files are byte-different; pick one deliberately rather than
+letting an importer's source-preference order decide silently.
+
+FORMAT VERIFICATION
+-------------------
+Measured locally with PIL. All three: 64x64, PIL mode "P", indices entirely within
+0..15 (argenta 16 entries / 0..15, dahlia 12 / 0..11, thorton 14 / 0..13). Stock
+pokeemerald front-pic layout, zero conversion needed. Per-file numbers are in
+../manifest.json.
+
+DISTRIBUTION
+------------
+No ROM binaries were downloaded. Any downstream release is a patch, never a
+modified ROM.

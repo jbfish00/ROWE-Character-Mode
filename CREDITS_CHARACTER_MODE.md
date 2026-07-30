@@ -190,3 +190,93 @@ Three more donor sets staged alongside `rogue/`, converted by
   already have game art, and are deliberately NOT used: the importer skips any
   character that already resolves to a TRAINER_PIC, so `brock_anime` and
   friends sit unused rather than overriding the canonical portraits.
+
+---
+
+## Greenphx, MrDollSteak's thread, and one unattributed sprite (added 2026-07-29)
+
+Nine front pics staged from the 2026-07-28 harvest
+(`../Character Hacks/art_harvest_2026-07-28/rowe/`), which measured and credited
+them but deliberately staged nothing, leaving two calls to a human. Both were
+made on 2026-07-29 and both are recorded at the point of use.
+
+Four of the nine — **Ghetsis, Kiawe, Lana, Mallow** — are **Emerald Rogue** art
+from the same commit (`79c1df5f`) as the set already credited above; they were
+simply missed by the 2026-07-25 staging filter. **The 42-name "Additional
+Sprites" roll reproduced in that section covers them**; no new credit is owed,
+but the omission is noted so the count is not mistaken for new sourcing.
+
+### `sprites/donors/greenphx/` — 2 front pics (Argenta, Dahlia)
+- **Source**: Greenphx, "GBA (64x64 + 16-colour) Trainer Sprites!",
+  PokeCommunity thread 463927. The thread is Cloudflare-403 to automated
+  fetching; it was read through a Wayback capture, and the MediaFire archive
+  host served the `.rar` directly.
+- **Licence, verbatim** (thread OP): *"Also, if you do use these, I'd like
+  credits, but they aren't required."* And from the archive's own `readme.txt`:
+  *"All sprites shrunk by Greenphx. … Please give credits if used. Not required
+  tho."*
+- **Credit**: **Greenphx** for the 80x80 → 64x64 / 16-colour conversion, which
+  is the work that makes these usable at all; **The Spriters Resource** for the
+  DS-era rips underneath (HGSS sheet 28037 / Platinum fullview 18524).
+- Credit is not contractually required here. This project credits anyway.
+
+### `sprites/donors/dollsteak/` — 1 front pic (Lillie)
+- **Source**: MrDollSteak's "The DS-Style 64x64 Trainer Sprite Resource",
+  PokeCommunity thread 308798; the sprite was contributed to that thread by
+  **Shinya-kun & Mika-kun**.
+- **Licence, verbatim** (thread OP, MrDollSteak): *"you **ARE** allowed to use
+  these for your hack, this is the entire point of the resource! Just make sure
+  you credit this thread if you do use any of the sprites."*
+- **Credit**: **Shinya-kun & Mika-kun** (the sprite) and **MrDollSteak** (the
+  resource thread the grant comes from).
+- ⚠️ **The grant is the thread OWNER's, not the contributor's.** The thread's
+  stated purpose is a shared free-to-use resource and the sprite was posted into
+  it, so the grant reasonably reads as covering it — but that inference is ours.
+  Same judgement class as the Pokesho set above. **If either artist asks for
+  withdrawal, honour it.**
+- ⚠️ The file was **indexed by this project**, not taken as-is: the
+  contributor's own indexed attachment is HTTP 403 and absent from the Wayback
+  Machine, so the only reachable copy was the forum CDN's re-encoded truecolour
+  one. The conversion is lossless, not a quantisation — the source holds exactly
+  16 distinct fully-opaque colours, and the converter asserts that rather than
+  guessing. `sprites/donors/dollsteak/lillie_rgba_source.png` is the unmodified
+  download, kept so the conversion stays auditable.
+
+### `sprites/donors/unattributed/` — 1 front pic (Colress)
+- **Source**: https://github.com/fakuzatsu/verdant — a personal fork of
+  rh-hideout/pokeemerald-expansion.
+- **Licence**: **NONE STATED.** No LICENSE file, no per-sprite credit, and the
+  commit that introduced the art says only *"add various sprites"*. Upstream
+  pokeemerald-expansion ships no Colress front pic, so the art entered at the
+  fork and the trail ends there.
+- **Credit**: **artist unknown**; via github.com/fakuzatsu/verdant.
+  **If you drew this, we would like to credit you properly — please get in
+  touch.**
+- ⚠️ **This is the weakest provenance in the project and it is shipped
+  knowingly**, on an explicit user decision (2026-07-29) to take it with an
+  honest credit rather than leave Colress portrait-less. It is the same defect
+  for which *SwSh Ultimate Plus* was rejected as a primary source, so it is
+  quarantined rather than folded into a neighbouring set: the directory is named
+  `unattributed`, and it sits **last** in the importer's `PREFERENCE` order —
+  below `platinum`, previously the weakest — so it can never outrank a source
+  that can name its artist. Stage an attributed Colress anywhere else and it
+  wins automatically.
+- A second copy of the same artwork exists at ProfLeonDias/Pokeemerald-Expansion
+  with the same problem; it was **not** staged, so no importer is given a silent
+  choice between them.
+
+### Thorton — a deliberate choice between two clean sources
+Thorton was available from both Greenphx's pack and **Team Aqua's Asset Repo**.
+TAAR's was taken (artist: **BrandonXL**, already credited in the TAAR section
+above), because TAAR carries an explicit free-to-use grant *and* a named creator
+per folder — the strongest licence position of any set staged here. Greenphx's
+Thorton was **deliberately not staged**, so `PREFERENCE` order never gets to make
+that call silently.
+
+### Not new art at all — the seven Frontier Brains
+**Anabel, Brandon, Greta, Lucy, Noland, Spenser and Tucker** also gained
+portraits on 2026-07-29 and are **vanilla Emerald Battle Frontier art already in
+this tree** — already covered by the base-game credit at the top of this file.
+They were listed as "no art of any kind" for months only because the asset
+name-matcher never tried their facility titles (`TRAINER_PIC_SALON_MAIDEN_ANABEL`
+and friends). Nothing was sourced, converted or added; seven constants were.

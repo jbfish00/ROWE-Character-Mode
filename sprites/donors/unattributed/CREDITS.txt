@@ -1,0 +1,103 @@
+⚠ PROVENANCE UNKNOWN — DO NOT SHIP WITHOUT A HUMAN DECISION
+============================================================
+Set name  : provenance_unknown
+Harvested : 2026-07-28
+Character : Colress (front pic) — the ONLY roster character in this directory
+
+WHY THIS DIRECTORY IS SEPARATE
+------------------------------
+Both files below MEASURE PERFECTLY: 64x64, PIL mode "P", indices 0..14, stock
+pokeemerald front-pic layout, drop-in injectable. Format is not the problem.
+
+**Nobody can say who drew them.** They come from two personal forks of
+rh-hideout/pokeemerald-expansion. Neither fork has a LICENSE file, neither has any
+per-sprite credit, and the commit that introduced the art says only "add various
+sprites". The upstream expansion ships no Colress front pic, so the art entered at
+the fork and its trail ends there.
+
+That is the same defect for which this workspace already rejected **SwSh Ultimate
+Plus** as a primary source (CLAUDE.md: "rejected as primary — its README admits
+unknown asset provenance"). It is strictly weaker than every set already staged:
+  * Emerald Rogue      — no LICENSE, but a 42-name credits roll that travels with
+                         the art
+  * TAAR               — explicit free-to-use grant AND a named creator per folder
+  * pokeemerald-platinum — no licence and no per-sprite credit, but at least a
+                         single coherent project with a known team
+  * here               — no licence, no project identity, no artist, no trail
+
+SOURCES
+-------
+  colress_front__fakuzatsu_verdant.png
+      https://github.com/fakuzatsu/verdant/blob/master/graphics/trainers/front_pics/colress.png
+      repo licence : NONE      per-sprite credit : NONE
+      commits touching the file: 2024-06-14 fakuzatsu "updated trainer pics for
+      some trainers"; 2026-03-29 fakuzatsu "add various sprites"
+
+  colress_front__profleondias.png
+      https://github.com/ProfLeonDias/Pokeemerald-Expansion/blob/main/graphics/trainers/front_pics/colress.png
+      repo licence : NONE      per-sprite credit : NONE
+      commit: 2026-01-04 EmperorZaph "Massive Pokemon Update"
+
+The two are the SAME artwork at different palettes/indexing — verified: neither the
+index data nor the rendered RGB matches byte-for-byte, but both are 15-colour 64x64
+Colress. One is a re-index of the other, or both descend from a common original.
+
+ORIGIN SEARCH — what was tried and what it found
+------------------------------------------------
+Attempted attribution: GitHub commit history on both files (no credit), both repos'
+whole file trees (no CREDITS/attribution file covering sprites — only the inherited
+rh-hideout contributor roll, which is engine contributors, not this art), and a web
+search for a Gen-3-style Colress artist.
+
+The nearest named work is **aveontrainer's "Colress"** on DeviantArt
+(https://www.deviantart.com/aveontrainer/art/Colress-786918192), described as
+"Pokemon Team Plasma Boss Colress Overworld in FR/LG Style" and crediting
+"PurpleZaffre for the color palette & the design I based it off of".
+**It is NOT the source of these files** — it is 128x192, an OVERWORLD walk sheet,
+not a 64x64 battle front pic. It also carries no explicit licence (DeviantArt
+default terms only), so it is not usable on its own account either. Recorded here
+so the next session does not re-run the same search.
+
+VERDICT
+-------
+Colress is best described as **format-solved but attribution-unsolved**. Injecting
+this would put art in the ROM that cannot be credited to anyone, which breaks
+SPRITE_PLAN section 6's standing obligation. The choice is the user's:
+  (a) ship it with an honest "artist unknown, via <fork>" credit, or
+  (b) leave Colress without a front pic until a properly attributed sprite exists.
+Nothing here has been staged into ROWE.
+
+FORMAT VERIFICATION
+-------------------
+  colress_front__fakuzatsu_verdant.png   P, 64x64, 15 palette entries, indices 0..14
+  colress_front__profleondias.png        P, 64x64, 16 palette entries, indices 0..14
+Both measured locally with PIL; index ranges recorded explicitly per SPRITE_PLAN
+section 5.
+
+DISTRIBUTION
+------------
+No ROM binaries were downloaded. Any downstream release is a patch, never a
+modified ROM.
+
+DECISION — 2026-07-29
+---------------------
+The user chose option (a): SHIP IT, with an honest "artist unknown" credit.
+
+Staged here as `colress_front.png`, taken from the fakuzatsu/verdant copy — the
+earlier of the two by commit date (2024-06-14 vs 2026-01-04), so the nearer of
+the two to whatever the original was. The ProfLeonDias copy was NOT staged; it
+is the same artwork re-indexed and would only give an importer a silent choice
+to make.
+
+⚠ THE DIRECTORY NAME IS THE POINT. This set is called `unattributed` rather than
+being folded into a neighbouring set so that the attribution gap stays visible
+in the tree, not just in this file. It sits LAST in
+import_donor_front_pics.py's PREFERENCE list — below `platinum`, which was
+previously the weakest — so nothing here can ever outrank a source that can name
+its artist. If a properly attributed Colress sprite ever appears, it wins
+automatically by being staged anywhere else.
+
+The credit line carried into CREDITS_CHARACTER_MODE.md is:
+  Colress — artist unknown; via github.com/fakuzatsu/verdant, which states no
+  licence and no per-sprite credit. If you drew this, we would like to credit
+  you properly: please get in touch.

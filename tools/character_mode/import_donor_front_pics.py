@@ -72,7 +72,28 @@ DONORS = os.path.join(TARGET, "sprites", "donors")
 # else, `rogue` is the largest coherent set with one consistent style, `taar`
 # has recoverable per-author attribution, and `platinum` has no per-sprite
 # credit at all so it is the last resort.
-PREFERENCE = ["ashgray", "rogue", "taar", "hns", "pokesho", "loulilie", "platinum"]
+#
+# ⚠️ A DIRECTORY NOT NAMED HERE IS SILENTLY IGNORED. `candidates()` iterates
+# this list, not `os.listdir(DONORS)`, so staging art into a new set without
+# adding it here looks exactly like "there is no art for that character". The
+# three 2026-07-29 sets below were staged from
+# `../Character Hacks/art_harvest_2026-07-28/rowe/`, which the 2026-07-28
+# harvest deliberately left un-staged pending the two decisions it could not
+# make on its own (ship unattributed art? which of two Thorton sprites?).
+#
+# Ordering below `hns` is by STRENGTH OF ATTRIBUTION, weakest last:
+#   greenphx     named author, explicit (if optional) grant
+#   pokesho      archived, permission inferred
+#   dollsteak    thread-wide grant, but from the thread OWNER rather than the
+#                sprite's actual contributor -- same judgement class as pokesho
+#   loulilie     named author
+#   platinum     no per-sprite credit, but one coherent project
+#   unattributed NO licence, NO artist, NO project identity. Deliberately last
+#                so it can never outrank a source that can name its artist; if
+#                an attributed sprite for the same character is ever staged
+#                anywhere else, it wins automatically.
+PREFERENCE = ["ashgray", "rogue", "taar", "hns", "greenphx", "pokesho",
+              "dollsteak", "loulilie", "platinum", "unattributed"]
 
 # Characters whose staged art is filed under a different stem. Kept identical
 # to the sibling repos so a fix in one place is a fix everywhere.

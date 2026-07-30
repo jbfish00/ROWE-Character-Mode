@@ -28,11 +28,11 @@ fixed, the 1% legendary encounter rule is shipped, and the whole suite is green.
 | Branch | `character-mode`, **working tree clean and PUSHED to `origin`** (`jbfish00/ROWE-Character-Mode`) as of 2026-07-29. Last feature commit `c231ba2a`, followed by an anchors commit, a doc commit and a credits commit — don't treat any single hash as HEAD, and re-check with `git rev-list --left-right --count origin/character-mode...HEAD` rather than trusting this row |
 | Rosters | **AUDITED** — 236 table slots / **206 selectable** / 30 hidden, **3,359** rows, **every row sourced** |
 | Threshold | **ENFORCED** — the only game in the project where it is |
-| Sprites | **168 of 236** have a front pic (68 are `CHAR_ASSET_NONE`) |
+| Sprites | **184 of 236** have a front pic (52 are `CHAR_ASSET_NONE`) — 168 → 184 on 2026-07-29: 9 newly staged from the 07-28 harvest, 7 Frontier Brains closed with zero new art. Back pics **12 of 236**, overworld **101 of 236**, both now TOOLING-blocked not art-blocked (§7.8b) |
 | Name length | **12/12 LANDED** (`71cebcbe`), verified by a new headless suite |
 | Legendary rule | **SHIPPED** — 1% wild encounters, offered-until-caught, no roaming |
 | Modes | **Randomized Party Mode SHIPPED** (`c231ba2a`), exclusive with Character Mode; both Game Modes menus de-drifted and pinned |
-| Readiness | **GREEN** — selftest 33/33 and **all 11 suite runs passing**, tallies identical to the pre-change baseline (re-run 2026-07-29 on `08eef0c3…`) |
+| Readiness | **GREEN** — selftest 33/33 and **all 11 suite runs passing**, tallies identical to the pre-change baseline. Re-run 2026-07-29 on the art-pass build `e2b047c4…` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, starter red 6 + normal 6) — every tally matches the `08eef0c3…` baseline exactly |
 
 Every number above was re-derived from this tree, not taken from notes.
 ⚠️ The suite is **11 runs**, not 12 — §0 and §7 both said 12 while §8 said 11.
@@ -484,20 +484,83 @@ a 0 onto Red's roster — each exits 1 and names the culprit.
 
 ### Art — re-examined 2026-07-28. Two of the three were smaller than documented.
 
-8. **Genuinely blocked on ACQUISITION, and now measured.**
-   `import_donor_front_pics.py --dry-run` reports **0 to import** — every sprite
-   staged in `sprites/donors/` (rogue, ashgray, hns, taar, platinum, kalarie,
-   pokesho, pokesho_field, loulilie) is already in. So there is no un-imported
-   art sitting on disk; the gap is real. **71 characters have no staged art**
-   (Ash, Tate, Paul, Zoey, Nando, Ghetsis, Colress, Trip, Alain, Sawyer, Guzma,
-   Plumeria, Lusamine, the Alola anime cast, most professors …). Also **224 of
-   236 have no back pic** (only 12 exist) and **135 have no overworld art**.
+8. **Front pics: 168 → 184 of 236 (2026-07-29). Partly worked, still open.**
+
+   ⚠️ **The previous version of this item was WRONG in the way that matters.**
+   It said *"there is no un-imported art sitting on disk"* on the strength of
+   `import_donor_front_pics.py --dry-run` reporting **0 to import**. The dry-run
+   was accurate and the conclusion was not: the importer only ever looks at
+   `sprites/donors/`, and the **2026-07-28 harvest deliberately staged nothing
+   there** — it left 9 measured, format-clean front pics sitting in
+   `../Character Hacks/art_harvest_2026-07-28/rowe/` pending two decisions it
+   could not make alone (ship art nobody can attribute? which of two Thorton
+   sprites?). **A tool reporting nothing to do is not evidence that there is
+   nothing to do — check what it actually looks at.**
+
+   **Landed 2026-07-29, +16 characters:**
+   - **9 newly staged and imported** — Ghetsis, Kiawe, Lana, Mallow (Emerald
+     Rogue, missed by the 2026-07-25 staging filter), Argenta, Dahlia (Greenphx),
+     Lillie (MrDollSteak thread), Thorton (TAAR/BrandonXL, chosen over Greenphx's
+     by the user), Colress (**unattributed** — shipped on an explicit user ruling
+     with an honest "artist unknown" credit; see `CREDITS_CHARACTER_MODE.md`).
+   - **7 with ZERO new art** — Anabel, Brandon, Greta, Lucy, Noland, Spenser,
+     Tucker. Their front pics, palettes, INCBINs and `gTrainerFrontPicCoords`
+     rows were **already in this tree** (vanilla Emerald Battle Frontier art);
+     only `emit_characters.py`'s `const_candidates()` missed them, because they
+     are filed under FACILITY TITLES (`TRAINER_PIC_SALON_MAIDEN_ANABEL`, …).
+     Seven characters closed by adding seven prefixes. **When a character is
+     reported as having no art, check whether the ENGINE already has it under
+     another name before going looking for a donor.**
+
+   ⚠️ **A destructive bug in the importer was found and fixed doing this, and it
+   had been live since `ca2657fa`.** Every `donor-*` marker block is rewritten
+   wholesale, and the "already has a pic" test counted the script's OWN previous
+   output — so the first run with real work to do emitted a block of only the new
+   picks and **deleted the other 99**, taking `trainers.h` from 287 TRAINER_PIC
+   defines to 197. It survived for months because every re-run until now found 0
+   to import and returned at the `if not picks` early-out **before touching a
+   file — the bug was unreachable in exactly the case anyone ever tested.** The
+   script now re-emits every pic it has ever imported, holds each id fixed, and
+   **refuses to run** if a previously-imported character no longer resolves to
+   staged art (proven by negative control: hide `ashgray/gary_front.png`, it
+   exits 1 naming Gary and writes nothing).
+
+   **Still open, and still genuinely acquisition-blocked: 52 characters have no
+   front pic** (Ash, Tate, Paul, Zoey, Nando, Trip, Alain, Sawyer, Guzma,
+   Plumeria, Lusamine, Rose, Goh, Chloe, most professors …). Nine of those —
+   **Paul, Zoey, Nando, Trip, Sawyer, Goh, Chloe, Cerise, Tobias** — have no
+   usable trainer-sprite art in ANY format anywhere searched; the anime cast that
+   does exist is uniformly DS/Essentials scale and would need a redraw, not a
+   conversion. Also **224 of 236 have no back pic** (only 12 exist) and **135
+   have no overworld art** — and for those two the blocker is now TOOLING, not
+   art: 19 characters have overworld sheets and 6 have back pics staged and
+   unused, because the only importer that reads `sprites/donors/` handles front
+   pics alone. See §7.8b.
    ⚠️ The importer counts **238**, not 236 — it iterates the roster data, which
    still holds Cogita and Iscan, the two dropped from `gCharacters` entirely.
-   That is why its "167 have a front pic" is one off the table's 168; do not
-   chase the discrepancy, it is this.
+   Do not chase the off-by-one against the table's count; it is this.
    Sourcing leads are in `../Character Hacks/SPRITE_PLAN.md`, which is the
    runbook — not this file.
+
+8b. **The next real sprite item is an overworld/back-pic importer, and it is
+   CODE, not acquisition.** `import_sprites.py` resolves its donors from a
+   scratchpad path that no longer exists, so it cannot be re-run; nothing else
+   reads `sprites/donors/` for anything but front pics. Sitting staged and unused
+   right now: **overworld sheets** for Jessie, James, Lyra, Korrina, Acerola,
+   Nessa, Bede, Larry, Oak, Birch, Rowan, Anabel, Brandon, Greta, Lucy, Noland,
+   Palmer, Spenser, Tucker (19), and **back pics** for Blue, Lance, Lyra, Phoebe,
+   Calem, Serena (6).
+   ⚠️ **The overworld slot is NOT the same one-line alias fix the Frontier Brains'
+   front pics were.** `emit_characters.py` gates it deliberately — an id is
+   accepted only if it is in `imported_ow.txt` or ends in `_NORMAL`, because
+   plain NPC ids use a short anim table and **CRASH** when used as the player's
+   own overworld sprite. Birch, Anabel, Brandon, Greta, Lucy, Noland, Spenser and
+   Tucker all have an `OBJ_EVENT_GFX_*` constant already and it looks like a free
+   win; wiring it would ship a crash. The slot needs a real player-grade 18-frame
+   sheet built by `build_ow_sheet()`, which is what the staged donor strips are
+   for. Also note `taar_gap/noland_back.png` has the right 64x256 geometry but
+   ships RGBA with **56** distinct colours against 4bpp's 16 — a deliberate
+   quantisation call, not an importer's guess.
 
 9. ✅ **Trainer card now draws all 16 badges — Johto in gold on a second row.**
    The old in-code comment blamed a tile collision ("a 16-badge loop pushes x to
@@ -614,11 +677,20 @@ every staged sprite is already imported.
    play. Three of the four newest features (the trainer card's second badge row,
    Randomized Party Mode's prompts, the wild-encounter block) are code- and
    render-verified but have never been seen by a player.
-2. **Art acquisition (§7.8)** — 71 characters with no staged front pic, 224 with
-   no back pic, 135 with no overworld art. Runbook is
-   `../Character Hacks/SPRITE_PLAN.md`; the importer is additive and idempotent,
-   so staged art needs no code work, only sourcing.
-3. **The selection-screen portrait (§7.4)** and any 10th mode row — both need the
+2. **An overworld / back-pic importer (§7.8b)** — this is now ahead of art
+   acquisition, because it is CODE and the art is already on disk: 19 overworld
+   sheets and 6 back pics staged and unreachable, because the only tool that
+   reads `sprites/donors/` does front pics alone. Do NOT take the
+   `OBJ_EVENT_GFX_*` shortcut; it ships a crash (the gate is there on purpose).
+3. **Art acquisition (§7.8)** — 52 characters with no front pic, 224 with no back
+   pic, 135 with no overworld art. Runbook is
+   `../Character Hacks/SPRITE_PLAN.md`. Nine of the 52 (Paul, Zoey, Nando, Trip,
+   Sawyer, Goh, Chloe, Cerise, Tobias) have no usable art anywhere searched, so
+   the realistic ceiling here is well short of 236. The two open permission
+   requests — **Emerald Enhanced** (would close Lusamine + Lillie's back pic;
+   they "rarely decline") and **Wolfang62** (four professors) — are the
+   highest-value moves and **nobody has asked yet**.
+4. **The selection-screen portrait (§7.4)** and any 10th mode row — both need the
    `ui_menu` tilemap redrawn. Same class as 2, not ahead of it.
 
 There is no open engine defect on this list. If one turns up, §9 is the trap

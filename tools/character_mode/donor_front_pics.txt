@@ -35,6 +35,8 @@ Marlon                       rogue      marlon_front.png
 Bianca                       rogue      bianca_front.png
 Hugh                         rogue      hugh_front.png
 N                            rogue      n_front.png
+Ghetsis                      rogue      ghetsis_front.png
+Colress                      unattributed colress_front.png
 Calem                        rogue      calem_front.png
 Serena                       rogue      serena_front.png
 Diantha                      rogue      diantha_front.png
@@ -64,6 +66,10 @@ Olivia                       rogue      olivia_front.png
 Nanu                         rogue      nanu_front.png
 Hapu                         rogue      hapu_front.png
 Gladion                      rogue      gladion_front.png
+Lillie (anime)               dollsteak  lillie_front.png
+Kiawe (anime)                rogue      kiawe_front.png
+Lana (anime)                 rogue      lana_front.png
+Mallow (anime)               rogue      mallow_front.png
 Sophocles                    rogue      sophocles_front.png
 Leon                         rogue      leon_front.png
 Milo                         rogue      milo_front.png
@@ -97,5 +103,8 @@ Penny                        rogue      penny_front.png
 Victor                       rogue      victor_front.png
 Gloria                       rogue      gloria_front.png
 Oak                          rogue      oak_front.png
+Argenta                      greenphx   argenta_front.png
+Dahlia                       greenphx   dahlia_front.png
 Darach                       taar       darach_front.png
 Palmer                       taar       palmer_front.png
+Thorton                      taar       thorton_front.png

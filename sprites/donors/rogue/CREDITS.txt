@@ -95,3 +95,18 @@ DISTRIBUTION
 ------------
 No ROM binaries were downloaded. Per workspace policy, any downstream release
 is a patch, never a modified ROM.
+
+ADDENDUM — 2026-07-29 staging-filter fix
+----------------------------------------
+Four front pics from the SAME commit as the harvest above (79c1df5f) were
+present upstream but never copied into this directory by the 2026-07-25 staging
+pass — a filter miss, not new upstream content. MD5-verified as not duplicates
+of anything already here:
+
+  ghetsis_front.png   graphics/trainers/front_pics/team/plasma_ghetsis_front_pic.png
+  kiawe_front.png     graphics/trainers/front_pics/alola/kiawe.png
+  lana_front.png      graphics/trainers/front_pics/alola/lana.png
+  mallow_front.png    graphics/trainers/front_pics/alola/mallow.png
+
+They carry the same licence position and the same 42-name "Additional Sprites"
+credit roll reproduced above — that list travels with any subset of this art.

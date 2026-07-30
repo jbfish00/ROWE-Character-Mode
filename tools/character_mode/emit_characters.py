@@ -67,13 +67,28 @@ def const_candidates(disp, prefix):
         # imported player-safe sheet (CM_) or player-grade costume (_NORMAL)
         return [prefix + "CM_" + key, prefix + key + "_NORMAL", prefix + key]
     if prefix == "TRAINER_PIC_":
+        # The FACILITY-TITLE prefixes are the Frontier Brains, and they are not
+        # a hypothetical: Anabel, Brandon, Greta, Lucy, Noland, Spenser and
+        # Tucker had their 64x64 front pics, palettes, INCBINs and
+        # gTrainerFrontPicCoords rows sitting in this tree the whole time --
+        # vanilla Emerald Battle Frontier art -- and were listed as "no art of
+        # any kind" purely because this function never tried their titles.
+        # Seven characters closed with zero new art (2026-07-29).
+        # Each title matches exactly one character, so none can shadow another.
         return [prefix + key,
                 prefix + "LEADER_" + key,
                 prefix + "ELITE_FOUR_" + key,
                 prefix + "CHAMPION_" + key,
                 prefix + "MAGMA_LEADER_" + key,
                 prefix + "AQUA_LEADER_" + key,
-                prefix + "RS_" + key]
+                prefix + "RS_" + key,
+                prefix + "SALON_MAIDEN_" + key,
+                prefix + "DOME_ACE_" + key,
+                prefix + "PALACE_MAVEN_" + key,
+                prefix + "ARENA_TYCOON_" + key,
+                prefix + "FACTORY_HEAD_" + key,
+                prefix + "PIKE_QUEEN_" + key,
+                prefix + "PYRAMID_KING_" + key]
     if prefix == "TRAINER_BACK_PIC_":
         return [prefix + "CM_" + key, prefix + key]
     return [prefix + key]
