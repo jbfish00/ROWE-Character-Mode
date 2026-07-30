@@ -489,14 +489,18 @@ def main():
     ours_ow, ours_back = mine_ow(ev_h), mine_back(tr_h)
 
     # Player-safe overworld ids from the OTHER importer, plus ROWE's own player
-    # costumes. Our own previous output is NOT evidence somebody else covered
-    # the character -- that conflation is the bug that deleted 99 front pics.
-    safe_ow = set()
-    for f in ("imported_ow.txt", "imported_ow_donor.txt"):
-        p = os.path.join(HERE, f)
-        if os.path.isfile(p):
-            safe_ow |= {t for t in read(p).split()
-                        if t.startswith("OBJ_EVENT_GFX_")}
+    # costumes (the `_NORMAL` ids, handled in the loop below).
+    #
+    # ⚠️ `imported_ow_donor.txt` is deliberately NOT read here. It is THIS
+    # script's own output, and treating your own previous output as "somebody
+    # else already covered this character" is the exact conflation that made the
+    # front-pic importer delete 99 imports. Subtracting only what the marker
+    # block still lists is not enough either: if the block and the txt ever
+    # disagree, the txt silently wins and the character is skipped instead of
+    # re-emitted. So the txt is informational only, and the block is the record.
+    p = os.path.join(HERE, "imported_ow.txt")
+    safe_ow = ({t for t in read(p).split() if t.startswith("OBJ_EVENT_GFX_")}
+               if os.path.isfile(p) else set())
     safe_ow -= {"OBJ_EVENT_GFX_CM_" + k for k in ours_ow}
     back_pics -= {"TRAINER_BACK_PIC_CM_" + k for k in ours_back}
 
