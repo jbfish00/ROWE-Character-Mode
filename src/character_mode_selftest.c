@@ -163,6 +163,32 @@ enum
                            // equivalent to the scan it replaced instead of
                            // spot-checking a few species. Chunked because a full
                            // sweep of the reference is ~22M iterations.
+    CM_REQ_LEARNSET_PROBE, // argA: party slot | (op << 8), argB: op argument.
+                           // Drives the three UNBOUNDED scans over
+                           // gLevelUpLearnsets[species]. That array is
+                           // designated-initializer, so a species with no row
+                           // is a NULL pointer, and every one of these walks it
+                           // with a u8 index and no bound -- on hardware the
+                           // NULL read returns a constant BIOS-prefetch value
+                           // whose .move is never LEVEL_UP_END, so the index
+                           // wraps forever and the game HANGS. Four Legends:
+                           // Arceus species shipped in exactly that state.
+                           //   op 0: MonTryLearningNewMove sweep at the mon's
+                           //         current level (the level-up path).
+                           //         result = granted << 16 | iterations.
+                           //   op 1: MonTryLearningNewMoveEvolution sweep (the
+                           //         learn-on-evolution path, the level-0
+                           //         sentinel rows). Same result encoding.
+                           //   op 2: result = the mon's move in slot argB.
+                           //   op 3: the party_menu.c:2851 field-move scan
+                           //         shape -- walk to LEVEL_UP_END, capped at
+                           //         250. result = entries | (found << 16).
+                           //   op 4: evolve in place, the way the level-up
+                           //         evolution check does.
+                           //         result = GetEvolutionTargetSpecies().
+                           // Every op returns a result AT ALL only because the
+                           // row exists; a hang shows up as the request never
+                           // completing, which is the point.
 };
 
 enum
@@ -691,6 +717,81 @@ void CharacterMode_PumpTestMailbox(void)
                 SetMonData(&gPlayerParty[slot], MON_DATA_MOVE1 + moveSlot, &move);
                 SetMonData(&gPlayerParty[slot], MON_DATA_PP1 + moveSlot, &pp);
                 mb->result = GetMonData(&gPlayerParty[slot], MON_DATA_MOVE1 + moveSlot, NULL);
+            }
+        }
+        break;
+    case CM_REQ_LEARNSET_PROBE:
+        {
+            u8 slot = mb->argA & 0xFF;
+            u8 op = mb->argA >> 8;
+            struct Pokemon *mon;
+            u16 move;
+            u16 species;
+            u16 targetSpecies;
+            u8 targetFormId;
+            u32 granted;
+            u32 iterations;
+
+            if (slot >= PARTY_SIZE)
+                break;
+            mon = &gPlayerParty[slot];
+            granted = 0;
+            iterations = 0;
+
+            switch (op)
+            {
+            case 0:
+                // The level-up path, exactly as LevelUpMon drives it.
+                move = MonTryLearningNewMove(mon, TRUE);
+                while (move != 0 && iterations < 32)
+                {
+                    if (move != MON_HAS_MAX_MOVES && move != MON_ALREADY_KNOWS_MOVE)
+                        granted++;
+                    iterations++;
+                    move = MonTryLearningNewMove(mon, FALSE);
+                }
+                mb->result = (granted << 16) | iterations;
+                break;
+            case 1:
+                // The learn-on-evolution path (the LEVEL_UP_MOVE(0, X) rows).
+                move = MonTryLearningNewMoveEvolution(mon, TRUE);
+                while (move != 0 && iterations < 32)
+                {
+                    if (move != MON_HAS_MAX_MOVES && move != MON_ALREADY_KNOWS_MOVE)
+                        granted++;
+                    iterations++;
+                    move = MonTryLearningNewMoveEvolution(mon, FALSE);
+                }
+                mb->result = (granted << 16) | iterations;
+                break;
+            case 2:
+                if (mb->argB < MAX_MON_MOVES)
+                    mb->result = GetMonData(mon, MON_DATA_MOVE1 + mb->argB, NULL);
+                break;
+            case 3:
+                // The party_menu.c:2851 field-move scan shape: walk the row to
+                // LEVEL_UP_END. Capped here ONLY so a regression reports a
+                // number instead of wedging the harness; the shipping loop has
+                // no cap at all.
+                species = GetMonData(mon, MON_DATA_SPECIES, NULL);
+                while (iterations < 250
+                       && gLevelUpLearnsets[species][iterations].move != LEVEL_UP_END)
+                    iterations++;
+                if (iterations < 250)
+                    granted = 1;   // LEVEL_UP_END was actually reached
+                mb->result = (granted << 16) | iterations;
+                break;
+            case 4:
+                targetFormId = 0;
+                targetSpecies = GetEvolutionTargetSpecies(mon, 0, ITEM_NONE, SPECIES_NONE, &targetFormId);
+                if (targetSpecies != SPECIES_NONE)
+                {
+                    SetMonData(mon, MON_DATA_SPECIES, &targetSpecies);
+                    SetMonData(mon, MON_DATA_FORM_ID, &targetFormId);
+                    CalculateMonStats(mon);
+                }
+                mb->result = targetSpecies;
+                break;
             }
         }
         break;
