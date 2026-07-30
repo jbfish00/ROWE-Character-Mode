@@ -280,3 +280,90 @@ this tree** — already covered by the base-game credit at the top of this file.
 They were listed as "no art of any kind" for months only because the asset
 name-matcher never tried their facility titles (`TRAINER_PIC_SALON_MAIDEN_ANABEL`
 and friends). Nothing was sourced, converted or added; seven constants were.
+
+---
+
+## Overworld sheets and battle back pics (added 2026-07-30)
+
+`tools/character_mode/import_donor_ow_backs.py` filled the other two asset slots
+from art that had been staged in `sprites/donors/` and unreachable, because the
+only tool that read that directory did front pics alone. **27 overworld sheets**
+(101 → 128 of 236) and **7 battle back pics** (12 → 19 of 236). No new donor
+*sets* were harvested; everything below is already licensed under a section
+above, except `taar_gap/`, which is new to this tree and detailed at the end.
+
+Nothing here is a drop-in copy. Each overworld donor is a 9-frame NPC strip and
+the player avatar needs an **18-frame** sheet (`build_ow_sheet`-style), so every
+one was re-laid-out; each back pic was re-framed to the 4- or 5-frame throw
+animation the engine plays, and one was quantised.
+
+### Overworld — Emerald Rogue (`sprites/donors/rogue/`), 16 characters
+Lyra (walk **and** run), Calem, Serena, Elio, Selene, Victor, Gloria, Oak,
+Birch, Anabel, Brandon, Greta, Lucy, Noland, Spenser, Tucker. Licence and the
+full "Additional Sprites" artist list are in the Emerald Rogue section above;
+that list travels with any subset of the art.
+
+### Overworld — Team Aqua's Asset Repo (`sprites/donors/taar/`), 7 characters
+Korrina, Acerola, Nessa, Bede, Larry, Palmer, Rowan.
+- **Rowan** — artist **spilledpizza**, whose folder README carries its own
+  credit list, reproduced here as it must travel with the file: *"spilledpizza
+  (myself) / TheWiggliestJiggliest / RichardPT / robloxmaster376 / The Spriters
+  Resource / The Radiant Quartz / Prismatic Platinum team for their support."*
+- ⚠️ **The other six cannot be attributed to an individual from this tree, and
+  TAAR's licence requires it.** TAAR is organised `<asset type>/<creator>/…`, so
+  the upstream path IS the attribution — but the 2026-07-25 staging pass flattened
+  the filenames and `manifest.json` records only the flat staged name. The
+  `harvest_index.json` that the TAAR credit block above says "preserves each
+  file's original path" **is not present in `sprites/donors/taar/`.** Until it is
+  recovered (re-fetch the tree at commit `36b619ec…` and match by content), these
+  six are credited to **Team Aqua's Asset Repo contributors** collectively, which
+  is weaker than the licence asks for. **This is a known debt, recorded rather
+  than papered over.**
+
+### Overworld — kalarie (`sprites/donors/kalarie/`), 2 characters
+**Jessie** and **James**, from kalarie's PokéCommunity anime overworld set —
+the only GBA-style overworld art of the Team Rocket duo anywhere searched.
+Credit **Kalarie**, and **Pokesho** for the front frames kalarie animated (both
+per the kalarie section above).
+
+### Back pics — Team Aqua's Asset Repo, 3 characters
+- **Blue** — **ShinyDragonHunter** (64x320, five frames, FRLG throw).
+- **Lance** — **yoshord** (64x384, six frames). ⚠️ **Re-framed, deliberately.**
+  His sheet has one extra intermediate arm-raise (frame 3) that the engine's
+  five-frame FRLG animation has no slot for, so frames 0,1,2,4,5 are taken and
+  frame 3 is dropped. yoshord's own README ships a matching six-frame
+  `sAnimCmd_Lance_Back[]` upstream, which was **not** harvested with the art; if
+  it is ever fetched, a six-frame path is the better answer than this crop.
+- **Phoebe** — **mudskip** (64x256, four frames, Emerald throw).
+
+### Back pics — Emerald Rogue, 3 characters
+**Lyra**, **Calem** and **Serena** (64x320, five frames each). Same collective
+credit list as the overworld set above.
+
+### `sprites/donors/taar_gap/` — TAAR gap-fill pass (NEW to this tree)
+Five files from the 2026-07-28 harvest
+(`../Character Hacks/art_harvest_2026-07-28/rowe/taar_gap/`), staged here on
+2026-07-30. Same repository and licence as `taar/` above
+(github.com/Pawkkie/Team-Aquas-Asset-Repo, commit `36b619ec…`) — free to use and
+edit, **credit to the original creator required** — but unlike `taar/` this set
+kept its per-file artist, so it ranks ABOVE `taar/` in the importer's
+`PREFERENCE`. Its own `CREDITS.txt` travels with it.
+- **`elm_ow.png`** — Professor Elm overworld, artist **IAG**, whose README asks:
+  *"If you use any of these sprites, please credit IAG."* **Used.**
+- **`kiawe_ow.png`** — Kiawe overworld, artist **PurrfectDoodle (Eva)**, whose
+  README asks: *"Please credit PurrfectDoodle (Eva) :)"*. **Used.**
+- **`noland_back.png`** — Noland back pic, artist **kwenio**. **Used, and
+  QUANTISED.** It ships 64x256 (correct geometry) but as fully-opaque RGBA with
+  **56 distinct colours** against 4bpp's 16. The deliberate call, recorded in the
+  importer's `QUANTISE` table: mask every pixel within 8/255 per channel of the
+  corner colour to palette slot 0 (the backdrop is opaque, so alpha cannot do
+  it, and a backdrop anywhere but slot 0 renders as a solid box behind the
+  player), then MEDIANCUT the remaining 54 colours to 15 with **dithering off**.
+  Compared against the original as a decoded contact sheet before shipping: the
+  hat, glove, vest and skin ramps all survive; the loss is one step of forearm
+  shading. The importer refuses to quantise any file not named in that table.
+- **`birch_ow_hyo.png`** (artist **hyo**) and **`rowan_ow_spilledpizza.png`**
+  (artist **spilledpizza**) are staged but **NOT used** — Birch and Rowan resolve
+  to `rogue/` and `taar/` first, and the importer matches exact filenames so an
+  `_hyo`/`_spilledpizza` suffix can never be picked silently. Recorded here
+  because the art is in the tree.
