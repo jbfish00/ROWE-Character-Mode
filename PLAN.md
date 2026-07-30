@@ -32,11 +32,15 @@ fixed, the 1% legendary encounter rule is shipped, and the whole suite is green.
 | Name length | **12/12 LANDED** (`71cebcbe`), verified by a new headless suite |
 | Legendary rule | **SHIPPED** — 1% wild encounters, offered-until-caught, no roaming |
 | Modes | **Randomized Party Mode SHIPPED** (`c231ba2a`), exclusive with Character Mode; both Game Modes menus de-drifted and pinned |
-| Readiness | **GREEN** — selftest 33/33 and **all 11 suite runs passing**, tallies identical to the pre-change baseline. Re-run 2026-07-30 on the overworld/back-pic build `dd0315b8758e8ae7d50c2e9b52881e8d` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, starter red 6 + normal 6) — every tally matches the `08eef0c3…` and `e2b047c4…` baselines exactly. Anchors regenerated first; map digest `004c513b2eeaa584`, and a second `gen_anchors.py` run reproduces `anchors.lua` byte-identical |
+| Readiness | **GREEN** — selftest 33/33 and **all 12 suite runs passing**. Re-run 2026-07-30 on the learnset-fix build `b14e874be3f1122a039909132eadf898` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, **basculegion_hang 34**, starter red 6 + normal 6) — the eleven pre-existing tallies match the `08eef0c3…`, `e2b047c4…` and `dd0315b8…` baselines EXACTLY, and `basculegion_hang` is the new run. Anchors regenerated first; map digest `b827823a240e436f`, and a second `gen_anchors.py` run reproduces `anchors.lua` byte-identical |
+| Species tables | **COMPLETE** — every species with a `gBaseStats` row now has a learnset, a name and front/back pic coords, gated by `tools/check_species_tables.py`. Four had none and **hung the game** (§7.11) |
 
 Every number above was re-derived from this tree, not taken from notes.
-⚠️ The suite is **11 runs**, not 12 — §0 and §7 both said 12 while §8 said 11.
-Nine scripts plus the two `starter_regression` paths; the 11 tallies are in §7.
+⚠️ The suite is **12 runs as of 2026-07-30** — ten scripts plus the two
+`starter_regression` paths. It was **11** before that (nine scripts), and for
+three sessions §0 and §7 claimed 12 while §8 correctly said 11: that 12th was a
+*phantom*. The 12th now is real — `basculegion_hang_e2e`, §7.11. Do not fold the
+two facts together; the tallies are in §7.
 
 ---
 
@@ -712,7 +716,83 @@ a 0 onto Red's roster — each exits 1 and names the culprit.
     gate** — teaching it the roster would have meant a per-battle roster-filtered
     reroll, i.e. a different feature. Exclusion was the smaller, honest answer.
 
-**Nothing here blocks a playthrough.** 1-3, 5, 6, 7, **9** and **10** are done,
+11. ✅ **A LIVE HANG: four species had base stats and no learnset — FIXED
+    2026-07-30.** `SPECIES_WYRDEER`, `SPECIES_URSALUNA`, `SPECIES_BASCULEGION`
+    and `SPECIES_OVERQWIL` had base stats, dex numbers, pre-evolution rows and
+    (since `fix_species_graphics.py`) complete battle graphics — and **no row in
+    `gLevelUpLearnsets`, `gSpeciesNames`, `gMonFrontPicCoords` or
+    `gMonBackPicCoords`.** Those are designated-initializer arrays, so the
+    learnset entry was a **NULL pointer**, and three shipping loops walk that row
+    with a `u8` index and no bound: `MonTryLearningNewMove`
+    (`src/pokemon.c:4864`, every level-up), `MonTryLearningNewMoveEvolution`
+    (`:9525`, every evolution) and the field-move scan in
+    `src/party_menu.c:2851` (opening the party menu). A NULL read never yields
+    `LEVEL_UP_END`, so the index wraps forever — **the game hangs.**
+
+    ⚠️ **Basculegion is reachable in ordinary play.**
+    `[SPECIES_BASCULIN_WHITE_STRIPED] = {{EVO_LEVEL, 43, SPECIES_BASCULEGION}}`
+    is a LIVE row (its red- and blue-striped siblings use the dead
+    `EVO_HUSIAN`), and Basculin-White-Striped has **22 wild-encounter slots**.
+    Catch one, level it to 43, and the next level-up — or one press of A on it in
+    the party menu — wedges the game.
+
+    **The full fix landed:** all four learnsets copied verbatim from the donor
+    (every move constant in them already exists here), their four pointer rows,
+    their four `gSpeciesNames` rows spelled in full (12-char names, so the
+    donor's `"Basculegn"` abbreviation is not needed), and front/back pic coords
+    matching `[SPECIES_NONE]` — because these four still render the
+    `CircledQuestionMark` placeholder, which is what that row describes. They
+    remain art-blocked; that is accepted.
+
+    ⚠️ **A clean build proved nothing here, and neither did five green graphics
+    tables.** `fix_species_graphics.py` fills front pic / back pic / palette /
+    shiny palette / front anims and knows nothing about learnsets, names or
+    coords — so these four looked *fixed* and hung anyway.
+    **`tools/check_species_tables.py`** now asserts that every species with a
+    `gBaseStats` row has a row in all four of the other tables. Before the fix it
+    named exactly those four; after, it is clean. Proven by negative control
+    twice: delete the Basculegion pointer row and it exits 1 naming Basculegion;
+    raise its extracted-set floor and it refuses to run rather than pass on an
+    empty set.
+    ⚠️ The remaining ~18 Legends: Arceus species (Kleavor, Sneasler, Enamorus,
+    the 15 `_HISUI` forms) have **no base stats either**, so a `gBaseStats`-keyed
+    check correctly ignores them. Do not port those.
+
+    **And the hang itself is now a suite run.** `tools/mgba_scripts/
+    basculegion_hang_e2e.lua` (34/34) creates a real Basculin-White-Striped at
+    Lv43, evolves it through `GetEvolutionTargetSpecies`, and then RUNS all three
+    scans via the new `CM_REQ_LEARNSET_PROBE` mailbox request. **The assertion is
+    that they return at all.** Negative control: rebuild with the Basculegion
+    pointer row deleted and the walk hits its 250 cap instead of `LEVEL_UP_END`,
+    then the very next two requests **never answer** — the emulator is wedged
+    inside the unbounded loop, and every later step fails on its deadline. That
+    is the hang, reproduced on demand.
+
+12. ✅ **11 learn-on-evolution moves restored** (2026-07-30). `LEVEL_UP_MOVE(0, X)`
+    is this engine's **learn-on-evolution sentinel**, not level zero —
+    `MonTryLearningNewMoveEvolution` grants it when a mon evolves, and there are
+    330 such rows here. Eleven the donor has were missing: Gallade/Sacred Sword,
+    Garchomp/Dig, Honchkrow/Beat Up, Houndstone/Last Respects, Inteleon/Snipe
+    Shot, Malamar/Inverse Room, Meowscarada/Flower Trick, Pawmot/Supercell Slam,
+    Quaquaval/Aqua Step, Skeledirge/Torch Song, Tinkaton/Gigaton Hammer.
+
+    **Seven moves that were in the ROM but unobtainable now have an acquisition
+    path**: Gigaton Hammer, Flower Trick, Aqua Step, Torch Song, Last Respects,
+    Supercell Slam, Inverse Room. Gigaton Hammer in particular means the
+    already-proven `gigaton_reselect_e2e` no-twice-in-a-row gate can be reached
+    in actual play for the first time.
+
+    ⚠️ **Only 3 of the 11 arrays differed from the donor by the level-0 line
+    alone** (Houndstone, Inteleon — where ours had it commented out — and
+    Tinkaton). The other 8 have further, pre-existing divergences that were
+    deliberately NOT touched: Garchomp keeps our `(0, MOVE_CRUNCH)` **and** gains
+    the donor's `(0, MOVE_DIG)`, so it now grants both on evolution where the
+    donor grants only Dig; Gallade, Malamar, Meowscarada, Quaquaval, Skeledirge,
+    Honchkrow and Pawmot each differ from the donor in other rows too. Anyone
+    resyncing these arrays wholesale should read that list first.
+
+**Nothing here blocks a playthrough.** 1-3, 5, 6, 7, **9**, **10**, **11** and
+**12** are done,
 green and **committed** (`0f321aea`..`e5e40c83`). **4 was implemented and
 reverted** — it is art-blocked after all, and the way that was established
 (render the tilemap, do not reason about coordinates) is now the rule for this
@@ -753,6 +833,7 @@ python3 tools/check_name_lengths.py         # 16 checks — the gate for the 12/
 python3 tools/check_species_names.py        # abbreviated-species-name detector
 python3 tools/check_mode_menus.py           # menu row <-> pory switch case drift (§7.10)
 python3 tools/check_mode_menus.py --self-test   # its negative control
+python3 tools/check_species_tables.py       # base stats <-> learnset/name/coords (§7.11)
 python3 tools/mgba_scripts/gen_anchors.py   # MUST re-run after every build
 ```
 
@@ -765,15 +846,18 @@ CM_SAV_OUT=~/Documents/rowe_fixture.sav timeout 300 "$MGBA" \
     --script tools/mgba_scripts/make_fixture_save.lua pokeemerald.gba
 ```
 
-The suite (11 runs). Logs are ~130 MB; `timeout` exit 124 is NORMAL — the harness
-never exits on its own and the RESULT line prints well before the timeout:
+The suite (**12 runs** as of 2026-07-30 — ten scripts plus the two
+`starter_regression` paths; `basculegion_hang_e2e` is the new tenth script, a
+REAL script and not the phantom 12th §0 used to miscount). Logs are ~130 MB;
+`timeout` exit 124 is NORMAL — the harness never exits on its own and the
+RESULT line prints well before the timeout:
 
 ```bash
 MGBA="../Character Hacks/Seaglass-Character-Mode/tools/mgba_src/build/mgba-headless"
 export CM_SAV=~/Documents/rowe_fixture.sav
 for t in boot_smoke continue_smoke ot_roundtrip_e2e legendary_encounter_e2e \
          encounter_doc_e2e catch_gate_e2e pc_sweep_e2e johto_gym_e2e \
-         gigaton_reselect_e2e; do
+         gigaton_reselect_e2e basculegion_hang_e2e; do
     timeout 100 "$MGBA" --script tools/mgba_scripts/$t.lua pokeemerald.gba > /tmp/$t.log 2>&1
     echo "$t $(grep -aoE 'RESULT: [A-Z]+' /tmp/$t.log | tail -1)"
 done
@@ -825,6 +909,16 @@ scripts in `tools/mgba_scripts/`.
   break it on purpose and watch it fail before believing it.
 - **A `.sav` is a build artifact now.** Regenerate; never check one in, and never
   point `CM_SAV` at a pre-2026-07-26 file.
+- **A species table with no row for a species is a NULL/zero entry, not an
+  absence, and the engine does not check.** `gLevelUpLearnsets`, `gSpeciesNames`,
+  `gMonFrontPicCoords`, `gMonBackPicCoords` and the five graphics tables are all
+  designated-initializer arrays. A missing `gLevelUpLearnsets` row is a NULL
+  pointer walked by three UNBOUNDED `u8` loops — it **hangs the game** (§7.11).
+  A missing coords row is `size = 0`. `tools/check_species_tables.py` is the
+  gate; run it after anything that adds a species.
+- **`fix_species_graphics.py` fills FIVE tables and nothing else.** A species can
+  pass every graphics check, build clean, render fine, and still hang. Filling
+  the tables you thought of is not evidence about the tables you did not.
 - **`make compare` will never pass** and is not the goal — this is a fork, not a
   byte-matching decomp.
 - **`gen_anchors.py` must be re-run after every build**, or the mGBA scripts read
