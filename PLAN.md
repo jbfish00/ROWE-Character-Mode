@@ -900,7 +900,20 @@ imported, and the tools to import a newly staged one already exist.
    *other four games'* behaviour. Anyone following it would have filed a bug that
    was not one.
 2. ✅ **The overworld / back-pic importer (§7.8b)** — DONE 2026-07-30.
-2b. **The 6 automatable playthrough gaps**, in the order worth doing them:
+2b. **The 6 automatable playthrough gaps.** ⚠️ **The first one is half-written on
+   a local branch: `mode-exclusion-wip` (not pushed).** 722 lines of
+   `tools/mgba_scripts/mode_exclusion_e2e.lua` plus harness helpers, a
+   `gen_anchors.py` export and a 9-line `character_mode_selftest.c` addition. It
+   was abandoned **immediately before its negative controls ran**, so it is not
+   built, not run, and **not believed**. The mailbox enum was *not* renumbered —
+   the append-only rule held, which was the main corruption risk.
+   **Before trusting any of it:** *"the party was not re-rolled"* passes both when
+   the exclusion works **and when `RandomizeParty` never ran at all** — the exact
+   shape of the four vacuous checks this repo has already shipped. Build with the
+   `battle_main.c` guard removed, confirm the assertion goes **red**, restore.
+   Only then is it evidence. Full brief is in that branch's commit message.
+
+   In the order worth doing them:
    the **Randomized Party Mode exclusion** (items 21/22/23 — newest feature, four
    enforcement points, zero e2e coverage, and item 22 guards a screen with no
    cancel button, so it is the highest risk per unit of work); **Tobias's
