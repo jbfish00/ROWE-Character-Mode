@@ -28,11 +28,11 @@ fixed, the 1% legendary encounter rule is shipped, and the whole suite is green.
 | Branch | `character-mode`, **working tree clean and PUSHED to `origin`** (`jbfish00/ROWE-Character-Mode`) as of 2026-07-29. Last feature commit `c231ba2a`, followed by an anchors commit, a doc commit and a credits commit — don't treat any single hash as HEAD, and re-check with `git rev-list --left-right --count origin/character-mode...HEAD` rather than trusting this row |
 | Rosters | **AUDITED** — 236 table slots / **206 selectable** / 30 hidden, **3,359** rows, **every row sourced** |
 | Threshold | **ENFORCED** — the only game in the project where it is |
-| Sprites | **184 of 236** have a front pic (52 are `CHAR_ASSET_NONE`) — 168 → 184 on 2026-07-29: 9 newly staged from the 07-28 harvest, 7 Frontier Brains closed with zero new art. Back pics **12 of 236**, overworld **101 of 236**, both now TOOLING-blocked not art-blocked (§7.8b) |
+| Sprites | **184 of 236** have a front pic (52 are `CHAR_ASSET_NONE`) — 168 → 184 on 2026-07-29: 9 newly staged from the 07-28 harvest, 7 Frontier Brains closed with zero new art. Overworld **128 of 236** and back pics **19 of 236** as of 2026-07-30 (was 101 / 12) — §7.8b is DONE, the tooling block is gone, and what is left in those two slots is acquisition |
 | Name length | **12/12 LANDED** (`71cebcbe`), verified by a new headless suite |
 | Legendary rule | **SHIPPED** — 1% wild encounters, offered-until-caught, no roaming |
 | Modes | **Randomized Party Mode SHIPPED** (`c231ba2a`), exclusive with Character Mode; both Game Modes menus de-drifted and pinned |
-| Readiness | **GREEN** — selftest 33/33 and **all 11 suite runs passing**, tallies identical to the pre-change baseline. Re-run 2026-07-29 on the art-pass build `e2b047c4…` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, starter red 6 + normal 6) — every tally matches the `08eef0c3…` baseline exactly |
+| Readiness | **GREEN** — selftest 33/33 and **all 11 suite runs passing**, tallies identical to the pre-change baseline. Re-run 2026-07-30 on the overworld/back-pic build `dd0315b8758e8ae7d50c2e9b52881e8d` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, starter red 6 + normal 6) — every tally matches the `08eef0c3…` and `e2b047c4…` baselines exactly. Anchors regenerated first; map digest `004c513b2eeaa584`, and a second `gen_anchors.py` run reproduces `anchors.lua` byte-identical |
 
 Every number above was re-derived from this tree, not taken from notes.
 ⚠️ The suite is **11 runs**, not 12 — §0 and §7 both said 12 while §8 said 11.
@@ -531,36 +531,86 @@ a 0 onto Red's roster — each exits 1 and names the culprit.
    **Paul, Zoey, Nando, Trip, Sawyer, Goh, Chloe, Cerise, Tobias** — have no
    usable trainer-sprite art in ANY format anywhere searched; the anime cast that
    does exist is uniformly DS/Essentials scale and would need a redraw, not a
-   conversion. Also **224 of 236 have no back pic** (only 12 exist) and **135
-   have no overworld art** — and for those two the blocker is now TOOLING, not
-   art: 19 characters have overworld sheets and 6 have back pics staged and
-   unused, because the only importer that reads `sprites/donors/` handles front
-   pics alone. See §7.8b.
+   conversion. The other two slots were TOOLING-blocked and are not any more
+   (§7.8b, landed 2026-07-30): **108 of 236 still have no overworld art** and
+   **217 have no back pic**, and every staged sheet is now imported, so both are
+   acquisition again.
    ⚠️ The importer counts **238**, not 236 — it iterates the roster data, which
    still holds Cogita and Iscan, the two dropped from `gCharacters` entirely.
    Do not chase the off-by-one against the table's count; it is this.
    Sourcing leads are in `../Character Hacks/SPRITE_PLAN.md`, which is the
    runbook — not this file.
 
-8b. **The next real sprite item is an overworld/back-pic importer, and it is
-   CODE, not acquisition.** `import_sprites.py` resolves its donors from a
-   scratchpad path that no longer exists, so it cannot be re-run; nothing else
-   reads `sprites/donors/` for anything but front pics. Sitting staged and unused
-   right now: **overworld sheets** for Jessie, James, Lyra, Korrina, Acerola,
-   Nessa, Bede, Larry, Oak, Birch, Rowan, Anabel, Brandon, Greta, Lucy, Noland,
-   Palmer, Spenser, Tucker (19), and **back pics** for Blue, Lance, Lyra, Phoebe,
-   Calem, Serena (6).
-   ⚠️ **The overworld slot is NOT the same one-line alias fix the Frontier Brains'
-   front pics were.** `emit_characters.py` gates it deliberately — an id is
-   accepted only if it is in `imported_ow.txt` or ends in `_NORMAL`, because
-   plain NPC ids use a short anim table and **CRASH** when used as the player's
-   own overworld sprite. Birch, Anabel, Brandon, Greta, Lucy, Noland, Spenser and
-   Tucker all have an `OBJ_EVENT_GFX_*` constant already and it looks like a free
-   win; wiring it would ship a crash. The slot needs a real player-grade 18-frame
-   sheet built by `build_ow_sheet()`, which is what the staged donor strips are
-   for. Also note `taar_gap/noland_back.png` has the right 64x256 geometry but
-   ships RGBA with **56** distinct colours against 4bpp's 16 — a deliberate
-   quantisation call, not an importer's guess.
+8b. ✅ **The overworld / back-pic importer — BUILT AND LANDED 2026-07-30.**
+   `tools/character_mode/import_donor_ow_backs.py`. **Overworld 101 → 128 of
+   236, back pics 12 → 19 of 236.** Roster data untouched: `characters.h` differs
+   from HEAD on the `.owGfxId` and `.backPic` lines and nothing else, and
+   `audit_rosters.py` still reads 236 characters / 2775 entries / 206 selectable.
+
+   **It found MORE staged art than this section had counted: 27 overworld
+   sheets, not 19, and 7 back pics, not 6.** The extra six overworld characters
+   — **Calem, Serena, Elio, Selene, Victor, Gloria** — have `<name>_ow_walking.png`
+   in `sprites/donors/rogue/`, which the hand count missed because it looked for
+   `<name>_ow.png`. The extra back pic is **Noland** (the `taar_gap` file below).
+   Two more came from staging `taar_gap/` into `sprites/donors/`: **Elm** (IAG)
+   and **Kiawe** (PurrfectDoodle). Nothing else in `sprites/donors/` resolves to
+   an overworld strip or a back pic for a character that lacks one — the tool
+   iterates the whole roster, so that count is now derived, not eyeballed.
+
+   ⚠️ **The `OBJ_EVENT_GFX_*` shortcut was NOT taken, and the gate is proven.**
+   Every id it emits is a real 18-frame player-grade sheet, added to a new
+   `imported_ow_donor.txt` that `emit_characters.py` now reads alongside
+   `imported_ow.txt`. Negative control: delete `OBJ_EVENT_GFX_CM_ANABEL` from
+   that allowlist and Anabel falls back to `CHAR_ASSET_NONE` — she does **not**
+   fall through to `OBJ_EVENT_GFX_ANABEL` (id 70), which is the crash.
+
+   ⚠️ **A frame width is not in a filename, and guessing it builds clean.**
+   `taar/nessa_ow.png` is 288x32 — which is 18 frames of 16 px OR 9 of 32, and
+   every 288-wide strip in `sprites/donors/` is the latter. The first version
+   assumed 16, sliced every Nessa frame down the middle and paired the halves;
+   it compiled, linked and produced a plausible-looking sprite sheet. **It was
+   caught only by decoding the built `.4bpp` back out and looking at it.** The
+   width is now MEASURED (worst sprite content either side of a candidate frame
+   boundary; 144-wide sheets score 0-8 at fw=16, 288-wide ones score 19-21 at
+   fw=16 and 0 at fw=32 — two clusters, threshold 12 between them). Proven by
+   negative control: raise the threshold to 999 and Nessa comes out 16x576
+   again.
+
+   ⚠️ **"Backdrop at index 0" is not free.** `import_sprites.normalize_indexed()`
+   returns a donor UNTOUCHED when it already fits 16 slots, backdrop wherever it
+   sits — and `taar/phoebe_back.png` has its backdrop at slot **6**. The GBA
+   renders sprite slot 0 transparent whatever its colour, so that ships an opaque
+   box round Phoebe and makes slot 6's real colour vanish. `bg_to_slot0()` rotates
+   it, losslessly.
+
+   ⚠️ **Two of the tables it writes are POSITIONAL, not designated** —
+   `gTrainerBackPicTable` and `gSpriteTemplateTable_TrainerBackSprites` are
+   indexed by back-pic id with no `[id] =` on the rows. Those two blocks are
+   emitted sorted by id and appended at the end of their arrays; the other
+   seven arrays are designated and order-free.
+
+   **`taar_gap/noland_back.png` — quantised, deliberately.** 64x256 (right
+   geometry) but fully-opaque RGBA with 56 distinct colours. Chosen: mask
+   everything within 8/255 per channel of the corner colour to slot 0 (alpha
+   cannot do it — the backdrop is opaque), MEDIANCUT the rest to 15, dithering
+   OFF. Compared against the original as a decoded contact sheet: hat, glove,
+   vest and skin ramps survive, the loss is one step of forearm shading. The
+   importer **refuses to quantise any file not named in its `QUANTISE` table**
+   (negative control: remove the entry, it exits 1 and writes nothing).
+
+   **Refuses to run, and re-derives its whole output** — the discipline
+   `import_donor_front_pics.py` learned the hard way. Negative controls: hide
+   `taar/korrina_ow.png` or `taar/lance_back.png` and it exits 1 naming them with
+   nothing written. **But "still resolves" is not "still the same art":** hiding
+   `rogue/oak_ow.png` leaves `taar/oak_ow.png` standing, the refusal never fires,
+   the run reports "0 new" — and Oak's sprite silently becomes a different
+   artist's drawing. Found by negative control, not by reasoning. A source change
+   is now reported loudly (it is legitimate, it is never silent).
+
+   Also fixed here: `import_sprites._block`'s after-anchor insert prepends a
+   `\n` it never strips, so every re-run leaves one more blank line and the file
+   is not byte-stable. The new tool anchors past the anchor line's own newline —
+   three consecutive runs reproduce all 50 outputs byte-identical.
 
 9. ✅ **Trainer card now draws all 16 badges — Johto in gold on a second row.**
    The old in-code comment blamed a tile collision ("a 16-badge loop pushes x to
@@ -666,8 +716,9 @@ a 0 onto Red's roster — each exits 1 and names the culprit.
 green and **committed** (`0f321aea`..`e5e40c83`). **4 was implemented and
 reverted** — it is art-blocked after all, and the way that was established
 (render the tilemap, do not reason about coordinates) is now the rule for this
-repo's screens. **8 is the only real art wall left**, and it is acquisition:
-every staged sprite is already imported.
+repo's screens. **8b landed 2026-07-30.** **8 is the only real art wall left**,
+and it is acquisition: as of that pass every staged sprite in every slot is
+imported, and the tools to import a newly staged one already exist.
 
 ### So what is actually next, in order
 
@@ -677,13 +728,9 @@ every staged sprite is already imported.
    play. Three of the four newest features (the trainer card's second badge row,
    Randomized Party Mode's prompts, the wild-encounter block) are code- and
    render-verified but have never been seen by a player.
-2. **An overworld / back-pic importer (§7.8b)** — this is now ahead of art
-   acquisition, because it is CODE and the art is already on disk: 19 overworld
-   sheets and 6 back pics staged and unreachable, because the only tool that
-   reads `sprites/donors/` does front pics alone. Do NOT take the
-   `OBJ_EVENT_GFX_*` shortcut; it ships a crash (the gate is there on purpose).
-3. **Art acquisition (§7.8)** — 52 characters with no front pic, 224 with no back
-   pic, 135 with no overworld art. Runbook is
+2. ✅ **The overworld / back-pic importer (§7.8b)** — DONE 2026-07-30.
+3. **Art acquisition (§7.8)** — 52 characters with no front pic, 217 with no back
+   pic, 108 with no overworld art. Runbook is
    `../Character Hacks/SPRITE_PLAN.md`. Nine of the 52 (Paul, Zoey, Nando, Trip,
    Sawyer, Goh, Chloe, Cerise, Tobias) have no usable art anywhere searched, so
    the realistic ceiling here is well short of 236. The two open permission
