@@ -25,24 +25,57 @@ fixed, the 1% legendary encounter rule is shipped, and the whole suite is green.
 
 | | |
 |---|---|
-| Branch | `character-mode`, **working tree clean and PUSHED to `origin`** (`jbfish00/ROWE-Character-Mode`) as of 2026-07-29. Last feature commit `c231ba2a`, followed by an anchors commit, a doc commit and a credits commit — don't treat any single hash as HEAD, and re-check with `git rev-list --left-right --count origin/character-mode...HEAD` rather than trusting this row |
+| Branch | `character-mode`, **working tree clean and level with `origin`** (`jbfish00/ROWE-Character-Mode`) as of 2026-07-31, HEAD `0ea10468`. 20 commits landed 07-29 → 07-31. ⚠️ **Do not trust this row for HEAD** — several passes ended with a doc or anchors commit after the last feature commit. Re-check: `git rev-list --left-right --count origin/character-mode...HEAD` (want `0  0`) |
 | Rosters | **AUDITED** — 236 table slots / **206 selectable** / 30 hidden, **3,359** rows, **every row sourced** |
 | Threshold | **ENFORCED** — the only game in the project where it is |
 | Sprites | **184 of 236** have a front pic (52 are `CHAR_ASSET_NONE`) — 168 → 184 on 2026-07-29: 9 newly staged from the 07-28 harvest, 7 Frontier Brains closed with zero new art. Overworld **128 of 236** and back pics **19 of 236** as of 2026-07-30 (was 101 / 12) — §7.8b is DONE, the tooling block is gone, and what is left in those two slots is acquisition |
 | Name length | **12/12 LANDED** (`71cebcbe`), verified by a new headless suite |
 | Legendary rule | **SHIPPED** — 1% wild encounters, offered-until-caught, no roaming |
 | Modes | **Randomized Party Mode SHIPPED** (`c231ba2a`), exclusive with Character Mode; both Game Modes menus de-drifted and pinned |
-| Readiness | **GREEN** — selftest 33/33 and **all 15 suite runs passing**. Re-run 2026-07-30 on the mode-exclusion build `4ba53b39dc7f2c02bf1f023a95302467` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, basculegion_hang 34, mode_exclusion 72, char_select 11, **tobias_legend 14**, starter red 6 + normal 6) — the fourteen pre-existing tallies match the `08eef0c3…`, `e2b047c4…`, `dd0315b8…` and `b14e874b…` baselines EXACTLY, and `mode_exclusion` is the new run. Anchors regenerated first; map digest `45cfe76e469fceeb`, and a second `gen_anchors.py` run reproduces `anchors.lua` byte-identical |
+| Readiness | **GREEN** — selftest 33/33 and **all 15 suite runs passing**. Re-run 2026-07-30 on the mode-exclusion build `4ba53b39dc7f2c02bf1f023a95302467` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, basculegion_hang 34, mode_exclusion 72, char_select 11, **tobias_legend 14**, starter red 6 + normal 6) — the fourteen pre-existing tallies match the `08eef0c3…`, `e2b047c4…`, `dd0315b8…` and `b14e874b…` baselines EXACTLY, and `tobias_legend` was the newest run. **Run it with `bash tools/mgba_scripts/run_suite.sh`** (new 2026-07-30; there was no runner before, so every session re-derived fifteen invocations from prose). Anchors regenerated first; map digest `45cfe76e469fceeb`, and a second `gen_anchors.py` run reproduces `anchors.lua` byte-identical |
 | Species tables | **COMPLETE** — every species with a `gBaseStats` row now has a learnset, a name and front/back pic coords, gated by `tools/check_species_tables.py`. Four had none and **hung the game** (§7.11) |
 
 Every number above was re-derived from this tree, not taken from notes.
-⚠️ The suite is **15 runs as of 2026-07-30** — thirteen scripts plus the two
+⚠️ The suite is **15 runs as of 2026-07-31** — thirteen scripts plus the two
 `starter_regression` paths. It was **11** before that (nine scripts), and for
 three sessions §0 and §7 claimed 12 while §8 correctly said 11: that 12th was a
 *phantom*. The 12th now is real — `basculegion_hang_e2e`, §7.11 — and the 13th is
 `mode_exclusion_e2e`, the 14th `character_select_e2e` and the 15th
 `tobias_legendary_e2e` — all §7 item 2b. Do not fold the
 two facts together; the tallies are in §7.
+
+### If you are picking this up cold, start here
+
+**Nothing is broken and nothing is half-done.** Tree clean, level with origin,
+15/15 green. There is no rescue work waiting.
+
+1. **Sanity-check the tree before believing any of this**, in this order —
+   `make -j$(nproc)` → `python3 tools/mgba_scripts/gen_anchors.py` →
+   `bash tools/mgba_scripts/run_suite.sh`. Expect ROM md5
+   `4ba53b39dc7f2c02bf1f023a95302467`, map digest `45cfe76e469fceeb`, and a
+   second `gen_anchors.py` run that changes nothing.
+   ⚠️ **Regenerate anchors BEFORE the suite, and never judge staleness by
+   mtime** — `make` relinks on every invocation, so the ROM is always newer.
+2. **The largest remaining work is a human playthrough**, and it is genuinely
+   the user's to do, not an agent's. §7 item 1. But read
+   `../Character Hacks/game_plans/rowe_playthrough_coverage.md` first: **20 of
+   the 32 checklist items are already machine-proven**, so most of that list
+   does not need a person at all.
+3. **The single highest-value thing anyone can do costs ten minutes**: look at
+   the game. 27 overworld sheets and 7 back pics landed 2026-07-30, verified as
+   decoded artifacts, and **nobody has watched one animate.**
+4. **Two things are waiting on the user specifically** and no agent should do
+   them: send the two drafted art-permission requests
+   (`../Character Hacks/PERMISSION_REQUESTS.md`), and decide about the TAAR
+   attribution debt (§7 item 3).
+5. **One automatable test gap is left**, not six — item 11, the in-game trade
+   path (§7 item 2b). Everything else in that list is closed.
+
+⚠️ **The most useful habit in this repo, stated once:** when a new assertion
+goes green on the first try, **break it on purpose before believing it.** Five
+vacuously-passing checks have shipped here. The fifth was caught by tooling
+(`run_suite.sh` now fails a run that reports PASS with zero assertions) — the
+first four were caught by someone happening to notice.
 
 ---
 
