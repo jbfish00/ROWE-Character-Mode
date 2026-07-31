@@ -35,8 +35,17 @@ SYMBOLS = [
     "gActionSelectionCursor",
     "BattleScript_CharacterBallBlock",
     "gTestMenuPtr",
+    # VAR_RESULT. A menu drive that only watches sMenu cannot tell "the A press
+    # was swallowed" from "the answer was NO and nothing changed" -- both leave
+    # the game exactly as it was. Writing a sentinel here and waiting for the
+    # menu's own answer to replace it makes that distinction observable.
+    "gSpecialVar_Result",
     "CB2_StartWallClock",
     "Common_Eventscript_Gym_Leader_Falkner",
+    # The two halves of the Character Mode / Randomized Party Mode exclusion
+    # prompt (data/maps/InsideOfTruck/scripts.pory), invoked via CM_REQ_RUN_SCRIPT.
+    "Start_EventScript_Character_Mode",
+    "Start_EventScript_Game_Mode_Random_Party",
     "gBattleMons",
     "gBattleResults",
     "gMoveSelectionCursor",

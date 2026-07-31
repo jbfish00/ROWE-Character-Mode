@@ -79,6 +79,7 @@ do
         "battleMon_moves",
         "battleMon_nickname",
         "battleMon_otName",
+        "saveBlock1_flags",
     }
     if base then
         for i, n in ipairs(names) do
@@ -98,6 +99,50 @@ function H.wr32(a, v) emu:write32(a, v) end
 
 function H.hex(v, width)
     return string.format("0x%0" .. (width or 8) .. "X", v)
+end
+
+-- ------------------------------------------------------------- raw flag bits
+--
+-- SaveBlock1.flags, addressed through the offsetof() beacon rather than a
+-- literal (the offset moved once already when SaveBlock1 grew). This is for the
+-- one case the mailbox cannot serve: the pump only runs from CB2_Overworld and
+-- BattleMainCB2, so while another CB2 owns the screen -- the Character Mode
+-- menu, for instance -- there is no in-game way to change a flag at all.
+--
+-- ONLY valid for flags below SPECIAL_FLAGS_START (16384); the specials live in
+-- a separate array and are refused here rather than silently writing the wrong
+-- byte. ALWAYS confirm a raw write with CM_REQ_QUERY_FLAG, which reads it back
+-- through the game's own FlagGet, so a wrong address can never read as a pass.
+
+local SPECIAL_FLAGS_START = 16384
+
+function H.flagByteAddr(flagId)
+    if flagId >= SPECIAL_FLAGS_START then
+        error("H.flag*: " .. flagId .. " is a SPECIAL flag, not in SaveBlock1.flags")
+    end
+    if not H.off.saveBlock1_flags then
+        error("H.flag*: gTestStructOffsets has no saveBlock1_flags -- re-run gen_anchors.py")
+    end
+    return H.rd32(H.anchors.gSaveBlock1Ptr) + H.off.saveBlock1_flags
+           + math.floor(flagId / 8)
+end
+
+function H.rawFlagGet(flagId)
+    local bit = 2 ^ (flagId % 8)
+    return math.floor(H.rd8(H.flagByteAddr(flagId)) / bit) % 2
+end
+
+function H.rawFlagSet(flagId, on)
+    local addr = H.flagByteAddr(flagId)
+    local bit = 2 ^ (flagId % 8)
+    local v = H.rd8(addr)
+    local had = math.floor(v / bit) % 2
+    if on and had == 0 then
+        H.wr8(addr, v + bit)
+    elseif (not on) and had == 1 then
+        H.wr8(addr, v - bit)
+    end
+    return H.rawFlagGet(flagId)
 end
 
 -- ---------------------------------------------------------------- assertions

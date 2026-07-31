@@ -455,6 +455,15 @@ const u16 gTestStructOffsets[] =
     offsetof(struct BattlePokemon, moves),               // [5]
     offsetof(struct BattlePokemon, nickname),            // [6]
     offsetof(struct BattlePokemon, otName),              // [7]
+    // [8] Lets a test set/clear an arbitrary flag DIRECTLY in SaveBlock1 at a
+    // moment when the mailbox pump is not running -- the pump is only called
+    // from CB2_Overworld and BattleMainCB2, so while the Character Mode menu
+    // owns the screen there is no other way to change game state at all. That
+    // is exactly the state mode_exclusion_e2e has to create to prove the START
+    // commit clears FLAG_FULL_RANDOMIZED_MODE. Reads go back through the
+    // mailbox's FlagGet, so the raw write is always cross-checked by the game's
+    // own accessor rather than trusted.
+    offsetof(struct SaveBlock1, flags),                  // [8]
 };
 
 void CharacterMode_PumpTestMailbox(void)
