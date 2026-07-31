@@ -18,6 +18,10 @@ Checks, per character:
      (entries that are not canonical bases must be shadowed)
   4. starterCount <= roster length, and starterCount == 0 only on a roster that
      really is all-legendary (ui_mode_menu.c reads 0 as "hand out roster[0]")
+  5. every starterCount == 0 character has a PINNED_STARTERS entry and its
+     roster[0] still matches it. Check 4 passes happily on a REORDERED roster,
+     and roster[0] is handed out verbatim -- so reordering is a data-only,
+     silent way to change which Pokemon the player actually receives.
 
 Exit code 1 on any finding; prints a summary either way.
 """
@@ -29,6 +33,18 @@ import sys
 HERE = os.path.dirname(os.path.abspath(__file__))
 TARGET = os.path.abspath(os.path.join(HERE, "..", ".."))
 
+
+
+# Characters whose starter is FIXED because their roster is all-legendary.
+# ui_mode_menu.c's RandomizeStarterSelection hands these roster[0] verbatim
+# rather than rolling, so the starter's identity is decided by roster ORDER --
+# which is data, and reorders silently. User ruling 2026-07-28: an
+# all-legendary roster DOES get a starter, and always the same one.
+#   Tobias: roster is [DARKRAI, LATIOS]; he must always start with Darkrai,
+#   never a coin flip, and never Latios.
+PINNED_STARTERS = {
+    "Tobias": "SPECIES_DARKRAI",
+}
 
 def read(path):
     with open(path, encoding="utf-8") as f:
@@ -184,6 +200,27 @@ def main():
                     "would lose its starter choice"
                     % (name, len(ordinary), "y" if len(ordinary) == 1 else "ies",
                        ", ".join(ordinary[:4])))
+            # ...and the check above still passes if the roster is REORDERED.
+            # RandomizeStarterSelection hands out roster[0] verbatim, so the
+            # identity of the starter is decided entirely by which entry is
+            # first -- a silent, data-only way to change what the player gets.
+            # PINNED_STARTERS records the ruling; a reorder now fails loudly
+            # instead of quietly swapping Darkrai for Latios.
+            expected = PINNED_STARTERS.get(name)
+            if expected is None:
+                findings.append(
+                    "%s: starterCount is 0, so this character is handed "
+                    "roster[0] (%s) as a fixed starter, but no entry exists in "
+                    "PINNED_STARTERS -- add one recording which species is "
+                    "intended, or a roster reorder will change it silently"
+                    % (name, entries[0]))
+            elif entries[0] != expected:
+                findings.append(
+                    "%s: fixed starter is roster[0] = %s, but PINNED_STARTERS "
+                    "says %s. Either the roster was reordered (the player now "
+                    "gets a different starter) or the pin is out of date -- "
+                    "resolve deliberately, do not just update the pin"
+                    % (name, entries[0], expected))
         roster_set = set(entries)
         for e in entries:
             entry_total += 1
