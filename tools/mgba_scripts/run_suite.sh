@@ -72,7 +72,7 @@ run() {
     fi
 }
 
-# 14 runs: twelve scripts plus the two starter_regression paths.
+# 15 runs: thirteen scripts plus the two starter_regression paths.
 run boot           boot_smoke.lua
 run continue       continue_smoke.lua         CM_SAV="$FIX"
 run ot_roundtrip   ot_roundtrip_e2e.lua
@@ -85,18 +85,20 @@ run gigaton        gigaton_reselect_e2e.lua   CM_SAV="$FIX"
 run basculegion    basculegion_hang_e2e.lua
 run mode_exclusion mode_exclusion_e2e.lua
 run char_select    character_select_e2e.lua
+run tobias_legend  tobias_legendary_e2e.lua
 run starter_red    starter_regression.lua     CM_PATH=red
 run starter_normal starter_regression.lua     CM_PATH=normal
 
 echo
 if [ "$fail" -eq 0 ]; then
-    echo "ALL 14 RUNS PASS.  logs: $OUT"
+    echo "ALL 15 RUNS PASS.  logs: $OUT"
 else
     echo "SUITE FAILED -- read the logs in $OUT"
 fi
 # Expected tallies (compare EVERY run, a changed tally is a regression even if
 # the run still says PASS): boot 2, continue 2, ot_roundtrip 19, legendary 20,
 # encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9,
-# basculegion 34, mode_exclusion 72, char_select 11, starter red 6 + normal 6.
+# basculegion 34, mode_exclusion 72, char_select 11, tobias_legend 14,
+# starter red 6 + normal 6.
 # Selftest 33/33.
 exit "$fail"

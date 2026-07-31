@@ -32,16 +32,16 @@ fixed, the 1% legendary encounter rule is shipped, and the whole suite is green.
 | Name length | **12/12 LANDED** (`71cebcbe`), verified by a new headless suite |
 | Legendary rule | **SHIPPED** — 1% wild encounters, offered-until-caught, no roaming |
 | Modes | **Randomized Party Mode SHIPPED** (`c231ba2a`), exclusive with Character Mode; both Game Modes menus de-drifted and pinned |
-| Readiness | **GREEN** — selftest 33/33 and **all 14 suite runs passing**. Re-run 2026-07-30 on the mode-exclusion build `4ba53b39dc7f2c02bf1f023a95302467` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, basculegion_hang 34, mode_exclusion 72, **char_select 11**, starter red 6 + normal 6) — the thirteen pre-existing tallies match the `08eef0c3…`, `e2b047c4…`, `dd0315b8…` and `b14e874b…` baselines EXACTLY, and `mode_exclusion` is the new run. Anchors regenerated first; map digest `45cfe76e469fceeb`, and a second `gen_anchors.py` run reproduces `anchors.lua` byte-identical |
+| Readiness | **GREEN** — selftest 33/33 and **all 15 suite runs passing**. Re-run 2026-07-30 on the mode-exclusion build `4ba53b39dc7f2c02bf1f023a95302467` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, basculegion_hang 34, mode_exclusion 72, char_select 11, **tobias_legend 14**, starter red 6 + normal 6) — the fourteen pre-existing tallies match the `08eef0c3…`, `e2b047c4…`, `dd0315b8…` and `b14e874b…` baselines EXACTLY, and `mode_exclusion` is the new run. Anchors regenerated first; map digest `45cfe76e469fceeb`, and a second `gen_anchors.py` run reproduces `anchors.lua` byte-identical |
 | Species tables | **COMPLETE** — every species with a `gBaseStats` row now has a learnset, a name and front/back pic coords, gated by `tools/check_species_tables.py`. Four had none and **hung the game** (§7.11) |
 
 Every number above was re-derived from this tree, not taken from notes.
-⚠️ The suite is **14 runs as of 2026-07-30** — twelve scripts plus the two
+⚠️ The suite is **15 runs as of 2026-07-30** — thirteen scripts plus the two
 `starter_regression` paths. It was **11** before that (nine scripts), and for
 three sessions §0 and §7 claimed 12 while §8 correctly said 11: that 12th was a
 *phantom*. The 12th now is real — `basculegion_hang_e2e`, §7.11 — and the 13th is
-`mode_exclusion_e2e` and the 14th is `character_select_e2e`, both §7 item 2b.
-Do not fold the
+`mode_exclusion_e2e`, the 14th `character_select_e2e` and the 15th
+`tobias_legendary_e2e` — all §7 item 2b. Do not fold the
 two facts together; the tallies are in §7.
 
 ---
@@ -950,13 +950,32 @@ imported, and the tools to import a newly staged one already exist.
    repo's vacuous-pass ledger, and the first one caught by tooling rather than by
    someone noticing.
 
-   Still open, in the order worth doing them:
-   the **Randomized Party Mode exclusion** (items 21/22/23 — newest feature, four
-   enforcement points, zero e2e coverage, and item 22 guards a screen with no
-   cancel button, so it is the highest risk per unit of work); **Tobias's
-   always-Darkrai starter** and **repeatable legendaries** (16/15 — a
-   `starter_regression` variant, cheap); **the in-game trade path** (11 — audited
-   statically, never driven); and **costume persistence across a reload** (26).
+   ✅ **Item 15 is closed too** — `tobias_legendary_e2e.lua` (14 assertions).
+   His pool is exactly `{Darkrai, Latios}`, he **IS** flagged as an
+   all-legendary roster, and after marking one CAUGHT the pool is **still 2**.
+   That is the §1.2 exemption: applying the normal offered-until-caught filter
+   to a wholly legendary roster would empty his wild pool and leave him nothing
+   to meet.
+   ⭐ **It carries an in-band contrast, and that is the point.** *"The pool still
+   has 2 entries after catching one"* passes when the exemption works **and**
+   when `repeatable` is hardwired TRUE for everybody — which would quietly make
+   every character's legendaries farmable. So the run asks the same question as
+   **Red** immediately afterwards and requires the opposite answer
+   (`repeatable == 0`, and a different pool size). **A test that only ever
+   exercises the exempt case cannot tell an exemption from a no-op.**
+
+   That leaves **one** automatable gap, not six:
+
+   Still open — **one** automatable gap and one partial, not six:
+   - **Item 11, the in-game trade path.** Statically audited only:
+     `CharacterMode_SweepPartyToPC` is called from `trade.c:3905,4422,5723` and
+     no run drives a real trade.
+   - **Item 26, costume persistence across a reload.** Party and mode are
+     covered by `continue_smoke` + `ot_roundtrip_e2e`; the costume var is not.
+   ⚠️ **Do not re-plan items 3, 15, 16 or 21/22/23 from an older copy of this
+   list** — they are done, and an earlier version of this section described
+   15/16 as "a `starter_regression` variant, cheap", which was wrong: they
+   needed character-menu steering that did not exist.
 3. **Art acquisition (§7.8)** — 52 characters with no front pic, 217 with no back
    pic, 108 with no overworld art. Runbook is
    `../Character Hacks/SPRITE_PLAN.md`. Nine of the 52 (Paul, Zoey, Nando, Trip,
@@ -996,7 +1015,7 @@ python3 tools/check_mode_menus.py           # menu row <-> pory switch case drif
 python3 tools/check_mode_menus.py --self-test   # its negative control
 python3 tools/check_species_tables.py       # base stats <-> learnset/name/coords (§7.11)
 python3 tools/mgba_scripts/gen_anchors.py   # MUST re-run after every build
-bash tools/mgba_scripts/run_suite.sh        # all 14 runs, one line each (NEW 2026-07-30)
+bash tools/mgba_scripts/run_suite.sh        # all 15 runs, one line each (NEW 2026-07-30)
 ```
 
 ⚠️ **`run_suite.sh` is new because there was no runner** — every session
@@ -1021,7 +1040,7 @@ CM_SAV_OUT=~/Documents/rowe_fixture.sav timeout 300 "$MGBA" \
     --script tools/mgba_scripts/make_fixture_save.lua pokeemerald.gba
 ```
 
-The suite (**14 runs** as of 2026-07-30 — twelve scripts plus the two
+The suite (**15 runs** as of 2026-07-30 — thirteen scripts plus the two
 `starter_regression` paths; `basculegion_hang_e2e` is the new tenth script, a
 REAL script and not the phantom 12th §0 used to miscount). Logs are ~130 MB;
 `timeout` exit 124 is NORMAL — the harness never exits on its own and the
