@@ -33,6 +33,10 @@ return {
     HandleInputChooseAction = 0x08071F64,
     HandleInputChooseAction_2 = 0x0819F4E0,
     HandleInputChooseMove = 0x08072860,
+    cursorRow = 0x0203F774,
+    starterselection = 0x0203F776,
+    characterSelection = 0x0203F77A,
+    genSelection = 0x0203F77C,
     -- Mailbox request ids, derived from the enum in
     -- src/character_mode_selftest.c. Never hand-mirror these.
     REQ = {

@@ -59,11 +59,20 @@ run() {
     st=$(grep -oE 'CM-SELFTEST: [0-9]+ passed, [0-9]+ failed' "$OUT/$name.log" | tail -1)
     printf '%-18s %-13s pass=%-4s fail=%-4s %s\n' \
         "$name" "${res:-NO-RESULT}" "${p:-?}" "${f:-?}" "$st"
-    # No RESULT line at all means the run wedged before finishing -- also a failure.
-    [ "$res" = "RESULT: PASS" ] || fail=1
+    # No RESULT line at all means the run wedged before finishing -- a failure.
+    # And a run that reports PASS with ZERO assertions is not a pass either: a
+    # script that calls H.finish() before D.run() emits an empty
+    # "PASSED 0, FAILED 0 / RESULT: PASS" summary at load time, which is
+    # indistinguishable from success to anything that only reads RESULT.
+    # Caught exactly that way on 2026-07-30.
+    if [ "$res" != "RESULT: PASS" ] || [ -z "${p:-}" ] || [ "${p:-0}" -eq 0 ]; then
+        fail=1
+        [ "${p:-0}" -eq 0 ] 2>/dev/null && \
+            echo "    ^ ZERO assertions ran -- treating as failure, not a pass"
+    fi
 }
 
-# 13 runs: eleven scripts plus the two starter_regression paths.
+# 14 runs: twelve scripts plus the two starter_regression paths.
 run boot           boot_smoke.lua
 run continue       continue_smoke.lua         CM_SAV="$FIX"
 run ot_roundtrip   ot_roundtrip_e2e.lua
@@ -75,17 +84,19 @@ run johto_gym      johto_gym_e2e.lua
 run gigaton        gigaton_reselect_e2e.lua   CM_SAV="$FIX"
 run basculegion    basculegion_hang_e2e.lua
 run mode_exclusion mode_exclusion_e2e.lua
+run char_select    character_select_e2e.lua
 run starter_red    starter_regression.lua     CM_PATH=red
 run starter_normal starter_regression.lua     CM_PATH=normal
 
 echo
 if [ "$fail" -eq 0 ]; then
-    echo "ALL 13 RUNS PASS.  logs: $OUT"
+    echo "ALL 14 RUNS PASS.  logs: $OUT"
 else
     echo "SUITE FAILED -- read the logs in $OUT"
 fi
 # Expected tallies (compare EVERY run, a changed tally is a regression even if
 # the run still says PASS): boot 2, continue 2, ot_roundtrip 19, legendary 20,
 # encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9,
-# basculegion 34, mode_exclusion 72, starter red 6 + normal 6. Selftest 33/33.
+# basculegion 34, mode_exclusion 72, char_select 11, starter red 6 + normal 6.
+# Selftest 33/33.
 exit "$fail"

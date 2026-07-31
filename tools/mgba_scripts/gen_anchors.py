@@ -63,6 +63,15 @@ SYMBOLS = [
 LOCAL_SYMBOLS = [
     "HandleInputChooseAction",
     "HandleInputChooseMove",
+    # ui_mode_menu.c's file-static menu state. Exported so a test can steer the
+    # character screen CLOSED-LOOP -- read where the cursor actually is, press,
+    # read again -- instead of counting keypresses blind. Blind counts are what
+    # every earlier intro drive got wrong: mGBA drops short taps, so a fixed
+    # number of presses lands somewhere different every run.
+    "cursorRow",            # u8  -- 0 starter, 3 generation, 4 character
+    "starterselection",     # u8
+    "characterSelection",   # u16 -- 1-based index into gCharacters
+    "genSelection",         # u8
 ]
 
 

@@ -32,15 +32,16 @@ fixed, the 1% legendary encounter rule is shipped, and the whole suite is green.
 | Name length | **12/12 LANDED** (`71cebcbe`), verified by a new headless suite |
 | Legendary rule | **SHIPPED** — 1% wild encounters, offered-until-caught, no roaming |
 | Modes | **Randomized Party Mode SHIPPED** (`c231ba2a`), exclusive with Character Mode; both Game Modes menus de-drifted and pinned |
-| Readiness | **GREEN** — selftest 33/33 and **all 13 suite runs passing**. Re-run 2026-07-30 on the mode-exclusion build `4ba53b39dc7f2c02bf1f023a95302467` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, basculegion_hang 34, **mode_exclusion 72**, starter red 6 + normal 6) — the twelve pre-existing tallies match the `08eef0c3…`, `e2b047c4…`, `dd0315b8…` and `b14e874b…` baselines EXACTLY, and `mode_exclusion` is the new run. Anchors regenerated first; map digest `45cfe76e469fceeb`, and a second `gen_anchors.py` run reproduces `anchors.lua` byte-identical |
+| Readiness | **GREEN** — selftest 33/33 and **all 14 suite runs passing**. Re-run 2026-07-30 on the mode-exclusion build `4ba53b39dc7f2c02bf1f023a95302467` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, basculegion_hang 34, mode_exclusion 72, **char_select 11**, starter red 6 + normal 6) — the thirteen pre-existing tallies match the `08eef0c3…`, `e2b047c4…`, `dd0315b8…` and `b14e874b…` baselines EXACTLY, and `mode_exclusion` is the new run. Anchors regenerated first; map digest `45cfe76e469fceeb`, and a second `gen_anchors.py` run reproduces `anchors.lua` byte-identical |
 | Species tables | **COMPLETE** — every species with a `gBaseStats` row now has a learnset, a name and front/back pic coords, gated by `tools/check_species_tables.py`. Four had none and **hung the game** (§7.11) |
 
 Every number above was re-derived from this tree, not taken from notes.
-⚠️ The suite is **13 runs as of 2026-07-30** — eleven scripts plus the two
+⚠️ The suite is **14 runs as of 2026-07-30** — twelve scripts plus the two
 `starter_regression` paths. It was **11** before that (nine scripts), and for
 three sessions §0 and §7 claimed 12 while §8 correctly said 11: that 12th was a
 *phantom*. The 12th now is real — `basculegion_hang_e2e`, §7.11 — and the 13th is
-`mode_exclusion_e2e`, §7 item 2b. Do not fold the
+`mode_exclusion_e2e` and the 14th is `character_select_e2e`, both §7 item 2b.
+Do not fold the
 two facts together; the tallies are in §7.
 
 ---
@@ -923,6 +924,32 @@ imported, and the tools to import a newly staged one already exist.
    control proves it can still fail tomorrow.** Prefer both; if only one, the
    in-band one.
 
+   ✅ **Items 3 and 16 are also closed** — `character_select_e2e.lua`
+   (11 assertions) steers the menu to **Tobias, character 233**, and commits him.
+   Every other drive in this suite takes the DEFAULT Gen I/Red pick, so the
+   *scrolling* half of the game's only selection mechanism had never been
+   exercised. The commit grants **Darkrai at level 10**, not Latios.
+   ⭐ **He is one keypress away, not 232.** `CycleCharacter` skips entries whose
+   generation does not match `genSelection` and **wraps** — and Tobias is the
+   LAST selectable character in generation 4, so a single LEFT from anywhere in
+   gen 4 lands on him.
+   ⚠️ **The steering is closed-loop and that is not optional.** `gen_anchors.py`
+   now exports `ui_mode_menu.c`'s file-static `cursorRow` / `genSelection` /
+   `characterSelection`, so each phase reads where the menu actually is rather
+   than counting keypresses — mGBA drops short taps, so a fixed count lands
+   somewhere different every run. Same lesson `gTestMenuPtr` taught the intro.
+
+   ⚠️ **Writing it exposed a hole in `run_suite.sh`, now fixed.** The first
+   version called `H.finish()` after `D.run()` — but `D.run()` calls it itself,
+   so the extra call fired at script LOAD and emitted
+   `PASSED 0, FAILED 0 / RESULT: PASS` before a single frame ran. Had the real
+   run then wedged, that empty summary would have been the only one and the
+   runner, which reads the LAST `RESULT` line, would have called it a pass.
+   **A run reporting PASS with zero assertions is now a failure**, proven by a
+   throwaway script that does nothing but call `H.finish()`. Fifth entry in this
+   repo's vacuous-pass ledger, and the first one caught by tooling rather than by
+   someone noticing.
+
    Still open, in the order worth doing them:
    the **Randomized Party Mode exclusion** (items 21/22/23 — newest feature, four
    enforcement points, zero e2e coverage, and item 22 guards a screen with no
@@ -969,7 +996,7 @@ python3 tools/check_mode_menus.py           # menu row <-> pory switch case drif
 python3 tools/check_mode_menus.py --self-test   # its negative control
 python3 tools/check_species_tables.py       # base stats <-> learnset/name/coords (§7.11)
 python3 tools/mgba_scripts/gen_anchors.py   # MUST re-run after every build
-bash tools/mgba_scripts/run_suite.sh        # all 13 runs, one line each (NEW 2026-07-30)
+bash tools/mgba_scripts/run_suite.sh        # all 14 runs, one line each (NEW 2026-07-30)
 ```
 
 ⚠️ **`run_suite.sh` is new because there was no runner** — every session
@@ -994,7 +1021,7 @@ CM_SAV_OUT=~/Documents/rowe_fixture.sav timeout 300 "$MGBA" \
     --script tools/mgba_scripts/make_fixture_save.lua pokeemerald.gba
 ```
 
-The suite (**13 runs** as of 2026-07-30 — eleven scripts plus the two
+The suite (**14 runs** as of 2026-07-30 — twelve scripts plus the two
 `starter_regression` paths; `basculegion_hang_e2e` is the new tenth script, a
 REAL script and not the phantom 12th §0 used to miscount). Logs are ~130 MB;
 `timeout` exit 124 is NORMAL — the harness never exits on its own and the
