@@ -32,14 +32,15 @@ fixed, the 1% legendary encounter rule is shipped, and the whole suite is green.
 | Name length | **12/12 LANDED** (`71cebcbe`), verified by a new headless suite |
 | Legendary rule | **SHIPPED** — 1% wild encounters, offered-until-caught, no roaming |
 | Modes | **Randomized Party Mode SHIPPED** (`c231ba2a`), exclusive with Character Mode; both Game Modes menus de-drifted and pinned |
-| Readiness | **GREEN** — selftest 33/33 and **all 12 suite runs passing**. Re-run 2026-07-30 on the learnset-fix build `b14e874be3f1122a039909132eadf898` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, **basculegion_hang 34**, starter red 6 + normal 6) — the eleven pre-existing tallies match the `08eef0c3…`, `e2b047c4…` and `dd0315b8…` baselines EXACTLY, and `basculegion_hang` is the new run. Anchors regenerated first; map digest `b827823a240e436f`, and a second `gen_anchors.py` run reproduces `anchors.lua` byte-identical |
+| Readiness | **GREEN** — selftest 33/33 and **all 13 suite runs passing**. Re-run 2026-07-30 on the mode-exclusion build `4ba53b39dc7f2c02bf1f023a95302467` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, basculegion_hang 34, **mode_exclusion 72**, starter red 6 + normal 6) — the twelve pre-existing tallies match the `08eef0c3…`, `e2b047c4…`, `dd0315b8…` and `b14e874b…` baselines EXACTLY, and `mode_exclusion` is the new run. Anchors regenerated first; map digest `45cfe76e469fceeb`, and a second `gen_anchors.py` run reproduces `anchors.lua` byte-identical |
 | Species tables | **COMPLETE** — every species with a `gBaseStats` row now has a learnset, a name and front/back pic coords, gated by `tools/check_species_tables.py`. Four had none and **hung the game** (§7.11) |
 
 Every number above was re-derived from this tree, not taken from notes.
-⚠️ The suite is **12 runs as of 2026-07-30** — ten scripts plus the two
+⚠️ The suite is **13 runs as of 2026-07-30** — eleven scripts plus the two
 `starter_regression` paths. It was **11** before that (nine scripts), and for
 three sessions §0 and §7 claimed 12 while §8 correctly said 11: that 12th was a
-*phantom*. The 12th now is real — `basculegion_hang_e2e`, §7.11. Do not fold the
+*phantom*. The 12th now is real — `basculegion_hang_e2e`, §7.11 — and the 13th is
+`mode_exclusion_e2e`, §7 item 2b. Do not fold the
 two facts together; the tallies are in §7.
 
 ---
@@ -900,20 +901,29 @@ imported, and the tools to import a newly staged one already exist.
    *other four games'* behaviour. Anyone following it would have filed a bug that
    was not one.
 2. ✅ **The overworld / back-pic importer (§7.8b)** — DONE 2026-07-30.
-2b. **The 6 automatable playthrough gaps.** ⚠️ **The first one is half-written on
-   a local branch: `mode-exclusion-wip` (not pushed).** 722 lines of
-   `tools/mgba_scripts/mode_exclusion_e2e.lua` plus harness helpers, a
-   `gen_anchors.py` export and a 9-line `character_mode_selftest.c` addition. It
-   was abandoned **immediately before its negative controls ran**, so it is not
-   built, not run, and **not believed**. The mailbox enum was *not* renumbered —
-   the append-only rule held, which was the main corruption risk.
-   **Before trusting any of it:** *"the party was not re-rolled"* passes both when
-   the exclusion works **and when `RandomizeParty` never ran at all** — the exact
-   shape of the four vacuous checks this repo has already shipped. Build with the
-   `battle_main.c` guard removed, confirm the assertion goes **red**, restore.
-   Only then is it evidence. Full brief is in that branch's commit message.
+2b. **The automatable playthrough gaps — 3 of 6 are now CLOSED** (`25a81317`,
+   2026-07-30). `tools/mgba_scripts/mode_exclusion_e2e.lua` (72 assertions) covers
+   items **21, 22 and 23** plus enforcement point 3. **The suite is 13 runs.**
 
-   In the order worth doing them:
+   ⭐ **It is anchored twice, and the second anchor is the one to copy.**
+   *"The party was not re-rolled"* passes equally when the exclusion works and
+   when `RandomizeParty` never ran — the exact shape of the four vacuous checks
+   this repo has shipped. So:
+   - **In-band, permanently:** the same run turns Character Mode **off** with RPM
+     still on and asserts the party **IS** re-rolled (≥3 of 4 slots changing
+     species *and* move 0). If the feature ever goes dead, that control goes red
+     first, in **every future run** — not just at commit time.
+   - **Out-of-band, at commit time:** rebuilt with the
+     `&& !FlagGet(FLAG_CHARACTER_MODE)` half of the `battle_main.c` guard deleted
+     → **PASSED 64 / FAILED 8**, and the 8 were exactly the roster-protection
+     assertions (slot species 25/1/4/7 → 298/1309/820/463, every move 0
+     rewritten). Nothing else moved. Guard restored, md5 back to `4ba53b39…`.
+
+   **A commit-time negative control proves the test could fail once. An in-band
+   control proves it can still fail tomorrow.** Prefer both; if only one, the
+   in-band one.
+
+   Still open, in the order worth doing them:
    the **Randomized Party Mode exclusion** (items 21/22/23 — newest feature, four
    enforcement points, zero e2e coverage, and item 22 guards a screen with no
    cancel button, so it is the highest risk per unit of work); **Tobias's
@@ -959,7 +969,21 @@ python3 tools/check_mode_menus.py           # menu row <-> pory switch case drif
 python3 tools/check_mode_menus.py --self-test   # its negative control
 python3 tools/check_species_tables.py       # base stats <-> learnset/name/coords (§7.11)
 python3 tools/mgba_scripts/gen_anchors.py   # MUST re-run after every build
+bash tools/mgba_scripts/run_suite.sh        # all 13 runs, one line each (NEW 2026-07-30)
 ```
+
+⚠️ **`run_suite.sh` is new because there was no runner** — every session
+re-derived the invocation from `CLAUDE.md` prose and re-hit the same traps. It
+encodes them: mint a fresh fixture `.sav` every time (they are build artifacts,
+and a pre-2026-07-26 one is refused by design); never judge a run by its exit
+code, because `H.finish()` does not stop the emulator so **every** run is killed
+by `timeout` and exits 124; and redirect before grepping. It still cannot tell
+you whether `anchors.lua` is stale — **`make` then `gen_anchors.py` first**, and
+judge staleness by whether re-running changes the file, never by mtime.
+
+The expected tallies are in a comment at the bottom of the script. **Compare
+every one of them**: a changed tally is a regression even when the run still
+says PASS.
 
 **Save fixtures are GENERATED, never checked in.** Any `.sav` predating the
 name-length change is refused by the ROM:
@@ -970,7 +994,7 @@ CM_SAV_OUT=~/Documents/rowe_fixture.sav timeout 300 "$MGBA" \
     --script tools/mgba_scripts/make_fixture_save.lua pokeemerald.gba
 ```
 
-The suite (**12 runs** as of 2026-07-30 — ten scripts plus the two
+The suite (**13 runs** as of 2026-07-30 — eleven scripts plus the two
 `starter_regression` paths; `basculegion_hang_e2e` is the new tenth script, a
 REAL script and not the phantom 12th §0 used to miscount). Logs are ~130 MB;
 `timeout` exit 124 is NORMAL — the harness never exits on its own and the
