@@ -1,0 +1,37 @@
+{
+  "_comment": "Reconstructed by tools/character_mode/rebuild_taar_index.py. TAAR is organised <asset type>/<creator>/..., so upstream_path IS the attribution. Every entry is an EXACT content match against the upstream tree -- no filename heuristics.",
+  "commit": "36b619ecd1d2df95212b375c95803af78414f78a",
+  "files": {
+    "birch_ow_hyo.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "86c6f94a05f6444f5670bd3e730eb6d1",
+      "upstream_path": "Overworld Trainer Sprites/hyo/prof_birch.png"
+    },
+    "elm_ow.png": {
+      "also_at": [],
+      "author": "IAG",
+      "md5": "b0a9b3332f3c6a81aea8bacc81376f8f",
+      "upstream_path": "Overworld Trainer Sprites/IAG/prof_elm.png"
+    },
+    "kiawe_ow.png": {
+      "also_at": [],
+      "author": "PurrfectDoodle",
+      "md5": "2308e0af5b22acb0560ed4c54c4d76ba",
+      "upstream_path": "Overworld Trainer Sprites/PurrfectDoodle/FRLG/kiawe.png"
+    },
+    "noland_back.png": {
+      "also_at": [],
+      "author": "kwenio",
+      "md5": "888a5e9e17601421032d1dec25d59a74",
+      "upstream_path": "Trainer Back Sprites/kwenio/noland.png"
+    },
+    "rowan_ow_spilledpizza.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "9ec4ca2a86d69245221235a523b35b73",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/DP_prof_rowan.png"
+    }
+  },
+  "source": "https://github.com/TeamAquasHideout/Team-Aquas-Asset-Repo"
+}

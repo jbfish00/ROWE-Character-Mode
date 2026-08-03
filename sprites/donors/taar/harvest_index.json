@@ -1,0 +1,1519 @@
+{
+  "_comment": "Reconstructed by tools/character_mode/rebuild_taar_index.py. TAAR is organised <asset type>/<creator>/..., so upstream_path IS the attribution. Every entry is an EXACT content match against the upstream tree -- no filename heuristics.",
+  "commit": "36b619ecd1d2df95212b375c95803af78414f78a",
+  "files": {
+    "aaron_ow.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "6dc97496955c4c64a903c9969e4af1b8",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/DP_aaron.png"
+    },
+    "acerola_front.png": {
+      "also_at": [],
+      "author": "Kasen",
+      "md5": "1a40055684e0077896b68b71abd9f033",
+      "upstream_path": "Trainer Front Sprites/Kasen/acerola.png"
+    },
+    "acerola_ow.png": {
+      "also_at": [],
+      "author": "Kasen",
+      "md5": "d02adb323f415d1214774f2968bb0dbb",
+      "upstream_path": "Overworld Trainer Sprites/Kasen/acerola.png"
+    },
+    "anabel_ow.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "0910f07f95e3a96e19cb008a9d648f67",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/frontier_brains/anabel.png"
+    },
+    "anabel_ow_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "cadcb3e59474b68f1ea942b3bdee6531",
+      "upstream_path": "Overworld Trainer Sprites/hyo/frontier_brains/anabel.png"
+    },
+    "archer_front.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "331054c76a035d9a1b319a2e374532b0",
+      "upstream_path": "Trainer Front Sprites/Black Fragrant/archer.png"
+    },
+    "archer_ow.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "4004f2d15b46b77e452a6f1869d918f5",
+      "upstream_path": "Overworld Trainer Sprites/Black Fragrant/archer.png"
+    },
+    "archie_ow.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "8d1ab2cf0f37347f180928cc229cfca4",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/team_aqua/archie.png"
+    },
+    "archie_ow_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "dc823acfba1f4789ad0fdc819d9c0031",
+      "upstream_path": "Overworld Trainer Sprites/hyo/team_aqua/archie.png"
+    },
+    "ariana_front.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "a73cdf24689c1daf2eadfaad0c6b784b",
+      "upstream_path": "Trainer Front Sprites/Black Fragrant/ariana.png"
+    },
+    "ariana_ow.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "f0d7309a2427a42dbacc8889e5879855",
+      "upstream_path": "Overworld Trainer Sprites/Black Fragrant/ariana.png"
+    },
+    "barry_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "5ff4c88df28b49291350a366676d500f",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Barry.png"
+    },
+    "barry_ow.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "f57be91e201f193af2f46ed2d6887643",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/DP_barry.png"
+    },
+    "bede_ow.png": {
+      "also_at": [],
+      "author": "PurrfectDoodle",
+      "md5": "18b5f84b8854930ce9a8618a0ec27f25",
+      "upstream_path": "Overworld Trainer Sprites/PurrfectDoodle/FRLG/bede.png"
+    },
+    "bertha_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "7e6a59cc7b24e6eed04404cafa68cd4a",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Bertha.png"
+    },
+    "bertha_ow.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "bf77e29db83c0f007e7e0604a5d9c9b9",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/DP_bertha.png"
+    },
+    "birch_ow.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "e2afc7c2b52a1b75dffcf2074c1ff52f",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/prof_birch.png"
+    },
+    "birch_ow_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "86c6f94a05f6444f5670bd3e730eb6d1",
+      "upstream_path": "Overworld Trainer Sprites/hyo/prof_birch.png"
+    },
+    "blaine_ow.png": {
+      "also_at": [],
+      "author": "Horo",
+      "md5": "ac05e21109c2d491e56cefeddf87a989",
+      "upstream_path": "Overworld Trainer Sprites/Horo/Blaine.png"
+    },
+    "blue_back.png": {
+      "also_at": [],
+      "author": "ShinyDragonHunter",
+      "md5": "016507901898d68b1b54e244c1f4101b",
+      "upstream_path": "Trainer Back Sprites/ShinyDragonHunter/rival.png"
+    },
+    "blue_ow.png": {
+      "also_at": [],
+      "author": "Horo",
+      "md5": "5fe3aafa5cb998dedc8143e3089cd0c3",
+      "upstream_path": "Overworld Trainer Sprites/Horo/Blue.png"
+    },
+    "blue_ow_field_move.png": {
+      "also_at": [],
+      "author": "grintoul",
+      "md5": "85de7d6b0dba39d659852ba4aaff2644",
+      "upstream_path": "Overworld Trainer Sprites/grintoul/Green (additions to kwenios original sprites)/field_move.png"
+    },
+    "blue_ow_fishing.png": {
+      "also_at": [],
+      "author": "grintoul",
+      "md5": "8a3f6441d1656154b5de0d677ee5321c",
+      "upstream_path": "Overworld Trainer Sprites/grintoul/Green (additions to kwenios original sprites)/fishing.png"
+    },
+    "blue_ow_running.png": {
+      "also_at": [],
+      "author": "grintoul",
+      "md5": "908fdc52a7512fe08ef93dc770b95019",
+      "upstream_path": "Overworld Trainer Sprites/grintoul/Green (additions to kwenios original sprites)/running.png"
+    },
+    "blue_ow_surfing.png": {
+      "also_at": [],
+      "author": "grintoul",
+      "md5": "194bf4560240d71f01030cc91900c7ed",
+      "upstream_path": "Overworld Trainer Sprites/grintoul/Green (additions to kwenios original sprites)/surfing.png"
+    },
+    "blue_ow_walking.png": {
+      "also_at": [],
+      "author": "grintoul",
+      "md5": "7aa2c59e70b0ab54827f1c3421508c7c",
+      "upstream_path": "Overworld Trainer Sprites/grintoul/Green (additions to kwenios original sprites)/walking.png"
+    },
+    "brandon_ow.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "fd05cf92efd4c778beddee8ba3f631f5",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/frontier_brains/brandon.png"
+    },
+    "brandon_ow_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "e59d0d9442f434692a357aa38766e4eb",
+      "upstream_path": "Overworld Trainer Sprites/hyo/frontier_brains/brandon.png"
+    },
+    "brawly_ow.png": {
+      "also_at": [],
+      "author": "Bivurnum",
+      "md5": "e12c65c2eae0101def878541ca140395",
+      "upstream_path": "Overworld Trainer Sprites/Bivurnum/added_walking_anims_to_vanilla_npcs/gym_leaders/brawly.png"
+    },
+    "brawly_ow_2.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "541ca2bde560fa5098a84edd34f61f5a",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/gym_leaders/brawly.png"
+    },
+    "brawly_ow_3.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "e90c08d4358eefdbea5b704c12952dbd",
+      "upstream_path": "Overworld Trainer Sprites/hyo/gym_leaders/brawly.png"
+    },
+    "brendan_back.png": {
+      "also_at": [],
+      "author": "KyuZee",
+      "md5": "eb35566435d922219d606ef487b39d42",
+      "upstream_path": "Trainer Back Sprites/KyuZee/brendan_oras.png"
+    },
+    "brendan_back_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "e0ac25a272609255fc1c1113137bc8d2",
+      "upstream_path": "Trainer Back Sprites/hyo/brendan_back_pic.png"
+    },
+    "brendan_front.png": {
+      "also_at": [],
+      "author": "KyuZee",
+      "md5": "d04dcc0a144de686cd212dd25d4b7659",
+      "upstream_path": "Trainer Front Sprites/KyuZee/brendan_oras.png"
+    },
+    "brendan_front_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "c6ee4807c14c7e8cd34a88bc1909d33f",
+      "upstream_path": "Trainer Front Sprites/hyo/brendan_front_pic.png"
+    },
+    "brendan_ow_field_move.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "fd59ddaf993bcd5247291de181432719",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/brendan/field_move.png"
+    },
+    "brendan_ow_field_move_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "b874be3b2e54fd4aa534866128183925",
+      "upstream_path": "Overworld Trainer Sprites/hyo/brendan/field_move.png"
+    },
+    "brendan_ow_fishing.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "ad4981720322c82168038c721a42ea64",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/brendan/fishing.png"
+    },
+    "brendan_ow_fishing_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "ef161ee55559b89231e0d7f4cc7b7730",
+      "upstream_path": "Overworld Trainer Sprites/hyo/brendan/fishing.png"
+    },
+    "brendan_ow_running.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "94b4a8fbf6e76a8c081ed7bbbc230240",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/brendan/running.png"
+    },
+    "brendan_ow_running_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "18fa8dedf9dbe4c058692f911d954be1",
+      "upstream_path": "Overworld Trainer Sprites/hyo/brendan/running.png"
+    },
+    "brendan_ow_surfing.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "bffe6644185ae47d43694c9f59f31b5b",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/brendan/surfing.png"
+    },
+    "brendan_ow_surfing_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "613ecc994387ce27daa5075616ecd633",
+      "upstream_path": "Overworld Trainer Sprites/hyo/brendan/surfing.png"
+    },
+    "brendan_ow_walking.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "29dbbaa180e781845085abc06c6e2f51",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/brendan/walking.png"
+    },
+    "brendan_ow_walking_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "67864704bcf45461dac1044658e2d582",
+      "upstream_path": "Overworld Trainer Sprites/hyo/brendan/walking.png"
+    },
+    "brock_ow.png": {
+      "also_at": [],
+      "author": "Horo",
+      "md5": "36b009d1223af5c519c9ffa562636266",
+      "upstream_path": "Overworld Trainer Sprites/Horo/brock.png"
+    },
+    "bugsy_front.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "7558ed5b6b28d2049063c9750baf25ba",
+      "upstream_path": "Trainer Front Sprites/Black Fragrant/bugsy.png"
+    },
+    "bugsy_front_2.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "e489771facf8bd6622a698450f4bbcc6",
+      "upstream_path": "Trainer Front Sprites/Galaxeeh/leader_bugsy.PNG"
+    },
+    "bugsy_ow.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "558eeb33188873cde65a295bf6cdc2c5",
+      "upstream_path": "Overworld Trainer Sprites/Black Fragrant/bugsy.png"
+    },
+    "bugsy_ow_2.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "fec608aefdacc46106f49cb70e6b6f74",
+      "upstream_path": "Overworld Trainer Sprites/Galaxeeh/bugsy.png"
+    },
+    "byron_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "10a52f508167429d5bae26c68d8c8305",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Byron.png"
+    },
+    "byron_front_2.png": {
+      "also_at": [],
+      "author": "iriv24",
+      "md5": "2135c31529699182f889d4b636b866c2",
+      "upstream_path": "Trainer Front Sprites/iriv24/byron.png"
+    },
+    "byron_ow.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "76d76ee1075eaaa7d1e3ac1f30721fb5",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/DP_byron.png"
+    },
+    "candice_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "eea3af99f73011dd9accee323d4b980d",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Candice.png"
+    },
+    "candice_front_2.png": {
+      "also_at": [],
+      "author": "iriv24",
+      "md5": "0ac9e727816125231201ddcdf90f4e0c",
+      "upstream_path": "Trainer Front Sprites/iriv24/candice.png"
+    },
+    "candice_ow.png": {
+      "also_at": [],
+      "author": "PurrfectDoodle",
+      "md5": "8758e16eefac6f791c9f843f1a90c822",
+      "upstream_path": "Overworld Trainer Sprites/PurrfectDoodle/RSE/candice.png"
+    },
+    "chuck_front.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "5f6a95c3a59e1ddf7b28c3006c26a800",
+      "upstream_path": "Trainer Front Sprites/Black Fragrant/chuck.png"
+    },
+    "chuck_ow.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "3c1cc27df1ac5fccf91d1f5c09bdf940",
+      "upstream_path": "Overworld Trainer Sprites/Black Fragrant/chuck.png"
+    },
+    "clair_front.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "a8205847ecded3f4cb12abaecbab533a",
+      "upstream_path": "Trainer Front Sprites/Black Fragrant/clair.png"
+    },
+    "clair_ow.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "4a3929159110182f6b2a0452d7878485",
+      "upstream_path": "Overworld Trainer Sprites/Black Fragrant/clair.png"
+    },
+    "clay_front.png": {
+      "also_at": [],
+      "author": "Kasen",
+      "md5": "14e6366f1be8c73aa860f0e004ddfc68",
+      "upstream_path": "Trainer Front Sprites/Kasen/leader_clay.png"
+    },
+    "clay_ow.png": {
+      "also_at": [],
+      "author": "Kasen",
+      "md5": "f9a06cc3783ac26badf88443dafab0dc",
+      "upstream_path": "Overworld Trainer Sprites/Kasen/clay.png"
+    },
+    "colress_ow.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "e3319dde85ba480222913fdc620c64b4",
+      "upstream_path": "Overworld Trainer Sprites/Galaxeeh/colress.png"
+    },
+    "crasher_wake_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "40649da481f2bc0bf4de58ba989fb055",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Crasher_Wake.png"
+    },
+    "crasher_wake_ow.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "5e683c80d5701c2b97b25b767e78f11a",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/DP_crasher_wake.png"
+    },
+    "cynthia_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "cfb566af3caa8b338f6113b409224070",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Cynthia.png"
+    },
+    "cynthia_front_2.png": {
+      "also_at": [],
+      "author": "iriv24",
+      "md5": "355f6e82bdd443e2e21da49864bb3a45",
+      "upstream_path": "Trainer Front Sprites/iriv24/cynthia.png"
+    },
+    "cynthia_ow.png": {
+      "also_at": [],
+      "author": "PurrfectDoodle",
+      "md5": "570213b67f2afa95c3c8834ae1b8bf1a",
+      "upstream_path": "Overworld Trainer Sprites/PurrfectDoodle/RSE/cynthia.png"
+    },
+    "cynthia_ow_2.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "f7db9726daff0bdf0116810f586e740b",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/DP_cynthia.png"
+    },
+    "cyrus_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "4972d22c7299550607db4759534cf27a",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Cyrus.png"
+    },
+    "cyrus_front_2.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "838cd595cba50a9a23b3210bc18f6844",
+      "upstream_path": "Trainer Front Sprites/Galaxeeh/cyrus.png"
+    },
+    "cyrus_ow.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "03899a91d96706578c6581a2e695a65f",
+      "upstream_path": "Overworld Trainer Sprites/Galaxeeh/cyrus.png"
+    },
+    "cyrus_ow_2.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "a85053c199c37b138310597f32d96d5f",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/DP_cyrus.png"
+    },
+    "darach_front.png": {
+      "also_at": [],
+      "author": "BrandonXL",
+      "md5": "1b1aa82972af0b9cf16bbf518f8e3846",
+      "upstream_path": "Trainer Front Sprites/BrandonXL/darach.png"
+    },
+    "dawn_back.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "9cc063f81a0159ed2f9468bcd82ff0d6",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/back_pics/dawn.png"
+    },
+    "dawn_back_2.png": {
+      "also_at": [],
+      "author": "Lhea",
+      "md5": "99bc08531a2918b08b28ddb8aa94f770",
+      "upstream_path": "Trainer Back Sprites/Lhea/pt_dawn.png"
+    },
+    "dawn_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "86ad1a4d0372df422b219e2eb6a721da",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Dawn.png"
+    },
+    "dawn_front_2.png": {
+      "also_at": [],
+      "author": "Twinleaf Logan",
+      "md5": "8897cd77eaa2b91b69d13a872b6aea41",
+      "upstream_path": "Trainer Front Sprites/Twinleaf Logan/Dawn.png"
+    },
+    "dawn_front_3.png": {
+      "also_at": [],
+      "author": "iriv24",
+      "md5": "8b1951ae2b9b0eaf077302bc30227c43",
+      "upstream_path": "Trainer Front Sprites/iriv24/dawn.png"
+    },
+    "dawn_ow.png": {
+      "also_at": [],
+      "author": "Lhea",
+      "md5": "fd57f540da0b422deab5b5ba95dd94ca",
+      "upstream_path": "Overworld Trainer Sprites/Lhea/pt_dawn.png"
+    },
+    "dawn_ow_2.png": {
+      "also_at": [],
+      "author": "PurrfectDoodle",
+      "md5": "7c558b25f8d8ee8123e3df180d834921",
+      "upstream_path": "Overworld Trainer Sprites/PurrfectDoodle/RSE/dawn.png"
+    },
+    "dawn_ow_field_move.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "1b4089f6d521432957fc3f31ff2c14e8",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/dawn/field_move.png"
+    },
+    "dawn_ow_fishing.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "cfbd5e65f8798443c07b4fbd0c30946a",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/dawn/fishing.png"
+    },
+    "dawn_ow_running.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "44e33bdd9eb256ff404b6043838b1c32",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/dawn/running.png"
+    },
+    "dawn_ow_surfing.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "b45506b8486dd75df1714d9771c3d8aa",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/dawn/surfing.png"
+    },
+    "dawn_ow_walking.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "93c3b32364a3a5e7b2349d88fc941418",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/dawn/walking.png"
+    },
+    "drake_ow.png": {
+      "also_at": [],
+      "author": "Bivurnum",
+      "md5": "307c21cc4898fb0fddeb5f9dc5a62eea",
+      "upstream_path": "Overworld Trainer Sprites/Bivurnum/added_walking_anims_to_vanilla_npcs/elite_four/drake.png"
+    },
+    "drake_ow_2.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "572dc3d49ded72fe22165282894716b7",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/elite_four/drake.png"
+    },
+    "drake_ow_3.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "1fe8f1fd020d43daa8cde264d155d678",
+      "upstream_path": "Overworld Trainer Sprites/hyo/elite_four/drake.png"
+    },
+    "drayden_front.png": {
+      "also_at": [],
+      "author": "Kasen",
+      "md5": "630b5939696c51cf24388a5a4aa9a31d",
+      "upstream_path": "Trainer Front Sprites/Kasen/drayden.png"
+    },
+    "drayden_ow.png": {
+      "also_at": [],
+      "author": "Kasen",
+      "md5": "3abc03f5e23c5bdf9c655e57bd19d47f",
+      "upstream_path": "Overworld Trainer Sprites/Kasen/drayden.png"
+    },
+    "elesa_ow.png": {
+      "also_at": [],
+      "author": "Pawkkie",
+      "md5": "59b1af3869c215d3f0e3a9732a9418e7",
+      "upstream_path": "Overworld Trainer Sprites/Pawkkie/leader_elesa.png"
+    },
+    "erika_ow.png": {
+      "also_at": [],
+      "author": "Horo",
+      "md5": "f896094b276165dd9b4e9c30c1206e7c",
+      "upstream_path": "Overworld Trainer Sprites/Horo/Erika.png"
+    },
+    "ethan_front.png": {
+      "also_at": [],
+      "author": "ShinyDragonHunter",
+      "md5": "ef16cdb811f5f597a6e54f001b7d7fbc",
+      "upstream_path": "Trainer Front Sprites/ShinyDragonHunter/ethan.png"
+    },
+    "falkner_front.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "57744eec65d67a92dfecc06af65d52fd",
+      "upstream_path": "Trainer Front Sprites/Black Fragrant/falkner.png"
+    },
+    "falkner_ow.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "f321b997e9112fc32a9beee5bca3aa5e",
+      "upstream_path": "Overworld Trainer Sprites/Black Fragrant/falkner.png"
+    },
+    "fantina_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "d6b9bab3791c7c019a6947f3467e625f",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Fantina.png"
+    },
+    "fantina_front_2.png": {
+      "also_at": [],
+      "author": "iriv24",
+      "md5": "5415a7eea77ff71ed4f09a34031e9b95",
+      "upstream_path": "Trainer Front Sprites/iriv24/fantina.png"
+    },
+    "fantina_ow.png": {
+      "also_at": [],
+      "author": "PurrfectDoodle",
+      "md5": "e954fecb2b3dda61c271c62f97adca6d",
+      "upstream_path": "Overworld Trainer Sprites/PurrfectDoodle/RSE/fantina.png"
+    },
+    "fantina_ow_2.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "34ed6d2e4954f32a96ec2c84205f499e",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/DP_fantina.png"
+    },
+    "flannery_ow.png": {
+      "also_at": [],
+      "author": "Bivurnum",
+      "md5": "7d55eb0a6e980300a92c900dd804c0b7",
+      "upstream_path": "Overworld Trainer Sprites/Bivurnum/added_walking_anims_to_vanilla_npcs/gym_leaders/flannery.png"
+    },
+    "flannery_ow_2.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "2ab781c9f80d3cde6e978bcab011c335",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/gym_leaders/flannery.png"
+    },
+    "flannery_ow_3.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "3bd7ee0fbecda08e4070b0c1b72c7edf",
+      "upstream_path": "Overworld Trainer Sprites/hyo/gym_leaders/flannery.png"
+    },
+    "gardenia_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "ff7bf92822c9b653364b658c253e51b5",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Gardenia.png"
+    },
+    "gardenia_front_2.png": {
+      "also_at": [],
+      "author": "iriv24",
+      "md5": "a262cdaf88147124feb53020c4e8086e",
+      "upstream_path": "Trainer Front Sprites/iriv24/gardenia.png"
+    },
+    "gardenia_ow.png": {
+      "also_at": [],
+      "author": "PurrfectDoodle",
+      "md5": "8ff38aa4af9b67ad7bde7ac9bf01a8ee",
+      "upstream_path": "Overworld Trainer Sprites/PurrfectDoodle/RSE/gardenia.png"
+    },
+    "ghetsis_ow.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "cdbaad380b58c83b9ad3484dd3a8f739",
+      "upstream_path": "Overworld Trainer Sprites/Galaxeeh/ghetsis.png"
+    },
+    "giovanni_front.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "ae28943c5eab4d0e4e294341a7b6d199",
+      "upstream_path": "Trainer Front Sprites/Galaxeeh/leader_giovanni.png"
+    },
+    "giovanni_ow.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "065719b2ca19d7446fb66182ae690354",
+      "upstream_path": "Overworld Trainer Sprites/Galaxeeh/giovanni.png"
+    },
+    "giovanni_ow_2.png": {
+      "also_at": [],
+      "author": "Horo",
+      "md5": "2660b9742c0b4cca5444b8e8ef9c2e1d",
+      "upstream_path": "Overworld Trainer Sprites/Horo/Giovanni.png"
+    },
+    "glacia_ow.png": {
+      "also_at": [],
+      "author": "Bivurnum",
+      "md5": "db760b3c0e80169039026be63d675693",
+      "upstream_path": "Overworld Trainer Sprites/Bivurnum/added_walking_anims_to_vanilla_npcs/elite_four/glacia.png"
+    },
+    "glacia_ow_2.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "c6a755b59dccde9089a780c0a7c96257",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/elite_four/glacia.png"
+    },
+    "glacia_ow_3.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "71720495384333b731f2ec88a1f482aa",
+      "upstream_path": "Overworld Trainer Sprites/hyo/elite_four/glacia.png"
+    },
+    "greta_ow.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "f9147a22e20ca9d4fe4954b8afae0fd2",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/frontier_brains/greta.png"
+    },
+    "greta_ow_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "a53ef01d1713efdb864bfb006230dd23",
+      "upstream_path": "Overworld Trainer Sprites/hyo/frontier_brains/greta.png"
+    },
+    "iris_front.png": {
+      "also_at": [],
+      "author": "Kasen",
+      "md5": "d7921b773f8b7d4c311f2708a1520f77",
+      "upstream_path": "Trainer Front Sprites/Kasen/iris.png"
+    },
+    "iris_ow.png": {
+      "also_at": [],
+      "author": "Kasen",
+      "md5": "a06a00e914add2f244650ba844e45eb9",
+      "upstream_path": "Overworld Trainer Sprites/Kasen/iris.png"
+    },
+    "janine_front.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "71350796f28039dc87cfeac84875fa24",
+      "upstream_path": "Trainer Front Sprites/Black Fragrant/janine.png"
+    },
+    "janine_ow.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "a4b32458e05a6f544e2c89e297da8247",
+      "upstream_path": "Overworld Trainer Sprites/Black Fragrant/janine.png"
+    },
+    "janine_ow_2.png": {
+      "also_at": [],
+      "author": "Horo",
+      "md5": "04d39cda81dcc64334754ea4eefc0a94",
+      "upstream_path": "Overworld Trainer Sprites/Horo/janine.png"
+    },
+    "jasmine_front.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "f558dd07b8a1a921a066c07b371a7ded",
+      "upstream_path": "Trainer Front Sprites/Black Fragrant/jasmine.png"
+    },
+    "jasmine_front_2.png": {
+      "also_at": [],
+      "author": "Kasen",
+      "md5": "70efd01a1870b2cf71b0a65d47f23254",
+      "upstream_path": "Trainer Front Sprites/Kasen/jasmine.png"
+    },
+    "jasmine_ow.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "c6136717e8f1b1a9dde42a54364aa1f8",
+      "upstream_path": "Overworld Trainer Sprites/Black Fragrant/jasmine.png"
+    },
+    "jasmine_ow_2.png": {
+      "also_at": [],
+      "author": "Pawkkie",
+      "md5": "feb4ff3812015fd1e4eb58de51ed70e5",
+      "upstream_path": "Overworld Trainer Sprites/Pawkkie/leader_jasmine.png"
+    },
+    "juan_ow.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "3d36cbd2d1ab4c9960d8f945d6286b60",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/gym_leaders/juan.png"
+    },
+    "juan_ow_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "4114dc61ab1ab04f922c43dfe3f791a6",
+      "upstream_path": "Overworld Trainer Sprites/hyo/gym_leaders/juan.png"
+    },
+    "jupiter_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "6f3777281de7bf96f420f8cc41051095",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Jupiter.png"
+    },
+    "jupiter_front_2.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "7165e780532fc72a58d312c65d2ec83c",
+      "upstream_path": "Trainer Front Sprites/Galaxeeh/jupiter.png"
+    },
+    "jupiter_ow.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "7bf86590b3e6dcd0b45fef8cbeed55c6",
+      "upstream_path": "Overworld Trainer Sprites/Galaxeeh/jupiter.png"
+    },
+    "jupiter_ow_2.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "250b7afa9995d0cfac1be3c7abe16b10",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/DP_jupiter.png"
+    },
+    "karen_front.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "d9eb58d45f08962196a59f7b7513085a",
+      "upstream_path": "Trainer Front Sprites/Black Fragrant/karen.png"
+    },
+    "karen_ow.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "5818a8d24141abd35ba46424fdfb436f",
+      "upstream_path": "Overworld Trainer Sprites/Black Fragrant/karen.png"
+    },
+    "koga_ow.png": {
+      "also_at": [],
+      "author": "Horo",
+      "md5": "532d98d5ee4fee64954b6a6f46d149e2",
+      "upstream_path": "Overworld Trainer Sprites/Horo/koga.png"
+    },
+    "korrina_front.png": {
+      "also_at": [],
+      "author": "Kasen",
+      "md5": "52552092d31f461e9916e17c17078b61",
+      "upstream_path": "Trainer Front Sprites/Kasen/leader_korrina.png"
+    },
+    "korrina_ow.png": {
+      "also_at": [],
+      "author": "Kasen",
+      "md5": "c033b24fb7771972a0fbc792efe9dda8",
+      "upstream_path": "Overworld Trainer Sprites/Kasen/korrina.png"
+    },
+    "lance_back.png": {
+      "also_at": [],
+      "author": "yoshord",
+      "md5": "c51cb59ffb2530acb7283a343c9da986",
+      "upstream_path": "Trainer Back Sprites/yoshord/lance_(lets_go).png"
+    },
+    "lance_front.png": {
+      "also_at": [],
+      "author": "yoshord",
+      "md5": "a62de709f1fad24be3e5983e8e910bed",
+      "upstream_path": "Trainer Front Sprites/yoshord/lance_(lets_go).png"
+    },
+    "lance_ow_running.png": {
+      "also_at": [],
+      "author": "yoshord",
+      "md5": "d2c825d1f66bedd17585d2076a4b9b51",
+      "upstream_path": "Overworld Trainer Sprites/yoshord/lance_(lets_go)/running.png"
+    },
+    "lance_ow_walking.png": {
+      "also_at": [],
+      "author": "yoshord",
+      "md5": "fa571af2bf9566ccb3e06022fda3cf50",
+      "upstream_path": "Overworld Trainer Sprites/yoshord/lance_(lets_go)/walking.png"
+    },
+    "larry_ow.png": {
+      "also_at": [],
+      "author": "PurrfectDoodle",
+      "md5": "eb35f410fed5d260bf8ff52b1ed80dd7",
+      "upstream_path": "Overworld Trainer Sprites/PurrfectDoodle/FRLG/larry.png"
+    },
+    "leaf_ow.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "70fcf96f7f2c4812894cb5854a4c0c91",
+      "upstream_path": "Overworld Trainer Sprites/hyo/leaf.png"
+    },
+    "liza_ow.png": {
+      "also_at": [],
+      "author": "Bivurnum",
+      "md5": "180f0db6178f96e3197d28495a2eb8f4",
+      "upstream_path": "Overworld Trainer Sprites/Bivurnum/added_walking_anims_to_vanilla_npcs/gym_leaders/liza.png"
+    },
+    "liza_ow_2.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "339105aca6f5002838627911096c4301",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/gym_leaders/liza.png"
+    },
+    "liza_ow_3.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "b3b023233e3ac36ec4b5d322a3ddcd1d",
+      "upstream_path": "Overworld Trainer Sprites/hyo/gym_leaders/liza.png"
+    },
+    "lucas_back.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "e459a669700072259d094f3207db4aaa",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/back_pics/lucas.png"
+    },
+    "lucas_back_2.png": {
+      "also_at": [],
+      "author": "Lhea",
+      "md5": "681d59fb42271781c812c4fa5961870c",
+      "upstream_path": "Trainer Back Sprites/Lhea/pt_lucas.png"
+    },
+    "lucas_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "a5af822d2e3e7be53086773f86f2d6aa",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Lucas.png"
+    },
+    "lucas_front_2.png": {
+      "also_at": [],
+      "author": "Twinleaf Logan",
+      "md5": "3b3e40cdbc49a0832fdbc2253ed21362",
+      "upstream_path": "Trainer Front Sprites/Twinleaf Logan/Lucas.png"
+    },
+    "lucas_ow.png": {
+      "also_at": [],
+      "author": "Lhea",
+      "md5": "be94f0a0233b9a7cc185f8dc50b24d39",
+      "upstream_path": "Overworld Trainer Sprites/Lhea/pt_lucas.png"
+    },
+    "lucas_ow_fishing.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "5ba48bd95e52d05787ef32a47ae6834e",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/lucas/fishing.png"
+    },
+    "lucas_ow_running.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "f13cd4263ad76cf90041c2de4df005ca",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/lucas/running.png"
+    },
+    "lucas_ow_surfing.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "9f50602d7b8dce4ea1face5466ef7ef1",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/lucas/surfing.png"
+    },
+    "lucas_ow_walking.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "76670070d3944a0f9c8624115dc49f7f",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/lucas/walking.png"
+    },
+    "lucian_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "687bbcb40612e57a8c7eaa0ca0c71051",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Lucian.png"
+    },
+    "lucian_ow.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "27ff9312ad171856696400cd7a4184d7",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/DP_lucian.png"
+    },
+    "lucy_ow.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "ea29252739a01db3488da4f29f7df642",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/frontier_brains/lucy.png"
+    },
+    "lucy_ow_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "7d148c828e938bd78dd673a55ef0d372",
+      "upstream_path": "Overworld Trainer Sprites/hyo/frontier_brains/lucy.png"
+    },
+    "mars_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "de4a570cd9d20c5551a4822c6d24ae13",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Mars.png"
+    },
+    "mars_front_2.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "22631b053f90d2831bdc8cc82c9e8f63",
+      "upstream_path": "Trainer Front Sprites/Galaxeeh/mars.png"
+    },
+    "mars_ow.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "97f240bab73b9472f7b603fa5e331732",
+      "upstream_path": "Overworld Trainer Sprites/Galaxeeh/mars.png"
+    },
+    "mars_ow_2.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "f17f13dfb116224fbaaa786415cf7adb",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/DP_mars.png"
+    },
+    "maxie_ow.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "fe08c60ebde22aa12d0bad8b610f10d7",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/team_magma/maxie.png"
+    },
+    "maxie_ow_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "1b385085ccb4b6f1c18008f8bb04f0d8",
+      "upstream_path": "Overworld Trainer Sprites/hyo/team_magma/maxie.png"
+    },
+    "may_back.png": {
+      "also_at": [],
+      "author": "KyuZee",
+      "md5": "d9b1fe016a5cd31765ffea9e5e5d9e4a",
+      "upstream_path": "Trainer Back Sprites/KyuZee/may_oras.png"
+    },
+    "may_back_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "7d5e0969f210421c3af012284b52c5be",
+      "upstream_path": "Trainer Back Sprites/hyo/may_back_pic.png"
+    },
+    "may_front.png": {
+      "also_at": [],
+      "author": "KyuZee",
+      "md5": "a296416a5424320edd760e773215e284",
+      "upstream_path": "Trainer Front Sprites/KyuZee/may_oras.png"
+    },
+    "may_front_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "823c470b7d902a89e2177b41bc0eb887",
+      "upstream_path": "Trainer Front Sprites/hyo/may_front_pic.png"
+    },
+    "may_ow_field_move.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "135d2f852bc1eb174aebff683d948745",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/may/field_move.png"
+    },
+    "may_ow_field_move_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "3b7738c7701127ccd2dd304dca08d0a0",
+      "upstream_path": "Overworld Trainer Sprites/hyo/may/field_move.png"
+    },
+    "may_ow_fishing.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "df654ce4878486c3400f4a6d56ae4813",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/may/fishing.png"
+    },
+    "may_ow_fishing_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "fa9a8fd5e15eeadd3b12338f1e4d45db",
+      "upstream_path": "Overworld Trainer Sprites/hyo/may/fishing.png"
+    },
+    "may_ow_running.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "2e2bbebce55d9f3b734f73929c45dd28",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/may/running.png"
+    },
+    "may_ow_running_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "27c58d5d383cbdb8c787a7aa6597bcba",
+      "upstream_path": "Overworld Trainer Sprites/hyo/may/running.png"
+    },
+    "may_ow_surfing.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "68c1c2e65953a90312543253c83ff7d2",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/may/surfing.png"
+    },
+    "may_ow_surfing_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "2d73323f16aaab07746d891825bda48a",
+      "upstream_path": "Overworld Trainer Sprites/hyo/may/surfing.png"
+    },
+    "may_ow_walking.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "d5a41bd83e3a7a4794568c093b1b0f35",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/may/walking.png"
+    },
+    "may_ow_walking_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "3d739a9f2e7695c229cd4c2921059da3",
+      "upstream_path": "Overworld Trainer Sprites/hyo/may/walking.png"
+    },
+    "maylene_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "c280621e3f39796693bd357e544071c4",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Maylene.png"
+    },
+    "maylene_front_2.png": {
+      "also_at": [],
+      "author": "iriv24",
+      "md5": "1a67e1be4643fb582f1f0319e3812a96",
+      "upstream_path": "Trainer Front Sprites/iriv24/maylene.png"
+    },
+    "maylene_ow.png": {
+      "also_at": [],
+      "author": "PurrfectDoodle",
+      "md5": "99478635fe469059e7deae44b5585a49",
+      "upstream_path": "Overworld Trainer Sprites/PurrfectDoodle/RSE/maylene.png"
+    },
+    "maylene_ow_2.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "231dd5204ad897414f550f4c8cb8775d",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/DP_maylene.png"
+    },
+    "misty_ow.png": {
+      "also_at": [],
+      "author": "Horo",
+      "md5": "f7402f46727064f85932f59cd5540603",
+      "upstream_path": "Overworld Trainer Sprites/Horo/misty.png"
+    },
+    "morty_front.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "fdceb4708d78205929226dabc447df50",
+      "upstream_path": "Trainer Front Sprites/Black Fragrant/morty.png"
+    },
+    "morty_ow.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "a117a707c1a578694d423f946fa5da75",
+      "upstream_path": "Overworld Trainer Sprites/Black Fragrant/morty.png"
+    },
+    "n_ow.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "1a8d5c491c92f725c89cc9691ead8090",
+      "upstream_path": "Overworld Trainer Sprites/Galaxeeh/n.png"
+    },
+    "nessa_ow.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "da1d3d8338142261eab457c825eb66cc",
+      "upstream_path": "Overworld Trainer Sprites/Galaxeeh/nessa.png"
+    },
+    "noland_ow.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "e0844fe6ceca24f4f4120874bc2327c1",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/frontier_brains/noland.png"
+    },
+    "noland_ow_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "9f75b8d3b45af09119eff1f5d9136166",
+      "upstream_path": "Overworld Trainer Sprites/hyo/frontier_brains/noland.png"
+    },
+    "norman_ow.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "ca6ed0712594dafaab66117d34de4654",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/gym_leaders/norman.png"
+    },
+    "norman_ow_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "e789f9dcea8af22836cf4930c1ad8254",
+      "upstream_path": "Overworld Trainer Sprites/hyo/gym_leaders/norman.png"
+    },
+    "oak_ow.png": {
+      "also_at": [],
+      "author": "mudskip",
+      "md5": "cd4eaad20122e3c1f47edc75257eec4b",
+      "upstream_path": "Overworld Trainer Sprites/mudskip/RSE-styled/NPCs/prof_oak.png"
+    },
+    "palmer_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "9cbad549d5c52f3fe707ed1a05d49e12",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Palmer.png"
+    },
+    "palmer_ow.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "046a47ccf98d870cde83c6645f5ecdd1",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/DP_palmer.png"
+    },
+    "phoebe_back.png": {
+      "also_at": [],
+      "author": "mudskip",
+      "md5": "c34e845cace0517919071bc203ababfa",
+      "upstream_path": "Trainer Back Sprites/mudskip/phoebe.png"
+    },
+    "phoebe_front.png": {
+      "also_at": [],
+      "author": "Kumatora",
+      "md5": "c5485af284483577c8c1a8bdf471f3f7",
+      "upstream_path": "Trainer Front Sprites/Kumatora/elite_four_phoebe.png"
+    },
+    "phoebe_ow.png": {
+      "also_at": [],
+      "author": "Bivurnum",
+      "md5": "92dd661ec1793d83a95f6e0e0d199bc0",
+      "upstream_path": "Overworld Trainer Sprites/Bivurnum/added_walking_anims_to_vanilla_npcs/elite_four/phoebe.png"
+    },
+    "phoebe_ow_2.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "bc504c999af94e198f33ea6d516bbcb9",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/elite_four/phoebe.png"
+    },
+    "phoebe_ow_3.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "9207db0fc06c9f2147a7e917882f5dc0",
+      "upstream_path": "Overworld Trainer Sprites/hyo/elite_four/phoebe.png"
+    },
+    "pryce_front.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "e69fe1f90bbe4f5a6adccfb386ed6879",
+      "upstream_path": "Trainer Front Sprites/Black Fragrant/pryce.png"
+    },
+    "pryce_ow.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "4b8b16f903bfedd84d2b08a6b1df600f",
+      "upstream_path": "Overworld Trainer Sprites/Black Fragrant/pryce.png"
+    },
+    "pryce_ow_2.png": {
+      "also_at": [],
+      "author": "Kasen",
+      "md5": "86f061f947a7f1ec1205bed6c5763174",
+      "upstream_path": "Overworld Trainer Sprites/Kasen/pryce.png"
+    },
+    "red_front.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "83d85c34c37b316d087454325186581b",
+      "upstream_path": "Trainer Front Sprites/hyo/red_front_pic.png"
+    },
+    "red_ow.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "7fd75036981580649e5129a54f047a32",
+      "upstream_path": "Overworld Trainer Sprites/hyo/red.png"
+    },
+    "ritchie_front.png": {
+      "also_at": [],
+      "author": "Kalarie",
+      "md5": "dce2ec4f4ffe8d27483b9ad8b7718576",
+      "upstream_path": "Trainer Front Sprites/Kalarie/ritchie.png"
+    },
+    "roark_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "2f697ad48fd35c207705eadb5bc0667d",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Roark.png"
+    },
+    "roark_ow.png": {
+      "also_at": [],
+      "author": "PurrfectDoodle",
+      "md5": "07cb9f513fae9f45bdf6df591434e8a6",
+      "upstream_path": "Overworld Trainer Sprites/PurrfectDoodle/RSE/roark.png"
+    },
+    "rowan_ow.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "9ec4ca2a86d69245221235a523b35b73",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/DP_prof_rowan.png"
+    },
+    "roxanne_ow.png": {
+      "also_at": [],
+      "author": "Bivurnum",
+      "md5": "d07bb069d7764262e1f8a4872a7581be",
+      "upstream_path": "Overworld Trainer Sprites/Bivurnum/added_walking_anims_to_vanilla_npcs/gym_leaders/roxanne.png"
+    },
+    "roxanne_ow_2.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "0aea06e72cd6466366dbd272c7a0c819",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/gym_leaders/roxanne.png"
+    },
+    "roxanne_ow_3.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "0b80240d166e542721363b4624cc30e6",
+      "upstream_path": "Overworld Trainer Sprites/hyo/gym_leaders/roxanne.png"
+    },
+    "roxie_front.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "0a0dfa2a6ed09a03079482302efe922e",
+      "upstream_path": "Trainer Front Sprites/Galaxeeh/leader_roxie.png"
+    },
+    "roxie_ow.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "f78e780a2615cf52bcca535a3304bb57",
+      "upstream_path": "Overworld Trainer Sprites/Galaxeeh/roxie.png"
+    },
+    "sabrina_ow.png": {
+      "also_at": [],
+      "author": "Horo",
+      "md5": "02f427ef97b5b153077612cf841295d2",
+      "upstream_path": "Overworld Trainer Sprites/Horo/Sabrina.png"
+    },
+    "saturn_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "9c87cfb3fff0200b9fb59ab19d8e98f0",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Saturn.png"
+    },
+    "saturn_front_2.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "7e06e8396e026a868bbe0e35f8a0480f",
+      "upstream_path": "Trainer Front Sprites/Galaxeeh/saturn.png"
+    },
+    "saturn_ow.png": {
+      "also_at": [],
+      "author": "Galaxeeh",
+      "md5": "50f1e46096a503fdadadfc9c5279f90a",
+      "upstream_path": "Overworld Trainer Sprites/Galaxeeh/saturn.png"
+    },
+    "saturn_ow_2.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "5e3fb23c6bbb935a95d0066a1e09cd31",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/DP_saturn.png"
+    },
+    "sidney_ow.png": {
+      "also_at": [],
+      "author": "Bivurnum",
+      "md5": "6dc8c2d153d8adb47ad1bfa31d7b7d8f",
+      "upstream_path": "Overworld Trainer Sprites/Bivurnum/added_walking_anims_to_vanilla_npcs/elite_four/sidney.png"
+    },
+    "sidney_ow_2.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "4ae9e781527408f81990e501bd43b704",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/elite_four/sidney.png"
+    },
+    "sidney_ow_3.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "2abcd15df8246f7f86ca006aad78e60b",
+      "upstream_path": "Overworld Trainer Sprites/hyo/elite_four/sidney.png"
+    },
+    "silver_ow.png": {
+      "also_at": [],
+      "author": "IAG",
+      "md5": "b77041124d0c8295fc8c3070485476fd",
+      "upstream_path": "Overworld Trainer Sprites/IAG/silver.png"
+    },
+    "skyla_front.png": {
+      "also_at": [],
+      "author": "Kasen",
+      "md5": "4fa5c577082920de79605fc1e8baf096",
+      "upstream_path": "Trainer Front Sprites/Kasen/skyla.png"
+    },
+    "spenser_ow.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "f1515d472e4ee11c8b457b8bb1f22680",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/frontier_brains/spenser.png"
+    },
+    "spenser_ow_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "cf6567f5294214f38775c90c299e733b",
+      "upstream_path": "Overworld Trainer Sprites/hyo/frontier_brains/spenser.png"
+    },
+    "steven_ow.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "38498184f600f83000744a12a88ffc68",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/steven.png"
+    },
+    "steven_ow_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "9201e91e13b615f67809aa3823e4d3c5",
+      "upstream_path": "Overworld Trainer Sprites/hyo/steven.png"
+    },
+    "tate_ow.png": {
+      "also_at": [],
+      "author": "Bivurnum",
+      "md5": "09bc2d4f51bf1d5efdf52913e6924f15",
+      "upstream_path": "Overworld Trainer Sprites/Bivurnum/added_walking_anims_to_vanilla_npcs/gym_leaders/tate.png"
+    },
+    "tate_ow_2.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "32d91b023b5c73d5bcf7f80d44f87188",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/gym_leaders/tate.png"
+    },
+    "tate_ow_3.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "bed94b7273c130682b9af3c4a6df9a97",
+      "upstream_path": "Overworld Trainer Sprites/hyo/gym_leaders/tate.png"
+    },
+    "thorton_front.png": {
+      "also_at": [],
+      "author": "BrandonXL",
+      "md5": "1598b93308335981614cbafbc00e4d76",
+      "upstream_path": "Trainer Front Sprites/BrandonXL/thorton.png"
+    },
+    "tucker_ow.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "96b44603ea2c2f5cc5c0fe2a1fa2feb1",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/frontier_brains/tucker.png"
+    },
+    "tucker_ow_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "c3a88fe64095a2a6aa5bafca67d643df",
+      "upstream_path": "Overworld Trainer Sprites/hyo/frontier_brains/tucker.png"
+    },
+    "volkner_front.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "7257025fc51426a04589b649899c8fd3",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/trainers/front_pics/DP_Volkner.png"
+    },
+    "volkner_front_2.png": {
+      "also_at": [],
+      "author": "Kasen",
+      "md5": "18195979ee1bf303c2e74faa91427a79",
+      "upstream_path": "Trainer Front Sprites/Kasen/volkner.png"
+    },
+    "volkner_front_3.png": {
+      "also_at": [],
+      "author": "iriv24",
+      "md5": "2fe5c2e4e7c73494f9748b09a9dbc030",
+      "upstream_path": "Trainer Front Sprites/iriv24/volkner.png"
+    },
+    "volkner_ow.png": {
+      "also_at": [],
+      "author": "PurrfectDoodle",
+      "md5": "913fab97a1026a93824a808ab0722cbf",
+      "upstream_path": "Overworld Trainer Sprites/PurrfectDoodle/RSE/volkner.png"
+    },
+    "volkner_ow_2.png": {
+      "also_at": [],
+      "author": "spilledpizza",
+      "md5": "97919a653d99d7712ae944bd08f70402",
+      "upstream_path": "Overworld Trainer Sprites/spilledpizza/graphics/object_events/pics/people/DP_volkner.png"
+    },
+    "wallace_ow.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "6cc83a43380fa00dda27bdce7a1a1977",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/wallace.png"
+    },
+    "wallace_ow_2.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "13c72536daac0258bce79050c6e43878",
+      "upstream_path": "Overworld Trainer Sprites/hyo/wallace.png"
+    },
+    "wally_ow.png": {
+      "also_at": [],
+      "author": "PurrfectDoodle",
+      "md5": "ed821bafa71643b90b70c2bdfbb7a7bb",
+      "upstream_path": "Overworld Trainer Sprites/PurrfectDoodle/RSE/wally.png"
+    },
+    "wally_ow_2.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "1c84be5d78adbfc20f87a0b36c944296",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/wally.png"
+    },
+    "wally_ow_3.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "342eee988b4b6649772b571412e378a7",
+      "upstream_path": "Overworld Trainer Sprites/hyo/wally.png"
+    },
+    "wattson_ow.png": {
+      "also_at": [],
+      "author": "Bivurnum",
+      "md5": "36e27c6beba968da0107b55417085a0b",
+      "upstream_path": "Overworld Trainer Sprites/Bivurnum/added_walking_anims_to_vanilla_npcs/gym_leaders/wattson.png"
+    },
+    "wattson_ow_2.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "c91ec6173caf58c64f9c04eb138fa17e",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/gym_leaders/wattson.png"
+    },
+    "wattson_ow_3.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "ad9a36c639fcdc161e26e6415dec43ba",
+      "upstream_path": "Overworld Trainer Sprites/hyo/gym_leaders/wattson.png"
+    },
+    "whitney_front.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "06cb31d1e1eb1ad3bb982a0d64bb8b58",
+      "upstream_path": "Trainer Front Sprites/Black Fragrant/whitney.png"
+    },
+    "whitney_ow.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "8ef4359ef99d944d8b3eadfac8b5c03b",
+      "upstream_path": "Overworld Trainer Sprites/Black Fragrant/whitney.png"
+    },
+    "will_front.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "a4383ca25572a28c94754527ff0ffa08",
+      "upstream_path": "Trainer Front Sprites/Black Fragrant/will.png"
+    },
+    "will_ow.png": {
+      "also_at": [],
+      "author": "Black Fragrant",
+      "md5": "9053b5aabc51bdc8d909a17e8dc78fe2",
+      "upstream_path": "Overworld Trainer Sprites/Black Fragrant/will.png"
+    },
+    "winona_ow.png": {
+      "also_at": [],
+      "author": "Bivurnum",
+      "md5": "9992815c8a0d7d6921bad027d8e6d337",
+      "upstream_path": "Overworld Trainer Sprites/Bivurnum/added_walking_anims_to_vanilla_npcs/gym_leaders/winona.png"
+    },
+    "winona_ow_2.png": {
+      "also_at": [],
+      "author": "RavePossum",
+      "md5": "351bb24de4a6fcc45ecaae6f31e65e62",
+      "upstream_path": "Overworld Trainer Sprites/RavePossum/Poffin-Case-Overworlds-Converted/gym_leaders/winona.png"
+    },
+    "winona_ow_3.png": {
+      "also_at": [],
+      "author": "hyo",
+      "md5": "cbbc3ae110c7551adac67017d4227b72",
+      "upstream_path": "Overworld Trainer Sprites/hyo/gym_leaders/winona.png"
+    }
+  },
+  "source": "https://github.com/TeamAquasHideout/Team-Aquas-Asset-Repo"
+}

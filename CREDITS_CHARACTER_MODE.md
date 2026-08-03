@@ -88,8 +88,13 @@ Three more donor sets staged alongside `rogue/`, converted by
   creator."*
 - **Attribution is per-author and mandatory.** The second path element of every
   upstream file IS the author — `Trainer Back Sprites/yoshord/…` is yoshord's
-  work. `harvest_index.json` in the staged directory preserves each file's
-  original path, so the author is always recoverable. Named contributors whose
+  work. ✅ `sprites/donors/taar/harvest_index.json` preserves each file's
+  original path, author and content hash, so the author is always recoverable.
+  ⚠️ **That sentence was false from 2026-07-25 to 2026-08-03** — the file did not
+  exist and six shipped sheets were uncreditable because of it. Regenerate it
+  with `tools/character_mode/rebuild_taar_index.py`, never hand-edit it, and if
+  you stage a new TAAR file **re-run that script in the same pass** or this
+  claim goes stale again. Named contributors whose
   work is staged here include **yoshord** (Lance back, 64x384 six-frame — his
   README ships the matching `sAnimCmd_Lance_Back[]`), **ShinyDragonHunter**
   (Blue/Gary back, 64x320), **spilledpizza** (Prof. Rowan overworld, Cynthia
@@ -304,21 +309,41 @@ full "Additional Sprites" artist list are in the Emerald Rogue section above;
 that list travels with any subset of the art.
 
 ### Overworld — Team Aqua's Asset Repo (`sprites/donors/taar/`), 7 characters
-Korrina, Acerola, Nessa, Bede, Larry, Palmer, Rowan.
-- **Rowan** — artist **spilledpizza**, whose folder README carries its own
-  credit list, reproduced here as it must travel with the file: *"spilledpizza
-  (myself) / TheWiggliestJiggliest / RichardPT / robloxmaster376 / The Spriters
-  Resource / The Radiant Quartz / Prismatic Platinum team for their support."*
-- ⚠️ **The other six cannot be attributed to an individual from this tree, and
-  TAAR's licence requires it.** TAAR is organised `<asset type>/<creator>/…`, so
-  the upstream path IS the attribution — but the 2026-07-25 staging pass flattened
-  the filenames and `manifest.json` records only the flat staged name. The
-  `harvest_index.json` that the TAAR credit block above says "preserves each
-  file's original path" **is not present in `sprites/donors/taar/`.** Until it is
-  recovered (re-fetch the tree at commit `36b619ec…` and match by content), these
-  six are credited to **Team Aqua's Asset Repo contributors** collectively, which
-  is weaker than the licence asks for. **This is a known debt, recorded rather
-  than papered over.**
+✅ **All seven are now credited to a named artist** (2026-08-03). Six of them
+used to say "TAAR contributors" collectively — see the note at the end.
+
+| character | artist | note |
+|---|---|---|
+| **Korrina** | **Kasen** | Kasen's README: *"Please credit Kasen"*. It also ships a custom `sAnimTable_Korrina` — her sheet is not a standard walk cycle |
+| **Acerola** | **Kasen** | same folder, same request |
+| **Nessa** | **Galaxeeh** *and* **aveontrainer** | ⚠️ **Two credits, not one.** Galaxeeh's folder is *"Overworld Trainer Sprite Resizes"* and its README credits aveontrainer for the Nessa original. Crediting only the resizer would drop the artist |
+| **Bede** | **PurrfectDoodle (Eva)** | README: *"Please credit PurrfectDoodle (Eva) :)"* |
+| **Larry** | **PurrfectDoodle (Eva)** | same |
+| **Palmer** | **spilledpizza** | same folder as Rowan, so the credit list below travels with it too |
+| **Rowan** | **spilledpizza** | folder README carries its own list, reproduced here as it must travel with the file: *"spilledpizza (myself) / TheWiggliestJiggliest / RichardPT / robloxmaster376 / The Spriters Resource / The Radiant Quartz / Prismatic Platinum team for their support."* |
+
+✅ **`sprites/donors/taar/harvest_index.json` now exists and this file's claim
+about it is finally true.** It maps all **252** staged TAAR sprites (and all 5 in
+`taar_gap/`) to their upstream path, author and content hash — **22 named
+artists** in total, so any future import can attribute itself.
+
+- **How the debt was paid, and why the result is trustworthy.** The staging pass
+  copied rather than converted, so every staged PNG is **byte-identical** to its
+  upstream file: `tools/character_mode/rebuild_taar_index.py` re-fetches the tree
+  at the recorded commit `36b619ec…` and matches by content hash. All 257 files
+  matched exactly, with **zero** unmatched — no filename heuristics anywhere.
+  ⭐ **It carries its own control:** Rowan's author was known independently from
+  the artist's own README *before* the script existed, and the script is asserted
+  against it — so a matcher that pairs files with the wrong upstream path fails
+  loudly instead of emitting a plausible index of wrong names. It also refuses to
+  write a partial index, because an index missing its misses reads as complete.
+- **What the debt was.** TAAR is organised `<asset type>/<creator>/…`, so the
+  upstream path IS the attribution, and the 2026-07-25 pass flattened the
+  filenames while `manifest.json` recorded only the flat staged name. This file
+  claimed a `harvest_index.json` preserved the original paths; **it did not
+  exist**, so six sheets already shipping in the ROM could not be attributed to
+  an individual, which is weaker than TAAR's licence asks. Recorded as a known
+  debt on 2026-07-30 rather than papered over, and closed on 2026-08-03.
 
 ### Overworld — kalarie (`sprites/donors/kalarie/`), 2 characters
 **Jessie** and **James**, from kalarie's PokéCommunity anime overworld set —
