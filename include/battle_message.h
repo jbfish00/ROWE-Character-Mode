@@ -66,6 +66,13 @@
 #define B_TXT_DEF_TEAM2 0x3B // your/the opposing
 #define B_TXT_ACTIVE_NAME 0x3C
 #define B_TXT_ACTIVE_NAME2 0x3D // no Illusion check
+// The Character Mode character whose roster produced this wild encounter.
+// gCharacters[].name is already charmap-encoded, so it copies straight out --
+// which is why this is its own placeholder rather than a {B_BUFF1}, whose
+// PREPARE_*_BUFFER encoding is churned by battle events between the intro
+// string being chosen and being printed. APPEND ONLY: the value is baked into
+// every string that uses it and mirrored in charmap.txt.
+#define B_TXT_CHARACTER_NAME 0x3E
 
 // for B_TXT_BUFF1, B_TXT_BUFF2 and B_TXT_BUFF3
 

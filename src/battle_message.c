@@ -5,6 +5,7 @@
 #include "battle_message.h"
 #include "battle_setup.h"
 #include "battle_tower.h"
+#include "character_mode.h"
 #include "data.h"
 #include "event_data.h"
 #include "frontier_util.h"
@@ -395,6 +396,15 @@ static const u8 sText_WildPkmnAppeared[] = _("¡Un {B_OPPONENT_MON1_NAME} salvaj
 static const u8 sText_WildPkmnAppeared2[] = _("Wild {B_OPPONENT_MON1_NAME} appeared!\p");
 static const u8 sText_WildPkmnAppearedPause[] = _("¡Un {B_OPPONENT_MON1_NAME} salvaje!{PAUSE 127}");
 static const u8 sText_TwoWildPkmnAppeared[] = _("Wild {B_OPPONENT_MON1_NAME} and\n{B_OPPONENT_MON2_NAME} appeared!\p");
+// The Character Mode encounter markers. Left in English in the SPANISH block on
+// purpose: "destinado/destinada" has to agree with the species' gender and this
+// string has no way to know it, so a guess would be wrong for half the dex --
+// and sText_WildPkmnAppeared2 and sText_TwoWildPkmnAppeared two lines above are
+// already untranslated here, so this is the block's existing state, not a new
+// gap. They exist at all so a future GAME_LANGUAGE flip fails loudly in review
+// rather than silently reverting to the unmarked text.
+static const u8 sText_CharacterWildPkmnAppeared[] = _("A wild {B_OPPONENT_MON1_NAME} destined for\n{B_CHARACTER_NAME} appeared!\p");
+static const u8 sText_CharacterLegendaryAppeared[] = _("{B_OPPONENT_MON1_NAME} revealed itself\nto {B_CHARACTER_NAME}!\p");
 static const u8 sText_Trainer1WantsToBattle[] = _("¡A luchar contra {B_TRAINER1_CLASS}\n{B_TRAINER1_NAME}!\p");
 static const u8 sText_LinkTrainerWantsToBattle[] = _("{B_LINK_OPPONENT1_NAME}\nwants to battle!");
 static const u8 sText_TwoLinkTrainersWantToBattle[] = _("{B_LINK_OPPONENT1_NAME} and {B_LINK_OPPONENT2_NAME}\nwant to battle!");
@@ -1039,6 +1049,14 @@ static const u8 sText_WildPkmnAppeared[] = _("Wild {B_OPPONENT_MON1_NAME} appear
 static const u8 sText_WildPkmnAppeared2[] = _("Wild {B_OPPONENT_MON1_NAME} appeared!\p");
 static const u8 sText_WildPkmnAppearedPause[] = _("Wild {B_OPPONENT_MON1_NAME} appeared!{PAUSE 127}");
 static const u8 sText_TwoWildPkmnAppeared[] = _("Wild {B_OPPONENT_MON1_NAME} and\n{B_OPPONENT_MON2_NAME} appeared!\p");
+// The Character Mode encounter markers -- see §7.14. The 10% roster override
+// returns a canonical FAMILY BASE, so it hands the player a Gible that the map's
+// own table could equally have produced: without naming the character, a feature
+// that is working is indistinguishable from one that is dead. Line breaks are
+// measured, not guessed -- worst case is "A wild Brambleghast destined for" at
+// 170 px against B_WIN_MSG's 208.
+static const u8 sText_CharacterWildPkmnAppeared[] = _("A wild {B_OPPONENT_MON1_NAME} destined for\n{B_CHARACTER_NAME} appeared!\p");
+static const u8 sText_CharacterLegendaryAppeared[] = _("{B_OPPONENT_MON1_NAME} revealed itself\nto {B_CHARACTER_NAME}!\p");
 static const u8 sText_Trainer1WantsToBattle[] = _("{B_TRAINER1_CLASS} {B_TRAINER1_NAME}\nwould like to battle!\p");
 static const u8 sText_LinkTrainerWantsToBattle[] = _("{B_LINK_OPPONENT1_NAME}\nwants to battle!");
 static const u8 sText_TwoLinkTrainersWantToBattle[] = _("{B_LINK_OPPONENT1_NAME} and {B_LINK_OPPONENT2_NAME}\nwant to battle!");
@@ -3402,12 +3420,30 @@ void BufferStringBattle(u16 stringID)
         }
         else
         {
+            // ⚠️ BATTLE_TYPE_LEGENDARY is NOT the 1% legendary encounter. It is
+            // set only by battle_setup.c for SCRIPTED static legendaries; the
+            // Character Mode roll goes through the ordinary wild path and never
+            // sets it. Reusing it as the signal would also change more than the
+            // string, which is why the marker rides its own state instead.
             if (gBattleTypeFlags & BATTLE_TYPE_LEGENDARY)
                 stringPtr = sText_WildPkmnAppeared2;
             else if (gBattleTypeFlags & BATTLE_TYPE_DOUBLE) // interesting, looks like they had something planned for wild double battles
                 stringPtr = sText_TwoWildPkmnAppeared;
             else if (gBattleTypeFlags & BATTLE_TYPE_WALLY_TUTORIAL)
                 stringPtr = sText_WildPkmnAppearedPause;
+            // The Character Mode encounter markers, tested LAST so every case
+            // above keeps its exact vanilla string. The double-battle case in
+            // particular has two opponents and only one of them could ever be
+            // the override, so it stays unmarked rather than naming half a
+            // battle. GetActiveCharacter() is re-checked because the marker
+            // prints that character's name -- a marker with nobody to name is
+            // just the vanilla line.
+            else if (CharacterMode_GetWildEncounterKind() == CHAR_WILD_ENCOUNTER_LEGENDARY
+                     && GetActiveCharacter() != NULL)
+                stringPtr = sText_CharacterLegendaryAppeared;
+            else if (CharacterMode_GetWildEncounterKind() == CHAR_WILD_ENCOUNTER_ROSTER
+                     && GetActiveCharacter() != NULL)
+                stringPtr = sText_CharacterWildPkmnAppeared;
             else
                 stringPtr = sText_WildPkmnAppeared;
         }
@@ -4116,6 +4152,17 @@ u32 BattleStringExpandPlaceholders(const u8 *src, u8 *dst)
                 break;
             case B_TXT_PLAYER_NAME: // player name
                 toCpy = BattleStringGetPlayerName(text, GetBattlerAtPosition(B_POSITION_PLAYER_LEFT));
+                break;
+            case B_TXT_CHARACTER_NAME: // Character Mode character name
+                {
+                    const struct CharacterInfo *character = GetActiveCharacter();
+
+                    // Only the encounter markers use this, and they are only
+                    // selected when the character is non-NULL -- but the copy
+                    // loop below dereferences toCpy unconditionally, so a NULL
+                    // here would be a crash rather than a blank.
+                    toCpy = (character != NULL) ? character->name : gText_EmptyString2;
+                }
                 break;
             case B_TXT_TRAINER1_LOSE_TEXT: // trainerA lose text
                 if (gBattleTypeFlags & BATTLE_TYPE_FRONTIER)

@@ -486,7 +486,7 @@ u16 CharacterMode_RollWildLegendarySpecies(u8 level)
     return candidates[Random() % count];
 }
 
-u16 CharacterMode_RollWildOverrideSpecies(u8 level)
+u16 CharacterMode_RollWildOverrideSpecies(u8 level, u8 *outKind)
 {
     const struct CharacterInfo *character = GetActiveCharacter();
     u16 candidates[64];
@@ -500,7 +500,11 @@ u16 CharacterMode_RollWildOverrideSpecies(u8 level)
     // Legendary roll first, and independent -- see WILD_LEGENDARY_CHANCE_PERCENT.
     legendary = CharacterMode_RollWildLegendarySpecies(level);
     if (legendary != SPECIES_NONE)
+    {
+        if (outKind != NULL)
+            *outKind = CHAR_WILD_ENCOUNTER_LEGENDARY;
         return legendary;
+    }
 
     if (Random() % 100 >= WILD_OVERRIDE_CHANCE_PERCENT)
         return SPECIES_NONE;
@@ -514,5 +518,12 @@ u16 CharacterMode_RollWildOverrideSpecies(u8 level)
     if (candidateCount == 0)
         return SPECIES_NONE;
 
+    if (outKind != NULL)
+        *outKind = CHAR_WILD_ENCOUNTER_ROSTER;
     return CharacterMode_PickEvolutionStageForLevel(candidates[Random() % candidateCount], level);
 }
+
+// CharacterMode_{Set,Get}WildEncounterKind live in src/wild_encounter.c, next to
+// the CreateWildMon call that clears the marker -- see the comment there. This
+// file has no mutable statics and no entry in sym_ewram.txt/sym_bss.txt, and
+// wild_encounter.o already has one, so putting the byte there costs nothing.

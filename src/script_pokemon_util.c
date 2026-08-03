@@ -183,7 +183,14 @@ void CreateScriptedWildMon(u16 species, u8 level, u16 item)
 {
     u8 heldItem[2];
 	u8 abilityNum = 2;
-	
+
+    // A scripted spawn (static legendaries, Alpha bosses, the debug menu) is
+    // never a Character Mode override, and it does not go through CreateWildMon
+    // -- so it clears the marker itself. Without this, an Alpha battle entered
+    // right after a roster override would announce the Alpha as destined for
+    // your character.
+    CharacterMode_SetWildEncounterKind(CHAR_WILD_ENCOUNTER_NORMAL);
+
 	if(level <= 4) //If level is less than 4, the level gets scaled
 		level = getWildPokemonLevel(); 
 	
@@ -217,6 +224,7 @@ void CreateScriptedDoubleWildMon(u16 species1, u8 level1, u16 item1, u16 species
     u8 heldItem1[2];
     u8 heldItem2[2];
 
+    CharacterMode_SetWildEncounterKind(CHAR_WILD_ENCOUNTER_NORMAL);
     ZeroEnemyPartyMons();
 
     CreateMon(&gEnemyParty[0], species1, level1, 32, 0, 0, OT_ID_PLAYER_ID, 0, 0); // handle forms

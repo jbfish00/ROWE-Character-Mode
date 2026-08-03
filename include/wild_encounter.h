@@ -50,6 +50,7 @@ bool8 UpdateRepelCounter(void);
 bool8 TryDoDoubleWildBattle(void);
 bool8 UpdateLureCounter(void);
 void CreateWildMon(u16 species, u8 level);
+u16 CreateWildMonWithCharacterOverride(u16 tableSpecies, u8 level);
 u16 GetCurrentMapWildMonHeaderId(void);
 u8 ChooseWildMonIndex_Land(void);
 u8 ChooseWildMonIndex_WaterRock(void);

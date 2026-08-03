@@ -1,4 +1,5 @@
 #include "global.h"
+#include "character_mode.h"
 #include "event_data.h"
 #include "pokemon.h"
 #include "random.h"
@@ -194,6 +195,10 @@ void CreateRoamerMonInstance(void)
     struct Roamer *roamer;
 
     mon = &gEnemyParty[0];
+    // The third wild-enemy-party builder that bypasses CreateWildMon. ROWE ships
+    // no roamers today (the 1% legendary rule was specified without roaming), but
+    // an unmarked default here costs one line and cannot rot.
+    CharacterMode_SetWildEncounterKind(CHAR_WILD_ENCOUNTER_NORMAL);
     ZeroEnemyPartyMons();
     roamer = &gSaveBlock1Ptr->roamer;
     CreateMonWithIVsPersonality(mon, roamer->species, roamer->level, roamer->ivs, roamer->personality, 0); // handle forms

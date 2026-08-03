@@ -24,5 +24,14 @@ void LinkTradeDrawWindow(void);
 void InitTradeBg(void);
 void DrawTextOnTradeWindow(u8, const u8 *, u8);
 u16 getWonderTradePokemonFormID(u16 species);
+// The two specials the in-game trade scripts call, in this order. Declared here
+// (they had no header at all -- data/specials.inc references the symbols
+// directly) so the test mailbox can drive the real trade cutscene rather than
+// re-implementing it: the Character Mode sweep lives at the very END of that
+// cutscene, so anything short of running it proves nothing.
+// Both read gSpecialVar_0x8004 (which trade) and gSpecialVar_0x8005 (which
+// party slot).
+void CreateInGameTradePokemon(void);
+void DoInGameTradeScene(void);
 
 #endif //GUARD_TRADE_H

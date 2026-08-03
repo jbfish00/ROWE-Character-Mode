@@ -13,7 +13,12 @@
 #include "script.h"
 #include "script_pokemon_util.h"
 #include "string_util.h"
-#include "text.h"  // EOS
+#include "text.h"  // EOS, GetStringWidth
+#include "trade.h"  // CreateInGameTradePokemon / DoInGameTradeScene (item 11)
+#include "pokemon_storage_system.h"  // CountMonsInBox
+#include "wild_encounter.h"  // CreateWildMonWithCharacterOverride
+#include "field_player_avatar.h"  // RefreshPlayerAvatarGraphics
+#include "constants/trade.h"
 #include "constants/species.h"
 #include "constants/flags.h"
 #include "constants/items.h"
@@ -189,6 +194,81 @@ enum
                            // Every op returns a result AT ALL only because the
                            // row exists; a hang shows up as the request never
                            // completing, which is the point.
+    CM_REQ_OVERRIDE_WILD_BATTLE, // argA: the map-table species to fall back to
+                           // when the roll does not fire. argB: level |
+                           // (wantKind << 8), wantKind being CHAR_WILD_ENCOUNTER_*.
+                           // Calls the REAL CreateWildMonWithCharacterOverride
+                           // -- the function BOTH shipping wild call sites go
+                           // through -- over and over until the encounter kind
+                           // it produces is the one asked for, then starts the
+                           // battle through BattleSetup_StartWildBattle, the
+                           // same entry point TryStandardWildEncounter uses.
+                           //
+                           // ⚠️ It does NOT force the kind, and that is the
+                           // whole point. A test that sets the marker itself
+                           // and then reads it back proves only that a byte
+                           // round-trips; this one asks the shipping roll for
+                           // an override, an ordinary encounter and a legendary
+                           // IN THE SAME RUN, so a marker hardwired either on
+                           // or off fails one of the three. Expected attempts:
+                           // ~1 for NORMAL, ~11 for ROSTER, ~100 for LEGENDARY.
+                           // result = species | (kind << 16), or 0 if the
+                           // requested kind did not come up inside the cap (in
+                           // which case NO battle is started).
+    CM_REQ_PLAIN_WILD_BATTLE, // argA: species, argB: level. Marks the encounter
+                           // kind ROSTER, then starts a wild battle the way
+                           // every NON-override wild path does -- a bare
+                           // CreateWildMon followed by BattleSetup_StartWildBattle,
+                           // which is the shape of the mass outbreak
+                           // (wild_encounter.c:442), the Feebas spot (:915),
+                           // the DexNav spawns and the in-game trade mon.
+                           //
+                           // ⚠️ THIS REQUEST EXISTS BECAUSE A NEGATIVE CONTROL
+                           // PASSED. Deleting CreateWildMon's clear left
+                           // encounter_marker_e2e fully green: the override
+                           // wrapper writes the kind on every call, NORMAL
+                           // included, so it never depended on that clear. The
+                           // clear is what protects the four paths above -- and
+                           // nothing exercised any of them, so the line
+                           // guarding all four was untested. This drives one.
+    CM_REQ_BATTLE_STRING_WIDTH, // The width in pixels of the widest line of
+                           // gDisplayedStringBattle, measured by the GAME's own
+                           // GetStringWidth with the battle box's font and
+                           // letter spacing. B_WIN_MSG is 26 tiles = 208 px, so
+                           // anything above that is clipped on a real screen.
+                           // result = width | (kind << 16), kind being
+                           // CharacterMode_GetWildEncounterKind() at the moment
+                           // of the read, so a test can tie the measurement to
+                           // the string it is measuring.
+    CM_REQ_INGAME_TRADE,   // argA: INGAME_TRADE_* index, argB: party slot to
+                           // trade away. Sets the two script vars the trade
+                           // scripts set and calls the SAME two specials they
+                           // call -- CreateInGameTradePokemon then
+                           // DoInGameTradeScene -- so the whole real cutscene
+                           // runs, including the CharacterMode_SweepPartyToPC()
+                           // at trade.c:3905/4422 that nothing has ever driven.
+                           // Index 6 is the engine's "trade your own mon and get
+                           // it back" mode, which is how a test gets an
+                           // ON-roster incoming mon out of a table whose four
+                           // real entries are all off-roster fossils.
+                           // result = party count before the trade.
+    CM_REQ_BOX_COUNT,      // Mons in PC box argA (0..TOTAL_BOXES_COUNT-1), or
+                           // the total across every box when argA == 0xFFFF.
+                           // "It left the party" and "it went to the PC" are
+                           // different claims; the sweep's keptOne guard can
+                           // make the first true while the second is false.
+                           // result = the count.
+    CM_REQ_REFRESH_AVATAR, // RefreshPlayerAvatarGraphics() -- the call
+                           // ApplyCostumeChoice makes so a costume change is
+                           // visible without leaving the map. SET_CHARACTER
+                           // changes VAR_CHARACTER_ID but the player object
+                           // keeps the graphics it was created with, so without
+                           // this a visual check of a character's overworld art
+                           // photographs the PREVIOUS character and looks fine.
+    CM_REQ_SET_VAR,        // argA: var id, argB: value. VarSet(). Exists for the
+                           // costume vars, which no other request can reach --
+                           // VAR_COSTUME_CHARACTER is written by the costume
+                           // menu and nothing else.
 };
 
 enum
@@ -336,22 +416,52 @@ void CharacterMode_RunBootSelftest(void)
         u32 trial, fired = 0;
         u32 legendaryCount = 0;
         bool8 anyLegendary = FALSE;
+        u32 kindMismatches = 0;
+        u32 kindWithoutSpecies = 0;
 
         for (trial = 0; trial < 200; trial++)
         {
-            u16 result = CharacterMode_RollWildOverrideSpecies(30);
+            // 0xFF, not NORMAL: a roll that returns SPECIES_NONE must leave the
+            // out-param ALONE, and seeding it with a legal value would make
+            // "never written" indistinguishable from "written as unmarked".
+            u8 kind = 0xFF;
+            u16 result = CharacterMode_RollWildOverrideSpecies(30, &kind);
+
             if (result != SPECIES_NONE)
             {
+                u8 want = CharacterMode_IsLegendaryOrMythical(result)
+                        ? CHAR_WILD_ENCOUNTER_LEGENDARY : CHAR_WILD_ENCOUNTER_ROSTER;
+
                 fired++;
+                if (kind != want)
+                    kindMismatches++;
                 if (CharacterMode_IsLegendaryOrMythical(result))
                 {
                     anyLegendary = TRUE;
                     legendaryCount++;
                 }
             }
+            else if (kind != 0xFF)
+            {
+                kindWithoutSpecies++;
+            }
         }
         Check("wild override: fired at least once in 200 rolls at 10% (Red active)",
               fired > 0);
+        // The encounter marker's whole content. A kind hardwired to either value
+        // fails one of these two, because the loop sees both outcomes: the kind
+        // has to TRACK the species that actually came back, and a roll that
+        // produced nothing must not label anything.
+        Check("encounter kind: matches the species the roll returned, every time",
+              kindMismatches == 0);
+        Check("encounter kind: a roll that did not fire labels nothing",
+              kindWithoutSpecies == 0);
+        // Trap 1, asserted at every boot: 200 rolls just fired ~20 overrides and
+        // started no battle. If the kind were stored by the ROLL rather than
+        // beside the mon's creation, it would be standing here -- and the next
+        // ordinary encounter would be announced as somebody's destiny.
+        Check("encounter kind: 200 rolls with no battle leave the marker clear",
+              CharacterMode_GetWildEncounterKind() == CHAR_WILD_ENCOUNTER_NORMAL);
         // NOTE: the old assertion here was "never produced a legendary", which
         // became WRONG when the 1% legendary roll landed -- and, worse, would
         // have stayed green either way. Legendaries are now expected from this
@@ -416,7 +526,7 @@ void CharacterMode_RunBootSelftest(void)
     Check("mode off: everything allowed",
           IsSpeciesAllowedForCharacter(SPECIES_MEOWTH) == TRUE);
     Check("wild override: mode off never fires",
-          CharacterMode_RollWildOverrideSpecies(30) == SPECIES_NONE);
+          CharacterMode_RollWildOverrideSpecies(30, NULL) == SPECIES_NONE);
 
     if (savedFlag)
         FlagSet(FLAG_CHARACTER_MODE);
@@ -620,7 +730,10 @@ void CharacterMode_PumpTestMailbox(void)
 
             for (t = 0; t < trials; t++)
             {
-                u16 got = CharacterMode_RollWildOverrideSpecies(mb->argA);
+                // NULL out-param on purpose: this loop measures RATES and must
+                // not label anything. The kind belongs to a battle, and there
+                // is no battle here -- see CHAR_WILD_ENCOUNTER_* in the header.
+                u16 got = CharacterMode_RollWildOverrideSpecies(mb->argA, NULL);
 
                 if (got == SPECIES_NONE)
                     continue;
@@ -630,6 +743,105 @@ void CharacterMode_PumpTestMailbox(void)
             }
             mb->result = ((u32)totalFires << 16) | legendaryFires;
         }
+        break;
+    case CM_REQ_OVERRIDE_WILD_BATTLE:
+        {
+            u8 level = mb->argB & 0xFF;
+            u8 wantKind = mb->argB >> 8;
+            u16 species = SPECIES_NONE;
+            u16 attempt;
+            bool8 got = FALSE;
+
+            if (ScriptContext2_IsEnabled())
+            {
+                mb->request = CM_REQ_NONE;
+                mb->status = CM_STATUS_REJECTED;
+                return;
+            }
+
+            // 3000 is ~30x the mean wait for the rarest case (the 1% legendary),
+            // so a miss means the feature is dead rather than unlucky. Each
+            // attempt builds a real mon, which is the cost of driving the
+            // shipping function instead of a stripped-down copy of it.
+            for (attempt = 0; attempt < 3000; attempt++)
+            {
+                species = CreateWildMonWithCharacterOverride(mb->argA, level);
+                if (CharacterMode_GetWildEncounterKind() == wantKind)
+                {
+                    got = TRUE;
+                    break;
+                }
+            }
+
+            if (!got)
+            {
+                mb->result = 0;
+                break;
+            }
+
+            mb->result = ((u32)wantKind << 16) | species;
+            BattleSetup_StartWildBattle();
+        }
+        break;
+    case CM_REQ_PLAIN_WILD_BATTLE:
+        if (ScriptContext2_IsEnabled())
+        {
+            mb->request = CM_REQ_NONE;
+            mb->status = CM_STATUS_REJECTED;
+            return;
+        }
+        // Mark FIRST, so the only thing that can unmark this battle is
+        // CreateWildMon itself. A test that started from an already-clear
+        // marker would pass whether the clear ran or not.
+        CharacterMode_SetWildEncounterKind(CHAR_WILD_ENCOUNTER_ROSTER);
+        CreateWildMon(mb->argA, mb->argB);
+        mb->result = CharacterMode_GetWildEncounterKind();
+        BattleSetup_StartWildBattle();
+        break;
+    case CM_REQ_BATTLE_STRING_WIDTH:
+        // FONT_NORMAL with letterSpacing 0 is what sTextOnWindowsInfo_Normal[0]
+        // prints the battle message with; GetStringWidth returns the widest
+        // LINE, having reset at each CHAR_NEWLINE, which is the number that has
+        // to fit B_WIN_MSG.
+        mb->result = ((u32)CharacterMode_GetWildEncounterKind() << 16)
+                   | (GetStringWidth(1, gDisplayedStringBattle, 0) & 0xFFFF);
+        break;
+    case CM_REQ_INGAME_TRADE:
+        if (ScriptContext2_IsEnabled())
+        {
+            mb->request = CM_REQ_NONE;
+            mb->status = CM_STATUS_REJECTED;
+            return;
+        }
+        gSpecialVar_0x8004 = mb->argA;   // which trade
+        gSpecialVar_0x8005 = mb->argB;   // which party slot goes away
+        mb->result = CalculatePlayerPartyCount();
+        CreateInGameTradePokemon();
+        DoInGameTradeScene();
+        break;
+    case CM_REQ_BOX_COUNT:
+        {
+            u16 total = 0;
+            u8 box;
+
+            if (mb->argA == 0xFFFF)
+            {
+                for (box = 0; box < TOTAL_BOXES_COUNT; box++)
+                    total += CountMonsInBox(box);
+            }
+            else if (mb->argA < TOTAL_BOXES_COUNT)
+            {
+                total = CountMonsInBox(mb->argA);
+            }
+            mb->result = total;
+        }
+        break;
+    case CM_REQ_REFRESH_AVATAR:
+        RefreshPlayerAvatarGraphics();
+        break;
+    case CM_REQ_SET_VAR:
+        VarSet(mb->argA, mb->argB);
+        mb->result = VarGet(mb->argA);
         break;
     case CM_REQ_VERIFY_PREEVO:
         {

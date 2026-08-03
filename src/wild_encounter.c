@@ -283,6 +283,15 @@ void CreateWildMon(u16 species, u8 level)
 	u16 helditem = GetMonData(&gPlayerParty[0], MON_DATA_HELD_ITEM);
 	u16 wildspecie = GetWildPokemon(species, level, helditem);
 	u8 formId = GetFormIdFromFormSpeciesId(wildspecie);
+
+    // Every wild mon starts UNMARKED. CreateWildMonWithCharacterOverride below
+    // re-records the kind immediately after its own CreateWildMon call; the
+    // outbreak, Feebas, trade and DexNav paths -- and any path added later --
+    // get the safe default for free. Clearing here rather than at the call
+    // sites is deliberate: forgetting to clear mislabels an ordinary encounter
+    // with the last override's character, which is the exact false bug report
+    // this feature exists to prevent.
+    CharacterMode_SetWildEncounterKind(CHAR_WILD_ENCOUNTER_NORMAL);
     ZeroEnemyPartyMons();
     checkCuteCharm = TRUE;
 	
@@ -317,6 +326,56 @@ void CreateWildMon(u16 species, u8 level)
     }
 
 	CreateMonWithNature(&gEnemyParty[0], wildspecie, level, 32, PickWildMonNature(), formId);
+}
+
+// The label on the wild battle that is about to start, read by battle_message.c
+// to pick the intro string. Deliberately NOT written by the ROLL: the roll runs
+// per encounter ATTEMPT, and a flag left standing by an attempt that produced no
+// battle would mislabel the next ORDINARY encounter -- which is precisely the
+// false bug report ("it said this Zigzagoon was destined for me") that the
+// feature exists to prevent.
+//
+// It lives here rather than in character_mode.c because the invariant it depends
+// on is CreateWildMon's: that function clears it for every wild mon in the game,
+// so a path written next year is unmarked by default. (Practical reason too --
+// wild_encounter.o is already in sym_ewram.txt and character_mode.o is in none
+// of the three sym files, so this byte is free here and a linker-layout change
+// there.)
+EWRAM_DATA static u8 sWildEncounterKind = 0;
+
+void CharacterMode_SetWildEncounterKind(u8 kind)
+{
+    sWildEncounterKind = kind;
+}
+
+u8 CharacterMode_GetWildEncounterKind(void)
+{
+    return sWildEncounterKind;
+}
+
+// Roll the Character Mode overrides for one encounter, make the mon, and label
+// the battle with whichever roll (if either) actually fired. Returns the species
+// that was created.
+//
+// Both wild call sites go through here rather than repeating the sequence,
+// because the ORDER is the load-bearing part: CreateWildMon clears the kind, so
+// recording it before the call would throw it away. Sharing one function also
+// means a test can drive the exact code path the game runs, instead of a
+// re-implementation of it that would agree with itself no matter what shipped.
+u16 CreateWildMonWithCharacterOverride(u16 tableSpecies, u8 level)
+{
+    u8 kind = CHAR_WILD_ENCOUNTER_NORMAL;
+    u16 species = CharacterMode_RollWildOverrideSpecies(level, &kind);
+
+    if (species == SPECIES_NONE)
+    {
+        species = tableSpecies;
+        kind = CHAR_WILD_ENCOUNTER_NORMAL;
+    }
+
+    CreateWildMon(species, level);
+    CharacterMode_SetWildEncounterKind(kind);
+    return species;
 }
 
 enum
@@ -402,15 +461,8 @@ static bool8 TryGenerateWildMon(const struct WildPokemonInfo *wildMonInfo, u8 ar
 
     // Character Mode: 10% chance for the table's pick to be swapped for a
     // level-appropriate, non-legendary member of the active character's
-    // roster. No-op (returns SPECIES_NONE) unless the mode is on.
-    {
-        u16 species = wildMonInfo->wildPokemon[wildMonIndex].species;
-        u16 overrideSpecies = CharacterMode_RollWildOverrideSpecies(level);
-
-        if (overrideSpecies != SPECIES_NONE)
-            species = overrideSpecies;
-        CreateWildMon(species, level);
-    }
+    // roster (and 1% for one of their legendaries). No-op unless the mode is on.
+    CreateWildMonWithCharacterOverride(wildMonInfo->wildPokemon[wildMonIndex].species, level);
     return TRUE;
 }
 
@@ -418,16 +470,10 @@ static u16 GenerateFishingWildMon(const struct WildPokemonInfo *wildMonInfo, u8 
 {
     u8 wildMonIndex = ChooseWildMonIndex_Fishing(rod);
     u8 level = ChooseWildMonLevel(&wildMonInfo->wildPokemon[wildMonIndex]);
-    u16 species = wildMonInfo->wildPokemon[wildMonIndex].species;
-    u16 overrideSpecies = CharacterMode_RollWildOverrideSpecies(level);
 
-    // Character Mode: same 10% roster-override roll as the land/water/rock
-    // smash path above, for every fishing rod tier.
-    if (overrideSpecies != SPECIES_NONE)
-        species = overrideSpecies;
-
-    CreateWildMon(species, level);
-    return species;
+    // Character Mode: same rolls as the land/water/rock smash path above, for
+    // every fishing rod tier.
+    return CreateWildMonWithCharacterOverride(wildMonInfo->wildPokemon[wildMonIndex].species, level);
 }
 
 static bool8 SetUpMassOutbreakEncounter(u8 flags)

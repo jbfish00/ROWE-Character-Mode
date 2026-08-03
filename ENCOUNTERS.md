@@ -12,6 +12,16 @@ Every wild encounter rolls twice, independently, before the area's own table is 
 
 A character with no legendary never rolls the first one at all, so its rates are exactly the shipped 10% / 90%.
 
+**You can tell which roll fired, because the battle says so.** Both overrides announce themselves in the wild-battle intro:
+
+| roll | what the battle prints |
+|---|---|
+| roster | *A wild {SPECIES} destined for {CHARACTER} appeared!* |
+| legendary | *{SPECIES} revealed itself to {CHARACTER}!* |
+| — | the vanilla *Wild {SPECIES} appeared!* |
+
+This matters more than it looks. Rosters store canonical **family bases**, so the 10% roll hands you a Gible, not a Garchomp — and a wild Gible is exactly what the map's own table might have produced anyway. Without the message there is no way to tell the feature fired, and a playthrough of a sibling project reported "no on-roster encounters" when nothing was wrong. If you never see either line, the feature really is off; seeing one is proof it is on.
+
 ⚠️ **This is what can SPAWN, which is narrower than what can be OWNED.** `ROSTERS.md` walks form siblings as well as evolutions, because the catch gate canonicalizes forms. The wild stage picker walks the evolution table alone, so a form that is legal to own can be impossible to meet.
 
 A number after a stage is the level from which it can appear; the stage before it stops appearing at that level.

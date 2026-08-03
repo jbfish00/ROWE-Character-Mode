@@ -14,6 +14,19 @@
 // active character always won.
 #define COSTUME_CHARACTER_BASE  0xFFFF
 
+// Which roll, if any, produced the wild Pokemon the player is about to fight.
+// Read by battle_message.c to pick the intro string, and by nothing else.
+//
+// This exists because a 10% override that returns a family ROOT is invisible:
+// rosters store canonical family bases, so the override hands you a Gible, and
+// a wild Gible is exactly what the map's own table might have produced anyway.
+// Platinum shipped the identical feature, a playthrough reported "no on-roster
+// encounters", and there was no bug -- naming the character in the message is
+// the whole fix. Message only: the rates are not this feature's business.
+#define CHAR_WILD_ENCOUNTER_NORMAL     0
+#define CHAR_WILD_ENCOUNTER_ROSTER     1  // the 10% roster override fired
+#define CHAR_WILD_ENCOUNTER_LEGENDARY  2  // the 1% legendary roll fired
+
 struct CharacterInfo
 {
     const u8 *name;         // display name, charmap-encoded
@@ -49,7 +62,16 @@ bool8 CharacterMode_PartyHasAllowedMon(void);
 u16 CharacterMode_GetRosterSize(const struct CharacterInfo *character);
 bool8 CharacterMode_IsLegendaryOrMythical(u16 species);
 u16 CharacterMode_PickEvolutionStageForLevel(u16 species, u8 level);
-u16 CharacterMode_RollWildOverrideSpecies(u8 level);
+// outKind (may be NULL) reports WHICH roll produced the species, so a caller
+// that is about to start a battle can label it. It is only ever written when
+// the return value is a real species -- see CHAR_WILD_ENCOUNTER_* above.
+u16 CharacterMode_RollWildOverrideSpecies(u8 level, u8 *outKind);
+// The encounter kind belongs to the BATTLE, not to the roll. The roll runs per
+// encounter ATTEMPT -- repel, Keen Eye and the self-test's 4000-trial loops all
+// call it with no battle in sight -- so the kind is recorded next to the mon's
+// creation and cleared by every other path that makes a wild mon.
+void CharacterMode_SetWildEncounterKind(u8 kind);
+u8 CharacterMode_GetWildEncounterKind(void);
 // The 1% legendary encounter roll, and the pool it draws from. The pool builder
 // is public so a test can assert the POSITIVE direction deterministically --
 // a 1% event otherwise hides a test that cannot fail.

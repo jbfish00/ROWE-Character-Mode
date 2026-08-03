@@ -263,6 +263,26 @@ def main():
                  "all, so its rates are exactly the shipped %d%% / %d%%."
                  % (OVERRIDE_PCT, 100 - OVERRIDE_PCT))
     lines.append("")
+    lines.append("**You can tell which roll fired, because the battle says so.** "
+                 "Both overrides announce themselves in the wild-battle intro:")
+    lines.append("")
+    lines.append("| roll | what the battle prints |")
+    lines.append("|---|---|")
+    lines.append("| roster | *A wild {SPECIES} destined for {CHARACTER} "
+                 "appeared!* |")
+    lines.append("| legendary | *{SPECIES} revealed itself to {CHARACTER}!* |")
+    lines.append("| — | the vanilla *Wild {SPECIES} appeared!* |")
+    lines.append("")
+    lines.append("This matters more than it looks. Rosters store canonical "
+                 "**family bases**, so the %d%% roll hands you a Gible, not a "
+                 "Garchomp — and a wild Gible is exactly what the map's own "
+                 "table might have produced anyway. Without the message there "
+                 "is no way to tell the feature fired, and a playthrough of a "
+                 "sibling project reported \"no on-roster encounters\" when "
+                 "nothing was wrong. If you never see either line, the feature "
+                 "really is off; seeing one is proof it is on."
+                 % OVERRIDE_PCT)
+    lines.append("")
     lines.append("⚠️ **This is what can SPAWN, which is narrower than what can "
                  "be OWNED.** `ROSTERS.md` walks form siblings as well as "
                  "evolutions, because the catch gate canonicalizes forms. The "
