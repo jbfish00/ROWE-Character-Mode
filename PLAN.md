@@ -6,10 +6,15 @@ name-length expansion, playthrough readiness and the open engine work — plus t
 traps specific to this tree.
 
 `CLAUDE.md` (gitignored) remains the authority for architecture and history; this
-file is **state and next steps**. Verified 2026-07-26 against this working tree;
-§7 re-derived 2026-07-28, and the seven commits it describes were **landed
-2026-07-29** (`0f321aea`..`e5e40c83`) after a full rebuild, an anchor regeneration
-and a clean suite re-run. Tree clean.
+file is **state and next steps**. Re-derived against this working tree on
+**2026-08-03**, after a full rebuild (ROM `993c036846e10bf550505cd958899771`),
+an anchor regeneration (map digest `ffba13d0e6e3263b`) and a clean 18-run suite.
+
+⚠️ **The 2026-08-03 pass closed the last of the open work in this repo** — the
+encounter markers (§7.14), the in-game trade test, costume persistence and the
+TAAR attribution debt. **There is no open code work.** What remains is a human
+playthrough, art acquisition, and two permission requests only the user can
+send. If a later note here tells you to build something, check its date.
 
 > A mirror of this file lives at
 > `/home/jbfish00/Documents/Character Hacks/game_plans/rowe.md`, alongside plans
@@ -22,9 +27,15 @@ and a clean suite re-run. Tree clean.
 **The most feature-complete game in the project, and no longer blocked.** The
 12-character-name change is landed, a live out-of-bounds write in the Pokedex is
 fixed, the 1% legendary encounter rule is shipped, and the whole suite is green.
-⬜ **One feature is open and unstarted: the encounter markers (§7.14)**, requested
-2026-08-02 — the 10% roster override is currently *unobservable*, because it
-hands out a family root that the map's own table could equally have produced.
+✅ **The encounter markers (§7.14) SHIPPED 2026-08-02/03** — the 10% roster
+override and the 1% legendary now announce themselves by name in the wild-battle
+intro, so a feature that was *unobservable* (it hands out a family root the map's
+own table could equally have produced) is a yes/no reading.
+✅ **Both remaining automatable test gaps are closed too** — the in-game trade
+path (§7 item 2b / checklist 11) and costume persistence (checklist 26).
+✅ **The TAAR attribution debt is paid** (§7 item 3).
+⬜ **There is no open code work in this repo.** What is left is a human
+playthrough, art acquisition, and two permission requests the user must send.
 
 | | |
 |---|---|
@@ -35,16 +46,17 @@ hands out a family root that the map's own table could equally have produced.
 | Name length | **12/12 LANDED** (`71cebcbe`), verified by a new headless suite |
 | Legendary rule | **SHIPPED** — 1% wild encounters, offered-until-caught, no roaming |
 | Modes | **Randomized Party Mode SHIPPED** (`c231ba2a`), exclusive with Character Mode; both Game Modes menus de-drifted and pinned |
-| Readiness | **GREEN** — selftest 33/33 and **all 15 suite runs passing**. Re-run 2026-07-30 on the mode-exclusion build `4ba53b39dc7f2c02bf1f023a95302467` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, basculegion_hang 34, mode_exclusion 72, char_select 11, **tobias_legend 14**, starter red 6 + normal 6) — the fourteen pre-existing tallies match the `08eef0c3…`, `e2b047c4…`, `dd0315b8…` and `b14e874b…` baselines EXACTLY, and `tobias_legend` was the newest run. **Run it with `bash tools/mgba_scripts/run_suite.sh`** (new 2026-07-30; there was no runner before, so every session re-derived fifteen invocations from prose). Anchors regenerated first; map digest `45cfe76e469fceeb`, and a second `gen_anchors.py` run reproduces `anchors.lua` byte-identical |
+| Readiness | **GREEN** — selftest **36/36** and **all 18 suite runs passing** on the marker build `993c036846e10bf550505cd958899771` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, basculegion_hang 34, mode_exclusion 72, char_select 11, tobias_legend 14, **enc_marker 41**, **trade_gate 10**, **costume_persist 12**, starter red 6 + normal 6) — **the fifteen pre-existing tallies match the `4ba53b39…` baseline EXACTLY** (re-run in full 2026-08-03 on this build, not carried over from notes). **Run it with `bash tools/mgba_scripts/run_suite.sh`**. ⚠️ **Selftest went 33 → 36**, not by accident: §7.14 added three checks (the encounter kind tracks the species the roll returned, a roll that did not fire labels nothing, and 200 rolls with no battle leave the marker clear). A 33 on this build is a regression, not a stale note. Anchors regenerated first; map digest `ffba13d0e6e3263b`, and a second `gen_anchors.py` run reproduces `anchors.lua` byte-identical |
 | Species tables | **COMPLETE** — every species with a `gBaseStats` row now has a learnset, a name and front/back pic coords, gated by `tools/check_species_tables.py`. Four had none and **hung the game** (§7.11) |
 
 Every number above was re-derived from this tree, not taken from notes.
-⚠️ The suite is **15 runs as of 2026-07-31** — thirteen scripts plus the two
-`starter_regression` paths. It was **11** before that (nine scripts), and for
+⚠️ The suite is **18 runs as of 2026-08-03** — sixteen scripts plus the two
+`starter_regression` paths. It was **11** (nine scripts) until 2026-07-30, and for
 three sessions §0 and §7 claimed 12 while §8 correctly said 11: that 12th was a
-*phantom*. The 12th now is real — `basculegion_hang_e2e`, §7.11 — and the 13th is
-`mode_exclusion_e2e`, the 14th `character_select_e2e` and the 15th
-`tobias_legendary_e2e` — all §7 item 2b. Do not fold the
+*phantom*. Since then: 12 `basculegion_hang_e2e` (§7.11), 13 `mode_exclusion_e2e`,
+14 `character_select_e2e`, 15 `tobias_legendary_e2e` (all §7 item 2b), then
+**16 `encounter_marker_e2e` (§7.14), 17 `trade_gate_e2e` (checklist item 11) and
+18 `costume_persist_e2e` (checklist item 26)** on 2026-08-02/03. Do not fold the
 two facts together; the tallies are in §7.
 
 ### If you are picking this up cold, start here
@@ -55,8 +67,9 @@ two facts together; the tallies are in §7.
 1. **Sanity-check the tree before believing any of this**, in this order —
    `make -j$(nproc)` → `python3 tools/mgba_scripts/gen_anchors.py` →
    `bash tools/mgba_scripts/run_suite.sh`. Expect ROM md5
-   `4ba53b39dc7f2c02bf1f023a95302467`, map digest `45cfe76e469fceeb`, and a
-   second `gen_anchors.py` run that changes nothing.
+   `993c036846e10bf550505cd958899771`, map digest `ffba13d0e6e3263b`, and a
+   second `gen_anchors.py` run that changes nothing. (Both changed on
+   2026-08-03 — the previous build was `4ba53b39…` / `45cfe76e469fceeb`.)
    ⚠️ **Regenerate anchors BEFORE the suite, and never judge staleness by
    mtime** — `make` relinks on every invocation, so the ROM is always newer.
 2. **The largest remaining work is a human playthrough**, and it is genuinely
@@ -64,19 +77,33 @@ two facts together; the tallies are in §7.
    `../Character Hacks/game_plans/rowe_playthrough_coverage.md` first: **20 of
    the 32 checklist items are already machine-proven**, so most of that list
    does not need a person at all.
-3. **The single highest-value thing anyone can do costs ten minutes**: look at
-   the game. 27 overworld sheets and 7 back pics landed 2026-07-30, verified as
-   decoded artifacts, and **nobody has watched one animate.**
+3. ✅ **"Nobody has watched one animate" is no longer true** (2026-08-03). All
+   **22** characters from the 07-30 art batch were photographed in-engine
+   walking in four directions by
+   `tools/mgba_scripts/sprite_visual_check.lua`, and every sprite is coherent —
+   no scrambled walk cycle, no half-sliced frames, no palette mangling. Contact
+   sheet: `../Character Hacks/rowe_sprite_contact_sheet_2026-08-03.png`.
+   ⭐ **`emu:screenshot(path)` works in HEADLESS mGBA.** That retires this
+   repo's standing assumption that anything visual needs `mgba-qt` + xdotool,
+   and it is why a visual check is now seconds rather than an afternoon.
+   ⚠️ **`CM_REQ_SET_CHARACTER` alone photographs the WRONG character** — the
+   player object keeps the graphics it was created with, so the shot shows the
+   previous costume and looks perfectly fine. `CM_REQ_REFRESH_AVATAR` (the call
+   `ApplyCostumeChoice` makes) is what repaints it.
+   ⚠️ **The trainer BACK sprite is only on screen during the send-out throw.**
+   A fixed delay photographs the transition wipe (blank) and waiting for the
+   action menu photographs the battle after the trainer has already left — two
+   reasonable-looking shots that both miss it. The script bursts the intro.
 4. **Two things are waiting on the user specifically** and no agent should do
    them: send the two drafted art-permission requests
    (`../Character Hacks/PERMISSION_REQUESTS.md`), and decide about the TAAR
    attribution debt (§7 item 3).
-5. **One automatable test gap is left**, not six — item 11, the in-game trade
-   path (§7 item 2b). Everything else in that list is closed.
-6. ⬜ **There is one unstarted FEATURE: the encounter markers (§7.14)**, requested
-   2026-08-02. It is the only open code work in the repo and it is message-only —
-   naming the character when the 10% roster override or the 1% legendary fires,
-   so the player can see the feature working at all. **Do not change the rates.**
+5. ✅ **No automatable test gap is left.** Item 11 (the in-game trade path) and
+   item 26 (costume persistence) both closed 2026-08-03; the list is empty.
+6. ✅ **The encounter markers (§7.14) are DONE** — requested and shipped
+   2026-08-02/03, message-only, rates untouched. **There is no open code work in
+   this repo.** If you are looking for something to build, there isn't one; read
+   §7 "So what is actually next" and expect a playthrough and art.
 
 ⚠️ **The most useful habit in this repo, stated once:** when a new assertion
 goes green on the first try, **break it on purpose before believing it.** Five
@@ -906,110 +933,127 @@ a 0 onto Red's roster — each exits 1 and names the culprit.
     change); the exposure is that nothing would tell them. **One unported check,
     not four new bugs.**
 
-14. ⬜ **ENCOUNTER MARKERS — the roster override needs to say so. USER REQUEST
-    2026-08-02, NOT STARTED.** Two new wild-battle intro messages:
+14. ✅ **ENCOUNTER MARKERS — SHIPPED 2026-08-02/03.** Requested 2026-08-02,
+    built and proven the same pass. Two new wild-battle intro messages, and
+    **the rates were not touched**:
 
     | path | message |
     |---|---|
-    | 10% roster override | `A wild {SPECIES} destined for {CHARACTER} appeared!` |
-    | 1% legendary | `{SPECIES} revealed itself to {CHARACTER}!` |
+    | 10% roster override | `A wild {SPECIES} destined for\n{CHARACTER} appeared!` |
+    | 1% legendary | `{SPECIES} revealed itself\nto {CHARACTER}!` |
+    | anything else | the vanilla `Wild {SPECIES} appeared!` |
 
-    ⭐ **Why this is worth doing, and it is not cosmetic.** A 10% override that
-    returns a **family ROOT** is *unobservable*. Rosters store canonical family
-    bases, so the override hands you a **Gible**, not a Garchomp — and a wild
-    Gible is exactly what the map's own table might have produced anyway. The
-    player cannot tell the feature fired. **Platinum shipped this same feature,
-    a playthrough reported "no on-roster encounters", and there was no bug** —
-    the fix was naming the character in the message, rate unchanged
-    (`../Character Hacks/game_plans/platinum.md` §9). ROWE has the identical
-    exposure and, worse, a checklist item (12) that asks the player to judge a
-    *rate by eye* over "a few dozen encounters". This turns a statistical
-    judgement into a yes/no observation.
+    ⭐ **Why it was worth doing.** A 10% override that returns a **family ROOT**
+    is *unobservable*: rosters store canonical family bases, so it hands you a
+    **Gible**, not a Garchomp — and a wild Gible is exactly what the map's own
+    table might have produced. Platinum shipped the identical feature, a
+    playthrough reported "no on-roster encounters", and **there was no bug**.
+    Checklist items 12 and 13 asked a player to judge a ~10% and a ~1% rate by
+    eye over "a few dozen encounters"; they are now yes/no readings.
 
-    ### Where it goes (all four sites located 2026-08-02)
+    ### How it is wired
 
-    - **The signal.** `CharacterMode_RollWildOverrideSpecies` (`character_mode.c:489`)
-      returns only a species, and both call sites
-      (`wild_encounter.c:408` land/water/rock-smash, `:422` fishing) collapse
-      "no override" to `SPECIES_NONE`. Nothing records *which* of the two rolls
-      fired. Needs either an out-param or a module-level "last override kind".
-    - **The message.** `battle_message.c:3403`, the wild `else` branch of
-      `STRINGID_INTROMSG`, which currently picks between
-      `sText_WildPkmnAppeared` / `…Appeared2` / `…AppearedPause` /
-      `sText_TwoWildPkmnAppeared`.
-      ⚠️ **`BATTLE_TYPE_LEGENDARY` cannot be reused as the legendary signal.**
-      It is set only in `battle_setup.c` (:508/512/516/556/586) for *scripted*
-      static legendaries; the 1% wild legendary goes through the ordinary wild
-      path and never sets it. Setting it would also change more than the string.
-    - **The character name.** Add a `B_TXT_CHARACTER_NAME` placeholder beside
-      `B_TXT_PLAYER_NAME` in `BattleStringExpandPlaceholders`
-      (`battle_message.c:4117`). ✅ `gCharacters[].name` is **already
-      charmap-encoded** (`_("Tobias")`), so it copies straight out — no
-      conversion, and the "no `_` inside `_()`" charmap rule is not in play.
-      ⚠️ Prefer this over `{B_BUFF1}`, which has its own
-      `PREPARE_*_BUFFER` encoding and is churned by battle events.
-    - **ES/EN.** `battle_message.c` carries **two** string blocks (~line 394 and
-      ~line 1038). Both need the new strings or one language silently keeps the
-      old text.
+    - **The signal.** `CharacterMode_RollWildOverrideSpecies` gained an
+      `outKind` out-param (NULL allowed), written **only** when it returns a real
+      species. The kind itself lives in `sWildEncounterKind`
+      (`src/wild_encounter.c`), read through
+      `CharacterMode_{Get,Set}WildEncounterKind`.
+      ⚠️ **It is in `wild_encounter.c`, not `character_mode.c`, for a linker
+      reason worth knowing**: this tree's `ld_script.txt` names every object's
+      sections explicitly and has **no `.data` output section**, so
+      `static u8 x = 0;` in a file with no `sym_ewram.txt`/`sym_bss.txt` entry
+      links as a reference into a *discarded* section. `wild_encounter.o` is
+      already in `sym_ewram.txt`; `character_mode.o` is in none of the three.
+    - **Both wild call sites now share one function**,
+      `CreateWildMonWithCharacterOverride` — roll, make the mon, record the
+      kind. Sharing it is what lets a test drive the shipping code path instead
+      of a re-implementation that would agree with itself no matter what shipped.
+    - **The message.** `battle_message.c`'s wild `else` branch of
+      `STRINGID_INTROMSG`, tested **last** so `BATTLE_TYPE_LEGENDARY`,
+      `BATTLE_TYPE_DOUBLE` and the Wally tutorial keep their exact vanilla
+      strings. (A wild double has two opponents and only one could be the
+      override, so it stays unmarked rather than naming half a battle.)
+    - **`B_TXT_CHARACTER_NAME` = `0x3E`**, appended in `include/battle_message.h`
+      and `charmap.txt`. `gCharacters[].name` is already charmap-encoded, so it
+      copies straight out. Falls back to `gText_EmptyString2` when there is no
+      active character — the copy loop dereferences unconditionally.
+    - **Both language blocks got the strings.** The Spanish block keeps English
+      text on purpose: *destinado/destinada* must agree with the species' gender
+      and the string cannot know it, and its two neighbours
+      (`sText_WildPkmnAppeared2`, `sText_TwoWildPkmnAppeared`) are already
+      untranslated there. `GAME_LANGUAGE` is `LANGUAGE_ENGLISH`, so that block is
+      compiled out today.
 
-    ### The traps this will hit — all four are the shapes this repo already knows
+    ### The four traps, and what each cost
 
-    1. ⚠️ **A flag set by the ROLL is not a property of the BATTLE.** The roll
-       runs per encounter *attempt*; repel, Keen Eye and a failed encounter all
-       return before a battle exists. A module-level flag set at roll time would
-       still be set when a later, ORDINARY encounter starts, and mislabel it.
-       **Set it where the species is committed** (next to `CreateWildMon`), and
-       **clear it on every other path that creates a wild mon** — including
-       `CreateScriptedWildMon` and the debug/`Alpha` spawns.
-    2. ⚠️ **The self-test rolls 4000 times with no battle.**
-       `CM_REQ_WILD_ROLL_STATS` and `CM_REQ_LEGENDARY_ROLL_STATS`
-       (`character_mode_selftest.c:623`) call the roll in a tight loop purely to
-       measure rates. Whatever signal is chosen must not leak out of that loop.
-    3. ⚠️ **The string may not fit, and a coordinate argument is not evidence.**
-       Worst case is `Crasher Wake` (12, the longest of the 236) with a 12-char
-       species: *"A wild Crabominable destined for Crasher Wake appeared!"* is
-       ~55 characters against a two-line box. **Render it and look**, per §7.4 —
-       measure with the real font, place `\n`/`\p` deliberately, and do not
-       assume `GetFontIdToFit` rescues it (that is used for NAME fields, not for
-       a whole battle string).
-    4. ⚠️ **Do not change the RATES.** This is a message-only change. The 10%
-       and 1% rolls, their order, and the data-check-before-`Random()` rule
-       (§5, `a5befab7`) must be untouched — `legendary_encounter_e2e`'s
-       "rate is consistent with 1% (15..75 of 4000)" is the guard.
+    1. ✅ **A flag set by the ROLL is not a property of the BATTLE.** Handled by
+       setting the kind beside the mon's creation, never in the roll, and by
+       `CreateWildMon` clearing it for **every** wild mon so a path written next
+       year is unmarked by default. `CreateScriptedWildMon`,
+       `CreateScriptedDoubleWildMon` and `CreateRoamerMonInstance` bypass
+       `CreateWildMon`, so those three clear it explicitly.
+    2. ✅ **The self-test's 4000-roll loops leak nothing** — they pass `NULL`.
+       Asserted at every boot: *"200 rolls with no battle leave the marker clear"*.
+    3. ✅ **The string was MEASURED, then rendered, then looked at.** Worst case
+       is `A wild Brambleghast destined for` at **170 px** against B_WIN_MSG's
+       **208** (26 tiles), and `to Crasher Wake!` at 86. Proven three ways:
+       `tools/check_battle_strings.py` measures the worst of all
+       236 × 1023 name combinations offline; `CM_REQ_BATTLE_STRING_WIDTH` makes
+       the ROM measure its own printed string with `GetStringWidth`; and the two
+       worst-case strings were built into a throwaway ROM and **screenshotted**
+       (both fit, with margin). The offline model agrees with the ROM to the
+       pixel on three real strings (146 / 119 / 131), and those three are pinned
+       in the checker so the model cannot drift away from the engine.
+    4. ✅ **The rates are untouched.** `legendary_encounter_e2e`'s "rate is
+       consistent with 1% (15..75 of 4000)" and the boot self-test's rarity bound
+       both still hold at their baseline tallies.
 
-    ### The test it needs, and the shape it must NOT have
+    ### The test: `tools/mgba_scripts/encounter_marker_e2e.lua` (41 assertions)
 
-    A test asserting *"the marker appeared"* passes when the feature works **and**
-    when the marker is hardwired on. **The assertion has to be a discriminating
-    pair, in one run**: force an override encounter → marker present, naming the
-    right character; force an ORDINARY encounter → **vanilla string, no marker**.
-    Same save, same map, same run. That is the in-band control this repo now
-    requires (§7 item 2b), and it is the only version that can tell a working
-    marker from a stuck one.
-    Add as a suite run (**would make 16**); `catch_gate_e2e` already drives real
-    wild battles and is the closest model.
+    **Six real battles in one run**, and *nothing is forced*:
+    `CM_REQ_OVERRIDE_WILD_BATTLE` loops the shipping
+    `CreateWildMonWithCharacterOverride` until the roll produces the kind under
+    test, then starts the battle through `BattleSetup_StartWildBattle` — the same
+    entry point `TryStandardWildEncounter` uses. Ordinary, roster override and
+    1% legendary therefore all occur in the same run, so a marker hardwired
+    either on or off fails one of them. Three in-band controls: an ordinary
+    encounter **after** a marked one, a scripted spawn, and a bare
+    `CreateWildMon` with the marker deliberately pre-set.
 
-    ### Everything else that needs updating when it lands
+    ⭐⭐ **THE FINDING WORTH CARRYING: A NEGATIVE CONTROL CAN PASS AND STILL BE
+    TELLING YOU SOMETHING.** Deleting `CreateWildMon`'s clear and rebuilding left
+    the run **fully green** — because `CreateWildMonWithCharacterOverride` writes
+    the kind on *every* call, `NORMAL` included, and so never depended on that
+    clear. The clear exists for the four paths that do **not** go through the
+    wrapper — outbreak, Feebas, DexNav, the trade mon — and **none of them was
+    exercised**, so the one line protecting all four was untested. A sixth
+    battle (`CM_REQ_PLAIN_WILD_BATTLE`) now drives that shape, and the same
+    deletion turns the run red. **When a control passes, either the code is fine
+    or your test does not reach it. Find out which.**
 
-    - **`ENCOUNTERS.md`** (generated by `emit_encounter_docs.py`) — document both
-      messages, so a player who sees one knows it is a feature.
-    - **`PLAYTHROUGH_CHECKLISTS.md` §4 item 12** currently asks the player to
-      confirm a ~10% rate "over a few dozen encounters". Rewrite it: the marker
-      makes it directly observable, and **that item gets easier and more
-      trustworthy**. Item 13 (the 1% legendary) likewise.
-    - **`game_plans/rowe_playthrough_coverage.md`** — item 12/13 evidence rows.
-    - **`CREDITS`/§0** — no art, no credits impact.
-    - ⚠️ **Re-run the full suite.** `catch_gate_e2e` drives real battles and
-      A-mashes through the intro; a longer intro string changes how many frames
-      that takes. If it goes red, suspect the timing before the gate.
+    Three commit-time controls, all re-broken on purpose:
 
-**Nothing here blocks a playthrough.** 1-3, 5, 6, 7, **9**, **10**, **11**,
-**12** and **13** are done, green and **committed**
-(`0f321aea`..`f288437b`). ⬜ **14 is a new user request (2026-08-02) and is the
-only unstarted feature on this list** — it does not block a playthrough either,
-but it materially improves one, because it makes the 10% override observable
-instead of a rate the player has to judge by eye. **4 was implemented and
-reverted** — it is art-blocked after all, and the way that was established
+    | break | result |
+    |---|---|
+    | delete `CreateWildMon`'s clear | 3 failures, **all** in `plain-wild-after-marked` |
+    | delete the wrapper's `SetWildEncounterKind` | 8 failures, all in `roster` + `legendary` |
+    | hardwire the roster marker ON | 9 failures, all in the four *unmarked* battles |
+
+    ### Everything else that landed with it
+
+    - **`ENCOUNTERS.md`** documents both messages (regenerated by
+      `emit_encounter_docs.py` — the header text lives in the generator).
+    - **`PLAYTHROUGH_CHECKLISTS.md` §4 items 12/13** rewritten from "judge a rate
+      by eye" to "walk in grass until you see the line once".
+    - **`game_plans/rowe_playthrough_coverage.md`** — rows 12, 13 and a new 12b.
+    - **`tools/check_battle_strings.py`** is a new static gate (with
+      `--self-test` as its negative control) — it also fails if a marker string
+      is added to only one `GAME_LANGUAGE` block, or reworded to stop naming the
+      character.
+
+**Nothing here blocks a playthrough, and nothing on this list is open.** 1-3, 5,
+6, 7, **9**, **10**, **11**, **12**, **13** and now **14** are done and green.
+**4 was implemented and reverted** — it is art-blocked after all, and the way that was established
 (render the tilemap, do not reason about coordinates) is now the rule for this
 repo's screens. **8b landed 2026-07-30.** **8 is the only real art wall left**,
 and it is acquisition: as of that pass every staged sprite in every slot is
@@ -1017,20 +1061,41 @@ imported, and the tools to import a newly staged one already exist.
 
 ### So what is actually next, in order
 
-0. ⬜ **The encounter markers (§7.14) — NEW, user-requested 2026-08-02, not
-   started.** Ahead of the playthrough deliberately: it changes what the
-   playthrough can *observe*. Items 12 and 13 of the checklist currently ask a
-   player to confirm a ~10% and a ~1% rate by eye over "a few dozen encounters";
-   with the markers those become a yes/no reading, and the single most likely
-   false bug report in this whole project ("I never saw an on-roster encounter")
-   stops being possible. Platinum hit exactly that and there was no bug.
-   Message-only — **do not touch the rates.**
+0. ✅ **The encounter markers (§7.14) — DONE 2026-08-02/03.** They were put
+   ahead of the playthrough deliberately, because they change what a playthrough
+   can *observe*: checklist items 12 and 13 are now yes/no readings instead of
+   rates judged by eye, and the single most likely false bug report in this whole
+   project ("I never saw an on-roster encounter") is no longer possible.
+   Message-only; the rates were not touched.
 
-1. **The playthrough (§7.7). It is 32 items** — recounted 2026-07-30 with
-   `grep -c "^- \[ \]"`; the workspace total is **120**. It has been wrong three
-   times (24 → 28 → 32); derive it, never copy it. Both numbers had
+1. **The playthrough (§7.7). It is 33 items** — recounted 2026-08-03 with
+   `grep -c "^- \[ \]"`; the workspace total is **121**. It has been wrong four
+   times (24 → 28 → 32 → 33); derive it, never copy it. Both numbers had
    been copied forward for sessions under a note that said *"recount it, do not
    copy it"*. Derive them.
+
+   ⭐ **One more slice of it got measured on 2026-08-03.**
+   `tools/character_mode/roster_playability_report.py` answers the data half of
+   *"is this roster miserable to play"*: the game's own **3,729** wild slots
+   against each roster, excluding the 10% override because the override is the
+   floor everyone already has. **The median selectable character matches 2.0%**
+   of the game's wild slots (mean 3.4%), and **26 characters match ZERO on the
+   Hoenn opening routes.** For most characters the override is doing nearly all
+   the work of letting you build a team — which is exactly why the §7.14 markers
+   matter, and why *"I never saw an on-roster encounter"* was always the most
+   likely false bug report. Sanity: Goh (86 families) 29.4%, Brendan 7.3%,
+   Roxanne 2.0%, Tobias 0.0% (two legendaries, none in wild tables).
+   ⚠️ Counts SLOTS, not encounter probability, and `early%` assumes the Hoenn
+   opening though ROWE lets you start on any of eight islands. **Flags for which
+   characters to watch, never verdicts, and never a gate.**
+
+   ⚠️ **This is now the ONLY thing on this list that an agent cannot advance**,
+   and the sub-items that could be automated have been: 22 of 34 coverage rows
+   are fully machine-proven, item 19's "is the art corrupt" half is answered by
+   a contact sheet, and items 11, 26, 12 and 13 all closed on 2026-08-02/03.
+   What is left is a person playing the game — level curve, whether a roster is
+   miserable over 40 hours, whether the new prompts read clearly to someone who
+   has not read the source, and reaching the credits.
 
    ⚠️ **"Nothing automated can close it" is true of the WHOLE and false item by
    item, and that distinction was costing real work.**
@@ -1114,14 +1179,37 @@ imported, and the tools to import a newly staged one already exist.
    (`repeatable == 0`, and a different pool size). **A test that only ever
    exercises the exempt case cannot tell an exemption from a no-op.**
 
-   That leaves **one** automatable gap, not six:
+   ✅ **Items 11 and 26 closed 2026-08-03, so the list is now EMPTY.**
 
-   Still open — **one** automatable gap and one partial, not six:
-   - **Item 11, the in-game trade path.** Statically audited only:
-     `CharacterMode_SweepPartyToPC` is called from `trade.c:3905,4422,5723` and
-     no run drives a real trade.
-   - **Item 26, costume persistence across a reload.** Party and mode are
-     covered by `continue_smoke` + `ot_roundtrip_e2e`; the costume var is not.
+   - **Item 11, the in-game trade path** — `trade_gate_e2e.lua` (10 assertions).
+     It had been "statically audited" for weeks, which meant nobody had run a
+     trade: the sweep sits at **case 74** of the cutscene's state machine, after
+     the fade and the free, so nothing short of running the whole cutscene
+     reaches it. `CM_REQ_INGAME_TRADE` sets the two script vars and calls the
+     same two specials the trade scripts call, in the same order.
+     ⭐ **Discriminating pair**: off-roster incoming (Dracovish) → PC box count
+     **+1** and party −1; on-roster incoming → box count **unchanged**. Without
+     the second half a build that swept the whole party after any trade passes.
+     ⭐ **The controls check themselves** — both species go through the gift gate
+     first, so the 2026-07-24 failure (a roster sync silently made three tests'
+     off-roster control on-roster) fails loudly here instead of going quiet.
+     ⚠️ It trades away slot **1**, never slot 0: `SweepPartyToPC`'s `keptOne`
+     guard refuses to empty the party, so an off-roster mon left alone would be
+     KEPT and read as a broken gate.
+     **Negative control:** deleting the sweep from both trade sites → exactly 2
+     failures, both off-roster; the on-roster half stayed green.
+   - **Item 26, costume persistence** — `costume_persist_e2e.lua` (12
+     assertions). `VAR_COSTUME_CHARACTER` (17008) and `VAR_COSTUME_NUMBER`
+     (0x409D) survive save → **reset** → Continue, alongside
+     `FLAG_CHARACTER_MODE` and the party, so all three thirds of item 26 are
+     proven on one reload.
+     ⭐ **The control is the half that can fail**: it then writes *different*
+     values, does **NOT** save, resets again, and requires the **saved** values
+     back. A GBA reset zero-fills EWRAM, so a value that survives came out of
+     flash — without this, "the var still reads 7" passes on a build where the
+     reload never happened or the write never landed.
+     ⚠️ **It is the only suite run that WRITES to its fixture** (it has to).
+     It runs last, and `run_suite.sh` mints a fresh fixture per invocation.
    ⚠️ **Do not re-plan items 3, 15, 16 or 21/22/23 from an older copy of this
    list** — they are done, and an earlier version of this section described
    15/16 as "a `starter_regression` variant, cheap", which was wrong: they
@@ -1137,12 +1225,43 @@ imported, and the tools to import a newly staged one already exist.
    📄 **Both are now DRAFTED** in `../Character Hacks/PERMISSION_REQUESTS.md`
    with a tracking table — ready to send, **not sent**. Sending is the user's to
    do, not an agent's.
-   ⚠️ **An attribution debt is open on art already shipped.**
-   `CREDITS_CHARACTER_MODE.md` claims a `harvest_index.json` in
-   `sprites/donors/taar/` makes each file's author recoverable. **That file does
-   not exist**, so six TAAR overworld sheets now in the ROM (Korrina, Acerola,
-   Nessa, Bede, Larry, Palmer) cannot be attributed to an individual — weaker
-   than TAAR's licence asks. Fix: re-fetch at `36b619ec…` and match by content.
+   ✅ **The attribution debt is PAID (2026-08-03).**
+   `CREDITS_CHARACTER_MODE.md` claimed a `harvest_index.json` in
+   `sprites/donors/taar/` made each file's author recoverable; **that file did
+   not exist**, so six TAAR overworld sheets in the ROM could not be attributed
+   to an individual — weaker than TAAR's licence asks.
+   `tools/character_mode/rebuild_taar_index.py` re-fetches the tree at the
+   recorded commit `36b619ec…` (still `main`'s HEAD) and matches **by content
+   hash**: the staging pass copied rather than converted, so all **257** staged
+   PNGs are byte-identical to their upstream files and **all 257 matched, zero
+   unmatched**. `harvest_index.json` now exists for `taar/` and `taar_gap/`,
+   covering **22 named artists**.
+   The six: **Korrina** and **Acerola** → *Kasen*; **Nessa** → *Galaxeeh* **and**
+   *aveontrainer* (⚠️ Galaxeeh's folder is *"Overworld Trainer Sprite Resizes"*
+   and its README credits aveontrainer for the original — crediting only the
+   resizer would have dropped the artist); **Bede** and **Larry** →
+   *PurrfectDoodle (Eva)*; **Palmer** → *spilledpizza*.
+   ⭐ **The script carries its own control**: Rowan's author was known
+   independently from the artist's README *before* it existed, and it is
+   asserted — so a matcher pairing files with the wrong upstream path fails
+   loudly instead of emitting a plausible index of wrong names. It also refuses
+   to write a partial index, because an index missing its misses reads as
+   complete. **Re-run it in the same pass as any new TAAR staging**, or the
+   credits claim goes stale again.
+
+   📄 **MEASURED NEGATIVE, 2026-08-03: TAAR is EXHAUSTED for this roster — do
+   not re-search it.** While the clone was on disk, all three missing slots were
+   swept against the full upstream tree (789 overworld files, plus the front and
+   back sets), by exact normalised name *and* by substring so nested layouts like
+   `spilledpizza/…/DP_palmer.png` could not hide: **0 of 52 missing front pics,
+   0 of 108 missing overworld, 0 of 217 missing back pics** have a TAAR file.
+   The only four substring hits were false positives (Milo→*milotic*,
+   Kabu→*kabuto*, Rika→*Erika*, Ress→*colress*), which is a good reminder that a
+   name match is a candidate and not a find — the 07-29 harvest's own trap was a
+   format-perfect `paul_front_pic.png` that is a cartoon stranger in a top hat.
+   This confirms "every staged sprite in every slot is imported" and extends it:
+   **the upstream source is also empty.** New art must come from a different
+   donor or from the two open permission requests.
 4. **The selection-screen portrait (§7.4)** and any 10th mode row — both need the
    `ui_menu` tilemap redrawn. Same class as 2, not ahead of it.
 
@@ -1164,8 +1283,15 @@ python3 tools/check_species_names.py        # abbreviated-species-name detector
 python3 tools/check_mode_menus.py           # menu row <-> pory switch case drift (§7.10)
 python3 tools/check_mode_menus.py --self-test   # its negative control
 python3 tools/check_species_tables.py       # base stats <-> learnset/name/coords (§7.11)
+python3 tools/check_battle_strings.py       # marker strings fit B_WIN_MSG (§7.14)
+python3 tools/character_mode/roster_playability_report.py [--csv]  # which rosters to watch
+python3 tools/check_battle_strings.py --self-test   # its negative control
+python3 tools/character_mode/rebuild_taar_index.py <taar-clone>  # art attribution
 python3 tools/mgba_scripts/gen_anchors.py   # MUST re-run after every build
-bash tools/mgba_scripts/run_suite.sh        # all 15 runs, one line each (NEW 2026-07-30)
+bash tools/mgba_scripts/run_suite.sh        # all 18 runs, one line each
+# Visual check -- NOT a suite run, it asserts nothing about how art LOOKS.
+CM_SAV=<fixture> CM_SHOTS=/tmp/shots CM_NO_BATTLE=1 CM_CHARS=112,113 \
+  timeout 280 "$MGBA" --script tools/mgba_scripts/sprite_visual_check.lua pokeemerald.gba
 ```
 
 ⚠️ **`run_suite.sh` is new because there was no runner** — every session
@@ -1190,23 +1316,27 @@ CM_SAV_OUT=~/Documents/rowe_fixture.sav timeout 300 "$MGBA" \
     --script tools/mgba_scripts/make_fixture_save.lua pokeemerald.gba
 ```
 
-The suite (**15 runs** as of 2026-07-30 — thirteen scripts plus the two
-`starter_regression` paths; `basculegion_hang_e2e` is the new tenth script, a
-REAL script and not the phantom 12th §0 used to miscount). Logs are ~130 MB;
-`timeout` exit 124 is NORMAL — the harness never exits on its own and the
-RESULT line prints well before the timeout:
+The suite is **18 runs** as of 2026-08-03 — sixteen scripts plus the two
+`starter_regression` paths. Logs are ~130 MB each; `timeout` exit 124 is NORMAL
+— the harness never exits on its own and the RESULT line prints well before the
+timeout, so **judge by the RESULT line, never by the exit code**.
+
+**Use the runner, not a hand-rolled loop** — it mints a fresh fixture, encodes
+every trap, and fails a run that reports PASS with zero assertions:
+
+```bash
+bash tools/mgba_scripts/run_suite.sh
+```
+
+⚠️ **The loop that used to live here listed ten scripts and is gone.** Six runs
+have been added since it was written, and a hand-rolled loop that silently omits
+a third of the suite prints all-green. If you need to run one script alone:
 
 ```bash
 MGBA="../Character Hacks/Seaglass-Character-Mode/tools/mgba_src/build/mgba-headless"
-export CM_SAV=~/Documents/rowe_fixture.sav
-for t in boot_smoke continue_smoke ot_roundtrip_e2e legendary_encounter_e2e \
-         encounter_doc_e2e catch_gate_e2e pc_sweep_e2e johto_gym_e2e \
-         gigaton_reselect_e2e basculegion_hang_e2e; do
-    timeout 100 "$MGBA" --script tools/mgba_scripts/$t.lua pokeemerald.gba > /tmp/$t.log 2>&1
-    echo "$t $(grep -aoE 'RESULT: [A-Z]+' /tmp/$t.log | tail -1)"
-done
-CM_PATH=red    timeout 100 "$MGBA" --script tools/mgba_scripts/starter_regression.lua pokeemerald.gba > /tmp/sr.log 2>&1
-CM_PATH=normal timeout 100 "$MGBA" --script tools/mgba_scripts/starter_regression.lua pokeemerald.gba > /tmp/sn.log 2>&1
+CM_SAV=/tmp/fixture.sav timeout 240 "$MGBA" \
+    --script tools/mgba_scripts/<name>.lua pokeemerald.gba > /tmp/t.log 2>&1
+grep -aoE 'RESULT: [A-Z]+|PASSED [0-9]+, FAILED [0-9]+' /tmp/t.log | tail -2
 ```
 
 There is **no `test/` directory** — the suite is the in-ROM boot selftest

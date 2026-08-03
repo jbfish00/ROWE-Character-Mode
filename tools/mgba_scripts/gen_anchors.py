@@ -52,6 +52,11 @@ SYMBOLS = [
     "gSelectionBattleScripts",
     "BattleScript_SelectingTormentedMove",
     "gBattlerControllerFuncs",
+    # The battle message the game actually printed, after placeholder expansion.
+    # The encounter markers (§7.14) are only observable HERE -- a test that reads
+    # the state byte instead is testing that a byte round-trips, not that the
+    # player is told anything.
+    "gDisplayedStringBattle",
     # Struct-layout beacon (src/character_mode_selftest.c). Read it through
     # H.off.* rather than hardcoding any struct offset in a test.
     "gTestStructOffsets",
