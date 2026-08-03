@@ -72,7 +72,7 @@ run() {
     fi
 }
 
-# 15 runs: thirteen scripts plus the two starter_regression paths.
+# 18 runs: sixteen scripts plus the two starter_regression paths.
 run boot           boot_smoke.lua
 run continue       continue_smoke.lua         CM_SAV="$FIX"
 run ot_roundtrip   ot_roundtrip_e2e.lua
@@ -86,12 +86,19 @@ run basculegion    basculegion_hang_e2e.lua
 run mode_exclusion mode_exclusion_e2e.lua
 run char_select    character_select_e2e.lua
 run tobias_legend  tobias_legendary_e2e.lua
+run enc_marker     encounter_marker_e2e.lua   CM_SAV="$FIX"
+run trade_gate     trade_gate_e2e.lua         CM_SAV="$FIX"
+# ⚠️ costume_persist WRITES to its fixture (it has to -- it proves a save
+# survives a reload). It runs LAST of the CM_SAV users so the mutated
+# fixture cannot leak into another run, and the fixture is minted fresh
+# every invocation anyway.
+run costume_persist costume_persist_e2e.lua   CM_SAV="$FIX"
 run starter_red    starter_regression.lua     CM_PATH=red
 run starter_normal starter_regression.lua     CM_PATH=normal
 
 echo
 if [ "$fail" -eq 0 ]; then
-    echo "ALL 15 RUNS PASS.  logs: $OUT"
+    echo "ALL 18 RUNS PASS.  logs: $OUT"
 else
     echo "SUITE FAILED -- read the logs in $OUT"
 fi
@@ -99,6 +106,9 @@ fi
 # the run still says PASS): boot 2, continue 2, ot_roundtrip 19, legendary 20,
 # encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9,
 # basculegion 34, mode_exclusion 72, char_select 11, tobias_legend 14,
+# enc_marker 41, trade_gate 10, costume_persist 12,
 # starter red 6 + normal 6.
-# Selftest 33/33.
+# Selftest 36/36 -- was 33 until the §7.14 encounter markers added three checks
+# (the kind tracks the species the roll returned; a roll that did not fire
+# labels nothing; 200 rolls with no battle leave the marker clear).
 exit "$fail"
