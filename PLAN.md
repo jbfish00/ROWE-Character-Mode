@@ -22,6 +22,9 @@ and a clean suite re-run. Tree clean.
 **The most feature-complete game in the project, and no longer blocked.** The
 12-character-name change is landed, a live out-of-bounds write in the Pokedex is
 fixed, the 1% legendary encounter rule is shipped, and the whole suite is green.
+⬜ **One feature is open and unstarted: the encounter markers (§7.14)**, requested
+2026-08-02 — the 10% roster override is currently *unobservable*, because it
+hands out a family root that the map's own table could equally have produced.
 
 | | |
 |---|---|
@@ -70,6 +73,10 @@ two facts together; the tallies are in §7.
    attribution debt (§7 item 3).
 5. **One automatable test gap is left**, not six — item 11, the in-game trade
    path (§7 item 2b). Everything else in that list is closed.
+6. ⬜ **There is one unstarted FEATURE: the encounter markers (§7.14)**, requested
+   2026-08-02. It is the only open code work in the repo and it is message-only —
+   naming the character when the 10% roster override or the 1% legendary fires,
+   so the player can see the feature working at all. **Do not change the rates.**
 
 ⚠️ **The most useful habit in this repo, stated once:** when a new assertion
 goes green on the first try, **break it on purpose before believing it.** Five
@@ -899,9 +906,109 @@ a 0 onto Red's roster — each exits 1 and names the culprit.
     change); the exposure is that nothing would tell them. **One unported check,
     not four new bugs.**
 
+14. ⬜ **ENCOUNTER MARKERS — the roster override needs to say so. USER REQUEST
+    2026-08-02, NOT STARTED.** Two new wild-battle intro messages:
+
+    | path | message |
+    |---|---|
+    | 10% roster override | `A wild {SPECIES} destined for {CHARACTER} appeared!` |
+    | 1% legendary | `{SPECIES} revealed itself to {CHARACTER}!` |
+
+    ⭐ **Why this is worth doing, and it is not cosmetic.** A 10% override that
+    returns a **family ROOT** is *unobservable*. Rosters store canonical family
+    bases, so the override hands you a **Gible**, not a Garchomp — and a wild
+    Gible is exactly what the map's own table might have produced anyway. The
+    player cannot tell the feature fired. **Platinum shipped this same feature,
+    a playthrough reported "no on-roster encounters", and there was no bug** —
+    the fix was naming the character in the message, rate unchanged
+    (`../Character Hacks/game_plans/platinum.md` §9). ROWE has the identical
+    exposure and, worse, a checklist item (12) that asks the player to judge a
+    *rate by eye* over "a few dozen encounters". This turns a statistical
+    judgement into a yes/no observation.
+
+    ### Where it goes (all four sites located 2026-08-02)
+
+    - **The signal.** `CharacterMode_RollWildOverrideSpecies` (`character_mode.c:489`)
+      returns only a species, and both call sites
+      (`wild_encounter.c:408` land/water/rock-smash, `:422` fishing) collapse
+      "no override" to `SPECIES_NONE`. Nothing records *which* of the two rolls
+      fired. Needs either an out-param or a module-level "last override kind".
+    - **The message.** `battle_message.c:3403`, the wild `else` branch of
+      `STRINGID_INTROMSG`, which currently picks between
+      `sText_WildPkmnAppeared` / `…Appeared2` / `…AppearedPause` /
+      `sText_TwoWildPkmnAppeared`.
+      ⚠️ **`BATTLE_TYPE_LEGENDARY` cannot be reused as the legendary signal.**
+      It is set only in `battle_setup.c` (:508/512/516/556/586) for *scripted*
+      static legendaries; the 1% wild legendary goes through the ordinary wild
+      path and never sets it. Setting it would also change more than the string.
+    - **The character name.** Add a `B_TXT_CHARACTER_NAME` placeholder beside
+      `B_TXT_PLAYER_NAME` in `BattleStringExpandPlaceholders`
+      (`battle_message.c:4117`). ✅ `gCharacters[].name` is **already
+      charmap-encoded** (`_("Tobias")`), so it copies straight out — no
+      conversion, and the "no `_` inside `_()`" charmap rule is not in play.
+      ⚠️ Prefer this over `{B_BUFF1}`, which has its own
+      `PREPARE_*_BUFFER` encoding and is churned by battle events.
+    - **ES/EN.** `battle_message.c` carries **two** string blocks (~line 394 and
+      ~line 1038). Both need the new strings or one language silently keeps the
+      old text.
+
+    ### The traps this will hit — all four are the shapes this repo already knows
+
+    1. ⚠️ **A flag set by the ROLL is not a property of the BATTLE.** The roll
+       runs per encounter *attempt*; repel, Keen Eye and a failed encounter all
+       return before a battle exists. A module-level flag set at roll time would
+       still be set when a later, ORDINARY encounter starts, and mislabel it.
+       **Set it where the species is committed** (next to `CreateWildMon`), and
+       **clear it on every other path that creates a wild mon** — including
+       `CreateScriptedWildMon` and the debug/`Alpha` spawns.
+    2. ⚠️ **The self-test rolls 4000 times with no battle.**
+       `CM_REQ_WILD_ROLL_STATS` and `CM_REQ_LEGENDARY_ROLL_STATS`
+       (`character_mode_selftest.c:623`) call the roll in a tight loop purely to
+       measure rates. Whatever signal is chosen must not leak out of that loop.
+    3. ⚠️ **The string may not fit, and a coordinate argument is not evidence.**
+       Worst case is `Crasher Wake` (12, the longest of the 236) with a 12-char
+       species: *"A wild Crabominable destined for Crasher Wake appeared!"* is
+       ~55 characters against a two-line box. **Render it and look**, per §7.4 —
+       measure with the real font, place `\n`/`\p` deliberately, and do not
+       assume `GetFontIdToFit` rescues it (that is used for NAME fields, not for
+       a whole battle string).
+    4. ⚠️ **Do not change the RATES.** This is a message-only change. The 10%
+       and 1% rolls, their order, and the data-check-before-`Random()` rule
+       (§5, `a5befab7`) must be untouched — `legendary_encounter_e2e`'s
+       "rate is consistent with 1% (15..75 of 4000)" is the guard.
+
+    ### The test it needs, and the shape it must NOT have
+
+    A test asserting *"the marker appeared"* passes when the feature works **and**
+    when the marker is hardwired on. **The assertion has to be a discriminating
+    pair, in one run**: force an override encounter → marker present, naming the
+    right character; force an ORDINARY encounter → **vanilla string, no marker**.
+    Same save, same map, same run. That is the in-band control this repo now
+    requires (§7 item 2b), and it is the only version that can tell a working
+    marker from a stuck one.
+    Add as a suite run (**would make 16**); `catch_gate_e2e` already drives real
+    wild battles and is the closest model.
+
+    ### Everything else that needs updating when it lands
+
+    - **`ENCOUNTERS.md`** (generated by `emit_encounter_docs.py`) — document both
+      messages, so a player who sees one knows it is a feature.
+    - **`PLAYTHROUGH_CHECKLISTS.md` §4 item 12** currently asks the player to
+      confirm a ~10% rate "over a few dozen encounters". Rewrite it: the marker
+      makes it directly observable, and **that item gets easier and more
+      trustworthy**. Item 13 (the 1% legendary) likewise.
+    - **`game_plans/rowe_playthrough_coverage.md`** — item 12/13 evidence rows.
+    - **`CREDITS`/§0** — no art, no credits impact.
+    - ⚠️ **Re-run the full suite.** `catch_gate_e2e` drives real battles and
+      A-mashes through the intro; a longer intro string changes how many frames
+      that takes. If it goes red, suspect the timing before the gate.
+
 **Nothing here blocks a playthrough.** 1-3, 5, 6, 7, **9**, **10**, **11**,
-**12** and **13** are done,
-green and **committed** (`0f321aea`..`e5e40c83`). **4 was implemented and
+**12** and **13** are done, green and **committed**
+(`0f321aea`..`f288437b`). ⬜ **14 is a new user request (2026-08-02) and is the
+only unstarted feature on this list** — it does not block a playthrough either,
+but it materially improves one, because it makes the 10% override observable
+instead of a rate the player has to judge by eye. **4 was implemented and
 reverted** — it is art-blocked after all, and the way that was established
 (render the tilemap, do not reason about coordinates) is now the rule for this
 repo's screens. **8b landed 2026-07-30.** **8 is the only real art wall left**,
@@ -910,8 +1017,18 @@ imported, and the tools to import a newly staged one already exist.
 
 ### So what is actually next, in order
 
-1. **The playthrough (§7.7). It is 28 items, not 24** — recounted 2026-07-30 with
-   `grep -c "^- \[ \]"`; the workspace total is **116**, not 112. Both numbers had
+0. ⬜ **The encounter markers (§7.14) — NEW, user-requested 2026-08-02, not
+   started.** Ahead of the playthrough deliberately: it changes what the
+   playthrough can *observe*. Items 12 and 13 of the checklist currently ask a
+   player to confirm a ~10% and a ~1% rate by eye over "a few dozen encounters";
+   with the markers those become a yes/no reading, and the single most likely
+   false bug report in this whole project ("I never saw an on-roster encounter")
+   stops being possible. Platinum hit exactly that and there was no bug.
+   Message-only — **do not touch the rates.**
+
+1. **The playthrough (§7.7). It is 32 items** — recounted 2026-07-30 with
+   `grep -c "^- \[ \]"`; the workspace total is **120**. It has been wrong three
+   times (24 → 28 → 32); derive it, never copy it. Both numbers had
    been copied forward for sessions under a note that said *"recount it, do not
    copy it"*. Derive them.
 
