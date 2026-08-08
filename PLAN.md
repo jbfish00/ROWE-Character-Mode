@@ -12,9 +12,22 @@ an anchor regeneration (map digest `ffba13d0e6e3263b`) and a clean 18-run suite.
 
 ⚠️ **The 2026-08-03 pass closed the last of the open work in this repo** — the
 encounter markers (§7.14), the in-game trade test, costume persistence and the
-TAAR attribution debt. **There is no open code work.** What remains is a human
-playthrough, art acquisition, and two permission requests only the user can
-send. If a later note here tells you to build something, check its date.
+TAAR attribution debt. **There is no open code work.** If a later note here
+tells you to build something, check its date.
+
+**What remains, and none of it is an agent's:**
+
+| # | item | who | unblock |
+|---|---|---|---|
+| 1 | **Push** the 4 local commits | user says the word | `git push origin character-mode` |
+| 2 | **Send** the two art-permission requests | user, from their own account | `../Character Hacks/PERMISSION_REQUESTS.md` — both drafts verified send-ready 2026-08-03 |
+| 3 | **Art acquisition** | blocked on 2 | every staged sprite is imported, the 07-28 harvest is consumed, and TAAR upstream is EXHAUSTED (measured — §7 item 3) |
+| 4 | **Selection-screen portrait / 10th mode row** | needs new tilemap art | §7.4; re-verified 2026-08-03 by rendering the screen — largest free square is **0×0** |
+| 5 | **The playthrough** | a person playing | §7 item 1; 22 of 34 coverage rows are already machine-proven, so read `../Character Hacks/game_plans/rowe_playthrough_coverage.md` first |
+
+⚠️ **Do not re-derive 3 and 4 from scratch — both were re-measured on 2026-08-03
+and the negative results are recorded.** Three sessions have now re-measured the
+`game_plans/rowe.md` drift instead of acting on it; do not make that four.
 
 > A mirror of this file lives at
 > `/home/jbfish00/Documents/Character Hacks/game_plans/rowe.md`, alongside plans
@@ -39,7 +52,7 @@ playthrough, art acquisition, and two permission requests the user must send.
 
 | | |
 |---|---|
-| Branch | `character-mode`, **working tree clean and level with `origin`** (`jbfish00/ROWE-Character-Mode`) as of 2026-07-31, HEAD `0ea10468`. 20 commits landed 07-29 → 07-31. ⚠️ **Do not trust this row for HEAD** — several passes ended with a doc or anchors commit after the last feature commit. Re-check: `git rev-list --left-right --count origin/character-mode...HEAD` (want `0  0`) |
+| Branch | `character-mode`, **working tree clean, HEAD `90e51300`, and FOUR COMMITS AHEAD OF `origin`** (`jbfish00/ROWE-Character-Mode`) as of 2026-08-03. ⚠️ **NOT pushed** — the 2026-08-03 pass committed but did not publish, because pushing was never asked for. `git push origin character-mode` when you want it out. 24 commits landed 07-29 → 08-03. ⚠️ **Do not trust this row for HEAD** — several passes ended with a doc or anchors commit after the last feature commit. Re-check: `git rev-list --left-right --count origin/character-mode...HEAD` (`0  4` today; `0  0` once pushed) |
 | Rosters | **AUDITED** — 236 table slots / **206 selectable** / 30 hidden, **3,359** rows, **every row sourced** |
 | Threshold | **ENFORCED** — the only game in the project where it is |
 | Sprites | **184 of 236** have a front pic (52 are `CHAR_ASSET_NONE`) — 168 → 184 on 2026-07-29: 9 newly staged from the 07-28 harvest, 7 Frontier Brains closed with zero new art. Overworld **128 of 236** and back pics **19 of 236** as of 2026-07-30 (was 101 / 12) — §7.8b is DONE, the tooling block is gone, and what is left in those two slots is acquisition |
@@ -61,8 +74,13 @@ two facts together; the tallies are in §7.
 
 ### If you are picking this up cold, start here
 
-**Nothing is broken and nothing is half-done.** Tree clean, level with origin,
-15/15 green. There is no rescue work waiting.
+**Nothing is broken and nothing is half-done.** Tree clean, **18/18 green**,
+selftest 36/36. There is no rescue work waiting and **no open code work at
+all** — see the handoff table at the top of this file for the five things that
+remain, all of which need the user rather than an agent.
+⚠️ **Four commits are LOCAL and UNPUSHED** (HEAD `90e51300`). That is the one
+piece of state that looks like unfinished work and is not: it is waiting on the
+user's say-so, not on anybody's keyboard.
 
 1. **Sanity-check the tree before believing any of this**, in this order —
    `make -j$(nproc)` → `python3 tools/mgba_scripts/gen_anchors.py` →
@@ -74,9 +92,13 @@ two facts together; the tallies are in §7.
    mtime** — `make` relinks on every invocation, so the ROM is always newer.
 2. **The largest remaining work is a human playthrough**, and it is genuinely
    the user's to do, not an agent's. §7 item 1. But read
-   `../Character Hacks/game_plans/rowe_playthrough_coverage.md` first: **20 of
-   the 32 checklist items are already machine-proven**, so most of that list
-   does not need a person at all.
+   `../Character Hacks/game_plans/rowe_playthrough_coverage.md` first: **22 of
+   the 34 coverage rows are fully machine-proven** and 6 more partly, so most of
+   that list does not need a person at all.
+   ⚠️ **Before you go looking for automatable items in it: there are none left.**
+   Items 11, 26, 12 and 13 all closed on 2026-08-02/03 and item 19's
+   corruption half is answered by a contact sheet. What is left is reaching the
+   credits and four judgement calls. Re-deriving that list is wasted work.
 3. ✅ **"Nobody has watched one animate" is no longer true** (2026-08-03). All
    **22** characters from the 07-30 art batch were photographed in-engine
    walking in four directions by
