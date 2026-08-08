@@ -207,20 +207,33 @@ def main():
 
     print()
     print("Share of the game's own wild slots that are ON each roster.")
-    print("The 10%% override is NOT counted -- it is the floor everyone has.")
+    print("The 10% override is NOT counted -- it is the floor everyone has.")
     print()
-    print("%-16s %8s %10s %10s %6s" % ("character", "families", "natural%",
-                                       "early%", "early"))
+    hdr = "%-16s %8s %10s %10s %6s" % ("character", "families", "natural%",
+                                       "early%", "early")
+
+    # Best first. Somebody choosing who to PLAY needs this end of the list, and
+    # for a long time the report printed only the worst 20 -- which answers
+    # "who is at risk" but never "who should I pick".
+    print("BEST 20 -- the characters who meet their own Pokemon most often")
+    print(hdr)
+    print("-" * 56)
+    for r in reversed(rows[-20:]):
+        print("%-16s %8d %9.1f%% %9.1f%% %6d" % r)
+    print()
+
+    print("WORST 20 -- most dependent on the 10% override")
+    print(hdr)
     print("-" * 56)
     for r in rows[:20]:
         print("%-16s %8d %9.1f%% %9.1f%% %6d" % r)
-    print("   ... %d selectable characters, worst 20 shown" % len(rows))
+    print("   ... %d selectable characters, 20 shown at each end" % len(rows))
     print()
     zero = [r for r in rows if r[4] == 0]
     print("⚠️  %d characters have ZERO on-roster wild slots on the early maps."
           % len(zero))
     if zero:
-        print("    They meet their own Pokemon ONLY through the 10%% override")
+        print("    They meet their own Pokemon ONLY through the 10% override")
         print("    until later areas open up:")
         for r in zero[:25]:
             print("      %-16s %d families, %.1f%% of the game overall"
