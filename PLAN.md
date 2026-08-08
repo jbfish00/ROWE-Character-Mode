@@ -9,6 +9,9 @@ traps specific to this tree.
 file is **state and next steps**. Re-derived against this working tree on
 **2026-08-03**, after a full rebuild (ROM `993c036846e10bf550505cd958899771`),
 an anchor regeneration (map digest `ffba13d0e6e3263b`) and a clean 18-run suite.
+✅ **Every one of those claims was re-checked from scratch on 2026-08-08** — same
+ROM md5, same map digest, byte-identical anchors, 18/18 green with all eighteen
+tallies matching. The tree is what this file says it is.
 
 ⚠️ **The 2026-08-03 pass closed the last of the open work in this repo** — the
 encounter markers (§7.14), the in-game trade test, costume persistence and the
@@ -19,11 +22,11 @@ tells you to build something, check its date.
 
 | # | item | who | unblock |
 |---|---|---|---|
-| 1 | **Push** the 4 local commits | user says the word | `git push origin character-mode` |
+| 1 | ~~**Push** the local commits~~ | ✅ **DONE 2026-08-07** | `origin/character-mode` is level with local at `89ef5ce7` |
 | 2 | **Send** the two art-permission requests | user, from their own account | `../Character Hacks/PERMISSION_REQUESTS.md` — both drafts verified send-ready 2026-08-03 |
 | 3 | **Art acquisition** | blocked on 2 | every staged sprite is imported, the 07-28 harvest is consumed, and TAAR upstream is EXHAUSTED (measured — §7 item 3) |
 | 4 | **Selection-screen portrait / 10th mode row** | needs new tilemap art | §7.4; re-verified 2026-08-03 by rendering the screen — largest free square is **0×0** |
-| 5 | **The playthrough** | a person playing | §7 item 1; 22 of 34 coverage rows are already machine-proven, so read `../Character Hacks/game_plans/rowe_playthrough_coverage.md` first |
+| 5 | **The playthrough** | a person playing | §7 item 1; **23 of 33** coverage rows are already machine-proven, so read `../Character Hacks/game_plans/rowe_playthrough_coverage.md` first |
 
 ⚠️ **Do not re-derive 3 and 4 from scratch — both were re-measured on 2026-08-03
 and the negative results are recorded.** Three sessions have now re-measured the
@@ -52,14 +55,14 @@ playthrough, art acquisition, and two permission requests the user must send.
 
 | | |
 |---|---|
-| Branch | `character-mode`, **working tree clean, HEAD `90e51300`, and FOUR COMMITS AHEAD OF `origin`** (`jbfish00/ROWE-Character-Mode`) as of 2026-08-03. ⚠️ **NOT pushed** — the 2026-08-03 pass committed but did not publish, because pushing was never asked for. `git push origin character-mode` when you want it out. 24 commits landed 07-29 → 08-03. ⚠️ **Do not trust this row for HEAD** — several passes ended with a doc or anchors commit after the last feature commit. Re-check: `git rev-list --left-right --count origin/character-mode...HEAD` (`0  4` today; `0  0` once pushed) |
+| Branch | `character-mode`, **working tree clean and LEVEL WITH `origin`** (`jbfish00/ROWE-Character-Mode`) at HEAD `89ef5ce7` — ✅ **pushed 2026-08-07**, which closes the one item that used to look like unfinished state. 25 commits landed 07-29 → 08-07. ⚠️ **Do not trust this row for HEAD** — several passes ended with a doc or anchors commit after the last feature commit. Re-check: `git rev-list --left-right --count origin/character-mode...HEAD` (`0  0` today) |
 | Rosters | **AUDITED** — 236 table slots / **206 selectable** / 30 hidden, **3,359** rows, **every row sourced** |
 | Threshold | **ENFORCED** — the only game in the project where it is |
 | Sprites | **184 of 236** have a front pic (52 are `CHAR_ASSET_NONE`) — 168 → 184 on 2026-07-29: 9 newly staged from the 07-28 harvest, 7 Frontier Brains closed with zero new art. Overworld **128 of 236** and back pics **19 of 236** as of 2026-07-30 (was 101 / 12) — §7.8b is DONE, the tooling block is gone, and what is left in those two slots is acquisition |
 | Name length | **12/12 LANDED** (`71cebcbe`), verified by a new headless suite |
 | Legendary rule | **SHIPPED** — 1% wild encounters, offered-until-caught, no roaming |
 | Modes | **Randomized Party Mode SHIPPED** (`c231ba2a`), exclusive with Character Mode; both Game Modes menus de-drifted and pinned |
-| Readiness | **GREEN** — selftest **36/36** and **all 18 suite runs passing** on the marker build `993c036846e10bf550505cd958899771` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, basculegion_hang 34, mode_exclusion 72, char_select 11, tobias_legend 14, **enc_marker 41**, **trade_gate 10**, **costume_persist 12**, starter red 6 + normal 6) — **the fifteen pre-existing tallies match the `4ba53b39…` baseline EXACTLY** (re-run in full 2026-08-03 on this build, not carried over from notes). **Run it with `bash tools/mgba_scripts/run_suite.sh`**. ⚠️ **Selftest went 33 → 36**, not by accident: §7.14 added three checks (the encounter kind tracks the species the roll returned, a roll that did not fire labels nothing, and 200 rolls with no battle leave the marker clear). A 33 on this build is a regression, not a stale note. Anchors regenerated first; map digest `ffba13d0e6e3263b`, and a second `gen_anchors.py` run reproduces `anchors.lua` byte-identical |
+| Readiness | **GREEN** — selftest **36/36** and **all 18 suite runs passing** on the marker build `993c036846e10bf550505cd958899771` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, basculegion_hang 34, mode_exclusion 72, char_select 11, tobias_legend 14, **enc_marker 41**, **trade_gate 10**, **costume_persist 12**, starter red 6 + normal 6) — **the fifteen pre-existing tallies match the `4ba53b39…` baseline EXACTLY** (re-run in full 2026-08-03 on this build, not carried over from notes). ✅ **RE-VERIFIED INDEPENDENTLY 2026-08-08 from a clean rebuild** — `make` → ROM md5 `993c036846e10bf550505cd958899771` (unchanged), `gen_anchors.py` → map digest `ffba13d0e6e3263b` with a second run reproducing `anchors.lua` byte-identical and the tree still clean, then all 18 runs green with **all eighteen tallies identical to the list above** and selftest 36/36 on every run. Nothing in this row is carried over from a note. **Run it with `bash tools/mgba_scripts/run_suite.sh`**. ⚠️ **Budget ~75 minutes and detach it.** Every run burns its full 240 s `RUN_TIMEOUT` by design (`H.finish()` does not stop the emulator), and the fixture step burns one too — 19 × 240 s. A foreground call under any shorter tool/command timeout gets killed mid-suite and looks like a hang; `setsid nohup … &` and poll the log. ⚠️ **Selftest went 33 → 36**, not by accident: §7.14 added three checks (the encounter kind tracks the species the roll returned, a roll that did not fire labels nothing, and 200 rolls with no battle leave the marker clear). A 33 on this build is a regression, not a stale note. Anchors regenerated first; map digest `ffba13d0e6e3263b`, and a second `gen_anchors.py` run reproduces `anchors.lua` byte-identical |
 | Species tables | **COMPLETE** — every species with a `gBaseStats` row now has a learnset, a name and front/back pic coords, gated by `tools/check_species_tables.py`. Four had none and **hung the game** (§7.11) |
 
 Every number above was re-derived from this tree, not taken from notes.
@@ -78,9 +81,10 @@ two facts together; the tallies are in §7.
 selftest 36/36. There is no rescue work waiting and **no open code work at
 all** — see the handoff table at the top of this file for the five things that
 remain, all of which need the user rather than an agent.
-⚠️ **Four commits are LOCAL and UNPUSHED** (HEAD `90e51300`). That is the one
-piece of state that looks like unfinished work and is not: it is waiting on the
-user's say-so, not on anybody's keyboard.
+✅ **Everything is pushed** (HEAD `89ef5ce7`, level with `origin` as of
+2026-08-07). Earlier revisions of this file warned that four local commits were
+the one piece of state that looked like unfinished work; they are published now,
+so there is nothing outstanding in git either.
 
 1. **Sanity-check the tree before believing any of this**, in this order —
    `make -j$(nproc)` → `python3 tools/mgba_scripts/gen_anchors.py` →
@@ -92,9 +96,10 @@ user's say-so, not on anybody's keyboard.
    mtime** — `make` relinks on every invocation, so the ROM is always newer.
 2. **The largest remaining work is a human playthrough**, and it is genuinely
    the user's to do, not an agent's. §7 item 1. But read
-   `../Character Hacks/game_plans/rowe_playthrough_coverage.md` first: **22 of
-   the 34 coverage rows are fully machine-proven** and 6 more partly, so most of
-   that list does not need a person at all.
+   `../Character Hacks/game_plans/rowe_playthrough_coverage.md` first: **23 of
+   the 33 coverage rows are fully machine-proven** and 6 more partly, so most of
+   that list does not need a person at all. (Re-counted 2026-08-07 from that
+   file's own status column; it said "22 of 34", and there is no 34th row.)
    ⚠️ **Before you go looking for automatable items in it: there are none left.**
    Items 11, 26, 12 and 13 all closed on 2026-08-02/03 and item 19's
    corruption half is answered by a contact sheet. What is left is reaching the
@@ -1111,8 +1116,20 @@ imported, and the tools to import a newly staged one already exist.
    opening though ROWE lets you start on any of eight islands. **Flags for which
    characters to watch, never verdicts, and never a gate.**
 
+   ⭐ **2026-08-07: it prints a BEST 20 too, and that is the half the playthrough
+   needs.** The report only ever showed the worst 20, which answers "who is at
+   risk" and never "who should I play". Best early coverage: **Goh 28.1%, Oak
+   17.4%, Juan 16.0%, Misty 13.9%, May 13.2%, Birch 12.5%, Ash 11.8%.**
+   ⚠️ **Red — the DEFAULT pick, and the character every suite run uses — is
+   7.6%.** So the automated coverage is built on a mid-table roster, and a
+   playthrough done as Red will see the feature at less than its best. If the
+   point of the run is to judge whether Character Mode feels good, pick from the
+   top of that list; if it is to judge the worst case, pick from the bottom.
+   Either is defensible, but it is a choice, and defaulting to Red makes it by
+   accident.
+
    ⚠️ **This is now the ONLY thing on this list that an agent cannot advance**,
-   and the sub-items that could be automated have been: 22 of 34 coverage rows
+   and the sub-items that could be automated have been: 23 of 33 coverage rows
    are fully machine-proven, item 19's "is the art corrupt" half is answered by
    a contact sheet, and items 11, 26, 12 and 13 all closed on 2026-08-02/03.
    What is left is a person playing the game — level curve, whether a roster is
