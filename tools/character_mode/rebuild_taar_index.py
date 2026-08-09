@@ -97,6 +97,7 @@ def main():
     print("indexed %d distinct upstream PNG contents" % len(index))
 
     failures = []
+    pending_writes = []
     for donor in DONORS:
         staged_dir = os.path.join(TARGET, "sprites/donors", donor)
         if not os.path.isdir(staged_dir):
@@ -141,35 +142,57 @@ def main():
             "commit": EXPECTED_COMMIT,
             "files": entries,
         }
+        # ⚠️ DO NOT WRITE YET. This script's own docstring promises it "refuses
+        # to write a partial index", and it did exactly that: an unmatched PNG
+        # was appended to `failures` and `continue`d, then the file was written
+        # anyway from the incomplete dict, and only afterwards did the failure
+        # get reported. A re-run against a TAAR clone at a different commit
+        # therefore DELETED the attribution rows this script exists to preserve
+        # -- and the control below re-reads the file it just wrote, so it
+        # validated the damage. Queue the writes; commit them only if every
+        # donor and the control came back clean.
         out_path = os.path.join(staged_dir, "harvest_index.json")
-        with open(out_path, "w", encoding="utf-8") as fh:
-            json.dump(out, fh, indent=2, sort_keys=True)
-            fh.write("\n")
-        print("\n%s: %d files, %d authors -> %s"
+        pending_writes.append((out_path, out))
+        print("\n%s: %d files, %d authors -> %s (pending)"
               % (donor, len(entries), len(authors),
                  os.path.relpath(out_path, TARGET)))
         for a in sorted(authors, key=lambda x: (-len(authors[x]), x.lower())):
             print("    %-32s %3d" % (a, len(authors[a])))
 
-    # The control.
+    # The control -- against what this run COMPUTED, not what is on disk.
+    # Reading the file back only proved the previous run's contents (and, before
+    # the pending-write change above, proved whatever this run had just
+    # overwritten it with). Neither tests the attribution logic.
     donor, name, want = CONTROL
     path = os.path.join(TARGET, "sprites/donors", donor, "harvest_index.json")
-    if os.path.exists(path):
-        with open(path, encoding="utf-8") as fh:
-            got = json.load(fh)["files"].get(name, {}).get("author")
-        if got != want:
-            failures.append("CONTROL FAILED: %s/%s resolved to %r, but its "
-                            "author is independently known to be %r"
-                            % (donor, name, got, want))
-        else:
-            print("\ncontrol ok: %s/%s -> %s (independently known)"
-                  % (donor, name, got))
+    computed = None
+    for out_path, out in pending_writes:
+        if os.path.dirname(out_path) == os.path.dirname(path):
+            computed = out["files"].get(name, {}).get("author")
+            break
+    if computed is None:
+        failures.append("CONTROL FAILED: %s/%s was not resolved by this run at "
+                        "all, so the attribution logic is unproven" % (donor, name))
+    elif computed != want:
+        failures.append("CONTROL FAILED: %s/%s resolved to %r, but its "
+                        "author is independently known to be %r"
+                        % (donor, name, computed, want))
+    else:
+        print("\ncontrol ok: %s/%s -> %s (independently known)"
+              % (donor, name, computed))
 
     if failures:
-        print("\nFAILED:")
+        print("\nFAILED -- nothing written, the existing index files are "
+              "untouched:")
         for f in failures:
             print("  " + f)
         return 1
+
+    for out_path, out in pending_writes:
+        with open(out_path, "w", encoding="utf-8") as fh:
+            json.dump(out, fh, indent=2, sort_keys=True)
+            fh.write("\n")
+    print("\nwrote %d index file(s)" % len(pending_writes))
     return 0
 
 

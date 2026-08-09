@@ -112,7 +112,11 @@ def main():
     lines.append("\n#define ABILITIES_COUNT_GEN8    %s + 1\n" % last_name)
     anchor = "\n#define ABILITIES_COUNT ABILITIES_COUNT_GEN8"
     assert anchor in text
-    text = text.replace(anchor, "\n" + wrap("consts", "".join(lines)) + anchor)
+    # No leading "\n": it falls outside the span strip_block removes, so it
+    # survives every strip and a new one is added on top. wrap() already ends
+    # with a newline, and `anchor` starts its own line, so the spacing is right
+    # without it.
+    text = text.replace(anchor, wrap("consts", "".join(lines)) + anchor)
     write(path, text)
 
     # ---- 4. our text file: description statics (ES + EN), names (ES + EN),

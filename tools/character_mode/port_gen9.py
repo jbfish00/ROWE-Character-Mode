@@ -129,14 +129,21 @@ def strip_marker_block(text, tag):
 def insert_block(path, tag, block, anchor_re, before=True, count=1):
     """Insert marker-wrapped block before/after the `count`-th anchor match."""
     text = strip_marker_block(read(path), tag)
-    wrapped = "%s%s\n%s\n%s\n" % ("" if before else "\n",
-                                  MARK_START.format(tag=tag), block.rstrip("\n"),
-                                  MARK_END.format(tag=tag))
+    # ⚠️ NO leading "\n". strip_marker_block removes START..END plus ONE
+    # trailing newline, so any newline emitted before START survives the strip
+    # and a fresh one is added on top -- the file grows a blank line per run,
+    # forever. That silently destroys "run it twice and diff", which is the only
+    # cheap idempotency check these ports have. Step past the anchor's own
+    # newline instead of inventing one.
+    wrapped = "%s\n%s\n%s\n" % (MARK_START.format(tag=tag), block.rstrip("\n"),
+                                MARK_END.format(tag=tag))
     matches = list(re.finditer(anchor_re, text, re.M))
     if len(matches) < count:
         raise SystemExit("anchor %r x%d not found in %s" % (anchor_re, count, path))
     m = matches[count - 1]
     pos = m.start() if before else m.end()
+    if not before and text[pos:pos + 1] == "\n":
+        pos += 1
     write(path, text[:pos] + wrapped + text[pos:])
 
 

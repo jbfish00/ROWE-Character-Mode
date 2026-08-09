@@ -299,8 +299,14 @@ def main():
               "#define SPECIES_EGG (%s + 1)" % ports[-1]["sp"],
               "#define NUM_SPECIES SPECIES_EGG"]
     anchor = "// ROWEMEGA-PORT-END consts"
+    # Step past the anchor's OWN newline rather than emitting one before the
+    # block: strip_block only consumes START..END plus one trailing newline, so
+    # a leading "\n" here survives every strip and stacks up a blank line per
+    # run (11 of them had accumulated in species.h). See port_gen9.insert_block.
     pos = text.index(anchor) + len(anchor)
-    write(path, text[:pos] + "\n" + wrap("consts", "\n".join(lines) + "\n") +
+    if text[pos:pos + 1] == "\n":
+        pos += 1
+    write(path, text[:pos] + wrap("consts", "\n".join(lines) + "\n") +
           text[pos:])
 
     # ---- 2. base stats, both tables

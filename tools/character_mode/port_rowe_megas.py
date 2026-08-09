@@ -199,9 +199,14 @@ def main():
     path = tgt("include/constants/species.h")
     text = strip_block(read(path), "consts")
     anchor = "// GEN9-PORT-END species-consts"
+    # Step past the anchor's own newline instead of emitting one before the
+    # block -- a leading "\n" lives outside what strip_block removes, so it
+    # stacks up a blank line every run. (`line_end` was computed here and never
+    # used; it was reaching for exactly this and stopped short.)
     pos = text.index(anchor) + len(anchor)
-    line_end = text.index("\n", pos) + 1 if "\n" in text[pos:pos+2] else pos + 1
-    write(path, text[:pos] + "\n" + wrap("consts", "\n".join(lines) + "\n") +
+    if text[pos:pos + 1] == "\n":
+        pos += 1
+    write(path, text[:pos] + wrap("consts", "\n".join(lines) + "\n") +
           text[pos:])
 
     # ---- 2. base stats into both tables (sanitize to fields our struct has)
@@ -380,7 +385,10 @@ def main():
         for p in ports)
     path = tgt("src/data/graphics/pokemon.h")
     text = strip_block(read(path), "incbins")
-    write(path, text + "\n" + wrap("incbins", block))
+    # rstrip first: this appends at EOF, and the bare "\n" separator sat outside
+    # the stripped span, so each run left one more blank line before the block
+    # (7 had built up in pokemon.h). Normalising the tail makes it idempotent.
+    write(path, text.rstrip("\n") + "\n" + wrap("incbins", block))
 
     block = "".join(
         "extern const u32 gMonFrontPic_%(c)s[];\nextern const u32 gMonBackPic_%(c)s[];\n"
