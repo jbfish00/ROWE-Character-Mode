@@ -8250,7 +8250,14 @@ u32 CanMonLearnTMHM(struct Pokemon *mon, u8 tm)
         return 0;
     }
 
+    // A species with no row is a NULL pointer, and the walk below has no bound
+    // -- it runs until it happens to find 0xFF. 477 species have no row and,
+    // before gTMHMLearnsets was sized, 283 ids read past the array entirely.
+    if (formSpeciesId >= NUM_SPECIES)
+        return FALSE;
     learnableMoves = gTMHMLearnsets[formSpeciesId];
+    if (learnableMoves == NULL)
+        return FALSE;
     while (*learnableMoves != 0xFF)
     {
         if (*learnableMoves == tm)
@@ -8268,7 +8275,11 @@ u32 CanSpeciesLearnTMHM(u16 species, u8 tm) // handle forms
         return 0;
     }
 
+    if (species >= NUM_SPECIES)
+        return FALSE;
     learnableMoves = gTMHMLearnsets[species];
+    if (learnableMoves == NULL)
+        return FALSE;
     while (*learnableMoves != 0xFF)
     {
         if (*learnableMoves == tm)

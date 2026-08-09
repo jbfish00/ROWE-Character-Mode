@@ -19719,7 +19719,10 @@ static const u8 sCalyrexShadowRiderTutorLearnset[] =
     TUTOR(MOVE_FOUL_PLAY),
     0xFF,
 };
-const u8 *const sTutorLearnsets[] =
+// SIZED DELIBERATELY -- see the comment on gTMHMLearnsets. This array stopped
+// at 1207 elements against NUM_SPECIES 1482, and CanLearnTutorMove indexes it
+// raw from the party menu's Cut check.
+const u8 *const sTutorLearnsets[NUM_SPECIES] =
 {
     [SPECIES_NONE] = sNoneTutorLearnset,
     [SPECIES_BULBASAUR] = sBulbasaurTutorLearnset,

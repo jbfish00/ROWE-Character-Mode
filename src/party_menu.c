@@ -2243,7 +2243,12 @@ bool8 CanLearnTutorMove(u16 species, u8 tutor)
     if (species == SPECIES_EGG)
         return FALSE;
     
+    // See CanMonLearnTMHM: no row means a NULL pointer and the walk is unbounded.
+    if (species >= NUM_SPECIES)
+        return FALSE;
     learnableMoves = sTutorLearnsets[species];
+    if (learnableMoves == NULL)
+        return FALSE;
     while (*learnableMoves != 0xFF)
     {
         if (*learnableMoves == tutor)

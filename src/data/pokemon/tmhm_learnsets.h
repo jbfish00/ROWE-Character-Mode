@@ -36073,7 +36073,14 @@ static const u8 sDeoxysSpeedTMHMLearnset[] =
     TMHM(TM119_DRAIN_PUNCH),
     0xFF,
 };
-const u8 *const gTMHMLearnsets[] =
+// SIZED DELIBERATELY. Without [NUM_SPECIES] this array ends at its highest
+// designator (SPECIES_STUNFISK_GALARIAN, 1198 -> 1199 elements) while species
+// ids run to NUM_SPECIES-1 = 1481, and CanMonLearnTMHM indexes it raw. 49
+// species on this branch's own rosters sit past that end -- Nemona's fixed
+// starter SPECIES_PAWMI is 1245 -- so opening the party menu read an arbitrary
+// ROM word and walked it as a pointer. Sizing turns every hole into a NULL,
+// which the accessors now check. Costs ~1.1 KB of ROM.
+const u8 *const gTMHMLearnsets[NUM_SPECIES] =
 {
     [SPECIES_BULBASAUR] = sBulbasaurTMHMLearnset,
     [SPECIES_IVYSAUR] = sIvysaurTMHMLearnset,
