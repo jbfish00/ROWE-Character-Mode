@@ -6965,9 +6965,56 @@ static void SetMonMarkings(u8 markings)
     }
 }
 
+// Character Mode: refuse to remove the last ON-ROSTER mon.
+//
+// CharacterMode_SweepPartyToPC's keptOne guard says "never empty the party", so
+// if the sweep finds nothing allowed it KEEPS an off-roster mon. That is a
+// sensible fallback and it was also an exploit, because the PSS only ever
+// refused to remove the last mon that was *alive and non-egg* -- it never asked
+// whether the survivor was on-roster. Withdraw an off-roster B, deposit your
+// only on-roster A, exit: the sweep finds nothing allowed, keeps B, and nothing
+// re-sweeps on map or save load. You could play the whole game as your
+// character with an arbitrary Pokemon.
+//
+// ⚠️ Only refuse when the mon being removed is ITSELF allowed. Removing an
+// off-roster mon can never reduce the allowed count, and refusing it would
+// strand a player whose party is entirely off-roster (reachable when the boxes
+// are full and the sweep has to leave them in place).
+static bool8 IsRemovingLastAllowedPartyMon(u8 slotToIgnore)
+{
+    u16 i;
+    u16 species;
+
+    if (!InCharacterMode())
+        return FALSE;
+
+    species = GetMonData(&gPlayerParty[slotToIgnore], MON_DATA_SPECIES);
+    if (species == SPECIES_NONE
+        || GetMonData(&gPlayerParty[slotToIgnore], MON_DATA_IS_EGG)
+        || !IsSpeciesAllowedForCharacter(species))
+        return FALSE;
+
+    for (i = 0; i < PARTY_SIZE; i++)
+    {
+        if (i == slotToIgnore)
+            continue;
+
+        species = GetMonData(&gPlayerParty[i], MON_DATA_SPECIES);
+        if (species != SPECIES_NONE
+            && !GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG)
+            && GetMonData(&gPlayerParty[i], MON_DATA_HP) != 0
+            && IsSpeciesAllowedForCharacter(species))
+            return FALSE;
+    }
+
+    return TRUE;
+}
+
 static bool8 IsRemovingLastPartyMon(void)
 {
-    if (sBoxCursorArea == CURSOR_AREA_IN_PARTY && !sIsMonBeingMoved && CountPartyAliveNonEggMonsExcept(sBoxCursorPosition) == 0)
+    if (sBoxCursorArea == CURSOR_AREA_IN_PARTY && !sIsMonBeingMoved
+        && (CountPartyAliveNonEggMonsExcept(sBoxCursorPosition) == 0
+            || IsRemovingLastAllowedPartyMon(sBoxCursorPosition)))
         return TRUE;
     else
         return FALSE;
@@ -6982,6 +7029,14 @@ static bool8 CanShiftMon(void)
             if (sStorage->cursorMonIsEgg || GetMonData(&sStorage->movingMon, MON_DATA_HP) == 0)
                 return FALSE;
         }
+        // Same hole as IsRemovingLastPartyMon, reached by SHIFT rather than
+        // deposit: swapping your last on-roster mon out for an off-roster one
+        // leaves the sweep nothing to keep. Allowed when the incoming mon is
+        // itself on-roster, since the roster count does not drop.
+        if (sBoxCursorArea == CURSOR_AREA_IN_PARTY
+            && IsRemovingLastAllowedPartyMon(sBoxCursorPosition)
+            && !IsSpeciesAllowedForCharacter(GetMonData(&sStorage->movingMon, MON_DATA_SPECIES)))
+            return FALSE;
         return TRUE;
     }
     return FALSE;
