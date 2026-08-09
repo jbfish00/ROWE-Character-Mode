@@ -1493,6 +1493,19 @@ const u8 *const gMonIconTable[] =
     [SPECIES_VANILLUXE_MEGA] = gMonIcon_Vanilluxe_Mega,
     [SPECIES_WOOPER_PALDEA] = gMonIcon_Wooper,
 // ROWESPEC-PORT-END icons
+
+// The four Hisui evolutions that hung the game in July 2026 had no row here
+// either. gMonIconTable is dereferenced with no NULL guard
+// (GetMonIconPtr -> iconTemplate.image), and GetIconSpecies does not remap
+// them, so every party/PC/summary/dex icon read a NULL pointer. Basculegion is
+// reachable in ordinary play (evolve Basculin-White-Striped at Lv43).
+// Placeholder art, matching how their front/back pic coords already point at
+// the CircledQuestionMark row -- this is missing ART, not a missing species.
+// Kept OUTSIDE the generated marker block above so a re-run cannot drop them.
+    [SPECIES_WYRDEER] = gMonIcon_QuestionMark,
+    [SPECIES_URSALUNA] = gMonIcon_QuestionMark,
+    [SPECIES_BASCULEGION] = gMonIcon_QuestionMark,
+    [SPECIES_OVERQWIL] = gMonIcon_QuestionMark,
 };
 
 const u8 *const gMonIconTableFemale[] =

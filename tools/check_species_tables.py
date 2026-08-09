@@ -45,6 +45,22 @@ TABLES = [
     ("gSpeciesNames", "src/data/text/species_names.h"),
     ("gMonFrontPicCoords", "src/data/pokemon_graphics/front_pic_coordinates.h"),
     ("gMonBackPicCoords", "src/data/pokemon_graphics/back_pic_coordinates.h"),
+    # Added 2026-08-09. This gate covered four tables and the July hang was in
+    # one of them -- but gMonIconTable was missing EXACTLY the same four species
+    # (Wyrdeer, Ursaluna, Basculegion, Overqwil) and nothing noticed, because
+    # the checker only knew about the tables that had already bitten. Every
+    # table listed here is dereferenced without a NULL guard somewhere.
+    ("gMonIconTable", "src/pokemon_icon.c"),
+]
+
+# Indexed raw by species id with no bound AND no NULL check, from paths a player
+# reaches constantly (the party menu's Fly/Dig/Cut offer). Listed separately
+# because a hole here is only safe now that both arrays are sized to
+# NUM_SPECIES and the three accessors NULL-check -- before that, ids past the
+# last designator read arbitrary ROM and walked it as a pointer.
+SIZED_POINTER_TABLES = [
+    ("gTMHMLearnsets", "src/data/pokemon/tmhm_learnsets.h"),
+    ("sTutorLearnsets", "src/data/pokemon/tutor_learnsets.h"),
 ]
 
 
@@ -117,9 +133,36 @@ def main():
         for i in missing:
             bad.setdefault(i, []).append(tname)
 
+    # These two legitimately have hundreds of holes -- most species learn no
+    # TMs -- so "every species has a row" is the wrong assertion. What must
+    # hold is that they are SIZED, because the accessors index them by raw
+    # species id. Unsized, the array ends at its highest designator (1199 and
+    # 1207) while ids run to NUM_SPECIES-1 = 1481, and 49 roster species read
+    # off the end -- Nemona's starter SPECIES_PAWMI (1245) did it from the
+    # party menu. Sizing turns every hole into a NULL the accessors check.
+    unsized = []
+    for tname, path in SIZED_POINTER_TABLES:
+        text = read(path)
+        m = re.search(re.escape(tname) + r"\s*\[\s*([A-Za-z_0-9]*)\s*\]\s*=", text)
+        if not m:
+            sys.exit("!! %s not found in %s" % (tname, path))
+        if m.group(1) != "NUM_SPECIES":
+            unsized.append((tname, path, m.group(1) or "<empty>"))
+        else:
+            print("%-24s sized [NUM_SPECIES]  (holes are NULL, and checked)" % tname)
+
+    if unsized:
+        print("\nFAIL: these tables are indexed by raw species id and are NOT "
+              "sized to NUM_SPECIES:")
+        for tname, path, got in unsized:
+            print("  %s in %s is declared [%s]" % (tname, path, got))
+        print("\nAn id past the last designator reads arbitrary ROM and the "
+              "accessor then walks it as a pointer.")
+        return 1
+
     if not bad:
         print("\nOK: all %d species with base stats have a learnset, a name, "
-              "front pic coords and back pic coords." % len(base))
+              "front/back pic coords and an icon." % len(base))
         return 0
 
     print("\nFAIL: %d species have base stats but are missing rows:" % len(bad))
