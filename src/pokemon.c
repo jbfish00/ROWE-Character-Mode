@@ -9564,9 +9564,20 @@ void CreateShinyMonWithNature(struct Pokemon *mon, u16 species, u8 level, u8 nat
     CreateMon(mon, species, level, 32, 1, personality, OT_ID_PRESET, otid, 0);
 }
 
+// ⚠️ Callers legitimately pass a PALETTE TAG here, not just a species id.
+// SetMultiuseSpriteTemplateToPokemon takes `pal->tag`, and the 34 rows emitted
+// with SPECIES_SHINY_PAL set tag = species + SPECIES_SHINY_TAG (5000) -- which
+// the sprite code below it expects, since it subtracts SPECIES_SHINY_TAG before
+// indexing gMonFrontAnimsPtrTable. But this function indexed a NUM_SPECIES-sized
+// pointer table with that ~6200 value first, read thousands of pointers past the
+// end, and dereferenced whatever it found. Reachable by opening the summary
+// screen for a shiny of one of those 34 (SPECIES_WOOPER_PALDEA and
+// SPECIES_BASCULIN_WHITE_STRIPED are both in wild encounters and trainer
+// parties). Returning the id unchanged when it is out of range is exactly what
+// the shiny-tag branch downstream needs.
 u16 GetFormSpeciesId(u16 baseSpeciesId, u8 formId)
 {
-    if(gFormSpeciesIdTables[baseSpeciesId] != NULL)
+    if(baseSpeciesId < NUM_SPECIES && gFormSpeciesIdTables[baseSpeciesId] != NULL)
         return gFormSpeciesIdTables[baseSpeciesId][formId];
     else
         return baseSpeciesId;
@@ -9575,7 +9586,10 @@ u16 GetFormSpeciesId(u16 baseSpeciesId, u8 formId)
 u8 GetFormIdFromFormSpeciesId(u16 formSpeciesId)
 {
     u8 targetFormId = 0;
-    
+
+    if (formSpeciesId >= NUM_SPECIES)
+        return 0;
+
     if (gFormSpeciesIdTables[formSpeciesId] != NULL)
     {
         while (gFormSpeciesIdTables[formSpeciesId][targetFormId] != 0xFFFF)

@@ -875,6 +875,13 @@ static const struct ListMenuItem sTradingBoardTypes[NUMBER_OF_MON_TYPES] = {
     { gTypeNames[TYPE_DRAGON],   TYPE_DRAGON         },
     { gTypeNames[TYPE_STEEL],    TYPE_STEEL          },
     { gTypeNames[TYPE_DARK],     TYPE_DARK           },
+    // Fairy was missing, and the array is declared [NUMBER_OF_MON_TYPES] = 19
+    // while listing only 17 types + Exit = 18 rows. C zero-fills the 19th to
+    // { NULL, 0 }, and .totalItems is ARRAY_COUNT, so the Union Room trading
+    // board drew a 19th row from a NULL string pointer -- and selecting it
+    // returned id 0, i.e. TYPE_NORMAL. Adding Fairy fills the array exactly.
+    // TYPE_MYSTERY (9) stays out on purpose: it is the "???" placeholder type.
+    { gTypeNames[TYPE_FAIRY],    TYPE_FAIRY          },
     { sText_Exit,                NUMBER_OF_MON_TYPES }
 };
 
