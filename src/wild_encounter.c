@@ -365,7 +365,26 @@ u8 CharacterMode_GetWildEncounterKind(void)
 u16 CreateWildMonWithCharacterOverride(u16 tableSpecies, u8 level)
 {
     u8 kind = CHAR_WILD_ENCOUNTER_NORMAL;
-    u16 species = CharacterMode_RollWildOverrideSpecies(level, &kind);
+    u16 species;
+
+    // ⚠️ NEVER roll the override inside the Battle Pyramid or Battle Pike.
+    // Their encounter tables do not store species at all -- they store INDICES.
+    // gBattlePyramid_1_LandMons is twelve rows of SPECIES_BULBASAUR..CHARMANDER
+    // (ids 1..4), and GenerateBattlePyramidWildMon does
+    //     id = GetMonData(&gEnemyParty[0], MON_DATA_SPECIES) - 1;
+    //     ... wildMons[id] ...
+    // into an EIGHT-entry round table. Hand it a real roster species and `id`
+    // becomes several hundred: it reads kilobytes past the table and writes a
+    // garbage species, which then indexes gBaseStats and gMonFrontAnimsPtrTable.
+    // The marker was wrong here too -- these are facility mons, not roster ones.
+    if (InBattlePyramid() || InBattlePike())
+    {
+        CreateWildMon(tableSpecies, level);
+        CharacterMode_SetWildEncounterKind(CHAR_WILD_ENCOUNTER_NORMAL);
+        return tableSpecies;
+    }
+
+    species = CharacterMode_RollWildOverrideSpecies(level, &kind);
 
     if (species == SPECIES_NONE)
     {
