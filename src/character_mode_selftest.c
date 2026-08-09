@@ -523,10 +523,35 @@ void CharacterMode_RunBootSelftest(void)
 
     FlagClear(FLAG_CHARACTER_MODE);
     VarSet(VAR_CHARACTER_ID, 0);
+    // ⚠️ MUST be a species the active character would REFUSE, or this check
+    // cannot fail. It asked about SPECIES_MEOWTH until 2026-08-09 -- and Meowth
+    // is ON Red's roster (characters.h), while the block above sets
+    // VAR_CHARACTER_ID = 1 = Red. Allowed either way, so deleting the
+    // FlagClear above, or hardwiring InCharacterMode() to TRUE, left this
+    // green. Poochyena is already proven off-roster for Red 140 lines up, which
+    // makes this the in-band opposite of that check rather than a restatement.
     Check("mode off: everything allowed",
-          IsSpeciesAllowedForCharacter(SPECIES_MEOWTH) == TRUE);
-    Check("wild override: mode off never fires",
-          CharacterMode_RollWildOverrideSpecies(30, NULL) == SPECIES_NONE);
+          IsSpeciesAllowedForCharacter(SPECIES_POOCHYENA) == TRUE);
+    // A SINGLE roll here was a ~89% pass on a build where the mode never
+    // turned off: the two rolls together fire only ~11% of the time, so one
+    // sample mostly missed. 200 rolls makes a stuck-on mode a certainty rather
+    // than a coin flip, and costs nothing on a correct build -- with the mode
+    // off, GetActiveCharacter() returns NULL and the function returns on its
+    // first line, well before the expensive candidate-list walk.
+    {
+        u32 offRolls;
+        bool8 everFired = FALSE;
+
+        for (offRolls = 0; offRolls < 200; offRolls++)
+        {
+            if (CharacterMode_RollWildOverrideSpecies(30, NULL) != SPECIES_NONE)
+            {
+                everFired = TRUE;
+                break;
+            }
+        }
+        Check("wild override: mode off never fires", everFired == FALSE);
+    }
 
     if (savedFlag)
         FlagSet(FLAG_CHARACTER_MODE);

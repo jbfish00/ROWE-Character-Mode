@@ -74,8 +74,12 @@ local function assertOt(when, r)
     -- is testing the old format against a name that never needed truncating.
     H.assertEq(when .. ": player name is at PLAYER_NAME_LENGTH",
                o.playerLen, PLAYER_NAME_LENGTH)
-    H.assertTrue(when .. ": that name is longer than the OT field",
-                 PLAYER_NAME_LENGTH > OT_NAME_LENGTH)
+    -- REMOVED 2026-08-09: `PLAYER_NAME_LENGTH > OT_NAME_LENGTH` asserted one
+    -- Lua local against another (12 > 7, both defined at the top of this file).
+    -- It read nothing from the ROM, so it could not fail for ANY build --
+    -- including one where the name-length change was never made, which is the
+    -- exact premise it claimed to be establishing. The assertion above already
+    -- proves it properly, by comparing the ROM's own playerLen.
 
     -- A stored OT is truncated to OT_NAME_LENGTH. Reading back more than that
     -- means an accessor is running off the end of the field; reading back fewer

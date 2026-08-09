@@ -48,11 +48,19 @@ CM_SAV_OUT="$FIX" timeout "$RUN_TIMEOUT" "$MGBA" \
     --script tools/mgba_scripts/make_fixture_save.lua "$ROM" > "$OUT/fixture.log" 2>&1
 
 fail=0
+# Every run declares the assertion count it MUST produce. Until 2026-08-09 the
+# expected tallies lived in a comment at the bottom of this file that said
+# "compare EVERY run, a changed tally is a regression" -- and nothing compared
+# them. Same for the self-test: the count was captured into $st, printed, and
+# never checked, so deleting 35 of the 36 Check() calls still reported
+# "ALL RUNS PASS". A tally that is printed but not asserted is decoration.
+EXPECTED_SELFTEST=36
+
 run() {
-    local name=$1 script=$2; shift 2
+    local name=$1 script=$2 expected=$3; shift 3
     env "$@" timeout "$RUN_TIMEOUT" "$MGBA" \
         --script "tools/mgba_scripts/$script" "$ROM" > "$OUT/$name.log" 2>&1
-    local res p f st
+    local res p f st sp sf
     res=$(grep -oE 'RESULT: (PASS|FAIL)' "$OUT/$name.log" | tail -1)
     p=$(grep -oE 'PASSED [0-9]+' "$OUT/$name.log" | tail -1 | awk '{print $2}')
     f=$(grep -oE 'FAILED [0-9]+' "$OUT/$name.log" | tail -1 | awk '{print $2}')
@@ -69,46 +77,72 @@ run() {
         fail=1
         [ "${p:-0}" -eq 0 ] 2>/dev/null && \
             echo "    ^ ZERO assertions ran -- treating as failure, not a pass"
+        return
+    fi
+    # A run can go green having quietly stopped asserting things: a probe list
+    # that generated fewer rows, a loop that exited early, an assertion block
+    # skipped by a changed precondition. RESULT: PASS cannot see any of that.
+    if [ "${p}" != "$expected" ]; then
+        fail=1
+        echo "    ^ TALLY CHANGED: expected $expected assertions, got $p."
+        echo "      A changed tally is a regression even when the run says PASS."
+        echo "      If the change is intentional, update the expected count here."
+    fi
+    if [ -n "$st" ]; then
+        sp=$(echo "$st" | awk '{print $2}')
+        sf=$(echo "$st" | awk '{print $4}')
+        if [ "$sp" != "$EXPECTED_SELFTEST" ] || [ "$sf" != "0" ]; then
+            fail=1
+            echo "    ^ SELFTEST CHANGED: expected $EXPECTED_SELFTEST passed / 0 failed, got $sp / $sf."
+        fi
     fi
 }
 
-# 18 runs: sixteen scripts plus the two starter_regression paths.
-run boot           boot_smoke.lua
-run continue       continue_smoke.lua         CM_SAV="$FIX"
-run ot_roundtrip   ot_roundtrip_e2e.lua
-run legendary      legendary_encounter_e2e.lua
-run encounter_doc  encounter_doc_e2e.lua
-run catch_gate     catch_gate_e2e.lua         CM_SAV="$FIX"
-run pc_sweep       pc_sweep_e2e.lua
-run johto_gym      johto_gym_e2e.lua
-run gigaton        gigaton_reselect_e2e.lua   CM_SAV="$FIX"
-run basculegion    basculegion_hang_e2e.lua
-run mode_exclusion mode_exclusion_e2e.lua
-run char_select    character_select_e2e.lua
-run tobias_legend  tobias_legendary_e2e.lua
-run enc_marker     encounter_marker_e2e.lua   CM_SAV="$FIX"
-run trade_gate     trade_gate_e2e.lua         CM_SAV="$FIX"
+# 19 runs: seventeen scripts plus the two starter_regression paths.
+# (18 until 2026-08-09, when pre_evolution_e2e was finally added to the list.)
+#   run <name> <script> <expected assertions> [env ...]
+run boot           boot_smoke.lua              2
+run continue       continue_smoke.lua          2   CM_SAV="$FIX"
+run ot_roundtrip   ot_roundtrip_e2e.lua        17
+run legendary      legendary_encounter_e2e.lua 20
+run encounter_doc  encounter_doc_e2e.lua       60
+run catch_gate     catch_gate_e2e.lua          14  CM_SAV="$FIX"
+run pc_sweep       pc_sweep_e2e.lua            10
+run johto_gym      johto_gym_e2e.lua           13
+run gigaton        gigaton_reselect_e2e.lua    9   CM_SAV="$FIX"
+run basculegion    basculegion_hang_e2e.lua    34
+run mode_exclusion mode_exclusion_e2e.lua      72
+run char_select    character_select_e2e.lua    11
+run tobias_legend  tobias_legendary_e2e.lua    14
+run enc_marker     encounter_marker_e2e.lua    41  CM_SAV="$FIX"
+run trade_gate     trade_gate_e2e.lua          10  CM_SAV="$FIX"
+# pre_evolution_e2e existed since 2026-07 and was never in this list, while
+# PLAN.md cited it as proof that pre_evolution.h matches evolution.h across all
+# ~1470 species. A test nobody runs proves nothing; only the 9 hand-picked
+# FamilyBase checks in the in-ROM selftest covered that table.
+# Expected 2: the per-chunk assertion inside its loop fires ONLY on a mismatch,
+# so a clean run emits just the two summary assertions (coverage + zero
+# disagreements). A tally above 2 means real mismatches were found.
+run pre_evolution  pre_evolution_e2e.lua       2
 # ⚠️ costume_persist WRITES to its fixture (it has to -- it proves a save
 # survives a reload). It runs LAST of the CM_SAV users so the mutated
 # fixture cannot leak into another run, and the fixture is minted fresh
 # every invocation anyway.
-run costume_persist costume_persist_e2e.lua   CM_SAV="$FIX"
-run starter_red    starter_regression.lua     CM_PATH=red
-run starter_normal starter_regression.lua     CM_PATH=normal
+run costume_persist costume_persist_e2e.lua   12  CM_SAV="$FIX"
+run starter_red    starter_regression.lua      6   CM_PATH=red
+run starter_normal starter_regression.lua      6   CM_PATH=normal
 
 echo
 if [ "$fail" -eq 0 ]; then
-    echo "ALL 18 RUNS PASS.  logs: $OUT"
+    echo "ALL 19 RUNS PASS.  logs: $OUT"
 else
     echo "SUITE FAILED -- read the logs in $OUT"
 fi
-# Expected tallies (compare EVERY run, a changed tally is a regression even if
-# the run still says PASS): boot 2, continue 2, ot_roundtrip 19, legendary 20,
-# encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9,
-# basculegion 34, mode_exclusion 72, char_select 11, tobias_legend 14,
-# enc_marker 41, trade_gate 10, costume_persist 12,
-# starter red 6 + normal 6.
-# Selftest 36/36 -- was 33 until the §7.14 encounter markers added three checks
-# (the kind tracks the species the roll returned; a roll that did not fire
-# labels nothing; 200 rolls with no battle leave the marker clear).
+# The expected tallies are ARGUMENTS to run() now, not a comment here. They sat
+# in this comment for months under the instruction "compare EVERY run" while
+# nothing compared them, so a run could quietly stop asserting and still be
+# scored green. Same for the self-test count -- see EXPECTED_SELFTEST above.
+#
+# ot_roundtrip went 19 -> 17 on 2026-08-09: two of its assertions compared one
+# Lua constant against another and could not fail for any build.
 exit "$fail"

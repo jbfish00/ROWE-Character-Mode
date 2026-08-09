@@ -64,7 +64,14 @@ local STATUS_REJECTED = 2
 local MB           = H.anchors.gCharacterModeTestMailbox
 local MB_MAGIC     = 0x434D5442  -- "CMTB", written by the pump once alive
 local BALLBLOCK    = H.anchors.BattleScript_CharacterBallBlock
-local BALLBLOCK_END = BALLBLOCK + 0x20  -- script is ~15 bytes; pad for safety
+-- ⚠️ +0x10 is the script's REAL length (next label BattleScript_PlayerUsesItem
+-- is at +0x10), not a guess. The old +0x20 "pad for safety" swallowed all of
+-- PlayerUsesItem -- which HandleAction_UseItem selects for any non-ball item
+-- use -- plus the head of OpponentUsesHealItem, so `sawBallBlock` was not a
+-- unique witness to the character block. Latent rather than live (this run only
+-- throws Master Balls at an itemless wild mon), but the window should mean what
+-- its name says.
+local BALLBLOCK_END = BALLBLOCK + 0x10
 
 local DEADLINE = 60000  -- total frames (~33 s headless) before hard failure
 

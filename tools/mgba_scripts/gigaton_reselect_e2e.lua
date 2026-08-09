@@ -114,9 +114,16 @@ local function selScript()  return H.rd32(H.anchors.gSelectionBattleScripts) end
 -- advances as the script runs (observed: the label, then label+3 one frame
 -- later). An exact-equality test therefore has a one-or-two frame window and
 -- loses the race whenever the poll misses it. Accept the whole script body.
+-- ⚠️ +0x08, NOT +0x20. BattleScript_SelectingTormentedMove is FOUR bytes (the
+-- next label sits at +0x04), so a 0x20 window also covered
+-- MoveUsedIsTormented, SelectingTormentedMoveInPalace, and -- the ones that
+-- matter -- SelectingNotAllowedMoveTaunt (+0x17) and MoveUsedIsTaunted (+0x1B).
+-- Repoint the Gigaton Hammer block at Taunt's script and this assertion, whose
+-- name promises Torment, stayed green while the player saw the wrong message.
+-- 0x08 still covers the label-then-label+3 advance the comment below describes.
 local function inTormentScript()
     local s = selScript()
-    return s >= TORMENT_SCRIPT and s < TORMENT_SCRIPT + 0x20
+    return s >= TORMENT_SCRIPT and s < TORMENT_SCRIPT + 0x08
 end
 
 local function refillEnemyHp()
