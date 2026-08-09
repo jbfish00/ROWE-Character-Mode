@@ -12791,9 +12791,21 @@ static void Cmd_handleballthrow(void)
         MarkBattlerForControllerExec(gActiveBattler);
         gBattlescriptCurrInstr = BattleScript_LegendaryPokemonBallBlock;
     }
-    else if (!IsSpeciesAllowedForCharacter(gBattleMons[gBattlerTarget].species))
+    else if (!IsSpeciesAllowedForCharacter(
+                 GetMonData(&gEnemyParty[gBattlerPartyIndexes[gBattlerTarget]], MON_DATA_SPECIES, NULL)))
     {
         // Character Mode: off-roster species cannot be caught.
+        //
+        // ⚠️ ASK THE PARTY MON, NOT gBattleMons. `species` is an 11-bit field
+        // at offset 0 of struct BattlePokemon, and Cmd_transformdataexecution
+        // copies from byte 0 -- so a wild mon that used Transform (or switched
+        // in with ABILITY_IMPOSTER) reports YOUR species here. Ditto's entire
+        // learnset is LEVEL_UP_MOVE(1, MOVE_TRANSFORM) and it has 9 wild slots,
+        // so it fires turn 1 with certainty: the gate saw the player's own
+        // Pikachu, allowed the throw, and an off-roster Ditto was caught and
+        // dex-flagged. Only GiveMonToPlayer's separate check kept it out of the
+        // party. Mew is the other vector. The party data is what actually gets
+        // caught, so it is the only correct thing to gate on.
         BtlController_EmitBallThrowAnim(0, BALL_TRAINER_BLOCK);
         MarkBattlerForControllerExec(gActiveBattler);
         gBattlescriptCurrInstr = BattleScript_CharacterBallBlock;
