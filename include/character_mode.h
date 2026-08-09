@@ -48,6 +48,11 @@ struct CharacterInfo
                             // it instead.
 };
 
+// Upper bound on the non-legendary candidate list the 10% wild override builds.
+// Must be >= the largest non-legendary roster (Goh, 83 as of 2026-08-09).
+// Enforced by tools/character_mode/audit_rosters.py -- raise both together.
+#define CHARACTER_MAX_ROSTER_CANDIDATES 96
+
 extern const struct CharacterInfo gCharacters[];
 
 u16 GetCharacterCount(void);

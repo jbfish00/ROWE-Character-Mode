@@ -489,7 +489,15 @@ u16 CharacterMode_RollWildLegendarySpecies(u8 level)
 u16 CharacterMode_RollWildOverrideSpecies(u8 level, u8 *outKind)
 {
     const struct CharacterInfo *character = GetActiveCharacter();
-    u16 candidates[64];
+    // ⚠️ This must hold the largest NON-LEGENDARY roster, not a round number.
+    // At 64 it silently truncated Goh (83 non-legendary families): the loop
+    // below stops at the cap, his roster is alphabetical, and so the entire
+    // S-Z tail -- Sentret through Zubat, 19 families -- could never be produced
+    // by the 10% override, while ENCOUNTERS.md advertised all 83. Nothing
+    // failed; the feature just quietly did less than the docs promised.
+    // tools/character_mode/audit_rosters.py now fails the build-time audit if
+    // any roster outgrows this, so it cannot rot silently again.
+    u16 candidates[CHARACTER_MAX_ROSTER_CANDIDATES];
     u8 candidateCount = 0;
     u32 i;
     u16 legendary;

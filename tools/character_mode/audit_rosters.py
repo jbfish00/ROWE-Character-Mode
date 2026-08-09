@@ -51,6 +51,19 @@ def read(path):
         return f.read()
 
 
+def max_roster_candidates():
+    """Read CHARACTER_MAX_ROSTER_CANDIDATES out of the header rather than
+    duplicating it here. A second copy of a size constant is the same drift bug
+    this check exists to catch, one layer up."""
+    src = read(os.path.join(TARGET, "include", "character_mode.h"))
+    m = re.search(r"#define\s+CHARACTER_MAX_ROSTER_CANDIDATES\s+(\d+)", src)
+    if not m:
+        raise SystemExit("audit_rosters: could not find "
+                         "CHARACTER_MAX_ROSTER_CANDIDATES in "
+                         "include/character_mode.h -- refusing to guess it")
+    return int(m.group(1))
+
+
 def species_ids():
     """Identifier -> numeric id from species.h #defines, resolving full
     expressions (aliases, GEN_9_START + n, FORMS_START arithmetic, ...)."""
@@ -172,6 +185,7 @@ def main():
 
     chars = rosters()
     legend = legendary_bases()
+    MAX_ROSTER_CANDIDATES = max_roster_candidates()
     findings = []
     entry_total = 0
     shadowed = 0
@@ -182,6 +196,23 @@ def main():
         if starter_count > len(entries):
             findings.append("%s: starterCount %d > roster size %d"
                             % (name, starter_count, len(entries)))
+        # CharacterMode_RollWildOverrideSpecies builds its 10%-override
+        # candidate list into u16 candidates[CHARACTER_MAX_ROSTER_CANDIDATES]
+        # and stops at the cap. Overflowing it does not crash and does not fail
+        # any test -- the tail of the roster simply stops appearing in the wild,
+        # while ENCOUNTERS.md keeps advertising it. Goh silently lost 19
+        # families that way. Fail loudly instead.
+        ordinary_count = len([e for e in entries
+                              if canonical_base(e, parent, form_base) not in legend])
+        if ordinary_count > MAX_ROSTER_CANDIDATES:
+            findings.append(
+                "%s: %d non-legendary entries exceeds "
+                "CHARACTER_MAX_ROSTER_CANDIDATES (%d) in include/character_mode.h "
+                "-- the 10%% wild override would silently drop the last %d, and "
+                "ENCOUNTERS.md would still list them. Raise the #define and this "
+                "constant together."
+                % (name, ordinary_count, MAX_ROSTER_CANDIDATES,
+                   ordinary_count - MAX_ROSTER_CANDIDATES))
         # starterCount == 0 means "no non-legendary starter exists", and
         # ui_mode_menu.c's RandomizeStarterSelection answers it by handing the
         # character roster[0] deliberately (Tobias always starts with Darkrai)
