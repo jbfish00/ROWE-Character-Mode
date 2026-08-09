@@ -7,22 +7,32 @@ traps specific to this tree.
 
 `CLAUDE.md` (gitignored) remains the authority for architecture and history; this
 file is **state and next steps**. Re-derived against this working tree on
-**2026-08-03**, after a full rebuild (ROM `993c036846e10bf550505cd958899771`),
-an anchor regeneration (map digest `ffba13d0e6e3263b`) and a clean 18-run suite.
-✅ **Every one of those claims was re-checked from scratch on 2026-08-08** — same
-ROM md5, same map digest, byte-identical anchors, 18/18 green with all eighteen
-tallies matching. The tree is what this file says it is.
+**2026-08-09**, after a full rebuild, an anchor regeneration and a clean 19-run
+suite. See §10 for that session.
 
-⚠️ **The 2026-08-03 pass closed the last of the open work in this repo** — the
-encounter markers (§7.14), the in-game trade test, costume persistence and the
-TAAR attribution debt. **There is no open code work.** If a later note here
-tells you to build something, check its date.
+🔴 **"There is no open code work" was TRUE and WRONG, and that is the lesson of
+2026-08-09.** This file carried that headline for six days on the strength of an
+18/18 green suite. An adversarial sweep then found **nine confirmed bugs**,
+including two memory-safety defects reachable in ordinary play — one of them in
+the first five minutes of a Nemona playthrough. Every one predated the green
+run. The suite was not lying; it was answering a narrower question than the
+headline claimed, and **nothing in it entered a Battle Frontier facility, opened
+the party menu with a Gen 9 starter, or drove a PC deposit.**
+
+⚠️ **Do not read a green suite as "the tree is correct".** Read it as "the paths
+the suite covers did not regress". The gap between those two sentences is where
+all nine lived. When you next want to write "there is no open code work", write
+"no *known* open code work, last swept <date>" instead.
+
+✅ **All nine are fixed as of 2026-08-09** (§10), suite 19/19 on ROM
+`90fa8e3cf4fe57a0c092dd55c1743c60`. What remains below is genuinely not an
+agent's.
 
 **What remains, and none of it is an agent's:**
 
 | # | item | who | unblock |
 |---|---|---|---|
-| 1 | ~~**Push** the local commits~~ | ✅ **DONE 2026-08-07** | `origin/character-mode` is level with local at `89ef5ce7` |
+| 1 | ~~**Push** the local commits~~ | ✅ **DONE 2026-08-09** | `origin/character-mode` level with local; the 2026-08-09 fixes are pushed too |
 | 2 | **Send** the two art-permission requests | user, from their own account | `../Character Hacks/PERMISSION_REQUESTS.md` — both drafts verified send-ready 2026-08-03 |
 | 3 | **Art acquisition** | blocked on 2 | every staged sprite is imported, the 07-28 harvest is consumed, and TAAR upstream is EXHAUSTED (measured — §7 item 3) |
 | 4 | **Selection-screen portrait / 10th mode row** | needs new tilemap art | §7.4; re-verified 2026-08-03 by rendering the screen — largest free square is **0×0** |
@@ -62,11 +72,11 @@ playthrough, art acquisition, and two permission requests the user must send.
 | Name length | **12/12 LANDED** (`71cebcbe`), verified by a new headless suite |
 | Legendary rule | **SHIPPED** — 1% wild encounters, offered-until-caught, no roaming |
 | Modes | **Randomized Party Mode SHIPPED** (`c231ba2a`), exclusive with Character Mode; both Game Modes menus de-drifted and pinned |
-| Readiness | **GREEN** — selftest **36/36** and **all 18 suite runs passing** on the marker build `993c036846e10bf550505cd958899771` (boot 2, continue 2, ot_roundtrip 19, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, basculegion_hang 34, mode_exclusion 72, char_select 11, tobias_legend 14, **enc_marker 41**, **trade_gate 10**, **costume_persist 12**, starter red 6 + normal 6) — **the fifteen pre-existing tallies match the `4ba53b39…` baseline EXACTLY** (re-run in full 2026-08-03 on this build, not carried over from notes). ✅ **RE-VERIFIED INDEPENDENTLY 2026-08-08 from a clean rebuild** — `make` → ROM md5 `993c036846e10bf550505cd958899771` (unchanged), `gen_anchors.py` → map digest `ffba13d0e6e3263b` with a second run reproducing `anchors.lua` byte-identical and the tree still clean, then all 18 runs green with **all eighteen tallies identical to the list above** and selftest 36/36 on every run. Nothing in this row is carried over from a note. **Run it with `bash tools/mgba_scripts/run_suite.sh`**. ⚠️ **Budget ~75 minutes and detach it.** Every run burns its full 240 s `RUN_TIMEOUT` by design (`H.finish()` does not stop the emulator), and the fixture step burns one too — 19 × 240 s. A foreground call under any shorter tool/command timeout gets killed mid-suite and looks like a hang; `setsid nohup … &` and poll the log. ⚠️ **Selftest went 33 → 36**, not by accident: §7.14 added three checks (the encounter kind tracks the species the roll returned, a roll that did not fire labels nothing, and 200 rolls with no battle leave the marker clear). A 33 on this build is a regression, not a stale note. Anchors regenerated first; map digest `ffba13d0e6e3263b`, and a second `gen_anchors.py` run reproduces `anchors.lua` byte-identical |
+| Readiness | **GREEN** — selftest **36/36** and **all 19 suite runs passing** on `90fa8e3cf4fe57a0c092dd55c1743c60` (boot 2, continue 2, ot_roundtrip 17, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13, gigaton 9, basculegion_hang 34, mode_exclusion 72, char_select 11, tobias_legend 14, enc_marker 41, trade_gate 10, **pre_evolution 2**, costume_persist 12, starter red 6 + normal 6). ⭐ **The tallies are ARGUMENTS to `run()` now, and the runner fails on a mismatch.** They sat in a bottom-of-file comment reading "compare EVERY run" while nothing compared them, and the self-test count was printed and never checked — deleting 35 of the 36 `Check()` calls still reported ALL RUNS PASS. Both are asserted (`EXPECTED_SELFTEST=36`), and both guards were broken on purpose to prove they fail. ⚠️ **ot_roundtrip is 17, not 19** — two of its assertions compared one Lua constant to another. ⚠️ **pre_evolution is NEW to the list** (2026-08-09); it had existed unrun since July while this file cited it as proof. It passes. **Run it with `bash tools/mgba_scripts/run_suite.sh`**. ⚠️ **Budget ~80 minutes and DETACH it.** Every run burns its full 240 s `RUN_TIMEOUT` by design (`H.finish()` does not stop the emulator) and the fixture step burns one too — 20 × 240 s. A foreground call under a shorter timeout dies mid-suite and reads as a hang; `setsid nohup … &` and poll. ⚠️ **Selftest 36 is the floor**: §7.14 added three checks and a 33 is a regression. Anchors regenerated first; map digest `0078bac7e41ab1e0`, second `gen_anchors.py` run byte-identical |
 | Species tables | **COMPLETE** — every species with a `gBaseStats` row now has a learnset, a name and front/back pic coords, gated by `tools/check_species_tables.py`. Four had none and **hung the game** (§7.11) |
 
 Every number above was re-derived from this tree, not taken from notes.
-⚠️ The suite is **18 runs as of 2026-08-03** — sixteen scripts plus the two
+⚠️ The suite is **19 runs as of 2026-08-09** — seventeen scripts plus the two
 `starter_regression` paths. It was **11** (nine scripts) until 2026-07-30, and for
 three sessions §0 and §7 claimed 12 while §8 correctly said 11: that 12th was a
 *phantom*. Since then: 12 `basculegion_hang_e2e` (§7.11), 13 `mode_exclusion_e2e`,
@@ -77,7 +87,7 @@ two facts together; the tallies are in §7.
 
 ### If you are picking this up cold, start here
 
-**Nothing is broken and nothing is half-done.** Tree clean, **18/18 green**,
+**Nothing is KNOWN broken.** Tree clean, **19/19 green**,
 selftest 36/36. There is no rescue work waiting and **no open code work at
 all** — see the handoff table at the top of this file for the five things that
 remain, all of which need the user rather than an agent.
@@ -89,7 +99,7 @@ so there is nothing outstanding in git either.
 1. **Sanity-check the tree before believing any of this**, in this order —
    `make -j$(nproc)` → `python3 tools/mgba_scripts/gen_anchors.py` →
    `bash tools/mgba_scripts/run_suite.sh`. Expect ROM md5
-   `993c036846e10bf550505cd958899771`, map digest `ffba13d0e6e3263b`, and a
+   `90fa8e3cf4fe57a0c092dd55c1743c60`, map digest `0078bac7e41ab1e0`, and a
    second `gen_anchors.py` run that changes nothing. (Both changed on
    2026-08-03 — the previous build was `4ba53b39…` / `45cfe76e469fceeb`.)
    ⚠️ **Regenerate anchors BEFORE the suite, and never judge staleness by
@@ -1327,7 +1337,7 @@ python3 tools/character_mode/roster_playability_report.py [--csv]  # which roste
 python3 tools/check_battle_strings.py --self-test   # its negative control
 python3 tools/character_mode/rebuild_taar_index.py <taar-clone>  # art attribution
 python3 tools/mgba_scripts/gen_anchors.py   # MUST re-run after every build
-bash tools/mgba_scripts/run_suite.sh        # all 18 runs, one line each
+bash tools/mgba_scripts/run_suite.sh        # all 19 runs, one line each
 # Visual check -- NOT a suite run, it asserts nothing about how art LOOKS.
 CM_SAV=<fixture> CM_SHOTS=/tmp/shots CM_NO_BATTLE=1 CM_CHARS=112,113 \
   timeout 280 "$MGBA" --script tools/mgba_scripts/sprite_visual_check.lua pokeemerald.gba
@@ -1355,7 +1365,7 @@ CM_SAV_OUT=~/Documents/rowe_fixture.sav timeout 300 "$MGBA" \
     --script tools/mgba_scripts/make_fixture_save.lua pokeemerald.gba
 ```
 
-The suite is **18 runs** as of 2026-08-03 — sixteen scripts plus the two
+The suite is **19 runs** as of 2026-08-09 — seventeen scripts plus the two
 `starter_regression` paths. Logs are ~130 MB each; `timeout` exit 124 is NORMAL
 — the harness never exits on its own and the RESULT line prints well before the
 timeout, so **judge by the RESULT line, never by the exit code**.
@@ -1451,3 +1461,102 @@ scripts in `tools/mgba_scripts/`.
 - The two legendary lists in §5 are hand-synced — change both or neither.
 - **`gSelectionBattleScripts` holds the CURRENT instruction**, not the label — it
   advances within a frame or two, so test it as a range, never `==`.
+
+---
+
+## 10. Session 2026-08-09 — nine bugs behind a green suite
+
+**An adversarial sweep of a tree this file called finished found nine confirmed
+bugs.** All nine predated the 18/18 green run recorded above; none was a
+regression from it. Four read-only agents were pointed at failure classes this
+repo has actually shipped before — vacuous tests, roster-enforcement bypasses,
+the newest code, and bounds/generator defects — and every claim below was
+re-verified against the source before being acted on. Several agent claims did
+**not** survive that check and were dropped; see "over-reported" at the end.
+
+### The two that mattered
+
+**1. `gTMHMLearnsets` / `sTutorLearnsets` were indexed past their ends.**
+The tables stop at their highest designator — 1199 and 1207 elements — while
+species ids run to `NUM_SPECIES-1` = 1481, and all three accessors index them
+raw and then walk the returned pointer until they find `0xFF`. **49 species on
+this branch's own rosters sit past that end.** Nemona's fixed starter is
+`SPECIES_PAWMI`, id **1245**, granted at level 10 in the intro — and
+`ShowPartyMenu` calls `CanMonLearnTMHM` twice plus `CanLearnTutorMove` once on
+the highlighted slot to decide whether to offer Fly/Dig/Cut. So an ordinary
+party-menu open, five minutes into that playthrough, read ~46 pointers past the
+array and dereferenced whatever was there. Fixed by sizing both to
+`[NUM_SPECIES]` (holes become NULL) plus bound and NULL checks in the accessors.
+
+**2. The Battle Pyramid stores INDICES in its species field.**
+`gBattlePyramid_1_LandMons` is twelve rows of ids 1..4 used as index 0..3 into
+an **eight-entry** round table; `GenerateBattlePyramidWildMon` does
+`id = species - 1`. The 10% roster override handed it a real species, so `id`
+became several hundred and read kilobytes past the table, writing a garbage
+species that then indexed `gBaseStats` and `gMonFrontAnimsPtrTable`. ~11% of
+Pyramid encounters in Character Mode. The override is now refused inside both
+frontier facilities, in the shared wrapper so every caller is covered.
+
+### The other seven
+
+| # | bug | shape |
+|---|---|---|
+| 3 | `FLAG_RANDOMIZED_MODE` remapped every override species via `GetWildPokemon`, deleting the feature while the marker still announced it | feature silently absent |
+| 4 | Transform/Imposter defeated the catch gate — it read `gBattleMons[].species`, which a transformed Ditto overwrites with YOURS | gate reads mutable state |
+| 5 | Depositing your last on-roster mon let the sweep's `keptOne` fallback keep an off-roster one **permanently** | guard asked the wrong question |
+| 6 | `candidates[64]` truncated Goh's 83 non-legendary families; `ENCOUNTERS.md` advertised all 19 unreachable ones | silent cap |
+| 7 | `gMonIconTable` missing exactly the four species that hung the game in July | gate covered only tables that had already bitten |
+| 8 | `GetFormSpeciesId` indexed a 1482-entry table with a `species + 5000` palette tag | tag used as an id |
+| 9 | `sTradingBoardTypes[19]` had 18 initialisers — Fairy missing, 19th row drawn from a NULL string | short initialiser list |
+
+### Why the suite did not catch any of them
+
+⚠️ **This is the part worth carrying.** The suite was green and honest. It simply
+never enters a Battle Frontier facility, never opens the party menu holding a
+Gen 9 starter, never drives a PC deposit, and never ticks Randomized Mode. A
+green suite means *the covered paths did not regress*. It has never meant *the
+tree is correct*, and this file said otherwise for six days.
+
+Worse, four of its own checks could not have failed:
+
+- The self-test's "mode off: everything allowed" asked about **Meowth, which is
+  on Red's roster** — allowed either way, so the whole mode-off section passed
+  with Character Mode still on. Its partner was a single sample of an ~11%
+  event, a ~89% pass on a broken build.
+- `run_suite.sh` carried the expected tallies in a comment saying "compare EVERY
+  run" and **compared none of them**; the self-test count was captured, printed
+  and never checked.
+- `pre_evolution_e2e.lua` had existed since July, was cited in this file as
+  proof, and **was not in the run list**.
+- `ot_roundtrip` asserted `PLAYER_NAME_LENGTH > OT_NAME_LENGTH` — two Lua
+  constants, 12 and 7. It could not fail for any build.
+
+All fixed. Tallies are now arguments to `run()`, the self-test count is asserted,
+and both new guards were broken on purpose to prove they fail.
+
+### Tooling, same pass
+
+`audit_rosters.py` fails if a roster outgrows `CHARACTER_MAX_ROSTER_CANDIDATES`
+(read from the header, not duplicated). `check_species_tables.py` gained
+`gMonIconTable` and asserts the two sized pointer tables are still
+`[NUM_SPECIES]`. `rebuild_taar_index.py` no longer writes the partial index its
+docstring promises it refuses to write, and its control now checks what the run
+COMPUTED rather than re-reading the file it just wrote. Four generator insertion
+idioms gained a blank line per run, which destroys "run it twice and diff" as an
+idempotency test — fixed and each proven stable by simulation.
+
+⚠️ **Over-reported, do not go looking:** the agents also flagged
+`port_2x_species_aliases.py` as non-byte-stable (**it is stable** — simulated),
+and claimed the `SPECIES_SHINY_PAL` rows were simply the wrong macro (they are
+not; the engine's `formSpeciesId > SPECIES_SHINY_TAG` branch expects that tag —
+the defect was the unbounded index, which is what got fixed).
+
+### Still unverified, from the same reports
+
+Not investigated, not fixed, and **not confirmed** — treat as leads, not facts:
+`gMonFootprintTable` and the female icon/palette tables have NULL holes;
+`TakeSelectedPokemonFromDaycare` is an ungated party writer; `encounter_doc_e2e`
+has no floor on its probe set; `check_battle_strings.py` silently excludes
+apostrophe names from its worst case and `load_names` has no floor; several
+porters assign ids positionally from a name-sorted list, which is the
+save-breaking hazard the sprite importers' held-id tables exist to prevent.
