@@ -1,4 +1,5 @@
 #include "global.h"
+#include "character_mode.h"
 #include "field_control_avatar.h"
 #include "battle.h"
 #include "battle_anim.h"
@@ -684,9 +685,22 @@ u16 GetWildPokemon(u16 basespecies, u8 level, u16 heldItem){
 	
 	if(basespecies == SPECIES_AUDINO || basespecies == SPECIES_RELICANTH)
 		return basespecies;
-	else if(FlagGet(FLAG_RANDOMIZED_MODE) && !FlagGet(FLAG_FULL_RANDOMIZED_MODE) && IsPokemonValid(GetRandomFirstStage(basespecies)))
+	// ⚠️ Character Mode outranks the wild RANDOMIZERS -- and only those two
+	// branches. The rest of this function is ordinary evolution-stage scaling
+	// that Character Mode players need exactly as much as anyone else; an early
+	// return here would hand them base-stage wild mons for the whole game.
+	//
+	// The invariant is enforced HERE rather than only at the mode menu because
+	// the Game Modes menu can raise FLAG_RANDOMIZED_MODE at any point after the
+	// character is committed. Without it, GetRandomFirstStage() remapped the
+	// species the 10% roster override (and the 1% legendary) had just chosen
+	// onto an unrelated family -- deleting the override outright, leaving the
+	// catch gate to refuse the result, while the battle still announced it as
+	// "destined for {CHARACTER}". Precisely the false bug report the encounter
+	// markers exist to prevent.
+	else if(!InCharacterMode() && FlagGet(FLAG_RANDOMIZED_MODE) && !FlagGet(FLAG_FULL_RANDOMIZED_MODE) && IsPokemonValid(GetRandomFirstStage(basespecies)))
 		return GetRandomizedWildPokemon(GetRandomFirstStage(basespecies), level, heldItem);
-	else if(FlagGet(FLAG_FULL_RANDOMIZED_MODE))
+	else if(!InCharacterMode() && FlagGet(FLAG_FULL_RANDOMIZED_MODE))
 		return GetRandomizedWildPokemon(GetRandomFirstStage(SPECIES_NONE), level, heldItem);
 	else if(FlagGet(FLAG_NO_EVOLUTION_MODE))
 		return GetFirstStage(basespecies);

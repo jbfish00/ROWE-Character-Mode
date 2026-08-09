@@ -722,6 +722,13 @@ static void Task_MenuMain(u8 taskId)
             // the player has already agreed; this keeps the invariant true even
             // if some future path reaches the menu without asking.
             FlagClear(FLAG_FULL_RANDOMIZED_MODE);
+            // FLAG_RANDOMIZED_MODE (ModeFlags[3]) is a separate checkbox in
+            // this same menu and was NOT cleared here, so the two could be on
+            // together -- and GetWildPokemon's randomizer then remapped every
+            // roster-override species onto an unrelated family, silently
+            // deleting the feature. GetWildPokemon now refuses to randomize in
+            // Character Mode regardless; this keeps the flags honest too.
+            FlagClear(FLAG_RANDOMIZED_MODE);
             FlagSet(FLAG_CHARACTER_MODE);
             VarSet(VAR_CHARACTER_ID, characterSelection);
             CharacterMode_SweepPartyToPC();
