@@ -44,12 +44,25 @@ This mod is distributed as a patch only, never as a prebuilt ROM.
 
 ## Emerald Rogue — trainer, back and overworld sprites (added 2026-07-25)
 
-Staged in `sprites/donors/rogue/` — 294 sprites covering 160 Character Mode
-characters (149 trainer front pics, 133 overworld sheets, 12 battle back pics),
-filtered from a 531-file harvest down to characters actually on the roster.
+Staged in `sprites/donors/rogue/` — 338 sprites covering 160 Character Mode
+characters (149 trainer front pics, 177 overworld sheets, 12 battle back pics),
+originally filtered from a 531-file harvest down to characters actually on the
+roster.
+
+⚠️ **The 2026-07-25 harvest missed 44 overworld sheets, and they were there the
+whole time.** It read `graphics/object_events/pics/people/…`; Emerald Rogue also
+keeps its own custom NPC art under `graphics/object_events/pics/rogue/npc/<region>/`,
+which the filter never traversed. Verified 2026-08-10 by diffing the pinned
+commit's tree against HEAD — **both hold the same 158 files**, so upstream did
+not grow and nothing new was published. Those 44 were added on 2026-08-10, taking
+overworld coverage 128 → 172 of 206. PLAN.md had recorded art acquisition as
+blocked on permission replies on the strength of that filter's output; it was
+not. *A tool reporting nothing to do is not evidence there is nothing to do.*
 
 - **Source**: https://github.com/Pokabbie/pokeemerald-rogue, branch `vanilla`,
-  commit `79c1df5f8a2ebb423c7a48d29de0cf21ef5783e7`, fetched 2026-07-25.
+  commit `79c1df5f8a2ebb423c7a48d29de0cf21ef5783e7`, fetched 2026-07-25;
+  re-fetched from the same branch 2026-08-10 for the 44 `npc/<region>/` sheets
+  (Alola 10, Galar 8, Kalos 7, Paldea 11, rivals 8).
 - **Format**: converted from the repo's PNGs by `tools/png_to_gba.py` into
   `.4bpp` + `.gbapal` and LZ77 (BIOS type 0x10) streams of each. Every blob was
   round-tripped through the decompressor before staging.
@@ -302,11 +315,28 @@ the player avatar needs an **18-frame** sheet (`build_ow_sheet`-style), so every
 one was re-laid-out; each back pic was re-framed to the 4- or 5-frame throw
 animation the engine plays, and one was quantised.
 
-### Overworld — Emerald Rogue (`sprites/donors/rogue/`), 16 characters
+### Overworld — Emerald Rogue (`sprites/donors/rogue/`), 60 characters
 Lyra (walk **and** run), Calem, Serena, Elio, Selene, Victor, Gloria, Oak,
-Birch, Anabel, Brandon, Greta, Lucy, Noland, Spenser, Tucker. Licence and the
-full "Additional Sprites" artist list are in the Emerald Rogue section above;
-that list travels with any subset of the art.
+Birch, Anabel, Brandon, Greta, Lucy, Noland, Spenser, Tucker.
+
+**Added 2026-08-10, from `graphics/object_events/pics/rogue/npc/<region>/`** —
+44 characters the original harvest never reached (see the ⚠️ note in the Emerald
+Rogue section above):
+
+- **Alola (10)** — Hala, Hapu, Kahili, Kukui, Lana, Mallow, Molayne, Nanu,
+  Olivia, Sophocles
+- **Galar (8)** — Allister, Bea, Kabu, Leon, Melony, Milo, Piers, Raihan
+- **Kalos (7)** — Diantha, Malva, Olympia, Ramos, Siebold, Valerie, Wikstrom
+- **Paldea (11)** — Brassius, Geeta, Grusha, Hassel, Iono, Katy, Kofu, Poppy,
+  Rika, Ryme, Tulip
+- **Rivals (8)** — Arven, Gladion, Hau, Hop, Marnie, Nemona, Penny, Shauna
+
+All 44 were **viewed before staging** — the standing rule after a format-perfect
+`paul_front_pic.png` turned out to be a cartoon stranger in a top hat — and each
+is a 144×32 indexed 9-frame strip with its backdrop already at palette index 0,
+the same shape as the sheets imported in July. Licence and the full "Additional
+Sprites" artist list are in the Emerald Rogue section above; **that list travels
+with any subset of the art**, including this one.
 
 ### Overworld — Team Aqua's Asset Repo (`sprites/donors/taar/`), 7 characters
 ✅ **All seven are now credited to a named artist** (2026-08-03). Six of them

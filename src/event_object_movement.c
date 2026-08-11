@@ -629,14 +629,58 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_CM_LYRA              0x1202
 #define OBJ_EVENT_PAL_CM_CALEM             0x1203
 #define OBJ_EVENT_PAL_CM_SERENA            0x1204
+#define OBJ_EVENT_PAL_CM_DIANTHA           0x121B
+#define OBJ_EVENT_PAL_CM_MALVA             0x121C
+#define OBJ_EVENT_PAL_CM_SIEBOLD           0x121D
+#define OBJ_EVENT_PAL_CM_WIKSTROM          0x121E
 #define OBJ_EVENT_PAL_CM_KORRINA           0x1205
+#define OBJ_EVENT_PAL_CM_RAMOS             0x121F
+#define OBJ_EVENT_PAL_CM_VALERIE           0x1220
+#define OBJ_EVENT_PAL_CM_OLYMPIA           0x1221
+#define OBJ_EVENT_PAL_CM_SHAUNA            0x1222
 #define OBJ_EVENT_PAL_CM_ELIO              0x1206
 #define OBJ_EVENT_PAL_CM_SELENE            0x1207
+#define OBJ_EVENT_PAL_CM_KUKUI             0x1223
+#define OBJ_EVENT_PAL_CM_HAU               0x1224
+#define OBJ_EVENT_PAL_CM_MOLAYNE           0x1225
+#define OBJ_EVENT_PAL_CM_KAHILI            0x1226
 #define OBJ_EVENT_PAL_CM_ACEROLA           0x1208
+#define OBJ_EVENT_PAL_CM_HALA              0x1227
+#define OBJ_EVENT_PAL_CM_OLIVIA            0x1228
+#define OBJ_EVENT_PAL_CM_NANU              0x1229
+#define OBJ_EVENT_PAL_CM_HAPU              0x122A
+#define OBJ_EVENT_PAL_CM_GLADION           0x122B
 #define OBJ_EVENT_PAL_CM_KIAWE             0x1209
+#define OBJ_EVENT_PAL_CM_LANA              0x122C
+#define OBJ_EVENT_PAL_CM_MALLOW            0x122D
+#define OBJ_EVENT_PAL_CM_SOPHOCLES         0x122E
+#define OBJ_EVENT_PAL_CM_LEON              0x122F
+#define OBJ_EVENT_PAL_CM_MILO              0x1230
 #define OBJ_EVENT_PAL_CM_NESSA             0x120A
+#define OBJ_EVENT_PAL_CM_KABU              0x1231
+#define OBJ_EVENT_PAL_CM_BEA               0x1232
+#define OBJ_EVENT_PAL_CM_ALLISTER          0x1233
+#define OBJ_EVENT_PAL_CM_MELONY            0x1234
+#define OBJ_EVENT_PAL_CM_PIERS             0x1235
+#define OBJ_EVENT_PAL_CM_RAIHAN            0x1236
+#define OBJ_EVENT_PAL_CM_HOP               0x1237
 #define OBJ_EVENT_PAL_CM_BEDE              0x120B
+#define OBJ_EVENT_PAL_CM_MARNIE            0x1238
+#define OBJ_EVENT_PAL_CM_GEETA             0x1239
+#define OBJ_EVENT_PAL_CM_NEMONA            0x123A
+#define OBJ_EVENT_PAL_CM_RIKA              0x123B
+#define OBJ_EVENT_PAL_CM_POPPY             0x123C
+#define OBJ_EVENT_PAL_CM_HASSEL            0x123D
+#define OBJ_EVENT_PAL_CM_KATY              0x123E
+#define OBJ_EVENT_PAL_CM_BRASSIUS          0x123F
+#define OBJ_EVENT_PAL_CM_IONO              0x1240
+#define OBJ_EVENT_PAL_CM_KOFU              0x1241
 #define OBJ_EVENT_PAL_CM_LARRY             0x120C
+#define OBJ_EVENT_PAL_CM_RYME              0x1242
+#define OBJ_EVENT_PAL_CM_TULIP             0x1243
+#define OBJ_EVENT_PAL_CM_GRUSHA            0x1244
+#define OBJ_EVENT_PAL_CM_ARVEN             0x1245
+#define OBJ_EVENT_PAL_CM_PENNY             0x1246
 #define OBJ_EVENT_PAL_CM_VICTOR            0x120D
 #define OBJ_EVENT_PAL_CM_GLORIA            0x120E
 #define OBJ_EVENT_PAL_CM_OAK               0x120F
@@ -1679,14 +1723,58 @@ const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_CmLyra, OBJ_EVENT_PAL_CM_LYRA},
     {gObjectEventPalette_CmCalem, OBJ_EVENT_PAL_CM_CALEM},
     {gObjectEventPalette_CmSerena, OBJ_EVENT_PAL_CM_SERENA},
+    {gObjectEventPalette_CmDiantha, OBJ_EVENT_PAL_CM_DIANTHA},
+    {gObjectEventPalette_CmMalva, OBJ_EVENT_PAL_CM_MALVA},
+    {gObjectEventPalette_CmSiebold, OBJ_EVENT_PAL_CM_SIEBOLD},
+    {gObjectEventPalette_CmWikstrom, OBJ_EVENT_PAL_CM_WIKSTROM},
     {gObjectEventPalette_CmKorrina, OBJ_EVENT_PAL_CM_KORRINA},
+    {gObjectEventPalette_CmRamos, OBJ_EVENT_PAL_CM_RAMOS},
+    {gObjectEventPalette_CmValerie, OBJ_EVENT_PAL_CM_VALERIE},
+    {gObjectEventPalette_CmOlympia, OBJ_EVENT_PAL_CM_OLYMPIA},
+    {gObjectEventPalette_CmShauna, OBJ_EVENT_PAL_CM_SHAUNA},
     {gObjectEventPalette_CmElio, OBJ_EVENT_PAL_CM_ELIO},
     {gObjectEventPalette_CmSelene, OBJ_EVENT_PAL_CM_SELENE},
+    {gObjectEventPalette_CmKukui, OBJ_EVENT_PAL_CM_KUKUI},
+    {gObjectEventPalette_CmHau, OBJ_EVENT_PAL_CM_HAU},
+    {gObjectEventPalette_CmMolayne, OBJ_EVENT_PAL_CM_MOLAYNE},
+    {gObjectEventPalette_CmKahili, OBJ_EVENT_PAL_CM_KAHILI},
     {gObjectEventPalette_CmAcerola, OBJ_EVENT_PAL_CM_ACEROLA},
+    {gObjectEventPalette_CmHala, OBJ_EVENT_PAL_CM_HALA},
+    {gObjectEventPalette_CmOlivia, OBJ_EVENT_PAL_CM_OLIVIA},
+    {gObjectEventPalette_CmNanu, OBJ_EVENT_PAL_CM_NANU},
+    {gObjectEventPalette_CmHapu, OBJ_EVENT_PAL_CM_HAPU},
+    {gObjectEventPalette_CmGladion, OBJ_EVENT_PAL_CM_GLADION},
     {gObjectEventPalette_CmKiawe, OBJ_EVENT_PAL_CM_KIAWE},
+    {gObjectEventPalette_CmLana, OBJ_EVENT_PAL_CM_LANA},
+    {gObjectEventPalette_CmMallow, OBJ_EVENT_PAL_CM_MALLOW},
+    {gObjectEventPalette_CmSophocles, OBJ_EVENT_PAL_CM_SOPHOCLES},
+    {gObjectEventPalette_CmLeon, OBJ_EVENT_PAL_CM_LEON},
+    {gObjectEventPalette_CmMilo, OBJ_EVENT_PAL_CM_MILO},
     {gObjectEventPalette_CmNessa, OBJ_EVENT_PAL_CM_NESSA},
+    {gObjectEventPalette_CmKabu, OBJ_EVENT_PAL_CM_KABU},
+    {gObjectEventPalette_CmBea, OBJ_EVENT_PAL_CM_BEA},
+    {gObjectEventPalette_CmAllister, OBJ_EVENT_PAL_CM_ALLISTER},
+    {gObjectEventPalette_CmMelony, OBJ_EVENT_PAL_CM_MELONY},
+    {gObjectEventPalette_CmPiers, OBJ_EVENT_PAL_CM_PIERS},
+    {gObjectEventPalette_CmRaihan, OBJ_EVENT_PAL_CM_RAIHAN},
+    {gObjectEventPalette_CmHop, OBJ_EVENT_PAL_CM_HOP},
     {gObjectEventPalette_CmBede, OBJ_EVENT_PAL_CM_BEDE},
+    {gObjectEventPalette_CmMarnie, OBJ_EVENT_PAL_CM_MARNIE},
+    {gObjectEventPalette_CmGeeta, OBJ_EVENT_PAL_CM_GEETA},
+    {gObjectEventPalette_CmNemona, OBJ_EVENT_PAL_CM_NEMONA},
+    {gObjectEventPalette_CmRika, OBJ_EVENT_PAL_CM_RIKA},
+    {gObjectEventPalette_CmPoppy, OBJ_EVENT_PAL_CM_POPPY},
+    {gObjectEventPalette_CmHassel, OBJ_EVENT_PAL_CM_HASSEL},
+    {gObjectEventPalette_CmKaty, OBJ_EVENT_PAL_CM_KATY},
+    {gObjectEventPalette_CmBrassius, OBJ_EVENT_PAL_CM_BRASSIUS},
+    {gObjectEventPalette_CmIono, OBJ_EVENT_PAL_CM_IONO},
+    {gObjectEventPalette_CmKofu, OBJ_EVENT_PAL_CM_KOFU},
     {gObjectEventPalette_CmLarry, OBJ_EVENT_PAL_CM_LARRY},
+    {gObjectEventPalette_CmRyme, OBJ_EVENT_PAL_CM_RYME},
+    {gObjectEventPalette_CmTulip, OBJ_EVENT_PAL_CM_TULIP},
+    {gObjectEventPalette_CmGrusha, OBJ_EVENT_PAL_CM_GRUSHA},
+    {gObjectEventPalette_CmArven, OBJ_EVENT_PAL_CM_ARVEN},
+    {gObjectEventPalette_CmPenny, OBJ_EVENT_PAL_CM_PENNY},
     {gObjectEventPalette_CmVictor, OBJ_EVENT_PAL_CM_VICTOR},
     {gObjectEventPalette_CmGloria, OBJ_EVENT_PAL_CM_GLORIA},
     {gObjectEventPalette_CmOak, OBJ_EVENT_PAL_CM_OAK},
