@@ -23,6 +23,8 @@
 #include "constants/flags.h"
 #include "constants/items.h"
 #include "constants/vars.h"
+#include "party_menu.h"            // CanLearnTutorMove -- CM_REQ_TMHM_PROBE
+#include "constants/party_menu.h"  // TUTOR_MOVE_CUT
 
 // Character Mode boot self-test.
 //
@@ -269,6 +271,22 @@ enum
                            // costume vars, which no other request can reach --
                            // VAR_COSTUME_CHARACTER is written by the costume
                            // menu and nothing else.
+    CM_REQ_TMHM_PROBE,     // argA: first species, argB: how many. Runs the THREE
+                           // accessors the party menu calls on the highlighted
+                           // slot -- CanSpeciesLearnTMHM twice (Fly, Dig) and
+                           // CanLearnTutorMove once (Cut) -- across that range.
+                           // ⚠️ THE ASSERTION IS THAT THEY RETURN AT ALL. Both
+                           // tables are designated-initializer arrays with
+                           // hundreds of holes, and both accessors walked the
+                           // returned pointer until they happened to find 0xFF.
+                           // 49 roster species sat past the end of
+                           // gTMHMLearnsets (Nemona's starter SPECIES_PAWMI is
+                           // 1245 against 1199 rows) so opening the party menu
+                           // read arbitrary ROM and walked it as a pointer.
+                           // Same shape as CM_REQ_LEARNSET_PROBE and the July
+                           // hang: a wedge here never answers, and every later
+                           // step fails on its deadline.
+                           // result = species checked | (learnable hits << 16).
 };
 
 enum
@@ -885,6 +903,43 @@ void CharacterMode_PumpTestMailbox(void)
                     mismatches++;
             }
             mb->result = ((u32)checked << 16) | mismatches;
+        }
+        break;
+    case CM_REQ_TMHM_PROBE:
+        {
+            u16 first = mb->argA;
+            u16 count = mb->argB;
+            u16 checked = 0;
+            u16 tmhmHits = 0;
+            u16 tutorHits = 0;
+            u16 sp;
+
+            if (count > 256)
+                count = 256;
+            // The exact three calls ShowPartyMenu makes on the highlighted slot
+            // to decide whether to offer Fly, Dig and Cut. Reaching the end of
+            // this loop IS the assertion: before gTMHMLearnsets and
+            // sTutorLearnsets were sized to NUM_SPECIES and the accessors
+            // NULL-checked, a species past the last designator read an
+            // arbitrary ROM word and walked it looking for 0xFF.
+            for (sp = first; sp < first + count && sp < NUM_SPECIES; sp++)
+            {
+                checked++;
+                if (CanSpeciesLearnTMHM(sp, ITEM_TM76_FLY - ITEM_TM01_FOCUS_PUNCH))
+                    tmhmHits++;
+                if (CanSpeciesLearnTMHM(sp, ITEM_TM28_DIG - ITEM_TM01_FOCUS_PUNCH))
+                    tmhmHits++;
+                if (CanLearnTutorMove(sp, TUTOR_MOVE_CUT))
+                    tutorHits++;
+            }
+            // ⚠️ The two accessors are counted SEPARATELY and packed apart. A
+            // single combined counter cannot tell them apart, and the negative
+            // control proved that matters: neutering CanSpeciesLearnTMHM alone
+            // still left CanLearnTutorMove contributing hits, so a
+            // "hits > 0" assertion stayed green on a build where two thirds of
+            // the field-move offers were dead. Per chunk: tmhmHits <= 512,
+            // tutorHits <= 256, checked <= 256 -- 10 + 10 + 12 bits.
+            mb->result = ((u32)checked << 20) | ((u32)tutorHits << 10) | tmhmHits;
         }
         break;
     case CM_REQ_PICK_STAGE:

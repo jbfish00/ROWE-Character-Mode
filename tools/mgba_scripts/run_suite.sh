@@ -98,7 +98,7 @@ run() {
     fi
 }
 
-# 19 runs: seventeen scripts plus the two starter_regression paths.
+# 20 runs: eighteen scripts plus the two starter_regression paths.
 # (18 until 2026-08-09, when pre_evolution_e2e was finally added to the list.)
 #   run <name> <script> <expected assertions> [env ...]
 run boot           boot_smoke.lua              2
@@ -124,6 +124,11 @@ run trade_gate     trade_gate_e2e.lua          10  CM_SAV="$FIX"
 # so a clean run emits just the two summary assertions (coverage + zero
 # disagreements). A tally above 2 means real mismatches were found.
 run pre_evolution  pre_evolution_e2e.lua       2
+# Expected 4: Pawmi coverage, whole-table coverage, and the two SEPARATE in-band
+# controls (CanSpeciesLearnTMHM and CanLearnTutorMove each still answer TRUE
+# somewhere -- summing them hid a neutered accessor). Per-chunk steps assert nothing;
+# reaching the end of the sweep IS the primary claim.
+run tmhm_bound     tmhm_bound_e2e.lua          4
 # ⚠️ costume_persist WRITES to its fixture (it has to -- it proves a save
 # survives a reload). It runs LAST of the CM_SAV users so the mutated
 # fixture cannot leak into another run, and the fixture is minted fresh
@@ -134,7 +139,7 @@ run starter_normal starter_regression.lua      6   CM_PATH=normal
 
 echo
 if [ "$fail" -eq 0 ]; then
-    echo "ALL 19 RUNS PASS.  logs: $OUT"
+    echo "ALL 20 RUNS PASS.  logs: $OUT"
 else
     echo "SUITE FAILED -- read the logs in $OUT"
 fi
