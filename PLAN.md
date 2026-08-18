@@ -25,8 +25,9 @@ all nine lived. When you next want to write "there is no open code work", write
 "no *known* open code work, last swept <date>" instead.
 
 ✅ **All nine are fixed as of 2026-08-09** (§10), suite 19/19 on ROM
-`90fa8e3cf4fe57a0c092dd55c1743c60`. What remains below is genuinely not an
-agent's.
+`90fa8e3cf4fe57a0c092dd55c1743c60`. Superseded 2026-08-10 by the sprite import
+(§11): current ROM `4d5cd678a8982fc82d66a75b8342e34a`, map digest
+`bb34c4b8a4fa5e6f`, suite still 19/19.
 
 **What remains, and none of it is an agent's:**
 
@@ -34,7 +35,7 @@ agent's.
 |---|---|---|---|
 | 1 | ~~**Push** the local commits~~ | ✅ **DONE 2026-08-09** | `origin/character-mode` level with local; the 2026-08-09 fixes are pushed too |
 | 2 | **Send** the two art-permission requests | user, from their own account | `../Character Hacks/PERMISSION_REQUESTS.md` — both drafts verified send-ready 2026-08-03 |
-| 3 | **Art acquisition** | blocked on 2 | every staged sprite is imported, the 07-28 harvest is consumed, and TAAR upstream is EXHAUSTED (measured — §7 item 3) |
+| 3 | **Art acquisition** | partly UNBLOCKED 2026-08-10 | ⚠️ This row said "blocked on 2" for two weeks and was wrong. **44 overworld sheets were sitting in the pinned Emerald Rogue commit the whole time**, under `pics/rogue/npc/<region>/`, a path the July harvest never traversed — imported 2026-08-10, overworld **128 → 172 of 236**. TAAR genuinely IS exhausted (re-verified against all 7,380 of its PNGs). What is left needs a new source, not a permission reply — see §11 |
 | 4 | **Selection-screen portrait / 10th mode row** | needs new tilemap art | §7.4; re-verified 2026-08-03 by rendering the screen — largest free square is **0×0** |
 | 5 | **The playthrough** | a person playing | §7 item 1; **23 of 33** coverage rows are already machine-proven, so read `../Character Hacks/game_plans/rowe_playthrough_coverage.md` first |
 
@@ -68,7 +69,7 @@ playthrough, art acquisition, and two permission requests the user must send.
 | Branch | `character-mode`, **working tree clean and LEVEL WITH `origin`** (`jbfish00/ROWE-Character-Mode`) at HEAD `89ef5ce7` — ✅ **pushed 2026-08-07**, which closes the one item that used to look like unfinished state. 25 commits landed 07-29 → 08-07. ⚠️ **Do not trust this row for HEAD** — several passes ended with a doc or anchors commit after the last feature commit. Re-check: `git rev-list --left-right --count origin/character-mode...HEAD` (`0  0` today) |
 | Rosters | **AUDITED** — 236 table slots / **206 selectable** / 30 hidden, **3,359** rows, **every row sourced** |
 | Threshold | **ENFORCED** — the only game in the project where it is |
-| Sprites | **184 of 236** have a front pic (52 are `CHAR_ASSET_NONE`) — 168 → 184 on 2026-07-29: 9 newly staged from the 07-28 harvest, 7 Frontier Brains closed with zero new art. Overworld **128 of 236** and back pics **19 of 236** as of 2026-07-30 (was 101 / 12) — §7.8b is DONE, the tooling block is gone, and what is left in those two slots is acquisition |
+| Sprites | **184 of 236** have a front pic (52 are `CHAR_ASSET_NONE`). Overworld **172 of 236** as of 2026-08-10 (128 → 172; was 101 on 07-29) and back pics **19 of 236**. ⚠️ **The overworld jump needed no new art and no permission** — 44 sheets were already in the pinned donor commit behind an untraversed path (§11). Of the 206 SELECTABLE characters: portrait 175, overworld 172, back 19 |
 | Name length | **12/12 LANDED** (`71cebcbe`), verified by a new headless suite |
 | Legendary rule | **SHIPPED** — 1% wild encounters, offered-until-caught, no roaming |
 | Modes | **Randomized Party Mode SHIPPED** (`c231ba2a`), exclusive with Character Mode; both Game Modes menus de-drifted and pinned |
@@ -209,10 +210,15 @@ Rules the user set for roster work, all binding, in
 ## 3. Sprites
 
 **184 of 236 characters have a front pic**, up from 68 (`ca2657fa`) then 168
-(2026-07-29). **Overworld 128 of 236** and **back pics 19 of 236** as of
-2026-07-30. All three re-counted from `src/data/characters.h` on 2026-07-30:
-`.trainerFrontPic` has **52** `CHAR_ASSET_NONE`, `.owGfxId` has **108**, and
+(2026-07-29). **Overworld 172 of 236** (128 → 172 on 2026-08-10, §11) and
+**back pics 19 of 236**. Re-counted from `src/data/characters.h` on 2026-08-10:
+`.trainerFrontPic` has **52** `CHAR_ASSET_NONE`, `.owGfxId` has **64**, and
 `.backPic` has **217** `CHAR_ASSET_NONE_U8`.
+⚠️ **Count the SENTINEL PER FIELD.** `.backPic` uses `CHAR_ASSET_NONE_U8`; the
+other two use `CHAR_ASSET_NONE`. An exact-match comparison against the wrong one
+reports all 206 selectable characters as having a back sprite instead of 19 —
+which is exactly what happened while building the coverage artifact on
+2026-08-09. Match on the `CHAR_ASSET_NONE` PREFIX.
 
 ⚠️ **This section read "168 … exactly 68" until 2026-07-30 while §0 and §7.8
 already said 184/52** — the same count-drift this file keeps hitting. Note the
@@ -1560,3 +1566,58 @@ has no floor on its probe set; `check_battle_strings.py` silently excludes
 apostrophe names from its worst case and `load_names` has no floor; several
 porters assign ids positionally from a name-sorted list, which is the
 save-breaking hazard the sprite importers' held-id tables exist to prevent.
+
+---
+
+## 11. Session 2026-08-10 — 44 overworld sprites that were never missing
+
+**Overworld coverage 128 → 172 of 236, and it cost nothing but reading the right
+directory.** The characters were Alola 10, Galar 8, Kalos 7, Paldea 11 and
+8 rivals (Arven, Gladion, Hau, Hop, Marnie, Nemona, Penny, Shauna).
+
+⚠️ **This repo spent two weeks believing art acquisition was blocked on two
+unsent permission emails. It was not.** Emerald Rogue keeps its own custom NPC
+art under `graphics/object_events/pics/rogue/npc/<region>/`, separate from the
+`pics/people/` tree the 2026-07-25 harvest read. The filter never traversed it,
+reported it had consumed everything, and §7 item 3 recorded acquisition as
+exhausted on that basis.
+
+**It was not an upstream change.** The pinned commit `79c1df5f` and HEAD hold the
+*same 158 files* — verified by diffing both trees. The art was there in July.
+
+⭐ **The rule was already written in CLAUDE.md, in July, about a different tool:**
+*a tool reporting nothing to do is not evidence there is nothing to do; check
+what it actually reads.* It was written after `import_donor_front_pics.py --dry-run`
+reported 0 and the conclusion "there is no un-imported art on disk" turned out
+false. The identical mistake then happened to the overworld importer. **When a
+harvest reports a directory consumed, print the directories it walked.**
+
+### What was checked before staging, and why each check exists
+
+- **Every one of the 44 was viewed.** The 07-28 harvest contained a
+  format-perfect `paul_front_pic.png` that is a cartoon stranger in a top hat.
+- **Backdrop confirmed at palette index 0** on all 44. `phoebe_back.png` once had
+  hers at slot 6, which ships an opaque box round the sprite.
+- **All 44 passed the importer's own `_checked_ow()`**, frame-boundary score
+  included, before being staged — not after.
+- `characters.h` differs from HEAD on **44 `.owGfxId` lines and nothing else**;
+  `audit_rosters` still reads 236 / 2775 and `.selectable` is still 206.
+  `map_species.py` was deliberately NOT re-run.
+
+### What is still genuinely missing
+
+**31 portraits and 34 overworld.** Swept TAAR (all 7,380 PNGs — 3 hits, all
+already imported, so it IS exhausted), Emerald Rogue (now consumed), Pokémon
+SoulGold (`Eemeliri/soulgold` — zero overlap; it is Kanto/Johto and ROWE already
+has every one of those) and Pokémon Recharged Yellow (no obtainable assets; ROM
+patch only, no source repo, nothing on The Spriters Resource).
+
+The remainder is **Hisui** (Adaman, Akari, Irida, Kamado, Rei, Volo, Zisu) and
+**anime-only** characters (Cerise, Chloe, Goh, Paul, Ritchie, Sawyer, Tobias,
+Trip, Zoey, Nando). No mainline-region hack carries either group. This needs a
+different class of source or commissioned art — **not** a permission reply.
+
+⚠️ Paul, Zoey and Nando have single 16×22 frames in `sprites/donors/pokesho_field/`.
+They are NOT importable: the player avatar needs a 9- or 18-frame strip, and the
+importer refuses partial ids because falling through to a wrong `OBJ_EVENT_GFX_*`
+is the documented crash. Do not "just wire them up".
