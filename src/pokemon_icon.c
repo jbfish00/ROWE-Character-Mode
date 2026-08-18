@@ -3280,7 +3280,15 @@ const u8* GetMonIconTiles(u16 species, u32 personality)
     const u8* iconSprite = gMonIconTable[species];
     if (SpeciesHasGenderDifference[species] && GetGenderFromSpeciesAndPersonality(species, personality) == MON_FEMALE)
     {
-        iconSprite = gMonIconTableFemale[species];
+        // 15 species are flagged as having a gender difference; gMonIconTableFemale
+        // has 5 rows. The other 10 -- Starly, Staravia, Staraptor, Bidoof,
+        // Kricketot, Kricketune, Shinx, Combee, Hippopotas, Hippowdon -- resolved
+        // to NULL and were handed to the sprite engine as the icon image. Keep the
+        // male icon when there is no female art; a slightly wrong icon beats a
+        // NULL one, and it is what the player saw for the other 1,449 species anyway.
+        const u8* femaleIcon = gMonIconTableFemale[species];
+        if (femaleIcon != NULL)
+            iconSprite = femaleIcon;
     }
     return iconSprite;
 }

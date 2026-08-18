@@ -5188,10 +5188,27 @@ static void UnusedPrintDecimalNum(u8 windowId, u16 b, u8 left, u8 top)
 static void PrintFootprint(u8 windowId, u16 dexNum)
 {
     u8 image[32 * 4];
-    const u8 * r12 = gMonFootprintTable[NationalPokedexNumToSpecies(dexNum)];
+    u16 species = NationalPokedexNumToSpecies(dexNum);
+    const u8 * r12;
     u16 r5 = 0;
     u16 i;
     u16 j;
+
+    // gMonFootprintTable is a designated-initializer array with 652 rows against
+    // NUM_SPECIES 1482 -- 813 species with base stats have NO row, so this was a
+    // NULL pointer that the loop below then read 32 bytes from. It does not
+    // crash (address 0 is the BIOS region and reads as open bus) which is
+    // exactly why it went unnoticed: the Pokedex just drew a garbage footprint
+    // for most of the dex. Blank is the honest answer for "no footprint art".
+    if (species >= NUM_SPECIES || gMonFootprintTable[species] == NULL)
+    {
+        for (i = 0; i < (u16)sizeof(image); i++)
+            image[i] = 0;
+        CopyToWindowPixelBuffer(windowId, image, sizeof(image), 0);
+        return;
+    }
+
+    r12 = gMonFootprintTable[species];
 
     for (i = 0; i < 32; i++)
     {

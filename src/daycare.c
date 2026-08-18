@@ -280,6 +280,14 @@ static u16 TakeSelectedPokemonFromDaycare(struct DaycareMon *daycareMon)
     daycareMon->steps = 0;
     CompactPartySlots();
     CalculatePlayerPartyCount();
+    // The withdraw path writes straight into gPlayerParty with no gate, and was
+    // the last ungated party writer in the tree -- _GiveEggFromDaycare twenty
+    // lines below got the sweep in July and this did not. Benign in ordinary
+    // play (rosters are fixed after the intro and the daycare does not evolve),
+    // but it is reachable once an off-roster mon is in the party at all: the
+    // boxes-full branch of SweepPartyToPC leaves one there, and the debug mode
+    // toggle makes it trivial. A no-op when the party is already all on-roster.
+    CharacterMode_SweepPartyToPC();
     return species;
 }
 
