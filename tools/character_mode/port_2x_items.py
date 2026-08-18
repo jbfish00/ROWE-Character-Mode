@@ -182,6 +182,24 @@ def main():
     base_id = max(ours.values())
 
     # ---- 1. constants + hold effects
+    # ⚠️ Same positional-id hazard as port_2x_species: ids come from enumerate()
+    # over a sorted list, so one new donor item sorting early renumbers every
+    # item after it -- and a save stores the item NUMBER. Standing rule 3 is
+    # append-only. Refuse rather than renumber.
+    new_ids = {p["item"]: base_id + i for i, p in enumerate(ports, 1)}
+    prev = {mm.group(1): int(mm.group(2)) for mm in
+            re.finditer(r"#define\s+(ITEM_\w+)\s+(\d+)\s*$",
+                        read(tgt("include/constants/items.h")), re.M)}
+    moved = sorted((n, prev[n], new_ids[n]) for n in prev
+                   if n in new_ids and prev[n] != new_ids[n])
+    if moved:
+        for n, o, w in moved[:10]:
+            print("  RENUMBERED %-34s %d -> %d" % (n, o, w))
+        raise SystemExit(
+            "port_2x_items: refusing to write -- %d existing items would be "
+            "renumbered. A save stores the item NUMBER (standing rule 3, "
+            "append-only)." % len(moved))
+
     lines = []
     for i, p in enumerate(ports, 1):
         lines.append("#define %-34s %d\n" % (p["item"], base_id + i))

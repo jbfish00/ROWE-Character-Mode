@@ -293,6 +293,33 @@ def main():
     assert m, "mega block not found -- run port_rowe_megas.py first"
     last_mega = m.group(1)
     lines = ["#define ROWE_SPECIES_START %s" % last_mega]
+    new_ids = {p["sp"]: i for i, p in enumerate(ports, 1)}
+
+    # ⚠️ IDS ARE ASSIGNED POSITIONALLY FROM AN ALPHABETICALLY SORTED LIST, so a
+    # single new donor species sorting early would shift every id after it.
+    # Standing rule 3: NEVER renumber existing ids -- a save stores the species
+    # number, and renumbering corrupts every existing save. Nothing enforced
+    # that here; the sprite importers hold their ids fixed and these porters did
+    # not. Compare against what is already committed and refuse rather than
+    # silently re-number.
+    prev = {mm.group(1): int(mm.group(2)) for mm in
+            re.finditer(r"#define (SPECIES_\w+) \(ROWE_SPECIES_START \+ (\d+)\)",
+                        read(path))}
+    moved = sorted((n, prev[n], new_ids[n]) for n in prev
+                   if n in new_ids and prev[n] != new_ids[n])
+    dropped = sorted(n for n in prev if n not in new_ids)
+    if moved or dropped:
+        for n, o, w in moved[:10]:
+            print("  RENUMBERED %-40s %d -> %d" % (n, o, w))
+        for n in dropped[:10]:
+            print("  DROPPED    %s" % n)
+        raise SystemExit(
+            "port_2x_species: refusing to write -- %d existing species would be "
+            "renumbered and %d dropped. A save stores the species NUMBER, so "
+            "this corrupts every existing save (standing rule 3, append-only). "
+            "Append the new entries after the existing ids instead."
+            % (len(moved), len(dropped)))
+
     for i, p in enumerate(ports, 1):
         lines.append("#define %s (ROWE_SPECIES_START + %d)" % (p["sp"], i))
     lines += ["#undef SPECIES_EGG", "#undef NUM_SPECIES",

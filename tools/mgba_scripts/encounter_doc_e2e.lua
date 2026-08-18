@@ -36,6 +36,21 @@ local D = dofile("tools/mgba_scripts/intro_drive.lua")(H)
 -- resolved to ids by the generator, so this file carries no name table.
 local PROBES = dofile("tools/mgba_scripts/encounter_probes.lua")
 
+-- ⚠️ HARD FLOOR. Every assertion in this run lives inside the loop over PROBES,
+-- so a generator that emitted five rows instead of thirty would report
+-- "PASSED 10 / RESULT: PASS" and look healthy -- the empty-set shape that has
+-- passed vacuously in this repo four times. run_suite.sh now pins this run's
+-- tally at 60 and would also catch it, but a script should not depend on its
+-- caller to notice that it checked almost nothing.
+local MIN_PROBES = 25
+if #PROBES < MIN_PROBES then
+    H.assertTrue(string.format(
+        "encounter_probes.lua yielded %d probes, expected at least %d -- "
+        .. "regenerate with emit_encounter_docs.py", #PROBES, MIN_PROBES), false)
+    H.finish()
+    return
+end
+
 -- Enough samples that an eight-way branch is very unlikely to miss a member:
 -- P(a given one of 8 unseen in 120 draws) = (7/8)^120 ~ 1e-7.
 local SAMPLES = 120

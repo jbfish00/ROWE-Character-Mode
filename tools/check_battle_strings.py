@@ -92,9 +92,28 @@ def load_charmap():
     with open(os.path.join(ROOT, "charmap.txt"), encoding="utf-8") as f:
         for line in f:
             line = line.split("@")[0].rstrip("\n")
-            m = re.match(r"^'(.)'\s+= ([0-9A-F]{2})\s*$", line)
+            # ⚠️ The escaped form matters: charmap.txt writes the apostrophe as
+            # '\''  = B4. A plain ^'(.)' pattern cannot match it, so the
+            # apostrophe was absent from the map and every name containing one
+            # -- Farfetch'd, Sirfetch'd -- was silently DROPPED from the
+            # worst-case search rather than measured. Harmless today (both are
+            # short), but "silently exclude from the worst case" is the wrong
+            # direction for a check whose whole job is finding the worst case.
+            # ⚠️ Unescape ONLY the apostrophe (and a literal backslash). The other
+            # escaped entries -- '\l' = FA, '\p' = FB, '\n' = FE -- are CONTROL
+            # CODES, not glyphs. Stripping the backslash generically maps them
+            # onto the real letters l, p and n and overwrites those letters'
+            # byte values, which silently changes the measured width of any
+            # string containing them. The three PINNED ROM measurements caught
+            # exactly that when this was first written the lazy way.
+            m = re.match(r"^'(\\?.)'\s+= ([0-9A-F]{2})\s*$", line)
             if m:
-                cmap[m.group(1)] = int(m.group(2), 16)
+                ch = m.group(1)
+                if ch.startswith("\\"):
+                    ch = {"\\'": "'", "\\\\": "\\"}.get(ch)
+                    if ch is None:
+                        continue
+                cmap[ch] = int(m.group(2), 16)
     cmap.setdefault(" ", 0x00)
     if len(cmap) < 64:
         raise SystemExit("check_battle_strings: charmap.txt parsed to only %d "
@@ -149,14 +168,28 @@ def load_marker_strings():
     return out
 
 
-def load_names(path, pattern):
+def load_names(path, pattern, minimum):
+    """Every name matching `pattern` in `path`, with a HARD FLOOR.
+
+    load_widths() and load_charmap() both refuse to run on a short parse; this
+    did not, so a shape change in species_names.h or characters.h that still
+    matched a handful of strings would leave the checker reporting "5 species
+    names" and passing green. The floors are set well below the real counts
+    (~1460 species, ~236 characters) so ordinary growth never trips them.
+    """
     text = open(os.path.join(ROOT, path), encoding="utf-8").read()
-    return sorted({n for n in re.findall(pattern, text) if n})
+    names = sorted({n for n in re.findall(pattern, text) if n})
+    if len(names) < minimum:
+        raise SystemExit("check_battle_strings: %s parsed to only %d names "
+                         "(expected >= %d) -- the extraction is broken, not the "
+                         "data" % (path, len(names), minimum))
+    return names
 
 
 def widest(names, what):
     """The name with the greatest pixel width, skipping any the charmap cannot
-    represent (those cannot be printed by this font at all)."""
+    represent. That set should be EMPTY -- if a name is skipped, the charmap
+    parse is missing a character, not the font."""
     best, best_w = None, -1
     for n in names:
         w = safe_width(n)
@@ -177,8 +210,8 @@ def main():
         got = safe_width(text)
         check(got == want, "%-30r %s px (ROM measured %d)" % (text, got, want))
 
-    species = load_names("src/data/text/species_names.h", r'_\("([^"]*)"\)')
-    characters = load_names("src/data/characters.h", r'_\("([^"]+)"\)')
+    species = load_names("src/data/text/species_names.h", r'_\("([^"]*)"\)', 900)
+    characters = load_names("src/data/characters.h", r'_\("([^"]+)"\)', 150)
     print("\n%d species names, %d character names" % (len(species), len(characters)))
 
     if self_test:
