@@ -15,7 +15,7 @@ specific things in them are now wrong, and all three are the kind that read as
 authoritative: (1) **every one of §10's six "still unverified" leads was closed
 on 2026-08-17**, and this file carried them as open; (2) the **ROM md5 is cited
 three different ways in this file and all three are stale** — it is
-`1e8d9f654714ec9041542d62a0199517` at HEAD; (3) the suite is **21 runs**, not 19.
+`ead4fc6d7488c71361ba38314ccf10b0` at HEAD; (3) the suite is **21 runs**, not 19.
 §12 also carries the session's own find — an 8-byte party-menu buffer the game
 can write 16 entries into — and the measured, final answer on the SoulGold
 sprite question.
@@ -1789,9 +1789,15 @@ slot) and the anime-only cast have nothing in any mainline-region hack.
 
 | | |
 |---|---|
-| ROM | **`1e8d9f654714ec9041542d62a0199517`** at HEAD. ⚠️ §0 cites `90fa8e3c…`, §7 cites `4ba53b39…` and §10 cites `08eef0c3…` — **all three are stale**, and none matched the working tree even before this session |
-| Suite | **21 runs** (nineteen scripts + the two `starter_regression` paths). Was 19 in §0, which predates both `tmhm_bound_e2e` (2026-08-17) and `qol_items_e2e` (today) |
-| Anchors | map digest `fafca3a607b6d4d4`, second `gen_anchors.py` run byte-identical |
+| ROM | **`ead4fc6d7488c71361ba38314ccf10b0`** at HEAD. ⚠️ §0 cites `90fa8e3c…`, §7 cites `4ba53b39…` and §10 cites `08eef0c3…` — **all three are stale**, and none matched the working tree even before this session |
+| Suite | ✅ **ALL 21 RUNS PASS**, run to completion on this exact ROM. Every tally matched the count declared in `run_suite.sh`, and the in-ROM selftest read **36/36 on all 21**. Nineteen scripts plus the two `starter_regression` paths; §0 says 19, which predates both `tmhm_bound_e2e` (2026-08-17) and `qol_items_e2e` (today) |
+| Anchors | map digest `844123840bbc68bc`, second `gen_anchors.py` run byte-identical |
+| Checkers | `check_qol_items` (+ its self-test), `check_species_tables`, `check_mode_menus`, `check_name_lengths`, `check_species_names` all green; `audit_rosters` reads 236 characters / 2775 entries |
+
+⚠️ **Read that green the way §0 tells you to.** It means the covered paths did not
+regress. **None of the 21 runs opens the party menu's action window**, which is
+where this session's two findings live — so the buffer bound and the Nickname row
+are exactly as unproven after a 21/21 green as they were before it.
 
 ⚠️ **A trap re-learned the hard way today, already written in `run_suite.sh`'s
 own header:** a test was rebuilt four times without re-running
