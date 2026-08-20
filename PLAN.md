@@ -10,6 +10,16 @@ file is **state and next steps**. Re-derived against this working tree on
 **2026-08-09**, after a full rebuild, an anchor regeneration and a clean 19-run
 suite. See §10 for that session.
 
+🛑 **READ §12 FIRST — §0 AND §7 BELOW ARE OUT OF DATE (2026-08-19).** Three
+specific things in them are now wrong, and all three are the kind that read as
+authoritative: (1) **every one of §10's six "still unverified" leads was closed
+on 2026-08-17**, and this file carried them as open; (2) the **ROM md5 is cited
+three different ways in this file and all three are stale** — it is
+`1e8d9f654714ec9041542d62a0199517` at HEAD; (3) the suite is **21 runs**, not 19.
+§12 also carries the session's own find — an 8-byte party-menu buffer the game
+can write 16 entries into — and the measured, final answer on the SoulGold
+sprite question.
+
 🔴 **"There is no open code work" was TRUE and WRONG, and that is the lesson of
 2026-08-09.** This file carried that headline for six days on the strength of an
 18/18 green suite. An adversarial sweep then found **nine confirmed bugs**,
@@ -88,8 +98,8 @@ two facts together; the tallies are in §7.
 
 ### If you are picking this up cold, start here
 
-**Nothing is KNOWN broken.** Tree clean, **19/19 green**,
-selftest 36/36. There is no rescue work waiting and **no open code work at
+**Nothing is KNOWN broken.** Tree clean, **21/21 green** (see §12; it was
+19/19 when this line was written), selftest 36/36. There is no rescue work waiting and **no open code work at
 all** — see the handoff table at the top of this file for the five things that
 remain, all of which need the user rather than an agent.
 ✅ **Everything is pushed** (HEAD `89ef5ce7`, level with `origin` as of
@@ -1270,7 +1280,9 @@ imported, and the tools to import a newly staged one already exist.
    15/16 as "a `starter_regression` variant, cheap", which was wrong: they
    needed character-menu steering that did not exist.
 3. **Art acquisition (§7.8)** — 52 characters with no front pic, 217 with no back
-   pic, 108 with no overworld art. Runbook is
+   pic, **64** with no overworld art (⚠️ this line said **108** until 2026-08-19;
+   the 2026-08-10 Emerald Rogue import took overworld from 128 to 172 of 236 and
+   the correction reached §0 and §11 but never this line). Runbook is
    `../Character Hacks/SPRITE_PLAN.md`. Nine of the 52 (Paul, Zoey, Nando, Trip,
    Sawyer, Goh, Chloe, Cerise, Tobias) have no usable art anywhere searched, so
    the realistic ceiling here is well short of 236. The two open permission
@@ -1338,6 +1350,8 @@ python3 tools/check_species_names.py        # abbreviated-species-name detector
 python3 tools/check_mode_menus.py           # menu row <-> pory switch case drift (§7.10)
 python3 tools/check_mode_menus.py --self-test   # its negative control
 python3 tools/check_species_tables.py       # base stats <-> learnset/name/coords (§7.11)
+python3 tools/check_qol_items.py            # hand-maintained QoL item ids vs the generated block (§12)
+python3 tools/check_qol_items.py --self-test    # its negative control
 python3 tools/check_battle_strings.py       # marker strings fit B_WIN_MSG (§7.14)
 python3 tools/character_mode/roster_playability_report.py [--csv]  # which rosters to watch
 python3 tools/check_battle_strings.py --self-test   # its negative control
@@ -1557,15 +1571,30 @@ and claimed the `SPECIES_SHINY_PAL` rows were simply the wrong macro (they are
 not; the engine's `formSpeciesId > SPECIES_SHINY_TAG` branch expects that tag —
 the defect was the unbounded index, which is what got fixed).
 
-### Still unverified, from the same reports
+### Still unverified, from the same reports — ✅ ALL SIX CLOSED 2026-08-17
 
-Not investigated, not fixed, and **not confirmed** — treat as leads, not facts:
-`gMonFootprintTable` and the female icon/palette tables have NULL holes;
-`TakeSelectedPokemonFromDaycare` is an ungated party writer; `encounter_doc_e2e`
-has no floor on its probe set; `check_battle_strings.py` silently excludes
-apostrophe names from its worst case and `load_names` has no floor; several
-porters assign ids positionally from a name-sorted list, which is the
-save-breaking hazard the sprite importers' held-id tables exist to prevent.
+This section listed six leads on 2026-08-09 and was never updated when they were
+worked. **Every one of them is fixed**, across four commits on 2026-08-17, and
+this file carried them as open for two more days:
+
+| lead | closed by | what changed |
+|---|---|---|
+| `gMonFootprintTable` NULL holes | `78512b0b` | `src/pokedex.c` — 813 species with no footprint row now draw blank instead of dereferencing whatever follows the table |
+| female icon/palette tables have NULL holes | `78512b0b` | `src/pokemon_icon.c` — falls back to the male icon for the 15 gendered species with no female row. ⚠️ This closed the CRASH, not the art: there is still no female-specific icon for those 15 |
+| `TakeSelectedPokemonFromDaycare` ungated party writer | `78512b0b` | `src/daycare.c` — gated to match the July fix already applied to `_GiveEggFromDaycare` |
+| `encounter_doc_e2e` has no floor on its probe set | `744af90f` | the run now asserts a minimum probe count, so a shrinking probe list goes red instead of green |
+| `check_battle_strings.py` excludes apostrophe names | `744af90f` | unescapes `\'` and `\\` only. ⚠️ The first attempt broke the `\l` / `\p` / `\n` control codes and was caught by the pinned-ROM regression in the same commit — the checker's own worst case was wrong in both directions |
+| porters assign ids positionally from a name-sorted list | `744af90f` | `port_2x_items.py` and `port_2x_species.py` now REFUSE to write if a committed id would move |
+
+Plus one not on the list: `3239fd27` added `tmhm_bound_e2e.lua`, giving the
+2026-08-09 unbounded-accessor fix the regression test it had been shipped
+without.
+
+⚠️ **The lesson is the same one §0 already carries, from the other direction.**
+A "still unverified" list is as capable of going stale as a "nothing is broken"
+headline. These sat as open leads through two sessions that could have read the
+git log in one command. **Re-derive this section against `git log` before
+believing any row in it.**
 
 ---
 
@@ -1621,3 +1650,138 @@ different class of source or commissioned art — **not** a permission reply.
 They are NOT importable: the player avatar needs a 9- or 18-frame strip, and the
 importer refuses partial ids because falling through to a wrong `OBJ_EVENT_GFX_*`
 is the documented crash. Do not "just wire them up".
+
+
+---
+
+## 12. Session 2026-08-19 — SoulGold's QoL, and a buffer that took twice what it held
+
+**Two things came out of reading another hack: two QoL items worth porting, and
+a definitive answer to a sprite question this file had already guessed at.** A
+third thing came out of porting them, and it is the one that matters.
+
+### What Pokemon SoulGold actually is
+
+`Eemeliri/soulgold` is a **Gen 3 `pokeemerald-expansion` fork**, not the NDS
+project its HeartGold-shaped name suggests. Lineage: `pokeemerald` → Pokemon
+Heart & Soul (`PokemonHnS-Development/pokemonHnS`) → smithk200's expansion port
+→ SoulGold. Full public C source, full `graphics/` tree, **the same Gen 3 asset
+format ROWE uses**. No LICENSE file on any of the three, which is the scene norm;
+credit is by convention and by named artist.
+
+⚠️ **Most of its advertised QoL is stock `pokeemerald-expansion`, not SoulGold's
+own work**, and ROWE — which is NOT expansion-based — already has its own
+versions of nearly all of it: DexNav, followers, auto-run, an extended two-page
+options menu, IV/EV display, and reusable TMs (the removal is commented out at
+`src/party_menu.c`, `Task_LearnedMove`). **Do not port from its feature list
+without checking the tree first**; the list is mostly a description of the base
+it sits on.
+
+### Ported (§12.1) — three QoL features, all global and always-on
+
+| feature | what it does | covered by |
+|---|---|---|
+| **Zeromin** (`ITEM_ZEROMIN`) | a vitamin that resets all six EVs to zero. ROWE already had six single-stat EV-reducing berries; this is the all-at-once one | `qol_items_e2e.lua` |
+| **Ball swap** | any Poke Ball used from the bag on a party member changes which ball it lives in, no refund. Balls already carried `.type = 1` so they already routed to the party menu; only a `.fieldUseFunc` was missing | `qol_items_e2e.lua` |
+| **Nickname row** | rename any non-egg party member from the field party menu | ⛔ **nothing** |
+
+**The item ids sit OUTSIDE the `ROWEITEM-PORT` markers on purpose.**
+`port_2x_items.py` rewrites everything between them, so an id placed inside
+would be erased on its next run. `tools/check_qol_items.py` is the gate that
+turns a future collision into a build failure rather than a silent id clash that
+would make every save holding a Zeromin read back a different item.
+
+**The effects are split out of their party-menu callbacks** into
+`CharacterMode_ZeroAllEVs` / `CharacterMode_SwapMonBall`, so the headless run
+drives the same functions the items drive. Without that split the only honest
+claim available would have been "statically audited" — the phrase this repo has
+been burned by twice.
+
+⚠️ **The suite does NOT drive the bag → party-menu UI**, for any of the three.
+What is proven is effect logic and its refusal branches. The Nickname row is
+**entirely unproven**: it is party-menu UI, and no headless run in this repo
+drives that menu.
+
+### 12.2 — The find: `PartyMenuInternal.actions` was `u8[8]` and takes 16
+
+`AppendToList` (`src/start_menu.c:1749`) is `list[*pos] = newEntry; (*pos)++;`
+with **no bound of any kind**, and `numActions` is the byte immediately after
+`actions[]`. So the 9th append writes its entry **on top of the length counter**,
+and every append after that lands wherever that corrupted counter now points —
+into `palBuffer`.
+
+The field builder can emit **up to 16 rows** for a single Pokemon: Summary, Fly,
+Dig, Cut, Soft-Boiled, Teleport, Milk Drink, Sweet Scent, up to `MAX_MON_MOVES`
+known field moves, Switch, Mail or Item, Follow/Unfollow, and Cancel.
+
+**It does not take an exotic party member to pass eight.** ROWE lets any mon that
+*can learn* Fly/Dig/Cut use them without knowing the move, so
+`Summary + Fly + Dig + Cut + Switch + Item + Follow + Cancel` is **exactly 8**
+with no field move known at all — one known Surf is the ninth.
+
+Fixed: the buffer is `MAX_PARTY_MENU_ACTIONS` (20) and all 17 append sites in
+`party_menu.c` go through `AppendPartyMenuAction`, which refuses to write past
+the end. `AppendToList` itself is untouched — it is shared with the start menu,
+and changing it under another caller is a separate decision.
+
+⚠️ **FOUND BY INSPECTION, NOT DEMONSTRATED IN-ENGINE.** The arithmetic above is
+from reading the builder; **no run has observed a 9th append**. Do not promote
+it to a proven live defect without one, and do not demote it to theoretical
+either — nothing in the code prevented it. **This is the top open lead.**
+
+### 12.3 — `MON_DATA_IS_EGG` cannot be written on a party mon here
+
+`CM_REQ_SET_MON_EGG` was added to test the ball swap's egg refusal, and **it does
+not work**. The request body was proved to run (a `0xE0000000` marker came back
+in `mb->result`) and **both** egg bits still read back 0 afterwards — the
+encrypted `MON_DATA_IS_EGG` *and* the plain unencrypted
+`MON_DATA_SANITY_IS_EGG`. `SetBoxMonData`'s checksum guard is a silent `return`
+here where vanilla sets `isBadEgg`, so a refused write leaves no trace at all.
+
+**Root cause NOT established.** The request is kept because it is the only handle
+on the question, and it carries a warning not to build a test on it — such a
+test would pass by never creating an egg, which is this repo's single most
+repeated failure shape. The egg-refusal branch of the ball swap is
+correspondingly **unproven**. Second open lead.
+
+### 12.4 — Sprites: the HnS family is a measured dead end
+
+§11 recorded SoulGold as "zero overlap" on the strength of it being a Kanto/Johto
+game. That guess was right, and it is now **measured across all three repos** —
+SoulGold, base Heart & Soul, and smithk200's expansion port — by whole-tree
+sweep (33,374 / 13,014 / 29,565 asset files), by every `TRAINER_PIC_*`,
+`TRAINER_BACK_PIC_*` and `OBJ_EVENT_GFX_*` constant, and by classifying every
+`P`-mode PNG by dimension so art filed under an unrelated name could not hide.
+
+⚠️ **The back-pic hypothesis is dead, and it was the plausible one.** ROWE has
+back pics for only 19 of 236, and a Johto+Kanto remake ought to carry backs for
+Gen 1/2 leaders, E4 and Rocket admins. **It carries none.** All three ship only
+the ~9–11 stock pokeemerald/FRLG back pics; `TRAINER_BACK_PIC_*` counts are
+2 / 8 / 0. The only variation is that they reskin `brendan.png` → HGSS Ethan and
+`may.png` → HGSS Lyra, both of which ROWE already has.
+
+**One candidate exists in the entire family**, and it was NOT imported:
+`soulgold/graphics/field_mugshots/elm.png` — a format-clean 64×64 P-mode
+Professor Elm with the backdrop already at palette index 0, by **Mudskip**. It is
+a **head-and-shoulders mugshot**, not a full-body trainer sprite, so it would sit
+differently on the trainer card from every other `TRAINER_PIC_*`. Left for a
+human to judge; the clones are gone but the path is recorded here.
+
+**So the standing conclusion is unchanged and now much better founded: the
+remaining 52 front / 217 back / 64 overworld need a different class of source or
+commissioned art.** The Hisui cast (25 characters, zero art of any kind in any
+slot) and the anime-only cast have nothing in any mainline-region hack.
+
+### 12.5 — Numbers, re-derived
+
+| | |
+|---|---|
+| ROM | **`1e8d9f654714ec9041542d62a0199517`** at HEAD. ⚠️ §0 cites `90fa8e3c…`, §7 cites `4ba53b39…` and §10 cites `08eef0c3…` — **all three are stale**, and none matched the working tree even before this session |
+| Suite | **21 runs** (nineteen scripts + the two `starter_regression` paths). Was 19 in §0, which predates both `tmhm_bound_e2e` (2026-08-17) and `qol_items_e2e` (today) |
+| Anchors | map digest `fafca3a607b6d4d4`, second `gen_anchors.py` run byte-identical |
+
+⚠️ **A trap re-learned the hard way today, already written in `run_suite.sh`'s
+own header:** a test was rebuilt four times without re-running
+`gen_anchors.py`, went red, and was misdiagnosed as a flaky intro drive and
+"hardened" before the real cause turned up. **`make` then `gen_anchors.py` then
+the run, every time.** The hardening was reverted.
