@@ -136,6 +136,12 @@ struct PartyMenuInternal
     // any mon that CAN LEARN Fly/Dig/Cut use them without knowing the move,
     // which is what pushes an ordinary party member past eight.
     // This predates the Nickname row; that row only made it one step closer.
+    // ⚠️ MAX_PARTY_MENU_ACTIONS is 9 because that is what the WINDOW can show
+    // (see include/party_menu.h) -- it is NOT headroom, and rows past it are
+    // dropped on purpose. A first attempt at this fix used 20, which stopped
+    // the buffer overflow and swapped it for a tilemapTop underflow at 10
+    // actions: sizing the buffer without checking what consumes it is the same
+    // mistake one layer up.
     u8 actions[MAX_PARTY_MENU_ACTIONS];
     u8 numActions;
     // In vanilla Emerald, only the first 0xB0 hwords (0x160 bytes) are actually used.
@@ -422,6 +428,18 @@ static void AppendPartyMenuAction(u8 action)
     if (sPartyMenuInternal->numActions < MAX_PARTY_MENU_ACTIONS)
         AppendToList(sPartyMenuInternal->actions,
                      &sPartyMenuInternal->numActions, action);
+}
+
+// Cancel is appended last, so on a Pokemon with more rows than the window can
+// show it is the FIRST one dropped -- and a party menu with no visible Cancel
+// reads as a bug even though B still closes it. It takes the final slot
+// outright instead.
+static void AppendPartyMenuCancel(u8 action)
+{
+    if (sPartyMenuInternal->numActions < MAX_PARTY_MENU_ACTIONS)
+        AppendPartyMenuAction(action);
+    else
+        sPartyMenuInternal->actions[MAX_PARTY_MENU_ACTIONS - 1] = action;
 }
 
 static void CursorCb_Summary(u8);
@@ -2980,7 +2998,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             AppendPartyMenuAction(MENU_FOLLOW);
     }
 	
-    AppendPartyMenuAction(MENU_CANCEL1);
+    AppendPartyMenuCancel(MENU_CANCEL1);
 }
 
 static u8 GetPartyMenuActionsType(struct Pokemon *mon)

@@ -1719,10 +1719,23 @@ known field moves, Switch, Mail or Item, Follow/Unfollow, and Cancel.
 `Summary + Fly + Dig + Cut + Switch + Item + Follow + Cancel` is **exactly 8**
 with no field move known at all — one known Surf is the ninth.
 
-Fixed: the buffer is `MAX_PARTY_MENU_ACTIONS` (20) and all 17 append sites in
+Fixed: the buffer is `MAX_PARTY_MENU_ACTIONS` and all 17 append sites in
 `party_menu.c` go through `AppendPartyMenuAction`, which refuses to write past
 the end. `AppendToList` itself is untouched — it is shared with the start menu,
 and changing it under another caller is a separate decision.
+
+⚠️ **The bound is 9, and the first attempt at this fix got it wrong in an
+instructive way.** It used 20 — comfortable headroom for the 16 rows the builder
+can emit — which stopped the buffer overflow and **swapped it for a different
+one**. `DisplaySelectionWindow` builds the action window as
+`tilemapTop = 19 - (numActions * 2)` with `height = numActions * 2`, and
+`tilemapTop` is a **u8**: 9 actions gives top 1 / height 18, exactly filling the
+screen, and **10 gives 19 - 20 = -1, which wraps to 255**. So the window itself
+imposes the ceiling, and sizing the buffer without checking what consumes it is
+the same mistake one layer up. Rows past 9 are dropped deliberately, and because
+Cancel is appended last it would be the first row lost, `AppendPartyMenuCancel`
+gives it the final slot outright — B always closed the menu anyway, but a party
+menu with no visible Cancel reads as a bug.
 
 ⚠️ **FOUND BY INSPECTION, NOT DEMONSTRATED IN-ENGINE.** The arithmetic above is
 from reading the builder; **no run has observed a 9th append**. Do not promote

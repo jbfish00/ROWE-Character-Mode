@@ -1,10 +1,17 @@
 #ifndef GUARD_PARTY_MENU_H
 #define GUARD_PARTY_MENU_H
 
-// The most rows the field party menu can produce for one Pokemon. See the note
-// on PartyMenuInternal.actions in src/party_menu.c: the buffer was 8 and the
-// builder can emit 16, with the length counter sitting in the next byte.
-#define MAX_PARTY_MENU_ACTIONS 20
+// The most action rows the party menu can show, and it is DERIVED, not chosen.
+// DisplaySelectionWindow builds SELECTWINDOW_ACTIONS as
+//     tilemapTop = 19 - (numActions * 2),  height = numActions * 2
+// and tilemapTop is a u8. At 9 actions that is top 1, height 18 -- the window
+// exactly fills the screen. At 10 it is 19 - 20 = -1, which wraps to 255 and
+// puts the window off the bottom of a 20-row screen.
+// So 9 is a hard ceiling imposed by the WINDOW, not a buffer size to tune:
+// raising it without changing that arithmetic reintroduces the underflow.
+// See the note on PartyMenuInternal.actions in src/party_menu.c for why the
+// builder can want more rows than this.
+#define MAX_PARTY_MENU_ACTIONS 9
 
 #include "main.h"
 #include "task.h"
