@@ -10,7 +10,12 @@ file is **state and next steps**. Re-derived against this working tree on
 **2026-08-09**, after a full rebuild, an anchor regeneration and a clean 19-run
 suite. See §10 for that session.
 
-🛑 **READ §12 FIRST — §0 AND §7 BELOW ARE OUT OF DATE (2026-08-19).** Three
+🛑 **THE "What remains" TABLE JUST BELOW IS THE CURRENT OPEN-WORK LIST
+(re-derived 2026-08-20).** Fourteen items, split by who can actually do them:
+three need you, three need art that does not exist, and **eight are ordinary
+code and test work**. Read that table and §12; §0 and §7 further down are older.
+
+🛑 **§0 AND §7 ARE OUT OF DATE (2026-08-19).** Three
 specific things in them are now wrong, and all three are the kind that read as
 authoritative: (1) **every one of §10's six "still unverified" leads was closed
 on 2026-08-17**, and this file carried them as open; (2) the **ROM md5 is cited
@@ -39,19 +44,50 @@ all nine lived. When you next want to write "there is no open code work", write
 (§11): current ROM `4d5cd678a8982fc82d66a75b8342e34a`, map digest
 `bb34c4b8a4fa5e6f`, suite still 19/19.
 
-**What remains, and none of it is an agent's:**
+**What remains — re-derived against the tree on 2026-08-20.**
 
-| # | item | who | unblock |
-|---|---|---|---|
-| 1 | ~~**Push** the local commits~~ | ✅ **DONE 2026-08-09** | `origin/character-mode` level with local; the 2026-08-09 fixes are pushed too |
-| 2 | **Send** the two art-permission requests | user, from their own account | `../Character Hacks/PERMISSION_REQUESTS.md` — both drafts verified send-ready 2026-08-03 |
-| 3 | **Art acquisition** | partly UNBLOCKED 2026-08-10 | ⚠️ This row said "blocked on 2" for two weeks and was wrong. **44 overworld sheets were sitting in the pinned Emerald Rogue commit the whole time**, under `pics/rogue/npc/<region>/`, a path the July harvest never traversed — imported 2026-08-10, overworld **128 → 172 of 236**. TAAR genuinely IS exhausted (re-verified against all 7,380 of its PNGs). What is left needs a new source, not a permission reply — see §11 |
-| 4 | **Selection-screen portrait / 10th mode row** | needs new tilemap art | §7.4; re-verified 2026-08-03 by rendering the screen — largest free square is **0×0** |
-| 5 | **The playthrough** | a person playing | §7 item 1; **23 of 33** coverage rows are already machine-proven, so read `../Character Hacks/game_plans/rowe_playthrough_coverage.md` first |
+⚠️ The previous version of this table opened *"and none of it is an agent's"*.
+**That is no longer true**, and it was the sentence that made this section stop
+being read: **rows 7-14 below are ordinary code and test work**, and eight of
+them are things an agent should pick up. The old table also still carried a
+"push the local commits" row that had been done since 2026-08-09.
 
-⚠️ **Do not re-derive 3 and 4 from scratch — both were re-measured on 2026-08-03
-and the negative results are recorded.** Three sessions have now re-measured the
-`game_plans/rowe.md` drift instead of acting on it; do not make that four.
+**Nothing here is KNOWN broken.** Suite 21/21 on `ead4fc6d7488c71361ba38314ccf10b0`,
+selftest 36/36 on every run, all five static checkers green, tree clean and level
+with `origin/character-mode`. What follows is unfinished, not failing.
+
+### Needs a person — an agent cannot do these
+
+| # | item | why it is yours |
+|---|---|---|
+| 1 | **The playthrough** | **23 of 33** coverage rows are already machine-proven and 6 more partly. Read `../Character Hacks/game_plans/rowe_playthrough_coverage.md` BEFORE working the list or you will re-verify by hand what the suite asserts every run. What is genuinely left: reach the credits, look at your character animate, and pick someone who is **not Red** (the default, and a mid-table 7.6% early roster — every suite run uses him, so the automated coverage is built on him too) |
+| 2 | **Send the two art-permission requests** | `../Character Hacks/PERMISSION_REQUESTS.md`, drafted and verified send-ready 2026-08-03, **still unsent**. Emerald Enhanced (closes Lusamine + Lillie's back pic) and Wolfang62 (four professors). They must come from your own account |
+| 3 | **Decide on the Professor Elm mugshot** | `../Character Hacks/art_harvest_2026-08-19/` — format-clean 64×64 by **Mudskip**, and the ONLY candidate in the entire Heart & Soul family. It is a head-and-shoulders bust, not a full-body trainer sprite like every other `TRAINER_PIC_*`. Import steps and attribution are in that README. Pure look-and-feel; an agent should not make this call |
+
+### Needs art that does not exist yet
+
+| # | item | state |
+|---|---|---|
+| 4 | **52 front / 217 back / 64 overworld** of 236 | Derived 2026-08-20 from `tools/character_mode/sprite_report.txt`, not copied. **Every plausible donor is now measured empty**: TAAR (all 7,380 PNGs), Emerald Rogue (consumed), Recharged Yellow (no assets), and as of 2026-08-19 the whole Heart & Soul family — SoulGold, HnS and smithk200's expansion port — swept whole-tree, by constant, and by PNG dimension (§12.4). ⚠️ **The back-pic hypothesis is dead and it was the plausible one**: a Johto remake ought to carry Gen 1/2 leader backs and carries **none**. This needs a new class of source or commissioned art. The Hisui cast (25 characters) has **zero art of any kind in any slot** |
+| 5 | **Selection-screen portrait / 10th mode row** | §7.4. Needs the `ui_menu` tilemap redrawn — re-verified 2026-08-03 by rendering the screen, largest free square is **0×0**. ⚠️ Do not re-measure this a fourth time |
+| 6 | **Female icons for 15 gendered species** | `78512b0b` (2026-08-17) made `pokemon_icon.c` fall back to the male icon where the female table has NULL rows. That closed the **crash**; it did not author art. Starly line, Bidoof, Kricketot line, Shinx, Combee, Hippopotas line |
+
+### Ordinary code and test work — an agent CAN do these
+
+| # | item | why it matters |
+|---|---|---|
+| 7 | **Prove the party-menu action bound in-engine** | §12.2. The 8-entry `actions[]` overflow and the `tilemapTop` underflow above 9 rows are both **found by inspection only — no run has produced a 9th action**. Nothing in the suite opens the party menu's action window, so 21/21 green says nothing about either. **This is the top open lead**: a request that builds the action list for a given party mon and returns `numActions` would settle it |
+| 8 | **The Nickname row is completely unproven** | §12.1. Party-menu UI, which no headless run in this repo drives. It is the only feature shipped this year with no assertion behind it |
+| 9 | **Root-cause `MON_DATA_IS_EGG`** | §12.3. Neither egg bit can be written on a party mon in this tree, with the write proved to run. `SetBoxMonData`'s checksum guard is a silent `return` here where vanilla sets `isBadEgg` — so if that guard is firing, **every** encrypted write is silently droppable under some condition, and that is much bigger than the egg. Until it is understood, the ball swap's egg refusal is unproven |
+| 10 | **`TakeSelectedPokemonFromDaycare` has no e2e** | The ungated-party-writer bug was fixed in `78512b0b`, but no script in `tools/mgba_scripts/` drives the daycare-withdraw path at all. Model it on `pc_sweep_e2e.lua` |
+| 11 | **Only Falkner is proven playable as his own gym leader** | `johto_gym_e2e.lua` is the sole leader-as-player run; the other 15 leaders/E4 with rosters have no equivalent. The static argument that it generalises is in the 2026-07-17 session notes — it is an argument, not a run |
+| 12 | **The learnset NULL sweep spot-checks 4 species** | `basculegion_hang_e2e.lua` covers exactly the four that hung the game in July. `tmhm_bound_e2e` and `pre_evolution_e2e` sweep exhaustively; this one does not, so a fifth malformed row would not be caught |
+| 13 | **Two SoulGold QoL groups not ported** | Requested 2026-08-19, not built: **faster battle messages** (combine stat up/down and play them during the animation) + **music resumes** after battle instead of restarting; and a **shiny battle frame** + **fishing that yields items**. Music resume is the risky one — it needs `gMPlayInfo_BGM` state saved across the battle |
+| 14 | **Cogita and Iscan emit no roster at all** | `emit_characters.py` reports `Skipped (empty roster): Cogita, Iscan`. They are not selectable, so nothing is broken — but two named characters silently produce nothing, and that has never been written down before |
+
+⚠️ **Do not re-derive 4 or 5 from scratch — both are measured, and the negative
+results are recorded.** Three sessions re-measured the `game_plans/rowe.md` drift
+instead of acting on it; do not make that four.
 
 > A mirror of this file lives at
 > `/home/jbfish00/Documents/Character Hacks/game_plans/rowe.md`, alongside plans
