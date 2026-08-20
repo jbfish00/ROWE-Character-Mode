@@ -875,6 +875,7 @@ enum
     MENU_TRADE1,
     MENU_TRADE2,
     MENU_TOSS,
+    MENU_NICKNAME,
     MENU_FIELD_MOVES,
 };
 
@@ -902,6 +903,8 @@ enum
 //tx_pokemon_follower
 static const u8 gText_SummaryPkmFollow[] = _("Follow");
 static const u8 gText_SummaryPkmUnfollow[] = _("Unfollow");
+
+static const u8 sText_Nickname[] = _("Nickname");
 
 struct
 {
@@ -931,6 +934,7 @@ struct
     [MENU_TRADE1] = {gText_Trade4, CursorCb_Trade1},
     [MENU_TRADE2] = {gText_Trade4, CursorCb_Trade2},
     [MENU_TOSS] = {gMenuText_Toss, CursorCb_Toss},
+    [MENU_NICKNAME] = {sText_Nickname, CursorCb_Nickname},
     [MENU_FIELD_MOVES + FIELD_MOVE_CUT] = {gMoveNames[MOVE_CUT], CursorCb_FieldMove},
     [MENU_FIELD_MOVES + FIELD_MOVE_FLASH] = {gMoveNames[MOVE_FLASH], CursorCb_FieldMove},
     [MENU_FIELD_MOVES + FIELD_MOVE_ROCK_SMASH] = {gMoveNames[MOVE_ROCK_SMASH], CursorCb_FieldMove},

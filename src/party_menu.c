@@ -28,6 +28,7 @@
 #include "gpu_regs.h"
 #include "graphics.h"
 #include "international_string_util.h"
+#include "naming_screen.h"
 #include "item.h"
 #include "item_menu.h"
 #include "item_use.h"
@@ -124,7 +125,18 @@ struct PartyMenuInternal
     u32 spriteIdCancelPokeball:7;
     u32 messageId:14;
     u8 windowId[3];
-    u8 actions[8];
+    // ⚠️ WAS actions[8], AND IT COULD OVERFLOW -- found 2026-08-19.
+    // AppendToList (start_menu.c) is `list[*pos] = newEntry; (*pos)++;` with NO
+    // bound, and `numActions` is the very next byte, so the 9th append writes
+    // the new entry ON TOP OF the counter and the 10th onward land wherever
+    // that corrupted counter points -- into palBuffer.
+    // The field builder can append up to 16: Summary, Nickname, Fly, Dig, Cut,
+    // Soft-Boiled, Teleport, Milk Drink, Sweet Scent, up to MAX_MON_MOVES known
+    // field moves, Switch, Mail or Item, Follow/Unfollow and Cancel. ROWE lets
+    // any mon that CAN LEARN Fly/Dig/Cut use them without knowing the move,
+    // which is what pushes an ordinary party member past eight.
+    // This predates the Nickname row; that row only made it one step closer.
+    u8 actions[MAX_PARTY_MENU_ACTIONS];
     u8 numActions;
     // In vanilla Emerald, only the first 0xB0 hwords (0x160 bytes) are actually used.
     // However, a full 0x100 hwords (0x200 bytes) are allocated.
@@ -401,7 +413,22 @@ static void ShiftMoveSlot(struct Pokemon*, u8, u8);
 static void BlitBitmapToPartyWindow_LeftColumn(u8, u8, u8, u8, u8, u8);
 static void BlitBitmapToPartyWindow_RightColumn(u8, u8, u8, u8, u8, u8);
 static void BlitBitmapToPartyWindow_Equal(u8, u8, u8, u8, u8, u8); //Custom party menu
+// Bounded stand-in for AppendToList within the party menu. AppendToList itself
+// is shared with the start menu and is left alone; this one simply refuses to
+// write past the end. Dropping a menu row is a visible, harmless degradation.
+// Silently corrupting numActions is neither.
+static void AppendPartyMenuAction(u8 action)
+{
+    if (sPartyMenuInternal->numActions < MAX_PARTY_MENU_ACTIONS)
+        AppendToList(sPartyMenuInternal->actions,
+                     &sPartyMenuInternal->numActions, action);
+}
+
 static void CursorCb_Summary(u8);
+static void CursorCb_Nickname(u8);
+static void CB2_NicknamePartyMon(void);
+static void CB2_SetPartyMonNickname(void);
+static void CB2_ReturnToPartyMenuFromNaming(void);
 static void CursorCb_Switch(u8);
 static void CursorCb_Cancel1(u8);
 static void CursorCb_Item(u8);
@@ -2835,22 +2862,27 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 	bool8 canuseSweetScent 	= FALSE;
 	
     sPartyMenuInternal->numActions = 0;
-    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SUMMARY);
+    AppendPartyMenuAction(MENU_SUMMARY);
+
+    // An egg has no nickname worth setting and the naming screen would show a
+    // species it is not supposed to reveal yet.
+    if (!GetMonData(&mons[slotId], MON_DATA_IS_EGG, NULL))
+        AppendPartyMenuAction(MENU_NICKNAME);
 
     // Let any Pokemon that learns Fly or Dig use it without knowing the move
     if (CanMonLearnTMHM(&mons[slotId], ITEM_TM76_FLY - ITEM_TM01_FOCUS_PUNCH))
     {
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_FLY + MENU_FIELD_MOVES);
+        AppendPartyMenuAction(FIELD_MOVE_FLY + MENU_FIELD_MOVES);
     }
 	
     if (CanMonLearnTMHM(&mons[slotId], ITEM_TM28_DIG - ITEM_TM01_FOCUS_PUNCH))
     {
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_DIG + MENU_FIELD_MOVES);
+        AppendPartyMenuAction(FIELD_MOVE_DIG + MENU_FIELD_MOVES);
     }
 	
 	if (CanLearnTutorMove(GetMonData(&mons[slotId], MON_DATA_SPECIES),TUTOR_MOVE_CUT))
     {
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_CUT + MENU_FIELD_MOVES);
+        AppendPartyMenuAction(FIELD_MOVE_CUT + MENU_FIELD_MOVES);
     }
 	
 	for (k = 0; gLevelUpLearnsets[GetMonData(&mons[slotId], MON_DATA_SPECIES)][k].move != LEVEL_UP_END; k++)
@@ -2873,27 +2905,27 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 	
 	if (canuseSoftboiled)
     {
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_SOFT_BOILED + MENU_FIELD_MOVES);
+        AppendPartyMenuAction(FIELD_MOVE_SOFT_BOILED + MENU_FIELD_MOVES);
     }
 	
 	if (canuseTeleport)
     {
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_TELEPORT + MENU_FIELD_MOVES);
+        AppendPartyMenuAction(FIELD_MOVE_TELEPORT + MENU_FIELD_MOVES);
     }
 	
 	if (canuseMilkDrink)
     {
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_MILK_DRINK + MENU_FIELD_MOVES);
+        AppendPartyMenuAction(FIELD_MOVE_MILK_DRINK + MENU_FIELD_MOVES);
     }
 	
 	if (canuseSweetScent)
     {
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_SWEET_SCENT + MENU_FIELD_MOVES);
+        AppendPartyMenuAction(FIELD_MOVE_SWEET_SCENT + MENU_FIELD_MOVES);
     }
 	
     /*/if (FlagGet(FLAG_RECEIVED_TM34) && CanMonLearnTMHM(&mons[slotId], ITEM_TM99_DAZZLING_GLEAM - ITEM_TM01_FOCUS_PUNCH))
     {
-        AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, FIELD_MOVE_FLASH + MENU_FIELD_MOVES);
+        AppendPartyMenuAction(FIELD_MOVE_FLASH + MENU_FIELD_MOVES);
     }/*/
 
     // Add field moves to action list
@@ -2919,7 +2951,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
             }
             else if (move == sFieldMoves[j])
             {
-                AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, j + MENU_FIELD_MOVES);
+                AppendPartyMenuAction(j + MENU_FIELD_MOVES);
                 break;
             }
         }
@@ -2928,11 +2960,11 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
     if (!InBattlePike())
     {
         if (GetMonData(&mons[1], MON_DATA_SPECIES) != SPECIES_NONE)
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_SWITCH);
+            AppendPartyMenuAction(MENU_SWITCH);
         if (ItemIsMail(GetMonData(&mons[slotId], MON_DATA_HELD_ITEM)))
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_MAIL);
+            AppendPartyMenuAction(MENU_MAIL);
         else
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_ITEM);
+            AppendPartyMenuAction(MENU_ITEM);
     }
 	
 	//tx_pokemon_follower
@@ -2943,12 +2975,12 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 		&& !(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_SURFING))
     {
         if (slotId == gSaveBlock2Ptr->pokemonFollower.partySlotId - 1) //tx_pokemon_follower
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_UNFOLLOW);
+            AppendPartyMenuAction(MENU_UNFOLLOW);
         else
-            AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_FOLLOW);
+            AppendPartyMenuAction(MENU_FOLLOW);
     }
 	
-    AppendToList(sPartyMenuInternal->actions, &sPartyMenuInternal->numActions, MENU_CANCEL1);
+    AppendPartyMenuAction(MENU_CANCEL1);
 }
 
 static u8 GetPartyMenuActionsType(struct Pokemon *mon)
@@ -3109,6 +3141,50 @@ static void CB2_ReturnToPartyMenuFromSummaryScreen(void)
     gPaletteFade.bufferTransferDisabled = TRUE;
     gPartyMenu.slotId = gLastViewedMonIndex;
     InitPartyMenu(gPartyMenu.menuType, KEEP_PARTY_LAYOUT, gPartyMenu.action, TRUE, PARTY_MSG_DO_WHAT_WITH_MON, Task_TryCreateSelectionWindow, gPartyMenu.exitCallback);
+}
+
+// ---- Renaming a party Pokemon, including a traded one --------------------
+// There was NO way to rename an existing party member in this tree: the
+// storage system declares MENU_NAME and never wires it to anything, and the
+// Name Rater's map script is empty. Ported from SoulGold, which lifts the
+// usual "you are not its original trainer" refusal specifically for traded
+// mons; allowing it for any non-egg party member covers that case without
+// needing a second rule, and matches how the rest of ROWE treats ownership.
+static void CursorCb_Nickname(u8 taskId)
+{
+    PlaySE(SE_SELECT);
+    sPartyMenuInternal->exitCallback = CB2_NicknamePartyMon;
+    Task_ClosePartyMenu(taskId);
+}
+
+static void CB2_NicknamePartyMon(void)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+
+    GetMonData(mon, MON_DATA_NICKNAME, gStringVar2);
+    DoNamingScreen(NAMING_SCREEN_NICKNAME, gStringVar2,
+                   GetMonData(mon, MON_DATA_SPECIES, NULL),
+                   GetMonGender(mon),
+                   GetMonData(mon, MON_DATA_PERSONALITY, NULL),
+                   CB2_SetPartyMonNickname,
+                   GetMonData(mon, MON_DATA_FORM_ID, NULL));
+}
+
+static void CB2_SetPartyMonNickname(void)
+{
+    SetMonData(&gPlayerParty[gPartyMenu.slotId], MON_DATA_NICKNAME, gStringVar2);
+    SetMainCallback2(CB2_ReturnToPartyMenuFromNaming);
+}
+
+// Deliberately NOT CB2_ReturnToPartyMenuFromSummaryScreen: that one overwrites
+// gPartyMenu.slotId from gLastViewedMonIndex, which the naming screen never
+// sets, so the cursor would land on whichever mon was last viewed in a summary.
+static void CB2_ReturnToPartyMenuFromNaming(void)
+{
+    gPaletteFade.bufferTransferDisabled = TRUE;
+    InitPartyMenu(gPartyMenu.menuType, KEEP_PARTY_LAYOUT, gPartyMenu.action, TRUE,
+                  PARTY_MSG_DO_WHAT_WITH_MON, Task_TryCreateSelectionWindow,
+                  gPartyMenu.exitCallback);
 }
 
 static void CursorCb_Switch(u8 taskId)

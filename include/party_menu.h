@@ -1,6 +1,11 @@
 #ifndef GUARD_PARTY_MENU_H
 #define GUARD_PARTY_MENU_H
 
+// The most rows the field party menu can produce for one Pokemon. See the note
+// on PartyMenuInternal.actions in src/party_menu.c: the buffer was 8 and the
+// builder can emit 16, with the length counter sitting in the next byte.
+#define MAX_PARTY_MENU_ACTIONS 20
+
 #include "main.h"
 #include "task.h"
 
