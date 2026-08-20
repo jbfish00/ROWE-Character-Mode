@@ -6482,3 +6482,10 @@ static const u8 sWonderCharm2XDesc[] = _(
 
 // ROWEITEM-PORT-END desc
 #endif
+
+// Character Mode QoL items. Defined after the language blocks above on purpose,
+// so a single definition serves both LANGUAGE_SPANISH and English.
+static const u8 sZerominDesc[] = _(
+    "Resets all base\n"
+    "points of one\n"
+    "Pokémon to zero.");

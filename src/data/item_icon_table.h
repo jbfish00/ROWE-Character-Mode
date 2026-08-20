@@ -782,5 +782,6 @@ const u32 *const gItemIconTable[][2] =
     [ITEM_VANILLUXITE] = {gItemIcon_Mega_Stone, gItemIconPalette_QuestionMark},
     [ITEM_WATERFALL_TOOL] = {gItemIcon_Dive_Gear, gItemIconPalette_Dive_Gear},
     [ITEM_WONDER_CHARM] = {gItemIcon_Skill_Charm, gItemIconPalette_Skill_Charm},
+    [ITEM_ZEROMIN] = {gItemIcon_Vitamin, gItemIconPalette_HPUp},
 // ROWEITEM-PORT-END icons
 };

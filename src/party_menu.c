@@ -6007,6 +6007,121 @@ void ItemUseCB_ReduceEV(u8 taskId, TaskFunc task)
     }
 }
 
+// ---- Character Mode QoL: Zeromin and ball swapping ------------------------
+
+static const u8 sAllEvFields[] =
+{
+    MON_DATA_HP_EV, MON_DATA_ATK_EV, MON_DATA_DEF_EV,
+    MON_DATA_SPEED_EV, MON_DATA_SPATK_EV, MON_DATA_SPDEF_EV,
+};
+
+static const u8 sText_BasePointsReset[] = _("{STR_VAR_1}'s base points\nwere all reset to zero!{PAUSE_UNTIL_PRESS}");
+static const u8 sText_BallSwapped[] = _("{STR_VAR_1} was moved to\na {STR_VAR_2}.{PAUSE_UNTIL_PRESS}");
+
+// Shared refusal path. Mirrors ItemUseCB_ReduceEV's: the item is NOT consumed,
+// which is what makes "won't have any effect" safe to reach.
+static void PartyMenuQolNoEffect(u8 taskId, TaskFunc task)
+{
+    gPartyMenuUseExitCallback = FALSE;
+    PlaySE(SE_SELECT);
+    DisplayPartyMenuMessage(gText_WontHaveEffect, TRUE);
+    ScheduleBgCopyTilemapToVram(2);
+    gTasks[taskId].func = task;
+}
+
+// The EFFECT half of Zeromin, with no bag, sound, string or task in it, so a
+// headless request can drive the same code the item drives.
+// Returns FALSE when there was nothing to reset -- which is what makes the
+// "won't have any effect" branch reachable and, more importantly, what stops
+// "it returned TRUE" from being true unconditionally.
+bool8 CharacterMode_ZeroAllEVs(struct Pokemon *mon)
+{
+    u8 zero = 0;
+    u8 i;
+    bool8 hadAny = FALSE;
+
+    for (i = 0; i < ARRAY_COUNT(sAllEvFields); i++)
+    {
+        if (GetMonData(mon, sAllEvFields[i]) != 0)
+            hadAny = TRUE;
+    }
+    if (!hadAny)
+        return FALSE;
+
+    for (i = 0; i < ARRAY_COUNT(sAllEvFields); i++)
+        SetMonData(mon, sAllEvFields[i], &zero);
+    CalculateMonStats(mon);
+    return TRUE;
+}
+
+u16 CharacterMode_SumAllEVs(struct Pokemon *mon)
+{
+    u16 sum = 0;
+    u8 i;
+
+    for (i = 0; i < ARRAY_COUNT(sAllEvFields); i++)
+        sum += GetMonData(mon, sAllEvFields[i]);
+    return sum;
+}
+
+// The EFFECT half of the ball swap. Refuses an egg (it has no ball to show, and
+// the ball it hatches into is decided at hatch time) and refuses a no-op swap.
+bool8 CharacterMode_SwapMonBall(struct Pokemon *mon, u16 ballItem)
+{
+    u16 newBall = ballItem;
+
+    if (GetMonData(mon, MON_DATA_IS_EGG))
+        return FALSE;
+    if (GetMonData(mon, MON_DATA_POKEBALL) == ballItem)
+        return FALSE;
+
+    SetMonData(mon, MON_DATA_POKEBALL, &newBall);
+    return TRUE;
+}
+
+void ItemUseCB_ZeroAllEV(u8 taskId, TaskFunc task)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    u16 item = gSpecialVar_ItemId;
+
+    if (!CharacterMode_ZeroAllEVs(mon))
+    {
+        PartyMenuQolNoEffect(taskId, task);
+        return;
+    }
+
+    gPartyMenuUseExitCallback = TRUE;
+    PlaySE(SE_USE_ITEM);
+    RemoveBagItem(item, 1);
+    GetMonNickname(mon, gStringVar1);
+    StringExpandPlaceholders(gStringVar4, sText_BasePointsReset);
+    DisplayPartyMenuMessage(gStringVar4, TRUE);
+    ScheduleBgCopyTilemapToVram(2);
+    gTasks[taskId].func = task;
+}
+
+void ItemUseCB_BallSwap(u8 taskId, TaskFunc task)
+{
+    struct Pokemon *mon = &gPlayerParty[gPartyMenu.slotId];
+    u16 item = gSpecialVar_ItemId;
+
+    if (!CharacterMode_SwapMonBall(mon, item))
+    {
+        PartyMenuQolNoEffect(taskId, task);
+        return;
+    }
+
+    gPartyMenuUseExitCallback = TRUE;
+    PlaySE(SE_USE_ITEM);
+    RemoveBagItem(item, 1);   // deliberately no refund of the original ball
+    GetMonNickname(mon, gStringVar1);
+    CopyItemName(item, gStringVar2);
+    StringExpandPlaceholders(gStringVar4, sText_BallSwapped);
+    DisplayPartyMenuMessage(gStringVar4, TRUE);
+    ScheduleBgCopyTilemapToVram(2);
+    gTasks[taskId].func = task;
+}
+
 static u16 ItemEffectToMonEv(struct Pokemon *mon, u8 effectType)
 {
     switch (effectType)

@@ -806,6 +806,21 @@ void ItemUseOutOfBattle_ReduceEV(u8 taskId)
     SetUpItemUseCallback(taskId);
 }
 
+void ItemUseOutOfBattle_ZeroAllEV(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_ZeroAllEV;
+    SetUpItemUseCallback(taskId);
+}
+
+// Poke Balls carry .type = 1, so they already route to the party menu; giving
+// them a fieldUseFunc is all that is needed to make them usable out of battle.
+// Their battleUseFunc is untouched, so throwing a ball in battle is unaffected.
+void ItemUseOutOfBattle_BallSwap(u8 taskId)
+{
+    gItemUseCB = ItemUseCB_BallSwap;
+    SetUpItemUseCallback(taskId);
+}
+
 void ItemUseOutOfBattle_SacredAsh(u8 taskId)
 {
     gItemUseCB = ItemUseCB_SacredAsh;

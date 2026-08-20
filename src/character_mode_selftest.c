@@ -287,6 +287,46 @@ enum
                            // hang: a wedge here never answers, and every later
                            // step fails on its deadline.
                            // result = species checked | (learnable hits << 16).
+    CM_REQ_MON_EV,         // argA: party slot | (ev index << 8), argB: value.
+                           // Writes one EV, then reports it back.
+                           // ev index is 0..5 = HP/Atk/Def/Speed/SpAtk/SpDef,
+                           // matching sAllEvFields in party_menu.c.
+                           // result = the EV read back | (sum of all six << 16).
+                           // The sum is in the same word deliberately: "this one
+                           // stat is 0" and "the mon has no EVs left at all" are
+                           // different claims, and Zeromin has to make the second.
+    CM_REQ_ZERO_ALL_EVS,   // argA: party slot. Runs CharacterMode_ZeroAllEVs --
+                           // the SAME function ItemUseCB_ZeroAllEV calls, not a
+                           // reimplementation of it.
+                           // result = returned bool | (sum of all six EVs << 16).
+                           // ⚠️ The bool is the half that matters. Zeroing an
+                           // already-zero mon must return FALSE, or the item
+                           // would be consumed for nothing -- and a test that
+                           // only ever checks "the EVs are 0 afterwards" passes
+                           // identically on a build that hardwires TRUE.
+    CM_REQ_SWAP_BALL,      // argA: party slot, argB: ball item id. Runs
+                           // CharacterMode_SwapMonBall, the function
+                           // ItemUseCB_BallSwap calls.
+                           // result = returned bool | (MON_DATA_POKEBALL << 16).
+    CM_REQ_SET_MON_EGG,    // argA: party slot, argB: 0 or 1.
+                           // result = IS_EGG | (SANITY_IS_EGG << 8), both read
+                           // back after writing.
+                           //
+                           // ⚠️ IT DOES NOT WORK, AND THAT IS A FINDING, NOT A
+                           // BUG IN THIS REQUEST. Writing either egg bit on an
+                           // existing PARTY mon silently does nothing in this
+                           // tree: the case was proved to run (a 0xE0000000
+                           // marker came back in mb->result on 2026-08-19) and
+                           // both reads still returned 0, for the plain
+                           // unencrypted sanity bit as well as the encrypted
+                           // one. SetBoxMonData's checksum guard is a SILENT
+                           // `return` here where vanilla sets isBadEgg, so a
+                           // refused write leaves no trace at all.
+                           // Root cause NOT established. Kept because it is the
+                           // only handle on the question, and because the
+                           // ball swap's egg refusal is unprovable without it.
+                           // ⚠️ Do not build a test on this until it is fixed --
+                           // it will pass vacuously by never making an egg.
 };
 
 enum
@@ -1005,6 +1045,67 @@ void CharacterMode_PumpTestMailbox(void)
             SetMonData(&gPlayerParty[mb->argA], MON_DATA_NICKNAME, nickname);
             GetMonData(&gPlayerParty[mb->argA], MON_DATA_NICKNAME, nickname);
             mb->result = StringLength(nickname);
+        }
+        break;
+    case CM_REQ_MON_EV:
+        {
+            u8 slot = mb->argA & 0xFF;
+            u8 evIndex = mb->argA >> 8;
+            u8 value = mb->argB & 0xFF;
+            static const u8 sEvFieldsForTest[] =
+            {
+                MON_DATA_HP_EV, MON_DATA_ATK_EV, MON_DATA_DEF_EV,
+                MON_DATA_SPEED_EV, MON_DATA_SPATK_EV, MON_DATA_SPDEF_EV,
+            };
+            if (slot < PARTY_SIZE && evIndex < ARRAY_COUNT(sEvFieldsForTest))
+            {
+                struct Pokemon *mon = &gPlayerParty[slot];
+                SetMonData(mon, sEvFieldsForTest[evIndex], &value);
+                CalculateMonStats(mon);
+                mb->result = GetMonData(mon, sEvFieldsForTest[evIndex], NULL)
+                           | (CharacterMode_SumAllEVs(mon) << 16);
+            }
+        }
+        break;
+    case CM_REQ_ZERO_ALL_EVS:
+        {
+            u8 slot = mb->argA & 0xFF;
+            if (slot < PARTY_SIZE)
+            {
+                struct Pokemon *mon = &gPlayerParty[slot];
+                u16 changed = CharacterMode_ZeroAllEVs(mon);
+                mb->result = changed | (CharacterMode_SumAllEVs(mon) << 16);
+            }
+        }
+        break;
+    case CM_REQ_SWAP_BALL:
+        {
+            u8 slot = mb->argA & 0xFF;
+            if (slot < PARTY_SIZE)
+            {
+                struct Pokemon *mon = &gPlayerParty[slot];
+                u16 changed = CharacterMode_SwapMonBall(mon, mb->argB);
+                mb->result = changed
+                           | (GetMonData(mon, MON_DATA_POKEBALL, NULL) << 16);
+            }
+        }
+        break;
+    case CM_REQ_SET_MON_EGG:
+        {
+            u8 slot = mb->argA & 0xFF;
+            u8 isEgg = mb->argB & 0xFF;
+            if (slot < PARTY_SIZE)
+            {
+                struct Pokemon *mon = &gPlayerParty[slot];
+                // Both bits, because they are stored in different places:
+                // boxMon->isEgg is the sanity bit and substruct3->isEgg is the
+                // encrypted one, and only the second is what MON_DATA_IS_EGG
+                // reads back.
+                SetMonData(mon, MON_DATA_SANITY_IS_EGG, &isEgg);
+                SetMonData(mon, MON_DATA_IS_EGG, &isEgg);
+                mb->result = GetMonData(mon, MON_DATA_IS_EGG, NULL)
+                           | (GetMonData(mon, MON_DATA_SANITY_IS_EGG, NULL) << 8);
+            }
         }
         break;
     case CM_REQ_SET_MON_MOVE:

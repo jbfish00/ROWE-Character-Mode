@@ -16,6 +16,8 @@ void ItemUseOutOfBattle_PowerCandy(u8);
 void ItemUseOutOfBattle_IronPill(u8);
 void ItemUseOutOfBattle_Exiolite(u8);
 void ItemUseOutOfBattle_AbilityPatch(u8);
+void ItemUseOutOfBattle_ZeroAllEV(u8);
+void ItemUseOutOfBattle_BallSwap(u8);
 void ItemUseOutOfBattle_ReduceEV(u8);
 void ItemUseOutOfBattle_SacredAsh(u8);
 void ItemUseOutOfBattle_PPRecovery(u8);

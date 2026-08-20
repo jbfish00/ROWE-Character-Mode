@@ -98,7 +98,7 @@ run() {
     fi
 }
 
-# 20 runs: eighteen scripts plus the two starter_regression paths.
+# 21 runs: nineteen scripts plus the two starter_regression paths.
 # (18 until 2026-08-09, when pre_evolution_e2e was finally added to the list.)
 #   run <name> <script> <expected assertions> [env ...]
 run boot           boot_smoke.lua              2
@@ -133,13 +133,24 @@ run tmhm_bound     tmhm_bound_e2e.lua          4
 # survives a reload). It runs LAST of the CM_SAV users so the mutated
 # fixture cannot leak into another run, and the fixture is minted fresh
 # every invocation anyway.
+# Expected 21: the two SoulGold-derived QoL items (Zeromin's all-EV reset and
+# the bag ball swap), added 2026-08-19. Both in-band controls -- "resetting an
+# already-zero mon reports NO change" and "swapping to the ball it is already
+# in reports NO change" -- are the assertions that can actually go red, and both
+# were proved to by disabling the two guards and rebuilding (PASSED 19, FAILED 2,
+# exactly those two, nothing else moving; guards restored, md5 back to
+# 341ff5fc8285052f2d291b6bc74c5227).
+# ⚠️ It does NOT drive the bag -> party-menu UI, only the effect functions the
+# item callbacks call, and the egg-refusal branch is NOT covered at all. Read
+# the script's header before treating this as full coverage of the two items.
+run qol_items      qol_items_e2e.lua           21
 run costume_persist costume_persist_e2e.lua   12  CM_SAV="$FIX"
 run starter_red    starter_regression.lua      6   CM_PATH=red
 run starter_normal starter_regression.lua      6   CM_PATH=normal
 
 echo
 if [ "$fail" -eq 0 ]; then
-    echo "ALL 20 RUNS PASS.  logs: $OUT"
+    echo "ALL 21 RUNS PASS.  logs: $OUT"
 else
     echo "SUITE FAILED -- read the logs in $OUT"
 fi

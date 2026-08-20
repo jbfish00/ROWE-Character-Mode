@@ -1142,4 +1142,18 @@
 #define ITEMS_COUNT 1477
 #define ITEM_FIELD_ARROW ITEMS_COUNT
 // ROWEITEM-PORT-END consts
+
+// ---- Character Mode QoL items --------------------------------------------
+// Hand-maintained, and deliberately OUTSIDE the ROWEITEM-PORT markers above:
+// tools/character_mode/port_2x_items.py rewrites everything between them, so an
+// id placed inside would be erased on the next regeneration. These ids start one
+// past the porter's highest (1476), and ITEMS_COUNT is restated to cover them.
+// tools/check_qol_items.py fails if the porter ever grows into this range.
+#define ITEM_ZEROMIN                       1477
+
+#undef ITEMS_COUNT
+#undef ITEM_FIELD_ARROW
+#define ITEMS_COUNT 1478
+#define ITEM_FIELD_ARROW ITEMS_COUNT
+
 #endif  // GUARD_CONSTANTS_ITEMS_H
