@@ -15,14 +15,18 @@ suite. See §10 for that session.
 who can actually do them: three need you, three need art that does not exist,
 and **eight were ordinary code and test work — one of which is now done and one
 half-done**. Read that table and §12; §0 and §7 further down are older.
-⚠️ The suite is **22 runs** as of 2026-08-21, not 21.
+⚠️ The suite is **22 runs**, not 21, and it is **22/22 green on the ROM this
+tree builds today** — `3ef6d2d842fabf005e2a5d67a0b1a4f9`, map digest
+`03f4cfab122effaf`, re-run 2026-08-26 (§12.8). Every other md5 in this file is
+a record of an older build; do not read one as current.
 
 🛑 **§0 AND §7 ARE OUT OF DATE (2026-08-19).** Three
 specific things in them are now wrong, and all three are the kind that read as
 authoritative: (1) **every one of §10's six "still unverified" leads was closed
 on 2026-08-17**, and this file carried them as open; (2) the **ROM md5 is cited
 three different ways in this file and all three are stale** — it is
-`ead4fc6d7488c71361ba38314ccf10b0` at HEAD; (3) the suite is **21 runs**, not 19.
+`3ef6d2d842fabf005e2a5d67a0b1a4f9` at HEAD (it was `ead4fc6d…` when this
+paragraph was written); (3) the suite is **22 runs**, not 19.
 §12 also carries the session's own find — an 8-byte party-menu buffer the game
 can write 16 entries into — and the measured, final answer on the SoulGold
 sprite question.
@@ -54,9 +58,10 @@ being read: **rows 7-14 below are ordinary code and test work**, and eight of
 them are things an agent should pick up. The old table also still carried a
 "push the local commits" row that had been done since 2026-08-09.
 
-**Nothing here is KNOWN broken.** Suite 21/21 on `ead4fc6d7488c71361ba38314ccf10b0`,
-selftest 36/36 on every run, all five static checkers green, tree clean and level
-with `origin/character-mode`. What follows is unfinished, not failing.
+**Nothing here is KNOWN broken.** Suite **22/22** on
+`3ef6d2d842fabf005e2a5d67a0b1a4f9` (map digest `03f4cfab122effaf`), selftest
+36/36 on every run, all five static checkers green, tree clean and level with
+`origin/character-mode` at `684e7255`. What follows is unfinished, not failing.
 
 ### Needs a person — an agent cannot do these
 
@@ -91,9 +96,13 @@ with `origin/character-mode`. What follows is unfinished, not failing.
 results are recorded.** Three sessions re-measured the `game_plans/rowe.md` drift
 instead of acting on it; do not make that four.
 
-> A mirror of this file lives at
-> `/home/jbfish00/Documents/Character Hacks/game_plans/rowe.md`, alongside plans
-> for the five ports. Keep them in step, or delete one — do not let them drift.
+> ⛔ **The mirror is GONE, and this file is now the only copy.**
+> `/home/jbfish00/Documents/Character Hacks/game_plans/rowe.md` was reduced to a
+> pointer banner on 2026-08-26 (archived at `game_plans/.archive/`). It had been
+> frozen at the 2026-07-29 tree for four weeks and **three sessions re-derived
+> its drift instead of acting on it**. "Keep them in step" was the old
+> instruction here and it did not survive contact: two hand-maintained copies do
+> not stay in step. **Do not recreate it.**
 
 ---
 
@@ -148,9 +157,11 @@ so there is nothing outstanding in git either.
 1. **Sanity-check the tree before believing any of this**, in this order —
    `make -j$(nproc)` → `python3 tools/mgba_scripts/gen_anchors.py` →
    `bash tools/mgba_scripts/run_suite.sh`. Expect ROM md5
-   `90fa8e3cf4fe57a0c092dd55c1743c60`, map digest `0078bac7e41ab1e0`, and a
-   second `gen_anchors.py` run that changes nothing. (Both changed on
-   2026-08-03 — the previous build was `4ba53b39…` / `45cfe76e469fceeb`.)
+   **`3ef6d2d842fabf005e2a5d67a0b1a4f9`**, map digest **`03f4cfab122effaf`**,
+   **22/22 PASS** and a second `gen_anchors.py` run that changes nothing
+   (verified 2026-08-26, §12.8). ⚠️ **The `90fa8e3c…` / `0078bac7e41ab1e0` this
+   step used to name is four builds stale** — it was written 2026-08-03 and was
+   never updated as the ROM moved.
    ⚠️ **Regenerate anchors BEFORE the suite, and never judge staleness by
    mtime** — `make` relinks on every invocation, so the ROM is always newer.
 2. **The largest remaining work is a human playthrough**, and it is genuinely
@@ -1832,7 +1843,7 @@ slot) and the anime-only cast have nothing in any mainline-region hack.
 
 | | |
 |---|---|
-| ROM | **`ead4fc6d7488c71361ba38314ccf10b0`** at HEAD. ⚠️ §0 cites `90fa8e3c…`, §7 cites `4ba53b39…` and §10 cites `08eef0c3…` — **all three are stale**, and none matched the working tree even before this session |
+| ROM | **`ead4fc6d7488c71361ba38314ccf10b0`** — the build THIS SESSION (2026-08-19) ran on. ⚠️ Superseded: the tree builds `3ef6d2d842fabf005e2a5d67a0b1a4f9` today (§12.8) |
 | Suite | ✅ **ALL 21 RUNS PASS**, run to completion on this exact ROM. Every tally matched the count declared in `run_suite.sh`, and the in-ROM selftest read **36/36 on all 21**. Nineteen scripts plus the two `starter_regression` paths; §0 says 19, which predates both `tmhm_bound_e2e` (2026-08-17) and `qol_items_e2e` (today) |
 | Anchors | map digest `844123840bbc68bc`, second `gen_anchors.py` run byte-identical |
 | Checkers | `check_qol_items` (+ its self-test), `check_species_tables`, `check_mode_menus`, `check_name_lengths`, `check_species_names` all green; `audit_rosters` reads 236 characters / 2775 entries |
@@ -2054,3 +2065,49 @@ swap's egg-refusal branch stays unproven** — a test built on it would still pa
 by never making an egg. `CM_REQ_EGG_DIAG` (42) is a **diagnostic, not a test**,
 and carries the same warning.
 
+
+
+## 12.8 — Session 2026-08-26: the suite, run on the ROM that is actually pushed
+
+**22/22 PASS on `3ef6d2d842fabf005e2a5d67a0b1a4f9`**, map digest
+`03f4cfab122effaf`, selftest **36/36 on every one of the 22 runs**, runner exit
+0 — so every per-run tally equalled the count declared in `run_suite.sh`, not
+just the RESULT lines. All five static checkers green on the same build
+(`check_species_tables` reads 1464 species). `make` is clean and a second
+`gen_anchors.py` run is byte-identical.
+
+Tallies, for the next session to diff against: boot 2, continue 2, ot_roundtrip
+17, legendary 20, encounter_doc 60, catch_gate 14, pc_sweep 10, johto_gym 13,
+gigaton 9, basculegion 34, mode_exclusion 72, char_select 11, tobias_legend 14,
+enc_marker 41, trade_gate 10, pre_evolution 2, tmhm_bound 4, qol_items 21,
+**party_actions 31**, costume_persist 12, starter_red 6, starter_normal 6.
+
+### ⚠️ Why this run had to happen, and what it closes
+
+**§12.6's green was on a ROM that no longer existed.** It records 22/22 on
+`315cbff9953219a12b742f40834ecf8d` / digest `da136dd94eae5529` — and the egg
+diagnostic (§12.7) landed in `src/pokemon.c` *after* that run, rebuilding the
+ROM to `3ef6d2d8…` / `03f4cfab…`. Nothing was wrong with either the code or the
+run; they were simply about **different binaries**, and the difference was
+invisible because both were called "the suite is green".
+
+That is this repo's own standing lesson arriving one more time — *a green suite
+recorded against a binary you do not ship is not evidence about the one you do*,
+which `game_plans/rowe_parity.md` §8 had already caught the ports doing. The
+fix is procedural and cheap: **quote the md5 with every green claim**, which
+§12.6 did correctly and which is the only reason the gap was visible at all.
+
+⚠️ **`3ef6d2d8…` is now what `684e7255` builds and pushes.** §12.6's numbers are
+left as written — they are a true record of that run — but they are **not the
+current state**, and §0's `90fa8e3c…` is four builds stale.
+
+### One number worth not believing
+
+⚠️ **The suite took roughly ten minutes, not the ~80–92 this file budgets.**
+§0 says "every run burns its full 240 s `RUN_TIMEOUT` by design" and derives the
+wall-clock from it. That was not true today, and 22 runs at a full timeout
+cannot fit in ten minutes. Either `H.finish()` now stops the emulator on some or
+all runs, or the budget was always an over-estimate nobody re-measured. **The
+budget is unverified either way — do not tighten `RUN_TIMEOUT` on the strength
+of this observation**, which is one sample and was not the thing being measured.
+Detaching the run is still correct.
