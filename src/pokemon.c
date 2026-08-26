@@ -9828,3 +9828,71 @@ u16 RandomizePokemonAbility(u16 ability, u32 personality){
         return randomizedAbility;
     }
 }
+// ===========================================================================
+// PLAN.md item #9 -- why MON_DATA_IS_EGG cannot be written on a party mon
+// ===========================================================================
+//
+// §12.3 recorded the symptom (both egg bits read back 0 after being written,
+// with the writing code proved to have run) and named a suspect: the checksum
+// guard at the head of SetBoxMonData, which is a silent `return` here where
+// vanilla sets isBadEgg. That suspect is a GUESS. Nothing has ever looked at
+// the checksum, and nothing has ever read the two bits at their storage
+// locations rather than through GetMonData -- so "the write was dropped" and
+// "the write landed and the getter lies" are still the same observation.
+//
+// This separates them. Every op reports RAW storage, never a getter, except
+// op 4 which reports the getter precisely so the two can be compared.
+//
+//   0  checksum state: (computed << 16) | stored. Equal iff the halves match,
+//      and if they do NOT then the guard is firing and §12.3's suspect is the
+//      culprit for every encrypted write, not just this one.
+//   1  the two bits as stored, before anything is written
+//   2  write MON_DATA_SANITY_IS_EGG = 1, then re-read raw
+//   3  write MON_DATA_IS_EGG = 1, then re-read raw
+//   4  what GetMonData says, for comparison with 1-3
+//
+// Raw bit layout for ops 1-4: bit 0 = boxMon->isEgg (the plain unencrypted
+// sanity bit), bit 1 = substruct3->isEgg (the encrypted one).
+#define CM_EGGDIAG_RAN 0x80000000
+
+u32 CharacterMode_EggDiag(u8 slot, u8 op)
+{
+    struct Pokemon *mon;
+    struct BoxPokemon *boxMon;
+    struct PokemonSubstruct3 *substruct3;
+    u32 result = CM_EGGDIAG_RAN;
+    u8 one = 1;
+
+    if (slot >= PARTY_SIZE)
+        return 0;
+
+    mon = &gPlayerParty[slot];
+    boxMon = &mon->box;
+
+    if (op == 2)
+        SetMonData(mon, MON_DATA_SANITY_IS_EGG, &one);
+    else if (op == 3)
+        SetMonData(mon, MON_DATA_IS_EGG, &one);
+
+    if (op == 4)
+    {
+        result |= GetMonData(mon, MON_DATA_SANITY_IS_EGG, NULL) ? 1 : 0;
+        result |= GetMonData(mon, MON_DATA_IS_EGG, NULL) ? 2 : 0;
+        return result;
+    }
+
+    // Everything below reads STORAGE. substruct3 is inside the encrypted
+    // block, so the read is bracketed by the same decrypt/encrypt pair
+    // SetBoxMonData uses -- and the checksum is computed in exactly the state
+    // the guard computes it in, or the comparison would be meaningless.
+    substruct3 = &(GetSubstruct(boxMon, boxMon->personality, 3)->type3);
+    DecryptBoxMon(boxMon);
+
+    if (op == 0)
+        result |= ((u32)CalculateBoxMonChecksum(boxMon) << 16) | boxMon->checksum;
+    else
+        result |= (boxMon->isEgg ? 1 : 0) | (substruct3->isEgg ? 2 : 0);
+
+    EncryptBoxMon(boxMon);
+    return result;
+}

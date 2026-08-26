@@ -165,6 +165,15 @@ struct PartyMenuBox
 
 // EWRAM vars
 static EWRAM_DATA struct PartyMenuInternal *sPartyMenuInternal = NULL;
+
+// How many appends SetPartyMonFieldSelectionActions ATTEMPTED for the mon it
+// last ran on, as opposed to how many fit. AppendPartyMenuAction clamps at
+// MAX_PARTY_MENU_ACTIONS, so `numActions` alone can never answer the question
+// the 2026-08-19 find actually asked -- "does the builder want a 9th row for a
+// real Pokemon" -- and reads identically on a build where it never wants one.
+// One byte and one increment per append; see CharacterMode_ProbePartyMenuActions
+// at the bottom of this file for what reads it. (PLAN.md item #7.)
+static EWRAM_DATA u8 sPartyMenuActionDemand = 0;
 EWRAM_DATA struct PartyMenu gPartyMenu = {0};
 static EWRAM_DATA struct PartyMenuBox *sPartyMenuBoxes = NULL;
 static EWRAM_DATA u8 *sPartyBgGfxTilemap = NULL;
@@ -425,6 +434,8 @@ static void BlitBitmapToPartyWindow_Equal(u8, u8, u8, u8, u8, u8); //Custom part
 // Silently corrupting numActions is neither.
 static void AppendPartyMenuAction(u8 action)
 {
+    if (sPartyMenuActionDemand < 255)
+        sPartyMenuActionDemand++;
     if (sPartyMenuInternal->numActions < MAX_PARTY_MENU_ACTIONS)
         AppendToList(sPartyMenuInternal->actions,
                      &sPartyMenuInternal->numActions, action);
@@ -437,9 +448,15 @@ static void AppendPartyMenuAction(u8 action)
 static void AppendPartyMenuCancel(u8 action)
 {
     if (sPartyMenuInternal->numActions < MAX_PARTY_MENU_ACTIONS)
+    {
         AppendPartyMenuAction(action);
+    }
     else
+    {
+        if (sPartyMenuActionDemand < 255)
+            sPartyMenuActionDemand++;
         sPartyMenuInternal->actions[MAX_PARTY_MENU_ACTIONS - 1] = action;
+    }
 }
 
 static void CursorCb_Summary(u8);
@@ -2880,6 +2897,7 @@ static void SetPartyMonFieldSelectionActions(struct Pokemon *mons, u8 slotId)
 	bool8 canuseSweetScent 	= FALSE;
 	
     sPartyMenuInternal->numActions = 0;
+    sPartyMenuActionDemand = 0;
     AppendPartyMenuAction(MENU_SUMMARY);
 
     // An egg has no nickname worth setting and the naming screen would show a
@@ -8490,4 +8508,210 @@ void CursorCb_PkmAutomaticFollow(void)
 	
 	if(!(gPlayerAvatar.flags & PLAYER_AVATAR_FLAG_ON_FOOT) || POF_ChoseAutomaticFollower() >= PARTY_SIZE)
 		POF_DestroyFollower();
+}
+
+// ===========================================================================
+// PLAN.md item #7 -- proving the party-menu action bound IN-ENGINE
+// ===========================================================================
+//
+// The actions[] overflow and the tilemapTop underflow above 9 rows were both
+// found on 2026-08-19 by READING the builder. Nothing in the suite opens the
+// party menu's action window, so at 21/21 green no run had ever observed how
+// many rows SetPartyMonFieldSelectionActions actually wants for a Pokemon.
+//
+// These two entry points run THE REAL BUILDER against real mon data -- not a
+// reimplementation of its arithmetic, which would only ever re-derive the
+// inspection that is already written down. Two numbers come back and the
+// second is the one that settles anything:
+//
+//   numActions  what the menu would SHOW. AppendPartyMenuAction clamps it, so
+//               it can never exceed MAX_PARTY_MENU_ACTIONS. On its own it
+//               proves the clamp is present and nothing else -- it reads
+//               identically on a build whose builder never wants a 9th row.
+//   demand      how many appends were ATTEMPTED, unclamped.
+//
+// ⚠️ The two defects have DIFFERENT thresholds and conflating them is the
+// mistake this probe was written to stop making:
+//   demand > 8   overflows the u8[8] actions[] USED to be -- the 9th append
+//                landing on numActions itself. Measured: 9, on an ordinary
+//                Charizard, so the pre-fix build took it.
+//   demand > 9   overflows the WINDOW, wrapping tilemapTop to 255. Measured:
+//                no species reaches this on a natural moveset, but teaching
+//                Cut and Secret Power reaches 11.
+// See PLAN.md §12.6.
+//
+// Result word, shared by both requests below:
+//   [31]     ran (0 means the probe refused; a real answer is never 0)
+//   [25]     the Nickname row is present   (PLAN.md item #8)
+//   [24]     the last VISIBLE row is Cancel
+//   [23:16]  tilemapTop, as DisplaySelectionWindow computes it, cast to u8
+//   [15:8]   demand
+//   [7:0]    numActions
+#define CM_PROBE_RAN          0x80000000
+#define CM_PROBE_HAS_NICKNAME 0x02000000
+#define CM_PROBE_CANCEL_LAST  0x01000000
+
+static u32 ProbePartyMenuActionsFor(struct Pokemon *mons, u8 slotId)
+{
+    struct PartyMenuInternal *saved = sPartyMenuInternal;
+    struct PartyMenu savedMenu = gPartyMenu;
+    u32 result;
+    u8 i;
+
+    // The real menu allocates this too; borrowing the live one would corrupt
+    // an open party menu, and a stack copy is ~600 bytes of a small stack.
+    sPartyMenuInternal = AllocZeroed(sizeof(struct PartyMenuInternal));
+    if (sPartyMenuInternal == NULL)
+    {
+        sPartyMenuInternal = saved;
+        return 0;
+    }
+
+    // Go through the dispatcher, so the ACTIONS_NONE branch is SELECTED by
+    // GetPartyMenuActionsType the way the field menu selects it, rather than
+    // assumed by calling the field builder directly.
+    gPartyMenu.menuType = PARTY_MENU_TYPE_FIELD;
+    SetPartyMonSelectionActions(mons, slotId,
+                                GetPartyMenuActionsType(&mons[slotId]));
+
+    result = CM_PROBE_RAN
+           | (u32)sPartyMenuInternal->numActions
+           | ((u32)sPartyMenuActionDemand << 8)
+           | ((u32)(u8)(19 - (sPartyMenuInternal->numActions * 2)) << 16);
+
+    if (sPartyMenuInternal->numActions > 0
+     && sPartyMenuInternal->actions[sPartyMenuInternal->numActions - 1] == MENU_CANCEL1)
+        result |= CM_PROBE_CANCEL_LAST;
+
+    for (i = 0; i < sPartyMenuInternal->numActions; i++)
+    {
+        if (sPartyMenuInternal->actions[i] == MENU_NICKNAME)
+            result |= CM_PROBE_HAS_NICKNAME;
+    }
+
+    Free(sPartyMenuInternal);
+    sPartyMenuInternal = saved;
+    gPartyMenu = savedMenu;
+    return result;
+}
+
+// The live party, exactly as it stands. No state is touched, so what comes
+// back is what the player would see if they opened the menu on that slot.
+u32 CharacterMode_ProbePartyMenuActions(u8 slotId)
+{
+    if (slotId >= PARTY_SIZE
+     || GetMonData(&gPlayerParty[slotId], MON_DATA_SPECIES, NULL) == SPECIES_NONE)
+        return 0;
+
+    return ProbePartyMenuActionsFor(gPlayerParty, slotId);
+}
+
+// Every species, on a synthetic two-mon party, asking the maximum question:
+// how many rows can the builder want at all? Returns the worst species found
+// and how many exceeded the window.
+//
+// ⚠️ This one DOES manipulate state, and the manipulation is the point: the
+// automatic-follower option is forced on for the duration and restored after.
+// The Follow row is one of the rows in dispute, the option is player-settable,
+// so a sweep run with it off would understate the ceiling by exactly one and
+// call that a measurement. It is restored before returning.
+//
+// ⚠️ Personality and OT are PRESET, never rolled. CreateMon would otherwise
+// consume Random() once per species and shift the roll stream underneath every
+// later assertion in the same run.
+//
+// ⚠️ Ids with NO gBaseStats row are skipped and COUNTED, not probed. They are
+// not Pokemon -- gBaseStats is a designated-initializer array, so an absent row
+// is an all-zero one, and the species has no name and no learnset either. The
+// first version of this sweep did probe them and WEDGED THE EMULATOR at species
+// 1208 (Kleavor): the level-up scan in the builder walks a NULL row with a u8
+// index and no bound, exactly the §7.11 hang. Kleavor, Sneasler and Enamorus
+// are the three Legends: Arceus species that never got base stats here; they
+// appear in no roster, encounter table or trainer party, so the engine cannot
+// produce one and this is not a live hang. It is a standing demonstration that
+// the July fix filled four missing ROWS and left the LOOP unbounded.
+//
+// Result: [31] ran | [30:24] skipped | [23:17] over-window | [16:11] max demand
+//         [10:0] the species that produced it
+// `progress` is written with the species about to be probed, BEFORE probing it.
+// If the sweep never returns -- which is what an unbounded learnset walk looks
+// like from outside (PLAN.md §7.11) -- the caller is left holding the id of the
+// species that wedged instead of a timeout with no information in it.
+u32 CharacterMode_SweepPartyMenuActions(u32 first, u32 howMany, u32 *progress)
+{
+    struct Pokemon *scratch;
+    u8 savedFollowerOption;
+    u16 sp;
+    u8 maxDemand = 0;
+    u16 worst = SPECIES_NONE;
+    u16 over = 0;
+    u16 skipped = 0;
+
+    // howMany == 0 asks how many species there are, so the sweeping test can
+    // size itself instead of mirroring NUM_SPECIES as a Lua literal -- the
+    // define is behind three #ifdefs and a mirrored copy would rot silently.
+    if (howMany == 0)
+        return CM_PROBE_RAN | NUM_SPECIES;
+
+    if (howMany > 64)
+        howMany = 64;
+    // Past the end is a caller error, not an empty answer. It returns 0, and 0
+    // is also what an allocation failure returns: the test must treat either as
+    // a hard failure rather than as "nothing more to sweep".
+    if (first >= NUM_SPECIES)
+        return 0;
+
+    scratch = AllocZeroed(sizeof(struct Pokemon) * 2);
+    if (scratch == NULL)
+        return 0;
+
+    savedFollowerOption = gSaveBlock2Ptr->optionsAutomaticFollower;
+    gSaveBlock2Ptr->optionsAutomaticFollower = 1;
+
+    for (sp = first; sp < first + howMany && sp < NUM_SPECIES; sp++)
+    {
+        u32 r;
+        u8 demand;
+
+        // No base-stats row means no species. See the note above this function:
+        // probing one walks a NULL learnset row and never returns.
+        if (gBaseStats[sp].baseHP == 0)
+        {
+            skipped++;
+            continue;
+        }
+
+        if (progress != NULL)
+            *progress = CM_PROBE_RAN | sp;
+
+        CreateMon(&scratch[0], sp, 50, 31, TRUE, 0x1234ABCD, OT_ID_PRESET, 0, 0);
+        // Slot 1 has to be occupied or the Switch row is never offered, and a
+        // one-mon party is not the case in dispute.
+        CreateMon(&scratch[1], sp, 50, 31, TRUE, 0x1234ABCD, OT_ID_PRESET, 0, 0);
+
+        r = ProbePartyMenuActionsFor(scratch, 0);
+        if (!(r & CM_PROBE_RAN))
+            continue;
+
+        demand = (r >> 8) & 0xFF;
+        if (demand > maxDemand)
+        {
+            maxDemand = demand;
+            worst = sp;
+        }
+        if (demand > MAX_PARTY_MENU_ACTIONS && over < 127)
+            over++;
+    }
+
+    gSaveBlock2Ptr->optionsAutomaticFollower = savedFollowerOption;
+    Free(scratch);
+
+    if (maxDemand > 63)
+        maxDemand = 63;
+
+    return CM_PROBE_RAN
+         | ((u32)(skipped & 0x7F) << 24)
+         | ((u32)(over & 0x7F) << 17)
+         | ((u32)(maxDemand & 0x3F) << 11)
+         | (u32)(worst & 0x7FF);
 }

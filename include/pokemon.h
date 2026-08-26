@@ -620,6 +620,11 @@ u8 CalculateEnemyPartyCount(void);
 u8 GetMonsStateToDoubles(void);
 u8 GetMonsStateToDoubles_2(void);
 u16 GetAbilityBySpecies(u16 species, u8 abilityNum, u8 formId);
+
+// PLAN.md item #9. Reports the egg bits at their STORAGE locations and the
+// checksum the SetBoxMonData guard compares, so "the write was dropped" and
+// "the write landed and the getter lies" stop being the same observation.
+u32 CharacterMode_EggDiag(u8 slot, u8 op);
 u16 GetMonAbility(struct Pokemon *mon);
 void CreateSecretBaseEnemyParty(struct SecretBase *secretBaseRecord);
 u8 GetSecretBaseTrainerPicIndex(void);

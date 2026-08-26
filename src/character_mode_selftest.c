@@ -327,6 +327,51 @@ enum
                            // ball swap's egg refusal is unprovable without it.
                            // ⚠️ Do not build a test on this until it is fixed --
                            // it will pass vacuously by never making an egg.
+    CM_REQ_PARTY_MENU_ACTIONS, // argA: party slot. Runs the REAL party-menu
+                           // action builder against the LIVE gPlayerParty and
+                           // reports what it produced. Touches no state.
+                           // result = 0 if it refused, else:
+                           //   [31] ran | [25] Nickname row present
+                           //   [24] last visible row is Cancel
+                           //   [23:16] tilemapTop as the window computes it
+                           //   [15:8] appends ATTEMPTED (unclamped)
+                           //   [7:0]  numActions (what the menu would show)
+                           // ⚠️ [15:8] is the half that settles PLAN.md item
+                           // #7. [7:0] is clamped by AppendPartyMenuAction, so
+                           // it reads the same on a build whose builder never
+                           // wants a 9th row -- asserting on it alone is the
+                           // vacuous shape this repo keeps re-inventing.
+    CM_REQ_PARTY_ACTION_SWEEP, // argA: first species, argB: how many (<= 64).
+                           // The same builder over synthetic two-mon parties,
+                           // one per species, asking for the ceiling.
+                           // result = [31] ran | [27:19] how many species
+                           //   exceeded the window | [18:11] the largest demand
+                           //   seen | [10:0] the species that produced it.
+                           // ⚠️ Forces optionsAutomaticFollower on for the
+                           // duration and restores it: the Follow row is one of
+                           // the rows in dispute, so sweeping with the option
+                           // off would understate the ceiling by one and call
+                           // that a measurement.
+    CM_REQ_SET_FOLLOWER_OPTION, // argA: 0 or 1. The automatic-follower option,
+                           // which decides whether the party menu offers a
+                           // Follow/Unfollow row at all -- one of the rows in
+                           // dispute in PLAN.md item #7, so a probe run without
+                           // control of it understates the builder's demand by
+                           // exactly one and calls that a measurement.
+                           // A request rather than a gTestStructOffsets entry
+                           // because it is a ONE-BIT BITFIELD: there is no byte
+                           // a test could write without clobbering the options
+                           // packed beside it.
+                           // result = the bit read back.
+    CM_REQ_EGG_DIAG,       // argA: party slot, argB: op. PLAN.md item #9.
+                           // Reads the egg bits at their STORAGE locations and
+                           // the checksum the SetBoxMonData guard compares --
+                           // see CharacterMode_EggDiag in pokemon.c for the ops
+                           // and the bit layout.
+                           // ⚠️ Ops 2 and 3 WRITE. They are a diagnostic, not a
+                           // test: do not build an assertion on them until #9
+                           // is root-caused, for exactly the reason
+                           // CM_REQ_SET_MON_EGG carries the same warning.
 };
 
 enum
@@ -657,6 +702,10 @@ const u16 gTestStructOffsets[] =
     // mailbox's FlagGet, so the raw write is always cross-checked by the game's
     // own accessor rather than trusted.
     offsetof(struct SaveBlock1, flags),                  // [8]
+    // ⚠️ optionsAutomaticFollower does NOT belong here and was tried: it is a
+    // one-bit bitfield, so there is no byte address to hand a test and writing
+    // the containing byte would clobber every option packed beside it. It is
+    // CM_REQ_SET_FOLLOWER_OPTION instead.
 };
 
 void CharacterMode_PumpTestMailbox(void)
@@ -1107,6 +1156,19 @@ void CharacterMode_PumpTestMailbox(void)
                            | (GetMonData(mon, MON_DATA_SANITY_IS_EGG, NULL) << 8);
             }
         }
+        break;
+    case CM_REQ_SET_FOLLOWER_OPTION:
+        gSaveBlock2Ptr->optionsAutomaticFollower = (mb->argA != 0);
+        mb->result = gSaveBlock2Ptr->optionsAutomaticFollower;
+        break;
+    case CM_REQ_EGG_DIAG:
+        mb->result = CharacterMode_EggDiag(mb->argA & 0xFF, mb->argB & 0xFF);
+        break;
+    case CM_REQ_PARTY_MENU_ACTIONS:
+        mb->result = CharacterMode_ProbePartyMenuActions(mb->argA & 0xFF);
+        break;
+    case CM_REQ_PARTY_ACTION_SWEEP:
+        mb->result = CharacterMode_SweepPartyMenuActions(mb->argA, mb->argB, &mb->result);
         break;
     case CM_REQ_SET_MON_MOVE:
         {

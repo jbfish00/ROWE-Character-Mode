@@ -11,9 +11,11 @@ file is **state and next steps**. Re-derived against this working tree on
 suite. See §10 for that session.
 
 🛑 **THE "What remains" TABLE JUST BELOW IS THE CURRENT OPEN-WORK LIST
-(re-derived 2026-08-20).** Fourteen items, split by who can actually do them:
-three need you, three need art that does not exist, and **eight are ordinary
-code and test work**. Read that table and §12; §0 and §7 further down are older.
+(re-derived 2026-08-20, item 7 closed 2026-08-21).** Fourteen items, split by
+who can actually do them: three need you, three need art that does not exist,
+and **eight were ordinary code and test work — one of which is now done and one
+half-done**. Read that table and §12; §0 and §7 further down are older.
+⚠️ The suite is **22 runs** as of 2026-08-21, not 21.
 
 🛑 **§0 AND §7 ARE OUT OF DATE (2026-08-19).** Three
 specific things in them are now wrong, and all three are the kind that read as
@@ -76,9 +78,9 @@ with `origin/character-mode`. What follows is unfinished, not failing.
 
 | # | item | why it matters |
 |---|---|---|
-| 7 | **Prove the party-menu action bound in-engine** | §12.2. The 8-entry `actions[]` overflow and the `tilemapTop` underflow above 9 rows are both **found by inspection only — no run has produced a 9th action**. Nothing in the suite opens the party menu's action window, so 21/21 green says nothing about either. **This is the top open lead**: a request that builds the action list for a given party mon and returns `numActions` would settle it |
-| 8 | **The Nickname row is completely unproven** | §12.1. Party-menu UI, which no headless run in this repo drives. It is the only feature shipped this year with no assertion behind it |
-| 9 | **Root-cause `MON_DATA_IS_EGG`** | §12.3. Neither egg bit can be written on a party mon in this tree, with the write proved to run. `SetBoxMonData`'s checksum guard is a silent `return` here where vanilla sets `isBadEgg` — so if that guard is firing, **every** encrypted write is silently droppable under some condition, and that is much bigger than the egg. Until it is understood, the ball swap's egg refusal is unproven |
+| 7 | ✅ **DONE 2026-08-21 — the bound is MEASURED** | §12.6. `party_menu_actions_e2e.lua` (31) runs the real builder against the live party and all 1,463 species. **Both halves confirmed in-engine**: natural-moveset demand peaks at **9** (Charizard), which overflowed the old `u8[8]`; teaching Cut + Secret Power reaches **11**, which exceeds the window. The historical `MAX=20` fix, rebuilt as a control, reports **`tilemapTop` 253** — the u8 wrap, observed rather than argued |
+| 8 | **The Nickname row: half proven 2026-08-21** | §12.6. Its PRESENCE in the action list is now asserted on a non-egg party mon, and deleting the append turns the run red. ⚠️ **The row's BEHAVIOUR is still undriven** — `CursorCb_Nickname` → naming screen → write is party-menu UI, which no headless run in this repo drives. Do not read "the Nickname row is tested" out of a green suite |
+| 9 | ✅ **ROOT-CAUSED 2026-08-21 — and §12.3 blamed the wrong function** | §12.7. It is the **getter**, not the write guard: `GetBoxMonData` has an `else` branch vanilla does not, which zeroes both egg bits on every read of any encrypted field of a checksum-healthy mon — *before* the switch reads them. So `GetMonData(MON_DATA_IS_EGG)` **can never return 1**, anywhere. ⚠️ The FIX is a design decision and is NOT applied; see §12.7. Old text: §12.3. Neither egg bit can be written on a party mon in this tree, with the write proved to run. `SetBoxMonData`'s checksum guard is a silent `return` here where vanilla sets `isBadEgg` — so if that guard is firing, **every** encrypted write is silently droppable under some condition, and that is much bigger than the egg. Until it is understood, the ball swap's egg refusal is unproven |
 | 10 | **`TakeSelectedPokemonFromDaycare` has no e2e** | The ungated-party-writer bug was fixed in `78512b0b`, but no script in `tools/mgba_scripts/` drives the daycare-withdraw path at all. Model it on `pc_sweep_e2e.lua` |
 | 11 | **Only Falkner is proven playable as his own gym leader** | `johto_gym_e2e.lua` is the sole leader-as-player run; the other 15 leaders/E4 with rosters have no equivalent. The static argument that it generalises is in the 2026-07-17 session notes — it is an argument, not a run |
 | 12 | **The learnset NULL sweep spot-checks 4 species** | `basculegion_hang_e2e.lua` covers exactly the four that hung the game in July. `tmhm_bound_e2e` and `pre_evolution_e2e` sweep exhaustively; this one does not, so a fifth malformed row would not be caught |
@@ -1498,6 +1500,11 @@ scripts in `tools/mgba_scripts/`.
 - **`fix_species_graphics.py` fills FIVE tables and nothing else.** A species can
   pass every graphics check, build clean, render fine, and still hang. Filling
   the tables you thought of is not evidence about the tables you did not.
+- **`count` is a MACRO in this tree** (it preprocesses to `data[14]`), so a
+  function parameter named `count` makes a header prototype and a textually
+  identical definition fail with "conflicting types", naming the definition. Read
+  `build/emerald/src/<file>.i` when a prototype and its definition disagree and
+  you cannot see a difference. (§12.6)
 - **`make compare` will never pass** and is not the goal — this is a fork, not a
   byte-matching decomp.
 - **`gen_anchors.py` must be re-run after every build**, or the mGBA scripts read
@@ -1840,3 +1847,210 @@ own header:** a test was rebuilt four times without re-running
 `gen_anchors.py`, went red, and was misdiagnosed as a flaky intro drive and
 "hardened" before the real cause turned up. **`make` then `gen_anchors.py` then
 the run, every time.** The hardening was reverted.
+
+
+## 12.6 — Session 2026-08-21: the party-menu bound, measured
+
+**PLAN.md item #7 is closed.** Suite **22/22 PASS** on ROM
+`315cbff9953219a12b742f40834ecf8d`, map digest `da136dd94eae5529`, selftest
+36/36 on every run, every pre-existing tally identical to baseline.
+
+⚠️ **The runner said "ALL 21 RUNS PASS" while 22 ran.** The total was a string
+literal that the new run did not update — *the exact shape the comment fifteen
+lines above it warns about* ("a tally that is printed but not asserted is
+decoration"). It counts `run()` calls now. The per-run tallies were always
+asserted; only the headline was decoration, which is why 22 green runs could
+print a confident 21.
+
+`tools/mgba_scripts/party_menu_actions_e2e.lua`
+(**31** assertions, suite run 22) drives `CharacterMode_ProbePartyMenuActions`
+and `CharacterMode_SweepPartyMenuActions` — two entry points at the bottom of
+`src/party_menu.c` that run **the real builder** through the same dispatcher the
+field menu uses, and report two numbers rather than one:
+
+| | |
+|---|---|
+| `numActions` | what the menu would SHOW. Clamped by `AppendPartyMenuAction`, so it can never exceed 9 — and therefore **cannot settle anything on its own**: it reads identically on a build whose builder never wants a 9th row |
+| `demand` | how many appends were ATTEMPTED, unclamped. A new one-byte counter in `party_menu.c`, reset where `numActions` is reset. **This is the number the finding needed** |
+
+### What was measured
+
+- **Natural movesets, all 1,463 real species, level 50, two-mon party, follower
+  option on: the maximum demand is 9**, at `SPECIES_CHARIZARD` (6). **Nine
+  appends into the `u8[8]` this buffer used to be is the overflow** — the 9th
+  landing on `numActions` itself. §12.2's arithmetic was right, and it is now a
+  measurement.
+- **No species exceeds the WINDOW on a natural moveset — 0 of 1,463.** The two
+  defects are not the same defect and this is where they separate.
+- **Teaching Cut and Secret Power takes Charizard to demand 11**, which does
+  exceed the window. Both are ordinary player moves (HM01, TM43), so **the
+  `tilemapTop` underflow is reachable by an ordinary player**, not just in
+  principle. The clamp holds: shown 9, `tilemapTop` 1.
+
+### ⚠️ Two things §12.2 and CLAUDE.md say that are wrong
+
+1. **"one known Surf is the ninth" — no.** Surf is in the builder's own
+   break-list, along with Waterfall, Strength, Rock Smash, Dive, Fly, Flash,
+   Soft-Boiled, Teleport, Milk Drink, Sweet Scent and Dig: knowing any of them
+   appends **nothing**. Of the 14 `sFieldMoves`, exactly **two** can add a row
+   from a known move — **Cut and Secret Power**. Cut is the sharp one: a mon
+   that can *learn* Cut already has a tutor row, so knowing the move gives it a
+   **second** Cut row.
+2. **The Nickname row is not "one step closer", it is the step.** Rebuilt with
+   the Nickname append disabled, the natural maximum drops from 9 to **8** — the
+   old buffer's exact capacity. On a natural moveset the overflow was reachable
+   **because** the Nickname row shipped on 2026-08-19. The feature and the defect
+   arrived in the same commit.
+
+### The controls, both proved red
+
+- **`MAX_PARTY_MENU_ACTIONS` back to 20** — the historical wrong fix from §12.2 —
+  rebuilt: `PASSED 29 / FAILED 2`, reporting shown **11** and **`tilemapTop`
+  253**. That is the u8 wrap of `19 - 22`, observed in-engine for the first time.
+  The test would have caught the first attempt at this fix.
+- **Nickname append disabled**: `PASSED 29 / FAILED 2` — the Nickname assertion
+  and the overflow headline, exactly the two that should move.
+- In-band, every run: the automatic-follower option is turned on, probed, turned
+  off and re-probed, and the demand must fall by **exactly one**. A probe
+  returning a constant satisfies every inequality in the file and dies here.
+
+### ⚠️ A hang found on the way, and why it is NOT a live bug
+
+The first sweep **wedged the emulator at species 1208**. A progress marker (the
+sweep writes the id it is about to probe before probing it) named it:
+**`SPECIES_KLEAVOR`**. It, `SPECIES_SNEASLER` (1211) and `SPECIES_ENAMORUS` have
+**no `gBaseStats` row at all** — so no name, no learnset, and the builder's
+level-up scan walks a NULL row with a `u8` index and no bound. That is exactly
+the §7.11 hang.
+
+**It is not reachable in play**: all three are absent from every roster,
+encounter table and trainer party, and with no base stats the engine cannot
+create one. The sweep now skips ids with no `gBaseStats` row and **counts them
+out loud** — 19 of 1,482. But it stands as a demonstration that **the July fix
+filled four missing ROWS and left the LOOP unbounded**; anything that ever
+produces one of those ids hangs the game.
+
+### ⚠️ NEW LEAD, found while proving the above is unreachable
+
+**`SPECIES_ENAMORUS` is in `sLegendaryFamilyBases[]` (`character_mode.c:214`)
+and has no `gBaseStats` row.** Today that is harmless: the 1% legendary rule
+builds its pool by walking `character->roster[]`, and **no roster contains
+Enamorus** (checked: 0 hits in `src/data/characters.h`), so it can never be
+offered. Kleavor and Sneasler are in no list at all.
+
+**The day anyone adds Enamorus to a roster, the 1% rule offers a wild encounter
+that hangs the game** — and nothing would stop them. `check_species_tables.py`
+gates "every species WITH a `gBaseStats` row has a learnset", so a species with
+**no** base-stats row is outside the check by construction, and Enamorus is a
+perfectly legitimate-looking legendary name for a future roster pass to add.
+
+Cheap fix, not applied here because it is a separate concern with its own
+control to write: assert every entry of `sLegendaryFamilyBases` has a
+`gBaseStats` row. That is the exact shape of the standing warning in §10 —
+*"when you add a checker, list the tables that have NOT bitten yet"*.
+
+### New plumbing
+
+| request | id | note |
+|---|---|---|
+| `CM_REQ_PARTY_MENU_ACTIONS` | 39 | live party slot, touches no state |
+| `CM_REQ_PARTY_ACTION_SWEEP` | 40 | species chunk; `howMany == 0` asks for `NUM_SPECIES` so the test does not mirror a `#define` behind three `#ifdef`s |
+| `CM_REQ_SET_FOLLOWER_OPTION` | 41 | ⚠️ a request and **not** a `gTestStructOffsets` entry: `optionsAutomaticFollower` is a **one-bit bitfield**, so there is no byte a test could write without clobbering the options packed beside it. This was tried first and fails to compile — `cannot take address of bitfield` |
+
+### ⚠️ Trap: `count` is a macro in this tree
+
+`u32 f(u32 first, u32 count)` declared in a header and defined identically in the
+.c fails with **"conflicting types"**, because `count` preprocesses to
+`data[14]` — so the definition's second parameter is not the one the prototype
+declared. The two lines are textually identical and the error names the
+definition, which sends you looking at the wrong thing. **Read the `.i` file**
+(`build/emerald/src/<file>.i`) when a prototype and its definition disagree and
+you can see no difference.
+
+
+## 12.7 — Session 2026-08-21: `MON_DATA_IS_EGG`, root-caused
+
+**§12.3 named the wrong function, and the suspect it named is innocent.** It
+blamed `SetBoxMonData`'s checksum guard — the silent `return` where vanilla sets
+`isBadEgg`. That guard never fires on a healthy mon. What actually happens is in
+the **getter**.
+
+`GetBoxMonData`, for any field past `MON_DATA_ENCRYPT_SEPARATOR`:
+
+```c
+DecryptBoxMon(boxMon);
+if (CalculateBoxMonChecksum(boxMon) != boxMon->checksum) {
+    fix = CalculateBoxMonChecksum(boxMon);
+    SetBoxMonData(boxMon, MON_DATA_CHECKSUM, &fix);   // re-stamps, silently
+}
+if (CalculateBoxMonChecksum(boxMon) != boxMon->checksum) {
+    boxMon->isBadEgg = 1; boxMon->isEgg = 1; substruct3->isEgg = 1;
+} else {
+    boxMon->isBadEgg = 0; boxMon->isEgg = 0; substruct3->isEgg = 0;   // <-- BUG
+}
+```
+
+**Vanilla has no `else`.** This one clears both egg bits on every read of any
+encrypted field of a checksum-healthy Pokemon — and it runs *before* the
+`switch` that reads `substruct3->isEgg`. So the getter zeroes the bit and then
+returns the zero it just wrote: **`GetMonData(mon, MON_DATA_IS_EGG)` cannot
+return 1 in this tree for any Pokemon, ever.**
+
+### Measured, not read — `tools/mgba_scripts/party_egg_diag.lua`
+
+Reads the bits at their STORAGE locations and the checksum the guard compares,
+so "the write was dropped" and "the write landed and the getter lies" stop being
+one observation. On the starter, in order:
+
+| step | sanity | encrypted | checksum |
+|---|---|---|---|
+| before anything | 0 | 0 | 38122 / 38122 MATCH |
+| write SANITY (field 6, unencrypted, no guard) | **1** | 0 | 38122 / 38122 MATCH |
+| write IS_EGG (field 45) | **1** | **1** | — |
+| re-read raw, **no getter in between** | **1** | **1** | **54506 / 54506 MATCH** |
+| one getter | 1 | **0** | — |
+| re-read raw after that getter | **0** | **0** | 38122 / **54506 MISMATCH** |
+| a second getter | 0 | 0 | 38122 / 38122 **repaired** |
+
+The write is correct and durable across frames, and leaves the mon perfectly
+consistent. One getter destroys it.
+
+### Two consequences, and they have very different severities
+
+1. **Permanent and total: eggs cannot be observed to exist.** Any read of an
+   encrypted field un-eggs the mon. `ScriptGiveEgg` is the only live producer of
+   `isEgg = 1` — the daycare sets it **FALSE** in both places (`daycare.c:994`
+   and `:1029`), ROWE hands over hatched babies by design — and
+   `ScriptGiveEgg`'s very next call is `GiveMonToPlayer`, whose first act is
+   `GetMonData(mon, MON_DATA_IS_EGG, NULL)`. The egg is cleared before it
+   reaches the party. ⚠️ **This means the Water Labyrinth Togepi and the
+   mystery-gift Pichu arrive as ordinary Pokemon, not eggs.** Not yet driven
+   in-engine — that is the obvious next run.
+2. **Transient: encrypted writes are dropped for exactly one call.** The clear
+   happens on a decrypted mon and `GetBoxMonData` re-encrypts **without**
+   recomputing the checksum, so the stored checksum is briefly stale and
+   `SetBoxMonData`'s guard drops encrypted writes. Measured as **self-healing**:
+   the next encrypted read re-stamps it. So §12.3's fear — *"every encrypted
+   write is silently droppable"* — is **real but one call wide**, not the
+   open-ended hazard it was written up as.
+
+### ⚠️ The fix is a DESIGN DECISION and is deliberately NOT applied
+
+Two separable changes:
+
+- **Unambiguous bug, no design implication:** the `else` branch mutates the mon
+  and the function re-encrypts without recomputing the checksum. Under *any*
+  intent that is wrong — if you clear the bits you must re-stamp. Safe to fix
+  on its own.
+- **Needs a ruling:** deleting the `else` restores vanilla egg semantics and
+  makes gift eggs real eggs that must be hatched. That is a gameplay change.
+  ROWE looks like it disabled eggs on purpose — `IsBoxMonBadEgg` is hardwired
+  `retVal = FALSE`, `MON_DATA_SANITY_IS_BAD_EGG`'s setter is a documented no-op,
+  and the daycare refuses to make eggs. Whether eggs are *meant* to work here is
+  the user's call, not an agent's.
+
+⚠️ **Until it is fixed, `CM_REQ_SET_MON_EGG` keeps its warning and the ball
+swap's egg-refusal branch stays unproven** — a test built on it would still pass
+by never making an egg. `CM_REQ_EGG_DIAG` (42) is a **diagnostic, not a test**,
+and carries the same warning.
+

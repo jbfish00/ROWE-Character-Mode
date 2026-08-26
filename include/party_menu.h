@@ -16,6 +16,13 @@
 #include "main.h"
 #include "task.h"
 
+// PLAN.md item #7. Both run the real action builder and report how many rows
+// it ATTEMPTED to append as well as how many fit -- see the block comment at
+// the bottom of src/party_menu.c for the result encoding and for why the
+// attempted count is the only one that can settle anything.
+u32 CharacterMode_ProbePartyMenuActions(u8 slotId);
+u32 CharacterMode_SweepPartyMenuActions(u32 first, u32 howMany, u32 *progress);
+
 // seems like the last two fields may have been left as all-purpose vars
 // and the second of the two just happens to only be used in one case
 struct PartyMenu

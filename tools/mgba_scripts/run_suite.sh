@@ -56,8 +56,15 @@ fail=0
 # "ALL RUNS PASS". A tally that is printed but not asserted is decoration.
 EXPECTED_SELFTEST=36
 
+# ⚠️ DERIVED, not restated. This said "ALL 21 RUNS PASS" while 22 ran and all 22
+# passed -- the run was added and the summary literal was not, which is the exact
+# "tally that is printed but not asserted is decoration" shape the comment above
+# warns about, one line lower down in the same file.
+runs=0
+
 run() {
     local name=$1 script=$2 expected=$3; shift 3
+    runs=$((runs + 1))
     env "$@" timeout "$RUN_TIMEOUT" "$MGBA" \
         --script "tools/mgba_scripts/$script" "$ROM" > "$OUT/$name.log" 2>&1
     local res p f st sp sf
@@ -144,13 +151,19 @@ run tmhm_bound     tmhm_bound_e2e.lua          4
 # item callbacks call, and the egg-refusal branch is NOT covered at all. Read
 # the script's header before treating this as full coverage of the two items.
 run qol_items      qol_items_e2e.lua           21
+# PLAN.md item #7. Runs the real party-menu action builder against the live
+# party and against every species, and reports how many rows it ATTEMPTS as
+# well as how many fit. Sweeps 1482 ids in 64-species chunks, so it is the one
+# run whose tally moves if the species table grows -- 31 is with 1463 real
+# species and 19 ids that have no gBaseStats row.
+run party_actions  party_menu_actions_e2e.lua  31
 run costume_persist costume_persist_e2e.lua   12  CM_SAV="$FIX"
 run starter_red    starter_regression.lua      6   CM_PATH=red
 run starter_normal starter_regression.lua      6   CM_PATH=normal
 
 echo
 if [ "$fail" -eq 0 ]; then
-    echo "ALL 21 RUNS PASS.  logs: $OUT"
+    echo "ALL $runs RUNS PASS.  logs: $OUT"
 else
     echo "SUITE FAILED -- read the logs in $OUT"
 fi
