@@ -98,7 +98,7 @@ instead of acting on it; do not make that four.
 
 > ⛔ **The mirror is GONE, and this file is now the only copy.**
 > `/home/jbfish00/Documents/Character Hacks/game_plans/rowe.md` was reduced to a
-> pointer banner on 2026-08-26 (archived at `game_plans/.archive/`). It had been
+> pointer banner on 2026-08-26 and the original **deleted, with no copy**. It had been
 > frozen at the 2026-07-29 tree for four weeks and **three sessions re-derived
 > its drift instead of acting on it**. "Keep them in step" was the old
 > instruction here and it did not survive contact: two hand-maintained copies do
