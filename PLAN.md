@@ -37,6 +37,18 @@ question than the headline claimed.
 the suite covers did not regress". When you next want to write "there is no open
 code work", write "no *known* open code work, last swept <date>" instead.
 
+### 📄 Playing it? Use `PLAYTHROUGH_CHECKLIST.md`
+
+`PLAYTHROUGH_CHECKLIST.md` in this repo is the in-hand list for an actual
+playthrough — written 2026-08-31 against build `c9cd47db`. It deliberately opens
+by telling you what **not** to check: 23 of the 33 coverage rows are proven by
+named assertions that run every suite pass, and re-verifying them by hand costs
+hours and finds nothing. What it does ask for is the four features whose logic
+is asserted and whose **pixels nobody has ever seen** — the faster battle
+messages, fishing items, the shiny frame, and the Water Labyrinth gift — plus
+the handful of rows that always needed a person, and a list of behaviours that
+are deliberate and should not be reported as bugs.
+
 ### Items 1-6 are GONE — the user closed them 2026-08-31
 
 ⛔ **Do not re-derive, re-measure or re-open these.** They were:
