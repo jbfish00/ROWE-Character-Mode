@@ -16,6 +16,7 @@
 #include "overworld.h"
 #include "palette.h"
 #include "constants/rgb.h"  // RGB(), for the shiny frame tint
+#include "constants/species.h"  // SPECIES_NONE, the empty-slot guard
 #include "sound.h"
 #include "sprite.h"
 #include "task.h"
@@ -966,6 +967,28 @@ u16 CharacterMode_ShinyFrameTint(u16 color)
 bool8 CharacterMode_ApplyShinyBattleFrame(void)
 {
     u16 i;
+
+    // ⚠️⚠️ THIS FUNCTION IS NOT ONLY CALLED FROM A BATTLE, and the first version
+    // of it assumed otherwise. LoadBattleTextboxAndBackground() is shared with
+    // evolution_scene.c (twice) and with the mid-battle reload in
+    // battle_script_commands.c -- and the evolution scene NEVER SETS
+    // gBattleTypeFlags, so the trainer/link guard below does not run there.
+    //
+    // That made the bug deterministic rather than unlucky: gEnemyParty is
+    // zeroed EWRAM at boot, so otId and personality are both 0, and
+    // IsShinyOtIdPersonality computes 0 ^ 0 ^ 0 ^ 0 = 0, which is < SHINY_ODDS.
+    // A zeroed party slot IS shiny. So evolving anything by stone before the
+    // first wild battle of a session tinted the EVOLUTION screen gold, every
+    // time, and after a battle it depended on whatever mon was last fought.
+    //
+    // gMain.inBattle is the predicate that actually means "a battle is on"
+    // (set at battle_main.c:619, cleared before the evolution scene runs). The
+    // species check is belt and braces: an empty slot is not a Pokemon, shiny
+    // or otherwise.
+    if (!gMain.inBattle)
+        return FALSE;
+    if (GetMonData(&gEnemyParty[0], MON_DATA_SPECIES, NULL) == SPECIES_NONE)
+        return FALSE;
 
     // A trainer battle has no wild Pokemon to be shiny, and in a link battle
     // gEnemyParty[0] belongs to another human whose mon is not the subject.

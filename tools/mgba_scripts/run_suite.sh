@@ -204,7 +204,7 @@ run fishing_item   fishing_item_e2e.lua        32
 # PLAN.md item #13, the shiny half. The tint is a pure function so the transform
 # is asserted directly; the shiny/non-shiny PAIR is what stops "the frame was
 # tinted" from being satisfied by a build that tints every battle.
-run shiny_frame    shiny_frame_e2e.lua         12
+run shiny_frame    shiny_frame_e2e.lua         15
 # The gift-egg roster roll (2026-08-26). Pool, curve, both exclusions, the
 # Tobias fallback, and a distribution assertion that a FLAT draw fails -- the
 # weighted and flat implementations return the same KIND of answer, so every

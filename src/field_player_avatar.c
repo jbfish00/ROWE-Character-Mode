@@ -1973,7 +1973,13 @@ static void Task_WaitStopSurfing(u8 taskId)
 
 // Some states are jumped to directly, labeled below
 #define FISHING_START_ROUND 3
-#define FISHING_ON_HOOK 5
+// ⚠️ WAS 5, WHICH IS Fishing_CheckForBite. Fishing_MonOnHook is index 6 -- the
+// constant was off by one and got away with it because nothing ever used it as
+// a jump target; both labels below it (FISHING_NO_BITE 8, FISHING_SHOW_RESULT 9)
+// are correct and ARE used. Corrected 2026-08-31 rather than deleted, because
+// an unused-but-wrong constant is a trap armed for whoever writes
+// `task->tStep = FISHING_ON_HOOK` next.
+#define FISHING_ON_HOOK 6
 #define FISHING_NO_BITE 8
 #define FISHING_SHOW_RESULT 9
 

@@ -130,6 +130,20 @@ def load_drops():
 # legitimately joins or leaves this set, edit it deliberately.
 EMPTY_ROSTER_EXPECTED = {"Cogita"}
 
+# The egg pool and the wild-override picker both copy a character's families
+# into a fixed u16[CHARACTER_MAX_ROSTER_CANDIDATES] and stop when it is full --
+# a SILENT truncation that would bias every draw toward the head of the roster
+# and look like nothing at all. Lazarus computes its stride from the observed
+# max and Seaglass asserts rather than truncating; ROWE had neither, so this is
+# the data check that closes it.
+#
+# ⚠️ A C static assert cannot do this job: the roster arrays are generated, and
+# an assert on a generated array's own length is the tautology PLAN.md §12
+# already recorded (SDK_COMPILER_ASSERT(NELEMS(tbl) > LAST_ENUMERATOR) cannot
+# fail when the initializer defines the length). Some invariants are only
+# expressible as a check on the DATA, at the moment it is written.
+MAX_ROSTER_CANDIDATES = 96   # include/character_mode.h
+
 
 def main():
     drops = load_drops()
@@ -168,12 +182,14 @@ def main():
                 order.append(disp)
 
     rosters, table, report, skipped = [], [], [], []
+    roster_lengths = []
     seen_cids = set()
     for disp in order:
         info = mapped[disp]
         if not info["species"]:
             skipped.append(disp)
             continue
+        roster_lengths.append((disp, len(info["species"])))
         cid = ident(disp)
         if cid in seen_cids:
             raise SystemExit("duplicate character identifier: " + cid)
@@ -254,6 +270,19 @@ def main():
 
     with open(os.path.join(TARGET, "src/data/characters.h"), "w") as f:
         f.write(out)
+    # The candidate-array bound, checked against the data rather than asserted
+    # in C. Measured 2026-08-31: the longest roster is Goh at 86 of 96.
+    overflowing = [(d, n) for d, n in roster_lengths if n > MAX_ROSTER_CANDIDATES]
+    if overflowing:
+        raise SystemExit(
+            "roster longer than CHARACTER_MAX_ROSTER_CANDIDATES (%d):\n%s\n"
+            "CharacterMode_BuildEggPool and the wild-override picker copy into "
+            "a fixed array of that size and STOP when it is full -- silently, "
+            "biasing every draw toward the head of the roster. Raise the "
+            "constant in include/character_mode.h and rebuild."
+            % (MAX_ROSTER_CANDIDATES,
+               "\n".join("  %-20s %d families" % (d, n) for d, n in overflowing)))
+
     # The inventory check, BEFORE anything is written: a character who silently
     # produces no roster is either a data bug (Iscan was, for three weeks) or a
     # deliberate exemption, and there is no third case.

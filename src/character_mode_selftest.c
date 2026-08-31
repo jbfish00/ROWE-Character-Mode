@@ -468,6 +468,11 @@ enum
                            //         must come back CLEAR -- without this pair
                            //         "the frame was tinted" is equally true of
                            //         a build that tints every battle.
+                           //   op 3: a SHINY lead but NO battle in progress --
+                           //         the evolution scene's exact shape, which
+                           //         shares LoadBattleTextboxAndBackground and
+                           //         never sets gBattleTypeFlags. Must also
+                           //         come back clear.
                            // ⚠️ ops 1 and 2 RESTORE the palette afterwards:
                            // they run on the overworld, where those 32 entries
                            // are the live overworld palette.
@@ -1312,13 +1317,14 @@ void CharacterMode_PumpTestMailbox(void)
             {
                 mb->result = 0x80000000 | CharacterMode_ShinyFrameTint(mb->argB);
             }
-            else if (op == 1 || op == 2)
+            else if (op == 1 || op == 2 || op == 3)
             {
                 u16 saveUnfaded[32];
                 u16 saveFaded[32];
                 u16 i;
                 u32 changed = 0;
                 bool8 applied;
+                bool8 savedInBattle;
 
                 for (i = 0; i < 32; i++)
                 {
@@ -1329,11 +1335,26 @@ void CharacterMode_PumpTestMailbox(void)
                 // otId ^ personality == 0 is shiny by construction, so no
                 // brute-force search is needed for the positive case. For the
                 // negative one, a personality whose halves cannot cancel a zero
-                // otId.
+                // otId. op 3 uses the SHINY setup deliberately -- see below.
                 CreateMon(&gEnemyParty[0], SPECIES_PIKACHU, 5, 32, TRUE,
-                          (op == 1) ? 0 : 0x1234ABCD, OT_ID_PRESET, 0, 0);
+                          (op == 2) ? 0x1234ABCD : 0, OT_ID_PRESET, 0, 0);
 
+                // ⭐ op 3 IS THE REGRESSION TEST for the evolution-scene bug.
+                // LoadBattleTextboxAndBackground is shared with
+                // evolution_scene.c, which never sets gBattleTypeFlags, so a
+                // guard built only out of those flags did not fire there -- and
+                // a zeroed gEnemyParty slot reads as SHINY (0^0^0^0 = 0 <
+                // SHINY_ODDS). op 3 asks for the tint with a genuinely shiny
+                // lead but NO battle in progress, which is the evolution
+                // scene's exact shape, and the answer must still be no.
+                //
+                // The mailbox pump runs from CB2_Overworld, where inBattle is
+                // already 0, so ops 1 and 2 have to assert it to reach the
+                // decision at all. It is restored immediately.
+                savedInBattle = gMain.inBattle;
+                gMain.inBattle = (op == 3) ? FALSE : TRUE;
                 applied = CharacterMode_ApplyShinyBattleFrame();
+                gMain.inBattle = savedInBattle;
 
                 for (i = 0; i < 32; i++)
                 {
@@ -1427,7 +1448,16 @@ void CharacterMode_PumpTestMailbox(void)
             u8 op = mb->argA & 0xFF;
             u8 slot = mb->argA >> 8;
 
-            if (op == 0 && slot < PARTY_SIZE)
+            // ⚠️ THE FULL-DAYCARE CHECK IS OURS TO MAKE, and it is not
+            // optional. Daycare_FindEmptySpot returns -1 when both slots are
+            // taken and StorePokemonInEmptyDaycareSlot uses that return
+            // UNCHECKED -- &daycare->mons[-1] is an out-of-bounds WRITE, into
+            // whatever precedes the daycare in SaveBlock1. Vanilla never
+            // reaches it because the daycare SCRIPT checks capacity before
+            // offering to deposit; this mailbox is an ungated caller of the
+            // same function, so the check has to live here.
+            if (op == 0 && slot < PARTY_SIZE
+                && CountPokemonInDaycare(&gSaveBlock1Ptr->daycare) < DAYCARE_MON_COUNT)
             {
                 // GetCursorSelectionMonId() returns gPartyMenu.slotId, so this
                 // is the deposit the party menu performs, not a copy of it.

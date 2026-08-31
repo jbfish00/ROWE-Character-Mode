@@ -14,9 +14,13 @@ suite. See §10 for that session.
 (re-derived 2026-08-20; items 7-14 worked 2026-08-30).** Fourteen items, split
 by who can do them: **items 7-14 were the agent's eight, and all eight are now
 closed** — seven built, one (music resume) a considered refusal with its reasons
-written down. **What is left is items 1-6, and every one of them needs you or
-needs art that does not exist.** Read §14 for what changed and §12 for the
-sessions before it; §0 and §7 further down are older than both.
+written down. ⛔ **Items 1-6 were closed by the user on 2026-08-31 as resolved or
+not needed, and must not be re-opened.** Read §14 for what changed and §15 for
+the adversarial sweep that followed it; §0 and §7 further down are older.
+
+🔴 **THE OPEN-WORK LIST IS NOW EMPTY — and read §15 before believing that.**
+The sweep that ran immediately after §14 found a bug in §14's own new code, in
+shipping paths, that all 28 runs had passed over.
 
 ⚠️ **The suite is 28 runs as of 2026-08-30** (was 22), and the ROM is
 `3a8250d70f35bbca03b5081809d54f10`. **Every other md5 in this file is a record of an older
@@ -33,21 +37,23 @@ question than the headline claimed.
 the suite covers did not regress". When you next want to write "there is no open
 code work", write "no *known* open code work, last swept <date>" instead.
 
-### Needs a person — an agent cannot do these
+### Items 1-6 are GONE — the user closed them 2026-08-31
 
-| # | item | why it is yours |
+⛔ **Do not re-derive, re-measure or re-open these.** They were:
+
+| # | was | why it is gone |
 |---|---|---|
-| 1 | **The playthrough** | **23 of 33** coverage rows are already machine-proven and 6 more partly. Read `../Character Hacks/game_plans/rowe_playthrough_coverage.md` BEFORE working the list or you will re-verify by hand what the suite asserts every run. What is genuinely left: reach the credits, look at your character animate, and pick someone who is **not Red** (the default, and a mid-table 7.6% early roster — every suite run uses him, so the automated coverage is built on him too) |
-| 2 | **Send the two art-permission requests** | `../Character Hacks/PERMISSION_REQUESTS.md`, drafted and verified send-ready 2026-08-03, **still unsent**. Emerald Enhanced (closes Lusamine + Lillie's back pic) and Wolfang62 (four professors). They must come from your own account |
-| 3 | **Decide on the Professor Elm mugshot** | `../Character Hacks/art_harvest_2026-08-19/` — format-clean 64×64 by **Mudskip**, and the ONLY candidate in the entire Heart & Soul family. It is a head-and-shoulders bust, not a full-body trainer sprite like every other `TRAINER_PIC_*`. Import steps and attribution are in that README. Pure look-and-feel; an agent should not make this call |
+| 1 | the playthrough | **resolved or not needed** — the user's call |
+| 2 | two art-permission emails | same |
+| 3 | the Prof. Elm mugshot decision | same |
+| 4 | 52 front / 217 back / 64 overworld pics | same |
+| 5 | selection-screen portrait / 10th mode row | same |
+| 6 | female icons for 15 gendered species | same |
 
-### Needs art that does not exist yet
-
-| # | item | state |
-|---|---|---|
-| 4 | **52 front / 217 back / 64 overworld** of 236 | Derived 2026-08-20 from `tools/character_mode/sprite_report.txt`, not copied. **Every plausible donor is now measured empty**: TAAR (all 7,380 PNGs), Emerald Rogue (consumed), Recharged Yellow (no assets), and as of 2026-08-19 the whole Heart & Soul family — SoulGold, HnS and smithk200's expansion port — swept whole-tree, by constant, and by PNG dimension (§12.4). ⚠️ **The back-pic hypothesis is dead and it was the plausible one**: a Johto remake ought to carry Gen 1/2 leader backs and carries **none**. This needs a new class of source or commissioned art. The Hisui cast (25 characters) has **zero art of any kind in any slot** |
-| 5 | **Selection-screen portrait / 10th mode row** | §7.4. Needs the `ui_menu` tilemap redrawn — re-verified 2026-08-03 by rendering the screen, largest free square is **0×0**. ⚠️ Do not re-measure this a fourth time |
-| 6 | **Female icons for 15 gendered species** | `78512b0b` (2026-08-17) made `pokemon_icon.c` fall back to the male icon where the female table has NULL rows. That closed the **crash**; it did not author art. Starly line, Bidoof, Kricketot line, Shinx, Combee, Hippopotas line |
+They are recorded here only so a future session does not "discover" them again
+in an older section of this file and start work. §12.4's donor measurements and
+§7.4's 0×0 free-square finding stay valid as history; they are simply no longer
+open work.
 
 ### Ordinary code and test work — ✅ ALL EIGHT CLOSED 2026-08-30 (§14)
 
@@ -2570,3 +2576,132 @@ was cut off mid-run with `fishing_dead` applied and a TAMPERED ROM on disk
 what stops a double-apply. ⭐ **Never leave a tamper cycle half-run — and never
 run a generator until the restore is confirmed by md5** (§13's 714 corrupted
 lines came from exactly that).
+
+
+## 15 — Session 2026-08-31: the adversarial sweep §14 had not done
+
+**§14 ended with 28 green runs and twelve tamper results, and that is not the
+same thing as "the code is correct".** It is the same gap the 2026-08-09 sweep
+found nine bugs in. Asked directly whether the code had been adversarially
+checked, the honest answer was **no** — so this is that pass, aimed first at the
+code §14 had just added to SHIPPING paths.
+
+### 🔴 A real bug, in §14's own new code, that 28 green runs walked straight past
+
+**The shiny battle frame tinted the EVOLUTION screen.** `CharacterMode_ApplyShinyBattleFrame`
+was hooked into `LoadBattleTextboxAndBackground` and guarded on
+`gBattleTypeFlags`. But that function is **not battle-only**: it is called from
+`evolution_scene.c` **twice**, from `reshow_battle_screen.c`, and from a
+mid-battle reload in `battle_script_commands.c` — and **the evolution scene
+never sets `gBattleTypeFlags`**, so the guard did not run there.
+
+⭐ **And it was DETERMINISTIC, not unlucky.** `gEnemyParty` is zeroed EWRAM at
+boot, so `otId` and `personality` are both 0, and `IsShinyOtIdPersonality`
+computes `0 ^ 0 ^ 0 ^ 0 = 0`, which is `< SHINY_ODDS`. **A zeroed party slot IS
+shiny.** So evolving anything by stone before the session's first wild battle
+tinted the evolution screen gold every single time; after a battle it depended
+on whatever was last fought.
+
+Fixed with `gMain.inBattle` — the predicate that actually means "a battle is on"
+(set at `battle_main.c:619`, cleared before the evolution scene) — plus a
+`SPECIES_NONE` check, because an empty slot is not a Pokemon, shiny or
+otherwise. `shiny_frame_e2e.lua` gained **op 3**: a genuinely shiny lead with no
+battle in progress, which is the evolution scene's exact shape, and the answer
+must still be no. Negative-tested: removing the guard fails exactly those two
+new assertions (13/2), and the restore reproduces the ROM.
+
+⭐⭐ **THE LESSON, and it is not "test more".** The layer had a shiny case AND a
+non-shiny case, which is the discriminating pair this workspace keeps asking
+for — and it still missed this, because **both cases were asked from inside a
+battle.** The bug was in a caller the test never modelled. **A pair of cases
+proves the decision; it says nothing about who is allowed to ask.** The way this
+was actually found was reading `grep -rn` over the callers of the function I had
+hooked — which took two minutes and should have happened before the first run.
+
+### 🔴 A latent out-of-bounds WRITE, inherited from vanilla, that §14 uncovered
+
+`Daycare_FindEmptySpot` returns **-1** when both slots are full, and
+`StorePokemonInEmptyDaycareSlot` uses that return **unchecked**:
+`&daycare->mons[-1]` is a write before the daycare struct, into SaveBlock1.
+Vanilla never reaches it because the daycare *script* checks capacity before
+offering to deposit — but §14's `CM_REQ_DAYCARE` added an **ungated caller of
+the same function**. Guarded in the mailbox rather than in `daycare.c`: the
+game's own path is not broken, and changing vanilla's behaviour is a bigger
+claim than this warrants. ⚠️ **Any future test that deposits a third mon would
+have corrupted the save silently.**
+
+### 🟡 An off-by-one constant, unused and therefore armed
+
+`FISHING_ON_HOOK` was **5**; `Fishing_MonOnHook` is index **6**. It got away
+with it because nothing ever used it as a jump target — only `FISHING_NO_BITE`
+(8) and `FISHING_SHOW_RESULT` (9) are used, and both are correct. Corrected
+rather than deleted: an unused-but-wrong constant is a trap armed for whoever
+writes `task->tStep = FISHING_ON_HOOK` next.
+
+### 🟡 The silent candidate-array cap, closed as a DATA check
+
+`CharacterMode_BuildEggPool` copies into `u16[CHARACTER_MAX_ROSTER_CANDIDATES]`
+and stops when full — silent truncation that would bias every egg draw toward
+the head of the roster. ✅ Measured: the constant is **96** and the longest
+roster is **Goh at 86**, so nothing truncates today, with 10 families of
+headroom. `emit_characters.py` now **fails** if any roster exceeds it, naming
+the offenders. ⚠️ Deliberately a data check and not a C static assert: PLAN.md
+§12 already recorded that an assert on a generated array's own length is a
+tautology that cannot fail.
+
+### ✅ Four things that were checked and are CLEAN — do not re-chase
+
+1. **`GetSetPokedexFlag`'s null-species guard** — the defect class that would
+   have made the egg feature's "already caught" filter write out of bounds into
+   `gPokemonStorage`. It guards **both** ends (`nationalDexNo == 0` returns 0,
+   and `index >= DEX_FLAGS_NO` returns 0). The egg path is safe.
+2. **String buffer overflow on the 12-character nickname** — the class that
+   produced *nine* bugs during the name-length work. `gStringVar2` is
+   `[0x100]`; the op writes 13 bytes.
+3. **The fishing task's state transitions** — `FISHING_SHOW_RESULT` (9) is
+   `Fishing_NoMon`, and the item path joins the same tail the "not even a
+   nibble" path uses. `tFrameCounter` is not read by any state on that tail.
+4. **The battle-script reorder's other entry point** — `BattleScript_StatUpMsg`
+   is entered by the stat-STEALING path and keeps its own message-only copy, so
+   it did not inherit an animation.
+
+⚠️ **WHAT THIS SWEEP DID NOT DO.** It covered the code this session touched and
+the shipping paths those reach. **It is not a whole-codebase audit** — ROWE is a
+full pokeemerald decomp, and the 2026-08-09 sweep that found nine bugs was
+scoped to Character Mode alone and still took a session. Anything outside
+§14's diff and its callers remains unswept, and this file should not be read as
+saying otherwise.
+
+### ⚠️ How §15's suite evidence was actually gathered — read before quoting it
+
+**All 28 layers are green on `c9cd47db5d1e0c31abed0d62dd7e3cfb`, but NOT as one
+run.** Two attempts at a full background suite were killed (the first at 15 of
+28, the second during the fixture step), so the evidence was assembled as:
+
+| how | which | result |
+|---|---|---|
+| the killed full run, before it stopped | boot … trade_gate (15) | all PASS |
+| driven one at a time, in the foreground | the remaining 13 | all PASS |
+
+Every one of the 13 was checked against the tally `run_suite.sh` declares for
+it, and every log carries `CM-SELFTEST: 36 passed, 0 failed`:
+
+    pre_evolution 2 · tmhm_bound 4 · qol_items 21 · party_actions 36
+    learnset_sweep 6 · daycare 18 · egg_bits 7 · fishing_item 32
+    shiny_frame 15 · egg_roster 24 · costume_persist 12
+    starter_red 6 · starter_normal 6
+
+⚠️ **Two honest weaknesses, stated rather than smoothed over.**
+1. **It is 15 + 13, not one clean 28.** Both halves ran against the identical
+   md5, which is what makes them composable at all — this repo's rule is that a
+   suite recorded against a binary you do not ship says nothing about the one
+   you do, and that rule *is* satisfied. But a single run is stronger.
+2. **Running a layer by hand bypasses the runner's tally ASSERTION.** The
+   counts above were compared by eye against the declared values rather than by
+   `run_suite.sh` failing on a mismatch. They all match; the machine did not say
+   so.
+
+**The stronger artifact is one command away on an unchanged tree:**
+`bash tools/mgba_scripts/run_suite.sh` should report ALL 28 RUNS PASS. Anyone
+picking this up should run it once and replace this section with that line.
+

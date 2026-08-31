@@ -29,7 +29,7 @@
 local H = dofile("tools/mgba_scripts/harness.lua")
 local D = dofile("tools/mgba_scripts/intro_drive.lua")(H)
 
-local OP_TINT, OP_SHINY, OP_NOT_SHINY = 0, 1, 2
+local OP_TINT, OP_SHINY, OP_NOT_SHINY, OP_NO_BATTLE = 0, 1, 2, 3
 
 -- The blend's fixed point: r = (r+31)/2, g = (g+27)/2, b = (b+8)/2 all settle
 -- here, so this is the ONE colour the tint legitimately leaves alone. Asserting
@@ -98,6 +98,26 @@ D.mbStep("a NON-shiny wild lead leaves it alone",
         H.assertTrue("the request ran", bit(r, 31))
         H.assertTrue("it did NOT report applying the frame", not bit(r, 30))
         H.assertTrue("and not one palette entry changed", not bit(r, 29))
+    end)
+
+-- ⭐ THE REGRESSION TEST for the evolution-scene bug (found 2026-08-31 by
+-- reading the callers, not by a run). LoadBattleTextboxAndBackground is shared
+-- with evolution_scene.c, which never sets gBattleTypeFlags -- so a guard built
+-- only from those flags did not fire there. And gEnemyParty is zeroed EWRAM at
+-- boot, where otId ^ personality is 0, which IS shiny: evolving anything by
+-- stone before the session's first wild battle tinted the EVOLUTION screen,
+-- deterministically.
+--
+-- So: a genuinely SHINY lead, with no battle in progress. The answer must still
+-- be no.
+D.mbStep("a shiny lead with NO battle in progress is refused",
+    D.REQ.SHINY_FRAME, OP_NO_BATTLE, 0, function()
+        local r = D.mbResult()
+        H.assertTrue("the request ran", bit(r, 31))
+        H.assertTrue("it did NOT report applying the frame outside a battle",
+                     not bit(r, 30))
+        H.assertTrue("and not one palette entry changed -- the evolution scene "
+                     .. "keeps its own colours", not bit(r, 29))
     end)
 
 D.run()
