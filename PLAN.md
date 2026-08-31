@@ -2455,17 +2455,28 @@ rules before running it.** Both of these would have shown up as a red run at
 best, and at worst — the encoding one — as a green run that was right by
 coincidence.
 
-### ⚠️ A near-miss worth encoding: a "doc" generator also writes a SUITE input
+### A "doc" generator also writes a SUITE input — structurally, if not this time
 
-Regenerating the roster data changed the character count 236 → 237, and
+Regenerating the roster data changed the character count 236 → 237, so
 `ENCOUNTERS.md` was regenerated to match. **`emit_encounter_docs.py` also writes
-`tools/mgba_scripts/encounter_probes.lua`** — 30 engine cross-check probes that
-`encounter_doc_e2e.lua` reads. Left alone, the suite would have run 236-character
-probes against a 237-character ROM and gone red on a layer that had nothing wrong
-with it.
+`tools/mgba_scripts/encounter_probes.lua`**, which `encounter_doc_e2e.lua`
+`dofile`s — so that generator is not a documentation step, it feeds the suite.
 
-⭐ **So "regenerate the docs" is not a documentation step — it is part of making
-the suite match the ROM.** The full derived set after any roster change is:
+⚠️ **A first draft of this section claimed the suite "would have gone red" on
+stale probes. That was not measured, and it is FALSE.** ✅ Checked: the
+regenerated `encounter_probes.lua` is **byte-identical to HEAD** — the 30 engine
+cross-check probes do not happen to cover any of the five characters that gained
+species, so `encounter_doc` (60 assertions) would have passed either way. What
+was actually stale was `ENCOUNTERS.md` itself, a document.
+
+⭐ **Recording the correction rather than the tidy version, because the tidy
+version is this workspace's most repeated mistake**: a plausible claim about what
+some code would have done, written down without running it. The structural point
+survives and is worth keeping — *a generator whose output the suite reads is part
+of the build, not part of the documentation* — but this session did not
+demonstrate it.
+
+The full derived set after any roster change:
 
 | generator | writes | affects |
 |---|---|---|
@@ -2473,11 +2484,12 @@ the suite match the ROM.** The full derived set after any roster change is:
 | `derive_drops.py` | `character_drops.json` | who is selectable |
 | `emit_characters.py` | `src/data/characters.h` | **the ROM** |
 | `emit_roster_docs.py` | `ROSTERS.md`, `ROSTERS_SPRITES.md`, `sprites/gen_*.md` | `verify_docs.py` |
-| `emit_encounter_docs.py` | `ENCOUNTERS.md` **and `encounter_probes.lua`** | **the suite** |
+| `emit_encounter_docs.py` | `ENCOUNTERS.md` **and `encounter_probes.lua`** | docs **and the suite** |
 | `emit_pre_evolution.py` | `src/data/pokemon/pre_evolution.h` | **the ROM** |
 
 ✅ All six re-run and **byte-for-byte reproducible** on 2026-08-30;
-`pre_evolution.h` was already current, so the ROM was unaffected by it.
+`pre_evolution.h` and `encounter_probes.lua` were already current, so neither the
+ROM nor the suite was affected by them.
 
 ### What item #11's inventory actually covers
 

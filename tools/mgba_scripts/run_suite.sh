@@ -38,8 +38,10 @@
 # 6. REGENERATE THE DERIVED ARTIFACTS BEFORE RUNNING, not after. emit_encounter_docs.py
 #    writes tools/mgba_scripts/encounter_probes.lua, which encounter_doc_e2e.lua
 #    READS -- so a roster change that is not followed by that generator makes
-#    this suite check an old character count against a new ROM and go red on a
-#    layer that has nothing wrong with it.
+#    this suite check an old character count against a new ROM. (Measured
+#    2026-08-30: on that occasion the probes happened NOT to change, so nothing
+#    went red -- the hazard is structural, not something this repo has been bitten
+#    by yet.)
 #
 # 4. `.sav` files are BUILD ARTIFACTS. The 12/12 name change bumped the
 #    per-sector signature, so any pre-2026-07-26 .sav is refused by design and
