@@ -1157,6 +1157,7 @@ extern const u8 gText_SoldOut2[];
 extern const u8 gText_OhABite[];
 extern const u8 gText_PokemonOnHook[];
 extern const u8 gText_NotEvenANibble[];
+extern const u8 gText_FishedUpItem[];
 extern const u8 gText_ItGotAway[];
 
 extern const u8 gText_HallOfFame[];

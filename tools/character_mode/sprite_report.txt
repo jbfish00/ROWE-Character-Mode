@@ -235,5 +235,6 @@ Tobias           WARNING: all-legendary roster, starters fall back to full roste
 Tucker           ow=OBJ_EVENT_GFX_CM_TUCKER            front=TRAINER_PIC_DOME_ACE_TUCKER back=-
 Volo             ow=-                                  front=-                          back=-
 Zisu             ow=-                                  front=-                          back=-
+Iscan            ow=-                                  front=-                          back=-
 
-Skipped (empty roster): Cogita, Iscan
+Skipped (empty roster): Cogita

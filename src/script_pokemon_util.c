@@ -108,10 +108,63 @@ u8 ScriptGiveMon(u16 species, u8 level, u16 item, u32 ability, u32 unused2, u8 u
     return sentToPc;
 }
 
+// ===========================================================================
+// EGG-PATH INVENTORY -- every site in this tree that hands the player a mon
+// through an "egg", and what each one does about Character Mode.
+// ===========================================================================
+//
+// The workspace's lesson #1 is that a checker which greps files that ALREADY
+// contain a hook cannot see a bypass in a file with no hook, and that the fix
+// is an inventory: pin every site, each marked gated / deliberately-ungated, so
+// a new path fails a check instead of arriving silently. tools/check_egg_paths.py
+// enforces this list; if you add an egg path, add it here or the build check fails.
+//
+//   1. ScriptGiveEgg (below)                  -- GATED. The two `giveegg` script
+//      sites both reach the player through here: FiveIsland_WaterLabyrinth
+//      (Togepi) and mevent_pichu (Pichu).
+//   2. _GiveEggFromDaycare (src/daycare.c)    -- DELIBERATELY UNGATED, ruled by
+//      the user 2026-08-26: breeding keeps parent-species inheritance. It
+//      already hands over a hatched baby rather than an egg (isEgg = FALSE at
+//      daycare.c:994 and :1029), which is ROWE's own pre-existing design.
+//      ⚠️ This is an EXEMPTION, not an oversight. Do not "fix" it by routing it
+//      through CharacterMode_RollEggSpecies without asking -- it would turn
+//      breeding into a roster slot machine, which was considered and rejected.
+//   3. CreateEgg (src/daycare.c)              -- constructor only, no player
+//      hand-off; both callers are covered above.
+//
 u8 ScriptGiveEgg(u16 species)
 {
     struct Pokemon mon;
     u8 isEgg;
+    u16 rolled;
+
+    // Character Mode: the gift is a weighted draw from the active character's
+    // roster, biased toward rare families, with already-caught ones excluded.
+    // SPECIES_NONE means "not in Character Mode, or this character has nothing
+    // drawable" -- in both cases fall through to the scripted species, so the
+    // gift is never silently nothing.
+    rolled = CharacterMode_RollEggSpecies();
+    if (rolled != SPECIES_NONE)
+    {
+        const struct CharacterInfo *character = GetActiveCharacter();
+
+        // Level EGG_HATCH_LEVEL, base stage, delivered as an ORDINARY Pokemon.
+        // ⚠️ MON_DATA_IS_EGG is deliberately NOT set. Eggs stay disabled in this
+        // tree by the user's ruling of 2026-08-26 -- see PLAN.md §12.7, where
+        // GetBoxMonData's non-vanilla `else` clears the egg bits on every read,
+        // so setting it here would be a no-op that merely looked meaningful.
+        CreateEgg(&mon, rolled, TRUE);
+
+        // Buffered for EventScript_CharacterModeAnnounceGift. An override that
+        // hands over a family BASE is unobservable without naming it: the
+        // player cannot tell a Beldum the feature chose from a Beldum the
+        // script always gave.
+        GetSpeciesName(gStringVar1, rolled);
+        if (character != NULL)
+            StringCopy(gStringVar2, character->name);
+
+        return GiveMonToPlayer(&mon);
+    }
 
     CreateEgg(&mon, species, TRUE);
     isEgg = TRUE;

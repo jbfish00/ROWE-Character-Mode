@@ -11,57 +11,27 @@ file is **state and next steps**. Re-derived against this working tree on
 suite. See §10 for that session.
 
 🛑 **THE "What remains" TABLE JUST BELOW IS THE CURRENT OPEN-WORK LIST
-(re-derived 2026-08-20, item 7 closed 2026-08-21).** Fourteen items, split by
-who can actually do them: three need you, three need art that does not exist,
-and **eight were ordinary code and test work — one of which is now done and one
-half-done**. Read that table and §12; §0 and §7 further down are older.
-⚠️ The suite is **22 runs**, not 21, and it is **22/22 green on the ROM this
-tree builds today** — `3ef6d2d842fabf005e2a5d67a0b1a4f9`, map digest
-`03f4cfab122effaf`, re-run 2026-08-26 (§12.8). Every other md5 in this file is
-a record of an older build; do not read one as current.
+(re-derived 2026-08-20; items 7-14 worked 2026-08-30).** Fourteen items, split
+by who can do them: **items 7-14 were the agent's eight, and all eight are now
+closed** — seven built, one (music resume) a considered refusal with its reasons
+written down. **What is left is items 1-6, and every one of them needs you or
+needs art that does not exist.** Read §14 for what changed and §12 for the
+sessions before it; §0 and §7 further down are older than both.
 
-🛑 **§0 AND §7 ARE OUT OF DATE (2026-08-19).** Three
-specific things in them are now wrong, and all three are the kind that read as
-authoritative: (1) **every one of §10's six "still unverified" leads was closed
-on 2026-08-17**, and this file carried them as open; (2) the **ROM md5 is cited
-three different ways in this file and all three are stale** — it is
-`3ef6d2d842fabf005e2a5d67a0b1a4f9` at HEAD (it was `ead4fc6d…` when this
-paragraph was written); (3) the suite is **22 runs**, not 19.
-§12 also carries the session's own find — an 8-byte party-menu buffer the game
-can write 16 entries into — and the measured, final answer on the SoulGold
-sprite question.
+⚠️ **The suite is 28 runs as of 2026-08-30** (was 22), and the ROM is
+`3a8250d70f35bbca03b5081809d54f10`. **Every other md5 in this file is a record of an older
+build; do not read one as current.**
 
 🔴 **"There is no open code work" was TRUE and WRONG, and that is the lesson of
 2026-08-09.** This file carried that headline for six days on the strength of an
 18/18 green suite. An adversarial sweep then found **nine confirmed bugs**,
-including two memory-safety defects reachable in ordinary play — one of them in
-the first five minutes of a Nemona playthrough. Every one predated the green
-run. The suite was not lying; it was answering a narrower question than the
-headline claimed, and **nothing in it entered a Battle Frontier facility, opened
-the party menu with a Gen 9 starter, or drove a PC deposit.**
+including two memory-safety defects reachable in ordinary play. Every one
+predated the green run. The suite was not lying; it was answering a narrower
+question than the headline claimed.
 
 ⚠️ **Do not read a green suite as "the tree is correct".** Read it as "the paths
-the suite covers did not regress". The gap between those two sentences is where
-all nine lived. When you next want to write "there is no open code work", write
-"no *known* open code work, last swept <date>" instead.
-
-✅ **All nine are fixed as of 2026-08-09** (§10), suite 19/19 on ROM
-`90fa8e3cf4fe57a0c092dd55c1743c60`. Superseded 2026-08-10 by the sprite import
-(§11): current ROM `4d5cd678a8982fc82d66a75b8342e34a`, map digest
-`bb34c4b8a4fa5e6f`, suite still 19/19.
-
-**What remains — re-derived against the tree on 2026-08-20.**
-
-⚠️ The previous version of this table opened *"and none of it is an agent's"*.
-**That is no longer true**, and it was the sentence that made this section stop
-being read: **rows 7-14 below are ordinary code and test work**, and eight of
-them are things an agent should pick up. The old table also still carried a
-"push the local commits" row that had been done since 2026-08-09.
-
-**Nothing here is KNOWN broken.** Suite **22/22** on
-`3ef6d2d842fabf005e2a5d67a0b1a4f9` (map digest `03f4cfab122effaf`), selftest
-36/36 on every run, all five static checkers green, tree clean and level with
-`origin/character-mode` at `684e7255`. What follows is unfinished, not failing.
+the suite covers did not regress". When you next want to write "there is no open
+code work", write "no *known* open code work, last swept <date>" instead.
 
 ### Needs a person — an agent cannot do these
 
@@ -79,18 +49,18 @@ them are things an agent should pick up. The old table also still carried a
 | 5 | **Selection-screen portrait / 10th mode row** | §7.4. Needs the `ui_menu` tilemap redrawn — re-verified 2026-08-03 by rendering the screen, largest free square is **0×0**. ⚠️ Do not re-measure this a fourth time |
 | 6 | **Female icons for 15 gendered species** | `78512b0b` (2026-08-17) made `pokemon_icon.c` fall back to the male icon where the female table has NULL rows. That closed the **crash**; it did not author art. Starly line, Bidoof, Kricketot line, Shinx, Combee, Hippopotas line |
 
-### Ordinary code and test work — an agent CAN do these
+### Ordinary code and test work — ✅ ALL EIGHT CLOSED 2026-08-30 (§14)
 
-| # | item | why it matters |
+| # | item | outcome |
 |---|---|---|
-| 7 | ✅ **DONE 2026-08-21 — the bound is MEASURED** | §12.6. `party_menu_actions_e2e.lua` (31) runs the real builder against the live party and all 1,463 species. **Both halves confirmed in-engine**: natural-moveset demand peaks at **9** (Charizard), which overflowed the old `u8[8]`; teaching Cut + Secret Power reaches **11**, which exceeds the window. The historical `MAX=20` fix, rebuilt as a control, reports **`tilemapTop` 253** — the u8 wrap, observed rather than argued |
-| 8 | **The Nickname row: half proven 2026-08-21** | §12.6. Its PRESENCE in the action list is now asserted on a non-egg party mon, and deleting the append turns the run red. ⚠️ **The row's BEHAVIOUR is still undriven** — `CursorCb_Nickname` → naming screen → write is party-menu UI, which no headless run in this repo drives. Do not read "the Nickname row is tested" out of a green suite |
-| 9 | ✅ **ROOT-CAUSED 2026-08-21 — and §12.3 blamed the wrong function** | §12.7. It is the **getter**, not the write guard: `GetBoxMonData` has an `else` branch vanilla does not, which zeroes both egg bits on every read of any encrypted field of a checksum-healthy mon — *before* the switch reads them. So `GetMonData(MON_DATA_IS_EGG)` **can never return 1**, anywhere. ⚠️ The FIX is a design decision and is NOT applied; see §12.7. Old text: §12.3. Neither egg bit can be written on a party mon in this tree, with the write proved to run. `SetBoxMonData`'s checksum guard is a silent `return` here where vanilla sets `isBadEgg` — so if that guard is firing, **every** encrypted write is silently droppable under some condition, and that is much bigger than the egg. Until it is understood, the ball swap's egg refusal is unproven |
-| 10 | **`TakeSelectedPokemonFromDaycare` has no e2e** | The ungated-party-writer bug was fixed in `78512b0b`, but no script in `tools/mgba_scripts/` drives the daycare-withdraw path at all. Model it on `pc_sweep_e2e.lua` |
-| 11 | **Only Falkner is proven playable as his own gym leader** | `johto_gym_e2e.lua` is the sole leader-as-player run; the other 15 leaders/E4 with rosters have no equivalent. The static argument that it generalises is in the 2026-07-17 session notes — it is an argument, not a run |
-| 12 | **The learnset NULL sweep spot-checks 4 species** | `basculegion_hang_e2e.lua` covers exactly the four that hung the game in July. `tmhm_bound_e2e` and `pre_evolution_e2e` sweep exhaustively; this one does not, so a fifth malformed row would not be caught |
-| 13 | **Two SoulGold QoL groups not ported** | Requested 2026-08-19, not built: **faster battle messages** (combine stat up/down and play them during the animation) + **music resumes** after battle instead of restarting; and a **shiny battle frame** + **fishing that yields items**. Music resume is the risky one — it needs `gMPlayInfo_BGM` state saved across the battle |
-| 14 | **Cogita and Iscan emit no roster at all** | `emit_characters.py` reports `Skipped (empty roster): Cogita, Iscan`. They are not selectable, so nothing is broken — but two named characters silently produce nothing, and that has never been written down before |
+| 7 | the party-menu bound | ✅ done 2026-08-21. Demand peaks at **9** (Charizard); teaching Cut + Secret Power reaches **11**, which exceeds the window |
+| 8 | the Nickname row's behaviour | ✅ the REAL `CB2_SetPartyMonNickname` is now driven, through the real slot selector and the real `gStringVar2`, with two different names so the read-back cannot be an echo. ⚠️ The naming SCREEN is still undriven — it is UI, and nothing headless here drives UI |
+| 9 | `MON_DATA_IS_EGG` | ✅ fixed and asserted. The `else` **stays** (eggs remain disabled, the user's ruling); what is fixed is that it mutated the mon without re-stamping the checksum, which made `SetBoxMonData` drop the next encrypted write |
+| 10 | daycare withdraw | ✅ `daycare_withdraw_e2e.lua` drives the real store/take pair, with an on-roster control so "it went to the PC" cannot be satisfied by a build that sends everything there |
+| 11 | leaders as themselves | ✅ the static argument is now a checked **inventory** — `tools/check_gym_scripts.py`, 26 files, 15 with a `trainerbattle`. ⚠️ It does NOT run fifteen more battles; it proves the one property Falkner's run generalises on |
+| 12 | the learnset NULL sweep | ✅ every species with a `gBaseStats` row, in-engine, with the entry count as an in-band control |
+| 13 | two SoulGold QoL groups | ✅ fishing items, faster battle messages, shiny battle frame. 🔴 **music resume deliberately not built** — no headless assertion can tell "resumed" from "resumed into corrupt state", and the failure mode is pointer execution in the sound driver. It needs a person listening |
+| 14 | Cogita and Iscan | ✅ and it was a **real data bug**: Iscan's roster resolves fine, `rosters_mapped.json` was simply older than the species tables. Cogita is legitimately empty (Enamorus is not in this ROM) |
 
 ⚠️ **Do not re-derive 4 or 5 from scratch — both are measured, and the negative
 results are recorded.** Three sessions re-measured the `game_plans/rowe.md` drift
@@ -2111,3 +2081,480 @@ all runs, or the budget was always an over-estimate nobody re-measured. **The
 budget is unverified either way — do not tighten `RUN_TIMEOUT` on the strength
 of this observation**, which is one sample and was not the thing being measured.
 Detaching the run is still correct.
+
+
+## 13 — Session 2026-08-26: gift eggs draw from the roster, weighted by rarity
+
+**A new feature, specified by the user across four rounds of questions.** A
+scripted gift "egg" no longer hands over its hardcoded species; in Character
+Mode it hands over a species drawn from the active character's roster, biased so
+that rarer Pokemon are likelier.
+
+### The rules, all the user's
+
+| rule | ruling |
+|---|---|
+| Weighting | `255 / catchRate`, so a lower catch rate is likelier |
+| Already caught | **0% — excluded outright**, tested on the FAMILY BASE via the Pokedex caught flag (no new save state) |
+| Legendaries | **excluded**, as the 10% wild override already excludes them |
+| Pool exhausted | fall back to the whole non-legendary roster, ignoring caught |
+| No non-legendary family at all | allow legendaries — measured to be **Tobias and only Tobias** |
+| Eggs themselves | **stay disabled**. §12.7's `else` is NOT deleted; the gift arrives as an ordinary Pokemon |
+| Level / stage | `EGG_HATCH_LEVEL`, base stage |
+| Daycare | **deliberate exemption** — breeding keeps parent-species inheritance |
+| Outside Character Mode | untouched, vanilla |
+| Messaging | the gift names what you got and whose roster it is from |
+
+### ⚠️⚠️ THE FINDING THAT INVALIDATED THE DESIGN'S OWN NUMBERS
+
+**`src/data/pokemon/base_stats.h` defines TWO arrays**: the live `gBaseStats[]`
+at line 5, and `gVanillaBaseStats[]` at line 39773 — a full reference copy that
+repeats all 1,463 designators. Both spell their rows `[SPECIES_BELDUM] =` at the
+same indentation, with no `#if` between them and no comment at the split.
+
+A regex scan of that file which keeps the **last** match per species reads the
+**vanilla** table. That is what the design conversation was based on, and it was
+wrong: **ROWE rebalanced its catch rates.** Beldum is **45** here, not 3.
+
+The corrected numbers, from the live table:
+
+| | vanilla table (what was presented) | LIVE table (the truth) |
+|---|---|---|
+| Beldum | catch rate 3, 58% of Steven's eggs | catch rate **45**, **8.5%** |
+| Steven's top pick | Beldum | **Skarmory** (25) at 15.4% |
+| Rarest:commonest spread | 85:1 | **5.7:1** (Red) to **10:1** (Steven) |
+| Red's roster | dominated by one species | every non-legendary at cr 45, **6.1% each** |
+
+⭐ **The ordering the user asked for survives — rarer IS likelier — but the
+magnitude does not.** "Beldum much more likely than Caterpie" is 5.7x here, not
+85x. **The flattening is a property of this ROM's data, not of the curve**, and
+it is worth re-deciding whether 255/catchRate is steep enough now that the real
+spread is known.
+
+⚠️ **Legendaries are still all catch rate 3**, so the exclusion is doing MORE
+work on live data than on vanilla data, not less: without it, a cr-3 legendary
+outweighs everything on a roster where nothing else is below 25.
+
+✅ **RULED BY THE USER 2026-08-26: weight from the GAME'S OWN catch rates, not
+vanilla's.** So the curve is NOT steepened to compensate, and the 5.7:1 spread
+stands — it is what this ROM's data says. The implementation already does this
+(`gBaseStats[species].catchRate`, the live table), and `egg_roster_e2e.lua` pins
+Beldum's live weight AND asserts it is not the vanilla-table value, so a future
+edit that reaches for the wrong array fails the suite. ⚠️ **Every port of this
+feature must read its own game's table** — Radical Red, Unbound, Lazarus and
+Seaglass all rebalance catch rates too, and none of their spreads is knowable
+from ROWE's.
+
+⚠️ **The two-array fact was already known — to exactly one docstring.**
+`tools/check_species_tables.py:98` says "(base_stats.h also holds
+gVanillaBaseStats)" and handles it correctly. It was in no trap list, no
+CLAUDE.md and no plan, so it was not findable by anyone who did not already
+know. **Knowledge that lives only in the tool that uses it is not written
+down.**
+
+⭐ **The lesson generalises to every game in this workspace.** Any tool that
+scans a decomp data file by regex must know how many arrays that file defines.
+`emit_characters.py`, `audit_rosters.py` and every sibling's `map_species.py`
+read tables this way. **A duplicated designator is not a syntax error and not a
+warning** — the compiler takes the array you actually named, and a scanner takes
+whichever match it saw last. The two disagree silently.
+
+### Verification
+
+`tools/mgba_scripts/egg_roster_e2e.lua`, **24 assertions**, in the suite as run
+23. It asserts the pool, the curve, both exclusions, the Tobias fallback and the
+draw. ⭐ **Every structural assertion is paired with one that a FLAT picker
+fails**, because a weighted and a flat implementation return the same KIND of
+answer — the shape that made "an override never produced a legendary" satisfiable
+by a dead feature.
+
+**Negative-tested, three tampers, each failing on this layer's OWN assertions:**
+
+| tamper | result |
+|---|---|
+| legendary exclusion disabled | pool 18 vs 15, Deoxys drawable, Skarmory share falls to 3.0% |
+| caught exclusion disabled | Beldum still drawable, pool did not shrink |
+| all weights equal (a clean flat picker) | Beldum weight 100 vs 566, Skarmory 6.5% against a computed 16.8% |
+
+⚠️ **The first attempt at the third tamper was a FALSE negative test** and is
+worth recording: it returned a garbage species id (49252) because the edit did
+not compile cleanly and the run used a stale ROM against fresh anchors. A
+tampered build that fails for the wrong reason is not a control. Re-done as
+`EggWeightForSpecies` returning a constant, which compiles and is genuinely
+flat.
+
+⚠️ **And the first tamper run failed on an INTRO-DRIVE step, not on an
+assertion** — because the rebuild moved every address and `gen_anchors.py` had
+not been re-run. That is trap #1 in `run_suite.sh`'s own header, and it makes a
+negative test look like it passed for the right reason when it did not. **Every
+tamper cycle needs `make` → `gen_anchors.py` → run.**
+
+### Two things deliberately left, and one to check
+
+1. ⚠️ **`EGG_HATCH_LEVEL` is 1 in this tree, not 5.** The user picked "level 5,
+   base stage" from an option whose description read "what a hatched egg would
+   have given you" — and in ROWE that is level 1. The code uses the constant, so
+   it matches real hatchlings. **If a literal 5 was meant, it is one token.**
+2. **The Mystery Gift Pichu script is not wired for the announcement.** The C
+   swap applies to it, so it does give a roster species, but `mevent_pichu.pory`
+   runs from a Mystery Gift script buffer where a `call` into ROM script space
+   is a risk that was not worth taking for a path that needs Mystery Gift to
+   reach. Water Labyrinth — the reachable one — is wired.
+3. **The feature fires exactly twice per playthrough** with the daycare exempt.
+   The user was told this twice and confirmed it; the rarest-first ladder will
+   rarely be visible.
+
+### The enforcement checker, and the bug it had that it was written to prevent
+
+`tools/check_egg_paths.py` is the **inventory** (workspace lesson #1): every
+`CreateEgg()` call site and every egg producer is listed with a verdict — GATED,
+EXEMPT or CONSTRUCTOR — and a producer that is not on the list fails the check.
+A new egg path now fails a check instead of arriving silently.
+
+⚠️⚠️ **Its first version passed 3 of 4 tampers, and two of those were real holes
+of exactly the kind lesson #2 describes — in the checker written to encode
+lesson #1.**
+
+1. **The documentation defeated the check.** Check 3 tested
+   `"CharacterMode_RollEggSpecies" not in source`. The egg-path inventory
+   comment at the top of `ScriptGiveEgg` NAMES that function in prose, so
+   gutting the actual call left the checker green. Fixed by stripping comments
+   and matching the CALL (`\bname\s*\(`), not the name.
+2. **A superstring passed as the string.** Check 2 tested `symbol not in text`,
+   and `_GiveEggFromDaycareRenamed` contains `_GiveEggFromDaycare`, so renaming
+   the function away reported it as still present. Same fix.
+
+⭐ **And the other two "misses" were BAD TAMPERS, not gaps** — the third time
+this workspace has recorded that. One anchored its insert on a line that exists
+only in the header, so it edited nothing; the other renamed a definition but not
+its call site, leaving a file that names the symbol and would not compile.
+**Diagnose a MISS before believing it.** All four now fail correctly, with a
+pristine-tree control that passes.
+
+### ⚠️ A PROCESS FAILURE WORTH MORE THAN THE FEATURE: do not rebuild under a
+### running suite
+
+The first full-suite run of this session was **invalid and had to be killed**. It
+was launched in the background, and the negative-testing above then rebuilt
+`pokeemerald.gba` six times — including three deliberately TAMPERED builds —
+while the suite was still reading that same path, one run at a time.
+
+The symptom was not a failure. It was a **266 MB `fixture.log`** and a suite
+still on run 1 after twenty minutes: the fixture step was driving a ROM that
+changed underneath it. Had it merely been slow, the results would have looked
+ordinary and been meaningless.
+
+**The rule: the suite owns the ROM for its whole run.** Anything that runs
+`make` — negative tests above all, since they build tampered ROMs on purpose —
+must finish before the suite starts, or run against a private copy. This repo
+already knew a build invalidates anchors (`run_suite.sh` trap #1); it did not
+know a build invalidates a RUN IN FLIGHT.
+
+
+## 14 — Session 2026-08-30: the open-work list, worked
+
+**Goal for the session, the user's words:** *close every agent-doable item on
+this list, and leave the repo at a pushed HEAD whose ROM passes every checker
+the repo owns — with each new or changed check proven able to fail.*
+
+Items 1-6 are excluded by that wording and are untouched: 1-3 need the user
+(the playthrough, the two art-permission emails, the Elm mugshot call) and 4-6
+need art that does not exist.
+
+### What happened to each item
+
+| # | before | after |
+|---|---|---|
+| 7 | ✅ done 2026-08-21 | unchanged |
+| 8 | Nickname row's BEHAVIOUR undriven | ✅ the real `CB2_SetPartyMonNickname` is driven, twice, with different names |
+| 9 | root-caused, **fix not applied** (a design decision) | ✅ fix applied, ruling recorded, asserted by a new layer |
+| 10 | daycare withdraw had no e2e at all | ✅ `daycare_withdraw_e2e.lua`, 17 assertions, with an on-roster control |
+| 11 | only Falkner proven; the rest an argument | ✅ the argument is now a checked inventory: `tools/check_gym_scripts.py` |
+| 12 | learnset sweep spot-checked 4 species | ✅ every species with a `gBaseStats` row, in-engine |
+| 13 | two SoulGold QoL groups not ported | ✅ three of four built; **music resume deliberately NOT built — see below** |
+| 14 | Cogita and Iscan emit no roster | ✅ and it was a REAL data bug, not the cosmetic one it was filed as |
+
+### Item 9 — the ruling, so nobody re-opens it
+
+Two changes were separable and only one is a bug. **The `else` in
+`GetBoxMonData` STAYS**: eggs remain disabled in ROWE, per the user's ruling of
+2026-08-26, so `GetMonData(MON_DATA_IS_EGG)` still cannot return 1. What is
+fixed is that the `else` mutated the mon and the function re-encrypted **without
+recomputing the checksum**, leaving `SetBoxMonData`'s guard dropping the next
+encrypted write. Re-stamping is correct under any reading of the intent.
+
+⚠️⚠️ **THE MEASUREMENT HAS TO HAPPEN INSIDE ONE MAILBOX CALL, and this is the
+generalisable part.** §12.7 measured the damage as SELF-HEALING — the next
+encrypted read re-stamps the checksum. Two mailbox requests are a frame apart
+and the overworld reads mons every frame, so **a two-request test repairs the
+state it is trying to observe and passes on a broken build.** `EggDiag` ops 5
+and 6 do the getter and the observation back to back in one call for that
+reason. Any repo testing a self-healing defect has this problem.
+
+⚠️ **And the control has to reach the code.** The `else` only damages the mon
+when a bit was actually SET; clearing an already-clear bit leaves the checksum
+correct. Op 6's own getter clears it, so the egg bit is deliberately re-set
+before op 5 — without that, op 5 runs against a clean mon and passes on a broken
+build. The first draft of `egg_bits_e2e.lua` had exactly that hole.
+
+### Item 14 — filed as cosmetic, and it was a stale-data bug
+
+The entry read *"they are not selectable, so nothing is broken"*. Re-derived:
+
+- **Cogita is legitimately empty.** Her whole roster is Enamorus, which this ROM
+  does not have — no `gBaseStats` row, no `species_names.h` row, only a
+  `SPECIES_ENAMORUS` #define and a dex number. Nothing to fix short of porting
+  the species. (Kleavor and Sneasler are absent the same way; their owners have
+  other Pokemon and were unaffected.)
+- **Iscan was WRONGLY empty.** His roster is Basculegion, and
+  `rosters_mapped.json` was dated **2026-07-29** — *before* 2026-08-09, when the
+  four Legends: Arceus species finally got base stats and name rows in this ROM.
+  The name resolves today. Re-deriving gave five characters more species:
+  Calaba +1, Ingo +2, Iscan 0→1, Kamado +1, Mai +1.
+
+⭐ **The lesson: a DERIVED artifact older than the data it derives from reports a
+stale answer confidently.** Nothing looked wrong. The generated header, the
+docs and the ROM all agreed with each other — they were all downstream of the
+same stale file.
+
+⚠️⚠️ **AND THE SAVE-SAFETY TRAP, which is the part to carry to the other six
+games.** Once Iscan resolved, the emitter wanted to emit him — **from his
+position in the middle of `characters.txt`, shifting the table index of every
+character after him by one. Saves store the character INDEX.** The fix is free:
+a character who emits nothing occupies no slot, so **moving his line to the end
+of `characters.txt` costs nothing and turns the change into a pure append.**
+✅ Measured: 236 → 237 entries, **0 index shifts**, Iscan appended, 206
+selectable both before and after (he is below the playability threshold and
+ships hidden). `emit_characters.py` now carries an `EMPTY_ROSTER_EXPECTED`
+inventory and **fails** on any unlisted empty roster, with that warning in the
+failure text.
+
+### Item 13 — three of four, and the fourth is a considered refusal
+
+| feature | state |
+|---|---|
+| **Fishing yields items** | ✅ built. 10% once a bite has landed, so bite rates are untouched. Per-rod tables; a full bag falls through to an ordinary encounter rather than eating the item |
+| **Faster battle messages** | ✅ built, and the premise needed correcting first — see below |
+| **Shiny battle frame** | ✅ built, and **it needed no art** |
+| **Music resumes after battle** | 🔴 **not built, deliberately** |
+
+⚠️ **The battle-message premise was backwards, and reading the script alone
+gives the wrong answer.** "Play them during the animation" looked already-true:
+`playanimation` is asynchronous and the stat scripts have no `waitanimation`.
+But `Cmd_printfromtable` opens with `if (gBattleControllerExecFlags == 0)`, so
+with the animation first **the message does not print until the animation is
+over.** Printing first is what actually overlaps them. Both stat scripts are
+reordered and the wait is `B_WAIT_TIME_SHORT` (32) instead of 64.
+⚠️ `BattleScript_StatUpMsg` is a **separate entry point** (the stat-stealing path
+at `battle_script_commands.c:7893`) and must stay message-only, so it keeps its
+own copy of the two lines rather than falling through a reordered `StatUp`.
+
+⭐ **The shiny frame needed NO ART**, which is why it could be built at all when
+items 4-6 cannot: it re-tints the battle textbox palette in place. The tint is a
+pure function, so the transform is asserted directly instead of by photographing
+a battle.
+
+🔴 **Music resume is NOT built, and this is a judgement, not an oversight.** What
+it would take is known: save `gMPlayInfo_BGM.songHeader` plus each
+`MusicPlayerTrack`'s command pointer and clock before the battle, restart the
+same song afterwards, and restore — **under a `songHeader` match guard**, or the
+audio driver executes track pointers into the previous song's data. It is not
+built because **no headless assertion can tell "resumed correctly" from
+"resumed into corrupt state"**: the failure mode is arbitrary pointer execution
+inside the sound driver, and mGBA headless is the wrong instrument for judging
+audio. It needs a person listening — which is item 1's playthrough. Shipping it
+blind into a ROM the user is playing is the wrong trade.
+
+### ⭐⭐ Three findings that generalise beyond this repo
+
+**1. The suite owns its own RUNNER, not just the ROM.** §13 established that a
+`make` during a run invalidates it. This session broke a run a new way: editing
+`run_suite.sh` **while bash was executing it**. Bash reads a script by byte
+offset as it goes, so inserting lines shifted everything under the interpreter
+and it resumed mid-token — `line 116: y_encounter_e2e.lua: command not found`,
+which is the tail of `legendary_encounter_e2e.lua`. The run had passed five runs
+legitimately and everything after was void. **Runs now go through
+`tools/mgba_scripts/.run_suite_frozen.sh`, a copy taken at launch.** The same
+hazard applies to any `.lua` layer that has not run yet.
+
+**2. ⚠️ §13's "266 MB fixture.log" was NORMAL, and the diagnosis built on it was
+wrong.** ✅ Measured this session: the fixture step wrote **250 MB** with nothing
+rebuilding and nothing wrong — it burns its full 240 s timeout by design and
+logs the whole time. §13 read that size as a symptom of a corrupted run. It is
+not evidence of anything. (The *other* half of §13's diagnosis — do not rebuild
+under a running suite — stands.)
+
+**3. ⚠️⚠️ `src/strings.c` IS TWO LANGUAGE HALVES, and 1,598 of its 3,368
+`gText_` symbols are defined in BOTH.** `#if GAME_LANGUAGE == LANGUAGE_SPANISH`
+at line 6, `#else` at line 1921, `#endif` at 4032. A new string added next to
+the FIRST match of an existing one lands in the **dead Spanish half** and the
+build fails at link — or worse, a scanner reading the first match reads Spanish
+data. ⭐ **This is §13's `gBaseStats` / `gVanillaBaseStats` finding one file
+over**: §13's rule was "a regex that keeps the LAST match reads the vanilla
+table", and here keeping the FIRST match reads the Spanish one. **The general
+form is: know how many definitions of a symbol a file contains before adding or
+scanning one.** Caught by an assertion that expected one match and found two.
+
+### Negative tests
+
+Every new or changed check was proven able to fail.
+
+| check | how it was broken | result |
+|---|---|---|
+| `check_gym_scripts.py` | a real `FLAG_CHARACTER_MODE` read inserted into a gym script | FAIL ✅ |
+| `check_gym_scripts.py` | the same token in a COMMENT only | PASS ✅ (comment stripping works, and the check is not a substring match) |
+| `check_gym_scripts.py` | a required script file moved away | FAIL ✅ |
+| `check_gym_scripts.py` | pristine tree, control | PASS ✅ |
+| `check_battle_pacing.py` | ⭐ run against the **real pre-change ROM** | FAIL ✅ — decoded `45 13 12 3C`, the old order, and a 64-frame wait |
+| `check_battle_pacing.py` | the rebuilt ROM | PASS ✅ |
+| `emit_characters.py` inventory | — | fails by construction on any unlisted empty roster |
+
+⭐ **The battle-pacing negative test is the strongest kind available**: not a
+synthetic tamper but a *real binary that predates the fix*. A tamper can be
+wrong in ways that make a MISS look like a gap (three times in this workspace);
+a prior build cannot.
+
+⚠️ **`check_gym_scripts.py` shipped, in its first version, the exact vacuity
+shape it was written to close.** It carried a compiled-and-never-used Elite Four
+regex, listed two files by hand, found **8 Johto leaders and ZERO E4 members**,
+and printed OK — because `data/scripts/elite_four.pory` turns out to be door and
+metatile plumbing while every E4 battle lives in its own map script. Rewritten to
+discover files by glob and check them against a **pinned list of required
+names** (not a count — a bare count is this workspace's most repeated bug). It
+now scans 26 files, 15 of which contain a `trainerbattle`.
+
+### ⭐ Two defects found by re-reading this session's OWN work before running it
+
+Both were caught by tracing the new tests by hand rather than by a run. Neither
+would have failed loudly.
+
+**1. A result-word encoding collision that made a checksum comparison a coin
+flip.** `CM_EGGDIAG_RAN` is `0x80000000`, and ops 0 and 6 returned
+`RAN | (computed << 16) | stored`. A u16 checksum shifted left 16 reaches bit
+31, so the OR **silently forces bit 15 of the computed half**. Every checksum
+`party_egg_diag.lua` has ever printed (38122, 54506) happened to have bit 15 set
+already, so it has been decoding `computed | 0x8000` since it was written and
+getting the right answer by luck. **Any checksum below 32768 reads as a MISMATCH
+that is not one** — on the single comparison the request exists to make. The
+flag is no longer set for those two ops. ⭐ The general form: **a "this ran" flag
+ORed into the same word as a payload is only free while the payload is narrower
+than you think.**
+
+**2. A control that forced a state the game itself prevents.** The daycare
+layer's on-roster control deposited the mon in slot 0 — and after the sweep the
+party can be down to exactly one, so that deposit left the party EMPTY for the
+frame between two mailbox requests. The daycare UI refuses your last Pokemon
+precisely so that state cannot occur, which makes it a state nothing else in
+this tree is written to survive. A second legal mon is gifted first.
+⚠️ And the fix moved the number the control asserts (`partyBefore` →
+`partyBefore + 1`); getting that wrong would have been a green test asserting
+the wrong thing.
+
+**The habit worth keeping: hand-trace a new test's state through the game's own
+rules before running it.** Both of these would have shown up as a red run at
+best, and at worst — the encoding one — as a green run that was right by
+coincidence.
+
+### ⚠️ A near-miss worth encoding: a "doc" generator also writes a SUITE input
+
+Regenerating the roster data changed the character count 236 → 237, and
+`ENCOUNTERS.md` was regenerated to match. **`emit_encounter_docs.py` also writes
+`tools/mgba_scripts/encounter_probes.lua`** — 30 engine cross-check probes that
+`encounter_doc_e2e.lua` reads. Left alone, the suite would have run 236-character
+probes against a 237-character ROM and gone red on a layer that had nothing wrong
+with it.
+
+⭐ **So "regenerate the docs" is not a documentation step — it is part of making
+the suite match the ROM.** The full derived set after any roster change is:
+
+| generator | writes | affects |
+|---|---|---|
+| `map_species.py` | `rosters_mapped.json` | everything downstream |
+| `derive_drops.py` | `character_drops.json` | who is selectable |
+| `emit_characters.py` | `src/data/characters.h` | **the ROM** |
+| `emit_roster_docs.py` | `ROSTERS.md`, `ROSTERS_SPRITES.md`, `sprites/gen_*.md` | `verify_docs.py` |
+| `emit_encounter_docs.py` | `ENCOUNTERS.md` **and `encounter_probes.lua`** | **the suite** |
+| `emit_pre_evolution.py` | `src/data/pokemon/pre_evolution.h` | **the ROM** |
+
+✅ All six re-run and **byte-for-byte reproducible** on 2026-08-30;
+`pre_evolution.h` was already current, so the ROM was unaffected by it.
+
+### What item #11's inventory actually covers
+
+The 15 files carrying a `trainerbattle`, for the record — so "26 files scanned"
+is not a number standing in for a list:
+
+| where | who |
+|---|---|
+| `scripts/gym_scripts.pory` | the 8 Johto leaders: Falkner, Bugsy, Whitney, Morty, Chuck, Jasmine, Pryce, Clair |
+| 8 Hoenn gym maps | Rustboro, Dewford, Mauville, Lavaridge, Petalburg, Fortree, Mossdeep, Sootopolis (1F + B1F) |
+| 5 Ever Grande rooms | Sidney, Phoebe, Glacia, Drake, Champion |
+
+**Falkner is the only one with a live run.** Every other name on that list rests
+on the checked property — that none of these scripts branches on who the player
+is — and not on a run of its own. That is a real and stated limit, and it is
+still strictly more than the session note it replaces.
+
+### The two species counts are both right, and they count different things
+
+`tools/check_species_tables.py` says **1464**; `learnset_sweep_e2e.lua` reports
+**1463 species with base stats, 0 bad rows, 29,052 learnset entries walked**.
+The difference is `[SPECIES_NONE] = {0},` — a real designator with an all-zero
+body, which the checker counts and the in-engine sweep deliberately skips
+(nothing can be created as it, so a learnset there is unreachable). Recorded
+here so the off-by-one is not re-investigated a third time.
+
+⚠️ **And the first attempt to reconcile it was wrong, in the way this workspace
+keeps writing down.** A probe regex of the form
+`\[SPECIES_NONE\]\s*=\s*\{(.*?)\n    \},` assumes a multi-line body, does not
+match the one-line `{0}`, and runs on into **Bulbasaur's** block — reporting
+baseHP 45 for a row that is all zeros, and making the counts look irreconcilable.
+The fix was to read the three lines of the file. **Two regexes disagreeing about
+one file is not a mystery about the file.**
+
+### The suite, and the negative tests for everything new in it
+
+✅ **ALL 28 RUNS PASS** on `3a8250d70f35bbca03b5081809d54f10` (map digest
+`f7f2b69df4262998`), selftest **36/36** on every run, every tally exactly as
+declared to the runner. Six layers are new or extended this session:
+
+| run | assertions | what it pins |
+|---|---|---|
+| `party_actions` | 31 → **36** | the Nickname row's behaviour, on the real callback |
+| `learnset_sweep` | **6** | 1463 species with base stats, 0 bad rows, **29,052 learnset entries walked** |
+| `daycare` | **18** | the withdraw gate, with an on-roster control |
+| `egg_bits` | **7** | the checksum re-stamp, and that eggs stay disabled |
+| `fishing_item` | **32** | **204/2000 = 10.2%** against a designed 10%, bounded on both sides |
+| `shiny_frame` | **12** | the tint, and that a NON-shiny lead is left alone |
+
+**Negative tests — each layer broken at its subject and re-run:**
+
+| tamper | layer | result |
+|---|---|---|
+| the `else`'s checksum re-stamp deleted | `egg_bits` | **RED**, 5/2 — on "computed == stored after the `else` ran" and on the re-set guard |
+| `CharacterMode_SweepPartyToPC()` deleted from the withdraw | `daycare` | **RED**, 14/4 — the party count and the PC delta, exactly the two claims |
+| the fishing roll made never to fire | `fishing_item` | **RED**, 22/10 — "the roll fires sometimes", the rate, and all three per-rod draws |
+| the `IsMonShiny` check removed | `shiny_frame` | **RED**, 10/2 — on the **NON-shiny** case, which is the half that discriminates |
+| the real `CB2_SetPartyMonNickname` not called | `party_actions` | **RED**, 32/4 — read-back length **6** ("MEOWTH"), not 12 |
+| Pikachu's learnset row commented out (a NULL row) | `learnset_sweep` | **RED**, 5/1 — `bad = 1`, the exact July defect shape |
+
+✅ **Every restore reproduced the shipped ROM byte for byte**
+(`3a8250d70f35bbca03b5081809d54f10`), and the tree carries no `TAMPER` string.
+With the four on `check_gym_scripts.py` and the two on `check_battle_pacing.py`,
+that is **twelve** tamper results this session, every one failing on the
+assertion it was aimed at.
+
+⭐ **The egg tamper reported `computed 29427` against `stored 45811` — and 29427
+is BELOW 32768.** That is precisely the case the old `RAN | (computed << 16)`
+encoding would have mis-decoded, so this negative test would have been read
+wrong by the code that shipped an hour earlier. The encoding fix was not
+academic.
+
+⚠️ **A tamper left applied by a tool timeout is a live hazard.** The first batch
+was cut off mid-run with `fishing_dead` applied and a TAMPERED ROM on disk
+(`a4bd1be2`). Nothing had failed; it simply looked finished. The harness's
+`md5 back to <shipped>` line after every restore is what makes that visible, and
+`tamper.py` refusing to apply a tamper whose anchor is not found exactly once is
+what stops a double-apply. ⭐ **Never leave a tamper cycle half-run — and never
+run a generator until the restore is confirmed by md5** (§13's 714 corrupted
+lines came from exactly that).

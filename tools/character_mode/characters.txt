@@ -257,7 +257,6 @@ Gaeric | Gaeric | warden | 8
 Greta | Greta | frontier | 3
 Ingo | Ingo | frontier | 5
 Irida | Irida | rival | 8
-Iscan | Iscan | warden | 8
 Kamado | Kamado | villain | 8
 Lian | Lian | warden | 8
 Lucy | Lucy | frontier | 3
@@ -278,3 +277,14 @@ Tobias | Tobias | anime | 4
 Tucker | Tucker | frontier | 3
 Volo | Volo | villain | 8
 Zisu | Zisu | galaxy | 8
+
+# ⚠️ APPENDED OUT OF ORDER ON PURPOSE -- 2026-08-30. Iscan emitted NOTHING
+# until now: his only roster entry is Basculegion, and rosters_mapped.json
+# predated 2026-08-09, when the four Legends: Arceus species finally got
+# base stats and name rows in this ROM. Once the data was re-derived he
+# resolves, so the emitter would have started emitting him -- from his old
+# position in the middle of the list, shifting the table index of every
+# character after him by one. SAVES STORE THE CHARACTER INDEX. Moving the
+# line here costs nothing (a skipped character occupies no slot) and makes
+# him a pure append. Do the same for any character who gains a first roster.
+Iscan | Iscan | warden | 8

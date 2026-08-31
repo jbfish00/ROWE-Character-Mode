@@ -470,6 +470,7 @@ Caitlin,elite4,SPECIES_SABLEYE,Y
 Caitlin,elite4,SPECIES_SIGILYPH,Y
 Caitlin,elite4,SPECIES_SOLOSIS,Y
 Calaba,warden,SPECIES_BIDOOF,Y
+Calaba,warden,SPECIES_TEDDIURSA,Y
 Calem,protagonist,SPECIES_ABSOL,Y
 Calem,protagonist,SPECIES_BUNNELBY,Y
 Calem,protagonist,SPECIES_CHARMANDER,Y
@@ -1272,6 +1273,7 @@ Hugh,rival,SPECIES_TRAPINCH,Y
 Hugh,rival,SPECIES_TYNAMO,Y
 Ingo,frontier,SPECIES_ABRA,Y
 Ingo,frontier,SPECIES_AXEW,Y
+Ingo,frontier,SPECIES_BASCULIN,Y
 Ingo,frontier,SPECIES_DRILBUR,Y
 Ingo,frontier,SPECIES_DWEBBLE,Y
 Ingo,frontier,SPECIES_GLIGAR,Y
@@ -1280,6 +1282,7 @@ Ingo,frontier,SPECIES_LITWICK,Y
 Ingo,frontier,SPECIES_MACHOP,Y
 Ingo,frontier,SPECIES_MAGNEMITE,Y
 Ingo,frontier,SPECIES_NOSEPASS,Y
+Ingo,frontier,SPECIES_STANTLER,Y
 Ingo,frontier,SPECIES_TANGELA,Y
 Ingo,frontier,SPECIES_TIMBURR,Y
 Ingo,frontier,SPECIES_TRUBBISH,Y
@@ -1305,6 +1308,7 @@ Iris,champion,SPECIES_EMOLGA,Y
 Iris,champion,SPECIES_GIBLE,Y
 Iris,champion,SPECIES_LAPRAS,Y
 Iris,champion,SPECIES_POIPOLE,Y
+Iscan,warden,SPECIES_BASCULIN,Y
 James,anime,SPECIES_BELLSPROUT,Y
 James,anime,SPECIES_CACNEA,Y
 James,anime,SPECIES_CARNIVINE,Y
@@ -1428,6 +1432,7 @@ Kamado,villain,SPECIES_HERACROSS,Y
 Kamado,villain,SPECIES_MUNCHLAX,Y
 Kamado,villain,SPECIES_NOSEPASS,Y
 Kamado,villain,SPECIES_RUFFLET,Y
+Kamado,villain,SPECIES_TEDDIURSA,Y
 Karen,elite4,SPECIES_ABSOL,Y
 Karen,elite4,SPECIES_BELLSPROUT,Y
 Karen,elite4,SPECIES_EEVEE,Y
@@ -1749,6 +1754,7 @@ Magnolia,professor,SPECIES_ROTOM,Y
 Magnolia,professor,SPECIES_SINISTEA,Y
 Mai,warden,SPECIES_MUNCHLAX,Y
 Mai,warden,SPECIES_SNEASEL,Y
+Mai,warden,SPECIES_STANTLER,Y
 Mai,warden,SPECIES_ZUBAT,Y
 Mallow (anime),anime,SPECIES_BOUNSWEET,Y
 Mallow (anime),anime,SPECIES_COMFEY,Y

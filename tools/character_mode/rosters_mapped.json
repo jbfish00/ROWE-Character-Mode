@@ -761,7 +761,8 @@
   "gen": 8,
   "page": "Calaba",
   "species": [
-   "SPECIES_BIDOOF"
+   "SPECIES_BIDOOF",
+   "SPECIES_TEDDIURSA"
   ]
  },
  "Calem": {
@@ -2052,6 +2053,7 @@
   "species": [
    "SPECIES_ABRA",
    "SPECIES_AXEW",
+   "SPECIES_BASCULIN",
    "SPECIES_DRILBUR",
    "SPECIES_DWEBBLE",
    "SPECIES_GLIGAR",
@@ -2060,6 +2062,7 @@
    "SPECIES_MACHOP",
    "SPECIES_MAGNEMITE",
    "SPECIES_NOSEPASS",
+   "SPECIES_STANTLER",
    "SPECIES_TANGELA",
    "SPECIES_TIMBURR",
    "SPECIES_TRUBBISH"
@@ -2114,7 +2117,9 @@
   "category": "warden",
   "gen": 8,
   "page": "Iscan",
-  "species": []
+  "species": [
+   "SPECIES_BASCULIN"
+  ]
  },
  "James": {
   "category": "anime",
@@ -2314,7 +2319,8 @@
    "SPECIES_HERACROSS",
    "SPECIES_MUNCHLAX",
    "SPECIES_NOSEPASS",
-   "SPECIES_RUFFLET"
+   "SPECIES_RUFFLET",
+   "SPECIES_TEDDIURSA"
   ]
  },
  "Karen": {
@@ -2855,6 +2861,7 @@
   "species": [
    "SPECIES_MUNCHLAX",
    "SPECIES_SNEASEL",
+   "SPECIES_STANTLER",
    "SPECIES_ZUBAT"
   ]
  },

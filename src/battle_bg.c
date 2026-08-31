@@ -15,6 +15,7 @@
 #include "menu.h"
 #include "overworld.h"
 #include "palette.h"
+#include "constants/rgb.h"  // RGB(), for the shiny frame tint
 #include "sound.h"
 #include "sprite.h"
 #include "task.h"
@@ -929,12 +930,67 @@ void DrawMainBattleBackground(void)
     }
 }
 
+// ---------------------------------------------------------------------------
+// Shiny battle frame -- PLAN.md item #13, the SoulGold QoL group.
+// ---------------------------------------------------------------------------
+//
+// ⭐ NO NEW ART. The battle textbox palette that was just loaded is re-tinted in
+// place when the wild Pokemon you are facing is shiny, so the frame itself
+// announces it. Every other art-shaped item on the open list is blocked on
+// assets that do not exist (PLAN.md items 4-6); this one is a palette
+// transform, which is why it could be built at all.
+//
+// The tint is split out as a PURE function so the headless suite can assert the
+// transform without standing up a battle -- the same split the other QoL
+// effects use (PLAN.md §12.1), and the reason those are testable at all.
+
+// Blend halfway toward gold. Pure: same input, same output, no globals.
+u16 CharacterMode_ShinyFrameTint(u16 color)
+{
+    u8 r = (color >>  0) & 0x1F;
+    u8 g = (color >>  5) & 0x1F;
+    u8 b = (color >> 10) & 0x1F;
+
+    r = (r + 31) / 2;
+    g = (g + 27) / 2;
+    b = (b +  8) / 2;
+    return RGB(r, g, b);
+}
+
+// Returns TRUE if the frame was tinted -- which is what stops "it ran" from
+// being true unconditionally, and gives the non-shiny case something to assert.
+//
+// ⚠️ Index 0 of each 16-colour palette is the transparent/backdrop entry.
+// Tinting those would recolour the whole screen behind the battle, not the
+// frame, so both are skipped.
+bool8 CharacterMode_ApplyShinyBattleFrame(void)
+{
+    u16 i;
+
+    // A trainer battle has no wild Pokemon to be shiny, and in a link battle
+    // gEnemyParty[0] belongs to another human whose mon is not the subject.
+    if (gBattleTypeFlags & (BATTLE_TYPE_TRAINER | BATTLE_TYPE_LINK))
+        return FALSE;
+    if (!IsMonShiny(&gEnemyParty[0]))
+        return FALSE;
+
+    for (i = 0; i < 32; i++)
+    {
+        if (i == 0 || i == 16)
+            continue;
+        gPlttBufferUnfaded[i] = CharacterMode_ShinyFrameTint(gPlttBufferUnfaded[i]);
+        gPlttBufferFaded[i]   = CharacterMode_ShinyFrameTint(gPlttBufferFaded[i]);
+    }
+    return TRUE;
+}
+
 void LoadBattleTextboxAndBackground(void)
 {
     LZDecompressVram(gBattleTextboxTiles, (void*)(BG_CHAR_ADDR(0)));
     CopyToBgTilemapBuffer(0, gBattleTextboxTilemap, 0, 0);
     CopyBgTilemapBufferToVram(0);
     LoadCompressedPalette(gBattleTextboxPalette, 0, 0x40);
+    CharacterMode_ApplyShinyBattleFrame();
     LoadBattleMenuWindowGfx();
     #if B_TERRAIN_BG_CHANGE == TRUE
         DrawTerrainTypeBattleBackground();
@@ -1295,7 +1351,10 @@ bool8 LoadChosenBattleElement(u8 caseId)
         CopyBgTilemapBufferToVram(0);
         break;
     case 2:
+        // The second site that loads this palette (the staged loader). Tinted
+        // too, or the frame would be gold on one entry path and not the other.
         LoadCompressedPalette(gBattleTextboxPalette, 0, 0x40);
+        CharacterMode_ApplyShinyBattleFrame();
         break;
     case 3:
         if (gBattleTypeFlags & (BATTLE_TYPE_FRONTIER | BATTLE_TYPE_LINK | BATTLE_TYPE_x2000000 | BATTLE_TYPE_EREADER_TRAINER))

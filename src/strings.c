@@ -1615,6 +1615,12 @@ const u8 gText_Hoenn[] = _("Hoenn");
 const u8 gText_OhABite[] = _("Oh! A bite!");
 const u8 gText_PokemonOnHook[] = _("A Pokémon's on the hook!{PAUSE_UNTIL_PRESS}");
 const u8 gText_NotEvenANibble[] = _("Not even a nibble…{PAUSE_UNTIL_PRESS}");
+// Fishing QoL (PLAN.md item #13): what the rod pulls up when it is not a mon.
+// ⚠️ THIS FILE IS TWO LANGUAGE HALVES -- #if GAME_LANGUAGE == LANGUAGE_SPANISH
+// at line 6, #else at 1921 -- and 1,598 of its 3,368 gText_ symbols are defined
+// in BOTH. A new string added to only one half links fine or not at all
+// depending purely on which half you happened to scroll to.
+const u8 gText_FishedUpItem[] = _("{PLAYER} fished up {STR_VAR_1}!{PAUSE_UNTIL_PRESS}");
 const u8 gText_ItGotAway[] = _("It got away…{PAUSE_UNTIL_PRESS}");
 const u8 gText_XWillBeSentToY[] = _("{STR_VAR_2} will be\nsent to {STR_VAR_1}.");
 const u8 gText_ByeByeVar1[] = _("Bye-bye, {STR_VAR_2}!");
@@ -3539,6 +3545,12 @@ const u8 gText_Hoenn[] = _("Hoenn");
 const u8 gText_OhABite[] = _("Oh! A bite!");
 const u8 gText_PokemonOnHook[] = _("A Pokémon's on the hook!{PAUSE_UNTIL_PRESS}");
 const u8 gText_NotEvenANibble[] = _("Not even a nibble…{PAUSE_UNTIL_PRESS}");
+// Fishing QoL (PLAN.md item #13): what the rod pulls up when it is not a mon.
+// ⚠️ THIS FILE IS TWO LANGUAGE HALVES -- #if GAME_LANGUAGE == LANGUAGE_SPANISH
+// at line 6, #else at 1921 -- and 1,598 of its 3,368 gText_ symbols are defined
+// in BOTH. A new string added to only one half links fine or not at all
+// depending purely on which half you happened to scroll to.
+const u8 gText_FishedUpItem[] = _("{PLAYER} fished up {STR_VAR_1}!{PAUSE_UNTIL_PRESS}");
 const u8 gText_ItGotAway[] = _("It got away…{PAUSE_UNTIL_PRESS}");
 const u8 gText_XWillBeSentToY[] = _("{STR_VAR_2} will be\nsent to {STR_VAR_1}.");
 const u8 gText_ByeByeVar1[] = _("Bye-bye, {STR_VAR_2}!");

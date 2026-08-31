@@ -4065,6 +4065,7 @@ static const u8 sName_Brandon[] = _("Brandon");
 static const u16 sRoster_Calaba[] =
 {
     SPECIES_BIDOOF,
+    SPECIES_TEDDIURSA,
     SPECIES_NONE,
 };
 
@@ -4155,6 +4156,7 @@ static const u16 sRoster_Ingo[] =
 {
     SPECIES_ABRA,
     SPECIES_AXEW,
+    SPECIES_BASCULIN,
     SPECIES_DRILBUR,
     SPECIES_DWEBBLE,
     SPECIES_GLIGAR,
@@ -4163,6 +4165,7 @@ static const u16 sRoster_Ingo[] =
     SPECIES_MACHOP,
     SPECIES_MAGNEMITE,
     SPECIES_NOSEPASS,
+    SPECIES_STANTLER,
     SPECIES_TANGELA,
     SPECIES_TIMBURR,
     SPECIES_TRUBBISH,
@@ -4187,6 +4190,7 @@ static const u16 sRoster_Kamado[] =
     SPECIES_MUNCHLAX,
     SPECIES_NOSEPASS,
     SPECIES_RUFFLET,
+    SPECIES_TEDDIURSA,
     SPECIES_NONE,
 };
 
@@ -4224,6 +4228,7 @@ static const u16 sRoster_Mai[] =
 {
     SPECIES_MUNCHLAX,
     SPECIES_SNEASEL,
+    SPECIES_STANTLER,
     SPECIES_ZUBAT,
     SPECIES_NONE,
 };
@@ -4428,6 +4433,14 @@ static const u16 sRoster_Zisu[] =
 };
 
 static const u8 sName_Zisu[] = _("Zisu");
+
+static const u16 sRoster_Iscan[] =
+{
+    SPECIES_BASCULIN,
+    SPECIES_NONE,
+};
+
+static const u8 sName_Iscan[] = _("Iscan");
 
 const struct CharacterInfo gCharacters[] =
 {
@@ -6693,7 +6706,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 8,
-        .starterCount = 1,
+        .starterCount = 2,
         .hasSignature = 0,
         .selectable = 0,
     },
@@ -6792,7 +6805,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 5,
-        .starterCount = 13,
+        .starterCount = 15,
         .hasSignature = 0,
         .selectable = 1,
     },
@@ -6814,7 +6827,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 8,
-        .starterCount = 6,
+        .starterCount = 7,
         .hasSignature = 0,
         .selectable = 1,
     },
@@ -6847,7 +6860,7 @@ const struct CharacterInfo gCharacters[] =
         .trainerFrontPic = CHAR_ASSET_NONE,
         .backPic = CHAR_ASSET_NONE_U8,
         .generation = 8,
-        .starterCount = 3,
+        .starterCount = 4,
         .hasSignature = 0,
         .selectable = 0,
     },
@@ -7026,6 +7039,17 @@ const struct CharacterInfo gCharacters[] =
         .starterCount = 9,
         .hasSignature = 0,
         .selectable = 1,
+    },
+    {
+        .name = sName_Iscan,
+        .roster = sRoster_Iscan,
+        .owGfxId = CHAR_ASSET_NONE,
+        .trainerFrontPic = CHAR_ASSET_NONE,
+        .backPic = CHAR_ASSET_NONE_U8,
+        .generation = 8,
+        .starterCount = 1,
+        .hasSignature = 0,
+        .selectable = 0,
     },
 };
 

@@ -82,6 +82,7 @@ local REQ_GIVE_MON           = H.anchors.REQ.GIVE_MON
 local REQ_QUERY_PARTY_MON    = H.anchors.REQ.QUERY_PARTY_MON
 local REQ_SET_FOLLOWER_OPT   = H.anchors.REQ.SET_FOLLOWER_OPTION
 local REQ_SET_MON_MOVE       = H.anchors.REQ.SET_MON_MOVE
+local REQ_NICKNAME_APPLY     = H.anchors.REQ.NICKNAME_APPLY
 
 local STATUS_DONE     = 1
 local STATUS_REJECTED = 2
@@ -507,6 +508,53 @@ mbStep("re-probe the same mon with the follower option off",
         H.assertTrue("the re-probe ran", probeRan())
         H.assertEq("dropping the Follow row costs exactly one row",
                    probeDemand(), liveDemandTaught - 1)
+    end)
+
+-- ---------------------------------------------------------------------------
+-- PLAN.md item #8, second half: the Nickname row's BEHAVIOUR
+-- ---------------------------------------------------------------------------
+--
+-- The probe above asserts the row is PRESENT. That says nothing about what
+-- choosing it does. CB2_SetPartyMonNickname is the whole of what it does --
+-- everything between the naming screen and the mon is its one SetMonData --
+-- and CharacterMode_TestNicknameApply calls THAT function, through the real
+-- slot selector (gPartyMenu.slotId) and the real buffer (gStringVar2), rather
+-- than re-implementing the write the way CM_REQ_SET_NICKNAME does.
+--
+-- ⚠️ The naming screen itself is still undriven. DoNamingScreen -> keyboard ->
+-- this callback is party-menu UI and no headless run in this repo drives UI.
+-- Do not read a green run here as "the Nickname row is tested end to end".
+--
+-- Two DIFFERENT characters are written, and that is the control: one write
+-- reading back correctly is equally consistent with a read-back that returns
+-- whatever was asked for.
+
+local NAME_LENGTH = 12          -- POKEMON_NAME_LENGTH, 12/12 since 71cebcbe
+local CHAR_A      = 0xBB        -- 'A' in the game's charmap
+local CHAR_B      = 0xBC        -- 'B'
+
+local function nickLen(r)     return math.floor(r / 65536) % 256 end
+local function nickFirstBad(r) return r % 65536 end
+
+mbStep("rename slot 0 through the real party-menu callback", REQ_NICKNAME_APPLY,
+    0, CHAR_A,
+    function()
+        local r = mbResult()
+        H.assertTrue("the rename ran", bit(r, 31))
+        H.assertEq("every one of the 12 characters survived the round trip",
+                   nickFirstBad(r), 0)
+        H.assertEq("and the stored nickname is the full 12 characters long",
+                   nickLen(r), NAME_LENGTH)
+    end)
+
+mbStep("rename it again with a different character", REQ_NICKNAME_APPLY,
+    0, CHAR_B,
+    function()
+        local r = mbResult()
+        H.assertEq("the second name also survived intact -- so the read-back "
+                   .. "is reading the mon, not echoing the request",
+                   nickFirstBad(r), 0)
+        H.assertEq("still 12 characters", nickLen(r), NAME_LENGTH)
     end)
 
 -- -------------------------------------------------------------------- pump

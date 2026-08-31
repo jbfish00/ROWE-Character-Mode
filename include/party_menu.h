@@ -61,6 +61,7 @@ extern const u16 gTutorMoves[];
 void AnimatePartySlot(u8 slot, u8 animNum);
 bool8 IsMultiBattle(void);
 u8 GetCursorSelectionMonId(void);
+void CharacterMode_TestNicknameApply(u8 slot);  // PLAN.md item #8 test hook
 u8 GetPartyMenuType(void);
 void Task_HandleChooseMonInput(u8 taskId);
 u8* GetMonNickname(struct Pokemon *mon, u8 *dest);

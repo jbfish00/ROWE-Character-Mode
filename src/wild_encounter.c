@@ -23,6 +23,7 @@
 #include "constants/abilities.h"
 #include "constants/battle_config.h"
 #include "constants/game_stat.h"
+#include "item.h"     // fishing QoL: AddBagItem / CheckBagHasSpace
 #include "constants/items.h"
 #include "constants/layouts.h"
 #include "constants/moves.h"
@@ -962,6 +963,73 @@ bool8 DoesCurrentMapHaveFishingMons(void)
         return TRUE;
     else
         return FALSE;
+}
+
+// ---------------------------------------------------------------------------
+// Fishing can yield an item -- PLAN.md item #13, the SoulGold QoL group.
+// ---------------------------------------------------------------------------
+//
+// Rolled INSTEAD of the wild encounter once a bite has already landed, so it
+// does not change how often the rod gets a bite -- only what is on the end of
+// the line. Global and always-on, like the other three QoL ports; it is not
+// gated on Character Mode.
+//
+// Split into a PURE roll and the bag-touching wrapper for the reason the other
+// QoL effects were split (PLAN.md §12.1): the headless suite can then drive the
+// same function the game drives, instead of a host-side re-implementation of
+// its odds.
+//
+// ⚠️ THE FULL BAG FALLS THROUGH TO AN ORDINARY ENCOUNTER rather than eating the
+// item. A silent loss here would be indistinguishable from bad luck, which is
+// the worst shape a bug can have in a random feature.
+
+#define FISHING_ITEM_PERCENT 10
+
+static const u16 sFishingItems[][FISHING_ITEMS_PER_ROD] =
+{
+    [OLD_ROD]   = { ITEM_PEARL,     ITEM_STARDUST,   ITEM_HEART_SCALE },
+    [GOOD_ROD]  = { ITEM_BIG_PEARL, ITEM_STARDUST,   ITEM_HEART_SCALE },
+    [SUPER_ROD] = { ITEM_BIG_PEARL, ITEM_STAR_PIECE, ITEM_NUGGET },
+};
+
+// The pure roll: no bag, no string, no task. ITEM_NONE means "a Pokemon, as
+// before". Consumes at most two Random() calls and only after the rod is known
+// valid -- the data check before the RNG call, the rule the 1% legendary rule
+// had to learn twice (PLAN.md §7.13).
+u16 CharacterMode_PickFishingItem(u8 rod)
+{
+    if (rod >= ARRAY_COUNT(sFishingItems))
+        return ITEM_NONE;
+    if ((Random() % 100) >= FISHING_ITEM_PERCENT)
+        return ITEM_NONE;
+    return sFishingItems[rod][Random() % FISHING_ITEMS_PER_ROD];
+}
+
+// The table itself, so a test can assert "the item drawn is one of the ones
+// this rod actually offers" against the GAME's list rather than against three
+// ids retyped into a Lua file, which would agree with a wrong table forever.
+u16 CharacterMode_FishingItemAt(u8 rod, u8 index)
+{
+    if (rod >= ARRAY_COUNT(sFishingItems) || index >= FISHING_ITEMS_PER_ROD)
+        return ITEM_NONE;
+    return sFishingItems[rod][index];
+}
+
+// The whole path, as the fishing task drives it. TRUE means the player got an
+// item and there is to be no battle.
+bool8 CharacterMode_TryFishingItem(u8 rod, u16 *itemOut)
+{
+    u16 item = CharacterMode_PickFishingItem(rod);
+
+    if (item == ITEM_NONE)
+        return FALSE;
+    if (!CheckBagHasSpace(item, 1))
+        return FALSE;      // fall through to the ordinary encounter
+    if (!AddBagItem(item, 1))
+        return FALSE;
+
+    *itemOut = item;
+    return TRUE;
 }
 
 void FishingWildEncounter(u8 rod)

@@ -2636,11 +2636,27 @@ BattleScript_StatUpPrintString::
 BattleScript_StatUpEnd::
 	goto BattleScript_MoveEnd
 
+@ Faster battle messages -- PLAN.md item #13, the SoulGold QoL group.
+@
+@ The message used to come AFTER the animation, not during it: Cmd_printfromtable
+@ opens with `if (gBattleControllerExecFlags == 0)`, so it does not print until
+@ the animation controller has gone idle. Printing FIRST puts the text on screen
+@ while the animation plays, and the following waitmessage still waits for the
+@ controller, so nothing is skipped -- only overlapped.
+@
+@ ⚠️ BattleScript_StatUpMsg IS A SEPARATE ENTRY POINT (battle_script_commands.c
+@ :7893, the stat-stealing path) and must stay message-only, with no animation.
+@ It therefore keeps its own copy of the two lines rather than falling through
+@ into a reordered StatUp.
 BattleScript_StatUp::
+	printfromtable gStatUpStringIds
 	playanimation BS_EFFECT_BATTLER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	waitmessage B_WAIT_TIME_SHORT
+	return
+
 BattleScript_StatUpMsg::
 	printfromtable gStatUpStringIds
-	waitmessage 0x40
+	waitmessage B_WAIT_TIME_SHORT
 	return
 
 BattleScript_EffectAttackDown:
@@ -2692,10 +2708,12 @@ BattleScript_StatDownPrintString::
 BattleScript_StatDownEnd::
 	goto BattleScript_MoveEnd
 
+@ Same reordering as BattleScript_StatUp above. This one has no separate
+@ message-only entry label, so it is a straight swap.
 BattleScript_StatDown::
-	playanimation BS_EFFECT_BATTLER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
 	printfromtable gStatDownStringIds
-	waitmessage 0x40
+	playanimation BS_EFFECT_BATTLER, B_ANIM_STATS_CHANGE, sB_ANIM_ARG1
+	waitmessage B_WAIT_TIME_SHORT
 	return
 
 BattleScript_EffectHaze::

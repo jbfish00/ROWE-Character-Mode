@@ -10,6 +10,8 @@
 #include "field_effect_helpers.h"
 #include "field_player_avatar.h"
 #include "fieldmap.h"
+#include "item.h"         // fishing QoL: CopyItemName
+#include "string_util.h"  // fishing QoL: StringExpandPlaceholders
 #include "menu.h"
 #include "metatile_behavior.h"
 #include "overworld.h"
@@ -2112,7 +2114,27 @@ static bool8 Fishing_CheckForBite(struct Task *task)
 
 static bool8 Fishing_MonOnHook(struct Task *task)
 {
+    u16 item = ITEM_NONE;
+
     AlignFishingAnimationFrames();
+
+    // Fishing QoL -- PLAN.md item #13. The bite has ALREADY landed; this only
+    // decides what is on the end of the line, so the rate at which the rod gets
+    // a bite is untouched. On an item there is no battle, so the task joins the
+    // same tail the "not even a nibble" path uses (FISHING_SHOW_RESULT ->
+    // PutRodAway -> EndNoMon) rather than growing a second ending of its own.
+    if (CharacterMode_TryFishingItem(task->tFishingRod, &item))
+    {
+        StartSpriteAnim(&gSprites[gPlayerAvatar.spriteId],
+                        GetFishingNoCatchDirectionAnimNum(GetPlayerFacingDirection()));
+        CopyItemName(item, gStringVar1);
+        StringExpandPlaceholders(gStringVar4, gText_FishedUpItem);
+        FillWindowPixelBuffer(0, PIXEL_FILL(1));
+        AddTextPrinterParameterized2(0, 1, gStringVar4, 1, 0, 2, 1, 3);
+        task->tStep = FISHING_SHOW_RESULT;
+        return TRUE;
+    }
+
     FillWindowPixelBuffer(0, PIXEL_FILL(1));
     AddTextPrinterParameterized2(0, 1, gText_PokemonOnHook, 1, 0, 2, 1, 3);
     task->tStep++;

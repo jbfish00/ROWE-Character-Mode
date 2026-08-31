@@ -1,0 +1,27 @@
+raw `
+@ Character Mode gift announcement (2026-08-26).
+@
+@ ScriptGiveEgg swaps the scripted species for a weighted draw from the active
+@ character's roster, and buffers the result: STR_VAR_1 = the species the player
+@ actually received, STR_VAR_2 = the character it belongs to.
+@
+@ Without this the NPC says "you received an EGG" and hands over a Beldum, and
+@ the player has no way to tell a working feature from a broken one -- the exact
+@ shape of the §7.14 encounter markers, and of Platinum's "no on-roster
+@ encounters" report, which was a MESSAGE defect and not a rate defect.
+@
+@ Outside Character Mode this costs one special call and returns, so both gift
+@ sites can call it unconditionally.
+EventScript_CharacterModeAnnounceGift::
+	specialvar VAR_RESULT, IsPlayerInCharacterMode
+	compare VAR_RESULT, 1
+	goto_if_ne EventScript_CharacterModeAnnounceGift_Done
+	msgbox Text_CharacterModeGiftNamed, MSGBOX_DEFAULT
+EventScript_CharacterModeAnnounceGift_Done::
+	return
+`
+
+text Text_CharacterModeGiftNamed {
+	"It hatched on the spot!\p"
+	"It's {STR_VAR_1}, destined for\n{STR_VAR_2}!$"
+}

@@ -110,6 +110,27 @@ def load_drops():
         return set(json.load(f).get("unselectable", []))
 
 
+# PLAN.md item #14 -- the empty-roster INVENTORY.
+#
+# Two characters used to emit nothing at all and say so only in a line at the
+# bottom of sprite_report.txt that nobody read. Re-derived 2026-08-30:
+#
+#   Cogita -- LEGITIMATELY empty. Her entire roster is Enamorus, which this ROM
+#             does not have: no gBaseStats row, no species_names.h row, only a
+#             SPECIES_ENAMORUS #define and a national dex number. Nothing to
+#             emit, and nothing to fix short of porting the species.
+#   Iscan  -- WAS WRONGLY EMPTY, and is emitted again as of 2026-08-30. His
+#             roster is Basculegion, which the ROM gained base stats and a name
+#             for on 2026-08-09; rosters_mapped.json simply predated that. The
+#             lesson is the general one: a DERIVED artifact that is older than
+#             the data it derives from reports a stale answer confidently.
+#
+# This is the workspace's inventory pattern (see tools/check_egg_paths.py): a
+# new silent skip must FAIL here rather than arrive unnoticed. If a character
+# legitimately joins or leaves this set, edit it deliberately.
+EMPTY_ROSTER_EXPECTED = {"Cogita"}
+
+
 def main():
     drops = load_drops()
     with open(os.path.join(HERE, "rosters_mapped.json")) as f:
@@ -233,6 +254,22 @@ def main():
 
     with open(os.path.join(TARGET, "src/data/characters.h"), "w") as f:
         f.write(out)
+    # The inventory check, BEFORE anything is written: a character who silently
+    # produces no roster is either a data bug (Iscan was, for three weeks) or a
+    # deliberate exemption, and there is no third case.
+    if set(skipped) != EMPTY_ROSTER_EXPECTED:
+        raise SystemExit(
+            "empty-roster inventory mismatch (PLAN.md item #14)\n"
+            "  expected: %s\n"
+            "  got:      %s\n"
+            "A character emitting NO roster is a data bug until proven "
+            "otherwise -- check whether the species exist in this ROM before "
+            "adding a name to EMPTY_ROSTER_EXPECTED. ⚠️ And a character who "
+            "GAINS a first roster must be moved to the END of characters.txt "
+            "first: emitting them in place shifts every later table index, and "
+            "saves store the character INDEX."
+            % (sorted(EMPTY_ROSTER_EXPECTED), sorted(skipped)))
+
     with open(os.path.join(HERE, "sprite_report.txt"), "w") as f:
         f.write("\n".join(report) + "\n")
         if skipped:

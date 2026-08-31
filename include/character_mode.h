@@ -83,6 +83,20 @@ u8 CharacterMode_GetWildEncounterKind(void);
 u16 CharacterMode_RollWildLegendarySpecies(u8 level);
 u8 CharacterMode_BuildLegendaryPool(u8 level, u16 *out, u8 outCount,
                                    bool8 *outRepeatable);
+// The gift-egg roster roll (2026-08-26). Returns a family BASE species drawn
+// from the active character's roster, weighted 255/catchRate so rarer families
+// are likelier, with already-caught families excluded. SPECIES_NONE means "not
+// in Character Mode, or this character has no drawable family" -- the caller
+// must then give the vanilla species rather than nothing.
+u16 CharacterMode_RollEggSpecies(void);
+// Pool modes for CharacterMode_BuildEggPool. Public only so the test layer can
+// assert each pool deterministically instead of inferring exclusions from
+// thousands of draws.
+#define CM_EGG_POOL_UNCAUGHT     0
+#define CM_EGG_POOL_ANY_NONLEG   1
+#define CM_EGG_POOL_ANY          2
+u8 CharacterMode_BuildEggPool(u8 mode, u16 *out, u8 outCount);
+u32 CharacterMode_EggWeight(u16 species);
 void CharacterMode_RunBootSelftest(void);
 void CharacterMode_PumpTestMailbox(void);
 

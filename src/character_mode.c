@@ -535,3 +535,170 @@ u16 CharacterMode_RollWildOverrideSpecies(u8 level, u8 *outKind)
 // the CreateWildMon call that clears the marker -- see the comment there. This
 // file has no mutable statics and no entry in sym_ewram.txt/sym_bss.txt, and
 // wild_encounter.o already has one, so putting the byte there costs nothing.
+
+
+// ===========================================================================
+// Gift-egg roster roll -- the weighted picker behind ScriptGiveEgg
+// ===========================================================================
+//
+// Design ruled by the user 2026-08-26. A scripted gift "egg" hands over a
+// species drawn from the active character's roster, biased so that RARER
+// Pokemon are likelier: Beldum (catch rate 3) against Caterpie (255).
+//
+// The five rules, in the order they are applied:
+//
+//   1. Character Mode only. Outside it this is never called and the vanilla
+//      species is given, unchanged.
+//   2. Legendaries are excluded, exactly as the 10% wild override excludes
+//      them -- they all sit at catch rate 3 and would otherwise take 86% of
+//      Red's eggs, which is what the 1% legendary rule exists to prevent.
+//   3. A family whose base is already flagged CAUGHT in the Pokedex is
+//      excluded outright (weight 0), so eggs fill gaps instead of handing out
+//      duplicates. Same mechanism the legendary rule uses for
+//      offered-until-caught, and it costs no new save state.
+//   4. Weight is 255/catchRate, scaled -- see CM_EGG_WEIGHT_SCALE.
+//   5. Two fallbacks, narrowest first: if every eligible family is caught,
+//      re-open the whole non-legendary roster; if the roster has NO
+//      non-legendary family at all, allow legendaries. ⚠️ That last branch is
+//      not hypothetical and not general: it is TOBIAS, and measured to be
+//      Tobias alone -- he is the only SELECTABLE character whose roster (2
+//      families) is 100% legendary. Three more (Penny, Adaman, Irida) have
+//      exactly one non-legendary family, so their egg is deterministic; that
+//      is a property of their rosters, not a bug here.
+//
+// ⚠️ THE DATA CHECK MUST PRECEDE THE RNG CALL. Building the pool first and
+// returning SPECIES_NONE without drawing is deliberate: a character with no
+// pool must not consume a Random(), or every downstream roll in the game
+// shifts for them and nothing looks broken. Unbound hit this, ROWE shipped it
+// wrong in the legendary rule and fixed it in a5befab7. Do not "simplify" the
+// early return into a draw-then-discard.
+// (pool mode constants live in character_mode.h -- see the note there)
+
+
+
+// 255/catchRate in integer arithmetic collapses the middle of the range --
+// 255/45 truncates to 5 and 255/3 is 85, so a cr-45 family would read as 1/17th
+// of Beldum instead of 1/15th, and every cr>127 family would land on 1 or 2 and
+// become indistinguishable. Scaling by 100 first keeps the ratios intact in u32
+// and still cannot overflow: 25500 * 96 candidates = 2,448,000, well inside u32.
+#define CM_EGG_WEIGHT_SCALE 100
+#define CM_EGG_WEIGHT_MAX   (255 * CM_EGG_WEIGHT_SCALE)  // catchRate 1
+
+static u32 EggWeightForSpecies(u16 species)
+{
+    u8 catchRate = gBaseStats[species].catchRate;
+
+    // ⚠️ A species with NO gBaseStats row reads 0 out of the zero-filled tail of
+    // the table, and 255/0 is undefined behaviour, not a big number. This is the
+    // SPECIES_ENAMORUS hazard from §12.6 arriving somewhere new: that species
+    // sits in sLegendaryFamilyBases with no base-stats row, and any future
+    // roster pass could add another. Skipping it here is the safe direction --
+    // an unweighted species simply cannot be drawn.
+    if (catchRate == 0)
+        return 0;
+
+    return CM_EGG_WEIGHT_MAX / catchRate;
+}
+
+// Already-caught test, on the FAMILY BASE (the user's ruling). Note this reads
+// the Pokedex CAUGHT flag, so it is permanent: releasing or trading a Beldum
+// away does not make the family eligible again, and evolving one marks every
+// stage caught. A species with no national dex number returns 0 from
+// GetSetPokedexFlag (the §6 out-of-bounds guard) and so counts as NOT caught,
+// which keeps it eligible -- the safe direction, since the alternative silently
+// shrinks the pool.
+static bool8 EggFamilyAlreadyCaught(u16 species)
+{
+    u16 dexNum = SpeciesToNationalPokedexNum(species);
+
+    return GetSetPokedexFlag(dexNum, FLAG_GET_CAUGHT) != 0;
+}
+
+// Public wrapper so a test can assert the CURVE deterministically. Asserting
+// the weighting from drawn species alone needs thousands of trials to tell
+// 255/catchRate from flat, and a distribution test that cannot distinguish
+// those is the vacuity shape this repo keeps re-inventing.
+u32 CharacterMode_EggWeight(u16 species)
+{
+    return EggWeightForSpecies(species);
+}
+
+// Fills `out` with the eligible families for one pool mode and returns how many.
+// Split out from the roll so a test can assert the POOL deterministically --
+// asserting only on drawn species would need thousands of trials to notice that
+// an exclusion had stopped working.
+u8 CharacterMode_BuildEggPool(u8 mode, u16 *out, u8 outCount)
+{
+    const struct CharacterInfo *character = GetActiveCharacter();
+    u8 count = 0;
+    u32 i;
+
+    if (character == NULL || out == NULL)
+        return 0;
+
+    for (i = 0; character->roster[i] != SPECIES_NONE && count < outCount; i++)
+    {
+        u16 species = character->roster[i];
+
+        if (mode != CM_EGG_POOL_ANY && IsLegendaryRosterEntry(species))
+            continue;
+        if (mode == CM_EGG_POOL_UNCAUGHT && EggFamilyAlreadyCaught(species))
+            continue;
+        if (EggWeightForSpecies(species) == 0)
+            continue;
+
+        out[count++] = species;
+    }
+
+    return count;
+}
+
+u16 CharacterMode_RollEggSpecies(void)
+{
+    u16 candidates[CHARACTER_MAX_ROSTER_CANDIDATES];
+    u32 total = 0;
+    u32 roll;
+    u8 count;
+    u8 mode;
+    u32 i;
+
+    if (!InCharacterMode() || GetActiveCharacter() == NULL)
+        return SPECIES_NONE;
+
+    // Narrowest pool first; widen only when the narrower one came back empty.
+    for (mode = CM_EGG_POOL_UNCAUGHT; mode <= CM_EGG_POOL_ANY; mode++)
+    {
+        count = CharacterMode_BuildEggPool(mode, candidates, ARRAY_COUNT(candidates));
+        if (count != 0)
+            break;
+    }
+
+    // Data check BEFORE the RNG -- see the block comment above.
+    if (count == 0)
+        return SPECIES_NONE;
+
+    for (i = 0; i < count; i++)
+        total += EggWeightForSpecies(candidates[i]);
+
+    if (total == 0)
+        return SPECIES_NONE;
+
+    // Random32(), not Random(): the weight sum passes 65535 with as few as
+    // three cr-3 families, so a u16 draw would silently never reach the tail of
+    // the pool -- it would look like a working feature with a biased curve.
+    roll = Random32() % total;
+
+    for (i = 0; i < count; i++)
+    {
+        u32 weight = EggWeightForSpecies(candidates[i]);
+
+        if (roll < weight)
+            return candidates[i];
+        roll -= weight;
+    }
+
+    // Unreachable while total is the sum of the same weights, but a silent
+    // fallthrough here would hand back SPECIES_NONE and read as "the gift did
+    // nothing"; the last candidate is the honest answer.
+    return candidates[count - 1];
+}

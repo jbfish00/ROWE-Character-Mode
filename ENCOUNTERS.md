@@ -28,8 +28,8 @@ A number after a stage is the level from which it can appear; the stage before i
 
 ## Summary
 
-- **236** characters in the table.
-- **93** have at least one legendary; **143** have none and are completely unaffected by the 1% roll.
+- **237** characters in the table.
+- **93** have at least one legendary; **144** have none and are completely unaffected by the 1% roll.
 - **1** have an all-legendary roster, so their legendaries stay repeatable (spec §1.2): Tobias.
 - No character has an empty pool.
 
@@ -3907,9 +3907,10 @@ A number after a stage is the level from which it can appear; the stage before i
 
 **Legendary — none on this roster, so the 1%% roll never runs.**
 
-**Roster — 10% of encounters, 1 families:**
+**Roster — 10% of encounters, 2 families:**
 
 - Bidoof → Bibarel (15)
+- Teddiursa → Ursaring (30) → Ursaluna (32)
 
 ## Charm — Gen 8 *(not selectable)*
 
@@ -3994,10 +3995,11 @@ A number after a stage is the level from which it can appear; the stage before i
 
 **Legendary — none on this roster, so the 1%% roll never runs.**
 
-**Roster — 10% of encounters, 13 families:**
+**Roster — 10% of encounters, 15 families:**
 
 - Abra → Kadabra (16) → Alakazam (32)
 - Axew → Fraxure (30) → Haxorus (55)
+- Basculin → Basculegion (16)
 - Drilbur → Excadrill (31)
 - Dwebble → Crustle (34)
 - Gligar → Gliscor (16)
@@ -4006,6 +4008,7 @@ A number after a stage is the level from which it can appear; the stage before i
 - Machop → Machoke (28) → Machamp (32)
 - Magnemite → Magneton (30) → Magnezone (32)
 - Nosepass → Probopass (16)
+- Stantler → Wyrdeer (16)
 - Tangela → Tangrowth (16)
 - Timburr → Gurdurr (25) → Conkeldurr (32)
 - Trubbish → Garbodor (36)
@@ -4022,7 +4025,7 @@ A number after a stage is the level from which it can appear; the stage before i
 
 **Legendary — none on this roster, so the 1%% roll never runs.**
 
-**Roster — 10% of encounters, 6 families:**
+**Roster — 10% of encounters, 7 families:**
 
 - Cleffa → Clefairy (16) → Clefable (32)
 - Geodude → Graveler (25) → Golem (32)
@@ -4030,6 +4033,7 @@ A number after a stage is the level from which it can appear; the stage before i
 - Munchlax → Snorlax (30)
 - Nosepass → Probopass (16)
 - Rufflet → Braviary (35)
+- Teddiursa → Ursaring (30) → Ursaluna (32)
 
 ## Lian — Gen 8 *(not selectable)*
 
@@ -4063,10 +4067,11 @@ A number after a stage is the level from which it can appear; the stage before i
 
 **Legendary — none on this roster, so the 1%% roll never runs.**
 
-**Roster — 10% of encounters, 3 families:**
+**Roster — 10% of encounters, 4 families:**
 
 - Munchlax → Snorlax (30)
 - Sneasel → Weavile (16)
+- Stantler → Wyrdeer (16)
 - Zubat → Golbat (22) → Crobat (38)
 
 ## Melli — Gen 8 *(not selectable)*
@@ -4256,3 +4261,11 @@ A number after a stage is the level from which it can appear; the stage before i
 - Ponyta → Rapidash (40)
 - Shinx → Luxio (15) → Luxray (30)
 - Zorua → Zoroark (30)
+
+## Iscan — Gen 8 *(not selectable)*
+
+**Legendary — none on this roster, so the 1%% roll never runs.**
+
+**Roster — 10% of encounters, 1 families:**
+
+- Basculin → Basculegion (16)

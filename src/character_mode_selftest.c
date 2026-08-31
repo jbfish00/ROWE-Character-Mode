@@ -15,14 +15,17 @@
 #include "string_util.h"
 #include "text.h"  // EOS, GetStringWidth
 #include "trade.h"  // CreateInGameTradePokemon / DoInGameTradeScene (item 11)
+#include "battle_bg.h"  // CM_REQ_SHINY_FRAME
+#include "palette.h"   // the palette buffers it snapshots
 #include "pokemon_storage_system.h"  // CountMonsInBox
-#include "wild_encounter.h"  // CreateWildMonWithCharacterOverride
+#include "wild_encounter.h"  // CreateWildMonWithCharacterOverride + the fishing roll
 #include "field_player_avatar.h"  // RefreshPlayerAvatarGraphics
 #include "constants/trade.h"
 #include "constants/species.h"
 #include "constants/flags.h"
 #include "constants/items.h"
 #include "constants/vars.h"
+#include "daycare.h"  // CM_REQ_DAYCARE drives the real store/take pair
 #include "party_menu.h"            // CanLearnTutorMove -- CM_REQ_TMHM_PROBE
 #include "constants/party_menu.h"  // TUTOR_MOVE_CUT
 
@@ -372,6 +375,102 @@ enum
                            // test: do not build an assertion on them until #9
                            // is root-caused, for exactly the reason
                            // CM_REQ_SET_MON_EGG carries the same warning.
+    CM_REQ_EGG_POOL,       // argA: pool mode (CM_EGG_POOL_*), argB: a species to
+                           // look for (0 = don't look).
+                           // result = [31] ran | [30] species is in the pool
+                           //          | [15:0] pool size.
+                           // Asserts the EXCLUSIONS directly. Inferring them
+                           // from draws would need thousands of trials to
+                           // notice an exclusion had stopped working.
+    CM_REQ_EGG_WEIGHT,     // argA: species. result = [31] ran | [23:0] weight.
+                           // The curve itself: 255*100/catchRate, so Beldum (3)
+                           // must read 8500 and Caterpie (255) must read 100.
+    CM_REQ_EGG_ROLL,       // one draw from the live picker. result = species,
+                           // 0 = SPECIES_NONE. Touches the RNG, nothing else.
+    CM_REQ_EGG_ROLL_STATS, // argA: species to count, argB: trials (capped).
+                           // result = [31] ran | [15:0] hits. Proves the RNG
+                           // path actually CONSUMES the weights -- a pool and a
+                           // weight table can both be right while the draw
+                           // ignores them.
+    CM_REQ_DAYCARE,        // argA: op | (slot << 8). PLAN.md item #10 -- the
+                           // withdraw path had no e2e at all.
+                           //   op 0: deposit party slot (argA >> 8) through the
+                           //         REAL StoreSelectedPokemonInDaycare, with
+                           //         gPartyMenu.slotId set the way the party
+                           //         menu sets it (GetCursorSelectionMonId
+                           //         returns exactly that field).
+                           //   op 1: withdraw daycare slot (argA >> 8) through
+                           //         the REAL TakePokemonFromDaycare, which
+                           //         reads gSpecialVar_0x8004. That is the path
+                           //         that writes straight into gPlayerParty and
+                           //         then runs CharacterMode_SweepPartyToPC.
+                           //         result = species << 16 | party count.
+                           //   op 2: query. result = daycare count.
+                           // ops 0 and 2 also return the daycare count in the
+                           // low half, so a deposit that silently did nothing
+                           // is visible without a second request.
+    CM_REQ_LEARNSET_SWEEP, // argA: first species, argB: how many (<= 64).
+                           // PLAN.md item #12. CM_REQ_LEARNSET_PROBE op 3 walks
+                           // ONE mon's row; basculegion_hang_e2e spot-checks the
+                           // four species that hung the game in July, so a FIFTH
+                           // malformed row would not be caught. This walks
+                           // gLevelUpLearnsets[sp] to LEVEL_UP_END for a RANGE
+                           // of species, the same shape as CM_REQ_VERIFY_PREEVO
+                           // and CM_REQ_TMHM_PROBE, so the Lua side can chunk
+                           // the whole table.
+                           // result = entries << 16 | checked << 8 | bad.
+                           // "checked" counts only species with a gBaseStats
+                           // row -- an id that cannot exist cannot hang the
+                           // game. "bad" is a reachable species whose row is
+                           // NULL or does not reach LEVEL_UP_END: the July four
+                           // would have scored 4 here. "entries" is the in-band
+                           // control, because zero bad rows is equally true of
+                           // a sweep that walked nothing at all.
+    CM_REQ_NICKNAME_APPLY, // argA: party slot, argB: character to repeat.
+                           // PLAN.md item #8. Fills gStringVar2 the way the
+                           // naming screen does, then calls the REAL
+                           // CB2_SetPartyMonNickname via
+                           // CharacterMode_TestNicknameApply -- as opposed to
+                           // CM_REQ_SET_NICKNAME, which re-implements the write
+                           // with its own SetMonData and so cannot prove
+                           // anything about the row's own code.
+                           // result = [31] ran | [23:16] read-back length |
+                           //          [15:0] first mismatching index + 1, or 0
+                           //          if every character survived.
+    CM_REQ_FISHING_ITEM,   // argA: rod | (op << 8), argB: trials.
+                           // PLAN.md item #13, the fishing-yields-an-item QoL.
+                           //   op 0: run the PURE roll argB times and count the
+                           //         hits. result = [31] ran | [15:0] hits.
+                           //         Drives CharacterMode_PickFishingItem, so
+                           //         the odds asserted are the game's own.
+                           //   op 1: keep rolling (up to argB) until an item
+                           //         comes up and return it, with NO bag
+                           //         involvement. result = the item id, or 0.
+                           //         For asserting the per-rod table.
+                           //   op 2: the WHOLE path, bag and all --
+                           //         CharacterMode_TryFishingItem, repeated up
+                           //         to argB times until it fires.
+                           //         result = [31] ran | [30] the bag actually
+                           //         grew | [15:0] the item.
+                           //   op 3: result = CharacterMode_FishingItemAt(rod,
+                           //         argB) -- the game's OWN table, so a test
+                           //         asserts membership against the ROM rather
+                           //         than against ids retyped in Lua.
+    CM_REQ_SHINY_FRAME,    // argA: op, argB: op argument. PLAN.md item #13, the
+                           // shiny battle frame.
+                           //   op 0: result = CharacterMode_ShinyFrameTint(argB)
+                           //         -- the PURE transform, no battle needed.
+                           //   op 1: build a SHINY enemy lead and run the whole
+                           //         thing. result = [31] ran | [30] it
+                           //         reported applying | [29] palette entries
+                           //         actually changed.
+                           //   op 2: the same with a NON-shiny lead. Both bits
+                           //         must come back CLEAR -- without this pair
+                           //         "the frame was tinted" is equally true of
+                           //         a build that tints every battle.
+                           // ⚠️ ops 1 and 2 RESTORE the palette afterwards:
+                           // they run on the overworld, where those 32 entries
+                           // are the live overworld palette.
 };
 
 enum
@@ -1163,6 +1262,271 @@ void CharacterMode_PumpTestMailbox(void)
         break;
     case CM_REQ_EGG_DIAG:
         mb->result = CharacterMode_EggDiag(mb->argA & 0xFF, mb->argB & 0xFF);
+        break;
+    case CM_REQ_EGG_POOL:
+        {
+            u16 pool[CHARACTER_MAX_ROSTER_CANDIDATES];
+            u8 count = CharacterMode_BuildEggPool(mb->argA & 0xFF, pool, ARRAY_COUNT(pool));
+            u32 result = 0x80000000 | count;
+            u32 i;
+
+            if (mb->argB != SPECIES_NONE)
+            {
+                for (i = 0; i < count; i++)
+                {
+                    if (pool[i] == mb->argB)
+                    {
+                        result |= 0x40000000;
+                        break;
+                    }
+                }
+            }
+            mb->result = result;
+        }
+        break;
+    case CM_REQ_EGG_WEIGHT:
+        mb->result = 0x80000000 | (CharacterMode_EggWeight(mb->argA) & 0x00FFFFFF);
+        break;
+    case CM_REQ_EGG_ROLL:
+        mb->result = CharacterMode_RollEggSpecies();
+        break;
+    case CM_REQ_EGG_ROLL_STATS:
+        {
+            u32 trials = mb->argB > 4000 ? 4000 : mb->argB;
+            u32 hits = 0;
+            u32 i;
+
+            for (i = 0; i < trials; i++)
+            {
+                if (CharacterMode_RollEggSpecies() == mb->argA)
+                    hits++;
+            }
+            mb->result = 0x80000000 | (hits & 0xFFFF);
+        }
+        break;
+    case CM_REQ_SHINY_FRAME:
+        {
+            u8 op = mb->argA;
+
+            if (op == 0)
+            {
+                mb->result = 0x80000000 | CharacterMode_ShinyFrameTint(mb->argB);
+            }
+            else if (op == 1 || op == 2)
+            {
+                u16 saveUnfaded[32];
+                u16 saveFaded[32];
+                u16 i;
+                u32 changed = 0;
+                bool8 applied;
+
+                for (i = 0; i < 32; i++)
+                {
+                    saveUnfaded[i] = gPlttBufferUnfaded[i];
+                    saveFaded[i] = gPlttBufferFaded[i];
+                }
+
+                // otId ^ personality == 0 is shiny by construction, so no
+                // brute-force search is needed for the positive case. For the
+                // negative one, a personality whose halves cannot cancel a zero
+                // otId.
+                CreateMon(&gEnemyParty[0], SPECIES_PIKACHU, 5, 32, TRUE,
+                          (op == 1) ? 0 : 0x1234ABCD, OT_ID_PRESET, 0, 0);
+
+                applied = CharacterMode_ApplyShinyBattleFrame();
+
+                for (i = 0; i < 32; i++)
+                {
+                    if (gPlttBufferUnfaded[i] != saveUnfaded[i])
+                        changed++;
+                }
+
+                for (i = 0; i < 32; i++)
+                {
+                    gPlttBufferUnfaded[i] = saveUnfaded[i];
+                    gPlttBufferFaded[i] = saveFaded[i];
+                }
+
+                mb->result = 0x80000000;
+                if (applied)
+                    mb->result |= 0x40000000;
+                if (changed)
+                    mb->result |= 0x20000000;
+                mb->result |= (changed & 0xFFFF);
+            }
+        }
+        break;
+    case CM_REQ_FISHING_ITEM:
+        {
+            u8 rod = mb->argA & 0xFF;
+            u8 op = mb->argA >> 8;
+            u32 trials = mb->argB > 4000 ? 4000 : mb->argB;
+            u32 i;
+
+            if (op == 0)
+            {
+                u32 hits = 0;
+
+                for (i = 0; i < trials; i++)
+                {
+                    if (CharacterMode_PickFishingItem(rod) != ITEM_NONE)
+                        hits++;
+                }
+                mb->result = 0x80000000 | (hits & 0xFFFF);
+            }
+            else if (op == 1)
+            {
+                for (i = 0; i < trials; i++)
+                {
+                    u16 item = CharacterMode_PickFishingItem(rod);
+
+                    if (item != ITEM_NONE)
+                    {
+                        mb->result = item;
+                        break;
+                    }
+                }
+            }
+            else if (op == 2)
+            {
+                u16 item = ITEM_NONE;
+                u32 before = 0;
+                u32 after = 0;
+                u8 j;
+
+                // Sum every item this rod can give, BEFORE and after: the roll
+                // decides which one, so no single id can be snapshotted, and
+                // "the player has one" is not the claim -- "the player has one
+                // MORE" is.
+                for (j = 0; j < FISHING_ITEMS_PER_ROD; j++)
+                    before += CountTotalItemQuantityInBag(
+                        CharacterMode_FishingItemAt(rod, j));
+
+                for (i = 0; i < trials; i++)
+                {
+                    if (CharacterMode_TryFishingItem(rod, &item))
+                        break;
+                }
+
+                for (j = 0; j < FISHING_ITEMS_PER_ROD; j++)
+                    after += CountTotalItemQuantityInBag(
+                        CharacterMode_FishingItemAt(rod, j));
+
+                mb->result = 0x80000000 | (item & 0xFFFF);
+                if (after > before)
+                    mb->result |= 0x40000000;
+            }
+            else if (op == 3)
+            {
+                mb->result = CharacterMode_FishingItemAt(rod, mb->argB);
+            }
+        }
+        break;
+    case CM_REQ_DAYCARE:
+        {
+            u8 op = mb->argA & 0xFF;
+            u8 slot = mb->argA >> 8;
+
+            if (op == 0 && slot < PARTY_SIZE)
+            {
+                // GetCursorSelectionMonId() returns gPartyMenu.slotId, so this
+                // is the deposit the party menu performs, not a copy of it.
+                gPartyMenu.slotId = slot;
+                StoreSelectedPokemonInDaycare();
+            }
+            else if (op == 1)
+            {
+                u16 species;
+
+                gSpecialVar_0x8004 = slot;
+                species = TakePokemonFromDaycare();
+                mb->result = ((u32)species << 16) | CalculatePlayerPartyCount();
+                break;
+            }
+            mb->result = CountPokemonInDaycare(&gSaveBlock1Ptr->daycare);
+        }
+        break;
+    case CM_REQ_LEARNSET_SWEEP:
+        {
+            u16 first = mb->argA;
+            u16 count = mb->argB;
+            u16 checked = 0;
+            u16 bad = 0;
+            u16 entries = 0;
+            u16 sp;
+
+            if (count > 64)
+                count = 64;
+            for (sp = first; sp < first + count && sp < NUM_SPECIES; sp++)
+            {
+                u16 i = 0;
+
+                // Only species that can actually EXIST are the question. An id
+                // with no gBaseStats row cannot be created, caught, traded or
+                // evolved into, so a NULL learnset there is unreachable and
+                // counting it would bury the reachable ones in noise.
+                if (gBaseStats[sp].baseHP == 0 && gBaseStats[sp].baseSpeed == 0
+                    && gBaseStats[sp].catchRate == 0)
+                    continue;
+                checked++;
+
+                // ⚠️ A NULL row IS the July defect -- do not walk it. The three
+                // shipping loops (src/pokemon.c:4864, :9525,
+                // src/party_menu.c:2851) walk it with a u8 index and no bound
+                // at all and simply hang; doing the same here would wedge the
+                // harness instead of reporting the species.
+                if (gLevelUpLearnsets[sp] == NULL)
+                {
+                    bad++;
+                    continue;
+                }
+
+                // The cap exists ONLY so a malformed row reports a number
+                // instead of wedging. The shipping loops have no cap.
+                while (i < 250 && gLevelUpLearnsets[sp][i].move != LEVEL_UP_END)
+                    i++;
+                if (i >= 250)
+                    bad++;
+                entries += i;
+            }
+            // entries is the in-band control: "0 bad rows" is equally true of a
+            // sweep that walks nothing at all, which is one edit away (`while
+            // (0)`), so the Lua side asserts a large entry count too.
+            mb->result = ((u32)entries << 16) | ((u32)checked << 8) | bad;
+        }
+        break;
+    case CM_REQ_NICKNAME_APPLY:
+        {
+            u8 slot = mb->argA & 0xFF;
+            u8 want = mb->argB;
+            u8 readback[POKEMON_NAME_LENGTH + 1];
+            u8 i;
+            u32 firstBad = 0;
+
+            if (slot >= PARTY_SIZE)
+                break;
+
+            // Exactly what CB2_NicknamePartyMon leaves behind for the naming
+            // screen to edit: the buffer the screen writes into is gStringVar2.
+            for (i = 0; i < POKEMON_NAME_LENGTH; i++)
+                gStringVar2[i] = want;
+            gStringVar2[POKEMON_NAME_LENGTH] = EOS;
+
+            CharacterMode_TestNicknameApply(slot);
+
+            GetMonData(&gPlayerParty[slot], MON_DATA_NICKNAME, readback);
+            for (i = 0; i < POKEMON_NAME_LENGTH; i++)
+            {
+                if (readback[i] != want)
+                {
+                    firstBad = i + 1;
+                    break;
+                }
+            }
+            mb->result = 0x80000000
+                       | ((u32)StringLength(readback) << 16)
+                       | (firstBad & 0xFFFF);
+        }
         break;
     case CM_REQ_PARTY_MENU_ACTIONS:
         mb->result = CharacterMode_ProbePartyMenuActions(mb->argA & 0xFF);

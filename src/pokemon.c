@@ -5310,6 +5310,25 @@ u32 GetBoxMonData(struct BoxPokemon *boxMon, s32 field, u8 *data)
 			boxMon->isBadEgg = 0;
             boxMon->isEgg = 0;
             substruct3->isEgg = 0;
+            // PLAN.md §12.7, second half -- fixed 2026-08-26.
+            //
+            // This `else` is not vanilla, and clearing substruct3->isEgg mutates
+            // the ENCRYPTED block. The function re-encrypts on the way out but
+            // did NOT recompute the checksum, so the stored checksum was stale
+            // from here until the next read repaired it -- and SetBoxMonData's
+            // guard silently DROPS every encrypted write while it is stale.
+            // Measured, not argued: party_egg_diag.lua saw a healthy 54506 go
+            // to 38122/54506 MISMATCH after exactly one getter, and repair
+            // itself on the next one.
+            //
+            // Re-stamping here is correct under ANY reading of the intent: if
+            // you mutate the mon you must re-stamp it. It deliberately does NOT
+            // change egg semantics -- the `else` itself stays, so eggs remain
+            // disabled per the user's ruling of 2026-08-26, and
+            // GetMonData(MON_DATA_IS_EGG) still cannot return 1. Deleting the
+            // `else` is the separate, gameplay-affecting change, and is NOT
+            // done here.
+            boxMon->checksum = CalculateBoxMonChecksum(boxMon);
         }
     }
 
@@ -9881,6 +9900,34 @@ u32 CharacterMode_EggDiag(u8 slot, u8 op)
         return result;
     }
 
+    if (op == 5)
+    {
+        // PLAN.md item #9, asserted rather than diagnosed. §12.7 measured the
+        // damage as SELF-HEALING -- the next encrypted read re-stamps the
+        // checksum -- so no two-request Lua sequence can ever see it: the frame
+        // boundary between two mailbox requests slips a repairing read in
+        // between. Both halves therefore happen here, back to back:
+        //   1. one getter of an encrypted field (what used to leave the stored
+        //      checksum stale), then
+        //   2. an encrypted WRITE, read back.
+        // Before the re-stamp in GetBoxMonData, SetBoxMonData's checksum guard
+        // silently DROPPED that write and this returned the old held item
+        // (ITEM_NONE). With it, the write lands. Returns the read-back value,
+        // not a boolean, so the Lua side asserts the item id itself.
+        u16 probe = ITEM_POTION;
+
+        GetMonData(mon, MON_DATA_SPECIES, NULL);        // the one getter
+        SetMonData(mon, MON_DATA_HELD_ITEM, &probe);    // the encrypted write
+        result |= GetMonData(mon, MON_DATA_HELD_ITEM, NULL) & 0xFFFF;
+        return result;
+    }
+
+    // op 6 is op 0 (the checksum pair) with exactly one getter run first, for
+    // the same single-call reason as op 5. Without the re-stamp this reported
+    // computed 38122 against stored 54506; with it the two agree.
+    if (op == 6)
+        GetMonData(mon, MON_DATA_SPECIES, NULL);
+
     // Everything below reads STORAGE. substruct3 is inside the encrypted
     // block, so the read is bracketed by the same decrypt/encrypt pair
     // SetBoxMonData uses -- and the checksum is computed in exactly the state
@@ -9888,8 +9935,17 @@ u32 CharacterMode_EggDiag(u8 slot, u8 op)
     substruct3 = &(GetSubstruct(boxMon, boxMon->personality, 3)->type3);
     DecryptBoxMon(boxMon);
 
-    if (op == 0)
-        result |= ((u32)CalculateBoxMonChecksum(boxMon) << 16) | boxMon->checksum;
+    // ⚠️ ASSIGNMENT, NOT `|=`, AND DELIBERATELY WITHOUT CM_EGGDIAG_RAN. That
+    // flag is 0x80000000, and a u16 checksum shifted left 16 reaches bit 31 --
+    // so ORing them together silently forces bit 15 of the computed half. Both
+    // checksums §12.7 measured (38122 and 54506) happened to have bit 15 set
+    // already, which is exactly why the collision was invisible: the reader in
+    // party_egg_diag.lua has always been decoding `computed | 0x8000` and
+    // getting away with it. A checksum below 32768 would read as a MISMATCH
+    // that is not one -- a coin flip, on the one comparison this request
+    // exists to make. The mailbox status already proves the request ran.
+    if (op == 0 || op == 6)
+        result = ((u32)CalculateBoxMonChecksum(boxMon) << 16) | boxMon->checksum;
     else
         result |= (boxMon->isEgg ? 1 : 0) | (substruct3->isEgg ? 2 : 0);
 

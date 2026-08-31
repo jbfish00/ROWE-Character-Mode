@@ -38,6 +38,8 @@ FiveIsland_WaterLabyrinth_EventScript_TryGiveEgg:: @ 81688BA
 	message FiveIsland_WaterLabyrinth_Text_ReceivedEggFromMan
 	waitfanfare
 	waitmessage
+	@ Character Mode: name what was actually handed over. No-op otherwise.
+	call EventScript_CharacterModeAnnounceGift
 	call EventScript_RestorePrevTextColor
 	goto FiveIsland_WaterLabyrinth_EventScript_PostEggComment
 	end

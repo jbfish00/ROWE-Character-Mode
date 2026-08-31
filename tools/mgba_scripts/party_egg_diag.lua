@@ -240,6 +240,11 @@ local function raw(label)
                         label, sanity, enc, r))
 end
 
+-- ⚠️ This decode was silently wrong until 2026-08-30 and got away with it.
+-- CM_EGGDIAG_RAN is 0x80000000, so it landed on bit 15 of the computed half,
+-- and both checksums this script ever printed (38122, 54506) already had that
+-- bit set. Any checksum below 32768 would have printed as a MISMATCH that was
+-- not one. The C side no longer sets that bit for the checksum ops.
 local function checksum(label)
     local r = mbResult()
     local computed = math.floor(r / 65536) % 65536

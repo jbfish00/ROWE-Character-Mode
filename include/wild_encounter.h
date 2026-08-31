@@ -59,3 +59,11 @@ u8 ChooseHeadbuttMonIndex(void);
 u16 GetFirstStage(u16 species);
 
 #endif // GUARD_WILD_ENCOUNTER_H
+
+// Fishing QoL -- PLAN.md item #13. CharacterMode_PickFishingItem is the PURE
+// roll (no bag, no string), so the headless suite drives the same odds the game
+// does; CharacterMode_TryFishingItem is the whole path including the bag.
+u16 CharacterMode_PickFishingItem(u8 rod);
+bool8 CharacterMode_TryFishingItem(u8 rod, u16 *itemOut);
+u16 CharacterMode_FishingItemAt(u8 rod, u8 index);  // the per-rod table, for tests
+#define FISHING_ITEMS_PER_ROD 3

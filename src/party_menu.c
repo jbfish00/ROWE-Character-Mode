@@ -3212,6 +3212,32 @@ static void CB2_SetPartyMonNickname(void)
     SetMainCallback2(CB2_ReturnToPartyMenuFromNaming);
 }
 
+// Test hook -- PLAN.md item #8, the Nickname row's BEHAVIOUR.
+//
+// CB2_SetPartyMonNickname *is* that behaviour: everything between the naming
+// screen and the mon is the one SetMonData above. Its second line schedules
+// the party menu's return callback, which a headless run must not actually
+// take, so the caller's callback2 is saved and put back -- SetMainCallback2
+// only writes a global, so the mon-facing half of the real function runs
+// exactly as it ships.
+//
+// ⚠️ This does NOT drive the naming screen. DoNamingScreen -> keyboard -> this
+// callback is party-menu UI, and no headless run in this repo drives UI. What
+// is proven is the write, on the REAL function, through the real slot selector
+// (gPartyMenu.slotId) and the real buffer (gStringVar2) the naming screen
+// fills. Do not read a green run as "the Nickname row is tested end to end".
+void CharacterMode_TestNicknameApply(u8 slot)
+{
+    MainCallback saved = gMain.callback2;
+
+    if (slot >= PARTY_SIZE)
+        return;
+
+    gPartyMenu.slotId = slot;
+    CB2_SetPartyMonNickname();
+    SetMainCallback2(saved);
+}
+
 // Deliberately NOT CB2_ReturnToPartyMenuFromSummaryScreen: that one overwrites
 // gPartyMenu.slotId from gLastViewedMonIndex, which the naming screen never
 // sets, so the cursor would land on whichever mon was last viewed in a summary.
