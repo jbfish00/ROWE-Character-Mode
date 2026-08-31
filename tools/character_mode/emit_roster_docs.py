@@ -384,7 +384,8 @@ def main():
            "resolves to, in **National Pokédex order**. Rosters were researched from "
            "Bulbapedia (union of all games, remakes, rematches, and anime) and "
            "cross-checked where possible. Regional/cosmetic forms show as their base "
-           "species. Off-roster Pokémon are routed to your PC.", "",
+           "species. An off-roster ball is refused outright (the Pokémon is "
+           "never caught); off-roster gifts are routed to your PC instead.", "",
            "**%d playable characters.** Sprite version: `ROSTERS_SPRITES.md`."
            % len(chars), "",
            ("%d further characters remain in the data but are not offered in this "

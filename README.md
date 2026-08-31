@@ -8,9 +8,11 @@
 characters (Gen 1–9) — protagonist, rival, gym leader, Elite Four, champion,
 villain, professor, or anime cast — and are restricted to catching and keeping only that
 character's canon roster (Bulbapedia-documented, expanded to full evolution
-families). Off-roster catches and gifts route to your PC; on-roster species
-(and all their evolutions) join your party. It also drives ROWE's costume system
-so you visibly appear as your chosen character.
+families). An off-roster ball is **refused** — "It refuses to join {PLAYER}'s
+journey!" — and the Pokémon is never caught; off-roster *gifts* are routed to
+your PC instead. On-roster species (and all their evolutions) join your party.
+It also drives ROWE's costume system so you visibly appear as your chosen
+character.
 
 Activate it at the start of a new game: in the intro question sequence, choose
 **Character Mode**, scroll to your character, and confirm. This is the original

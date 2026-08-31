@@ -112,7 +112,7 @@ playthrough, art acquisition, and two permission requests the user must send.
 | | |
 |---|---|
 | Branch | `character-mode`, **working tree clean and LEVEL WITH `origin`** (`jbfish00/ROWE-Character-Mode`) at HEAD `89ef5ce7` — ✅ **pushed 2026-08-07**, which closes the one item that used to look like unfinished state. 25 commits landed 07-29 → 08-07. ⚠️ **Do not trust this row for HEAD** — several passes ended with a doc or anchors commit after the last feature commit. Re-check: `git rev-list --left-right --count origin/character-mode...HEAD` (`0  0` today) |
-| Rosters | **AUDITED** — 236 table slots / **206 selectable** / 30 hidden, **3,359** rows, **every row sourced** |
+| Rosters | **AUDITED** — **237** table slots / **206 selectable** / **31** hidden, **3,362** rows, **every row sourced**. ⚠️ Was 236/30/3,359 until 2026-08-31: Iscan was appended (§14 item 14) and five characters regained Legends: Arceus species. Selectable is unchanged, so anything quoting *206* is still right |
 | Threshold | **ENFORCED** — the only game in the project where it is |
 | Sprites | **184 of 236** have a front pic (52 are `CHAR_ASSET_NONE`). Overworld **172 of 236** as of 2026-08-10 (128 → 172; was 101 on 07-29) and back pics **19 of 236**. ⚠️ **The overworld jump needed no new art and no permission** — 44 sheets were already in the pinned donor commit behind an untraversed path (§11). Of the 206 SELECTABLE characters: portrait 175, overworld 172, back 19 |
 | Name length | **12/12 LANDED** (`71cebcbe`), verified by a new headless suite |
