@@ -20,6 +20,26 @@ reference implementation the other ports (Unbound, Lazarus, Radical Red,
 Seaglass, Prism) were derived from. Because ROWE is a full `pokeemerald`
 decompilation, you build the ROM yourself with `make` — see `INSTALL.md`.
 
+## ▶️ How to turn Character Mode on
+
+> **Character Mode is opt-in. Nothing in the game changes until you do this —
+> and you can only do it when starting a new game.**
+
+1. **Start a new game.**
+2. In the **intro question sequence**, choose **Character Mode**.
+3. **Scroll to your character** in the list and confirm.
+
+**You will know it worked:** your character's starter, their portrait on the
+trainer card, and your costume changes so you visibly appear as them.
+
+206 characters are selectable. Character Mode and **Randomized Party Mode** are
+mutually exclusive — picking one disables the other.
+
+⚠️ ROWE is a full `pokeemerald` decompilation, so you **build the ROM yourself**
+with `make` — see [`INSTALL.md`](INSTALL.md). There is no patch to download.
+
+---
+
 ---
 
 # Pokémon R.O.W.E
