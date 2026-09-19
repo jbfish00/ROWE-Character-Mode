@@ -425,7 +425,14 @@ static void BuildNormalStartMenu(void)
     AddStartMenuAction(MENU_ACTION_OPTION);
     AddStartMenuAction(MENU_ACTION_TRAINER_SKILLS);
 	//AddStartMenuAction(MENU_ACTION_UI_START_MENU);
-	//AddStartMenuAction(MENU_ACTION_UI_MODE_MENU);
+	// Mode Menu in the START menu (enabled 2026-09-19). Character Mode was
+	// otherwise reachable ONLY from the new-game intro question sequence, so a
+	// save started without it had no way in at all. The menu's commit handler
+	// is already written for mid-game activation: it clears
+	// FLAG_RANDOMIZED_MODE, sweeps the party to the PC, and grants the roster
+	// starter only when no roster member remains, so re-committing cannot mint
+	// duplicate starters.
+	AddStartMenuAction(MENU_ACTION_UI_MODE_MENU);
 #ifdef DEBUG_MENU
     AddStartMenuAction(MENU_ACTION_DEBUG);
 #endif

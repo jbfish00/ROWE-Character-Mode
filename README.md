@@ -25,23 +25,29 @@ decompilation, you build the ROM yourself with `make` — see `INSTALL.md`.
 > **Character Mode is opt-in. Nothing in the game changes until you do this —
 > and you can only do it when starting a new game.**
 
-1. **Start a new game.** ⚠️ **"Continue" will not work** — see the warning below.
-2. In the **intro question sequence** (the questions asked before you reach the
-   truck), choose **Character Mode**.
-3. **Scroll to your character** in the list and confirm.
+**There are two ways in — at any time, or during the intro.**
 
-⚠️⚠️ **THIS IS THE ONLY WAY IN.** Character Mode cannot be turned on after the
-intro. The "Mode Menu" entry that would open it from the START menu exists in
-the source but is **deliberately commented out**
-(`src/start_menu.c`, `AddStartMenuAction(MENU_ACTION_UI_MODE_MENU)`), so a save
-that was started without Character Mode has no way to enable it. Start a fresh
-game to change or disable your choice.
+### A. The START menu, at any point in the game ← easiest
+
+1. Press **START**, then choose **Mode Menu**.
+2. Tick **Character Mode**, pick your character, and confirm.
+
+Turning it on mid-game sweeps any off-roster Pokémon in your party into the PC
+and grants your character's starter if nothing on their roster remains. You can
+come back to the same menu to change character or switch the mode off.
+
+### B. The new-game intro
+
+In the **intro question sequence** (before you reach the truck), choose
+**Character Mode**, scroll to your character, and confirm.
+
+Character Mode and **Randomized Party Mode** are mutually exclusive — turning
+one on clears the other.
 
 **You will know it worked:** your character's starter, their portrait on the
 trainer card, and your costume changes so you visibly appear as them.
 
-206 characters are selectable. Character Mode and **Randomized Party Mode** are
-mutually exclusive — picking one disables the other.
+206 characters are selectable.
 
 ⚠️ ROWE is a full `pokeemerald` decompilation, so you **build the ROM yourself**
 with `make` — see [`INSTALL.md`](INSTALL.md). There is no patch to download.
