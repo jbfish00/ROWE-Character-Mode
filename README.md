@@ -25,24 +25,21 @@ decompilation, you build the ROM yourself with `make` — see `INSTALL.md`.
 > **Character Mode is opt-in. Nothing in the game changes until you do this —
 > and you can only do it when starting a new game.**
 
-**There are two ways in — at any time, or during the intro.**
-
-### A. The START menu, at any point in the game ← easiest
-
-1. Press **START**, then choose **Mode Menu**.
-2. Tick **Character Mode**, pick your character, and confirm.
-
-Turning it on mid-game sweeps any off-roster Pokémon in your party into the PC
-and grants your character's starter if nothing on their roster remains. You can
-come back to the same menu to change character or switch the mode off.
-
-### B. The new-game intro
-
-In the **intro question sequence** (before you reach the truck), choose
-**Character Mode**, scroll to your character, and confirm.
+1. **Start a new game.** ⚠️ **"Continue" will not work** — see below.
+2. In the **intro question sequence** (the questions asked before you reach the
+   truck), choose **Character Mode**.
+3. **Scroll to your character** in the list and confirm.
 
 Character Mode and **Randomized Party Mode** are mutually exclusive — turning
 one on clears the other.
+
+⚠️⚠️ **THIS IS THE ONLY WAY IN.** Character Mode cannot be turned on after the
+intro. A "Mode Menu" START-menu entry exists in the source
+(`MENU_ACTION_UI_MODE_MENU`) and its commit handler is written for mid-game
+activation, but it is **deliberately left disabled**: enabling it was tried on
+2026-09-19 and reverted because it breaks the test suite's intro navigation
+(five e2e layers go red together). See the comment at that line before trying
+again. Start a fresh game to change or disable your choice.
 
 **You will know it worked:** your character's starter, their portrait on the
 trainer card, and your costume changes so you visibly appear as them.

@@ -425,14 +425,18 @@ static void BuildNormalStartMenu(void)
     AddStartMenuAction(MENU_ACTION_OPTION);
     AddStartMenuAction(MENU_ACTION_TRAINER_SKILLS);
 	//AddStartMenuAction(MENU_ACTION_UI_START_MENU);
-	// Mode Menu in the START menu (enabled 2026-09-19). Character Mode was
-	// otherwise reachable ONLY from the new-game intro question sequence, so a
-	// save started without it had no way in at all. The menu's commit handler
-	// is already written for mid-game activation: it clears
-	// FLAG_RANDOMIZED_MODE, sweeps the party to the PC, and grants the roster
-	// starter only when no roster member remains, so re-committing cannot mint
-	// duplicate starters.
-	AddStartMenuAction(MENU_ACTION_UI_MODE_MENU);
+	// ⛔ DO NOT UNCOMMENT WITHOUT RUNNING tools/mgba_scripts/run_suite.sh.
+	// Tried 2026-09-19 and REVERTED: adding this entry breaks the suite's
+	// intro navigation. Measured, same machine, nothing else running --
+	// pc_sweep_e2e is "PASSED 10, FAILED 0" on the build without it
+	// (md5 c9cd47db) and fails on the build with it (md5 6ea486b6), and
+	// ot_roundtrip / legendary / encounter_doc / catch_gate / pc_sweep all go
+	// red together on "pick Character Mode at questions index N" and "picked
+	// Start Game before step timeout". The mode menu's commit handler IS
+	// written for mid-game activation, so the feature is plausible -- but
+	// something about adding this action perturbs the flow those layers drive,
+	// and that was not diagnosed. Character Mode remains new-game-only.
+	//AddStartMenuAction(MENU_ACTION_UI_MODE_MENU);
 #ifdef DEBUG_MENU
     AddStartMenuAction(MENU_ACTION_DEBUG);
 #endif
