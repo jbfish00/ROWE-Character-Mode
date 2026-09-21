@@ -10,6 +10,52 @@ file is **state and next steps**. Re-derived against this working tree on
 **2026-08-09**, after a full rebuild, an anchor regeneration and a clean 19-run
 suite. See §10 for that session.
 
+## ⭐⭐⭐ NEW WORKSTREAM 2026-09-20 — the in-game ROSTER DISPLAY (UNCOMMITTED)
+
+📄 **Runbook: `../Character Hacks/game_plans/roster_display.md`.** ROWE is the
+pilot for a screen that lists the ACTIVE character's roster — one row per family
+ROOT, species name plus a bordered species icon — to be ported to the other four
+GBA games (Seaglass next, by the user's order).
+
+🔴 **NOTHING IS COMMITTED.** Build `0e29237f`. **7 modified + 7 untracked**
+files (the 7th modified is this file):
+`src/character_roster_menu.c` + `include/character_roster_menu.h` (new screen),
+`src/start_menu.c` / `include/start_menu.h` (the row, in **`BuildSaveMenu`**),
+`ld_script.txt`, `tools/check_roster_menu_renderable.py` (+ its negative test,
+7/7), `tools/mgba_scripts/roster_menu_e2e.lua` (live layer, 8/8, wired into
+`run_suite.sh`), `tools/mgba_scripts/check_anchors_fresh.py` (+ its negative
+test, 6/6), and `gen_anchors.py` (+`gTasks`, `+gSprites`,
+`+RosterMenu_HandleInput`). **Commit this before anything else.**
+⬜ The full suite still needs a run on THIS build — it was 29/29 green on an
+earlier build of the same work and was stopped at 8/29 to free the machine.
+
+**Reaching it in game:** Continue → **START → SELECT → Roster**. START opens the
+graphical 8-slot grid; SELECT from there opens the classic list
+(`BuildSaveMenu`: Save / Skills / Roster / Debug / Exit).
+⚠️ **`BuildNormalStartMenu` is DEAD CODE** — declared, defined, called from
+nowhere. A row added there does nothing.
+
+⭐⭐ **§—: THE 2026-09-19 REVERT (`3215ccd0`) IS INVALIDATED.** It blamed a
+START-menu row for five live layers going red and said the mechanism was never
+diagnosed. It was never the menu row: commit `03466a10` did not regenerate
+`tools/mgba_scripts/anchors.lua`, so every ROM address the layers breakpoint was
+stale — including `Start_EventScript_Character_Mode`, the exact script
+`intro_drive.lua` breakpoints. The revert "fixed" it only by restoring a
+byte-identical build. `gen_anchors.py` had always stamped a `mapDigest` that
+**nothing read**, while `run_suite.sh` trap #1 claimed staleness "CANNOT" be
+detected — both now corrected, with `check_anchors_fresh.py` run first by the
+suite. ✅ Proven: with fresh anchors, a build carrying the new START-menu row
+AND a whole new source file gives `pc_sweep_e2e` PASSED 10 / FAILED 0.
+⬜ **Re-enabling `MENU_ACTION_UI_MODE_MENU` is now a USER decision** (mid-game
+activation changes what Character Mode means), not a test question.
+
+⚠️ **Traps this workstream paid for, in this tree:** `moveCursorFunc`'s first
+parameter is the item's **ID, not its index** (`list_menu.c:886`) — indexing
+`items[]` with it drew Scyther instead of Pikachu and, because Scyther is green,
+looked exactly like a palette bug; **regenerate `anchors.lua` after every
+build**; and **photograph the screen** — three defects were caught by
+screenshots that every assertion was happy with.
+
 🛑 **THE "What remains" TABLE JUST BELOW IS THE CURRENT OPEN-WORK LIST
 (re-derived 2026-08-20; items 7-14 worked 2026-08-30).** Fourteen items, split
 by who can do them: **items 7-14 were the agent's eight, and all eight are now

@@ -32,5 +32,6 @@ bool8 StartMenuBattlePyramidBagCallback(void);
 bool8 StartMenuDexNavCallback(void);
 bool8 StartMenuUiModeMenuCallback(void);
 bool8 StartMenuUiStartMenuCallback(void);
+bool8 StartMenuCharacterRosterCallback(void);
 
 #endif // GUARD_START_MENU_H

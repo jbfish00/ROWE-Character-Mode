@@ -41,6 +41,8 @@
 #include "script.h"
 #include "sound.h"
 #include "start_menu.h"
+#include "character_mode.h"
+#include "character_roster_menu.h"
 #include "trainer_skills.h"
 #include "debug.h"
 #include "strings.h"
@@ -87,6 +89,7 @@ enum
 	MENU_ACTION_UI_START_MENU,
     MENU_ACTION_TRAINER_SKILLS,   // 2.X Trainer Skills (appended: never shift existing ids)
     MENU_ACTION_DEBUG,            // dev only, gated on DEBUG_MENU (include/debug.h)
+    MENU_ACTION_CHARACTER_ROSTER, // Character Mode roster (appended: never shift existing ids)
 };
 
 // Save status
@@ -185,6 +188,10 @@ static const struct WindowTemplate sPyramidFloorWindowTemplate_1 = {0, 1, 1, 0xC
 
 static const u8 sText_ModeMenu[] = _("Mode Menu");
 static const u8 sText_StartMenu[] = _("Start Menu");
+// Local, not in strings.c: that file is split into Spanish and English blocks,
+// so a shared label would have to be added twice. sText_ModeMenu already does
+// it this way.
+static const u8 sText_CharacterRoster[] = _("Roster");
 
 static const struct MenuAction sStartMenuItems[] =
 {
@@ -220,7 +227,8 @@ static const struct MenuAction sStartMenuItems[] =
     [MENU_ACTION_RETIRE_FRONTIER]   = {gText_MenuRetire, {.u8_void = StartMenuBattlePyramidRetireCallback}},
     [MENU_ACTION_PYRAMID_BAG]   	= {gText_MenuBag, {.u8_void = StartMenuBattlePyramidBagCallback}},
     [MENU_ACTION_UI_MODE_MENU]      = {sText_ModeMenu, {.u8_void = StartMenuUiModeMenuCallback}},
-	[MENU_ACTION_UI_START_MENU]     = {sText_StartMenu, {.u8_void = StartMenuUiStartMenuCallback}}
+	[MENU_ACTION_UI_START_MENU]     = {sText_StartMenu, {.u8_void = StartMenuUiStartMenuCallback}},
+    [MENU_ACTION_CHARACTER_ROSTER]  = {sText_CharacterRoster, {.u8_void = StartMenuCharacterRosterCallback}}
 };
 
 static const struct BgTemplate sUnknown_085105A8[] =
@@ -368,6 +376,17 @@ bool8 StartMenuTrainerSkillsCallback(void)
     return TRUE;
 }
 
+bool8 StartMenuCharacterRosterCallback(void)
+{
+    // Same field-hosted overlay shape as the skills menu above, and for the
+    // same reason: the roster list calls AddWindow on the field.
+    RemoveExtraStartMenuWindows();
+    HideStartMenu();
+    FreeAllWindowBuffers();
+    CharacterRosterMenu_Open();
+    return TRUE;
+}
+
 // The debug menu (src/debug.c) shipped complete but was never reachable -- nothing
 // in the tree called Debug_ShowMainMenu(). Its Utilities > Warp submenu picks a
 // destination by map group + map number, which covers the Sevii maps (they were
@@ -391,6 +410,21 @@ static void BuildSaveMenu(void)
 
 	AddStartMenuAction(MENU_ACTION_SAVE);
     AddStartMenuAction(MENU_ACTION_TRAINER_SKILLS);
+
+    // ⚠️ THIS is the reachable home for the roster list.
+    // BuildNormalStartMenu() below is DEAD CODE -- declared, defined, and
+    // called from nowhere (BuildStartMenuActions picks this function in the
+    // ordinary case and BuildDarknessStartMenu under flash). Adding the row
+    // there did nothing at all.
+    // Reaching this menu in game is START (ROWE's graphical 8-slot grid,
+    // ui_start_menu.c) and then SELECT, which is what the grid's own footer
+    // means by "SELECT Save". The debug menu's comment below says the same
+    // thing and was read as being about the debug menu specifically.
+    // Measured by photographing the running game: pressing START and then
+    // "UP UP then A" opened the BAG, and pressing SELECT on the field just
+    // offered to register an item.
+    if (InCharacterMode())
+        AddStartMenuAction(MENU_ACTION_CHARACTER_ROSTER);
 #ifdef DEBUG_MENU
     // This is the reachable home for the debug menu. ROWE's graphical start menu
     // is a fixed 8-slot tilemap grid with no free slot, and the classic list menu
@@ -424,18 +458,40 @@ static void BuildNormalStartMenu(void)
     AddStartMenuAction(MENU_ACTION_SAVE);
     AddStartMenuAction(MENU_ACTION_OPTION);
     AddStartMenuAction(MENU_ACTION_TRAINER_SKILLS);
+
+    // Read-only list of the active character's roster. Gated on
+    // InCharacterMode(), so a normal save never sees the row. Unlike the Mode
+    // Menu entry below it opens NO path into Character Mode and changes no
+    // state -- it only reads gCharacters -- so the "new-game-only" rule is
+    // untouched.
+    // ⚠️ NB THIS WHOLE FUNCTION IS DEAD CODE -- nothing calls it (see the note
+    // in BuildSaveMenu, which is the builder the ordinary start menu uses).
+    // The row is kept here only for parity with MENU_ACTION_TRAINER_SKILLS,
+    // which is likewise present and likewise unreachable from here.
+    if (InCharacterMode())
+        AddStartMenuAction(MENU_ACTION_CHARACTER_ROSTER);
+
 	//AddStartMenuAction(MENU_ACTION_UI_START_MENU);
-	// ⛔ DO NOT UNCOMMENT WITHOUT RUNNING tools/mgba_scripts/run_suite.sh.
-	// Tried 2026-09-19 and REVERTED: adding this entry breaks the suite's
-	// intro navigation. Measured, same machine, nothing else running --
-	// pc_sweep_e2e is "PASSED 10, FAILED 0" on the build without it
-	// (md5 c9cd47db) and fails on the build with it (md5 6ea486b6), and
-	// ot_roundtrip / legendary / encounter_doc / catch_gate / pc_sweep all go
-	// red together on "pick Character Mode at questions index N" and "picked
-	// Start Game before step timeout". The mode menu's commit handler IS
-	// written for mid-game activation, so the feature is plausible -- but
-	// something about adding this action perturbs the flow those layers drive,
-	// and that was not diagnosed. Character Mode remains new-game-only.
+	// ⚠️ THE 2026-09-19 REVERT REASON WAS WRONG, AND IS WITHDRAWN (2026-09-20).
+	// This entry was blamed for breaking the suite's intro navigation --
+	// ot_roundtrip / legendary / encounter_doc / catch_gate / pc_sweep all red
+	// on "pick Character Mode at questions index N". The commit said the
+	// mechanism was never diagnosed. It has been now, and this line is
+	// innocent: commit 03466a10 changed the build WITHOUT re-running
+	// gen_anchors.py, so every ROM address in tools/mgba_scripts/anchors.lua
+	// was stale -- including Start_EventScript_Character_Mode, which is the
+	// exact script intro_drive.lua breakpoints. The layers waited at dead
+	// addresses and timed out. Reverting "fixed" it only because it restored a
+	// byte-identical build, which silently made anchors.lua correct again.
+	// ✅ Proven: adding a START-menu row AND a whole new source file
+	// (character_roster_menu.c), then regenerating anchors, gives pc_sweep_e2e
+	// "PASSED 10, FAILED 0" and the full suite green.
+	// run_suite.sh now refuses to start on stale anchors
+	// (tools/mgba_scripts/check_anchors_fresh.py), so this cannot recur
+	// silently.
+	// ⬜ Re-enabling this row is a USER decision, not a test question --
+	// mid-game activation changes what Character Mode means. The engineering
+	// objection to it is gone.
 	//AddStartMenuAction(MENU_ACTION_UI_MODE_MENU);
 #ifdef DEBUG_MENU
     AddStartMenuAction(MENU_ACTION_DEBUG);
@@ -823,6 +879,7 @@ static bool8 HandleStartMenuInput(void)
         if (gMenuCallback != StartMenuSaveCallback
             && gMenuCallback != StartMenuExitCallback
             && gMenuCallback != StartMenuTrainerSkillsCallback
+            && gMenuCallback != StartMenuCharacterRosterCallback
 #ifdef DEBUG_MENU
             && gMenuCallback != StartMenuDebugCallback
 #endif

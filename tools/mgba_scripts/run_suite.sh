@@ -9,10 +9,15 @@
 #
 # 1. ALWAYS `make` and then `gen_anchors.py` BEFORE running this. A suite that
 #    passes on stale anchors is the exact shape of failure this repo keeps
-#    hitting. This script refuses to run if anchors.lua is missing, but it
-#    CANNOT tell whether it is stale -- and do not judge staleness by mtime,
-#    because `make` relinks on every invocation so the ROM is always newer.
-#    The real test is whether re-running gen_anchors.py changes anchors.lua.
+#    hitting, and do not judge staleness by mtime, because `make` relinks on
+#    every invocation so the ROM is always newer.
+#    ⚠️ This trap used to end "...but it CANNOT tell whether it is stale".
+#    THAT WAS FALSE, and it cost a session: gen_anchors.py has always stamped
+#    the map's sha1 into anchors.lua as `mapDigest`, and nothing read it back.
+#    It is now checked by check_anchors_fresh.py, run from this script below.
+#    A STALE-ANCHORS failure looks exactly like a broken feature -- breakpoints
+#    sit at dead addresses and every layer that uses one times out -- which is
+#    how a working START-menu entry came to be reverted on 2026-09-19.
 #
 # 2. EVERY run burns its FULL timeout. `H.finish()` does not stop the emulator,
 #    so each mgba-headless call runs until `timeout` kills it and exits 124.
@@ -61,6 +66,11 @@ OUT="${OUT:-/tmp/rowe-suite-$$}"
 [ -f "$ROM" ]  || { echo "ROM not found: $ROM (run make first)" >&2; exit 1; }
 [ -f tools/mgba_scripts/anchors.lua ] || {
     echo "anchors.lua missing -- run: python3 tools/mgba_scripts/gen_anchors.py" >&2; exit 1; }
+# Trap #1 above used to say this script "CANNOT tell whether it is stale".
+# It can, and always could: gen_anchors.py stamps the map's sha1 into
+# anchors.lua and nothing ever read it back. See check_anchors_fresh.py for
+# what that gap cost on 2026-09-19. Status taken directly, never through a pipe.
+python3 tools/mgba_scripts/check_anchors_fresh.py || exit 1
 
 mkdir -p "$OUT"
 FIX="$OUT/fixture.sav"
@@ -173,6 +183,12 @@ run tmhm_bound     tmhm_bound_e2e.lua          4
 # item callbacks call, and the egg-refusal branch is NOT covered at all. Read
 # the script's header before treating this as full coverage of the two items.
 run qol_items      qol_items_e2e.lua           21
+# The Character Mode roster screen (SELECT menu -> Roster). Drives the real
+# menu rather than calling the opener, so it also proves the row is REACHABLE.
+# It writes screenshots to CM_SHOTS; the assertions do not read them, because
+# what the layout LOOKS like is a human judgement -- but the images are what
+# caught a wrong-species icon that every assertion here was happy with.
+run roster_menu    roster_menu_e2e.lua          8   CM_SAV="$FIX" CM_SHOTS="$OUT/roster-shots"
 # PLAN.md item #7. Runs the real party-menu action builder against the live
 # party and against every species, and reports how many rows it ATTEMPTS as
 # well as how many fit. Sweeps 1482 ids in 64-species chunks, so it is the one

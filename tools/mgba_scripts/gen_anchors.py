@@ -60,6 +60,14 @@ SYMBOLS = [
     # Struct-layout beacon (src/character_mode_selftest.c). Read it through
     # H.off.* rather than hardcoding any struct offset in a test.
     "gTestStructOffsets",
+    # The task and sprite arrays. Needed because the roster screen is a
+    # FIELD-HOSTED overlay: gMain.callback2 stays CB2_Overworld the whole time
+    # it is open, so callback2 cannot tell open from closed. (rowe_parity.md
+    # records the same trap for the FireRed pair's PC menu -- one engine's
+    # "the screen really opened" measurement is not another's.) A live task
+    # running RosterMenu_HandleInput is the discriminator that does work.
+    "gTasks",
+    "gSprites",
 ]
 
 # static (file-local) symbols never reach the linker map; resolve them from
@@ -77,6 +85,9 @@ LOCAL_SYMBOLS = [
     "starterselection",     # u8
     "characterSelection",   # u16 -- 1-based index into gCharacters
     "genSelection",         # u8
+    # character_roster_menu.c's input task. Its presence in gTasks is the only
+    # honest "the roster screen is open" signal -- see the gTasks note above.
+    "RosterMenu_HandleInput",
 ]
 
 
