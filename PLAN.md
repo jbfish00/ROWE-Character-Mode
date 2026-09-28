@@ -15,9 +15,10 @@ suite. See §10 for that session.
 📄 **Runbook: `../Character Hacks/game_plans/roster_display.md`.** ROWE is the
 pilot for a screen that lists the ACTIVE character's roster — one row per family
 ROOT, species name plus a bordered species icon — to be ported to the other four
-GBA games (Seaglass next, by the user's order).
+GBA games. ✅ As of 2026-09-27 all four ports have it too (Seaglass, Lazarus,
+Radical Red, Unbound); see the workspace's `game_plans/roster_display.md`.
 
-✅ **COMMITTED as `7fe83887`** (local, **unpushed** — not asked for). Build
+✅ **COMMITTED as `7fe83887`**, **pushed 2026-09-28** (with this file's `375ae301`). Build
 `0e29237f`, and the tree was rebuilt and reproduced that md5 **byte-for-byte**
 before committing, so the committed source is provably the source of the tested
 ROM. The 14 files (the 14th is this one):
