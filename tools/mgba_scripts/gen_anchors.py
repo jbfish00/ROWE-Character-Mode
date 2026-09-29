@@ -88,6 +88,10 @@ LOCAL_SYMBOLS = [
     # character_roster_menu.c's input task. Its presence in gTasks is the only
     # honest "the roster screen is open" signal -- see the gTasks note above.
     "RosterMenu_HandleInput",
+    # gflib/sprite.c's 16 loaded sprite-palette tags (0xFFFF = free slot).
+    # roster_menu_e2e.lua checks that no mon-icon tag survives the screen:
+    # the screen leaked them until 2026-09-28.
+    "sSpritePaletteTags",
 ]
 
 

@@ -46,8 +46,48 @@ emu:reset()
 local SHOTS = os.getenv("CM_SHOTS") or "/tmp/rowe-roster-shots"
 local CHARACTER = tonumber(os.getenv("CM_CHAR") or "1")   -- 1 = Red
 
-if H.anchors.RosterMenu_HandleInput == nil or H.anchors.gTasks == nil then
+if H.anchors.RosterMenu_HandleInput == nil or H.anchors.gTasks == nil
+   or H.anchors.sSpritePaletteTags == nil then
     error("anchors.lua predates the roster menu -- re-run gen_anchors.py")
+end
+
+-- ⚠️ THE PALETTE LEAK (fixed 2026-09-28). The screen used to free each icon
+-- with FreeAndDestroyMonIconSprite alone, on the belief that it also frees the
+-- palette. It does not (sub_80D328C only calls DestroySprite), so every icon
+-- palette the cursor touched stayed loaded on the field after closing. The
+-- first 8 assertions all passed on that build. These read the engine's own
+-- 16-slot tag table: mon-icon tags are POKE_ICON_BASE_PAL_TAG (56000) + 0..6.
+local ICON_TAG_LO, ICON_TAG_HI = 56000, 56006
+local function iconTagsLoaded()
+    local set, n = {}, 0
+    for i = 0, 15 do
+        local tag = H.rd16(H.anchors.sSpritePaletteTags + i * 2)
+        if tag >= ICON_TAG_LO and tag <= ICON_TAG_HI then
+            set[tag] = true; n = n + 1
+        end
+    end
+    return set, n
+end
+local function describeTags(set)
+    local out = {}
+    for t = ICON_TAG_LO, ICON_TAG_HI do if set[t] then table.insert(out, tostring(t)) end end
+    return "{" .. table.concat(out, ",") .. "}"
+end
+-- Tags loaded by something else before the screen opened. The screen may
+-- neither free these nor leave anything of its own behind.
+local baselineTags = nil
+local function newTagCount(set)
+    local n = 0
+    for t = ICON_TAG_LO, ICON_TAG_HI do
+        if set[t] and not baselineTags[t] then n = n + 1 end
+    end
+    return n
+end
+local function sameAsBaseline(set)
+    for t = ICON_TAG_LO, ICON_TAG_HI do
+        if (set[t] or false) ~= (baselineTags[t] or false) then return false end
+    end
+    return true
 end
 
 local STATUS_DONE, STATUS_REJECTED = 1, 2
@@ -135,6 +175,8 @@ if os.getenv("CM_NO_SET") == nil then
 end
 
 addStep("open the START grid", function()
+    baselineTags = iconTagsLoaded()
+    H.log("mon-icon palette tags before opening: " .. describeTags(baselineTags))
     H.press(H.KEY.START, 8)
 end, function(f)
     if f - stepStart >= 90 then
@@ -227,6 +269,12 @@ end, function(f)
         local icon = iconSpriteId()
         H.assertTrue("icon still present after scrolling",
                      icon ~= nil and icon < 64)
+        -- One icon on screen needs one palette. The previous row's palette
+        -- must be gone unless the new row shares it.
+        local tags = iconTagsLoaded()
+        H.log("mon-icon palette tags after scrolling: " .. describeTags(tags))
+        H.assertTrue("exactly one mon-icon palette held while open (the highlighted row's)",
+                     newTagCount(tags) == 1)
         return true
     end
 
@@ -264,8 +312,10 @@ addStep("field comes back", nil, function(f)
     emu:screenshot(SHOTS .. "/6-back-on-field.png")
     H.assertTrue("back on the overworld after closing", onField())
     H.assertTrue("roster task really is gone", not rosterOpen())
-    -- Closing must not leak the icon sprite. Checked by re-opening: a leak
-    -- would show as the sprite slot still in use with nothing owning it.
+    local tags = iconTagsLoaded()
+    H.log("mon-icon palette tags after closing: " .. describeTags(tags))
+    H.assertTrue("no mon-icon palette left behind on the field (tags == before opening)",
+                 sameAsBaseline(tags))
     return true
 end)
 

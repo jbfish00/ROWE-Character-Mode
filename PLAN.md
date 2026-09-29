@@ -18,6 +18,32 @@ ROOT, species name plus a bordered species icon — to be ported to the other fo
 GBA games. ✅ As of 2026-09-27 all four ports have it too (Seaglass, Lazarus,
 Radical Red, Unbound); see the workspace's `game_plans/roster_display.md`.
 
+✅ **FIXED 2026-09-28 (committed, unpushed): the roster screen leaked mon-icon sprite
+palettes onto the field.** Found by the 2026-09-28 adversarial sweep. The old
+code freed each icon with `FreeAndDestroyMonIconSprite` alone, and its comments
+said that also frees the palette. It doesn't: it is `sub_80D328C`
+(`src/pokemon_icon.c:3392`), which only calls `DestroySprite`. So every icon
+palette the cursor touched (`POKE_ICON_BASE_PAL_TAG`+0..6) stayed loaded on the
+field after close, up to 7 of 16 sprite palette slots until the next map load. A
+failed `CreateMonIcon` leaked its palette too.
+- **Fix** (`src/character_roster_menu.c`): new `tIconSpecies` (`data[7]`, as the
+  RR/Unbound ports do). One `RosterMenu_DestroyIcon` that frees the sprite AND
+  `FreeMonIconPalette(tIconSpecies)`, used by both MoveCursor and Destroy. The
+  create-failure path frees the palette it just loaded. Comments corrected.
+- **Live pin** (`roster_menu_e2e.lua`, **8 → 10**): reads `sSpritePaletteTags`
+  (new `LOCAL_SYMBOLS` entry in `gen_anchors.py`), baselines the icon tags
+  before opening, then asserts exactly ONE new icon tag while open and the
+  baseline restored after close. `run_suite.sh` pins 10.
+- **Negative control is the shipped ROM itself:** `0e29237f` gives PASSED 8,
+  FAILED 2, exactly the two new checks, with `{56001,56002}` left on the field.
+  The fixed build `d378f90a2b5b3b1efb8244af82656f9d` gives 10/10 (`{56001}`
+  while open, `{}` after close). Screenshots show Pikachu/Bellsprout in the
+  right colours and a clean field.
+- Static: all 13 `tools/check_*.py` + `check_anchors_fresh` (and both negative
+  tests) green. Full suite: **ALL 29 RUNS PASS** on `d378f90a` (2026-09-28), selftest
+  36/36 on every run, `roster_menu` 10/10, anchors fresh before and after.
+- None of the four ports had this bug (they always freed the palette).
+
 ✅ **COMMITTED as `7fe83887`**, **pushed 2026-09-28** (with this file's `375ae301`). Build
 `0e29237f`, and the tree was rebuilt and reproduced that md5 **byte-for-byte**
 before committing, so the committed source is provably the source of the tested

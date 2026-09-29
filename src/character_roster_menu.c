@@ -75,6 +75,7 @@
 #define tItemsHi     data[4]
 #define tItemsLo     data[5]
 #define tIconWinId   data[6]
+#define tIconSpecies data[7]    // whose icon palette tIconSprite holds
 
 static void RosterMenu_HandleInput(u8 taskId);
 static void RosterMenu_Destroy(u8 taskId);
@@ -144,6 +145,23 @@ static void RosterMenu_DrawHeader(u8 windowId, const struct CharacterInfo *chara
     CopyWindowToVram(windowId, 3);
 }
 
+// Removes the one icon sprite AND the palette it was drawn with.
+// ⚠️ FreeAndDestroyMonIconSprite does NOT free the palette: it is
+// sub_80D328C, which only calls DestroySprite. Until 2026-09-28 this file said
+// the opposite, called nothing else, and every icon palette the cursor touched
+// (tags POKE_ICON_BASE_PAL_TAG+0..6) stayed loaded on the field after the
+// screen closed, up to 7 of the 16 sprite palette slots. roster_menu_e2e.lua
+// now checks that no icon palette survives the close.
+static void RosterMenu_DestroyIcon(u8 taskId)
+{
+    if (gTasks[taskId].tIconSprite != MAX_SPRITES)
+    {
+        FreeAndDestroyMonIconSprite(&gSprites[gTasks[taskId].tIconSprite]);
+        FreeMonIconPalette(gTasks[taskId].tIconSpecies);
+        gTasks[taskId].tIconSprite = MAX_SPRITES;
+    }
+}
+
 // Redraws the single icon sprite for whichever row the cursor is now on.
 // ListMenuInit calls this once with onInit set, which is why the input task is
 // created BEFORE ListMenuInit -- the sprite id has to have somewhere to live
@@ -169,14 +187,7 @@ static void RosterMenu_MoveCursor(s32 itemId, bool8 onInit, struct ListMenu *lis
     if (!onInit)
         PlaySE(SE_SELECT);
 
-    // FreeAndDestroy, not DestroySprite: it releases this species' icon
-    // palette as well as the sprite slot, which is what pairs with the
-    // per-species LoadMonIconPalette below.
-    if (gTasks[taskId].tIconSprite != MAX_SPRITES)
-    {
-        FreeAndDestroyMonIconSprite(&gSprites[gTasks[taskId].tIconSprite]);
-        gTasks[taskId].tIconSprite = MAX_SPRITES;
-    }
+    RosterMenu_DestroyIcon(taskId);
 
     species = (u16)itemId;
     // LoadMonIconPalette(species), not LoadMonIconPalettes(): load the one
@@ -190,8 +201,14 @@ static void RosterMenu_MoveCursor(s32 itemId, bool8 onInit, struct ListMenu *lis
     gTasks[taskId].tIconSprite = CreateMonIcon(species, SpriteCB_MonIcon,
                                                ROSTER_ICON_X, ROSTER_ICON_Y, 0, 0,
                                                GetFormIdFromFormSpeciesId(species));
-    if (gTasks[taskId].tIconSprite != MAX_SPRITES)
-        gSprites[gTasks[taskId].tIconSprite].oam.priority = 0;
+    if (gTasks[taskId].tIconSprite == MAX_SPRITES)
+    {
+        // No sprite to own the palette, so nothing would ever free it.
+        FreeMonIconPalette(species);
+        return;
+    }
+    gTasks[taskId].tIconSpecies = species;
+    gSprites[gTasks[taskId].tIconSprite].oam.priority = 0;
 }
 
 void CharacterRosterMenu_Open(void)
@@ -320,11 +337,10 @@ static void RosterMenu_Destroy(u8 taskId)
     if (gTasks[taskId].tListTaskId != TASK_NONE)
     {
         DestroyListMenuTask(gTasks[taskId].tListTaskId, NULL, NULL);
-        // Frees the sprite AND the one icon palette it holds. Nothing calls
-        // FreeMonIconPalettes() here: this screen never loaded them all, and
-        // freeing all six would evict palettes the overworld is still using.
-        if (gTasks[taskId].tIconSprite != MAX_SPRITES)
-            FreeAndDestroyMonIconSprite(&gSprites[gTasks[taskId].tIconSprite]);
+        // Frees the sprite AND the one icon palette it holds. Not
+        // FreeMonIconPalettes(): this screen never loaded them all, so it
+        // frees only the one it did load.
+        RosterMenu_DestroyIcon(taskId);
     }
 
     if (items != NULL)
@@ -350,3 +366,4 @@ static void RosterMenu_Destroy(u8 taskId)
 #undef tItemsHi
 #undef tItemsLo
 #undef tIconWinId
+#undef tIconSpecies

@@ -188,7 +188,11 @@ run qol_items      qol_items_e2e.lua           21
 # It writes screenshots to CM_SHOTS; the assertions do not read them, because
 # what the layout LOOKS like is a human judgement -- but the images are what
 # caught a wrong-species icon that every assertion here was happy with.
-run roster_menu    roster_menu_e2e.lua          8   CM_SAV="$FIX" CM_SHOTS="$OUT/roster-shots"
+# Expected 10 (8 until 2026-09-28): +2 mon-icon palette checks, one while open
+# and one after close. The screen leaked icon palettes onto the field and the
+# old 8 all passed. The shipped 0e29237f fails exactly those two (PASSED 8,
+# FAILED 2, tags {56001,56002} left behind); the fixed build passes 10.
+run roster_menu    roster_menu_e2e.lua          10  CM_SAV="$FIX" CM_SHOTS="$OUT/roster-shots"
 # PLAN.md item #7. Runs the real party-menu action builder against the live
 # party and against every species, and reports how many rows it ATTEMPTS as
 # well as how many fit. Sweeps 1482 ids in 64-species chunks, so it is the one
