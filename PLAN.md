@@ -18,7 +18,7 @@ ROOT, species name plus a bordered species icon — to be ported to the other fo
 GBA games. ✅ As of 2026-09-27 all four ports have it too (Seaglass, Lazarus,
 Radical Red, Unbound); see the workspace's `game_plans/roster_display.md`.
 
-✅ **FIXED 2026-09-28 (committed, unpushed): the roster screen leaked mon-icon sprite
+✅ **FIXED 2026-09-28 (`d4a63812`, pushed 2026-09-29): the roster screen leaked mon-icon sprite
 palettes onto the field.** Found by the 2026-09-28 adversarial sweep. The old
 code freed each icon with `FreeAndDestroyMonIconSprite` alone, and its comments
 said that also frees the palette. It doesn't: it is `sub_80D328C`
