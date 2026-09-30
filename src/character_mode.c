@@ -144,6 +144,24 @@ void CharacterMode_SweepPartyToPC(void)
 
         if (species == SPECIES_NONE)
             continue;
+        // ⚠️ AN EGG COUNTS AS "KEPT", SO THIS SWEEP CAN LEAVE AN EGG-ONLY
+        // PARTY: e.g. [egg, off-roster mon] after the PC-withdraw path boxes
+        // the mon. Gen 3 storage refuses to deposit your last battle-capable
+        // mon, but that check runs at DEPOSIT time; this runs afterwards and
+        // calls the PC routine directly.
+        //
+        // Measured live 2026-09-18 in the four GBA ports, which inherited this
+        // exact logic (../Character Hacks/game_plans/rowe_parity.md §13.48,
+        // each port's docs/EGG_ONLY_PARTY.md): the engine sends the egg out
+        // and the battle is fully playable ("Go! Egg!", Run gets away). No
+        // crash, no softlock, always escapable. The only cost is a spoiler:
+        // the battle shows the unhatched egg's level, HP and move list.
+        //
+        // 🔴 THE USER DECIDED (2026-09-18): DOCUMENT THE CORNER AND LEAVE IT.
+        // Do NOT "fix" this by requiring a non-egg kept mon. That is a
+        // trade-off, not a fix: the sweep would then keep an OFF-ROSTER mon
+        // to avoid a cosmetic spoiler the player has to construct on purpose.
+        // PLAYTHROUGH_CHECKLISTS.md lists it as known, deliberate behaviour.
         if (GetMonData(&gPlayerParty[i], MON_DATA_IS_EGG, NULL)
             || IsSpeciesAllowedForCharacter(species))
         {
