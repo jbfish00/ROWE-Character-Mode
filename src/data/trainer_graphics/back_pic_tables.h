@@ -23,6 +23,9 @@ const struct MonCoords gTrainerBackPicCoords[] =
     [TRAINER_BACK_PIC_CM_PHOEBE] = {.size = 8, .y_offset = 4},
     [TRAINER_BACK_PIC_CM_CALEM] = {.size = 8, .y_offset = 5},
     [TRAINER_BACK_PIC_CM_SERENA] = {.size = 8, .y_offset = 5},
+    [TRAINER_BACK_PIC_CM_GLADION] = {.size = 8, .y_offset = 4},
+    [TRAINER_BACK_PIC_CM_LILLIE] = {.size = 8, .y_offset = 4},
+    [TRAINER_BACK_PIC_CM_LUCY] = {.size = 8, .y_offset = 4},
     [TRAINER_BACK_PIC_CM_NOLAND] = {.size = 8, .y_offset = 4},
 // CHARMODE-SPRITES-END donor-back-coords
 };
@@ -52,6 +55,9 @@ const struct SpritePalette gTrainerBackPicPaletteTable[] =
     TRAINER_BACK_PAL(CM_PHOEBE, gTrainerBackPicPalette_CmPhoebe),
     TRAINER_BACK_PAL(CM_CALEM, gTrainerBackPicPalette_CmCalem),
     TRAINER_BACK_PAL(CM_SERENA, gTrainerBackPicPalette_CmSerena),
+    TRAINER_BACK_PAL(CM_GLADION, gTrainerBackPicPalette_CmGladion),
+    TRAINER_BACK_PAL(CM_LILLIE, gTrainerBackPicPalette_CmLillie),
+    TRAINER_BACK_PAL(CM_LUCY, gTrainerBackPicPalette_CmLucy),
     TRAINER_BACK_PAL(CM_NOLAND, gTrainerBackPicPalette_CmNoland),
 // CHARMODE-SPRITES-END donor-back-pals
 };
@@ -85,5 +91,8 @@ const struct CompressedSpriteSheet gTrainerBackPicTable[] =
     (const u32 *)gTrainerBackPic_CmCalem, 0x2800, TRAINER_BACK_PIC_CM_CALEM,
     (const u32 *)gTrainerBackPic_CmSerena, 0x2800, TRAINER_BACK_PIC_CM_SERENA,
     (const u32 *)gTrainerBackPic_CmNoland, 0x2000, TRAINER_BACK_PIC_CM_NOLAND,
+    (const u32 *)gTrainerBackPic_CmGladion, 0x2000, TRAINER_BACK_PIC_CM_GLADION,
+    (const u32 *)gTrainerBackPic_CmLillie, 0x2000, TRAINER_BACK_PIC_CM_LILLIE,
+    (const u32 *)gTrainerBackPic_CmLucy, 0x2000, TRAINER_BACK_PIC_CM_LUCY,
 // CHARMODE-SPRITES-END donor-back-sheets
 };

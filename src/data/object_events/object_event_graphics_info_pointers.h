@@ -2375,6 +2375,8 @@ const struct ObjectEventGraphicsInfo *const gObjectEventGraphicsInfoPointers[NUM
     [OBJ_EVENT_GFX_CM_NANU] = &gObjectEventGraphicsInfo_CmNanu,
     [OBJ_EVENT_GFX_CM_HAPU] = &gObjectEventGraphicsInfo_CmHapu,
     [OBJ_EVENT_GFX_CM_GLADION] = &gObjectEventGraphicsInfo_CmGladion,
+    [OBJ_EVENT_GFX_CM_LUSAMINE] = &gObjectEventGraphicsInfo_CmLusamine,
+    [OBJ_EVENT_GFX_CM_LILLIE] = &gObjectEventGraphicsInfo_CmLillie,
     [OBJ_EVENT_GFX_CM_KIAWE] = &gObjectEventGraphicsInfo_CmKiawe,
     [OBJ_EVENT_GFX_CM_LANA] = &gObjectEventGraphicsInfo_CmLana,
     [OBJ_EVENT_GFX_CM_MALLOW] = &gObjectEventGraphicsInfo_CmMallow,

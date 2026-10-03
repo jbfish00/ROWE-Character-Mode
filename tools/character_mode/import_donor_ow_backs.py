@@ -106,9 +106,11 @@ ME = "// CHARMODE-SPRITES-END {tag}"
 #   loulilie     named author
 #   platinum     no per-sprite credit at all, but one coherent project
 #   unattributed NO licence, NO artist, NO project identity -- deliberately last
+#   emerald_enhanced  project-level credit (Enhanced Projects); used on the
+#                user's 2026-10-02 direction that permission is granted
 PREFERENCE = ["ashgray", "rogue", "taar", "taar_gap", "hns", "kalarie",
               "greenphx", "pokesho", "pokesho_field", "dollsteak", "loulilie",
-              "platinum", "unattributed"]
+              "platinum", "emerald_enhanced", "unattributed"]
 
 # Display name -> donor filename stem, when they differ. Deliberately NOT
 # shared with the front importer's ALIAS: there, James resolves to the Ash Gray
@@ -119,6 +121,13 @@ ALIAS = {}
 # frame indices to take, in order, and the reason -- a judgement call about
 # somebody's animation, so it is written down rather than guessed at.
 BACK_FRAME_PICK = {
+    # Emerald Enhanced's Gladion is six frames: 0-2 face the CAMERA (EE's own
+    # intro pose, which this engine's back-pic slot has no use for) and 3-5 are
+    # the back view -- 4 the plain stance, 3 the arm flung out, 5 the
+    # follow-through. Mapped onto Emerald's 4-frame idle/wind-up/throw/after.
+    "gladion_back": ([4, 4, 3, 5],
+                     "6-frame Emerald Enhanced sheet; frames 0-2 are a "
+                     "camera-facing intro pose, dropped; idle doubles as wind-up"),
     # yoshord's Lance is a six-frame sheet with one extra intermediate raise
     # (frame 3) between "hand up" and "throw". Dropping it yields exactly the
     # FRLG five-frame pattern gAnimCmd_Red_1 plays: idle, hand low, hand up,

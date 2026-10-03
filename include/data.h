@@ -125,6 +125,9 @@ extern const struct SpriteFrameImage gTrainerBackPicTable_CmLyra[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_CmPhoebe[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_CmCalem[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_CmSerena[];
+extern const struct SpriteFrameImage gTrainerBackPicTable_CmGladion[];
+extern const struct SpriteFrameImage gTrainerBackPicTable_CmLillie[];
+extern const struct SpriteFrameImage gTrainerBackPicTable_CmLucy[];
 extern const struct SpriteFrameImage gTrainerBackPicTable_CmNoland[];
 // CHARMODE-SPRITES-END donor-back-frame-externs
 

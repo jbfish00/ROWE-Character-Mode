@@ -92,8 +92,13 @@ DONORS = os.path.join(TARGET, "sprites", "donors")
 #                so it can never outrank a source that can name its artist; if
 #                an attributed sprite for the same character is ever staged
 #                anywhere else, it wins automatically.
+# "emerald_enhanced" and "wolfang62" (2026-10-02) fill gaps only, so they sit
+# after every older source: a character that already had art keeps it.
+# Wolfang62's are chibi overworld-style figures on a front-pic canvas, so
+# they are last of all -- any real battle front pic wins.
 PREFERENCE = ["ashgray", "rogue", "taar", "hns", "greenphx", "pokesho",
-              "dollsteak", "loulilie", "platinum", "unattributed"]
+              "dollsteak", "loulilie", "platinum", "emerald_enhanced",
+              "wolfang62", "unattributed"]
 
 # Characters whose staged art is filed under a different stem. Kept identical
 # to the sibling repos so a fix in one place is a fix everywhere.

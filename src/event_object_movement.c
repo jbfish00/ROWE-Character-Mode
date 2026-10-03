@@ -650,6 +650,8 @@ const u8 gInitialMovementTypeFacingDirections[] = {
 #define OBJ_EVENT_PAL_CM_NANU              0x1229
 #define OBJ_EVENT_PAL_CM_HAPU              0x122A
 #define OBJ_EVENT_PAL_CM_GLADION           0x122B
+#define OBJ_EVENT_PAL_CM_LUSAMINE          0x1247
+#define OBJ_EVENT_PAL_CM_LILLIE            0x1248
 #define OBJ_EVENT_PAL_CM_KIAWE             0x1209
 #define OBJ_EVENT_PAL_CM_LANA              0x122C
 #define OBJ_EVENT_PAL_CM_MALLOW            0x122D
@@ -1744,6 +1746,8 @@ const struct SpritePalette sObjectEventSpritePalettes[] = {
     {gObjectEventPalette_CmNanu, OBJ_EVENT_PAL_CM_NANU},
     {gObjectEventPalette_CmHapu, OBJ_EVENT_PAL_CM_HAPU},
     {gObjectEventPalette_CmGladion, OBJ_EVENT_PAL_CM_GLADION},
+    {gObjectEventPalette_CmLusamine, OBJ_EVENT_PAL_CM_LUSAMINE},
+    {gObjectEventPalette_CmLillie, OBJ_EVENT_PAL_CM_LILLIE},
     {gObjectEventPalette_CmKiawe, OBJ_EVENT_PAL_CM_KIAWE},
     {gObjectEventPalette_CmLana, OBJ_EVENT_PAL_CM_LANA},
     {gObjectEventPalette_CmMallow, OBJ_EVENT_PAL_CM_MALLOW},

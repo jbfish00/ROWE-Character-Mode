@@ -26,6 +26,8 @@ ow   Olivia                   rogue      olivia_ow.png                          
 ow   Nanu                     rogue      nanu_ow.png                                 9 frames of 16x32
 ow   Hapu                     rogue      hapu_ow.png                                 9 frames of 16x32
 ow   Gladion                  rogue      gladion_ow.png                              9 frames of 16x32
+ow   Lusamine                 emerald_enhanced lusamine_ow.png                             9 frames of 16x32
+ow   Lillie (anime)           emerald_enhanced lillie_ow.png                              18 frames of 16x32
 ow   Kiawe (anime)            taar_gap   kiawe_ow.png                                9 frames of 16x32
 ow   Lana (anime)             rogue      lana_ow.png                                 9 frames of 16x32
 ow   Mallow (anime)           rogue      mallow_ow.png                               9 frames of 16x32
@@ -78,3 +80,6 @@ back Phoebe                   taar       phoebe_back.png                   4 fra
 back Calem                    rogue      calem_back.png                    5 frames
 back Serena                   rogue      serena_back.png                   5 frames
 back Noland                   taar_gap   noland_back.png                   4 frames
+back Gladion                  emerald_enhanced gladion_back.png                  4 frames
+back Lillie (anime)           emerald_enhanced lillie_back.png                   4 frames
+back Lucy                     emerald_enhanced lucy_back.png                     4 frames

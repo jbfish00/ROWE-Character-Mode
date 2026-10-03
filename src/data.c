@@ -204,6 +204,27 @@ const struct SpriteFrameImage gTrainerBackPicTable_CmSerena[] =
     gTrainerBackPic_CmSerena + 0x1800, 0x0800,
     gTrainerBackPic_CmSerena + 0x2000, 0x0800,
 };
+const struct SpriteFrameImage gTrainerBackPicTable_CmGladion[] =
+{
+    gTrainerBackPic_CmGladion, 0x0800,
+    gTrainerBackPic_CmGladion + 0x0800, 0x0800,
+    gTrainerBackPic_CmGladion + 0x1000, 0x0800,
+    gTrainerBackPic_CmGladion + 0x1800, 0x0800,
+};
+const struct SpriteFrameImage gTrainerBackPicTable_CmLillie[] =
+{
+    gTrainerBackPic_CmLillie, 0x0800,
+    gTrainerBackPic_CmLillie + 0x0800, 0x0800,
+    gTrainerBackPic_CmLillie + 0x1000, 0x0800,
+    gTrainerBackPic_CmLillie + 0x1800, 0x0800,
+};
+const struct SpriteFrameImage gTrainerBackPicTable_CmLucy[] =
+{
+    gTrainerBackPic_CmLucy, 0x0800,
+    gTrainerBackPic_CmLucy + 0x0800, 0x0800,
+    gTrainerBackPic_CmLucy + 0x1000, 0x0800,
+    gTrainerBackPic_CmLucy + 0x1800, 0x0800,
+};
 const struct SpriteFrameImage gTrainerBackPicTable_CmNoland[] =
 {
     gTrainerBackPic_CmNoland, 0x0800,

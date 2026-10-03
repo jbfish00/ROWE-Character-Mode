@@ -238,6 +238,7 @@
 #define TRAINER_PIC_NANU                    494
 #define TRAINER_PIC_HAPU                    495
 #define TRAINER_PIC_GLADION                 496
+#define TRAINER_PIC_LUSAMINE                541
 #define TRAINER_PIC_LILLIE                  534
 #define TRAINER_PIC_KIAWE                   535
 #define TRAINER_PIC_LANA                    536
@@ -275,6 +276,13 @@
 #define TRAINER_PIC_VICTOR                  527
 #define TRAINER_PIC_GLORIA                  528
 #define TRAINER_PIC_OAK                     529
+#define TRAINER_PIC_ELM                     542
+#define TRAINER_PIC_BIRCH                   543
+#define TRAINER_PIC_ROWAN                   544
+#define TRAINER_PIC_JUNIPER                 545
+#define TRAINER_PIC_SYCAMORE                546
+#define TRAINER_PIC_MAGNOLIA                547
+#define TRAINER_PIC_SONIA                   548
 #define TRAINER_PIC_ARGENTA                 538
 #define TRAINER_PIC_DAHLIA                  539
 #define TRAINER_PIC_DARACH                  530
@@ -296,6 +304,9 @@
 #define TRAINER_BACK_PIC_CM_CALEM            18
 #define TRAINER_BACK_PIC_CM_SERENA           19
 #define TRAINER_BACK_PIC_CM_NOLAND           20
+#define TRAINER_BACK_PIC_CM_GLADION          21
+#define TRAINER_BACK_PIC_CM_LILLIE           22
+#define TRAINER_BACK_PIC_CM_LUCY             23
 // CHARMODE-SPRITES-END donor-back-ids
 
 

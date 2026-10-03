@@ -180,6 +180,21 @@ static const union AnimCmd *const sBackAnims_CmSerena[] =
     sAnim_GeneralFrame0,
     gAnimCmd_Red_1,
 };
+static const union AnimCmd *const sBackAnims_CmGladion[] =
+{
+    sAnim_GeneralFrame3,
+    gAnimCmd_May_Steven_1,
+};
+static const union AnimCmd *const sBackAnims_CmLillie[] =
+{
+    sAnim_GeneralFrame3,
+    gAnimCmd_May_Steven_1,
+};
+static const union AnimCmd *const sBackAnims_CmLucy[] =
+{
+    sAnim_GeneralFrame3,
+    gAnimCmd_May_Steven_1,
+};
 static const union AnimCmd *const sBackAnims_CmNoland[] =
 {
     sAnim_GeneralFrame3,
@@ -211,6 +226,9 @@ const union AnimCmd *const *const gTrainerBackAnimsPtrTable[] =
     [TRAINER_BACK_PIC_CM_PHOEBE] = sBackAnims_CmPhoebe,
     [TRAINER_BACK_PIC_CM_CALEM] = sBackAnims_CmCalem,
     [TRAINER_BACK_PIC_CM_SERENA] = sBackAnims_CmSerena,
+    [TRAINER_BACK_PIC_CM_GLADION] = sBackAnims_CmGladion,
+    [TRAINER_BACK_PIC_CM_LILLIE] = sBackAnims_CmLillie,
+    [TRAINER_BACK_PIC_CM_LUCY] = sBackAnims_CmLucy,
     [TRAINER_BACK_PIC_CM_NOLAND] = sBackAnims_CmNoland,
 // CHARMODE-SPRITES-END donor-back-anim-ptrs
 };

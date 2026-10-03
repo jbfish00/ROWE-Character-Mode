@@ -3303,6 +3303,33 @@ static const struct SpriteTemplate gSpriteTemplateTable_TrainerBackSprites[] =
         .affineAnims = gUnknown_082FF618,
         .callback = sub_8039BB4,
     },
+    {
+        .tileTag = 0xFFFF,
+        .paletteTag = 0,
+        .oam = &gOamData_831ACB0,
+        .anims = NULL,
+        .images = gTrainerBackPicTable_CmGladion,
+        .affineAnims = gUnknown_082FF618,
+        .callback = sub_8039BB4,
+    },
+    {
+        .tileTag = 0xFFFF,
+        .paletteTag = 0,
+        .oam = &gOamData_831ACB0,
+        .anims = NULL,
+        .images = gTrainerBackPicTable_CmLillie,
+        .affineAnims = gUnknown_082FF618,
+        .callback = sub_8039BB4,
+    },
+    {
+        .tileTag = 0xFFFF,
+        .paletteTag = 0,
+        .oam = &gOamData_831ACB0,
+        .anims = NULL,
+        .images = gTrainerBackPicTable_CmLucy,
+        .affineAnims = gUnknown_082FF618,
+        .callback = sub_8039BB4,
+    },
 // CHARMODE-SPRITES-END donor-back-templates
 };
 

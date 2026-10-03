@@ -47,13 +47,20 @@
 #define ROSTER_MENU_WIDTH    13
 #define ROSTER_MENU_ROWS      6
 #define ROSTER_HEADER_WIDTH  16
+// Two lines: "<name>'s roster", then sText_RosterHint. The list shows family
+// roots only while enforcement allows every stage, so the screen says so
+// (user ruling 2026-10-02: a hint line, not every stage as its own row).
+#define ROSTER_HEADER_HEIGHT  4
+// The 20-tile screen holds header frame (rows 0-5) + list frame (rows 6-19)
+// exactly: header at row 1 for 4 rows, list at row 7 for 2*ROSTER_MENU_ROWS.
+#define ROSTER_MENU_TOP      (1 + ROSTER_HEADER_HEIGHT + 2)
 
 // The icon sits in its own framed box to the right of the list (which ends at
 // x=112) and below the header. The box is 5x5 tiles at (19,8), i.e. x 152..192
 // and y 64..104, so a 32x32 icon centred at (172,84) leaves a 4px margin all
 // round. DrawStdWindowFrame draws one further tile outside that, x 144..200 /
 // y 56..112, which still clears the list frame (ends x=120) and the header
-// frame (ends y=32).
+// frame (ends y=48 since the header became two lines).
 #define ROSTER_ICON_WIN_LEFT  19
 #define ROSTER_ICON_WIN_TOP    8
 #define ROSTER_ICON_WIN_SIZE   5
@@ -82,6 +89,7 @@ static void RosterMenu_Destroy(u8 taskId);
 static void RosterMenu_MoveCursor(s32 itemId, bool8 onInit, struct ListMenu *list);
 
 static const u8 sText_RosterTitle[] = _("{STR_VAR_1}'s roster");
+static const u8 sText_RosterHint[] = _("Evolutions count too.");
 static const u8 sText_RosterEmpty[] = _("No roster in this game.");
 
 static const struct ListMenuTemplate sRosterMenuTemplate = {
@@ -93,7 +101,7 @@ static const struct ListMenuTemplate sRosterMenuTemplate = {
 static const struct WindowTemplate sRosterMenuWindow = {
     .bg = 0,
     .tilemapLeft = 1,
-    .tilemapTop = 5,
+    .tilemapTop = ROSTER_MENU_TOP,
     .width = ROSTER_MENU_WIDTH,
     .height = 2 * ROSTER_MENU_ROWS,
     .paletteNum = 15,
@@ -105,7 +113,7 @@ static const struct WindowTemplate sRosterHeaderWindow = {
     .tilemapLeft = 1,
     .tilemapTop = 1,
     .width = ROSTER_HEADER_WIDTH,
-    .height = 2,
+    .height = ROSTER_HEADER_HEIGHT,
     .paletteNum = 15,
     .baseBlock = 1 + ROSTER_MENU_WIDTH * 2 * ROSTER_MENU_ROWS,
 };
@@ -133,7 +141,7 @@ static const struct WindowTemplate sRosterIconWindow = {
     .height = ROSTER_ICON_WIN_SIZE,
     .paletteNum = 15,
     .baseBlock = 1 + ROSTER_MENU_WIDTH * 2 * ROSTER_MENU_ROWS
-                   + ROSTER_HEADER_WIDTH * 2,
+                   + ROSTER_HEADER_WIDTH * ROSTER_HEADER_HEIGHT,
 };
 
 static void RosterMenu_DrawHeader(u8 windowId, const struct CharacterInfo *character)
@@ -142,6 +150,7 @@ static void RosterMenu_DrawHeader(u8 windowId, const struct CharacterInfo *chara
     StringExpandPlaceholders(gStringVar4, sText_RosterTitle);
     FillWindowPixelBuffer(windowId, PIXEL_FILL(1));
     AddTextPrinterParameterized(windowId, 1, gStringVar4, 0, 1, 0, NULL);
+    AddTextPrinterParameterized(windowId, 1, sText_RosterHint, 0, 16, 0, NULL);
     CopyWindowToVram(windowId, 3);
 }
 

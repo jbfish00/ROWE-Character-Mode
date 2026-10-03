@@ -192,6 +192,9 @@ run qol_items      qol_items_e2e.lua           21
 # and one after close. The screen leaked icon palettes onto the field and the
 # old 8 all passed. The shipped 0e29237f fails exactly those two (PASSED 8,
 # FAILED 2, tags {56001,56002} left behind); the fixed build passes 10.
+# emu:screenshot does not create directories: without this the photos were
+# silently never written (2026-10-02).
+mkdir -p "$OUT/roster-shots"
 run roster_menu    roster_menu_e2e.lua          10  CM_SAV="$FIX" CM_SHOTS="$OUT/roster-shots"
 # PLAN.md item #7. Runs the real party-menu action builder against the live
 # party and against every species, and reports how many rows it ATTEMPTS as

@@ -66,6 +66,7 @@ Olivia                       rogue      olivia_front.png
 Nanu                         rogue      nanu_front.png
 Hapu                         rogue      hapu_front.png
 Gladion                      rogue      gladion_front.png
+Lusamine                     emerald_enhanced lusamine_front.png
 Lillie (anime)               dollsteak  lillie_front.png
 Kiawe (anime)                rogue      kiawe_front.png
 Lana (anime)                 rogue      lana_front.png
@@ -103,6 +104,13 @@ Penny                        rogue      penny_front.png
 Victor                       rogue      victor_front.png
 Gloria                       rogue      gloria_front.png
 Oak                          rogue      oak_front.png
+Elm                          wolfang62  elm_front.png
+Birch                        wolfang62  birch_front.png
+Rowan                        wolfang62  rowan_front.png
+Juniper                      wolfang62  juniper_front.png
+Sycamore                     wolfang62  sycamore_front.png
+Magnolia                     wolfang62  magnolia_front.png
+Sonia                        wolfang62  sonia_front.png
 Argenta                      greenphx   argenta_front.png
 Dahlia                       greenphx   dahlia_front.png
 Darach                       taar       darach_front.png

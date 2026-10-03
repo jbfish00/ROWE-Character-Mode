@@ -139,11 +139,11 @@ Hala             ow=OBJ_EVENT_GFX_CM_HALA              front=TRAINER_PIC_HALA   
 Olivia           ow=OBJ_EVENT_GFX_CM_OLIVIA            front=TRAINER_PIC_OLIVIA         back=-
 Nanu             ow=OBJ_EVENT_GFX_CM_NANU              front=TRAINER_PIC_NANU           back=-
 Hapu             ow=OBJ_EVENT_GFX_CM_HAPU              front=TRAINER_PIC_HAPU           back=-
-Gladion          ow=OBJ_EVENT_GFX_CM_GLADION           front=TRAINER_PIC_GLADION        back=-
+Gladion          ow=OBJ_EVENT_GFX_CM_GLADION           front=TRAINER_PIC_GLADION        back=TRAINER_BACK_PIC_CM_GLADION
 Guzma            ow=-                                  front=-                          back=-
 Plumeria         ow=-                                  front=-                          back=-
-Lusamine         ow=-                                  front=-                          back=-
-Lillie (anime)   ow=-                                  front=TRAINER_PIC_LILLIE         back=-
+Lusamine         ow=OBJ_EVENT_GFX_CM_LUSAMINE          front=TRAINER_PIC_LUSAMINE       back=-
+Lillie (anime)   ow=OBJ_EVENT_GFX_CM_LILLIE            front=TRAINER_PIC_LILLIE         back=TRAINER_BACK_PIC_CM_LILLIE
 Kiawe (anime)    ow=OBJ_EVENT_GFX_CM_KIAWE             front=TRAINER_PIC_KIAWE          back=-
 Lana (anime)     ow=OBJ_EVENT_GFX_CM_LANA              front=TRAINER_PIC_LANA           back=-
 Mallow (anime)   ow=OBJ_EVENT_GFX_CM_MALLOW            front=TRAINER_PIC_MALLOW         back=-
@@ -183,15 +183,15 @@ Penny            ow=OBJ_EVENT_GFX_CM_PENNY             front=TRAINER_PIC_PENNY  
 Victor           ow=OBJ_EVENT_GFX_CM_VICTOR            front=TRAINER_PIC_VICTOR         back=-
 Gloria           ow=OBJ_EVENT_GFX_CM_GLORIA            front=TRAINER_PIC_GLORIA         back=-
 Oak              ow=OBJ_EVENT_GFX_CM_OAK               front=TRAINER_PIC_OAK            back=-
-Elm              ow=OBJ_EVENT_GFX_CM_ELM               front=-                          back=-
-Birch            ow=OBJ_EVENT_GFX_CM_BIRCH             front=-                          back=-
-Rowan            ow=OBJ_EVENT_GFX_CM_ROWAN             front=-                          back=-
-Juniper          ow=-                                  front=-                          back=-
-Sycamore         ow=-                                  front=-                          back=-
+Elm              ow=OBJ_EVENT_GFX_CM_ELM               front=TRAINER_PIC_ELM            back=-
+Birch            ow=OBJ_EVENT_GFX_CM_BIRCH             front=TRAINER_PIC_BIRCH          back=-
+Rowan            ow=OBJ_EVENT_GFX_CM_ROWAN             front=TRAINER_PIC_ROWAN          back=-
+Juniper          ow=-                                  front=TRAINER_PIC_JUNIPER        back=-
+Sycamore         ow=-                                  front=TRAINER_PIC_SYCAMORE       back=-
 Burnet           ow=-                                  front=-                          back=-
 Samson Oak       ow=-                                  front=-                          back=-
-Magnolia         ow=-                                  front=-                          back=-
-Sonia            ow=-                                  front=-                          back=-
+Magnolia         ow=-                                  front=TRAINER_PIC_MAGNOLIA       back=-
+Sonia            ow=-                                  front=TRAINER_PIC_SONIA          back=-
 Laventon         ow=-                                  front=-                          back=-
 Cerise           ow=-                                  front=-                          back=-
 Sada             ow=-                                  front=-                          back=-
@@ -216,7 +216,7 @@ Ingo             ow=-                                  front=-                  
 Irida            ow=-                                  front=-                          back=-
 Kamado           ow=-                                  front=-                          back=-
 Lian             ow=-                                  front=-                          back=-
-Lucy             ow=OBJ_EVENT_GFX_CM_LUCY              front=TRAINER_PIC_PIKE_QUEEN_LUCY back=-
+Lucy             ow=OBJ_EVENT_GFX_CM_LUCY              front=TRAINER_PIC_PIKE_QUEEN_LUCY back=TRAINER_BACK_PIC_CM_LUCY
 Mai              ow=-                                  front=-                          back=-
 Melli            ow=-                                  front=-                          back=-
 Noland           ow=OBJ_EVENT_GFX_CM_NOLAND            front=TRAINER_PIC_FACTORY_HEAD_NOLAND back=TRAINER_BACK_PIC_CM_NOLAND

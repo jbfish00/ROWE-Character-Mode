@@ -422,3 +422,30 @@ kept its per-file artist, so it ranks ABOVE `taar/` in the importer's
   to `rogue/` and `taar/` first, and the importer matches exact filenames so an
   `_hyo`/`_spilledpizza` suffix can never be picked silently. Recorded here
   because the art is in the tree.
+
+## Wolfang62 — professor portraits (added 2026-10-02)
+
+**Artist: Wolfang62** — https://www.deviantart.com/wolfang62
+
+### `sprites/donors/wolfang62/` — 9 sprites
+
+From Wolfang62's **"All Professors"** sheet (DeviantArt, 2021-07-16,
+https://www.deviantart.com/wolfang62/art/All-Professors-885889095). Each
+professor was cut out of the sheet and placed, unscaled, on a 64×64 portrait
+canvas: Oak, Elm, Birch, Rowan, Juniper, Sycamore, Kukui, Magnolia, Sonia.
+Magnolia and Sonia had one or two near-identical shades merged to fit the GBA's
+15-colour limit; everything else is pixel-identical to the original. Used with
+the artist's permission. Thank you, Wolfang62.
+
+## Emerald Enhanced — Aether family and Lucy (added 2026-10-02)
+
+**Enhanced Projects** — https://github.com/Enhanced-Projects/Emerald-Enhanced
+(commit `8feeffde06a160c3f7a0e94689c0fd2ed13214f7`)
+
+### `sprites/donors/emerald_enhanced/` — 11 sprites
+
+Front pics of Lusamine, Gladion, Lillie and Lucy; back pics of Gladion, Lillie
+and Lucy; overworld sheets of Lusamine, Gladion, Lillie and Lucy. Byte-identical
+to Emerald Enhanced's own files. Used with the permission of Enhanced Projects,
+whose README asks for it ("We rarely decline such requests, we just need to know
+who is using what").
