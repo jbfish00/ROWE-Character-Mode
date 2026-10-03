@@ -10,6 +10,24 @@ file is **state and next steps**. Re-derived against this working tree on
 **2026-08-09**, after a full rebuild, an anchor regeneration and a clean 19-run
 suite. See §10 for that session.
 
+## ✅ 2026-10-02: roster hint line + Emerald Enhanced / Wolfang62 art (`50cc98db`, committed 2026-10-03, NOT pushed)
+
+- **Roster screen** (`src/character_roster_menu.c`): user ruling, roots only
+  stays with a hint. `ROSTER_HEADER_HEIGHT 4`, `ROSTER_MENU_TOP`, second header
+  line `sText_RosterHint` "Evolutions count too." at y=16. User ruling too:
+  **the Mode Menu row stays off**.
+- **Art**, imported on the user's direction to assume permission (the user is
+  handling the requests; `../Character Hacks/PERMISSION_REQUESTS.md`): donor
+  sets `sprites/donors/emerald_enhanced` and `sprites/donors/wolfang62`, appended
+  before `unattributed` in both importers' `PREFERENCE`. +8 front (Lusamine;
+  Elm, Birch, Rowan, Juniper, Sycamore, Magnolia, Sonia from Wolfang62's sheet),
+  +2 OW (Lusamine, Lillie), +3 back (Gladion `BACK_FRAME_PICK [4,4,3,5]`,
+  Lillie, Lucy). Credited in `CREDITS_CHARACTER_MODE.md`. Coverage now **192
+  front / 174 OW / 22 back of 236** (§3).
+- `tools/mgba_scripts/run_suite.sh` now creates `$OUT/roster-shots` (the
+  roster screenshots were silently never written).
+- Build `9394665c` (md5): **ALL 29 RUNS PASS**, screenshots checked.
+
 ## ⭐⭐⭐ NEW WORKSTREAM 2026-09-20 — the in-game ROSTER DISPLAY (SHIPPED)
 
 📄 **Runbook: `../Character Hacks/game_plans/roster_display.md`.** ROWE is the
@@ -338,9 +356,11 @@ Rules the user set for roster work, all binding, in
 
 ## 3. Sprites
 
-**184 of 236 characters have a front pic**, up from 68 (`ca2657fa`) then 168
-(2026-07-29). **Overworld 172 of 236** (128 → 172 on 2026-08-10, §11) and
-**back pics 19 of 236**. Re-counted from `src/data/characters.h` on 2026-08-10:
+**192 of 236 characters have a front pic** (2026-10-02, +8 from Emerald
+Enhanced and Wolfang62), up from 68 (`ca2657fa`), 168 (2026-07-29) and 184.
+**Overworld 174 of 236** (128 → 172 on 2026-08-10, §11; +2 on 2026-10-02) and
+**back pics 22 of 236** (+3 on 2026-10-02). The 2026-08-10 recount below is
+history; `characters.h` has 237 entries, the last a placeholder, so subtract it. Re-counted from `src/data/characters.h` on 2026-08-10:
 `.trainerFrontPic` has **52** `CHAR_ASSET_NONE`, `.owGfxId` has **64**, and
 `.backPic` has **217** `CHAR_ASSET_NONE_U8`.
 ⚠️ **Count the SENTINEL PER FIELD.** `.backPic` uses `CHAR_ASSET_NONE_U8`; the
