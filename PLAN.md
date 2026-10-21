@@ -1,3 +1,5 @@
+> **FROZEN 2026-10-08:** ROWE work moved to `../Character Hacks/ROWE2-Character-Mode/` (binary port onto R.O.W.E. 2.1.9.1). This repo is a reference/donor only.
+
 # PLAN.md — Pokemon ROWE, where everything stands
 
 **Read this first if you are picking this repo up cold.** It is the per-repo
